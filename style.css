@@ -24,6 +24,7 @@
 
   --yellow: #d9df57;
   --pink: #d8a4a5;
+  --soft-pink: #d8a4a5;
 
   --muted: #66675f;
   --soft: #8a8982;
@@ -64,6 +65,7 @@ html {
 
 body {
   min-width: 320px;
+
   background: var(--cream);
   color: var(--charcoal);
 
@@ -128,6 +130,7 @@ h3 {
 h2 {
   font-size: clamp(52px, 6vw, 88px);
   line-height: .92;
+
   font-weight: 500;
   letter-spacing: -.065em;
 }
@@ -143,9 +146,10 @@ h3 em {
 
   font-size: 10px;
   line-height: 1;
-  font-weight: 700;
 
+  font-weight: 700;
   letter-spacing: .17em;
+
   text-transform: uppercase;
 
   color: var(--green-dark);
@@ -181,6 +185,7 @@ h3 em {
 
 .section {
   width: var(--page);
+
   margin: 0 auto;
 
   padding: 145px 0;
@@ -202,11 +207,13 @@ h3 em {
 .section-number {
   font-size: 10px;
   font-weight: 700;
+
   letter-spacing: .17em;
 }
 
 .section-side-note {
   font-size: 9px;
+
   letter-spacing: .15em;
   text-transform: uppercase;
 
@@ -223,8 +230,10 @@ h3 em {
   height: 82px;
 
   position: fixed;
+
   left: 50%;
   top: 0;
+
   transform: translateX(-50%);
 
   z-index: 1000;
@@ -269,6 +278,7 @@ h3 em {
 
   font-size: 11px;
   font-weight: 700;
+
   letter-spacing: .12em;
 }
 
@@ -307,6 +317,7 @@ h3 em {
 
   font-size: 10px;
   font-weight: 700;
+
   letter-spacing: .05em;
 
   color: var(--muted);
@@ -353,6 +364,7 @@ h3 em {
 
   font-size: 9px;
   font-weight: 700;
+
   letter-spacing: .05em;
 
   transition:
@@ -462,6 +474,7 @@ h3 em {
 .mobile-nav-inner > small {
   font-size: 9px;
   letter-spacing: .17em;
+
   color: var(--soft);
 }
 
@@ -483,6 +496,7 @@ h3 em {
 
   font-size: 12px;
   font-weight: 700;
+
   letter-spacing: .09em;
 }
 
@@ -598,6 +612,7 @@ h3 em {
 
   font-size: 9px;
   font-weight: 700;
+
   letter-spacing: .14em;
   text-transform: uppercase;
 
@@ -649,6 +664,7 @@ h3 em {
 
 .hero-description {
   max-width: 470px;
+
   margin-left: 10vw;
 }
 
@@ -736,6 +752,7 @@ h3 em {
 
   font-size: 8px;
   line-height: 1.2;
+
   letter-spacing: .1em;
 }
 
@@ -769,6 +786,7 @@ h3 em {
   line-height: .8;
 
   font-weight: 700;
+
   letter-spacing: -.12em;
 
   color: rgba(37,37,37,.035);
@@ -791,7 +809,9 @@ h3 em {
   left: -125px;
   bottom: 65px;
 
-  border-radius: 53% 47% 65% 35% / 45% 57% 43% 55%;
+  border-radius:
+    53% 47% 65% 35% /
+    45% 57% 43% 55%;
 
   background: var(--green);
 
@@ -805,7 +825,9 @@ h3 em {
   right: 245px;
   top: 120px;
 
-  border-radius: 61% 39% 48% 52% / 44% 54% 46% 56%;
+  border-radius:
+    61% 39% 48% 52% /
+    44% 54% 46% 56%;
 
   background: var(--turquoise);
 
@@ -870,6 +892,7 @@ h3 em {
   gap: 13px;
 
   font-size: 8px;
+
   letter-spacing: .15em;
   text-transform: uppercase;
 
@@ -923,6 +946,7 @@ h3 em {
 
   font-size: 8px;
   font-weight: 700;
+
   letter-spacing: .1em;
 }
 
@@ -987,6 +1011,7 @@ h3 em {
 .proof-item strong {
   font-size: 48px;
   line-height: .9;
+
   font-weight: 500;
 
   letter-spacing: -.065em;
@@ -1085,11 +1110,13 @@ h3 em {
 
 .milestone-left {
   justify-content: flex-end;
+
   padding-right: 90px;
 }
 
 .milestone-right {
   margin-left: 50%;
+
   padding-left: 90px;
 }
 
@@ -1131,6 +1158,7 @@ h3 em {
 .milestone-marker span {
   font-size: 8px;
   font-weight: 700;
+
   letter-spacing: .04em;
 }
 
@@ -1183,6 +1211,8 @@ h3 em {
 }
 
 .milestone-expanded {
+  display: block;
+
   max-height: 0;
 
   overflow: hidden;
@@ -1253,6 +1283,7 @@ h3 em {
 
 .today-orbit span {
   font-size: 25px;
+
   color: var(--yellow);
 }
 
@@ -1342,7 +1373,12 @@ h3 em {
   position: relative;
 
   display: grid;
-  grid-template-columns: 55px minmax(0, 1fr) 125px 165px;
+
+  grid-template-columns:
+    55px
+    minmax(0, 1fr)
+    125px
+    165px;
 
   gap: 30px;
 
@@ -1492,6 +1528,7 @@ h3 em {
 
 .project-gallery {
   display: grid;
+
   grid-template-columns: repeat(12, 1fr);
 
   gap: 32px;
@@ -1640,6 +1677,7 @@ h3 em {
   font-family: var(--serif);
   font-size: 29px;
   line-height: .9;
+
   font-weight: 500;
 }
 
@@ -1735,6 +1773,7 @@ h3 em {
 
 .project-link:hover {
   gap: 14px;
+
   color: var(--green-dark);
 }
 
@@ -1772,11 +1811,15 @@ h3 em {
   left: 50%;
   top: 52%;
 
-  border-radius: 52% 48% 45% 55% / 57% 44% 56% 43%;
+  border-radius:
+    52% 48% 45% 55% /
+    57% 44% 56% 43%;
 
   background: var(--turquoise);
 
-  transform: translate(-50%, -50%) rotate(25deg);
+  transform:
+    translate(-50%, -50%)
+    rotate(25deg);
 }
 
 .fruit-shape::before {
@@ -1843,6 +1886,7 @@ h3 em {
 
   display: flex;
   flex-direction: column;
+
   align-items: center;
   justify-content: center;
 
@@ -1885,6 +1929,7 @@ h3 em {
   inset: 0;
 
   display: grid;
+
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
 
@@ -1900,6 +1945,7 @@ h3 em {
   line-height: .8;
 
   font-weight: 700;
+
   letter-spacing: -.1em;
 
   transform: rotate(-5deg);
@@ -1973,6 +2019,7 @@ h3 em {
 
   display: flex;
   flex-direction: column;
+
   align-items: center;
   justify-content: center;
 
@@ -2035,6 +2082,7 @@ h3 em {
 
   display: flex;
   flex-direction: column;
+
   align-items: center;
   justify-content: center;
 
@@ -2087,7 +2135,10 @@ h3 em {
 
 .node-top:hover,
 .node-top.active {
-  transform: translateX(-50%) scale(1.08) rotate(3deg);
+  transform:
+    translateX(-50%)
+    scale(1.08)
+    rotate(3deg);
 }
 
 .node-right {
@@ -2220,7 +2271,11 @@ h3 em {
   margin-top: 90px;
 
   display: grid;
-  grid-template-columns: 130px 1fr auto;
+
+  grid-template-columns:
+    130px
+    1fr
+    auto;
 
   gap: 40px;
 
@@ -2283,6 +2338,7 @@ h3 em {
 .education-gpa strong {
   font-family: var(--serif);
   font-size: 55px;
+
   font-weight: 500;
   line-height: 1;
 }
@@ -2295,269 +2351,884 @@ h3 em {
 
 
 /* =========================================================
-   15 — CREATIVE
+   15 — CREATIVE SKILLS
 ========================================================= */
 
 .creative-section {
-  padding-bottom: 160px;
-}
-
-.creative-intro {
-  display: grid;
-  grid-template-columns: 1fr 370px;
-
-  gap: 100px;
-
-  align-items: end;
-
-  margin-bottom: 80px;
-}
-
-.creative-intro h2 {
-  max-width: 750px;
-}
-
-.creative-intro p {
-  font-size: 13px;
-  line-height: 1.75;
-
-  color: var(--muted);
-}
-
-.creative-board {
-  display: grid;
-  grid-template-columns: 1.15fr .85fr;
-
-  gap: 30px;
-
-  align-items: start;
-}
-
-.creative-piece {
   position: relative;
 
-  padding: 28px;
-
-  border: 1px solid var(--line);
+  padding-bottom: 160px;
 
   overflow: hidden;
 }
 
-.photoshop-piece {
-  min-height: 650px;
 
-  background: var(--cream-dark);
+/* =========================================================
+   CREATIVE INTRO
+========================================================= */
+
+.creative-intro {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.15fr)
+    minmax(280px, .85fr);
+
+  gap: 80px;
+
+  align-items: end;
+
+  margin-bottom: 70px;
 }
 
-.tiktok-piece {
-  min-height: 610px;
+.creative-intro h2 {
+  max-width: 850px;
 
-  margin-top: 70px;
+  margin-top: 16px;
 
-  background: var(--charcoal);
-  color: var(--cream);
+  font-size: clamp(3.8rem, 7vw, 7.2rem);
+  line-height: .9;
+
+  letter-spacing: -.065em;
 }
 
-.piece-header {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
+.creative-intro h2 em {
+  color: var(--green-dark);
+}
 
+.creative-intro > p {
+  max-width: 420px;
+
+  margin-bottom: 5px;
+
+  color: var(--muted);
+
+  font-size: .95rem;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   CREATIVE BOARD
+========================================================= */
+
+.creative-board {
+  display: grid;
+
+  grid-template-columns:
+    minmax(320px, .78fr)
+    minmax(500px, 1.22fr);
+
+  gap: 28px;
+
+  align-items: stretch;
+}
+
+
+/* =========================================================
+   SHARED CREATIVE PIECE
+========================================================= */
+
+.creative-piece {
   position: relative;
-  z-index: 5;
+
+  overflow: hidden;
+
+  border: 1px solid var(--line);
+
+  transition:
+    transform .45s cubic-bezier(.2,.8,.2,1),
+    box-shadow .45s ease;
 }
 
-.piece-header > span {
-  font-family: var(--serif);
-  font-size: 16px;
+.creative-piece:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 25px 60px rgba(24,24,24,.09);
 }
 
-.piece-header small,
-.piece-header strong {
-  display: block;
-}
-
-.piece-header small {
-  font-size: 8px;
-  letter-spacing: .13em;
-
-  color: var(--soft);
-}
-
-.piece-header strong {
-  margin-top: 4px;
-
-  font-size: 10px;
-  letter-spacing: .05em;
-}
-
-.photoshop-image {
-  width: 74%;
-
-  margin: 50px auto 30px;
-
-  position: relative;
-
-  transform: rotate(-3deg);
-}
-
-.photoshop-image img {
-  width: 100%;
-  height: 350px;
-
-  object-fit: cover;
-
-  box-shadow: 14px 14px 0 var(--green);
-}
-
-.crop-mark {
-  width: 25px;
-  height: 25px;
-
+.piece-topline {
   position: absolute;
 
-  border-color: var(--charcoal);
-}
+  top: 24px;
+  left: 26px;
+  right: 26px;
 
-.crop-one {
-  top: -15px;
-  left: -15px;
+  z-index: 20;
 
-  border-top: 1px solid;
-  border-left: 1px solid;
-}
-
-.crop-two {
-  right: -15px;
-  bottom: -15px;
-
-  border-right: 1px solid;
-  border-bottom: 1px solid;
-}
-
-.piece-footer {
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
+  align-items: center;
 
-  gap: 30px;
-
-  margin-top: 35px;
-
-  position: relative;
-  z-index: 5;
+  gap: 15px;
 }
 
-.piece-footer p {
-  max-width: 390px;
+.piece-number {
+  font-size: .68rem;
+  font-weight: 700;
 
-  font-size: 10px;
-  line-height: 1.7;
+  letter-spacing: .14em;
+}
+
+.piece-category {
+  font-size: .62rem;
+  font-weight: 700;
+
+  letter-spacing: .13em;
 
   color: var(--muted);
 }
 
-.tiktok-piece .piece-footer p {
-  color: #aaa79f;
+.piece-kicker {
+  display: block;
+
+  font-size: .62rem;
+  font-weight: 700;
+
+  letter-spacing: .15em;
+  text-transform: uppercase;
+
+  color: var(--muted);
 }
 
-.tiktok-stage {
-  min-height: 400px;
 
-  position: relative;
+/* =========================================================
+   CREATIVE BUTTON
+========================================================= */
+
+.creative-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+
+  flex-shrink: 0;
+
+  padding: 12px 16px;
+
+  border: 1px solid var(--charcoal);
+  border-radius: 999px;
+
+  color: var(--charcoal);
+
+  text-decoration: none;
+
+  font-size: .62rem;
+  font-weight: 700;
+
+  letter-spacing: .12em;
+  text-transform: uppercase;
+
+  transition:
+    background .25s ease,
+    color .25s ease,
+    transform .25s ease;
+}
+
+.creative-button span {
+  font-size: .95rem;
+}
+
+.creative-button:hover {
+  background: var(--charcoal);
+  color: var(--cream);
+
+  transform: translateY(-2px);
+}
+
+.creative-button-light {
+  background: transparent;
+}
+
+
+/* =========================================================
+   PHOTOSHOP PIECE
+========================================================= */
+
+.photoshop-piece {
+  min-height: 730px;
+
+  background: var(--cream-dark);
+}
+
+
+/* ---------------------------------------------------------
+   Photoshop stage
+--------------------------------------------------------- */
+
+.photoshop-stage {
+  position: absolute;
+
+  inset:
+    70px
+    18px
+    215px
+    18px;
+}
+
+.photoshop-shape {
+  position: absolute;
+
+  pointer-events: none;
+}
+
+.photoshop-green {
+  width: 270px;
+  height: 270px;
+
+  right: 0;
+  top: 80px;
+
+  background: var(--green);
+
+  border-radius:
+    47% 53% 61% 39% /
+    43% 39% 61% 57%;
+
+  transform: rotate(-17deg);
+}
+
+.photoshop-pink {
+  width: 135px;
+  height: 135px;
+
+  left: 12px;
+  bottom: 30px;
+
+  background: var(--soft-pink);
+
+  border-radius:
+    62% 38% 47% 53% /
+    38% 58% 42% 62%;
+
+  transform: rotate(18deg);
+}
+
+
+/* ---------------------------------------------------------
+   Photoshop frame
+--------------------------------------------------------- */
+
+.photoshop-frame {
+  position: absolute;
+
+  z-index: 5;
+
+  width: 75%;
+  max-width: 420px;
+
+  left: 50%;
+  top: 90px;
+
+  padding: 9px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 25px 55px rgba(24,24,24,.13);
+
+  transform:
+    translateX(-50%)
+    rotate(-3deg);
+
+  transition:
+    transform .5s cubic-bezier(.2,.8,.2,1);
+}
+
+.photoshop-piece:hover .photoshop-frame {
+  transform:
+    translateX(-50%)
+    rotate(1deg)
+    translateY(-7px);
+}
+
+.photoshop-image {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  transform:
+    translateY(var(--image-shift, 0px));
+}
+
+
+/* ---------------------------------------------------------
+   Photoshop sticker
+--------------------------------------------------------- */
+
+.photoshop-sticker {
+  position: absolute;
+
+  z-index: 10;
+
+  right: 0;
+  top: 10px;
+
+  width: 125px;
+  height: 125px;
 
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
 
-  padding-left: 25px;
+  text-align: center;
+
+  background: var(--yellow);
+
+  border-radius:
+    45% 55% 57% 43% /
+    58% 42% 58% 42%;
+
+  font-size: .58rem;
+  font-weight: 800;
+
+  line-height: 1.45;
+  letter-spacing: .08em;
+
+  transform: rotate(8deg);
+
+  box-shadow:
+    5px 8px 0 rgba(24,24,24,.07);
 }
 
-.tiktok-big-number {
-  font-size: clamp(80px, 9vw, 130px);
-  line-height: .8;
+
+/* ---------------------------------------------------------
+   Photoshop crop marks
+--------------------------------------------------------- */
+
+.photoshop-mark {
+  position: absolute;
+
+  width: 26px;
+  height: 26px;
+
+  opacity: .45;
+}
+
+.photoshop-mark::before,
+.photoshop-mark::after {
+  content: "";
+
+  position: absolute;
+
+  background: var(--charcoal);
+}
+
+.photoshop-mark::before {
+  width: 26px;
+  height: 1px;
+
+  top: 50%;
+  left: 0;
+}
+
+.photoshop-mark::after {
+  width: 1px;
+  height: 26px;
+
+  left: 50%;
+  top: 0;
+}
+
+.mark-one {
+  top: 5%;
+  left: 8%;
+}
+
+.mark-two {
+  bottom: 3%;
+  right: 7%;
+}
+
+
+/* ---------------------------------------------------------
+   Photoshop copy
+--------------------------------------------------------- */
+
+.photoshop-copy {
+  position: absolute;
+
+  z-index: 15;
+
+  left: 34px;
+  right: 34px;
+  bottom: 32px;
+
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+
+  gap: 25px;
+}
+
+.photoshop-copy h3 {
+  margin-top: 10px;
+
+  font-size: clamp(2.6rem, 4vw, 4.1rem);
+  line-height: .88;
+
+  letter-spacing: -.055em;
+}
+
+.photoshop-copy h3 em {
+  color: var(--green-dark);
+}
+
+
+/* =========================================================
+   TIKTOK PIECE
+========================================================= */
+
+.tiktok-piece {
+  min-height: 730px;
+
+  background: var(--turquoise);
+
+  isolation: isolate;
+}
+
+
+/* ---------------------------------------------------------
+   Status
+--------------------------------------------------------- */
+
+.tiktok-status {
+  margin-left: auto;
+
+  padding: 7px 12px;
+
+  border: 1px solid rgba(24,24,24,.35);
+  border-radius: 999px;
+
+  font-size: .54rem;
+  font-weight: 800;
+
+  letter-spacing: .12em;
+}
+
+
+/* ---------------------------------------------------------
+   Background word
+--------------------------------------------------------- */
+
+.tiktok-background-word {
+  position: absolute;
+
+  right: -20px;
+  bottom: 145px;
+
+  z-index: -1;
+
+  font-size: clamp(8rem, 15vw, 15rem);
+  line-height: .75;
 
   font-weight: 700;
 
   letter-spacing: -.1em;
+
+  color: rgba(255,255,255,.2);
+
+  transform:
+    rotate(-90deg);
+
+  transform-origin: right bottom;
+
+  pointer-events: none;
 }
 
-.tiktok-big-number span {
-  font-family: var(--serif);
-  font-size: .55em;
-  font-style: italic;
-  font-weight: 500;
+
+/* ---------------------------------------------------------
+   TikTok visual
+--------------------------------------------------------- */
+
+.tiktok-visual {
+  position: absolute;
+
+  inset:
+    70px
+    35px
+    205px
+    35px;
 }
 
-.tiktok-stage > p {
-  margin-top: 13px;
-
-  font-size: 8px;
-  letter-spacing: .12em;
-
-  color: #aaa79f;
-}
-
-.tiktok-stat {
-  width: 92px;
-  height: 92px;
+.tiktok-visual::before {
+  content: "";
 
   position: absolute;
 
-  right: 5px;
-  top: 80px;
+  z-index: 0;
+
+  width: 430px;
+  height: 470px;
+
+  left: 50%;
+  top: 48%;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(7deg);
+
+  background: var(--cream);
+
+  border-radius:
+    51% 49% 42% 58% /
+    45% 57% 43% 55%;
+}
+
+
+/* ---------------------------------------------------------
+   TikTok screen
+--------------------------------------------------------- */
+
+.tiktok-screen {
+  position: absolute;
+
+  z-index: 4;
+
+  width: 270px;
+
+  left: 50%;
+  top: 48%;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(3deg);
+
+  padding: 7px 7px 9px;
+
+  background: var(--charcoal);
+
+  border-radius: 18px;
+
+  box-shadow:
+    18px 25px 55px rgba(24,24,24,.22);
+
+  transition:
+    transform .5s cubic-bezier(.2,.8,.2,1);
+}
+
+.tiktok-piece:hover .tiktok-screen {
+  transform:
+    translate(-50%, -50%)
+    rotate(-1deg)
+    translateY(-7px);
+}
+
+.screen-bar {
+  height: 17px;
 
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 
-  gap: 6px;
+  gap: 4px;
+}
+
+.screen-bar span {
+  width: 4px;
+  height: 4px;
 
   border-radius: 50%;
 
-  background: var(--turquoise);
-  color: var(--charcoal);
+  background: rgba(255,255,255,.55);
+}
+
+.tiktok-screen img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  border-radius: 11px;
+}
+
+
+/* ---------------------------------------------------------
+   TikTok stickers
+--------------------------------------------------------- */
+
+.tiktok-sticker {
+  position: absolute;
+
+  z-index: 10;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  box-shadow:
+    7px 9px 0 rgba(24,24,24,.08);
+}
+
+
+/* 367K */
+
+.sticker-views {
+  width: 175px;
+  height: 175px;
+
+  left: 0;
+  top: 5px;
+
+  padding: 24px;
+
+  background: var(--yellow);
+
+  border-radius:
+    49% 51% 44% 56% /
+    57% 43% 57% 43%;
+
+  transform: rotate(-8deg);
+}
+
+.sticker-views strong {
+  margin: 5px 0;
+
+  font-size: 4rem;
+  line-height: .8;
+
+  letter-spacing: -.09em;
+}
+
+.sticker-small {
+  font-size: .52rem;
+  font-weight: 800;
+
+  letter-spacing: .12em;
+}
+
+
+/* 1M */
+
+.sticker-million {
+  width: 115px;
+  height: 115px;
+
+  right: 0;
+  top: 25px;
+
+  align-items: center;
+
+  text-align: center;
+
+  background: var(--green-dark);
+  color: #ffffff;
+
+  border-radius:
+    44% 56% 59% 41% /
+    53% 43% 57% 47%;
 
   transform: rotate(8deg);
 }
 
-.tiktok-stat strong {
-  font-family: var(--serif);
-  font-size: 27px;
-  font-weight: 500;
+.sticker-million strong {
+  font-size: 2.8rem;
+
+  line-height: .8;
+
+  letter-spacing: -.08em;
 }
 
-.tiktok-stat span {
-  font-size: 8px;
-  line-height: 1.2;
-  font-weight: 700;
+.sticker-million span {
+  margin-top: 10px;
+
+  font-size: .55rem;
+  font-weight: 800;
+
+  letter-spacing: .08em;
+  line-height: 1.35;
 }
 
-.tiktok-profile {
+
+/* ---------------------------------------------------------
+   Followers tag
+--------------------------------------------------------- */
+
+.tiktok-tag {
   position: absolute;
 
-  left: 30px;
-  bottom: 20px;
+  z-index: 12;
+
+  left: 4%;
+  bottom: 5%;
 
   display: flex;
   align-items: center;
-  gap: 10px;
+
+  gap: 12px;
+
+  padding: 12px 17px;
+
+  background: var(--cream);
+
+  box-shadow:
+    5px 7px 0 rgba(24,24,24,.07);
+
+  transform: rotate(-4deg);
 }
 
-.tiktok-profile img {
-  width: 55px;
-  height: 55px;
+.tiktok-tag strong {
+  font-size: 1.4rem;
 
-  object-fit: cover;
+  line-height: 1;
 
-  border: 2px solid var(--cream);
-  border-radius: 50%;
+  letter-spacing: -.06em;
 }
 
-.tiktok-profile span {
-  font-size: 9px;
+.tiktok-tag span {
+  font-size: .52rem;
+  font-weight: 800;
 
-  color: #c5c2ba;
+  letter-spacing: .1em;
+}
+
+
+/* ---------------------------------------------------------
+   People × Attention
+--------------------------------------------------------- */
+
+.tiktok-note {
+  position: absolute;
+
+  z-index: 8;
+
+  right: 14%;
+  bottom: 29%;
+
+  display: flex;
+  flex-direction: column;
+
+  text-align: center;
+
+  font-size: .5rem;
+  font-weight: 800;
+
+  letter-spacing: .13em;
+
+  transform: rotate(7deg);
+}
+
+.tiktok-note strong {
+  margin: 4px 0;
+
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-style: italic;
+}
+
+
+/* ---------------------------------------------------------
+   Arrow
+--------------------------------------------------------- */
+
+.tiktok-arrow {
+  position: absolute;
+
+  z-index: 10;
+
+  left: 28%;
+  top: 27%;
+
+  font-family: var(--serif);
+
+  font-size: 3rem;
+  font-style: italic;
+
+  transform: rotate(-15deg);
+}
+
+
+/* ---------------------------------------------------------
+   Attention label
+--------------------------------------------------------- */
+
+.tiktok-label {
+  position: absolute;
+
+  z-index: 11;
+
+  right: 2%;
+  bottom: 4%;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 13px 18px;
+
+  background: var(--soft-pink);
+
+  border: 1px solid var(--charcoal);
+
+  box-shadow:
+    5px 6px 0 rgba(24,24,24,.08);
+
+  transform: rotate(-6deg);
+}
+
+.tiktok-label span {
+  font-size: .5rem;
+  font-weight: 800;
+
+  letter-spacing: .12em;
+}
+
+.tiktok-label strong {
+  margin-top: 2px;
+
+  font-family: var(--serif);
+
+  font-size: 1.35rem;
+  font-weight: 500;
+  font-style: italic;
+}
+
+
+/* ---------------------------------------------------------
+   TikTok story
+--------------------------------------------------------- */
+
+.tiktok-story {
+  position: absolute;
+
+  left: 35px;
+  right: 35px;
+  bottom: 28px;
+
+  z-index: 20;
+
+  display: grid;
+
+  grid-template-columns: 1fr .72fr;
+
+  gap: 45px;
+
+  align-items: end;
+}
+
+.tiktok-story-title h3 {
+  margin-top: 8px;
+
+  font-size: clamp(2rem, 3.4vw, 3.4rem);
+
+  line-height: .92;
+
+  letter-spacing: -.055em;
+}
+
+.tiktok-story-title h3 em {
+  color: var(--green-dark);
+}
+
+.tiktok-story-copy p {
+  max-width: 360px;
+
+  margin-bottom: 17px;
+
+  color: rgba(24,24,24,.7);
+
+  font-size: .76rem;
+  line-height: 1.65;
 }
 
 
@@ -2627,7 +3298,11 @@ h3 em {
 
 .contact-link {
   display: grid;
-  grid-template-columns: 100px 1fr 30px;
+
+  grid-template-columns:
+    100px
+    1fr
+    30px;
 
   gap: 20px;
 
@@ -2689,6 +3364,11 @@ h3 em {
   color: var(--soft);
 }
 
+
+/* ---------------------------------------------------------
+   Contact shapes
+--------------------------------------------------------- */
+
 .contact-shape {
   position: absolute;
 
@@ -2702,7 +3382,9 @@ h3 em {
   right: -110px;
   bottom: -125px;
 
-  border-radius: 47% 53% 60% 40% / 53% 43% 57% 47%;
+  border-radius:
+    47% 53% 60% 40% /
+    53% 43% 57% 47%;
 
   background: var(--green);
 
@@ -2730,7 +3412,8 @@ h3 em {
   right: 65px;
   top: 295px;
 
-  border-radius: 42% 58% 54% 46%;
+  border-radius:
+    42% 58% 54% 46%;
 
   background: var(--yellow);
 
@@ -2775,6 +3458,7 @@ h3 em {
   justify-content: space-between;
 
   font-size: 8px;
+
   letter-spacing: .12em;
 
   color: var(--soft);
@@ -2812,6 +3496,11 @@ h3 em {
     --page: min(100% - 48px, 940px);
   }
 
+
+  /* -------------------------------------------------------
+     Navigation
+  ------------------------------------------------------- */
+
   .desktop-nav {
     display: none;
   }
@@ -2824,6 +3513,11 @@ h3 em {
   .menu-toggle {
     display: block;
   }
+
+
+  /* -------------------------------------------------------
+     Hero
+  ------------------------------------------------------- */
 
   .hero {
     min-height: auto;
@@ -2859,12 +3553,16 @@ h3 em {
     width: 220px;
   }
 
+
+  /* -------------------------------------------------------
+     General sections
+  ------------------------------------------------------- */
+
   .about-grid,
   .journey-intro,
   .experience-intro,
   .projects-intro,
-  .skills-intro,
-  .creative-intro {
+  .skills-intro {
     grid-template-columns: 1fr 1fr;
 
     gap: 55px;
@@ -2878,13 +3576,26 @@ h3 em {
     font-size: 38px;
   }
 
+
+  /* -------------------------------------------------------
+     Experience
+  ------------------------------------------------------- */
+
   .experience-row {
-    grid-template-columns: 45px 1fr 100px;
+    grid-template-columns:
+      45px
+      1fr
+      100px;
   }
 
   .experience-impact {
     display: none;
   }
+
+
+  /* -------------------------------------------------------
+     Projects
+  ------------------------------------------------------- */
 
   .project-featured {
     grid-column: 1 / 8;
@@ -2906,14 +3617,34 @@ h3 em {
     font-size: 35px;
   }
 
-  .creative-board {
-    grid-template-columns: 1fr 1fr;
+
+  /* -------------------------------------------------------
+     Creative
+  ------------------------------------------------------- */
+
+  .creative-intro {
+    grid-template-columns:
+      1fr
+      .7fr;
+
+    gap: 40px;
   }
 
-  .piece-footer {
-    flex-direction: column;
-    align-items: flex-start;
+  .creative-board {
+    grid-template-columns:
+      1fr
+      1fr;
   }
+
+  .photoshop-piece,
+  .tiktok-piece {
+    min-height: 700px;
+  }
+
+
+  /* -------------------------------------------------------
+     Contact
+  ------------------------------------------------------- */
 
   .contact-content h2 {
     font-size: clamp(65px, 10vw, 108px);
@@ -2948,9 +3679,9 @@ h3 em {
   }
 
 
-  /* -------------------------------------------------------
+  /* =======================================================
      HEADER
-  ------------------------------------------------------- */
+  ======================================================= */
 
   .site-header {
     width: calc(100% - 32px);
@@ -2973,9 +3704,9 @@ h3 em {
   }
 
 
-  /* -------------------------------------------------------
+  /* =======================================================
      HERO
-  ------------------------------------------------------- */
+  ======================================================= */
 
   .hero {
     width: calc(100% - 32px);
@@ -3099,9 +3830,9 @@ h3 em {
   }
 
 
-  /* -------------------------------------------------------
+  /* =======================================================
      ABOUT
-  ------------------------------------------------------- */
+  ======================================================= */
 
   .about-grid {
     grid-template-columns: 1fr;
@@ -3151,9 +3882,9 @@ h3 em {
   }
 
 
-  /* -------------------------------------------------------
+  /* =======================================================
      JOURNEY
-  ------------------------------------------------------- */
+  ======================================================= */
 
   .journey-intro {
     grid-template-columns: 1fr;
@@ -3184,7 +3915,11 @@ h3 em {
 
     margin-left: 0;
 
-    padding: 0 0 55px 65px;
+    padding:
+      0
+      0
+      55px
+      65px;
 
     justify-content: flex-start;
   }
@@ -3236,6 +3971,7 @@ h3 em {
 
   .today-card {
     width: calc(100% - 10px);
+
     min-width: 0;
 
     padding: 28px 25px;
@@ -3246,9 +3982,9 @@ h3 em {
   }
 
 
-  /* -------------------------------------------------------
+  /* =======================================================
      EXPERIENCE
-  ------------------------------------------------------- */
+  ======================================================= */
 
   .experience-intro {
     grid-template-columns: 1fr;
@@ -3265,7 +4001,9 @@ h3 em {
 
     padding: 25px 0;
 
-    grid-template-columns: 32px 1fr;
+    grid-template-columns:
+      32px
+      1fr;
 
     gap: 15px;
   }
@@ -3295,9 +4033,9 @@ h3 em {
   }
 
 
-  /* -------------------------------------------------------
+  /* =======================================================
      PROJECTS
-  ------------------------------------------------------- */
+  ======================================================= */
 
   .projects-intro {
     grid-template-columns: 1fr;
@@ -3360,9 +4098,9 @@ h3 em {
   }
 
 
-  /* -------------------------------------------------------
+  /* =======================================================
      SKILLS
-  ------------------------------------------------------- */
+  ======================================================= */
 
   .skills-intro {
     grid-template-columns: 1fr;
@@ -3448,9 +4186,9 @@ h3 em {
   }
 
 
-  /* -------------------------------------------------------
+  /* =======================================================
      EDUCATION
-  ------------------------------------------------------- */
+  ======================================================= */
 
   .education-block {
     grid-template-columns: 1fr auto;
@@ -3477,58 +4215,273 @@ h3 em {
   }
 
 
-  /* -------------------------------------------------------
+  /* =======================================================
      CREATIVE
-  ------------------------------------------------------- */
+  ======================================================= */
+
+  .creative-section {
+    padding-bottom: 100px;
+  }
 
   .creative-intro {
-    grid-template-columns: 1fr;
+    display: block;
 
-    gap: 25px;
+    margin-bottom: 45px;
   }
 
-  .creative-board {
-    grid-template-columns: 1fr;
+  .creative-intro h2 {
+    max-width: 100%;
 
-    gap: 25px;
+    font-size: clamp(3.1rem, 14vw, 5rem);
   }
 
-  .photoshop-piece,
-  .tiktok-piece {
-    min-height: auto;
-
-    margin-top: 0;
-  }
-
-  .photoshop-image {
-    width: 85%;
-
-    margin-top: 40px;
-  }
-
-  .photoshop-image img {
-    height: 280px;
-  }
-
-  .tiktok-stage {
-    min-height: 330px;
-  }
-
-  .tiktok-big-number {
-    font-size: 82px;
-  }
-
-  .piece-footer {
-    flex-direction: column;
-    align-items: flex-start;
+  .creative-intro > p {
+    max-width: 320px;
 
     margin-top: 25px;
   }
 
+  .creative-board {
+    display: block;
+  }
+
+  .creative-piece {
+    margin-bottom: 18px;
+  }
+
 
   /* -------------------------------------------------------
-     CONTACT
+     Photoshop mobile
   ------------------------------------------------------- */
+
+  .photoshop-piece {
+    min-height: 590px;
+  }
+
+  .photoshop-stage {
+    inset:
+      70px
+      10px
+      180px
+      10px;
+  }
+
+  .photoshop-frame {
+    width: 74%;
+
+    top: 95px;
+  }
+
+  .photoshop-green {
+    width: 190px;
+    height: 190px;
+
+    right: 0;
+    top: 105px;
+  }
+
+  .photoshop-pink {
+    width: 95px;
+    height: 95px;
+
+    left: 8px;
+    bottom: 25px;
+  }
+
+  .photoshop-sticker {
+    width: 92px;
+    height: 92px;
+
+    right: 0;
+    top: 25px;
+
+    font-size: .46rem;
+  }
+
+  .photoshop-copy {
+    left: 22px;
+    right: 22px;
+    bottom: 22px;
+
+    align-items: end;
+  }
+
+  .photoshop-copy h3 {
+    font-size: 2.55rem;
+  }
+
+  .creative-button {
+    padding: 10px 13px;
+
+    font-size: .52rem;
+  }
+
+
+  /* -------------------------------------------------------
+     TikTok mobile
+  ------------------------------------------------------- */
+
+  .tiktok-piece {
+    min-height: 660px;
+  }
+
+  .piece-topline {
+    top: 20px;
+    left: 20px;
+    right: 20px;
+  }
+
+  .piece-category {
+    font-size: .53rem;
+  }
+
+  .tiktok-status {
+    padding: 5px 8px;
+
+    font-size: .45rem;
+  }
+
+  .tiktok-visual {
+    inset:
+      65px
+      12px
+      175px
+      12px;
+  }
+
+  .tiktok-visual::before {
+    width: 270px;
+    height: 330px;
+  }
+
+  .tiktok-screen {
+    width: 205px;
+  }
+
+  .sticker-views {
+    width: 112px;
+    height: 112px;
+
+    padding: 16px;
+
+    left: 0;
+    top: 10px;
+  }
+
+  .sticker-views strong {
+    font-size: 2.55rem;
+  }
+
+  .sticker-small {
+    font-size: .4rem;
+  }
+
+  .sticker-million {
+    width: 82px;
+    height: 82px;
+
+    right: 0;
+    top: 15px;
+  }
+
+  .sticker-million strong {
+    font-size: 2rem;
+  }
+
+  .sticker-million span {
+    font-size: .42rem;
+  }
+
+  .tiktok-tag {
+    left: 0;
+    bottom: 3%;
+
+    padding: 9px 12px;
+  }
+
+  .tiktok-tag strong {
+    font-size: 1.05rem;
+  }
+
+  .tiktok-tag span {
+    font-size: .42rem;
+  }
+
+  .tiktok-note {
+    right: 7%;
+    bottom: 29%;
+
+    font-size: .4rem;
+  }
+
+  .tiktok-note strong {
+    font-size: 1rem;
+  }
+
+  .tiktok-arrow {
+    left: 27%;
+    top: 28%;
+
+    font-size: 2.2rem;
+  }
+
+  .tiktok-label {
+    right: 0;
+    bottom: 2%;
+
+    padding: 9px 12px;
+  }
+
+  .tiktok-label span {
+    font-size: .4rem;
+  }
+
+  .tiktok-label strong {
+    font-size: 1rem;
+  }
+
+  .tiktok-story {
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+
+    display: block;
+  }
+
+  .tiktok-story-title h3 {
+    font-size: 2rem;
+  }
+
+  .tiktok-story-copy {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-top: 10px;
+  }
+
+  .tiktok-story-copy p {
+    margin: 0;
+
+    max-width: 260px;
+
+    font-size: .64rem;
+  }
+
+  .tiktok-story-copy .creative-button {
+    flex-shrink: 0;
+  }
+
+  .tiktok-background-word {
+    font-size: 8rem;
+  }
+
+
+  /* =======================================================
+     CONTACT
+  ======================================================= */
 
   .contact-section {
     min-height: 700px;
@@ -3559,7 +4512,10 @@ h3 em {
   }
 
   .contact-link {
-    grid-template-columns: 75px 1fr 20px;
+    grid-template-columns:
+      75px
+      1fr
+      20px;
 
     gap: 10px;
   }
@@ -3601,9 +4557,9 @@ h3 em {
   }
 
 
-  /* -------------------------------------------------------
+  /* =======================================================
      FOOTER
-  ------------------------------------------------------- */
+  ======================================================= */
 
   .site-footer {
     min-height: 90px;
@@ -3656,6 +4612,11 @@ h3 em {
     font-size: 7px;
   }
 
+
+  /* -------------------------------------------------------
+     Skills
+  ------------------------------------------------------- */
+
   .skills-map {
     height: 390px;
   }
@@ -3700,14 +4661,65 @@ h3 em {
     left: 5%;
   }
 
-  .tiktok-big-number {
-    font-size: 70px;
+
+  /* -------------------------------------------------------
+     Creative
+  ------------------------------------------------------- */
+
+  .photoshop-piece {
+    min-height: 550px;
+  }
+
+  .photoshop-frame {
+    width: 76%;
+  }
+
+  .photoshop-copy h3 {
+    font-size: 2.25rem;
+  }
+
+  .tiktok-piece {
+    min-height: 625px;
+  }
+
+  .tiktok-screen {
+    width: 190px;
+  }
+
+  .sticker-views {
+    width: 100px;
+    height: 100px;
+  }
+
+  .sticker-views strong {
+    font-size: 2.25rem;
+  }
+
+  .sticker-million {
+    width: 72px;
+    height: 72px;
+  }
+
+  .sticker-million strong {
+    font-size: 1.7rem;
+  }
+
+  .tiktok-story-title h3 {
+    font-size: 1.75rem;
+  }
+
+  .tiktok-story-copy p {
+    max-width: 200px;
+  }
+
+  .tiktok-background-word {
+    font-size: 7rem;
   }
 }
 
 
 /* =========================================================
-   22 — REDUCED MOTION
+   22 — ACCESSIBILITY / REDUCED MOTION
 ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -3726,6 +4738,34 @@ h3 em {
 
   .reveal {
     opacity: 1;
+
     transform: none;
+  }
+
+  .creative-piece:hover,
+  .photoshop-piece:hover .photoshop-frame,
+  .tiktok-piece:hover .tiktok-screen {
+    transform: none;
+  }
+
+  .photoshop-frame {
+    transform:
+      translateX(-50%)
+      rotate(-3deg);
+  }
+
+  .tiktok-screen {
+    transform:
+      translate(-50%, -50%)
+      rotate(3deg);
+  }
+
+  .node-top {
+    transform: translateX(-50%);
+  }
+
+  .node-top:hover,
+  .node-top.active {
+    transform: translateX(-50%);
   }
 }
