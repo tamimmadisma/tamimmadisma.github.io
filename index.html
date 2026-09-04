@@ -1,4409 +1,1534 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Tamimmah Disma Lestari — Marketing & Consumer Insights</title>
 
   <meta
     name="description"
-    content="Tamimmah Disma Lestari — Business Management graduate specializing in marketing, consumer insights, business development, and creative strategy."
-  />
+    content="Tamimmah Disma Lestari — Business Management graduate working across marketing, consumer insights, business development, and creative strategy."
+  >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap"
     rel="stylesheet"
-  />
+  >
 
-  <style>
-
-    /* =========================================================
-       RESET
-    ========================================================= */
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 90px;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--sans);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    body.menu-open,
-    body.story-open {
-      overflow: hidden;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    button {
-      font-family: inherit;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-
-    /* =========================================================
-       VARIABLES
-    ========================================================= */
-
-    :root {
-      --bg: #f7f6f2;
-      --text: #171717;
-      --muted: #737373;
-      --line: #d7d5ce;
-      --soft: #eceae3;
-
-      --sans: "DM Sans", sans-serif;
-      --serif: "Playfair Display", serif;
-
-      --container: 1180px;
-    }
-
-
-    /* =========================================================
-       GLOBAL
-    ========================================================= */
-
-    .container {
-      width: min(
-        var(--container),
-        calc(100% - 80px)
-      );
-
-      margin: 0 auto;
-    }
-
-    section {
-      padding: 110px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .section-label {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 30px;
-    }
-
-    .section-title {
-      font-size: clamp(42px, 6vw, 76px);
-      line-height: 0.98;
-      font-weight: 500;
-      letter-spacing: -0.04em;
-      max-width: 900px;
-    }
-
-    .section-title i {
-      font-family: var(--serif);
-      font-weight: 400;
-    }
-
-    .section-intro {
-      max-width: 650px;
-      margin-top: 35px;
-      color: var(--muted);
-      font-size: 17px;
-      line-height: 1.8;
-    }
-
-    .small-label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-weight: 700;
-    }
-
-
-    /* =========================================================
-       HEADER
-    ========================================================= */
-
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 74px;
-      z-index: 1000;
-
-      background: rgba(247, 246, 242, 0.92);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-
-      border-bottom: 1px solid var(--line);
-    }
-
-    .header-inner {
-      width: min(
-        var(--container),
-        calc(100% - 80px)
-      );
-
-      height: 100%;
-      margin: 0 auto;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-decoration: none;
-    }
-
-    .desktop-nav {
-      display: flex;
-      align-items: center;
-      gap: 22px;
-    }
-
-    .desktop-nav a {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-      text-decoration: none;
-      transition: opacity 0.2s ease;
-    }
-
-    .desktop-nav a:hover {
-      opacity: 0.5;
-    }
-
-
-    /* =========================================================
-       MOBILE MENU BUTTON
-    ========================================================= */
-
-    .menu-button {
-      display: none;
-
-      width: 42px;
-      height: 42px;
-
-      border: 1px solid var(--text);
-      background: transparent;
-
-      align-items: center;
-      justify-content: center;
-
-      cursor: pointer;
-      position: relative;
-      z-index: 1100;
-    }
-
-    .menu-icon {
-      width: 18px;
-      height: 12px;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .menu-icon span {
-      width: 100%;
-      height: 1px;
-      background: var(--text);
-      transition: transform 0.25s ease;
-    }
-
-    .menu-button.active .menu-icon span:first-child {
-      transform: translateY(5.5px) rotate(45deg);
-    }
-
-    .menu-button.active .menu-icon span:last-child {
-      transform: translateY(-5.5px) rotate(-45deg);
-    }
-
-
-    /* =========================================================
-       MOBILE MENU
-    ========================================================= */
-
-    .mobile-menu {
-      position: fixed;
-      inset: 0;
-      z-index: 1050;
-
-      background: var(--bg);
-
-      padding: 120px 40px 40px;
-
-      display: flex;
-      flex-direction: column;
-
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-
-      transition:
-        opacity 0.3s ease,
-        visibility 0.3s ease;
-    }
-
-    .mobile-menu.active {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
-    }
-
-    .mobile-menu-label {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-
-      color: var(--muted);
-
-      margin-bottom: 30px;
-    }
-
-    .mobile-nav {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .mobile-nav a {
-      padding: 18px 0;
-
-      border-bottom: 1px solid var(--line);
-
-      text-decoration: none;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      font-size: 21px;
-      font-weight: 500;
-    }
-
-    .mobile-nav a span {
-      font-size: 11px;
-      letter-spacing: 0.08em;
-      color: var(--muted);
-    }
-
-
-    /* =========================================================
-       HERO
-    ========================================================= */
-
-    .hero {
-      min-height: 100vh;
-      padding-top: 74px;
-
-      display: flex;
-      align-items: center;
-
-      border-bottom: 1px solid var(--line);
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 80px;
-      align-items: center;
-
-      padding: 90px 0;
-    }
-
-    .hero-kicker {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-
-      margin-bottom: 28px;
-    }
-
-    .hero h1 {
-      font-size: clamp(52px, 7vw, 92px);
-      line-height: 0.94;
-      font-weight: 500;
-      letter-spacing: -0.055em;
-    }
-
-    .hero h1 i {
-      font-family: var(--serif);
-      font-weight: 400;
-    }
-
-    .hero-description {
-      max-width: 600px;
-
-      margin-top: 34px;
-
-      color: var(--muted);
-
-      font-size: 17px;
-      line-height: 1.8;
-    }
-
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-
-      margin-top: 28px;
-    }
-
-    .hero-tag {
-      padding: 8px 13px;
-
-      border: 1px solid var(--line);
-
-      border-radius: 999px;
-
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-
-      margin-top: 35px;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-
-      padding: 13px 20px;
-
-      border: 1px solid var(--text);
-
-      text-decoration: none;
-
-      font-size: 12px;
-      font-weight: 600;
-
-      transition:
-        background 0.2s ease,
-        color 0.2s ease;
-    }
-
-    .button:hover {
-      background: var(--text);
-      color: var(--bg);
-    }
-
-    .hero-image {
-      position: relative;
-    }
-
-    .hero-image img {
-      width: 100%;
-      aspect-ratio: 0.85;
-      object-fit: cover;
-
-      filter: grayscale(100%);
-
-      transition: filter 0.4s ease;
-    }
-
-    .hero-image:hover img {
-      filter: grayscale(0%);
-    }
-
-    .hero-mark {
-      position: absolute;
-      right: -20px;
-      bottom: -20px;
-
-      width: 90px;
-      height: 90px;
-
-      border: 1px solid var(--text);
-      background: var(--bg);
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      font-family: var(--serif);
-      font-size: 24px;
-    }
-
-
-    /* =========================================================
-       EXPLORE PORTFOLIO
-    ========================================================= */
-
-    .explore {
-      margin-top: 70px;
-    }
-
-    .explore-toggle {
-      width: 100%;
-
-      padding: 24px 0;
-
-      border-top: 1px solid var(--text);
-      border-bottom: 1px solid var(--text);
-
-      background: transparent;
-      color: var(--text);
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      cursor: pointer;
-
-      text-align: left;
-    }
-
-    .explore-toggle-left {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-    }
-
-    .explore-toggle-label {
-      font-size: 13px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .explore-toggle-hint {
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .explore-toggle-icon {
-      width: 32px;
-      height: 32px;
-
-      border: 1px solid var(--text);
-      border-radius: 50%;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      font-size: 18px;
-
-      transition: transform 0.3s ease;
-    }
-
-    .explore-toggle.active .explore-toggle-icon {
-      transform: rotate(45deg);
-    }
-
-    .explore-menu {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-
-      max-height: 0;
-      overflow: hidden;
-
-      opacity: 0;
-
-      transition:
-        max-height 0.45s ease,
-        opacity 0.3s ease;
-    }
-
-    .explore-menu.active {
-      max-height: 600px;
-      opacity: 1;
-    }
-
-    .explore-link {
-      min-height: 100px;
-
-      padding: 18px;
-
-      border-right: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-
-      text-decoration: none;
-
-      transition:
-        background 0.25s ease,
-        color 0.25s ease;
-    }
-
-    .explore-link:nth-child(3n) {
-      border-right: 0;
-    }
-
-    .explore-link:hover {
-      background: var(--text);
-      color: var(--bg);
-    }
-
-    .explore-number {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-    }
-
-    .explore-name {
-      font-size: 16px;
-      font-weight: 600;
-    }
-
-    .explore-name span {
-      margin-left: 5px;
-      font-size: 13px;
-    }
-
-
-    /* =========================================================
-       ABOUT
-    ========================================================= */
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 100px;
-
-      margin-top: 70px;
-    }
-
-    .about-text {
-      font-size: 17px;
-      line-height: 1.9;
-    }
-
-    .about-text p + p {
-      margin-top: 24px;
-    }
-
-    .interest-list {
-      border-top: 1px solid var(--line);
-    }
-
-    .interest-item {
-      padding: 17px 0;
-
-      border-bottom: 1px solid var(--line);
-
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-
-      font-size: 14px;
-    }
-
-    .interest-item span:last-child {
-      color: var(--muted);
-    }
-
-
-    /* =========================================================
-       JOURNEY / ROADMAP
-    ========================================================= */
-
-    .journey-section {
-      overflow: hidden;
-    }
-
-    .journey-heading {
-      display: grid;
-      grid-template-columns: 1fr 0.7fr;
-      gap: 80px;
-      align-items: end;
-    }
-
-    .journey-heading-copy {
-      max-width: 600px;
-    }
-
-    .journey-intro {
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.8;
-      max-width: 430px;
-      justify-self: end;
-    }
-
-    .roadmap {
-      position: relative;
-      margin-top: 85px;
-      padding: 30px 0 50px;
-    }
-
-    .roadmap-line {
-      position: absolute;
-      left: 50%;
-      top: 0;
-      bottom: 0;
-
-      width: 1px;
-      background: var(--line);
-
-      transform: translateX(-50%);
-    }
-
-    .roadmap-item {
-      position: relative;
-
-      display: grid;
-      grid-template-columns: 1fr 70px 1fr;
-      align-items: center;
-
-      min-height: 150px;
-
-      margin-bottom: 25px;
-    }
-
-    .roadmap-item:last-child {
-      margin-bottom: 0;
-    }
-
-    .roadmap-card {
-      width: 100%;
-      max-width: 430px;
-
-      padding: 25px;
-
-      border: 1px solid var(--line);
-      background: var(--bg);
-
-      text-align: left;
-
-      cursor: pointer;
-
-      transition:
-        background 0.25s ease,
-        color 0.25s ease,
-        transform 0.25s ease,
-        border-color 0.25s ease;
-    }
-
-    .roadmap-card:hover {
-      background: var(--text);
-      color: var(--bg);
-      border-color: var(--text);
-      transform: translateY(-3px);
-    }
-
-    .roadmap-item:nth-child(odd) .roadmap-card {
-      grid-column: 1;
-      justify-self: end;
-    }
-
-    .roadmap-item:nth-child(even) .roadmap-card {
-      grid-column: 3;
-      justify-self: start;
-    }
-
-    .roadmap-node {
-      grid-column: 2;
-      grid-row: 1;
-
-      width: 58px;
-      height: 58px;
-
-      margin: 0 auto;
-
-      border: 1px solid var(--text);
-      background: var(--bg);
-
-      border-radius: 50%;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      font-size: 25px;
-
-      position: relative;
-      z-index: 2;
-    }
-
-    .roadmap-year {
-      font-size: 10px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-
-      color: var(--muted);
-
-      margin-bottom: 7px;
-    }
-
-    .roadmap-card:hover .roadmap-year {
-      color: rgba(255,255,255,0.6);
-    }
-
-    .roadmap-title {
-      font-size: 21px;
-      line-height: 1.15;
-      font-weight: 600;
-    }
-
-    .roadmap-subtitle {
-      margin-top: 7px;
-
-      font-family: var(--serif);
-      font-style: italic;
-
-      font-size: 15px;
-    }
-
-    .roadmap-detail {
-      margin-top: 14px;
-
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      color: var(--muted);
-
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .roadmap-card:hover .roadmap-detail {
-      color: rgba(255,255,255,0.6);
-    }
-
-    .roadmap-arrow {
-      font-size: 16px;
-      color: var(--text);
-    }
-
-    .roadmap-card:hover .roadmap-arrow {
-      color: var(--bg);
-    }
-
-    .roadmap-today {
-      margin-top: 65px;
-      text-align: center;
-    }
-
-    .roadmap-today-line {
-      width: 1px;
-      height: 45px;
-      background: var(--line);
-      margin: 0 auto 25px;
-    }
-
-    .roadmap-today-label {
-      font-size: 10px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--muted);
-    }
-
-    .roadmap-today-title {
-      margin-top: 8px;
-
-      font-size: 30px;
-      line-height: 1;
-      font-weight: 500;
-    }
-
-    .roadmap-today-title i {
-      font-family: var(--serif);
-      font-weight: 400;
-    }
-
-    .roadmap-today-copy {
-      max-width: 480px;
-      margin: 15px auto 0;
-
-      color: var(--muted);
-
-      font-size: 13px;
-      line-height: 1.8;
-    }
-
-
-    /* =========================================================
-       STORY MODAL
-    ========================================================= */
-
-    .story-overlay {
-      position: fixed;
-      inset: 0;
-      z-index: 2000;
-
-      background: rgba(23, 23, 23, 0.45);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      padding: 35px;
-
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-
-      transition:
-        opacity 0.3s ease,
-        visibility 0.3s ease;
-    }
-
-    .story-overlay.active {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
-    }
-
-    .story-modal {
-      width: min(900px, 100%);
-      max-height: min(820px, 90vh);
-
-      background: var(--bg);
-      border: 1px solid var(--text);
-
-      overflow-y: auto;
-
-      position: relative;
-
-      transform: translateY(20px);
-      transition: transform 0.35s ease;
-    }
-
-    .story-overlay.active .story-modal {
-      transform: translateY(0);
-    }
-
-    .story-close {
-      position: sticky;
-      top: 20px;
-      float: right;
-
-      margin: 20px 20px 0 0;
-
-      width: 40px;
-      height: 40px;
-
-      border: 1px solid var(--text);
-      background: var(--bg);
-
-      border-radius: 50%;
-
-      cursor: pointer;
-
-      font-size: 20px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      z-index: 5;
-    }
-
-    .story-content {
-      padding: 70px 70px 75px;
-      clear: both;
-    }
-
-    .story-label {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-
-      color: var(--muted);
-
-      margin-bottom: 20px;
-    }
-
-    .story-title {
-      font-size: clamp(42px, 6vw, 70px);
-      line-height: 0.98;
-      letter-spacing: -0.045em;
-      font-weight: 500;
-
-      max-width: 750px;
-    }
-
-    .story-title i {
-      font-family: var(--serif);
-      font-weight: 400;
-    }
-
-    .story-body {
-      max-width: 700px;
-      margin-top: 45px;
-
-      font-size: 15px;
-      line-height: 1.9;
-    }
-
-    .story-body p + p {
-      margin-top: 24px;
-    }
-
-    .story-body strong {
-      font-weight: 700;
-    }
-
-    .story-quote {
-      margin: 45px 0;
-
-      padding: 30px 0;
-
-      border-top: 1px solid var(--text);
-      border-bottom: 1px solid var(--text);
-
-      font-family: var(--serif);
-      font-size: clamp(24px, 4vw, 38px);
-      line-height: 1.2;
-    }
-
-    .story-lessons {
-      margin-top: 45px;
-
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .story-lesson {
-      padding: 8px 12px;
-
-      border: 1px solid var(--line);
-      border-radius: 999px;
-
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-
-    /* =========================================================
-       EXPERIENCE
-    ========================================================= */
-
-    .experience-list {
-      margin-top: 70px;
-      border-top: 1px solid var(--text);
-    }
-
-    .experience-item {
-      display: grid;
-      grid-template-columns: 130px minmax(0, 1fr);
-      gap: 35px;
-
-      padding: 28px 0;
-
-      border-bottom: 1px solid var(--line);
-
-      align-items: start;
-    }
-
-    .experience-date {
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.5;
-    }
-
-    .experience-main {
-      display: grid;
-      grid-template-columns: minmax(220px, 0.7fr) 1.3fr;
-      gap: 50px;
-    }
-
-    .experience-item h3 {
-      font-size: 20px;
-      line-height: 1.2;
-      font-weight: 600;
-    }
-
-    .experience-item h3 a {
-      text-decoration: none;
-      text-underline-offset: 6px;
-    }
-
-    .experience-item h3 a:hover {
-      text-decoration: underline;
-    }
-
-    .experience-role {
-      color: var(--muted);
-      font-size: 12px;
-      margin-top: 7px;
-    }
-
-    .experience-description {
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
-
-    /* =========================================================
-       PROJECTS
-    ========================================================= */
-
-    .project-grid {
-      margin-top: 70px;
-
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-
-      gap: 1px;
-
-      background: var(--line);
-
-      border: 1px solid var(--line);
-    }
-
-    .project-card {
-      background: var(--bg);
-
-      padding: 35px;
-
-      min-height: 360px;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-
-      text-decoration: none;
-
-      transition:
-        background 0.25s ease,
-        color 0.25s ease;
-    }
-
-    .project-card.featured {
-      grid-column: span 2;
-      min-height: 400px;
-    }
-
-    .project-card:hover {
-      background: var(--text);
-      color: var(--bg);
-    }
-
-    .project-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .project-category {
-      font-size: 10px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-
-    .project-arrow {
-      font-size: 20px;
-    }
-
-    .project-title {
-      font-size: clamp(28px, 4vw, 52px);
-      line-height: 1;
-      letter-spacing: -0.04em;
-      font-weight: 500;
-    }
-
-    .project-title i {
-      font-family: var(--serif);
-      font-weight: 400;
-    }
-
-    .project-meta {
-      margin-top: 20px;
-
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-    }
-
-    .project-meta span {
-      padding: 6px 10px;
-
-      border: 1px solid var(--line);
-
-      border-radius: 999px;
-
-      font-size: 10px;
-    }
-
-    .project-card:hover .project-meta span {
-      border-color: rgba(255,255,255,0.35);
-    }
-
-
-    /* =========================================================
-       SKILLS
-    ========================================================= */
-
-    .skills-grid {
-      margin-top: 70px;
-
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-
-      gap: 1px;
-
-      background: var(--line);
-
-      border: 1px solid var(--line);
-    }
-
-    .skill-group {
-      background: var(--bg);
-      padding: 30px;
-    }
-
-    .skill-group h3 {
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-
-      margin-bottom: 20px;
-    }
-
-    .skill-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .skill-list span {
-      padding: 8px 11px;
-
-      border: 1px solid var(--line);
-      border-radius: 999px;
-
-      font-size: 11px;
-    }
-
-    .education {
-      margin-top: 70px;
-
-      padding-top: 30px;
-
-      border-top: 1px solid var(--text);
-
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-
-      gap: 50px;
-    }
-
-    .education-title {
-      font-size: 24px;
-      font-weight: 600;
-    }
-
-    .education-info {
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
-
-    /* =========================================================
-       CREATIVE
-    ========================================================= */
-
-    .creative-grid {
-      margin-top: 70px;
-
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-
-      gap: 20px;
-    }
-
-    .creative-block {
-      border: 1px solid var(--line);
-      padding: 30px;
-    }
-
-    .creative-heading {
-      margin-bottom: 25px;
-    }
-
-    .creative-heading h3 {
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-
-    .creative-heading h2 {
-      margin-top: 12px;
-
-      font-size: clamp(34px, 4vw, 55px);
-
-      line-height: 1;
-      letter-spacing: -0.04em;
-
-      font-weight: 500;
-    }
-
-    .creative-heading h2 i {
-      font-family: var(--serif);
-      font-weight: 400;
-    }
-
-    .creative-image {
-      margin-top: 30px;
-
-      overflow: hidden;
-
-      border: 1px solid var(--line);
-    }
-
-    .creative-image img {
-      width: 100%;
-      height: auto;
-
-      transition: transform 0.4s ease;
-    }
-
-    .creative-block:hover .creative-image img {
-      transform: scale(1.02);
-    }
-
-    .creative-link {
-      display: inline-flex;
-      margin-top: 25px;
-
-      padding: 10px 14px;
-
-      border: 1px solid var(--text);
-
-      text-decoration: none;
-
-      font-size: 11px;
-      font-weight: 600;
-
-      transition:
-        background 0.2s ease,
-        color 0.2s ease;
-    }
-
-    .creative-link:hover {
-      background: var(--text);
-      color: var(--bg);
-    }
-
-    .creative-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-
-      margin-top: 25px;
-
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .creative-stat {
-      padding: 18px 10px;
-
-      border-right: 1px solid var(--line);
-
-      text-align: center;
-    }
-
-    .creative-stat:last-child {
-      border-right: 0;
-    }
-
-    .creative-stat strong {
-      display: block;
-      font-size: 18px;
-    }
-
-    .creative-stat span {
-      display: block;
-
-      margin-top: 3px;
-
-      color: var(--muted);
-
-      font-size: 9px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .creative-insight {
-      margin-top: 22px;
-
-      color: var(--muted);
-
-      font-size: 13px;
-      line-height: 1.8;
-    }
-
-
-    /* =========================================================
-       CONTACT
-    ========================================================= */
-
-    .contact-content {
-      margin-top: 70px;
-
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-
-      gap: 100px;
-    }
-
-    .contact-title {
-      font-size: clamp(46px, 7vw, 90px);
-
-      line-height: 0.95;
-
-      font-weight: 500;
-
-      letter-spacing: -0.05em;
-    }
-
-    .contact-title i {
-      font-family: var(--serif);
-      font-weight: 400;
-    }
-
-    .contact-description {
-      margin-top: 30px;
-
-      color: var(--muted);
-
-      max-width: 550px;
-
-      font-size: 16px;
-      line-height: 1.8;
-    }
-
-    .contact-links {
-      border-top: 1px solid var(--text);
-    }
-
-    .contact-link {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      padding: 18px 0;
-
-      border-bottom: 1px solid var(--line);
-
-      text-decoration: none;
-
-      font-size: 14px;
-
-      transition: opacity 0.2s ease;
-    }
-
-    .contact-link:hover {
-      opacity: 0.5;
-    }
-
-    .contact-link span:last-child {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-
-    /* =========================================================
-       BACK TO TOP
-    ========================================================= */
-
-    #backToTop {
-      position: fixed;
-      right: 30px;
-      bottom: 30px;
-
-      width: 48px;
-      height: 48px;
-
-      border: 1px solid var(--text);
-      border-radius: 50%;
-
-      background: var(--bg);
-      color: var(--text);
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      cursor: pointer;
-
-      font-size: 20px;
-      line-height: 1;
-
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-
-      transform: translateY(10px);
-
-      transition:
-        opacity 0.25s ease,
-        visibility 0.25s ease,
-        pointer-events 0.25s ease,
-        transform 0.25s ease,
-        background 0.25s ease,
-        color 0.25s ease;
-
-      z-index: 1500;
-    }
-
-    #backToTop.show {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
-      transform: translateY(0);
-    }
-
-    #backToTop:hover {
-      background: var(--text);
-      color: var(--bg);
-    }
-
-
-    /* =========================================================
-       FOOTER
-    ========================================================= */
-
-    footer {
-      padding: 28px 0;
-    }
-
-    .footer-inner {
-      width: min(
-        var(--container),
-        calc(100% - 80px)
-      );
-
-      margin: 0 auto;
-
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-
-      color: var(--muted);
-
-      font-size: 11px;
-    }
-
-
-    /* =========================================================
-       RESPONSIVE — TABLET
-    ========================================================= */
-
-    @media (max-width: 950px) {
-
-      .container,
-      .header-inner,
-      .footer-inner {
-        width: min(
-          var(--container),
-          calc(100% - 60px)
-        );
-      }
-
-      .desktop-nav {
-        gap: 14px;
-      }
-
-      .desktop-nav a {
-        font-size: 10px;
-      }
-
-      .hero-grid {
-        grid-template-columns: 1fr 0.75fr;
-        gap: 50px;
-      }
-
-      .about-grid {
-        gap: 50px;
-      }
-
-      .journey-heading {
-        gap: 50px;
-      }
-
-      .experience-main {
-        grid-template-columns: 1fr;
-        gap: 18px;
-      }
-
-      .contact-content {
-        gap: 50px;
-      }
-    }
-
-
-    /* =========================================================
-       RESPONSIVE — MOBILE
-    ========================================================= */
-
-    @media (max-width: 700px) {
-
-      html {
-        scroll-padding-top: 80px;
-      }
-
-      .container,
-      .header-inner,
-      .footer-inner {
-        width: calc(100% - 40px);
-      }
-
-      section {
-        padding: 80px 0;
-      }
-
-
-      /* Header */
-
-      header {
-        height: 68px;
-      }
-
-      .desktop-nav {
-        display: none;
-      }
-
-      .menu-button {
-        display: flex;
-      }
-
-
-      /* Mobile menu */
-
-      .mobile-menu {
-        padding: 105px 40px 40px;
-      }
-
-
-      /* Hero */
-
-      .hero {
-        min-height: auto;
-        padding-top: 68px;
-      }
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 55px;
-
-        padding: 70px 0 80px;
-      }
-
-      .hero h1 {
-        font-size: clamp(48px, 14vw, 72px);
-      }
-
-      .hero-description {
-        font-size: 15px;
-      }
-
-      .hero-image {
-        max-width: 520px;
-      }
-
-      .hero-mark {
-        right: -10px;
-        bottom: -10px;
-
-        width: 70px;
-        height: 70px;
-      }
-
-
-      /* Explore */
-
-      .explore {
-        margin-top: 50px;
-      }
-
-      .explore-toggle {
-        padding: 20px 0;
-      }
-
-      .explore-toggle-left {
-        display: block;
-      }
-
-      .explore-toggle-hint {
-        display: block;
-        margin-top: 4px;
-      }
-
-      .explore-menu {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .explore-link {
-        min-height: 90px;
-      }
-
-      .explore-link:nth-child(3n) {
-        border-right: 1px solid var(--line);
-      }
-
-      .explore-link:nth-child(2n) {
-        border-right: 0;
-      }
-
-
-      /* Section titles */
-
-      .section-title {
-        font-size: clamp(42px, 13vw, 62px);
-      }
-
-      .section-intro {
-        font-size: 15px;
-      }
-
-
-      /* About */
-
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 55px;
-
-        margin-top: 50px;
-      }
-
-      .about-text {
-        font-size: 15px;
-      }
-
-
-      /* Journey */
-
-      .journey-heading {
-        grid-template-columns: 1fr;
-        gap: 25px;
-      }
-
-      .journey-intro {
-        justify-self: start;
-      }
-
-      .roadmap {
-        margin-top: 55px;
-        padding-left: 0;
-      }
-
-      .roadmap-line {
-        left: 28px;
-        transform: none;
-      }
-
-      .roadmap-item {
-        display: grid;
-        grid-template-columns: 56px minmax(0, 1fr);
-
-        min-height: auto;
-
-        margin-bottom: 16px;
-      }
-
-      .roadmap-node {
-        grid-column: 1;
-        grid-row: 1;
-
-        width: 56px;
-        height: 56px;
-
-        font-size: 23px;
-      }
-
-      .roadmap-item:nth-child(odd) .roadmap-card,
-      .roadmap-item:nth-child(even) .roadmap-card {
-        grid-column: 2;
-        grid-row: 1;
-
-        justify-self: start;
-
-        max-width: none;
-      }
-
-      .roadmap-card {
-        padding: 20px;
-        margin-left: 14px;
-      }
-
-      .roadmap-title {
-        font-size: 18px;
-      }
-
-      .roadmap-subtitle {
-        font-size: 14px;
-      }
-
-      .roadmap-detail {
-        margin-top: 11px;
-      }
-
-      .roadmap-today {
-        margin-top: 45px;
-      }
-
-      .roadmap-today-line {
-        margin-left: 28px;
-        margin-bottom: 20px;
-      }
-
-
-      /* Story modal */
-
-      .story-overlay {
-        padding: 15px;
-      }
-
-      .story-modal {
-        max-height: 94vh;
-      }
-
-      .story-content {
-        padding: 55px 25px 45px;
-      }
-
-      .story-close {
-        margin: 15px 15px 0 0;
-
-        width: 36px;
-        height: 36px;
-      }
-
-      .story-title {
-        font-size: clamp(38px, 12vw, 58px);
-      }
-
-      .story-body {
-        margin-top: 35px;
-        font-size: 14px;
-        line-height: 1.85;
-      }
-
-      .story-quote {
-        margin: 35px 0;
-        font-size: 27px;
-      }
-
-
-      /* Experience */
-
-      .experience-list {
-        margin-top: 50px;
-      }
-
-      .experience-item {
-        grid-template-columns: 1fr;
-        gap: 15px;
-
-        padding: 25px 0;
-      }
-
-      .experience-main {
-        gap: 18px;
-      }
-
-      .experience-description {
-        font-size: 13px;
-      }
-
-
-      /* Projects */
-
-      .project-grid {
-        grid-template-columns: 1fr;
-
-        margin-top: 50px;
-      }
-
-      .project-card,
-      .project-card.featured {
-        grid-column: span 1;
-
-        min-height: 300px;
-
-        padding: 25px;
-      }
-
-
-      /* Skills */
-
-      .skills-grid {
-        grid-template-columns: 1fr;
-
-        margin-top: 50px;
-      }
-
-      .skill-group {
-        padding: 25px;
-      }
-
-      .education {
-        grid-template-columns: 1fr;
-
-        margin-top: 50px;
-
-        gap: 20px;
-      }
-
-
-      /* Creative */
-
-      .creative-grid {
-        grid-template-columns: 1fr;
-
-        margin-top: 50px;
-      }
-
-      .creative-block {
-        padding: 22px;
-      }
-
-      .creative-stats {
-        grid-template-columns: 1fr;
-      }
-
-      .creative-stat {
-        border-right: 0;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .creative-stat:last-child {
-        border-bottom: 0;
-      }
-
-
-      /* Contact */
-
-      .contact-content {
-        grid-template-columns: 1fr;
-
-        margin-top: 50px;
-
-        gap: 55px;
-      }
-
-      .contact-title {
-        font-size: clamp(50px, 15vw, 76px);
-      }
-
-
-      /* Back to top */
-
-      #backToTop {
-        right: 18px;
-        bottom: 18px;
-
-        width: 44px;
-        height: 44px;
-
-        font-size: 18px;
-      }
-
-
-      /* Footer */
-
-      .footer-inner {
-        flex-direction: column;
-      }
-    }
-
-
-    /* =========================================================
-       VERY SMALL MOBILE
-    ========================================================= */
-
-    @media (max-width: 420px) {
-
-      .container,
-      .header-inner,
-      .footer-inner {
-        width: calc(100% - 30px);
-      }
-
-      .mobile-menu {
-        padding-left: 30px;
-        padding-right: 30px;
-      }
-
-      .explore-menu {
-        grid-template-columns: 1fr;
-      }
-
-      .explore-link,
-      .explore-link:nth-child(3n),
-      .explore-link:nth-child(2n) {
-        border-right: 0;
-      }
-
-      .explore-link {
-        min-height: 75px;
-      }
-
-      .hero-tags {
-        gap: 6px;
-      }
-
-      .hero-tag {
-        font-size: 10px;
-      }
-
-      .hero-buttons {
-        flex-direction: column;
-      }
-
-      .button {
-        width: 100%;
-      }
-
-      .project-card,
-      .project-card.featured {
-        min-height: 280px;
-      }
-
-      .roadmap-card {
-        padding: 17px;
-      }
-
-      .roadmap-title {
-        font-size: 16px;
-      }
-
-      .roadmap-subtitle {
-        font-size: 13px;
-      }
-
-      .roadmap-detail {
-        font-size: 9px;
-      }
-    }
-
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
 
-  <!-- =======================================================
-       HEADER
-  ======================================================== -->
+<!-- =========================
+     HEADER
+========================= -->
 
-  <header>
+<header class="site-header">
 
-    <div class="header-inner">
+  <div class="header-inner">
 
-      <a href="#home" class="logo">
-        TDL
-      </a>
+    <a href="#top" class="logo" aria-label="Back to top">
+      TDL<span>.</span>
+    </a>
 
-      <nav class="desktop-nav">
-        <a href="#about">About</a>
-        <a href="#journey">Journey</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#creative">Creative</a>
-        <a href="#contact">Contact</a>
-      </nav>
+    <nav id="nav" aria-label="Main navigation">
 
-      <button
-        type="button"
-        class="menu-button"
-        id="menuButton"
-        aria-label="Open menu"
-        aria-expanded="false"
-      >
-        <span class="menu-icon">
-          <span></span>
-          <span></span>
-        </span>
-      </button>
-
-    </div>
-
-  </header>
-
-
-  <!-- =======================================================
-       MOBILE MENU
-  ======================================================== -->
-
-  <div class="mobile-menu" id="mobileMenu">
-
-    <div class="mobile-menu-label">
-      Navigation
-    </div>
-
-    <nav class="mobile-nav">
-
-      <a href="#about">
-        <span>01</span>
-        About
-      </a>
-
-      <a href="#journey">
-        <span>02</span>
-        My Journey
-      </a>
-
-      <a href="#experience">
-        <span>03</span>
-        Experience
-      </a>
-
-      <a href="#projects">
-        <span>04</span>
-        Selected Projects
-      </a>
-
-      <a href="#skills">
-        <span>05</span>
-        Skills & Education
-      </a>
-
-      <a href="#creative">
-        <span>06</span>
-        Creative Skills
-      </a>
-
-      <a href="#contact">
-        <span>07</span>
-        Contact
-      </a>
+      <a href="#about">01 — About</a>
+      <a href="#journey">02 — Journey</a>
+      <a href="#experience">03 — Experience</a>
+      <a href="#projects">04 — Projects</a>
+      <a href="#skills">05 — Skills</a>
+      <a href="#creative">06 — Creative</a>
+      <a href="#contact">07 — Contact</a>
 
     </nav>
+
+    <button
+      id="menu"
+      class="menu-button"
+      type="button"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="nav"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+
+</header>
+
+
+<main id="top">
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+  <div class="hero-inner">
+
+    <div class="hero-copy">
+
+      <p class="eyebrow hero-greeting">
+        HELLO, I'M
+      </p>
+
+      <h1 class="hero-name">
+        Tamimmah
+        <br>
+        <i>Disma Lestari.</i>
+      </h1>
+
+      <p class="hero-role">
+        Marketing & Consumer Insights
+      </p>
+
+      <p class="hero-headline">
+        Turning ideas into
+        <br>
+        <i>meaningful strategies.</i>
+      </p>
+
+      <div class="hero-keywords">
+        <span>MARKETING</span>
+        <span>CONSUMER INSIGHTS</span>
+        <span>BUSINESS</span>
+        <span>CREATIVITY</span>
+      </div>
+
+      <p class="hero-description">
+        Business Management graduate with hands-on experience across
+        marketing, consumer research, business development, entrepreneurship,
+        and creative strategy.
+      </p>
+
+      <div class="hero-actions">
+
+        <a href="resume.pdf" class="button button-primary" target="_blank">
+          View CV
+          <span>↗</span>
+        </a>
+
+        <a href="#contact" class="button button-secondary">
+          Let's Talk
+          <span>↘</span>
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="hero-visual">
+
+      <div class="hero-photo-wrap">
+
+        <img
+          src="images/profile-photo.jpg"
+          alt="Tamimmah Disma Lestari"
+          class="hero-photo"
+        >
+
+        <div class="hero-photo-label">
+          <span>MARKETING</span>
+          <span>×</span>
+          <span>PEOPLE</span>
+          <span>×</span>
+          <span>CREATIVITY</span>
+        </div>
+
+      </div>
+
+      <div class="hero-circle">
+        TDL
+      </div>
+
+      <div class="hero-star">✦</div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about" class="section about-section">
+
+  <div class="section-label">
+    <span>01</span>
+    <span>/ ABOUT</span>
+  </div>
+
+  <div class="section-grid">
+
+    <div class="section-intro">
+
+      <h2>
+        Curious about
+        <br>
+        <i>people.</i>
+      </h2>
+
+      <div class="accent-line"></div>
+
+    </div>
+
+
+    <div class="about-copy">
+
+      <p class="lead">
+        I’m interested in the space where
+        <strong>people, business, and creativity</strong>
+        meet.
+      </p>
+
+      <p>
+        My background in Business Management has taken me through
+        consumer research, marketing, entrepreneurship, business
+        development, digital communities, and creative projects.
+      </p>
+
+      <p>
+        I enjoy understanding why people behave the way they do —
+        what makes them notice something, trust it, choose it,
+        and eventually come back.
+      </p>
+
+      <p>
+        That curiosity shapes how I approach marketing:
+        not simply as communication, but as a way to connect
+        business goals with real human behavior.
+      </p>
+
+    </div>
 
   </div>
 
 
-  <main>
+  <!-- PERSONAL IDENTITY -->
+
+  <div class="identity-section">
+
+    <div class="identity-heading">
+
+      <p class="eyebrow">
+        A FEW THINGS PEOPLE ASSOCIATE WITH ME.
+      </p>
+
+      <h3>
+        Apparently, my friends
+        <i>have answers.</i>
+      </h3>
+
+      <p>
+        I asked a few friends what three things remind them of me.
+        These were the answers.
+      </p>
+
+    </div>
 
 
-    <!-- =====================================================
-         HERO
-    ====================================================== -->
+    <div class="identity-grid">
 
-    <section class="hero" id="home">
+      <article class="identity-card identity-green">
 
-      <div class="container">
-
-        <div class="hero-grid">
-
-          <div>
-
-            <div class="hero-kicker">
-              Business · Marketing · Consumer Insights
-            </div>
-
-            <h1>
-              Turning ideas into
-              <i>meaningful strategies.</i>
-            </h1>
-
-            <div class="hero-tags">
-
-              <span class="hero-tag">
-                Marketing
-              </span>
-
-              <span class="hero-tag">
-                Consumer Research
-              </span>
-
-              <span class="hero-tag">
-                Business Development
-              </span>
-
-              <span class="hero-tag">
-                Creative Strategy
-              </span>
-
-            </div>
-
-            <p class="hero-description">
-              Business Management graduate with hands-on experience
-              in marketing, consumer research, customer acquisition,
-              business development, and business operations.
-            </p>
-
-            <div class="hero-buttons">
-
-              <a
-                href="resume.pdf"
-                class="button"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View CV →
-              </a>
-
-              <a
-                href="#contact"
-                class="button"
-              >
-                Let's Talk →
-              </a>
-
-            </div>
-
-          </div>
-
-
-          <div class="hero-image">
-
-            <img
-              src="images/profile-photo.jpg"
-              alt="Tamimmah Disma Lestari"
-            />
-
-            <div class="hero-mark">
-              TDL
-            </div>
-
-          </div>
-
+        <div class="identity-symbol">
+          🌿
         </div>
 
+        <div>
+          <small>THE COLOR</small>
 
-        <!-- =================================================
-             EXPLORE PORTFOLIO
-        ================================================== -->
+          <h4>
+            Green /
+            <br>
+            Turquoise
+          </h4>
 
-        <div class="explore">
-
-          <button
-            type="button"
-            class="explore-toggle"
-            id="exploreToggle"
-            aria-expanded="false"
-            aria-controls="exploreMenu"
-          >
-
-            <div class="explore-toggle-left">
-
-              <div class="explore-toggle-label">
-                Explore my portfolio
-              </div>
-
-              <div class="explore-toggle-hint">
-                01 — 07 · Click to explore
-              </div>
-
-            </div>
-
-            <div
-              class="explore-toggle-icon"
-              aria-hidden="true"
-            >
-              +
-            </div>
-
-          </button>
-
-
-          <nav
-            class="explore-menu"
-            id="exploreMenu"
-            aria-label="Portfolio sections"
-          >
-
-            <a href="#about" class="explore-link">
-              <span class="explore-number">01</span>
-              <span class="explore-name">About <span>↗</span></span>
-            </a>
-
-            <a href="#journey" class="explore-link">
-              <span class="explore-number">02</span>
-              <span class="explore-name">My Journey <span>↗</span></span>
-            </a>
-
-            <a href="#experience" class="explore-link">
-              <span class="explore-number">03</span>
-              <span class="explore-name">Experience <span>↗</span></span>
-            </a>
-
-            <a href="#projects" class="explore-link">
-              <span class="explore-number">04</span>
-              <span class="explore-name">Selected Projects <span>↗</span></span>
-            </a>
-
-            <a href="#skills" class="explore-link">
-              <span class="explore-number">05</span>
-              <span class="explore-name">Skills & Education <span>↗</span></span>
-            </a>
-
-            <a href="#creative" class="explore-link">
-              <span class="explore-number">06</span>
-              <span class="explore-name">Creative Skills <span>↗</span></span>
-            </a>
-
-            <a href="#contact" class="explore-link">
-              <span class="explore-number">07</span>
-              <span class="explore-name">Contact <span>↗</span></span>
-            </a>
-
-          </nav>
-
+          <p>
+            Apparently, this is my color.
+          </p>
         </div>
 
+      </article>
+
+
+      <article class="identity-card identity-elephant">
+
+        <div class="identity-symbol">
+          🐘
+        </div>
+
+        <div>
+          <small>THE ANIMAL</small>
+
+          <h4>
+            Elephant
+          </h4>
+
+          <p>
+            Apparently, this is my animal.
+          </p>
+        </div>
+
+      </article>
+
+
+      <article class="identity-card identity-starfruit">
+
+        <div class="identity-symbol">
+          ⭐
+        </div>
+
+        <div>
+          <small>THE FRUIT</small>
+
+          <h4>
+            Starfruit
+          </h4>
+
+          <p>
+            The most unexpected answer — but somehow very me.
+          </p>
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     JOURNEY
+========================= -->
+
+<section id="journey" class="section journey-section">
+
+  <div class="section-label">
+    <span>02</span>
+    <span>/ MY JOURNEY</span>
+  </div>
+
+  <div class="journey-heading">
+
+    <div>
+      <p class="eyebrow">
+        FROM COOKIES TO COMMUNITIES.
+      </p>
+
+      <h2>
+        It started with
+        <br>
+        a box of <i>cookies.</i>
+      </h2>
+    </div>
+
+    <p>
+      I don't think I discovered business through a textbook.
+      Looking back, the pattern was always there:
+      <strong>people, curiosity, and making things happen.</strong>
+    </p>
+
+  </div>
+
+
+  <div class="journey-roadmap">
+
+
+    <!-- 01 -->
+
+    <article class="journey-item">
+
+      <div class="journey-marker">
+        🍪
       </div>
 
-    </section>
+      <div class="journey-card">
 
-
-    <!-- =====================================================
-         ABOUT
-    ====================================================== -->
-
-    <section id="about">
-
-      <div class="container">
-
-        <div class="section-label">
-          01 / About
-        </div>
-
-        <h2 class="section-title">
-          Business meets
-          <i>creativity.</i>
-        </h2>
-
-        <p class="section-intro">
-          I combine business thinking with an interest in people,
-          brands, and creative communication.
-        </p>
-
-
-        <div class="about-grid">
-
-          <div class="about-text">
-
-            <p>
-              I am a Business Management graduate from
-              Institut Teknologi Bandung, with a concentration
-              in Management & Marketing.
-            </p>
-
-            <p>
-              My experience sits at the intersection of marketing,
-              consumer behavior, business development,
-              entrepreneurship, and creative work.
-            </p>
-
-            <p>
-              I enjoy understanding what makes people choose,
-              engage with, and remember a product — then turning
-              those insights into practical business strategies.
-            </p>
-
-          </div>
-
+        <div class="journey-top">
 
           <div>
+            <small>JUNIOR HIGH</small>
 
-            <div class="small-label">
-              Areas of Interest
-            </div>
+            <h3>
+              The Cookie Experiment
+            </h3>
 
-            <div class="interest-list">
-
-              <div class="interest-item">
-                <span>Consumer Behavior</span>
-                <span>01</span>
-              </div>
-
-              <div class="interest-item">
-                <span>Marketing Strategy</span>
-                <span>02</span>
-              </div>
-
-              <div class="interest-item">
-                <span>Brand Development</span>
-                <span>03</span>
-              </div>
-
-              <div class="interest-item">
-                <span>Business Development</span>
-                <span>04</span>
-              </div>
-
-              <div class="interest-item">
-                <span>Creative Strategy</span>
-                <span>05</span>
-              </div>
-
-            </div>
-
+            <p>
+              Learning to sell.
+            </p>
           </div>
+
+          <span class="journey-stat">
+            01
+          </span>
 
         </div>
 
-      </div>
+        <div class="journey-detail">
 
-    </section>
+          <p>
+            My class had a project to create and sell a product.
+            My team made cookies, but nobody wanted to buy them.
+            So I walked to the school gate where parents were waiting
+            and started selling. Eventually, we sold everything.
+          </p>
 
-
-    <!-- =====================================================
-         JOURNEY / ROADMAP
-    ====================================================== -->
-
-    <section id="journey" class="journey-section">
-
-      <div class="container">
-
-        <div class="section-label">
-          02 / My Journey
-        </div>
-
-
-        <div class="journey-heading">
-
-          <div class="journey-heading-copy">
-
-            <h2 class="section-title">
-              It started with
-              <i>a box of cookies.</i>
-            </h2>
-
-          </div>
-
-          <p class="journey-intro">
-            Long before I knew exactly what marketing was,
-            I kept finding myself doing the same thing:
-            meeting people, spotting opportunities, and
-            figuring out how to make something happen.
+          <p>
+            It was probably my earliest lesson in finding an opportunity
+            and taking action when something wasn't working.
           </p>
 
         </div>
 
+      </div>
 
-        <!-- =================================================
-             ROADMAP
-        ================================================== -->
+    </article>
 
-        <div class="roadmap">
 
-          <div class="roadmap-line"></div>
+    <!-- 02 -->
 
+    <article class="journey-item">
 
-          <!-- COOKIE -->
+      <div class="journey-marker">
+        🎭
+      </div>
 
-          <div class="roadmap-item">
+      <div class="journey-card">
 
-            <button
-              type="button"
-              class="roadmap-card"
-              data-story="cookies"
-            >
+        <div class="journey-top">
 
-              <div class="roadmap-year">
-                Junior High School
-              </div>
+          <div>
+            <small>SENIOR HIGH</small>
 
-              <div class="roadmap-title">
-                The Cookie Experiment
-              </div>
+            <h3>
+              The Theatre Club
+            </h3>
 
-              <div class="roadmap-subtitle">
-                Learning to sell.
-              </div>
-
-              <div class="roadmap-detail">
-                <span>Open story</span>
-                <span class="roadmap-arrow">↗</span>
-              </div>
-
-            </button>
-
-            <div class="roadmap-node" aria-hidden="true">
-              🍪
-            </div>
-
-          </div>
-
-
-          <!-- THEATRE -->
-
-          <div class="roadmap-item">
-
-            <button
-              type="button"
-              class="roadmap-card"
-              data-story="theatre"
-            >
-
-              <div class="roadmap-year">
-                Senior High School
-              </div>
-
-              <div class="roadmap-title">
-                The Theatre Club
-              </div>
-
-              <div class="roadmap-subtitle">
-                Learning to serve.
-              </div>
-
-              <div class="roadmap-detail">
-                <span>Open story</span>
-                <span class="roadmap-arrow">↗</span>
-              </div>
-
-            </button>
-
-            <div class="roadmap-node" aria-hidden="true">
-              🎭
-            </div>
-
-          </div>
-
-
-          <!-- TEC / JUICE -->
-
-          <div class="roadmap-item">
-
-            <button
-              type="button"
-              class="roadmap-card"
-              data-story="juice"
-            >
-
-              <div class="roadmap-year">
-                University · ITB
-              </div>
-
-              <div class="roadmap-title">
-                Making Things Happen
-              </div>
-
-              <div class="roadmap-subtitle">
-                Learning to execute.
-              </div>
-
-              <div class="roadmap-detail">
-                <span>~98% stock sold</span>
-                <span class="roadmap-arrow">↗</span>
-              </div>
-
-            </button>
-
-            <div class="roadmap-node" aria-hidden="true">
-              🧃
-            </div>
-
-          </div>
-
-
-          <!-- ECOPLAST -->
-
-          <div class="roadmap-item">
-
-            <button
-              type="button"
-              class="roadmap-card"
-              data-story="ecoplast"
-            >
-
-              <div class="roadmap-year">
-                University · ECOPLAST
-              </div>
-
-              <div class="roadmap-title">
-                Learning to Influence
-              </div>
-
-              <div class="roadmap-subtitle">
-                When confidence became communication.
-              </div>
-
-              <div class="roadmap-detail">
-                <span>Pitching · Competitions</span>
-                <span class="roadmap-arrow">↗</span>
-              </div>
-
-            </button>
-
-            <div class="roadmap-node" aria-hidden="true">
-              🌱
-            </div>
-
-          </div>
-
-
-          <!-- KPOP -->
-
-          <div class="roadmap-item">
-
-            <button
-              type="button"
-              class="roadmap-card"
-              data-story="kpop"
-            >
-
-              <div class="roadmap-year">
-                Thesis Era
-              </div>
-
-              <div class="roadmap-title">
-                Building Communities
-              </div>
-
-              <div class="roadmap-subtitle">
-                Learning how audiences work.
-              </div>
-
-              <div class="roadmap-detail">
-                <span>10K+ × 3 accounts</span>
-                <span class="roadmap-arrow">↗</span>
-              </div>
-
-            </button>
-
-            <div class="roadmap-node" aria-hidden="true">
-              💜
-            </div>
-
-          </div>
-
-
-          <!-- RICE BOWL -->
-
-          <div class="roadmap-item">
-
-            <button
-              type="button"
-              class="roadmap-card"
-              data-story="rice"
-            >
-
-              <div class="roadmap-year">
-                After University
-              </div>
-
-              <div class="roadmap-title">
-                The Rice Bowl Experiment
-              </div>
-
-              <div class="roadmap-subtitle">
-                Learning to adapt.
-              </div>
-
-              <div class="roadmap-detail">
-                <span>25 → 22 sold</span>
-                <span class="roadmap-arrow">↗</span>
-              </div>
-
-            </button>
-
-            <div class="roadmap-node" aria-hidden="true">
-              🍚
-            </div>
-
-          </div>
-
-
-          <!-- SELLKPOPVT -->
-
-          <div class="roadmap-item">
-
-            <button
-              type="button"
-              class="roadmap-card"
-              data-story="sellkpopvt"
-            >
-
-              <div class="roadmap-year">
-                2021–2025
-              </div>
-
-              <div class="roadmap-title">
-                Turning Community Into Business
-              </div>
-
-              <div class="roadmap-subtitle">
-                Learning to build and scale.
-              </div>
-
-              <div class="roadmap-detail">
-                <span>International customers</span>
-                <span class="roadmap-arrow">↗</span>
-              </div>
-
-            </button>
-
-            <div class="roadmap-node" aria-hidden="true">
-              💼
-            </div>
-
-          </div>
-
-
-          <!-- CAHAYA SEGARA -->
-
-          <div class="roadmap-item">
-
-            <button
-              type="button"
-              class="roadmap-card"
-              data-story="cahaya"
-            >
-
-              <div class="roadmap-year">
-                2026
-              </div>
-
-              <div class="roadmap-title">
-                Beyond the Admin Title
-              </div>
-
-              <div class="roadmap-subtitle">
-                Learning to connect the dots.
-              </div>
-
-              <div class="roadmap-detail">
-                <span>Research · Field · Business</span>
-                <span class="roadmap-arrow">↗</span>
-              </div>
-
-            </button>
-
-            <div class="roadmap-node" aria-hidden="true">
-              🗂️
-            </div>
-
-          </div>
-
-
-          <!-- TODAY -->
-
-          <div class="roadmap-today">
-
-            <div class="roadmap-today-line"></div>
-
-            <div class="roadmap-today-label">
-              Today
-            </div>
-
-            <div class="roadmap-today-title">
-              People × Business ×
-              <i>Creativity.</i>
-            </div>
-
-            <p class="roadmap-today-copy">
-              Every chapter taught me something different.
-              Together, they shaped the way I approach
-              marketing, business, and people today.
+            <p>
+              Learning to serve.
             </p>
-
           </div>
+
+          <span class="journey-stat">
+            02
+          </span>
+
+        </div>
+
+        <div class="journey-detail">
+
+          <p>
+            I joined a theatre club and handled ticketing rather than
+            performing. I checked tickets, welcomed guests, and helped
+            people find their seats.
+          </p>
+
+          <p>
+            A senior later told me they remembered how kind I was
+            and how good the service had been.
+            That stayed with me.
+          </p>
 
         </div>
 
       </div>
 
-    </section>
+    </article>
 
 
-    <!-- =====================================================
-         STORY MODAL
-    ====================================================== -->
+    <!-- 03 -->
 
-    <div
-      class="story-overlay"
-      id="storyOverlay"
-      aria-hidden="true"
+    <article class="journey-item">
+
+      <div class="journey-marker">
+        🧃
+      </div>
+
+      <div class="journey-card">
+
+        <div class="journey-top">
+
+          <div>
+            <small>ITB · TECHNO ENTREPRENEUR CLUB</small>
+
+            <h3>
+              Making Things Happen
+            </h3>
+
+            <p>
+              Learning to execute.
+            </p>
+          </div>
+
+          <span class="journey-stat">
+            ~98%
+          </span>
+
+        </div>
+
+        <div class="journey-detail">
+
+          <p>
+            I worked on a fresh juice project supplying around
+            15 canteens at ITB. I explored Pasar Caringin for cheaper
+            ingredients, helped prepare the products, distributed them
+            early in the morning, and sold what remained directly to
+            students around campus.
+          </p>
+
+          <p>
+            We usually managed to sell around 98% of our stock.
+            I loved the entire cycle: finding, making, selling,
+            measuring, adjusting, and trying again.
+          </p>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- 04 -->
+
+    <article class="journey-item">
+
+      <div class="journey-marker">
+        🌱
+      </div>
+
+      <div class="journey-card">
+
+        <div class="journey-top">
+
+          <div>
+            <small>ECOPLAST</small>
+
+            <h3>
+              Learning to Influence
+            </h3>
+
+            <p>
+              Learning to communicate an idea.
+            </p>
+          </div>
+
+          <span class="journey-stat">
+            PITCH
+          </span>
+
+        </div>
+
+        <div class="journey-detail">
+
+          <p>
+            Through ECOPLAST, I discovered another side of business:
+            pitching ideas. I represented the startup in competitions
+            and investor-facing situations.
+          </p>
+
+          <p>
+            It taught me that communication isn't just about speaking
+            confidently. It's about understanding an idea well enough
+            to make someone else believe in it.
+          </p>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- 05 -->
+
+    <article class="journey-item">
+
+      <div class="journey-marker">
+        💜
+      </div>
+
+      <div class="journey-card">
+
+        <div class="journey-top">
+
+          <div>
+            <small>K-POP & COMMUNITY ERA</small>
+
+            <h3>
+              Building Communities
+            </h3>
+
+            <p>
+              Learning what makes people stay.
+            </p>
+          </div>
+
+          <span class="journey-stat">
+            10K+ × 3
+          </span>
+
+        </div>
+
+        <div class="journey-detail">
+
+          <p>
+            While working on my thesis, I became active in K-pop fandom
+            communities and eventually built communities of my own.
+            Across three fandom accounts, I reached more than 10,000
+            followers each.
+          </p>
+
+          <p>
+            I became fascinated by engagement, trust, content,
+            relationships, and what turns strangers into a community.
+          </p>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- 06 -->
+
+    <article class="journey-item">
+
+      <div class="journey-marker">
+        🍚
+      </div>
+
+      <div class="journey-card">
+
+        <div class="journey-top">
+
+          <div>
+            <small>ICE BSD</small>
+
+            <h3>
+              The Rice Bowl Experiment
+            </h3>
+
+            <p>
+              Learning through real customers.
+            </p>
+          </div>
+
+          <span class="journey-stat">
+            25 → 22
+          </span>
+
+        </div>
+
+        <div class="journey-detail">
+
+          <p>
+            Another small experiment in understanding what people
+            actually choose when faced with a real product and a real
+            purchase decision.
+          </p>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- 07 -->
+
+    <article class="journey-item">
+
+      <div class="journey-marker">
+        💼
+      </div>
+
+      <div class="journey-card">
+
+        <div class="journey-top">
+
+          <div>
+            <small>SELLKPOPVT · 2021–2025</small>
+
+            <h3>
+              Turning Community Into Business
+            </h3>
+
+            <p>
+              Learning to operate.
+            </p>
+          </div>
+
+          <span class="journey-stat">
+            GLOBAL
+          </span>
+
+        </div>
+
+        <div class="journey-detail">
+
+          <p>
+            I turned my community experience into a digital business
+            serving customers across Asia, North America, Europe,
+            and other international markets.
+          </p>
+
+          <p>
+            I handled customers, pricing, operations, retention,
+            acquisition, coordination, and a growing network of people.
+          </p>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- 08 -->
+
+    <article class="journey-item">
+
+      <div class="journey-marker">
+        🗂️
+      </div>
+
+      <div class="journey-card">
+
+        <div class="journey-top">
+
+          <div>
+            <small>PT CAHAYA SEGARA</small>
+
+            <h3>
+              Beyond the Admin Title
+            </h3>
+
+            <p>
+              Learning to coordinate.
+            </p>
+          </div>
+
+          <span class="journey-stat">
+            2026
+          </span>
+
+        </div>
+
+        <div class="journey-detail">
+
+          <p>
+            Project-based administrative and executive support involving
+            documentation, reports, proposals, tender preparation,
+            technical coordination, and business-related work.
+          </p>
+
+          <p>
+            It gave me a closer look at how business decisions and
+            operations come together behind the scenes.
+          </p>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- END -->
+
+    <div class="journey-end">
+
+      <span>✦</span>
+
+      <div>
+        <small>TODAY</small>
+
+        <strong>
+          People × Business × Creativity
+        </strong>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     EXPERIENCE
+========================= -->
+
+<section id="experience" class="section">
+
+  <div class="section-label">
+    <span>03</span>
+    <span>/ EXPERIENCE</span>
+  </div>
+
+  <div class="experience-list">
+
+
+    <article class="experience-item">
+
+      <div class="experience-date">
+        2020 — 2021
+      </div>
+
+      <div>
+
+        <h3>
+          <a href="https://www.instagram.com/thefounderslab/" target="_blank">
+            The Founders Lab ↗
+          </a>
+        </h3>
+
+        <p class="experience-role">
+          Co-Founder & Marketing Lead
+        </p>
+
+        <p>
+          Co-founded a platform for webinars and business competitions
+          backed by CIEL SBM ITB. Led marketing initiatives, promotional
+          activities, and audience engagement.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <article class="experience-item">
+
+      <div class="experience-date">
+        2021 — 2025
+      </div>
+
+      <div>
+
+        <h3>
+          <a href="https://x.com/sellkpopvt" target="_blank">
+            SellKpopVT ↗
+          </a>
+        </h3>
+
+        <p class="experience-role">
+          Founder / Owner
+        </p>
+
+        <p>
+          Built and operated an international digital business serving
+          customers across multiple markets. Managed customer acquisition,
+          retention, pricing, operations, and a distributed team.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <article class="experience-item">
+
+      <div class="experience-date">
+        2024 — 2026
+      </div>
+
+      <div>
+
+        <h3>
+          PT Sari Rasa
+        </h3>
+
+        <p class="experience-role">
+          Business Partner
+        </p>
+
+        <p>
+          Supported a traditional snack distribution business supplying
+          supermarkets, contributing to business operations and commercial
+          decisions.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <article class="experience-item">
+
+      <div class="experience-date">
+        2026 · Project-Based
+      </div>
+
+      <div>
+
+        <h3>
+          PT Cahaya Segara Indonesia
+        </h3>
+
+        <p class="experience-role">
+          Freelance Administrative & Executive Support
+        </p>
+
+        <p>
+          Prepared documentation, reports, proposals, tender materials,
+          and supported project-related administrative and business
+          coordination.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <article class="experience-item">
+
+      <div class="experience-date">
+        2018 — 2019
+      </div>
+
+      <div>
+
+        <h3>
+          <a href="https://www.instagram.com/ecoplastid/" target="_blank">
+            ECOPLAST ID ↗
+          </a>
+        </h3>
+
+        <p class="experience-role">
+          Chief Marketing Officer
+        </p>
+
+        <p>
+          Led marketing activities for an environmental startup,
+          including pitching, competitions, communication, and
+          business storytelling.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <article class="experience-item">
+
+      <div class="experience-date">
+        2018 — 2021
+      </div>
+
+      <div>
+
+        <h3>
+          Techno Entrepreneur Club · ITB
+        </h3>
+
+        <p class="experience-role">
+          Student Entrepreneur
+        </p>
+
+        <p>
+          Participated in entrepreneurial projects involving product
+          development, sales, marketing, operations, and customer-facing
+          activities.
+        </p>
+
+      </div>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section id="projects" class="section">
+
+  <div class="section-label">
+    <span>04</span>
+    <span>/ SELECTED PROJECTS</span>
+  </div>
+
+  <div class="projects-heading">
+
+    <h2>
+      Work that
+      <i>connects dots.</i>
+    </h2>
+
+    <p>
+      A selection of research, strategy, writing, and creative work.
+    </p>
+
+  </div>
+
+
+  <div class="projects-grid">
+
+
+    <a
+      href="Consumer_Purchase_Intention_Traditional_Chips.pdf"
+      target="_blank"
+      class="project-card project-featured"
     >
 
-      <div
-        class="story-modal"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="storyTitle"
+      <div class="project-number">
+        01
+      </div>
+
+      <div class="project-content">
+
+        <small>
+          CONSUMER RESEARCH · SPSS · REGRESSION
+        </small>
+
+        <h3>
+          Understanding
+          <i>Purchase Intention.</i>
+        </h3>
+
+        <p>
+          Quantitative research exploring factors influencing consumers'
+          purchase intention toward traditional chips in local
+          supermarkets in Jakarta.
+        </p>
+
+        <span class="project-link">
+          View research ↗
+        </span>
+
+      </div>
+
+    </a>
+
+
+    <a
+      href="buavita.html"
+      class="project-card"
+    >
+
+      <div class="project-number">
+        02
+      </div>
+
+      <div class="project-content">
+
+        <small>
+          BRAND STRATEGY
+        </small>
+
+        <h3>
+          Buavita
+          <i>Brand Strategy.</i>
+        </h3>
+
+        <p>
+          A strategic exploration of positioning, communication,
+          and brand direction.
+        </p>
+
+        <span class="project-link">
+          View project ↗
+        </span>
+
+      </div>
+
+    </a>
+
+
+    <a
+      href="https://marketing.co.id/menilik-strategi-branding-produk-kecantikan-korea/"
+      target="_blank"
+      class="project-card"
+    >
+
+      <div class="project-number">
+        03
+      </div>
+
+      <div class="project-content">
+
+        <small>
+          PUBLISHED WORK
+        </small>
+
+        <h3>
+          Korean Beauty
+          <i>Branding.</i>
+        </h3>
+
+        <p>
+          Published writing examining the branding strategies behind
+          Korean beauty products.
+        </p>
+
+        <span class="project-link">
+          Read article ↗
+        </span>
+
+      </div>
+
+    </a>
+
+
+    <a
+      href="https://tamimmah-disma.medium.com/the-rollercoaster-ride-of-twitch-acquisition-from-google-yahoo-to-amazon-70b8a2124df3"
+      target="_blank"
+      class="project-card"
+    >
+
+      <div class="project-number">
+        04
+      </div>
+
+      <div class="project-content">
+
+        <small>
+          INDEPENDENT WRITING
+        </small>
+
+        <h3>
+          The Rollercoaster Ride
+          <i>of Twitch.</i>
+        </h3>
+
+        <p>
+          An independent piece exploring Twitch's acquisition journey
+          from Google and Yahoo to Amazon.
+        </p>
+
+        <span class="project-link">
+          Read on Medium ↗
+        </span>
+
+      </div>
+
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     SKILLS
+========================= -->
+
+<section id="skills" class="section">
+
+  <div class="section-label">
+    <span>05</span>
+    <span>/ SKILLS & EDUCATION</span>
+  </div>
+
+  <div class="skills-grid">
+
+
+    <div class="skill-column">
+
+      <p class="eyebrow">
+        MARKETING & STRATEGY
+      </p>
+
+      <ul>
+        <li>Marketing Strategy</li>
+        <li>Brand Strategy</li>
+        <li>Consumer Research</li>
+        <li>Market Research</li>
+        <li>Digital Marketing</li>
+        <li>Content Strategy</li>
+      </ul>
+
+    </div>
+
+
+    <div class="skill-column">
+
+      <p class="eyebrow">
+        BUSINESS
+      </p>
+
+      <ul>
+        <li>Business Development</li>
+        <li>Customer Acquisition</li>
+        <li>Customer Retention</li>
+        <li>Entrepreneurship</li>
+        <li>Operations</li>
+        <li>Project Management</li>
+      </ul>
+
+    </div>
+
+
+    <div class="skill-column">
+
+      <p class="eyebrow">
+        RESEARCH & ANALYTICS
+      </p>
+
+      <ul>
+        <li>Consumer Behavior</li>
+        <li>SPSS</li>
+        <li>Regression Analysis</li>
+        <li>Data Interpretation</li>
+        <li>Market Analysis</li>
+      </ul>
+
+    </div>
+
+
+    <div class="skill-column">
+
+      <p class="eyebrow">
+        CREATIVE
+      </p>
+
+      <ul>
+        <li>Adobe Photoshop</li>
+        <li>Visual Communication</li>
+        <li>Social Media</li>
+        <li>Content Creation</li>
+        <li>Creative Strategy</li>
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <div class="education">
+
+    <div>
+      <p class="eyebrow">
+        EDUCATION
+      </p>
+    </div>
+
+    <div>
+
+      <h3>
+        Institut Teknologi Bandung
+      </h3>
+
+      <p>
+        Bachelor of Business Management · Management & Marketing
+      </p>
+
+      <span>
+        GPA 3.44
+      </span>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CREATIVE
+========================= -->
+
+<section id="creative" class="section creative-section">
+
+  <div class="section-label">
+    <span>06</span>
+    <span>/ CREATIVE SKILLS</span>
+  </div>
+
+  <div class="creative-grid">
+
+
+    <!-- PHOTOSHOP -->
+
+    <article class="creative-card photoshop-card">
+
+      <div class="creative-card-top">
+
+        <div>
+
+          <small>
+            ADOBE
+          </small>
+
+          <h2>
+            Photoshop.
+          </h2>
+
+        </div>
+
+        <span class="creative-icon">
+          ✦
+        </span>
+
+      </div>
+
+
+      <p>
+        Visual communication, image composition,
+        creative exploration, and visual storytelling.
+      </p>
+
+
+      <div class="creative-image">
+
+        <img
+          src="images/photoshop-works.png"
+          alt="Adobe Photoshop creative work"
+        >
+
+      </div>
+
+
+      <a
+        href="https://id.pinterest.com/akonhjhjhj/my-art-works/"
+        target="_blank"
+        class="creative-link"
+      >
+        View my artwork ↗
+      </a>
+
+    </article>
+
+
+    <!-- TIKTOK -->
+
+    <article class="creative-card tiktok-card">
+
+      <div class="creative-card-top">
+
+        <div>
+
+          <small>
+            CONTENT & SOCIAL MEDIA
+          </small>
+
+          <h2>
+            Understanding
+            <i>attention.</i>
+          </h2>
+
+        </div>
+
+        <span class="creative-icon">
+          ↗
+        </span>
+
+      </div>
+
+
+      <p>
+        Building content around audience behavior,
+        attention, trends, and community.
+      </p>
+
+
+      <div class="tiktok-stats">
+
+        <div>
+          <strong>984</strong>
+          <span>followers</span>
+        </div>
+
+        <div>
+          <strong>367K+</strong>
+          <span>avg. views / post</span>
+        </div>
+
+        <div>
+          <strong>2×</strong>
+          <span>1M+ views</span>
+        </div>
+
+      </div>
+
+
+      <div class="creative-image">
+
+        <img
+          src="images/tiktok-profile.png"
+          alt="TikTok profile and content"
+        >
+
+      </div>
+
+
+      <a
+        href="https://www.tiktok.com/@baesminju"
+        target="_blank"
+        class="creative-link"
+      >
+        View TikTok ↗
+      </a>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact" class="section contact-section">
+
+  <div class="section-label">
+    <span>07</span>
+    <span>/ CONTACT</span>
+  </div>
+
+  <div class="contact-grid">
+
+    <div>
+
+      <p class="eyebrow">
+        HAVE A PROJECT OR OPPORTUNITY?
+      </p>
+
+      <h2>
+        Let's make
+        <br>
+        something
+        <i>meaningful.</i>
+      </h2>
+
+    </div>
+
+
+    <div class="contact-links">
+
+      <a href="mailto:tamimmadisma@gmail.com" class="contact-link">
+
+        <span>
+          Email
+        </span>
+
+        <strong>
+          tamimmadisma@gmail.com
+        </strong>
+
+        <span>
+          ↗
+        </span>
+
+      </a>
+
+
+      <a
+        href="https://wa.me/6282130815541"
+        target="_blank"
+        class="contact-link"
       >
 
-        <button
-          type="button"
-          class="story-close"
-          id="storyClose"
-          aria-label="Close story"
-        >
-          ×
-        </button>
+        <span>
+          WhatsApp
+        </span>
 
-        <div class="story-content">
+        <strong>
+          Let's chat
+        </strong>
 
-          <div class="story-label" id="storyLabel"></div>
+        <span>
+          ↗
+        </span>
 
-          <h2 class="story-title" id="storyTitle"></h2>
+      </a>
 
-          <div class="story-body" id="storyBody"></div>
 
-        </div>
+      <a
+        href="https://www.instagram.com/miramimmah/"
+        target="_blank"
+        class="contact-link"
+      >
 
-      </div>
+        <span>
+          Instagram
+        </span>
+
+        <strong>
+          @miramimmah
+        </strong>
+
+        <span>
+          ↗
+        </span>
+
+      </a>
+
+
+      <a
+        href="https://www.instagram.com/tamidisma/"
+        target="_blank"
+        class="contact-link"
+      >
+
+        <span>
+          Instagram 02
+        </span>
+
+        <strong>
+          @tamidisma
+        </strong>
+
+        <span>
+          ↗
+        </span>
+
+      </a>
 
     </div>
 
+  </div>
 
-    <!-- =====================================================
-         EXPERIENCE
-    ====================================================== -->
+</section>
 
-    <section id="experience">
+</main>
 
-      <div class="container">
 
-        <div class="section-label">
-          03 / Experience
-        </div>
+<!-- =========================
+     FOOTER
+========================= -->
 
-        <h2 class="section-title">
-          Building, learning,
-          <i>doing.</i>
-        </h2>
+<footer>
 
-        <p class="section-intro">
-          Experience across entrepreneurship, marketing,
-          business operations, digital business, and
-          project-based work.
-        </p>
+  <div>
+    © 2026 Tamimmah Disma Lestari
+  </div>
 
+  <div>
+    Built with intention <span>✦</span>
+  </div>
 
-        <div class="experience-list">
+</footer>
 
 
-          <!-- THE FOUNDERS LAB -->
-
-          <div class="experience-item">
-
-            <div class="experience-date">
-              2020–2021
-            </div>
-
-            <div class="experience-main">
-
-              <div>
-
-                <h3>
-                  <a
-                    href="https://www.instagram.com/thefounderslab/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    The Founders Lab ↗
-                  </a>
-                </h3>
-
-                <div class="experience-role">
-                  Co-Founder & Marketing Lead
-                </div>
-
-              </div>
-
-              <p class="experience-description">
-                Co-founded a platform for business webinars
-                and competitions backed by CIEL SBM ITB.
-                Led marketing, event promotion, audience
-                engagement, and communication initiatives.
-              </p>
-
-            </div>
-
-          </div>
-
-
-          <!-- SELLKPOPVT -->
-
-          <div class="experience-item">
-
-            <div class="experience-date">
-              2021–2025
-            </div>
-
-            <div class="experience-main">
-
-              <div>
-
-                <h3>
-                  <a
-                    href="https://x.com/sellkpopvt"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    SellKpopVT ↗
-                  </a>
-                </h3>
-
-                <div class="experience-role">
-                  Founder / Owner
-                </div>
-
-              </div>
-
-              <p class="experience-description">
-                Built and operated an international digital
-                business serving customers across Indonesia,
-                Malaysia, Singapore, Thailand, India, the US,
-                Belgium, Europe, Qatar, Japan, and other markets.
-                Managed pricing, customer acquisition,
-                operations, and retention.
-              </p>
-
-            </div>
-
-          </div>
-
-
-          <!-- PT SARI RASA -->
-
-          <div class="experience-item">
-
-            <div class="experience-date">
-              2024–2026
-            </div>
-
-            <div class="experience-main">
-
-              <div>
-
-                <h3>
-                  PT Sari Rasa
-                </h3>
-
-                <div class="experience-role">
-                  Business Partner
-                </div>
-
-              </div>
-
-              <p class="experience-description">
-                Supported the distribution of traditional snack
-                products to local supermarkets, contributing to
-                business operations and market expansion across
-                approximately 50 supermarket locations.
-              </p>
-
-            </div>
-
-          </div>
-
-
-          <!-- PT CAHAYA SEGARA -->
-
-          <div class="experience-item">
-
-            <div class="experience-date">
-              2026 · Project-Based
-            </div>
-
-            <div class="experience-main">
-
-              <div>
-
-                <h3>
-                  PT Cahaya Segara Indonesia
-                </h3>
-
-                <div class="experience-role">
-                  Freelance Administrative & Executive Support
-                </div>
-
-              </div>
-
-              <p class="experience-description">
-                Supported a major tender pursuit by preparing
-                reports, proposals, documentation, and
-                project materials. Translated technical research
-                findings and field observations from marine
-                operations into clear, structured business
-                documentation.
-              </p>
-
-            </div>
-
-          </div>
-
-
-          <!-- ECOPLAST -->
-
-          <div class="experience-item">
-
-            <div class="experience-date">
-              2018–2019
-            </div>
-
-            <div class="experience-main">
-
-              <div>
-
-                <h3>
-                  <a
-                    href="https://www.instagram.com/ecoplastid/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    ECOPLAST ID ↗
-                  </a>
-                </h3>
-
-                <div class="experience-role">
-                  Chief Marketing Officer
-                </div>
-
-              </div>
-
-              <p class="experience-description">
-                Worked on marketing and brand communication
-                for an environmental startup, representing
-                the business in competitions and investor-facing
-                pitches while helping shape messaging and
-                audience engagement.
-              </p>
-
-            </div>
-
-          </div>
-
-
-          <!-- TEC -->
-
-          <div class="experience-item">
-
-            <div class="experience-date">
-              2018–2021
-            </div>
-
-            <div class="experience-main">
-
-              <div>
-
-                <h3>
-                  Techno Entrepreneur Club (TEC), ITB
-                </h3>
-
-                <div class="experience-role">
-                  Student Entrepreneur
-                </div>
-
-              </div>
-
-              <p class="experience-description">
-                Participated in entrepreneurship, business
-                development, marketing, and project execution
-                across startup initiatives and student-led
-                business activities.
-              </p>
-
-            </div>
-
-          </div>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         PROJECTS
-    ====================================================== -->
-
-    <section id="projects">
-
-      <div class="container">
-
-        <div class="section-label">
-          04 / Selected Projects
-        </div>
-
-        <h2 class="section-title">
-          Selected
-          <i>work.</i>
-        </h2>
-
-        <p class="section-intro">
-          A selection of work across consumer behavior,
-          brand strategy, marketing, business, and digital culture.
-        </p>
-
-
-        <div class="project-grid">
-
-
-          <!-- THESIS -->
-
-          <a
-            href="Consumer_Purchase_Intention_Traditional_Chips.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="project-card featured"
-          >
-
-            <div class="project-top">
-
-              <div class="project-category">
-                Consumer Research
-              </div>
-
-              <div class="project-arrow">
-                ↗
-              </div>
-
-            </div>
-
-            <div>
-
-              <h3 class="project-title">
-                Understanding
-                <i>Purchase Intention.</i>
-              </h3>
-
-              <div class="project-meta">
-
-                <span>Thesis</span>
-                <span>SPSS</span>
-                <span>Regression</span>
-
-              </div>
-
-            </div>
-
-          </a>
-
-
-          <!-- BUAVITA -->
-
-          <a
-            href="buavita.html"
-            class="project-card"
-          >
-
-            <div class="project-top">
-
-              <div class="project-category">
-                Brand Strategy
-              </div>
-
-              <div class="project-arrow">
-                ↗
-              </div>
-
-            </div>
-
-            <h3 class="project-title">
-              Buavita
-              <i>Brand Strategy.</i>
-            </h3>
-
-          </a>
-
-
-          <!-- KOREAN BEAUTY -->
-
-          <a
-            href="https://marketing.co.id/menilik-strategi-branding-produk-kecantikan-korea/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="project-card"
-          >
-
-            <div class="project-top">
-
-              <div class="project-category">
-                Published Work
-              </div>
-
-              <div class="project-arrow">
-                ↗
-              </div>
-
-            </div>
-
-            <h3 class="project-title">
-              Korean Beauty
-              <i>Branding.</i>
-            </h3>
-
-          </a>
-
-
-          <!-- TWITCH -->
-
-          <a
-            href="https://tamimmah-disma.medium.com/the-rollercoaster-ride-of-twitch-acquisition-from-google-yahoo-to-amazon-70b8a2124df3"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="project-card"
-          >
-
-            <div class="project-top">
-
-              <div class="project-category">
-                Independent Writing
-              </div>
-
-              <div class="project-arrow">
-                ↗
-              </div>
-
-            </div>
-
-            <h3 class="project-title">
-              The Rollercoaster Ride
-              <i>of Twitch.</i>
-            </h3>
-
-          </a>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         SKILLS & EDUCATION
-    ====================================================== -->
-
-    <section id="skills">
-
-      <div class="container">
-
-        <div class="section-label">
-          05 / Skills & Education
-        </div>
-
-        <h2 class="section-title">
-          What I
-          <i>bring.</i>
-        </h2>
-
-
-        <div class="skills-grid">
-
-
-          <div class="skill-group">
-
-            <h3>
-              Marketing & Strategy
-            </h3>
-
-            <div class="skill-list">
-
-              <span>Marketing Strategy</span>
-              <span>Brand Strategy</span>
-              <span>Consumer Research</span>
-              <span>Market Research</span>
-              <span>Digital Marketing</span>
-              <span>Content Strategy</span>
-
-            </div>
-
-          </div>
-
-
-          <div class="skill-group">
-
-            <h3>
-              Business
-            </h3>
-
-            <div class="skill-list">
-
-              <span>Business Development</span>
-              <span>Customer Acquisition</span>
-              <span>Customer Retention</span>
-              <span>Entrepreneurship</span>
-              <span>Operations</span>
-              <span>Project Management</span>
-
-            </div>
-
-          </div>
-
-
-          <div class="skill-group">
-
-            <h3>
-              Research & Analytics
-            </h3>
-
-            <div class="skill-list">
-
-              <span>Consumer Behavior</span>
-              <span>SPSS</span>
-              <span>Regression Analysis</span>
-              <span>Data Interpretation</span>
-              <span>Market Analysis</span>
-
-            </div>
-
-          </div>
-
-
-          <div class="skill-group">
-
-            <h3>
-              Creative
-            </h3>
-
-            <div class="skill-list">
-
-              <span>Adobe Photoshop</span>
-              <span>Visual Communication</span>
-              <span>Social Media</span>
-              <span>Content Creation</span>
-              <span>Creative Strategy</span>
-
-            </div>
-
-          </div>
-
-
-        </div>
-
-
-        <div class="education">
-
-          <div>
-
-            <div class="small-label">
-              Education
-            </div>
-
-            <div class="education-title">
-              Institut Teknologi Bandung
-            </div>
-
-          </div>
-
-          <div class="education-info">
-
-            Bachelor of Business Management
-            · Management & Marketing
-
-            <br>
-
-            GPA 3.44
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         CREATIVE SKILLS
-    ====================================================== -->
-
-    <section id="creative">
-
-      <div class="container">
-
-        <div class="section-label">
-          06 / Creative Skills
-        </div>
-
-        <h2 class="section-title">
-          Strategy is also
-          <i>visual.</i>
-        </h2>
-
-        <p class="section-intro">
-          Beyond strategy and analysis, I enjoy translating
-          ideas into visual communication and digital content.
-        </p>
-
-
-        <div class="creative-grid">
-
-
-          <!-- PHOTOSHOP -->
-
-          <div class="creative-block">
-
-            <div class="creative-heading">
-
-              <h3>
-                Adobe Photoshop
-              </h3>
-
-              <h2>
-                Visual
-                <i>communication.</i>
-              </h2>
-
-            </div>
-
-            <div class="creative-image">
-
-              <img
-                src="images/photoshop-works.png"
-                alt="Adobe Photoshop creative work"
-              />
-
-            </div>
-
-            <a
-              href="https://id.pinterest.com/akonhjhjhj/my-art-works/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="creative-link"
-            >
-              View My Artworks ↗
-            </a>
-
-          </div>
-
-
-          <!-- TIKTOK -->
-
-          <div class="creative-block">
-
-            <div class="creative-heading">
-
-              <h3>
-                Content & Social Media
-              </h3>
-
-              <h2>
-                Understanding
-                <i>attention.</i>
-              </h2>
-
-            </div>
-
-
-            <div class="creative-stats">
-
-              <div class="creative-stat">
-
-                <strong>
-                  984
-                </strong>
-
-                <span>
-                  Followers
-                </span>
-
-              </div>
-
-              <div class="creative-stat">
-
-                <strong>
-                  367K+
-                </strong>
-
-                <span>
-                  Avg. Views/Post
-                </span>
-
-              </div>
-
-              <div class="creative-stat">
-
-                <strong>
-                  2×
-                </strong>
-
-                <span>
-                  1M+ Views
-                </span>
-
-              </div>
-
-            </div>
-
-
-            <p class="creative-insight">
-              Built content around K-pop and entertainment
-              culture, focusing on audience interest,
-              content hooks, consistency, and discoverability.
-            </p>
-
-
-            <div class="creative-image">
-
-              <img
-                src="images/tiktok-profile.png"
-                alt="TikTok profile and content performance"
-              />
-
-            </div>
-
-
-            <a
-              href="https://www.tiktok.com/@baesminju"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="creative-link"
-            >
-              View TikTok ↗
-            </a>
-
-          </div>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         CONTACT
-    ====================================================== -->
-
-    <section id="contact">
-
-      <div class="container">
-
-        <div class="section-label">
-          07 / Contact
-        </div>
-
-
-        <div class="contact-content">
-
-          <div>
-
-            <h2 class="contact-title">
-              Let's
-              <i>talk.</i>
-            </h2>
-
-            <p class="contact-description">
-              Open to opportunities where strategy, business,
-              and creativity can work together.
-            </p>
-
-            <p class="contact-description">
-              Particularly interested in marketing,
-              business development, consumer insights,
-              and creative strategy.
-            </p>
-
-          </div>
-
-
-          <div class="contact-links">
-
-            <a
-              href="mailto:tamimmadisma@gmail.com"
-              class="contact-link"
-            >
-              <span>Email</span>
-              <span>↗</span>
-            </a>
-
-            <a
-              href="https://wa.me/6282130815541"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="contact-link"
-            >
-              <span>WhatsApp</span>
-              <span>↗</span>
-            </a>
-
-            <a
-              href="https://www.instagram.com/miramimmah/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="contact-link"
-            >
-              <span>Instagram</span>
-              <span>↗</span>
-            </a>
-
-            <a
-              href="https://www.instagram.com/tamidisma/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="contact-link"
-            >
-              <span>Instagram 02</span>
-              <span>↗</span>
-            </a>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-  </main>
-
-
-  <!-- =======================================================
-       FOOTER
-  ======================================================== -->
-
-  <footer>
-
-    <div class="footer-inner">
-
-      <span>
-        © 2026 Tamimmah Disma Lestari
-      </span>
-
-      <span>
-        Built with intention.
-      </span>
-
-    </div>
-
-  </footer>
-
-
-  <!-- =======================================================
-       BACK TO TOP
-  ======================================================== -->
-
-  <button
-    type="button"
-    id="backToTop"
-    aria-label="Back to top"
-  >
-    ↑
-  </button>
-
-
-  <!-- =======================================================
-       JAVASCRIPT
-  ======================================================== -->
-
-  <script>
-
-    /* =======================================================
-       START AT TOP
-    ======================================================== */
-
-    if ("scrollRestoration" in history) {
-      history.scrollRestoration = "manual";
-    }
-
-    window.addEventListener("pageshow", () => {
-
-      if (!window.location.hash) {
-        window.scrollTo(0, 0);
-      }
-
-    });
-
-
-    /* =======================================================
-       MOBILE MENU
-    ======================================================== */
-
-    const menuButton =
-      document.getElementById("menuButton");
-
-    const mobileMenu =
-      document.getElementById("mobileMenu");
-
-
-    function closeMobileMenu() {
-
-      menuButton.classList.remove("active");
-
-      mobileMenu.classList.remove("active");
-
-      document.body.classList.remove("menu-open");
-
-      menuButton.setAttribute(
-        "aria-expanded",
-        "false"
-      );
-
-      menuButton.setAttribute(
-        "aria-label",
-        "Open menu"
-      );
-
-    }
-
-
-    menuButton.addEventListener("click", () => {
-
-      const isOpen =
-        menuButton.classList.toggle("active");
-
-      mobileMenu.classList.toggle(
-        "active",
-        isOpen
-      );
-
-      document.body.classList.toggle(
-        "menu-open",
-        isOpen
-      );
-
-      menuButton.setAttribute(
-        "aria-expanded",
-        String(isOpen)
-      );
-
-      menuButton.setAttribute(
-        "aria-label",
-        isOpen
-          ? "Close menu"
-          : "Open menu"
-      );
-
-    });
-
-
-    document
-      .querySelectorAll(".mobile-nav a")
-      .forEach(link => {
-
-        link.addEventListener(
-          "click",
-          closeMobileMenu
-        );
-
-      });
-
-
-    /* =======================================================
-       EXPLORE PORTFOLIO
-    ======================================================== */
-
-    const exploreToggle =
-      document.getElementById("exploreToggle");
-
-    const exploreMenu =
-      document.getElementById("exploreMenu");
-
-
-    exploreToggle.addEventListener("click", () => {
-
-      const isOpen =
-        exploreToggle.classList.toggle("active");
-
-      exploreMenu.classList.toggle(
-        "active",
-        isOpen
-      );
-
-      exploreToggle.setAttribute(
-        "aria-expanded",
-        String(isOpen)
-      );
-
-    });
-
-
-    document
-      .querySelectorAll(".explore-link")
-      .forEach(link => {
-
-        link.addEventListener("click", () => {
-
-          exploreToggle.classList.remove("active");
-
-          exploreMenu.classList.remove("active");
-
-          exploreToggle.setAttribute(
-            "aria-expanded",
-            "false"
-          );
-
-        });
-
-      });
-
-
-    /* =======================================================
-       BACK TO TOP
-    ======================================================== */
-
-    const backToTop =
-      document.getElementById("backToTop");
-
-
-    function updateBackToTop() {
-
-      if (window.scrollY > 500) {
-
-        backToTop.classList.add("show");
-
-      } else {
-
-        backToTop.classList.remove("show");
-
-      }
-
-    }
-
-
-    window.addEventListener(
-      "scroll",
-      updateBackToTop,
-      { passive: true }
-    );
-
-
-    backToTop.addEventListener(
-      "click",
-      () => {
-
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth"
-        });
-
-      }
-    );
-
-
-    updateBackToTop();
-
-
-    /* =======================================================
-       STORY CONTENT
-    ======================================================== */
-
-    const stories = {
-
-      cookies: {
-        label: "Junior High School · The Beginning",
-
-        title: "It started with a box of <i>cookies.</i>",
-
-        body: `
-          <p>
-            I don't think I discovered my interest in business
-            through a textbook.
-          </p>
-
-          <p>
-            In junior high school, our class had a project where
-            each team had to create and sell a product. My team
-            decided to sell cookies.
-          </p>
-
-          <p>
-            There was just one problem: the students weren't
-            really interested. As the time went on, we still had
-            plenty of cookies left.
-          </p>
-
-          <p>
-            Instead of going home with unsold stock, I walked
-            outside the school building to the gates, where
-            parents were waiting for their children. I started
-            approaching them and offering our cookies.
-          </p>
-
-          <p>
-            Eventually, every single cookie was sold.
-          </p>
-
-          <div class="story-quote">
-            “Oh. I think I want to be a boss.”
-          </div>
-
-          <p>
-            It sounds funny now, but that moment stayed with me.
-            I liked figuring out how to make something sell.
-            I liked talking to people. Most importantly, I liked
-            <strong>taking action when something wasn't working.</strong>
-          </p>
-
-          <div class="story-lessons">
-            <span class="story-lesson">Initiative</span>
-            <span class="story-lesson">Salesmanship</span>
-            <span class="story-lesson">Resourcefulness</span>
-            <span class="story-lesson">Problem Solving</span>
-          </div>
-        `
-      },
-
-
-      theatre: {
-        label: "Senior High School · The Theatre Club",
-
-        title: "I didn't just enjoy selling. I enjoyed <i>helping people.</i>",
-
-        body: `
-          <p>
-            A few years later, in senior high school, I joined
-            a theatre club.
-          </p>
-
-          <p>
-            I wasn't part of the performance itself, so I found
-            another way to contribute: I took care of ticketing.
-          </p>
-
-          <p>
-            I checked tickets, welcomed people, and helped them
-            find their seats. It was a small role, but I genuinely
-            enjoyed it. I liked being around people and making
-            sure they had a good experience.
-          </p>
-
-          <p>
-            Weeks later, during a meeting with my seniors, one
-            of them remembered me. They told me that I had been
-            very kind and that my service was really good.
-          </p>
-
-          <div class="story-quote">
-            I didn't just enjoy selling.<br>
-            <strong>I enjoyed helping people.</strong>
-          </div>
-
-          <p>
-            That moment changed how I thought about business.
-            I realized I was drawn not only to selling, but to
-            <strong>customer experience, communication, empathy,
-            and relationships.</strong>
-          </p>
-
-          <div class="story-lessons">
-            <span class="story-lesson">Customer Orientation</span>
-            <span class="story-lesson">Empathy</span>
-            <span class="story-lesson">Communication</span>
-            <span class="story-lesson">Service Mindset</span>
-          </div>
-        `
-      },
-
-
-      juice: {
-        label: "University · Techno Entrepreneur Club",
-
-        title: "University taught me that I love <i>making things happen.</i>",
-
-        body: `
-          <p>
-            When I entered Institut Teknologi Bandung, I joined
-            the Techno Entrepreneur Club (TEC), a student
-            organization filled with people from different
-            backgrounds, including many engineering students.
-          </p>
-
-          <p>
-            Somehow, I kept getting recruited into different
-            projects. I guess they figured out I would say yes.
-          </p>
-
-          <p>
-            One project involved selling fresh juices to canteens
-            around ITB. I explored Pasar Caringin to find affordable
-            fruit that we could buy in bulk. We prepared the juices
-            ourselves in our club room, then woke up early to
-            distribute them to around 10–15 canteens.
-          </p>
-
-          <p>
-            But selling to the canteens wasn't always enough.
-            If we still had stock left, I would take the products
-            directly to SBM ITB students and sell around campus.
-          </p>
-
-          <p>
-            Most of the time, we could get around
-            <strong>98% of our stock sold.</strong>
-          </p>
-
-          <div class="story-quote">
-            I never really got tired of it.
-          </div>
-
-          <p>
-            I enjoyed finding the product, figuring out the
-            economics, going into the field, talking to people,
-            selling, checking what was left, and figuring out
-            what to do next.
-          </p>
-
-          <p>
-            That's when I realized I genuinely enjoy
-            <strong>making things happen.</strong>
-          </p>
-
-          <div class="story-lessons">
-            <span class="story-lesson">Initiative</span>
-            <span class="story-lesson">Commercial Awareness</span>
-            <span class="story-lesson">Adaptability</span>
-            <span class="story-lesson">Operations</span>
-            <span class="story-lesson">Sales</span>
-          </div>
-        `
-      },
-
-
-      ecoplast: {
-        label: "University · ECOPLAST",
-
-        title: "Confidence became <i>communication.</i>",
-
-        body: `
-          <p>
-            Another experience came through ECOPLAST, an
-            environmental startup.
-          </p>
-
-          <p>
-            I was initially recruited partly because I was an
-            ITB student and they believed I could represent the
-            company well in pitching and competitions.
-          </p>
-
-          <p>
-            I've always been comfortable speaking in front of
-            people, explaining ideas, and connecting with an
-            audience.
-          </p>
-
-          <p>
-            Through ECOPLAST, I represented the business in
-            competitions and investor-facing situations, and
-            we went on to win several business idea competitions.
-          </p>
-
-          <div class="story-quote">
-            Communication isn't just confidence on stage.
-          </div>
-
-          <p>
-            It's about understanding an idea deeply enough to
-            make other people believe in it too.
-          </p>
-
-          <p>
-            That experience strengthened my ability to
-            <strong>persuade, tell stories, represent ideas,
-            and communicate with different stakeholders.</strong>
-          </p>
-
-          <div class="story-lessons">
-            <span class="story-lesson">Public Speaking</span>
-            <span class="story-lesson">Persuasion</span>
-            <span class="story-lesson">Storytelling</span>
-            <span class="story-lesson">Leadership</span>
-          </div>
-        `
-      },
-
-
-      kpop: {
-        label: "Thesis Era · Community Building",
-
-        title: "I couldn't just sit around. So I started <i>building communities.</i>",
-
-        body: `
-          <p>
-            During my thesis era, I spent a lot of time at home.
-            At the same time, I was very passionate about K-pop.
-          </p>
-
-          <p>
-            And somehow, I couldn't just sit around.
-          </p>
-
-          <p>
-            I joined online communities, became active, built
-            trust with other members, and eventually started
-            building communities of my own.
-          </p>
-
-          <p>
-            I initiated several fandom communities across
-            three accounts, with each one eventually growing
-            to more than <strong>10,000 followers.</strong>
-          </p>
-
-          <p>
-            Along the way, I learned by actually watching how
-            communities work: what people respond to, what makes
-            them participate, how trust develops, and why people
-            keep coming back.
-          </p>
-
-          <div class="story-quote">
-            I wasn't studying audiences.<br>
-            I was building one.
-          </div>
-
-          <p>
-            That experience became a bridge between my interest
-            in people and my interest in business.
-          </p>
-
-          <div class="story-lessons">
-            <span class="story-lesson">Community Building</span>
-            <span class="story-lesson">Audience Understanding</span>
-            <span class="story-lesson">Trust Building</span>
-            <span class="story-lesson">Content</span>
-            <span class="story-lesson">Social Media</span>
-          </div>
-        `
-      },
-
-
-      rice: {
-        label: "After University · ICE BSD",
-
-        title: "25 rice bowls. One folding table. <i>One concert.</i>",
-
-        body: `
-          <p>
-            After university and during my thesis era, I somehow
-            ended up at a concert at ICE BSD — alone — selling
-            rice bowls.
-          </p>
-
-          <p>
-            There wasn't a fixed selling area, so I had to compete
-            with plenty of other people selling around the venue.
-          </p>
-
-          <p>
-            Instead of staying in one place, I kept moving.
-            I approached people, asked if they wanted to buy,
-            watched where demand seemed stronger, and looked
-            for a better opportunity.
-          </p>
-
-          <p>
-            Eventually, I found an exit gate where there weren't
-            as many sellers. I placed my folding table there,
-            put up my posters, and started selling.
-          </p>
-
-          <div class="story-quote">
-            25 rice bowls → only 3 left.
-          </div>
-
-          <p>
-            I didn't have a fancy booth or a team behind me.
-            I had a folding table, some posters, my products,
-            and the willingness to keep moving until I found
-            the right spot.
-          </p>
-
-          <p>
-            It was a simple experience, but it reinforced
-            something I've always enjoyed:
-            <strong>observe the situation, adapt, and make
-            something work.</strong>
-          </p>
-
-          <div class="story-lessons">
-            <span class="story-lesson">Field Sales</span>
-            <span class="story-lesson">Mobility</span>
-            <span class="story-lesson">Adaptability</span>
-            <span class="story-lesson">Consumer Sensing</span>
-            <span class="story-lesson">Resourcefulness</span>
-          </div>
-        `
-      },
-
-
-      sellkpopvt: {
-        label: "2021–2025 · SellKpopVT",
-
-        title: "Then I turned a community into <i>a business.</i>",
-
-        body: `
-          <p>
-            Building fandom communities eventually led me to
-            something bigger: SellKpopVT.
-          </p>
-
-          <p>
-            I built and operated the business around K-pop
-            digital voting, serving customers from Indonesia,
-            Malaysia, Singapore, Thailand, India, the US,
-            Belgium, Europe, Qatar, Japan, and other markets.
-          </p>
-
-          <p>
-            What started from understanding online communities
-            became an actual business operation.
-          </p>
-
-          <p>
-            I handled pricing, customer acquisition, customer
-            communication, operations, and retention. I also
-            worked with people in Indonesia and the Philippines —
-            mainly two people, who in turn distributed work to
-            their own friends.
-          </p>
-
-          <div class="story-quote">
-            Community taught me how people gather.<br>
-            Business taught me how to build around it.
-          </div>
-
-          <p>
-            This was where I learned how to manage customers,
-            coordinate people, build trust, handle international
-            communication, and turn something I understood
-            personally into something with commercial value.
-          </p>
-
-          <div class="story-lessons">
-            <span class="story-lesson">Entrepreneurship</span>
-            <span class="story-lesson">Customer Acquisition</span>
-            <span class="story-lesson">Retention</span>
-            <span class="story-lesson">International Business</span>
-            <span class="story-lesson">Team Coordination</span>
-          </div>
-        `
-      },
-
-
-      cahaya: {
-        label: "2026 · PT Cahaya Segara Indonesia",
-
-        title: "My title said admin. The work taught me <i>much more.</i>",
-
-        body: `
-          <p>
-            I joined PT Cahaya Segara Indonesia in an administrative
-            role, but the work quickly became much broader.
-          </p>
-
-          <p>
-            I helped the company pursue and prepare for a major
-            tender involving Danantara-related corporations,
-            supporting the documentation, reports, proposals,
-            and materials needed throughout the process.
-          </p>
-
-          <p>
-            One of the most interesting parts was preparing
-            operational reports that brought together two very
-            different sources: <strong>technical research findings
-            from a professor and observations from the diving
-            team working in the field.</strong>
-          </p>
-
-          <p>
-            Because much of the company's work takes place in
-            marine areas, the information wasn't coming from
-            a desk alone. I had to understand what was happening
-            in the field, organize observations, and turn technical
-            information into clear, structured documentation.
-          </p>
-
-          <div class="story-quote">
-            Research. Field observation. Business.<br>
-            I learned to connect the three.
-          </div>
-
-          <p>
-            It taught me to be extremely punctual, detail-oriented,
-            organized, and careful with information — especially
-            when a document could contribute to a real business
-            opportunity.
-          </p>
-
-          <div class="story-lessons">
-            <span class="story-lesson">Documentation</span>
-            <span class="story-lesson">Attention to Detail</span>
-            <span class="story-lesson">Research</span>
-            <span class="story-lesson">Field Operations</span>
-            <span class="story-lesson">Punctuality</span>
-          </div>
-        `
-      }
-
-    };
-
-
-    /* =======================================================
-       STORY MODAL
-    ======================================================== */
-
-    const storyOverlay =
-      document.getElementById("storyOverlay");
-
-    const storyClose =
-      document.getElementById("storyClose");
-
-    const storyLabel =
-      document.getElementById("storyLabel");
-
-    const storyTitle =
-      document.getElementById("storyTitle");
-
-    const storyBody =
-      document.getElementById("storyBody");
-
-
-    function openStory(storyKey) {
-
-      const story = stories[storyKey];
-
-      if (!story) return;
-
-      storyLabel.innerHTML = story.label;
-
-      storyTitle.innerHTML = story.title;
-
-      storyBody.innerHTML = story.body;
-
-      storyOverlay.classList.add("active");
-
-      storyOverlay.setAttribute(
-        "aria-hidden",
-        "false"
-      );
-
-      document.body.classList.add("story-open");
-
-      storyClose.focus();
-
-    }
-
-
-    function closeStory() {
-
-      storyOverlay.classList.remove("active");
-
-      storyOverlay.setAttribute(
-        "aria-hidden",
-        "true"
-      );
-
-      document.body.classList.remove("story-open");
-
-    }
-
-
-    document
-      .querySelectorAll(".roadmap-card")
-      .forEach(card => {
-
-        card.addEventListener("click", () => {
-
-          const storyKey =
-            card.getAttribute("data-story");
-
-          openStory(storyKey);
-
-        });
-
-      });
-
-
-    storyClose.addEventListener(
-      "click",
-      closeStory
-    );
-
-
-    storyOverlay.addEventListener(
-      "click",
-      event => {
-
-        if (event.target === storyOverlay) {
-          closeStory();
-        }
-
-      }
-    );
-
-
-    /* =======================================================
-       ESCAPE KEY
-    ======================================================== */
-
-    document.addEventListener(
-      "keydown",
-      event => {
-
-        if (event.key !== "Escape") return;
-
-        closeStory();
-
-        closeMobileMenu();
-
-        exploreToggle.classList.remove("active");
-
-        exploreMenu.classList.remove("active");
-
-        exploreToggle.setAttribute(
-          "aria-expanded",
-          "false"
-        );
-
-      }
-    );
-
-
-    /* =======================================================
-       CLOSE MOBILE MENU ON DESKTOP
-    ======================================================== */
-
-    window.addEventListener(
-      "resize",
-      () => {
-
-        if (window.innerWidth > 700) {
-          closeMobileMenu();
-        }
-
-      }
-    );
-
-  </script>
+<script src="script.js"></script>
 
 </body>
 </html>
