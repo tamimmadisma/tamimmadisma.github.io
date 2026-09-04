@@ -24,8 +24,16 @@
     ".milestone[data-milestone]"
   );
 
+  /*
+     UPDATED:
+     The Journey skill shapes now use:
+     .takeaway-skill
+
+     We also include .today-skill in case your
+     current HTML uses that class elsewhere.
+  */
   const journeySkills = document.querySelectorAll(
-    ".journey-skill"
+    ".takeaway-skill, .today-skill"
   );
 
   const skillNodes = document.querySelectorAll(
@@ -85,18 +93,30 @@
   }
 
 
-  prefersReducedMotion.addEventListener?.(
-    "change",
-    () => {
-      if (reducedMotion()) {
-        document
-          .querySelectorAll(".reveal")
-          .forEach(element => {
-            element.classList.add("visible");
-          });
+  if (prefersReducedMotion.addEventListener) {
+
+    prefersReducedMotion.addEventListener(
+      "change",
+      () => {
+
+        if (reducedMotion()) {
+
+          document
+            .querySelectorAll(".reveal")
+            .forEach(element => {
+
+              element.classList.add(
+                "visible"
+              );
+
+            });
+
+        }
+
       }
-    }
-  );
+    );
+
+  }
 
 
   /* =========================================================
@@ -104,8 +124,10 @@
   ========================================================= */
 
   if (currentYear) {
+
     currentYear.textContent =
       new Date().getFullYear();
+
   }
 
 
@@ -123,14 +145,18 @@
       "scrolled",
       window.scrollY > 32
     );
+
   }
 
 
   window.addEventListener(
     "scroll",
     updateHeader,
-    { passive: true }
+    {
+      passive: true
+    }
   );
+
 
   updateHeader();
 
@@ -145,6 +171,7 @@
       mobileNav &&
       mobileNav.classList.contains("active")
     );
+
   }
 
 
@@ -154,17 +181,21 @@
       return;
     }
 
-    const open = isMenuOpen();
+    const open =
+      isMenuOpen();
+
 
     mobileNav.setAttribute(
       "aria-hidden",
       open ? "false" : "true"
     );
 
+
     menuToggle.setAttribute(
       "aria-expanded",
       open ? "true" : "false"
     );
+
 
     menuToggle.setAttribute(
       "aria-label",
@@ -172,6 +203,7 @@
         ? "Close navigation"
         : "Open navigation"
     );
+
   }
 
 
@@ -181,11 +213,22 @@
       return;
     }
 
-    mobileNav.classList.add("active");
-    menuToggle.classList.add("active");
-    body.classList.add("menu-open");
+
+    mobileNav.classList.add(
+      "active"
+    );
+
+    menuToggle.classList.add(
+      "active"
+    );
+
+    body.classList.add(
+      "menu-open"
+    );
+
 
     syncMenuAccessibility();
+
   }
 
 
@@ -197,28 +240,47 @@
       return;
     }
 
-    mobileNav.classList.remove("active");
-    menuToggle.classList.remove("active");
-    body.classList.remove("menu-open");
+
+    mobileNav.classList.remove(
+      "active"
+    );
+
+    menuToggle.classList.remove(
+      "active"
+    );
+
+    body.classList.remove(
+      "menu-open"
+    );
+
 
     syncMenuAccessibility();
+
 
     if (
       returnFocus &&
       window.innerWidth <= 700
     ) {
+
       menuToggle.focus();
+
     }
+
   }
 
 
   function toggleMenu() {
 
     if (isMenuOpen()) {
+
       closeMenu();
+
     } else {
+
       openMenu();
+
     }
+
   }
 
 
@@ -236,21 +298,26 @@
      MOBILE NAV LINKS
   ========================================================= */
 
-  const mobileLinks = document.querySelectorAll(
-    ".mobile-nav a"
-  );
-
-
-  mobileLinks.forEach(link => {
-
-    link.addEventListener(
-      "click",
-      () => {
-        closeMenu();
-      }
+  const mobileLinks =
+    document.querySelectorAll(
+      ".mobile-nav a"
     );
 
-  });
+
+  mobileLinks.forEach(
+    link => {
+
+      link.addEventListener(
+        "click",
+        () => {
+
+          closeMenu();
+
+        }
+      );
+
+    }
+  );
 
 
   /* =========================================================
@@ -287,7 +354,9 @@
         if (
           event.target === mobileNav
         ) {
+
           closeMenu();
+
         }
 
       }
@@ -300,9 +369,10 @@
      SMOOTH ANCHOR SCROLL
   ========================================================= */
 
-  const anchorLinks = document.querySelectorAll(
-    'a[href^="#"]'
-  );
+  const anchorLinks =
+    document.querySelectorAll(
+      'a[href^="#"]'
+    );
 
 
   function getHeaderOffset() {
@@ -314,72 +384,95 @@
   }
 
 
-  anchorLinks.forEach(link => {
+  anchorLinks.forEach(
+    link => {
 
-    link.addEventListener(
-      "click",
-      event => {
+      link.addEventListener(
+        "click",
+        event => {
 
-        const targetID =
-          link.getAttribute("href");
+          const targetID =
+            link.getAttribute("href");
 
-        if (
-          !targetID ||
-          targetID === "#"
-        ) {
-          return;
+
+          if (
+            !targetID ||
+            targetID === "#"
+          ) {
+
+            return;
+
+          }
+
+
+          let target;
+
+
+          try {
+
+            target =
+              document.querySelector(
+                targetID
+              );
+
+          } catch {
+
+            return;
+
+          }
+
+
+          if (!target) {
+            return;
+          }
+
+
+          event.preventDefault();
+
+
+          closeMenu();
+
+
+          const targetPosition =
+            target.getBoundingClientRect().top +
+            window.scrollY -
+            getHeaderOffset();
+
+
+          window.scrollTo({
+
+            top:
+              Math.max(
+                0,
+                targetPosition
+              ),
+
+            behavior:
+              reducedMotion()
+                ? "auto"
+                : "smooth"
+
+          });
+
+
+          if (
+            history.replaceState &&
+            targetID !== "#"
+          ) {
+
+            history.replaceState(
+              null,
+              "",
+              targetID
+            );
+
+          }
+
         }
+      );
 
-        let target;
-
-        try {
-
-          target =
-            document.querySelector(targetID);
-
-        } catch {
-          return;
-        }
-
-        if (!target) {
-          return;
-        }
-
-        event.preventDefault();
-
-        closeMenu();
-
-        const targetPosition =
-          target.getBoundingClientRect().top +
-          window.scrollY -
-          getHeaderOffset();
-
-
-        window.scrollTo({
-          top: Math.max(0, targetPosition),
-          behavior: reducedMotion()
-            ? "auto"
-            : "smooth"
-        });
-
-
-        if (
-          history.replaceState &&
-          targetID !== "#"
-        ) {
-
-          history.replaceState(
-            null,
-            "",
-            targetID
-          );
-
-        }
-
-      }
-    );
-
-  });
+    }
+  );
 
 
   /* =========================================================
@@ -388,11 +481,15 @@
 
      Each milestone works as a small story module.
 
-     Closed:
-       → hook / title remains visible
+     CLOSED:
+       → title
+       → hook
+       → short detail
 
-     Open:
-       → story + skills become visible
+     OPEN:
+       → full story
+       → takeaway skills
+       → organic skill shapes
 
      Only one milestone stays open at a time.
   ========================================================= */
@@ -402,22 +499,30 @@
     except = null
   ) {
 
-    milestones.forEach(milestone => {
+    milestones.forEach(
+      milestone => {
 
-      if (milestone === except) {
-        return;
+        if (
+          milestone === except
+        ) {
+
+          return;
+
+        }
+
+
+        milestone.classList.remove(
+          "active"
+        );
+
+
+        milestone.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
       }
-
-      milestone.classList.remove(
-        "active"
-      );
-
-      milestone.setAttribute(
-        "aria-expanded",
-        "false"
-      );
-
-    });
+    );
 
   }
 
@@ -430,13 +535,16 @@
       return;
     }
 
+
     closeAllMilestones(
       milestone
     );
 
+
     milestone.classList.add(
       "active"
     );
+
 
     milestone.setAttribute(
       "aria-expanded",
@@ -454,9 +562,11 @@
       return;
     }
 
+
     milestone.classList.remove(
       "active"
     );
+
 
     milestone.setAttribute(
       "aria-expanded",
@@ -474,10 +584,12 @@
       return;
     }
 
+
     const active =
       milestone.classList.contains(
         "active"
       );
+
 
     if (active) {
 
@@ -504,24 +616,53 @@
         "0"
       );
 
+
       milestone.setAttribute(
         "role",
         "button"
       );
 
+
+      /*
+         IMPORTANT:
+         Keep the existing HTML's initial
+         .active state instead of forcing
+         every milestone closed.
+      */
       milestone.setAttribute(
         "aria-expanded",
-        "false"
+        milestone.classList.contains(
+          "active"
+        )
+          ? "true"
+          : "false"
       );
 
 
       /* -----------------------------------------
-         Click
+         CLICK
       ----------------------------------------- */
 
       milestone.addEventListener(
         "click",
-        () => {
+        event => {
+
+          /*
+             Prevent accidental double-triggering
+             when clicking interactive elements
+             inside the card.
+          */
+
+          const interactive =
+            event.target.closest(
+              "a, button, input, textarea, select"
+            );
+
+
+          if (interactive) {
+            return;
+          }
+
 
           toggleMilestone(
             milestone
@@ -532,7 +673,7 @@
 
 
       /* -----------------------------------------
-         Keyboard
+         KEYBOARD
       ----------------------------------------- */
 
       milestone.addEventListener(
@@ -546,6 +687,7 @@
 
             event.preventDefault();
 
+
             toggleMilestone(
               milestone
             );
@@ -557,13 +699,16 @@
 
 
       /* -----------------------------------------
-         Stagger
+         STAGGER
       ----------------------------------------- */
 
       if (!reducedMotion()) {
 
         milestone.style.transitionDelay =
-          `${Math.min(index * 45, 270)}ms`;
+          `${Math.min(
+            index * 45,
+            270
+          )}ms`;
 
       }
 
@@ -572,26 +717,39 @@
 
 
   /* =========================================================
-     JOURNEY — SKILL CHIPS
+     JOURNEY — ORGANIC SKILL SHAPES
   =========================================================
 
      These are intentionally NOT interactive.
 
-     They function as quick employer-facing
-     summaries of what was built at each stage.
+     Their purpose is visual:
+       → playful
+       → organic
+       → employer-friendly
+       → same typography as the site
+
+     CSS controls the actual shape, color,
+     rotation and hover treatment.
   ========================================================= */
 
   journeySkills.forEach(
     skill => {
 
-      skill.setAttribute(
-        "tabindex",
-        "-1"
+      /*
+         Remove old chip behaviour.
+         These are visual labels, not buttons.
+      */
+
+      skill.removeAttribute(
+        "tabindex"
       );
 
-      skill.setAttribute(
-        "role",
-        "presentation"
+      skill.removeAttribute(
+        "role"
+      );
+
+      skill.removeAttribute(
+        "aria-pressed"
       );
 
     }
@@ -611,92 +769,112 @@
     }
 
 
-    skillNodes.forEach(node => {
+    skillNodes.forEach(
+      node => {
 
-      const active =
-        node.dataset.skill === skillName;
-
-      node.classList.toggle(
-        "active",
-        active
-      );
-
-      node.setAttribute(
-        "aria-pressed",
-        active
-          ? "true"
-          : "false"
-      );
-
-    });
+        const active =
+          node.dataset.skill === skillName;
 
 
-    skillDetails.forEach(detail => {
-
-      const active =
-        detail.dataset.detail === skillName;
-
-      detail.classList.toggle(
-        "active",
-        active
-      );
-
-    });
-
-  }
+        node.classList.toggle(
+          "active",
+          active
+        );
 
 
-  skillNodes.forEach(node => {
-
-    node.setAttribute(
-      "role",
-      "button"
-    );
-
-    node.setAttribute(
-      "tabindex",
-      "0"
-    );
-
-    node.setAttribute(
-      "aria-pressed",
-      "false"
-    );
-
-
-    node.addEventListener(
-      "click",
-      () => {
-
-        activateSkill(
-          node.dataset.skill
+        node.setAttribute(
+          "aria-pressed",
+          active
+            ? "true"
+            : "false"
         );
 
       }
     );
 
 
-    node.addEventListener(
-      "keydown",
-      event => {
+    skillDetails.forEach(
+      detail => {
 
-        if (
-          event.key === "Enter" ||
-          event.key === " "
-        ) {
+        const active =
+          detail.dataset.detail === skillName;
 
-          event.preventDefault();
+
+        detail.classList.toggle(
+          "active",
+          active
+        );
+
+      }
+    );
+
+  }
+
+
+  skillNodes.forEach(
+    node => {
+
+      node.setAttribute(
+        "role",
+        "button"
+      );
+
+
+      node.setAttribute(
+        "tabindex",
+        "0"
+      );
+
+
+      node.setAttribute(
+        "aria-pressed",
+        "false"
+      );
+
+
+      /* -----------------------------------------
+         CLICK
+      ----------------------------------------- */
+
+      node.addEventListener(
+        "click",
+        () => {
 
           activateSkill(
             node.dataset.skill
           );
 
         }
+      );
 
-      }
-    );
 
-  });
+      /* -----------------------------------------
+         KEYBOARD
+      ----------------------------------------- */
+
+      node.addEventListener(
+        "keydown",
+        event => {
+
+          if (
+            event.key === "Enter" ||
+            event.key === " "
+          ) {
+
+            event.preventDefault();
+
+
+            activateSkill(
+              node.dataset.skill
+            );
+
+          }
+
+        }
+      );
+
+    }
+  );
 
 
   /* =========================================================
@@ -786,12 +964,16 @@
               if (
                 !entry.isIntersecting
               ) {
+
                 return;
+
               }
+
 
               entry.target.classList.add(
                 "visible"
               );
+
 
               revealObserver.unobserve(
                 entry.target
@@ -802,10 +984,13 @@
 
         },
         {
-          threshold: 0.08,
+
+          threshold:
+            0.08,
 
           rootMargin:
             "0px 0px -50px 0px"
+
         }
       );
 
@@ -833,7 +1018,10 @@
       (row, index) => {
 
         row.style.transitionDelay =
-          `${Math.min(index * 45, 250)}ms`;
+          `${Math.min(
+            index * 45,
+            250
+          )}ms`;
 
       }
     );
@@ -846,8 +1034,8 @@
   =========================================================
 
      Very subtle movement only.
-     The visual should feel tactile,
-     not like a 3D card effect.
+
+     No aggressive 3D effect.
   ========================================================= */
 
   if (
@@ -863,6 +1051,7 @@
             ".project-visual"
           );
 
+
         if (!visual) {
           return;
         }
@@ -875,11 +1064,14 @@
             const rect =
               project.getBoundingClientRect();
 
+
             if (
               !rect.width ||
               !rect.height
             ) {
+
               return;
+
             }
 
 
@@ -908,7 +1100,11 @@
 
 
             visual.style.transform =
-              `translate3d(${moveX}px, ${moveY}px, 0)`;
+              `translate3d(
+                ${moveX}px,
+                ${moveY}px,
+                0
+              )`;
 
           }
         );
@@ -934,7 +1130,8 @@
      CREATIVE — PHOTOSHOP PARALLAX
   ========================================================= */
 
-  let parallaxTicking = false;
+  let parallaxTicking =
+    false;
 
 
   function resetPhotoshopParallax() {
@@ -942,6 +1139,7 @@
     if (!photoshopImage) {
       return;
     }
+
 
     photoshopImage.style.setProperty(
       "--image-shift",
@@ -1013,10 +1211,14 @@
       parallaxTicking ||
       reducedMotion()
     ) {
+
       return;
+
     }
 
-    parallaxTicking = true;
+
+    parallaxTicking =
+      true;
 
 
     window.requestAnimationFrame(
@@ -1024,7 +1226,8 @@
 
         updatePhotoshopParallax();
 
-        parallaxTicking = false;
+        parallaxTicking =
+          false;
 
       }
     );
@@ -1037,13 +1240,17 @@
     window.addEventListener(
       "scroll",
       requestPhotoshopParallax,
-      { passive: true }
+      {
+        passive: true
+      }
     );
+
 
     window.addEventListener(
       "resize",
       requestPhotoshopParallax
     );
+
 
     updatePhotoshopParallax();
 
@@ -1108,7 +1315,9 @@
       link => {
 
         const href =
-          link.getAttribute("href");
+          link.getAttribute(
+            "href"
+          );
 
 
         const active =
@@ -1163,6 +1372,7 @@
 
         },
         {
+
           threshold: [
             0.15,
             0.3,
@@ -1172,6 +1382,7 @@
 
           rootMargin:
             "-18% 0px -48% 0px"
+
         }
       );
 
@@ -1193,7 +1404,8 @@
      RESIZE SAFETY
   ========================================================= */
 
-  let resizeTimer = null;
+  let resizeTimer =
+    null;
 
 
   window.addEventListener(
@@ -1282,6 +1494,7 @@
             "image-error"
           );
 
+
           image.setAttribute(
             "aria-hidden",
             "true"
@@ -1307,6 +1520,7 @@
       "aria-expanded",
       "false"
     );
+
 
     menuToggle.setAttribute(
       "aria-label",
@@ -1342,7 +1556,8 @@
 
 
   if (
-    document.readyState === "loading"
+    document.readyState ===
+    "loading"
   ) {
 
     document.addEventListener(
