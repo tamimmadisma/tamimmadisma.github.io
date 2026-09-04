@@ -663,13 +663,15 @@ h2 i {
 }
 
 .tiktok-profile {
-  width: 75%;
+  width: min(700px, 100%);
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .tiktok-profile img {
   display: block;
   width: 100%;
+  max-width: 100%;
   height: auto;
   border: 1px solid #e5e0d8;
 }
