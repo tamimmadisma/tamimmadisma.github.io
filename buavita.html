@@ -15,6 +15,7 @@
     rel="stylesheet"
   >
 
+  <!-- KEEP YOUR MAIN WEBSITE CSS -->
   <link rel="stylesheet" href="style.css">
 
   <style>
@@ -82,20 +83,122 @@
 
 
     /* =========================================================
+       BACK TO HOMEPAGE
+       ========================================================= */
+
+    .bvt-home {
+      position: absolute;
+
+      top: 28px;
+      left: 34px;
+
+      z-index: 50;
+
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+
+      color: var(--bvt-charcoal);
+
+      font-family: var(--sans);
+      font-size: 9px;
+      line-height: 1;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+
+      transition: opacity .25s ease;
+    }
+
+    .bvt-home:hover {
+      opacity: .6;
+    }
+
+    .bvt-home-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 29px;
+      height: 29px;
+
+      border: 1px solid var(--bvt-charcoal);
+      border-radius: 50%;
+
+      font-size: 15px;
+      line-height: 1;
+
+      transition:
+        transform .25s ease,
+        background .25s ease,
+        color .25s ease;
+    }
+
+    .bvt-home:hover .bvt-home-icon {
+      transform: translateY(-2px);
+
+      background: var(--bvt-charcoal);
+      color: var(--bvt-cream);
+    }
+
+
+    /* =========================================================
+       BACK TO TOP
+       ========================================================= */
+
+    .bvt-top {
+      position: fixed;
+
+      right: 28px;
+      bottom: 28px;
+
+      z-index: 100;
+
+      width: 43px;
+      height: 43px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+
+      background: var(--bvt-charcoal);
+      color: var(--bvt-cream);
+
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1;
+
+      box-shadow: 0 5px 15px rgba(37,37,37,.12);
+
+      transition:
+        transform .25s ease,
+        opacity .25s ease;
+    }
+
+    .bvt-top:hover {
+      transform: translateY(-4px);
+    }
+
+
+    /* =========================================================
        HERO
        ========================================================= */
 
     .bvt-hero {
       position: relative;
 
-      min-height: calc(100vh - 70px);
+      min-height: 100vh;
 
       display: grid;
       grid-template-columns: minmax(0, 1.15fr) minmax(340px, .85fr);
+
       align-items: center;
+
       gap: 50px;
 
-      padding: 100px 7vw 90px;
+      padding: 115px 7vw 90px;
 
       overflow: hidden;
     }
@@ -140,13 +243,14 @@
 
       font-family: var(--serif);
       font-weight: 500;
+
       letter-spacing: -.055em;
     }
 
     .bvt-hero-description {
       max-width: 510px;
 
-      margin: 45px 0 28px;
+      margin: 42px 0 28px;
 
       font-family: var(--sans);
       font-size: 13px;
@@ -158,6 +262,7 @@
     .bvt-hero-actions {
       display: flex;
       flex-wrap: wrap;
+
       gap: 9px;
     }
 
@@ -211,6 +316,7 @@
       position: relative;
 
       width: min(100%, 470px);
+
       aspect-ratio: 1 / 1;
 
       margin: auto;
@@ -400,8 +506,11 @@
 
     .bvt-overview-grid {
       display: grid;
+
       grid-template-columns: .8fr 1.2fr;
+
       gap: 90px;
+
       align-items: start;
     }
 
@@ -430,10 +539,12 @@
       padding-top: 8px;
     }
 
+    /* SHORTENED INTRO */
+
     .bvt-big-question {
       max-width: 650px;
 
-      margin: 0 0 35px;
+      margin: 0 0 28px;
 
       font-family: var(--sans);
       font-size: clamp(22px, 3vw, 37px);
@@ -466,7 +577,9 @@
 
     .bvt-research-heading {
       display: grid;
+
       grid-template-columns: 1fr 1fr;
+
       gap: 70px;
 
       margin-bottom: 75px;
@@ -549,46 +662,59 @@
 
     .bvt-file-card:nth-child(1) {
       grid-column: span 7;
+
       background: var(--bvt-yellow);
+
       min-height: 420px;
     }
 
     .bvt-file-card:nth-child(2) {
       grid-column: span 5;
+
       background: #fffdf8;
+
       transform: rotate(1deg);
     }
 
     .bvt-file-card:nth-child(3) {
       grid-column: span 5;
+
       background: var(--bvt-turquoise);
+
       transform: rotate(-1deg);
     }
 
     .bvt-file-card:nth-child(4) {
       grid-column: span 7;
+
       background: #fffdf8;
     }
 
     .bvt-file-card:nth-child(5) {
       grid-column: span 12;
+
       min-height: 480px;
+
       background: var(--bvt-green);
+
       color: white;
     }
 
     .bvt-file-card:nth-child(6) {
       grid-column: span 4;
+
       background: var(--bvt-pink);
     }
 
     .bvt-file-card:nth-child(7) {
       grid-column: span 4;
+
       background: #fffdf8;
     }
 
     .bvt-file-card:nth-child(8) {
       grid-column: span 4;
+
       background: var(--bvt-yellow);
     }
 
@@ -596,6 +722,7 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
+
       gap: 20px;
     }
 
@@ -654,6 +781,7 @@
     .bvt-tags {
       display: flex;
       flex-wrap: wrap;
+
       gap: 6px;
     }
 
@@ -759,8 +887,11 @@
 
     .bvt-map-header {
       display: grid;
+
       grid-template-columns: 1fr .65fr;
+
       gap: 70px;
+
       align-items: end;
 
       margin-bottom: 80px;
@@ -802,7 +933,9 @@
       position: relative;
 
       display: grid;
+
       grid-template-columns: repeat(5, 1fr);
+
       gap: 15px;
 
       align-items: start;
@@ -824,6 +957,7 @@
 
     .bvt-map-step {
       position: relative;
+
       z-index: 2;
 
       display: flex;
@@ -866,6 +1000,7 @@
 
     .bvt-map-step:nth-child(5) .bvt-map-dot {
       background: var(--bvt-green);
+
       color: white;
     }
 
@@ -901,8 +1036,11 @@
 
     .bvt-cap-grid {
       display: grid;
+
       grid-template-columns: .85fr 1.15fr;
+
       gap: 90px;
+
       align-items: start;
     }
 
@@ -937,6 +1075,7 @@
     .bvt-skill-cloud {
       display: flex;
       flex-wrap: wrap;
+
       gap: 10px;
 
       margin-top: 32px;
@@ -1014,8 +1153,11 @@
 
     .bvt-approach-header {
       display: grid;
+
       grid-template-columns: 1fr .8fr;
+
       gap: 80px;
+
       align-items: end;
 
       margin-bottom: 70px;
@@ -1053,8 +1195,11 @@
 
     .bvt-approach-item {
       display: grid;
+
       grid-template-columns: 80px 1fr 1fr;
+
       gap: 35px;
+
       align-items: start;
 
       padding: 38px 0;
@@ -1120,8 +1265,11 @@
       position: relative;
 
       display: grid;
+
       grid-template-columns: 120px 1fr 50px;
+
       gap: 35px;
+
       align-items: center;
 
       margin-top: 45px;
@@ -1245,6 +1393,7 @@
 
     .bvt-contact-inner {
       position: relative;
+
       z-index: 2;
     }
 
@@ -1286,12 +1435,11 @@
       line-height: 1.8;
     }
 
-    /* CONTACT LINKS */
-
     .bvt-contact-links {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
+
       gap: 10px;
 
       margin-top: 30px;
@@ -1301,6 +1449,7 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
+
       gap: 7px;
 
       min-width: 190px;
@@ -1339,6 +1488,34 @@
 
 
     /* =========================================================
+       FOOTER
+       ========================================================= */
+
+    .bvt-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      gap: 20px;
+
+      padding: 25px 7vw;
+
+      background: var(--bvt-cream);
+
+      border-top: 1px solid var(--bvt-line);
+
+      font-family: var(--sans);
+      font-size: 8px;
+      line-height: 1.4;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+
+      color: #6d6963;
+    }
+
+
+    /* =========================================================
        RESPONSIVE
        ========================================================= */
 
@@ -1349,7 +1526,7 @@
 
         min-height: auto;
 
-        padding-top: 80px;
+        padding-top: 100px;
       }
 
       .bvt-hero-visual {
@@ -1421,6 +1598,24 @@
 
     @media (max-width: 620px) {
 
+      .bvt-home {
+        top: 20px;
+        left: 20px;
+      }
+
+      .bvt-home-icon {
+        width: 27px;
+        height: 27px;
+      }
+
+      .bvt-top {
+        right: 18px;
+        bottom: 18px;
+
+        width: 39px;
+        height: 39px;
+      }
+
       .bvt-hero,
       .bvt-overview,
       .bvt-research,
@@ -1434,7 +1629,7 @@
       }
 
       .bvt-hero {
-        padding-top: 65px;
+        padding-top: 75px;
         padding-bottom: 70px;
       }
 
@@ -1546,6 +1741,14 @@
           rotate(12deg);
       }
 
+      .bvt-footer {
+        flex-direction: column;
+        align-items: flex-start;
+
+        padding-left: 6vw;
+        padding-right: 6vw;
+      }
+
     }
 
 
@@ -1570,52 +1773,21 @@
 
 <body>
 
-<div class="bvt-page">
+<div class="bvt-page" id="top">
 
 
   <!-- =======================================================
-       HEADER
+       BACK TO HOMEPAGE
        ======================================================= -->
 
-  <header>
-
-    <a class="logo" href="index.html">
-      TDL<span>.</span>
-    </a>
-
-    <button
-      id="menu"
-      aria-label="Open menu"
-      aria-expanded="false"
-    >
-      ☰
-    </button>
-
-    <nav>
-
-      <a href="index.html#about">
-        About
-      </a>
-
-      <a href="index.html#experience">
-        Experience
-      </a>
-
-      <a href="index.html#projects">
-        Projects
-      </a>
-
-      <a href="index.html#skills">
-        Skills
-      </a>
-
-      <a href="index.html#contact">
-        Contact
-      </a>
-
-    </nav>
-
-  </header>
+  <a
+    class="bvt-home"
+    href="index.html"
+    aria-label="Back to homepage"
+  >
+    <span class="bvt-home-icon">⌂</span>
+    <span>Back to homepage</span>
+  </a>
 
 
   <!-- =======================================================
@@ -1639,9 +1811,8 @@
         </h1>
 
         <p class="bvt-hero-description">
-          A comprehensive brand research project exploring Buavita's
-          brand identity, consumers, competitors, communications,
-          and strategic issues through qualitative and quantitative research.
+          A brand research project exploring Buavita's identity,
+          consumers, competitors, communications, and strategic issues.
         </p>
 
         <div class="bvt-hero-actions">
@@ -1664,6 +1835,8 @@
 
       </div>
 
+
+      <!-- HERO VISUAL -->
 
       <div
         class="bvt-hero-visual"
@@ -1744,7 +1917,10 @@
          OVERVIEW
          ======================================================= -->
 
-    <section class="bvt-overview">
+    <section
+      class="bvt-overview"
+      id="overview"
+    >
 
       <div class="bvt-overview-grid">
 
@@ -1770,22 +1946,11 @@
           </p>
 
           <p>
-            This project examines Buavita from multiple perspectives,
-            combining brand analysis, consumer research, competitive
-            analysis, marketing communications, and netnography.
-          </p>
-
-          <p>
-            The research was developed as a series of academic marketing
-            studies, with each article examining a different aspect of
-            the brand and its relationship with consumers.
-          </p>
-
-          <p>
-            Together, the studies provide a broader understanding of
-            Buavita's positioning, target market, competitive environment,
-            communication strategy, consumer perceptions, and potential
-            areas for improvement.
+            This project brings together brand analysis,
+            consumer research, competitive analysis,
+            marketing communications, and netnography
+            to understand how Buavita is positioned
+            and perceived by consumers.
           </p>
 
         </div>
@@ -1823,8 +1988,8 @@
         <p class="bvt-research-intro">
           Eight studies. Eight different perspectives.
           Each file examines another part of the brand,
-          gradually moving from observation to interpretation,
-          consumer insight, and strategic thinking.
+          moving from observation to consumer insight
+          and strategic thinking.
         </p>
 
       </div>
@@ -1832,6 +1997,8 @@
 
       <div class="bvt-files-grid">
 
+
+        <!-- FILE 01 -->
 
         <a
           class="bvt-file-card"
@@ -1898,6 +2065,8 @@
         </a>
 
 
+        <!-- FILE 02 -->
+
         <a
           class="bvt-file-card"
           href="https://tamimmah-disma.medium.com/who-are-buavita-s-goal-customers-and-rivals-48ff3c3909b0"
@@ -1956,6 +2125,8 @@
 
         </a>
 
+
+        <!-- FILE 03 -->
 
         <a
           class="bvt-file-card"
@@ -2020,6 +2191,8 @@
         </a>
 
 
+        <!-- FILE 04 -->
+
         <a
           class="bvt-file-card"
           href="https://tamimmah-disma.medium.com/brand-communications-of-buavita-9f6d4746de29"
@@ -2078,6 +2251,8 @@
 
         </a>
 
+
+        <!-- FILE 05 -->
 
         <a
           class="bvt-file-card"
@@ -2144,6 +2319,8 @@
         </a>
 
 
+        <!-- FILE 06 -->
+
         <a
           class="bvt-file-card"
           href="https://tamimmah-disma.medium.com/buavitas-netnography-61ecbf5b9eec"
@@ -2203,6 +2380,8 @@
         </a>
 
 
+        <!-- FILE 07 -->
+
         <a
           class="bvt-file-card"
           href="https://tamimmah-disma.medium.com/buavitas-brand-exploratory-178ee6244a86"
@@ -2261,6 +2440,8 @@
 
         </a>
 
+
+        <!-- FILE 08 -->
 
         <a
           class="bvt-file-card"
@@ -2753,10 +2934,13 @@
 
         <div class="bvt-contact-links">
 
+          <!-- EMAIL -->
+
           <a
             class="bvt-contact-link"
             href="mailto:tamimmadisma@gmail.com"
           >
+
             <span>
               EMAIL
             </span>
@@ -2764,8 +2948,11 @@
             <strong>
               tamimmadisma@gmail.com ↗
             </strong>
+
           </a>
 
+
+          <!-- INSTAGRAM -->
 
           <a
             class="bvt-contact-link"
@@ -2773,6 +2960,7 @@
             target="_blank"
             rel="noopener noreferrer"
           >
+
             <span>
               INSTAGRAM
             </span>
@@ -2780,6 +2968,7 @@
             <strong>
               @miramimmah ↗
             </strong>
+
           </a>
 
         </div>
@@ -2795,9 +2984,11 @@
        FOOTER
        ======================================================= -->
 
-  <footer>
+  <footer class="bvt-footer">
 
-    © 2026 Tamimmah Disma Lestari
+    <span>
+      © 2026 Tamimmah Disma Lestari
+    </span>
 
     <span>
       Built with intention.
@@ -2806,6 +2997,21 @@
   </footer>
 
 
+  <!-- =======================================================
+       BACK TO TOP
+       ======================================================= -->
+
+  <a
+    href="#top"
+    class="bvt-top"
+    aria-label="Back to top"
+    title="Back to top"
+  >
+    ↑
+  </a>
+
+
+  <!-- MAIN WEBSITE JAVASCRIPT -->
   <script src="script.js"></script>
 
 </div>
