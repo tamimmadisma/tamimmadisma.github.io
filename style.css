@@ -1077,7 +1077,7 @@ h3 em {
 
   position: relative;
 
-  padding: 25px 0 60px;
+  padding: 25px 0 65px;
 }
 
 .roadmap-line {
@@ -1105,12 +1105,12 @@ h3 em {
 
 
 /* ---------------------------------------------------------
-   Milestone
+   MILESTONE
 --------------------------------------------------------- */
 
 .milestone {
   width: 50%;
-  min-height: 265px;
+  min-height: 285px;
 
   position: relative;
 
@@ -1133,7 +1133,7 @@ h3 em {
 
 
 /* ---------------------------------------------------------
-   Marker
+   MARKER
 --------------------------------------------------------- */
 
 .milestone-marker {
@@ -1180,7 +1180,7 @@ h3 em {
 
 
 /* ---------------------------------------------------------
-   Milestone card
+   MILESTONE CARD
 --------------------------------------------------------- */
 
 .milestone-card {
@@ -1238,10 +1238,12 @@ h3 em {
 
 
 /* ---------------------------------------------------------
-   Expanded milestone
+   EXPANDED MILESTONE
 --------------------------------------------------------- */
 
 .milestone-expanded {
+  display: block;
+
   max-height: 0;
 
   overflow: hidden;
@@ -1267,22 +1269,22 @@ h3 em {
 
 
 /* ---------------------------------------------------------
-   Three skills
+   JOURNEY SKILLS
 --------------------------------------------------------- */
 
 .journey-skills {
-  margin-top: 20px;
+  margin-top: 21px;
 }
 
 .journey-skills-label {
   display: block;
 
-  margin-bottom: 9px;
+  margin-bottom: 10px;
 
   font-size: 7px;
-  font-weight: 800;
+  font-weight: 700;
 
-  letter-spacing: .16em;
+  letter-spacing: .13em;
   text-transform: uppercase;
 
   color: var(--soft);
@@ -1292,50 +1294,64 @@ h3 em {
   display: flex;
   flex-wrap: wrap;
 
-  gap: 6px;
+  gap: 7px;
 }
 
 .journey-skill {
   display: inline-flex;
   align-items: center;
 
-  min-height: 26px;
+  min-height: 27px;
 
-  padding: 6px 10px;
+  padding: 6px 11px;
 
-  border: 1px solid var(--line);
-  border-radius: 999px;
+  border: 1px solid #d5d2ca;
+  border-radius: 7px 11px 8px 10px;
 
-  background: rgba(255,255,255,.3);
+  background: #e8e5de;
 
-  font-size: 7px;
-  font-weight: 700;
+  font-size: 9px;
+  line-height: 1;
 
-  letter-spacing: .07em;
-  text-transform: uppercase;
+  font-weight: 500;
 
-  color: var(--charcoal);
+  letter-spacing: 0;
+
+  color: #575851;
 
   transition:
     background .25s ease,
     border-color .25s ease,
+    color .25s ease,
     transform .25s var(--ease);
 }
 
-.journey-skill:hover {
-  background: var(--yellow);
-  border-color: var(--yellow);
+.journey-skill:nth-child(2n) {
+  border-radius: 11px 7px 10px 8px;
+}
 
-  transform: translateY(-2px);
+.journey-skill:nth-child(3n) {
+  transform: rotate(-1deg);
+}
+
+.journey-skill:hover {
+  background: #dedbd3;
+  border-color: var(--line-dark);
+
+  color: var(--charcoal);
+
+  transform:
+    translateY(-2px)
+    rotate(0deg);
 }
 
 
 /* ---------------------------------------------------------
-   Active milestone
+   ACTIVE MILESTONE
 --------------------------------------------------------- */
 
 .milestone.active .milestone-expanded {
-  max-height: 330px;
+  max-height: 360px;
 
   padding-top: 18px;
 
@@ -1361,7 +1377,7 @@ h3 em {
 
 
 /* ---------------------------------------------------------
-   Alternating decorative shapes
+   MILESTONE DECORATIVE DOTS
 --------------------------------------------------------- */
 
 .milestone-card::before {
@@ -1407,7 +1423,7 @@ h3 em {
 
 
 /* ---------------------------------------------------------
-   Today
+   TODAY
 --------------------------------------------------------- */
 
 .milestone-today {
@@ -1465,6 +1481,7 @@ h3 em {
 }
 
 .today-card {
+  width: min(650px, 100%);
   min-width: 450px;
 
   padding: 42px 70px 42px 82px;
@@ -3080,7 +3097,7 @@ h3 em {
 
 
 /* ---------------------------------------------------------
-   TikTok stickers
+   TIKTOK STICKERS
 --------------------------------------------------------- */
 
 .tiktok-sticker {
@@ -3471,7 +3488,7 @@ h3 em {
 
 
 /* ---------------------------------------------------------
-   Contact shapes
+   CONTACT SHAPES
 --------------------------------------------------------- */
 
 .contact-shape {
@@ -3688,6 +3705,10 @@ h3 em {
 
   .milestone-card h3 {
     font-size: 25px;
+  }
+
+  .journey-skill {
+    font-size: 8px;
   }
 
 
@@ -4076,7 +4097,7 @@ h3 em {
   }
 
   .milestone.active .milestone-expanded {
-    max-height: 470px;
+    max-height: 500px;
   }
 
   .journey-skills {
@@ -4087,12 +4108,16 @@ h3 em {
     font-size: 6.5px;
   }
 
+  .journey-skill-list {
+    gap: 6px;
+  }
+
   .journey-skill {
     min-height: 25px;
 
     padding: 6px 9px;
 
-    font-size: 6.5px;
+    font-size: 8px;
   }
 
   .milestone-left .milestone-card::before,
@@ -4134,6 +4159,7 @@ h3 em {
 
   .today-card p {
     font-size: 9px;
+    max-width: 290px;
   }
 
 
@@ -4849,7 +4875,9 @@ h3 em {
   }
 
   .journey-skill {
-    font-size: 6px;
+    min-height: 24px;
+
+    font-size: 7px;
 
     padding: 5px 8px;
   }
