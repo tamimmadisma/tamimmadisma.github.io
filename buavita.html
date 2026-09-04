@@ -1,647 +1,2800 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <title>Buavita Brand Strategy · Tamimmah Disma Lestari</title>
+  <title>The Buavita Files · Tamimmah Disma Lestari</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="style.css">
+
+  <style>
+
+    /* =========================================================
+       BUAVITA FILES
+       Page-specific styling
+       ========================================================= */
+
+    .bvt-page {
+      --bvt-cream: #f7f4ee;
+      --bvt-charcoal: #252525;
+      --bvt-green: #6f8f78;
+      --bvt-green-dark: #526d5a;
+      --bvt-turquoise: #63b7b0;
+      --bvt-yellow: #d9df57;
+      --bvt-pink: #d8a4a5;
+      --bvt-soft: #77736d;
+      --bvt-line: rgba(37,37,37,.13);
+
+      background: var(--bvt-cream);
+      color: var(--bvt-charcoal);
+
+      overflow: hidden;
+    }
+
+    .bvt-page *,
+    .bvt-page *::before,
+    .bvt-page *::after {
+      box-sizing: border-box;
+    }
+
+    .bvt-page a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .bvt-page p {
+      margin-top: 0;
+    }
+
+    .bvt-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+
+      font-family: var(--sans);
+      font-size: 8px;
+      line-height: 1;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+
+      color: var(--bvt-soft);
+    }
+
+    .bvt-label::before {
+      content: "";
+
+      width: 23px;
+      height: 1px;
+
+      background: currentColor;
+    }
+
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+
+    .bvt-hero {
+      position: relative;
+
+      min-height: calc(100vh - 70px);
+
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(340px, .85fr);
+      align-items: center;
+      gap: 50px;
+
+      padding: 100px 7vw 90px;
+
+      overflow: hidden;
+    }
+
+    .bvt-hero-copy {
+      position: relative;
+      z-index: 5;
+    }
+
+    .bvt-kicker {
+      display: inline-block;
+
+      margin-bottom: 30px;
+
+      font-family: var(--sans);
+      font-size: 8px;
+      line-height: 1;
+      font-weight: 700;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+
+      color: var(--bvt-green-dark);
+    }
+
+    .bvt-hero h1 {
+      max-width: 850px;
+
+      margin: 0;
+
+      font-family: var(--sans);
+      font-size: clamp(68px, 10.5vw, 155px);
+      line-height: .79;
+      font-weight: 600;
+
+      letter-spacing: -.085em;
+    }
+
+    .bvt-hero h1 em {
+      display: block;
+
+      margin-left: .35em;
+
+      font-family: var(--serif);
+      font-weight: 500;
+      letter-spacing: -.055em;
+    }
+
+    .bvt-hero-description {
+      max-width: 510px;
+
+      margin: 45px 0 28px;
+
+      font-family: var(--sans);
+      font-size: 13px;
+      line-height: 1.85;
+
+      color: #5f5b56;
+    }
+
+    .bvt-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .bvt-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 42px;
+
+      padding: 0 18px;
+
+      border: 1px solid var(--bvt-charcoal);
+
+      font-family: var(--sans);
+      font-size: 8px;
+      line-height: 1;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+
+      transition:
+        transform .25s ease,
+        background .25s ease,
+        color .25s ease;
+    }
+
+    .bvt-button:hover {
+      transform: translateY(-3px);
+
+      background: var(--bvt-charcoal);
+      color: white;
+    }
+
+    .bvt-button.ghost {
+      border-color: var(--bvt-line);
+      color: #66615b;
+    }
+
+    .bvt-button.ghost:hover {
+      background: transparent;
+      color: var(--bvt-charcoal);
+    }
+
+
+    /* =========================================================
+       HERO CASE FILE
+       ========================================================= */
+
+    .bvt-hero-visual {
+      position: relative;
+
+      width: min(100%, 470px);
+      aspect-ratio: 1 / 1;
+
+      margin: auto;
+    }
+
+    .bvt-paper {
+      position: absolute;
+
+      top: 9%;
+      left: 13%;
+
+      width: 74%;
+      height: 79%;
+
+      padding: 30px;
+
+      background: #fffdf8;
+
+      border: 1px solid rgba(37,37,37,.17);
+
+      box-shadow:
+        12px 16px 0 rgba(37,37,37,.07);
+
+      transform: rotate(-5deg);
+
+      z-index: 2;
+    }
+
+    .bvt-paper-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      font-size: 7px;
+      line-height: 1.5;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .bvt-paper-stamp {
+      position: absolute;
+
+      top: 30%;
+      right: 8%;
+
+      padding: 9px 13px;
+
+      border: 1px solid var(--bvt-green-dark);
+
+      font-size: 7px;
+      line-height: 1;
+      font-weight: 700;
+      letter-spacing: .13em;
+
+      color: var(--bvt-green-dark);
+
+      transform: rotate(9deg);
+    }
+
+    .bvt-paper-number {
+      margin-top: 70px;
+
+      font-family: var(--sans);
+      font-size: clamp(80px, 10vw, 120px);
+      line-height: .72;
+      font-weight: 600;
+
+      letter-spacing: -.09em;
+    }
+
+    .bvt-paper-title {
+      margin-top: 28px;
+
+      font-family: var(--serif);
+      font-size: 25px;
+      line-height: 1.03;
+    }
+
+    .bvt-paper-footer {
+      position: absolute;
+
+      left: 30px;
+      bottom: 25px;
+
+      font-size: 7px;
+      line-height: 1.5;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+
+      color: #777;
+    }
+
+    .bvt-sticker {
+      position: absolute;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 105px;
+      height: 105px;
+
+      border-radius: 50%;
+
+      font-family: var(--sans);
+      font-size: 8px;
+      line-height: 1.25;
+      font-weight: 700;
+      text-align: center;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+
+      box-shadow: 5px 7px 0 rgba(37,37,37,.08);
+
+      z-index: 5;
+    }
+
+    .bvt-sticker.yellow {
+      top: 1%;
+      right: 1%;
+
+      background: var(--bvt-yellow);
+
+      transform: rotate(8deg);
+    }
+
+    .bvt-sticker.turquoise {
+      left: 0;
+      bottom: 7%;
+
+      background: var(--bvt-turquoise);
+
+      transform: rotate(-9deg);
+    }
+
+    .bvt-sticker.pink {
+      right: 0;
+      bottom: 2%;
+
+      width: 74px;
+      height: 74px;
+
+      background: var(--bvt-pink);
+
+      transform: rotate(12deg);
+    }
+
+    .bvt-doodle {
+      position: absolute;
+
+      font-family: var(--serif);
+      font-size: 15px;
+      font-style: italic;
+
+      color: var(--bvt-green-dark);
+
+      z-index: 6;
+    }
+
+    .bvt-doodle.one {
+      top: 15%;
+      left: 0;
+
+      transform: rotate(-10deg);
+    }
+
+    .bvt-doodle.two {
+      right: 0;
+      top: 43%;
+
+      transform: rotate(8deg);
+    }
+
+
+    /* =========================================================
+       OVERVIEW
+       ========================================================= */
+
+    .bvt-overview {
+      padding: 125px 7vw;
+
+      border-top: 1px solid var(--bvt-line);
+      border-bottom: 1px solid var(--bvt-line);
+    }
+
+    .bvt-overview-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 90px;
+      align-items: start;
+    }
+
+    .bvt-overview-title {
+      position: sticky;
+      top: 100px;
+    }
+
+    .bvt-overview-title h2 {
+      margin: 22px 0 0;
+
+      font-family: var(--sans);
+      font-size: clamp(43px, 6vw, 82px);
+      line-height: .88;
+      font-weight: 600;
+
+      letter-spacing: -.07em;
+    }
+
+    .bvt-overview-title h2 em {
+      font-family: var(--serif);
+      font-weight: 500;
+    }
+
+    .bvt-overview-copy {
+      padding-top: 8px;
+    }
+
+    .bvt-big-question {
+      max-width: 650px;
+
+      margin: 0 0 35px;
+
+      font-family: var(--sans);
+      font-size: clamp(22px, 3vw, 37px);
+      line-height: 1.12;
+      font-weight: 500;
+
+      letter-spacing: -.035em;
+    }
+
+    .bvt-overview-copy p:not(.bvt-big-question) {
+      max-width: 650px;
+
+      margin-bottom: 20px;
+
+      font-family: var(--sans);
+      font-size: 12px;
+      line-height: 1.9;
+
+      color: #62605b;
+    }
+
+
+    /* =========================================================
+       RESEARCH HEADER
+       ========================================================= */
+
+    .bvt-research {
+      padding: 135px 7vw 110px;
+    }
+
+    .bvt-research-heading {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+
+      margin-bottom: 75px;
+    }
+
+    .bvt-research-heading h2 {
+      margin: 22px 0 0;
+
+      font-family: var(--sans);
+      font-size: clamp(50px, 7vw, 100px);
+      line-height: .83;
+      font-weight: 600;
+
+      letter-spacing: -.075em;
+    }
+
+    .bvt-research-heading h2 em {
+      display: block;
+
+      margin-left: .28em;
+
+      font-family: var(--serif);
+      font-weight: 500;
+    }
+
+    .bvt-research-intro {
+      align-self: end;
+
+      max-width: 430px;
+
+      margin: 0;
+
+      font-size: 12px;
+      line-height: 1.85;
+
+      color: #65615b;
+    }
+
+
+    /* =========================================================
+       RESEARCH GRID
+       ========================================================= */
+
+    .bvt-files-grid {
+      display: grid;
+
+      grid-template-columns: repeat(12, 1fr);
+
+      gap: 17px;
+    }
+
+    .bvt-file-card {
+      position: relative;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      min-height: 390px;
+
+      padding: 30px;
+
+      overflow: hidden;
+
+      border: 1px solid rgba(37,37,37,.12);
+
+      transition:
+        transform .35s cubic-bezier(.2,.8,.2,1),
+        box-shadow .35s ease;
+    }
+
+    .bvt-file-card:hover {
+      transform:
+        translateY(-8px)
+        rotate(-.4deg);
+
+      box-shadow:
+        8px 12px 0 rgba(37,37,37,.07);
+    }
+
+
+    /* individual compositions */
+
+    .bvt-file-card:nth-child(1) {
+      grid-column: span 7;
+
+      background: var(--bvt-yellow);
+
+      min-height: 420px;
+    }
+
+    .bvt-file-card:nth-child(2) {
+      grid-column: span 5;
+
+      background: #fffdf8;
+
+      transform: rotate(1deg);
+    }
+
+    .bvt-file-card:nth-child(3) {
+      grid-column: span 5;
+
+      background: var(--bvt-turquoise);
+
+      transform: rotate(-1deg);
+    }
+
+    .bvt-file-card:nth-child(4) {
+      grid-column: span 7;
+
+      background: #fffdf8;
+    }
+
+    .bvt-file-card:nth-child(5) {
+      grid-column: span 12;
+
+      min-height: 480px;
+
+      background: var(--bvt-green);
+
+      color: white;
+    }
+
+    .bvt-file-card:nth-child(6) {
+      grid-column: span 4;
+
+      background: var(--bvt-pink);
+    }
+
+    .bvt-file-card:nth-child(7) {
+      grid-column: span 4;
+
+      background: #fffdf8;
+    }
+
+    .bvt-file-card:nth-child(8) {
+      grid-column: span 4;
+
+      background: var(--bvt-yellow);
+    }
+
+
+    /* card content */
+
+    .bvt-file-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      gap: 20px;
+    }
+
+    .bvt-file-number {
+      font-size: 11px;
+      line-height: 1;
+      font-weight: 700;
+      letter-spacing: .1em;
+    }
+
+    .bvt-file-category {
+      max-width: 180px;
+
+      font-size: 7px;
+      line-height: 1.3;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-align: right;
+      text-transform: uppercase;
+
+      opacity: .68;
+    }
+
+    .bvt-file-body {
+      margin-top: auto;
+    }
+
+    .bvt-file-card h3 {
+      max-width: 800px;
+
+      margin: 0 0 18px;
+
+      font-family: var(--sans);
+      font-size: clamp(28px, 3.3vw, 51px);
+      line-height: .93;
+      font-weight: 600;
+
+      letter-spacing: -.055em;
+    }
+
+    .bvt-file-card:nth-child(n+6) h3 {
+      font-size: 27px;
+    }
+
+    .bvt-file-card p {
+      max-width: 690px;
+
+      margin: 0 0 22px;
+
+      font-size: 11px;
+      line-height: 1.72;
+
+      opacity: .7;
+    }
+
+    .bvt-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .bvt-tag {
+      display: inline-flex;
+      align-items: center;
+
+      min-height: 22px;
+
+      padding: 5px 9px;
+
+      border: 1px solid currentColor;
+      border-radius: 999px;
+
+      font-size: 7px;
+      line-height: 1;
+      font-weight: 600;
+
+      opacity: .68;
+    }
+
+    .bvt-file-arrow {
+      position: absolute;
+
+      right: 25px;
+      bottom: 20px;
+
+      font-size: 23px;
+      line-height: 1;
+
+      transition:
+        transform .25s ease;
+    }
+
+    .bvt-file-card:hover .bvt-file-arrow {
+      transform: translate(5px,-5px);
+    }
+
+    .bvt-note {
+      position: absolute;
+
+      padding: 8px 12px;
+
+      border: 1px solid rgba(37,37,37,.18);
+      border-radius: 50%;
+
+      background: rgba(255,255,255,.42);
+
+      font-family: var(--serif);
+      font-size: 10px;
+      font-style: italic;
+
+      transform: rotate(-7deg);
+    }
+
+    .bvt-note.start {
+      top: 85px;
+      right: 45px;
+    }
+
+    .bvt-note.turn {
+      top: 110px;
+      right: 70px;
+
+      background: rgba(255,255,255,.12);
+
+      border-color: rgba(255,255,255,.4);
+
+      color: white;
+
+      transform: rotate(7deg);
+    }
+
+    .bvt-file-card::after {
+      content: "";
+
+      position: absolute;
+
+      width: 120px;
+      height: 120px;
+
+      right: -45px;
+      top: -45px;
+
+      border-radius: 50%;
+
+      background: rgba(255,255,255,.18);
+
+      pointer-events: none;
+    }
+
+
+    /* =========================================================
+       RESEARCH MAP
+       ========================================================= */
+
+    .bvt-map {
+      padding: 125px 7vw;
+
+      background: var(--bvt-charcoal);
+
+      color: white;
+    }
+
+    .bvt-map-header {
+      display: grid;
+      grid-template-columns: 1fr .65fr;
+      gap: 70px;
+      align-items: end;
+
+      margin-bottom: 80px;
+    }
+
+    .bvt-map .bvt-label {
+      color: rgba(255,255,255,.48);
+    }
+
+    .bvt-map h2 {
+      max-width: 700px;
+
+      margin: 22px 0 0;
+
+      font-size: clamp(47px, 6vw, 85px);
+      line-height: .87;
+      font-weight: 600;
+
+      letter-spacing: -.065em;
+    }
+
+    .bvt-map h2 em {
+      font-family: var(--serif);
+      font-weight: 500;
+    }
+
+    .bvt-map-intro {
+      max-width: 300px;
+
+      margin: 0;
+
+      font-size: 10px;
+      line-height: 1.8;
+
+      color: rgba(255,255,255,.5);
+    }
+
+    .bvt-map-line {
+      position: relative;
+
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 15px;
+
+      align-items: start;
+    }
+
+    .bvt-map-line::before {
+      content: "";
+
+      position: absolute;
+
+      left: 5%;
+      right: 5%;
+      top: 29px;
+
+      height: 1px;
+
+      background: rgba(255,255,255,.2);
+    }
+
+    .bvt-map-step {
+      position: relative;
+      z-index: 2;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      text-align: center;
+    }
+
+    .bvt-map-dot {
+      width: 58px;
+      height: 58px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+
+      background: var(--bvt-cream);
+
+      color: var(--bvt-charcoal);
+
+      font-size: 8px;
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    .bvt-map-step:nth-child(2) .bvt-map-dot {
+      background: var(--bvt-yellow);
+    }
+
+    .bvt-map-step:nth-child(3) .bvt-map-dot {
+      background: var(--bvt-turquoise);
+    }
+
+    .bvt-map-step:nth-child(4) .bvt-map-dot {
+      background: var(--bvt-pink);
+    }
+
+    .bvt-map-step:nth-child(5) .bvt-map-dot {
+      background: var(--bvt-green);
+      color: white;
+    }
+
+    .bvt-map-title {
+      margin-top: 18px;
+
+      font-size: 8px;
+      line-height: 1;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .bvt-map-caption {
+      max-width: 130px;
+
+      margin-top: 9px;
+
+      font-size: 8px;
+      line-height: 1.5;
+
+      color: rgba(255,255,255,.4);
+    }
+
+
+    /* =========================================================
+       CAPABILITIES
+       ========================================================= */
+
+    .bvt-capabilities {
+      padding: 130px 7vw;
+    }
+
+    .bvt-cap-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 90px;
+      align-items: start;
+    }
+
+    .bvt-cap-title h2 {
+      margin: 22px 0 0;
+
+      font-size: clamp(46px, 6vw, 83px);
+      line-height: .88;
+      font-weight: 600;
+
+      letter-spacing: -.065em;
+    }
+
+    .bvt-cap-title h2 em {
+      font-family: var(--serif);
+      font-weight: 500;
+    }
+
+    .bvt-cap-copy {
+      padding-top: 10px;
+    }
+
+    .bvt-cap-copy > p {
+      max-width: 530px;
+
+      font-size: 12px;
+      line-height: 1.85;
+
+      color: #66625d;
+    }
+
+    .bvt-skill-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+
+      margin-top: 32px;
+    }
+
+    .bvt-skill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 35px;
+
+      padding: 9px 15px;
+
+      border: 1px solid rgba(37,37,37,.1);
+
+      box-shadow: 2px 3px 0 rgba(37,37,37,.05);
+
+      font-size: 8px;
+      line-height: 1;
+      font-weight: 600;
+
+      transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+    }
+
+    .bvt-skill:nth-child(3n+1) {
+      background: var(--bvt-yellow);
+
+      border-radius:
+        48% 52% 45% 55% /
+        55% 45% 55% 45%;
+
+      transform: rotate(-2deg);
+    }
+
+    .bvt-skill:nth-child(3n+2) {
+      background: var(--bvt-turquoise);
+
+      border-radius:
+        55% 45% 52% 48% /
+        45% 55% 48% 52%;
+
+      transform: rotate(2deg);
+    }
+
+    .bvt-skill:nth-child(3n) {
+      background: var(--bvt-pink);
+
+      border-radius:
+        45% 55% 48% 52% /
+        52% 48% 55% 45%;
+
+      transform: rotate(-1deg);
+    }
+
+    .bvt-skill:hover {
+      transform: translateY(-4px) rotate(0deg);
+
+      box-shadow:
+        4px 6px 0 rgba(37,37,37,.08);
+    }
+
+
+    /* =========================================================
+       RESEARCH APPROACH
+       ========================================================= */
+
+    .bvt-approach {
+      padding: 125px 7vw;
+
+      border-top: 1px solid var(--bvt-line);
+    }
+
+    .bvt-approach-header {
+      display: grid;
+      grid-template-columns: 1fr .8fr;
+      gap: 80px;
+      align-items: end;
+
+      margin-bottom: 70px;
+    }
+
+    .bvt-approach-header h2 {
+      margin: 22px 0 0;
+
+      font-size: clamp(46px, 6vw, 82px);
+      line-height: .87;
+      font-weight: 600;
+
+      letter-spacing: -.065em;
+    }
+
+    .bvt-approach-header h2 em {
+      font-family: var(--serif);
+      font-weight: 500;
+    }
+
+    .bvt-approach-intro {
+      max-width: 390px;
+
+      margin: 0;
+
+      font-size: 11px;
+      line-height: 1.8;
+
+      color: #66625d;
+    }
+
+    .bvt-approach-list {
+      border-top: 1px solid var(--bvt-line);
+    }
+
+    .bvt-approach-item {
+      display: grid;
+      grid-template-columns: 80px 1fr 1fr;
+      gap: 35px;
+      align-items: start;
+
+      padding: 38px 0;
+
+      border-bottom: 1px solid var(--bvt-line);
+
+      transition:
+        padding .3s ease,
+        background .3s ease;
+    }
+
+    .bvt-approach-item:hover {
+      padding-left: 15px;
+    }
+
+    .bvt-approach-number {
+      font-size: 11px;
+      line-height: 1;
+      font-weight: 700;
+      letter-spacing: .1em;
+    }
+
+    .bvt-approach-item h3 {
+      margin: 0 0 9px;
+
+      font-size: 23px;
+      line-height: 1;
+      font-weight: 600;
+
+      letter-spacing: -.035em;
+    }
+
+    .bvt-approach-item h4 {
+      margin: 0;
+
+      font-family: var(--serif);
+      font-size: 15px;
+      line-height: 1.1;
+      font-weight: 500;
+    }
+
+    .bvt-approach-item p {
+      max-width: 480px;
+
+      margin: 0;
+
+      font-size: 10px;
+      line-height: 1.8;
+
+      color: #66625d;
+    }
+
+
+    /* =========================================================
+       RELATED WORK
+       ========================================================= */
+
+    .bvt-related {
+      padding: 115px 7vw;
+    }
+
+    .bvt-related-card {
+      position: relative;
+
+      display: grid;
+      grid-template-columns: 120px 1fr 50px;
+      gap: 35px;
+      align-items: center;
+
+      margin-top: 45px;
+
+      padding: 40px;
+
+      background: var(--bvt-yellow);
+
+      border: 1px solid rgba(37,37,37,.1);
+
+      transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+    }
+
+    .bvt-related-card:hover {
+      transform:
+        translateY(-6px)
+        rotate(-.4deg);
+
+      box-shadow:
+        7px 10px 0 rgba(37,37,37,.08);
+    }
+
+    .bvt-related-number {
+      font-size: 55px;
+      line-height: .8;
+      font-weight: 600;
+
+      letter-spacing: -.07em;
+    }
+
+    .bvt-related-category {
+      margin-bottom: 11px;
+
+      font-size: 7px;
+      line-height: 1;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .bvt-related-card h3 {
+      margin: 0 0 10px;
+
+      font-size: 29px;
+      line-height: .98;
+      font-weight: 600;
+
+      letter-spacing: -.045em;
+    }
+
+    .bvt-related-card p {
+      max-width: 650px;
+
+      margin: 0;
+
+      font-size: 10px;
+      line-height: 1.75;
+
+      color: #57544f;
+    }
+
+    .bvt-related-arrow {
+      font-size: 25px;
+    }
+
+
+    /* =========================================================
+       CONTACT
+       ========================================================= */
+
+    .bvt-contact {
+      position: relative;
+
+      min-height: 72vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 100px 7vw;
+
+      overflow: hidden;
+
+      background: var(--bvt-turquoise);
+
+      text-align: center;
+    }
+
+    .bvt-contact::before,
+    .bvt-contact::after {
+      content: "";
+
+      position: absolute;
+
+      border-radius: 50%;
+
+      pointer-events: none;
+    }
+
+    .bvt-contact::before {
+      width: 360px;
+      height: 360px;
+
+      left: -130px;
+      bottom: -150px;
+
+      background: var(--bvt-yellow);
+    }
+
+    .bvt-contact::after {
+      width: 270px;
+      height: 270px;
+
+      right: -90px;
+      top: -100px;
+
+      background: var(--bvt-pink);
+    }
+
+    .bvt-contact-inner {
+      position: relative;
+      z-index: 2;
+    }
+
+    .bvt-contact-label {
+      display: block;
+
+      margin-bottom: 28px;
+
+      font-size: 8px;
+      line-height: 1;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .bvt-contact h2 {
+      margin: 0;
+
+      font-size: clamp(58px, 9vw, 130px);
+      line-height: .8;
+      font-weight: 600;
+
+      letter-spacing: -.08em;
+    }
+
+    .bvt-contact h2 em {
+      display: block;
+
+      font-family: var(--serif);
+      font-weight: 500;
+    }
+
+    .bvt-contact p {
+      max-width: 450px;
+
+      margin: 35px auto 25px;
+
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    .bvt-email {
+      display: inline-flex;
+
+      padding-bottom: 6px;
+
+      border-bottom: 1px solid var(--bvt-charcoal);
+
+      font-size: 10px;
+      line-height: 1;
+      font-weight: 700;
+    }
+
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+
+    @media (max-width: 950px) {
+
+      .bvt-hero {
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+
+        padding-top: 80px;
+      }
+
+      .bvt-hero-visual {
+        margin-top: 10px;
+      }
+
+      .bvt-overview-grid,
+      .bvt-cap-grid {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+      }
+
+      .bvt-overview-title {
+        position: static;
+      }
+
+      .bvt-research-heading,
+      .bvt-map-header,
+      .bvt-approach-header {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+      }
+
+      .bvt-files-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .bvt-file-card:nth-child(n) {
+        grid-column: span 1;
+
+        min-height: 370px;
+      }
+
+      .bvt-file-card:nth-child(5) {
+        grid-column: span 2;
+
+        min-height: 420px;
+      }
+
+      .bvt-map-line {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+      }
+
+      .bvt-map-line::before {
+        top: 29px;
+        bottom: 29px;
+
+        left: 50%;
+        right: auto;
+
+        width: 1px;
+        height: auto;
+      }
+
+      .bvt-approach-item {
+        grid-template-columns: 65px 1fr;
+      }
+
+      .bvt-approach-item p {
+        grid-column: 2;
+      }
+
+    }
+
+
+    @media (max-width: 620px) {
+
+      .bvt-hero,
+      .bvt-overview,
+      .bvt-research,
+      .bvt-map,
+      .bvt-capabilities,
+      .bvt-approach,
+      .bvt-related,
+      .bvt-contact {
+        padding-left: 6vw;
+        padding-right: 6vw;
+      }
+
+      .bvt-hero {
+        padding-top: 65px;
+        padding-bottom: 70px;
+      }
+
+      .bvt-hero h1 {
+        font-size: clamp(57px, 17vw, 95px);
+      }
+
+      .bvt-hero-description {
+        margin-top: 35px;
+      }
+
+      .bvt-hero-visual {
+        transform: scale(.9);
+
+        margin-top: -5px;
+        margin-bottom: -30px;
+      }
+
+      .bvt-paper {
+        padding: 23px;
+      }
+
+      .bvt-paper-footer {
+        left: 23px;
+      }
+
+      .bvt-files-grid {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .bvt-file-card:nth-child(n) {
+        min-height: 350px;
+      }
+
+      .bvt-file-card:nth-child(5) {
+        min-height: 410px;
+      }
+
+      .bvt-file-card:nth-child(6),
+      .bvt-file-card:nth-child(7),
+      .bvt-file-card:nth-child(8) {
+        min-height: 320px;
+      }
+
+      .bvt-file-card h3 {
+        font-size: 31px;
+      }
+
+      .bvt-file-card:nth-child(n+6) h3 {
+        font-size: 27px;
+      }
+
+      .bvt-approach-item {
+        grid-template-columns: 45px 1fr;
+
+        gap: 15px;
+      }
+
+      .bvt-approach-item p {
+        grid-column: 2;
+      }
+
+      .bvt-related-card {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+        padding: 30px;
+      }
+
+      .bvt-related-arrow {
+        display: none;
+      }
+
+      .bvt-contact {
+        min-height: 65vh;
+      }
+
+      .bvt-sticker {
+        transform: scale(.78);
+      }
+
+      .bvt-sticker.yellow {
+        transform:
+          scale(.78)
+          rotate(8deg);
+      }
+
+      .bvt-sticker.turquoise {
+        transform:
+          scale(.78)
+          rotate(-9deg);
+      }
+
+      .bvt-sticker.pink {
+        transform:
+          scale(.78)
+          rotate(12deg);
+      }
+
+    }
+
+
+    /* =========================================================
+       REDUCED MOTION
+       ========================================================= */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .bvt-page *,
+      .bvt-page *::before,
+      .bvt-page *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+
+    }
+
+  </style>
 </head>
+
 
 <body>
 
-<header>
-  <a class="logo" href="index.html">TDL<span>.</span></a>
-
-  <button id="menu">☰</button>
-
-  <nav>
-    <a href="index.html#about">About</a>
-    <a href="index.html#experience">Experience</a>
-    <a href="index.html#projects">Projects</a>
-    <a href="index.html#skills">Skills</a>
-    <a href="index.html#contact">Contact</a>
-  </nav>
-</header>
+<div class="bvt-page">
 
 
-<!-- HERO -->
+  <!-- =======================================================
+       HEADER
+       ======================================================= -->
 
-<section class="hero">
+  <header>
 
-  <div>
-
-    <small>BRAND STRATEGY · CONSUMER RESEARCH</small>
-
-    <h1>
-      Understanding <i>Buavita.</i>
-    </h1>
-
-    <p>
-      A comprehensive brand research project exploring Buavita's
-      brand identity, consumers, competitors, communications,
-      and strategic issues through qualitative and quantitative research.
-    </p>
-
-    <a class="btn" href="#research">
-      Explore the research
+    <a class="logo" href="index.html">
+      TDL<span>.</span>
     </a>
 
-    <a class="btn ghost" href="index.html#projects">
-      ← Back to projects
-    </a>
-
-  </div>
-
-  <div class="initials">BVT</div>
-
-</section>
-
-
-<!-- OVERVIEW -->
-
-<section id="research">
-
-  <small>01 / PROJECT OVERVIEW</small>
-
-  <div class="grid">
-
-    <h2>
-      A closer look at<br>
-      <i>the brand.</i>
-    </h2>
-
-    <div>
-
-      <p>
-        This project examines Buavita from multiple perspectives,
-        combining brand analysis, consumer research, competitive
-        analysis, marketing communications, and netnography.
-      </p>
-
-      <p>
-        The research was developed as a series of academic marketing
-        studies, with each article examining a different aspect of
-        the brand and its relationship with consumers.
-      </p>
-
-      <p>
-        Together, the studies provide a broader understanding of
-        Buavita's positioning, target market, competitive environment,
-        communication strategy, consumer perceptions, and potential
-        areas for improvement.
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- RESEARCH SERIES -->
-
-<section>
-
-  <small>02 / RESEARCH SERIES</small>
-
-  <div class="cards">
-
-
-    <!-- ARTICLE 01 -->
-
-    <a
-      class="project-link"
-      href="https://tamimmah-disma.medium.com/brand-inventory-of-buavita-a9347f192b35"
-      target="_blank"
-      rel="noopener noreferrer"
+    <button
+      id="menu"
+      aria-label="Open menu"
+      aria-expanded="false"
     >
+      ☰
+    </button>
 
-      <article class="featured">
+    <nav>
 
-        <small>01 · BRAND ANALYSIS</small>
-
-        <h2>
-          Brand Inventory of Buavita ↗
-        </h2>
-
-        <p>
-          An analysis of Buavita's brand elements, products,
-          packaging, visual identity, campaigns, events,
-          and marketing activities to understand how the
-          brand presents itself to consumers.
-        </p>
-
-        <b>
-          Brand Identity · Brand Elements · Marketing Activities
-        </b>
-
-      </article>
-
-    </a>
-
-
-    <!-- ARTICLE 02 -->
-
-    <a
-      class="project-link"
-      href="https://tamimmah-disma.medium.com/who-are-buavita-s-goal-customers-and-rivals-48ff3c3909b0"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-
-      <article>
-
-        <small>02 · CONSUMER & COMPETITIVE ANALYSIS</small>
-
-        <h2>
-          Who Are Buavita's Goal Customers & Rivals? ↗
-        </h2>
-
-        <p>
-          Examined Buavita's primary, secondary, and tertiary
-          target customers alongside direct, indirect, and
-          replacement competitors.
-        </p>
-
-        <b>
-          Target Market · Competitor Analysis · Consumer Segmentation
-        </b>
-
-      </article>
-
-    </a>
-
-
-    <!-- ARTICLE 03 -->
-
-    <a
-      class="project-link"
-      href="https://tamimmah-disma.medium.com/buavita-s-point-of-parities-and-diversities-c2ceabd9a7ab"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-
-      <article>
-
-        <small>03 · BRAND POSITIONING</small>
-
-        <h2>
-          Points of Parity & Difference ↗
-        </h2>
-
-        <p>
-          Explored the points of parity and points of difference
-          that shape Buavita's competitive positioning within
-          the packaged fruit juice category.
-        </p>
-
-        <b>
-          Brand Positioning · POP · POD · Competitive Advantage
-        </b>
-
-      </article>
-
-    </a>
-
-
-    <!-- ARTICLE 04 -->
-
-    <a
-      class="project-link"
-      href="https://tamimmah-disma.medium.com/brand-communications-of-buavita-9f6d4746de29"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-
-      <article>
-
-        <small>04 · MARKETING COMMUNICATIONS</small>
-
-        <h2>
-          Brand Communications of Buavita ↗
-        </h2>
-
-        <p>
-          Analyzed how Buavita communicates its brand through
-          advertising, digital platforms, campaigns, social media,
-          and other consumer touchpoints.
-        </p>
-
-        <b>
-          Integrated Marketing · Digital Communication · Campaigns
-        </b>
-
-      </article>
-
-    </a>
-
-
-    <!-- ARTICLE 05 -->
-
-    <a
-      class="project-link"
-      href="https://tamimmah-disma.medium.com/brand-issue-of-buavita-b6153f0d9387"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-
-      <article class="featured">
-
-        <small>05 · STRATEGIC ANALYSIS</small>
-
-        <h2>
-          Brand Issue of Buavita ↗
-        </h2>
-
-        <p>
-          Synthesized findings from Buavita's brand touchpoints,
-          target market, competitors, communications, and consumer
-          interactions to identify key strategic brand issues and
-          opportunities for improvement.
-        </p>
-
-        <b>
-          Strategic Analysis · Consumer Insights · Brand Strategy
-        </b>
-
-      </article>
-
-    </a>
-
-
-    <!-- ARTICLE 06 -->
-
-    <a
-      class="project-link"
-      href="https://tamimmah-disma.medium.com/buavitas-netnography-61ecbf5b9eec"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-
-      <article>
-
-        <small>06 · NETNOGRAPHY</small>
-
-        <h2>
-          Buavita's Netnography ↗
-        </h2>
-
-        <p>
-          Conducted online consumer research by observing and
-          analyzing conversations, comments, and consumer responses
-          across Buavita's digital platforms.
-        </p>
-
-        <b>
-          Netnography · Online Consumer Research · Sentiment Analysis
-        </b>
-
-      </article>
-
-    </a>
-
-
-    <!-- ARTICLE 07 -->
-
-    <a
-      class="project-link"
-      href="https://tamimmah-disma.medium.com/buavitas-brand-exploratory-178ee6244a86"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-
-      <article>
-
-        <small>07 · BRAND EXPLORATORY</small>
-
-        <h2>
-          Buavita's Brand Exploratory ↗
-        </h2>
-
-        <p>
-          Explored consumer perceptions and associations surrounding
-          Buavita to better understand how the brand is experienced
-          and perceived in the marketplace.
-        </p>
-
-        <b>
-          Consumer Perception · Brand Associations · Brand Equity
-        </b>
-
-      </article>
-
-    </a>
-
-
-    <!-- ARTICLE 08 -->
-
-    <a
-      class="project-link"
-      href="https://tamimmah-disma.medium.com/nethnography-qualitative-quantitative-research-of-buavita-6ca28031c7a3"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-
-      <article>
-
-        <small>08 · RESEARCH METHODS</small>
-
-        <h2>
-          Qualitative & Quantitative Research ↗
-        </h2>
-
-        <p>
-          Combined qualitative and quantitative perspectives to
-          examine consumer responses and generate a more comprehensive
-          understanding of Buavita's market and brand position.
-        </p>
-
-        <b>
-          Qualitative Research · Quantitative Research · Consumer Insights
-        </b>
-
-      </article>
-
-    </a>
-
-
-  </div>
-
-</section>
-
-
-<!-- KEY TAKEAWAYS -->
-
-<section>
-
-  <small>03 / WHAT THIS PROJECT DEMONSTRATES</small>
-
-  <div class="grid">
-
-    <h2>
-      From research<br>
-      <i>to strategy.</i>
-    </h2>
-
-    <div>
-
-      <p>
-        The project demonstrates my ability to approach a brand
-        from multiple angles rather than relying on a single source
-        of consumer or market information.
-      </p>
-
-      <div class="skills">
-
-        <span>Brand Strategy</span>
-        <span>Consumer Research</span>
-        <span>Netnography</span>
-        <span>Competitive Analysis</span>
-        <span>Market Analysis</span>
-        <span>Consumer Insights</span>
-        <span>Marketing Communications</span>
-        <span>Qualitative Research</span>
-        <span>Quantitative Research</span>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- RESEARCH APPROACH -->
-
-<section>
-
-  <small>04 / RESEARCH APPROACH</small>
-
-  <div class="list">
-
-
-    <article>
-
-      <time>01</time>
-
-      <div>
-
-        <h3>
-          Understand the Brand
-        </h3>
-
-        <h4>
-          Brand Inventory
-        </h4>
-
-        <p>
-          Examined Buavita's brand elements, products,
-          packaging, campaigns, and consumer-facing activities
-          to establish the foundation for the analysis.
-        </p>
-
-      </div>
-
-    </article>
-
-
-    <article>
-
-      <time>02</time>
-
-      <div>
-
-        <h3>
-          Understand the Market
-        </h3>
-
-        <h4>
-          Consumers & Competitors
-        </h4>
-
-        <p>
-          Identified target customer groups and analyzed the
-          competitive landscape to understand Buavita's position
-          within the category.
-        </p>
-
-      </div>
-
-    </article>
-
-
-    <article>
-
-      <time>03</time>
-
-      <div>
-
-        <h3>
-          Understand the Consumer
-        </h3>
-
-        <h4>
-          Netnography & Brand Exploratory
-        </h4>
-
-        <p>
-          Examined online consumer conversations, responses,
-          perceptions, and associations to uncover consumer-level
-          insights.
-        </p>
-
-      </div>
-
-    </article>
-
-
-    <article>
-
-      <time>04</time>
-
-      <div>
-
-        <h3>
-          Translate Insights
-        </h3>
-
-        <h4>
-          Strategic Brand Issues
-        </h4>
-
-        <p>
-          Connected the research findings to Buavita's communication,
-          positioning, and broader strategic challenges to identify
-          potential areas for improvement.
-        </p>
-
-      </div>
-
-    </article>
-
-
-  </div>
-
-</section>
-
-
-<!-- RELATED PROJECT -->
-
-<section>
-
-  <small>05 / RELATED WORK</small>
-
-  <div class="cards">
-
-    <a
-      class="project-link"
-      href="Consumer_Purchase_Intention_Traditional_Chips.pdf"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-
-      <article class="featured">
-
-        <small>
-          CONSUMER RESEARCH · QUANTITATIVE
-        </small>
-
-        <h2>
-          Understanding Purchase Intention ↗
-        </h2>
-
-        <p>
-          Quantitative consumer research on purchase intention
-          toward traditional chips in Jakarta supermarkets using
-          SPSS, principal component analysis, and multiple linear
-          regression.
-        </p>
-
-        <b>
-          Consumer Research · SPSS · PCA · Regression
-        </b>
-
-      </article>
-
-    </a>
-
-  </div>
-
-</section>
-
-
-<!-- CONTACT -->
-
-<section id="contact">
-
-  <small>06 / CONTACT</small>
-
-  <div class="contact">
-
-    <small>
-      LET'S CONNECT
-    </small>
-
-    <h2>
-      Have an idea?<br>
-      <i>Let's talk.</i>
-    </h2>
-
-    <p>
-      Open to opportunities involving marketing, consumer insights,
-      business development, and related projects.
-    </p>
-
-    <a
-      class="email"
-      href="mailto:your.email@example.com"
-    >
-      your.email@example.com ↗
-    </a>
-
-    <div class="social">
-
-      <a href="#">
-        LinkedIn
+      <a href="index.html#about">
+        About
       </a>
 
-      <a href="#">
-        Instagram
+      <a href="index.html#experience">
+        Experience
       </a>
 
-      <a href="#">
-        X
+      <a href="index.html#projects">
+        Projects
       </a>
 
-    </div>
+      <a href="index.html#skills">
+        Skills
+      </a>
 
-  </div>
+      <a href="index.html#contact">
+        Contact
+      </a>
 
-</section>
+    </nav>
 
-
-<!-- FOOTER -->
-
-<footer>
-
-  © 2026 Tamimmah Disma Lestari
-
-  <span>
-    Built with intention.
-  </span>
-
-</footer>
+  </header>
 
 
-<script src="script.js"></script>
+  <!-- =======================================================
+       HERO
+       ======================================================= -->
+
+  <main>
+
+    <section class="bvt-hero">
+
+      <div class="bvt-hero-copy">
+
+        <span class="bvt-kicker">
+          Brand Strategy · Consumer Research
+        </span>
+
+        <h1>
+          The
+          <em>Buavita</em>
+          Files.
+        </h1>
+
+        <p class="bvt-hero-description">
+          A comprehensive brand research project exploring Buavita's
+          brand identity, consumers, competitors, communications,
+          and strategic issues through qualitative and quantitative research.
+        </p>
+
+        <div class="bvt-hero-actions">
+
+          <a
+            class="bvt-button"
+            href="#research"
+          >
+            Open the files ↓
+          </a>
+
+          <a
+            class="bvt-button ghost"
+            href="index.html#projects"
+          >
+            ← Back to projects
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- CASE FILE VISUAL -->
+
+      <div
+        class="bvt-hero-visual"
+        aria-hidden="true"
+      >
+
+        <span class="bvt-doodle one">
+          a closer look →
+        </span>
+
+        <span class="bvt-doodle two">
+          8 perspectives
+        </span>
+
+
+        <div class="bvt-paper">
+
+          <div class="bvt-paper-top">
+
+            <span>
+              Case No. 01
+            </span>
+
+            <span>
+              BVT / TDL
+            </span>
+
+          </div>
+
+
+          <div class="bvt-paper-number">
+            08
+          </div>
+
+
+          <div class="bvt-paper-title">
+            ways of looking<br>
+            at a brand.
+          </div>
+
+
+          <div class="bvt-paper-stamp">
+            RESEARCHED
+          </div>
+
+
+          <div class="bvt-paper-footer">
+            BUAVITA / BRAND RESEARCH<br>
+            Tamimmah Disma Lestari
+          </div>
+
+        </div>
+
+
+        <div class="bvt-sticker yellow">
+          BRAND<br>
+          +<br>
+          CONSUMER
+        </div>
+
+
+        <div class="bvt-sticker turquoise">
+          LOOK<br>
+          CLOSER
+        </div>
+
+
+        <div class="bvt-sticker pink">
+          BVT
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         OVERVIEW
+         ======================================================= -->
+
+    <section class="bvt-overview">
+
+      <div class="bvt-overview-grid">
+
+
+        <div class="bvt-overview-title">
+
+          <span class="bvt-label">
+            01 / The case
+          </span>
+
+          <h2>
+            One brand.<br>
+            <em>Eight questions.</em>
+          </h2>
+
+        </div>
+
+
+        <div class="bvt-overview-copy">
+
+          <p class="bvt-big-question">
+            What does Buavita want to be —
+            and how is it actually experienced by consumers?
+          </p>
+
+          <p>
+            This project examines Buavita from multiple perspectives,
+            combining brand analysis, consumer research, competitive
+            analysis, marketing communications, and netnography.
+          </p>
+
+          <p>
+            The research was developed as a series of academic marketing
+            studies, with each article examining a different aspect of
+            the brand and its relationship with consumers.
+          </p>
+
+          <p>
+            Together, the studies provide a broader understanding of
+            Buavita's positioning, target market, competitive environment,
+            communication strategy, consumer perceptions, and potential
+            areas for improvement.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         RESEARCH SERIES
+         ======================================================= -->
+
+    <section
+      class="bvt-research"
+      id="research"
+    >
+
+      <div class="bvt-research-heading">
+
+        <div>
+
+          <span class="bvt-label">
+            02 / Research series
+          </span>
+
+          <h2>
+            Follow<br>
+            the <em>trail.</em>
+          </h2>
+
+        </div>
+
+
+        <p class="bvt-research-intro">
+          Eight studies. Eight different perspectives.
+          Each file examines another part of the brand,
+          gradually moving from observation to interpretation,
+          consumer insight, and strategic thinking.
+        </p>
+
+      </div>
+
+
+      <div class="bvt-files-grid">
+
+
+        <!-- ===================================================
+             FILE 01
+             =================================================== -->
+
+        <a
+          class="bvt-file-card"
+          href="https://tamimmah-disma.medium.com/brand-inventory-of-buavita-a9347f192b35"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <div class="bvt-file-top">
+
+            <span class="bvt-file-number">
+              01
+            </span>
+
+            <span class="bvt-file-category">
+              Brand analysis
+            </span>
+
+          </div>
+
+
+          <span class="bvt-note start">
+            start here
+          </span>
+
+
+          <div class="bvt-file-body">
+
+            <h3>
+              Brand Inventory<br>
+              of Buavita ↗
+            </h3>
+
+            <p>
+              An analysis of Buavita's brand elements, products,
+              packaging, visual identity, campaigns, events,
+              and marketing activities to understand how the
+              brand presents itself to consumers.
+            </p>
+
+            <div class="bvt-tags">
+
+              <span class="bvt-tag">
+                Brand Identity
+              </span>
+
+              <span class="bvt-tag">
+                Brand Elements
+              </span>
+
+              <span class="bvt-tag">
+                Marketing Activities
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <span class="bvt-file-arrow">
+            ↗
+          </span>
+
+        </a>
+
+
+        <!-- ===================================================
+             FILE 02
+             =================================================== -->
+
+        <a
+          class="bvt-file-card"
+          href="https://tamimmah-disma.medium.com/who-are-buavita-s-goal-customers-and-rivals-48ff3c3909b0"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <div class="bvt-file-top">
+
+            <span class="bvt-file-number">
+              02
+            </span>
+
+            <span class="bvt-file-category">
+              Consumer & Competitive Analysis
+            </span>
+
+          </div>
+
+
+          <div class="bvt-file-body">
+
+            <h3>
+              Who Are Buavita's
+              Goal Customers & Rivals? ↗
+            </h3>
+
+            <p>
+              Examined Buavita's primary, secondary, and tertiary
+              target customers alongside direct, indirect, and
+              replacement competitors.
+            </p>
+
+            <div class="bvt-tags">
+
+              <span class="bvt-tag">
+                Target Market
+              </span>
+
+              <span class="bvt-tag">
+                Competitor Analysis
+              </span>
+
+              <span class="bvt-tag">
+                Consumer Segmentation
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <span class="bvt-file-arrow">
+            ↗
+          </span>
+
+        </a>
+
+
+        <!-- ===================================================
+             FILE 03
+             =================================================== -->
+
+        <a
+          class="bvt-file-card"
+          href="https://tamimmah-disma.medium.com/buavita-s-point-of-parities-and-diversities-c2ceabd9a7ab"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <div class="bvt-file-top">
+
+            <span class="bvt-file-number">
+              03
+            </span>
+
+            <span class="bvt-file-category">
+              Brand positioning
+            </span>
+
+          </div>
+
+
+          <div class="bvt-file-body">
+
+            <h3>
+              Points of Parity<br>
+              & Difference ↗
+            </h3>
+
+            <p>
+              Explored the points of parity and points of difference
+              that shape Buavita's competitive positioning within
+              the packaged fruit juice category.
+            </p>
+
+            <div class="bvt-tags">
+
+              <span class="bvt-tag">
+                Brand Positioning
+              </span>
+
+              <span class="bvt-tag">
+                POP
+              </span>
+
+              <span class="bvt-tag">
+                POD
+              </span>
+
+              <span class="bvt-tag">
+                Competitive Advantage
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <span class="bvt-file-arrow">
+            ↗
+          </span>
+
+        </a>
+
+
+        <!-- ===================================================
+             FILE 04
+             =================================================== -->
+
+        <a
+          class="bvt-file-card"
+          href="https://tamimmah-disma.medium.com/brand-communications-of-buavita-9f6d4746de29"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <div class="bvt-file-top">
+
+            <span class="bvt-file-number">
+              04
+            </span>
+
+            <span class="bvt-file-category">
+              Marketing communications
+            </span>
+
+          </div>
+
+
+          <div class="bvt-file-body">
+
+            <h3>
+              Brand Communications<br>
+              of Buavita ↗
+            </h3>
+
+            <p>
+              Analyzed how Buavita communicates its brand through
+              advertising, digital platforms, campaigns, social media,
+              and other consumer touchpoints.
+            </p>
+
+            <div class="bvt-tags">
+
+              <span class="bvt-tag">
+                Integrated Marketing
+              </span>
+
+              <span class="bvt-tag">
+                Digital Communication
+              </span>
+
+              <span class="bvt-tag">
+                Campaigns
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <span class="bvt-file-arrow">
+            ↗
+          </span>
+
+        </a>
+
+
+        <!-- ===================================================
+             FILE 05 — TURNING POINT
+             =================================================== -->
+
+        <a
+          class="bvt-file-card"
+          href="https://tamimmah-disma.medium.com/brand-issue-of-buavita-b6153f0d9387"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <div class="bvt-file-top">
+
+            <span class="bvt-file-number">
+              05
+            </span>
+
+            <span class="bvt-file-category">
+              Strategic analysis
+            </span>
+
+          </div>
+
+
+          <span class="bvt-note turn">
+            the turning point
+          </span>
+
+
+          <div class="bvt-file-body">
+
+            <h3>
+              So...<br>
+              What's the issue?
+            </h3>
+
+            <p>
+              Synthesized findings from Buavita's brand touchpoints,
+              target market, competitors, communications, and consumer
+              interactions to identify key strategic brand issues and
+              opportunities for improvement.
+            </p>
+
+            <div class="bvt-tags">
+
+              <span class="bvt-tag">
+                Strategic Analysis
+              </span>
+
+              <span class="bvt-tag">
+                Consumer Insights
+              </span>
+
+              <span class="bvt-tag">
+                Brand Strategy
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <span class="bvt-file-arrow">
+            ↗
+          </span>
+
+        </a>
+
+
+        <!-- ===================================================
+             FILE 06
+             =================================================== -->
+
+        <a
+          class="bvt-file-card"
+          href="https://tamimmah-disma.medium.com/buavitas-netnography-61ecbf5b9eec"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <div class="bvt-file-top">
+
+            <span class="bvt-file-number">
+              06
+            </span>
+
+            <span class="bvt-file-category">
+              Netnography
+            </span>
+
+          </div>
+
+
+          <div class="bvt-file-body">
+
+            <h3>
+              Buavita's<br>
+              Netnography ↗
+            </h3>
+
+            <p>
+              Conducted online consumer research by observing and
+              analyzing conversations, comments, and consumer responses
+              across Buavita's digital platforms.
+            </p>
+
+            <div class="bvt-tags">
+
+              <span class="bvt-tag">
+                Netnography
+              </span>
+
+              <span class="bvt-tag">
+                Online Consumer Research
+              </span>
+
+              <span class="bvt-tag">
+                Sentiment Analysis
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <span class="bvt-file-arrow">
+            ↗
+          </span>
+
+        </a>
+
+
+        <!-- ===================================================
+             FILE 07
+             =================================================== -->
+
+        <a
+          class="bvt-file-card"
+          href="https://tamimmah-disma.medium.com/buavitas-brand-exploratory-178ee6244a86"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <div class="bvt-file-top">
+
+            <span class="bvt-file-number">
+              07
+            </span>
+
+            <span class="bvt-file-category">
+              Brand exploratory
+            </span>
+
+          </div>
+
+
+          <div class="bvt-file-body">
+
+            <h3>
+              Buavita's<br>
+              Brand Exploratory ↗
+            </h3>
+
+            <p>
+              Explored consumer perceptions and associations surrounding
+              Buavita to better understand how the brand is experienced
+              and perceived in the marketplace.
+            </p>
+
+            <div class="bvt-tags">
+
+              <span class="bvt-tag">
+                Consumer Perception
+              </span>
+
+              <span class="bvt-tag">
+                Brand Associations
+              </span>
+
+              <span class="bvt-tag">
+                Brand Equity
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <span class="bvt-file-arrow">
+            ↗
+          </span>
+
+        </a>
+
+
+        <!-- ===================================================
+             FILE 08
+             =================================================== -->
+
+        <a
+          class="bvt-file-card"
+          href="https://tamimmah-disma.medium.com/nethnography-qualitative-quantitative-research-of-buavita-6ca28031c7a3"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <div class="bvt-file-top">
+
+            <span class="bvt-file-number">
+              08
+            </span>
+
+            <span class="bvt-file-category">
+              Research methods
+            </span>
+
+          </div>
+
+
+          <div class="bvt-file-body">
+
+            <h3>
+              Qualitative &<br>
+              Quantitative Research ↗
+            </h3>
+
+            <p>
+              Combined qualitative and quantitative perspectives to
+              examine consumer responses and generate a more comprehensive
+              understanding of Buavita's market and brand position.
+            </p>
+
+            <div class="bvt-tags">
+
+              <span class="bvt-tag">
+                Qualitative Research
+              </span>
+
+              <span class="bvt-tag">
+                Quantitative Research
+              </span>
+
+              <span class="bvt-tag">
+                Consumer Insights
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <span class="bvt-file-arrow">
+            ↗
+          </span>
+
+        </a>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         RESEARCH MAP
+         ======================================================= -->
+
+    <section class="bvt-map">
+
+      <div class="bvt-map-header">
+
+        <div>
+
+          <span class="bvt-label">
+            The bigger picture
+          </span>
+
+          <h2>
+            From looking<br>
+            <em>to understanding.</em>
+          </h2>
+
+        </div>
+
+
+        <p class="bvt-map-intro">
+          The eight studies don't stand alone.
+          They connect into a single research journey —
+          moving from the brand itself toward consumers,
+          insights, and strategy.
+        </p>
+
+      </div>
+
+
+      <div class="bvt-map-line">
+
+
+        <div class="bvt-map-step">
+
+          <div class="bvt-map-dot">
+            01
+          </div>
+
+          <div class="bvt-map-title">
+            Brand
+          </div>
+
+          <div class="bvt-map-caption">
+            What is Buavita?
+          </div>
+
+        </div>
+
+
+        <div class="bvt-map-step">
+
+          <div class="bvt-map-dot">
+            02
+          </div>
+
+          <div class="bvt-map-title">
+            Market
+          </div>
+
+          <div class="bvt-map-caption">
+            Where does it compete?
+          </div>
+
+        </div>
+
+
+        <div class="bvt-map-step">
+
+          <div class="bvt-map-dot">
+            03
+          </div>
+
+          <div class="bvt-map-title">
+            Consumer
+          </div>
+
+          <div class="bvt-map-caption">
+            Who experiences it?
+          </div>
+
+        </div>
+
+
+        <div class="bvt-map-step">
+
+          <div class="bvt-map-dot">
+            04
+          </div>
+
+          <div class="bvt-map-title">
+            Insight
+          </div>
+
+          <div class="bvt-map-caption">
+            What can we learn?
+          </div>
+
+        </div>
+
+
+        <div class="bvt-map-step">
+
+          <div class="bvt-map-dot">
+            05
+          </div>
+
+          <div class="bvt-map-title">
+            Strategy
+          </div>
+
+          <div class="bvt-map-caption">
+            Where can it go?
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         CAPABILITIES
+         ======================================================= -->
+
+    <section class="bvt-capabilities">
+
+      <div class="bvt-cap-grid">
+
+
+        <div class="bvt-cap-title">
+
+          <span class="bvt-label">
+            03 / What this demonstrates
+          </span>
+
+          <h2>
+            From research<br>
+            <em>to strategy.</em>
+          </h2>
+
+        </div>
+
+
+        <div class="bvt-cap-copy">
+
+          <p>
+            The project demonstrates my ability to approach a brand
+            from multiple angles rather than relying on a single source
+            of consumer or market information.
+          </p>
+
+
+          <div class="bvt-skill-cloud">
+
+            <span class="bvt-skill">
+              Brand Strategy
+            </span>
+
+            <span class="bvt-skill">
+              Consumer Research
+            </span>
+
+            <span class="bvt-skill">
+              Netnography
+            </span>
+
+            <span class="bvt-skill">
+              Competitive Analysis
+            </span>
+
+            <span class="bvt-skill">
+              Market Analysis
+            </span>
+
+            <span class="bvt-skill">
+              Consumer Insights
+            </span>
+
+            <span class="bvt-skill">
+              Marketing Communications
+            </span>
+
+            <span class="bvt-skill">
+              Qualitative Research
+            </span>
+
+            <span class="bvt-skill">
+              Quantitative Research
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         RESEARCH APPROACH
+         ======================================================= -->
+
+    <section class="bvt-approach">
+
+      <div class="bvt-approach-header">
+
+        <div>
+
+          <span class="bvt-label">
+            04 / Research approach
+          </span>
+
+          <h2>
+            How the<br>
+            <em>investigation</em><br>
+            unfolded.
+          </h2>
+
+        </div>
+
+
+        <p class="bvt-approach-intro">
+          Four connected stages moved the project from understanding
+          the brand itself toward identifying strategic issues
+          and potential areas for improvement.
+        </p>
+
+      </div>
+
+
+      <div class="bvt-approach-list">
+
+
+        <article class="bvt-approach-item">
+
+          <span class="bvt-approach-number">
+            01
+          </span>
+
+          <div>
+
+            <h3>
+              Understand the Brand
+            </h3>
+
+            <h4>
+              Brand Inventory
+            </h4>
+
+          </div>
+
+          <p>
+            Examined Buavita's brand elements, products,
+            packaging, campaigns, and consumer-facing activities
+            to establish the foundation for the analysis.
+          </p>
+
+        </article>
+
+
+        <article class="bvt-approach-item">
+
+          <span class="bvt-approach-number">
+            02
+          </span>
+
+          <div>
+
+            <h3>
+              Understand the Market
+            </h3>
+
+            <h4>
+              Consumers & Competitors
+            </h4>
+
+          </div>
+
+          <p>
+            Identified target customer groups and analyzed the
+            competitive landscape to understand Buavita's position
+            within the category.
+          </p>
+
+        </article>
+
+
+        <article class="bvt-approach-item">
+
+          <span class="bvt-approach-number">
+            03
+          </span>
+
+          <div>
+
+            <h3>
+              Understand the Consumer
+            </h3>
+
+            <h4>
+              Netnography & Brand Exploratory
+            </h4>
+
+          </div>
+
+          <p>
+            Examined online consumer conversations, responses,
+            perceptions, and associations to uncover consumer-level
+            insights.
+          </p>
+
+        </article>
+
+
+        <article class="bvt-approach-item">
+
+          <span class="bvt-approach-number">
+            04
+          </span>
+
+          <div>
+
+            <h3>
+              Translate Insights
+            </h3>
+
+            <h4>
+              Strategic Brand Issues
+            </h4>
+
+          </div>
+
+          <p>
+            Connected the research findings to Buavita's communication,
+            positioning, and broader strategic challenges to identify
+            potential areas for improvement.
+          </p>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         RELATED WORK
+         ======================================================= -->
+
+    <section class="bvt-related">
+
+      <span class="bvt-label">
+        05 / Related work
+      </span>
+
+
+      <a
+        class="bvt-related-card"
+        href="Consumer_Purchase_Intention_Traditional_Chips.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <div class="bvt-related-number">
+          01
+        </div>
+
+
+        <div>
+
+          <div class="bvt-related-category">
+            Consumer Research · Quantitative
+          </div>
+
+          <h3>
+            Understanding Purchase Intention ↗
+          </h3>
+
+          <p>
+            Quantitative consumer research on purchase intention
+            toward traditional chips in Jakarta supermarkets using
+            SPSS, principal component analysis, and multiple linear
+            regression.
+          </p>
+
+        </div>
+
+
+        <div class="bvt-related-arrow">
+          ↗
+        </div>
+
+      </a>
+
+    </section>
+
+
+    <!-- =======================================================
+         CONTACT
+         ======================================================= -->
+
+    <section
+      class="bvt-contact"
+      id="contact"
+    >
+
+      <div class="bvt-contact-inner">
+
+        <span class="bvt-contact-label">
+          06 / Contact
+        </span>
+
+        <h2>
+          Have an idea?
+          <em>Let's talk.</em>
+        </h2>
+
+        <p>
+          Open to opportunities involving marketing,
+          consumer insights, business development,
+          and related projects.
+        </p>
+
+        <a
+          class="bvt-email"
+          href="mailto:your.email@example.com"
+        >
+          your.email@example.com ↗
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =======================================================
+       FOOTER
+       ======================================================= -->
+
+  <footer>
+
+    © 2026 Tamimmah Disma Lestari
+
+    <span>
+      Built with intention.
+    </span>
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</div>
 
 </body>
 </html>
