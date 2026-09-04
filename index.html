@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -7,12 +8,16 @@
 
   <title>Tamimmah Disma Lestari — Marketing & Consumer Insights</title>
 
-  <meta
-    name="description"
-    content="Tamimmah Disma Lestari — Business Management graduate specializing in marketing, consumer insights, business development, and creative strategy."
-  >
+<meta
+name="description"
+content="Tamimmah Disma Lestari — Business Management graduate specializing in marketing, consumer insights, business development, and creative strategy."
 
-  <!-- GOOGLE FONTS -->
+>
+
+  <!-- =========================================================
+       GOOGLE FONTS
+  ========================================================= -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -21,13 +26,1271 @@
     rel="stylesheet"
   >
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+  <!-- =========================================================
+       CSS
+  ========================================================= -->
+
+  <style>
+
+    /* =========================================================
+       RESET
+    ========================================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: #f7f6f2;
+      color: #171717;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    ::selection {
+      background: #171717;
+      color: #f7f6f2;
+    }
+
+
+    /* =========================================================
+       VARIABLES
+    ========================================================= */
+
+    :root {
+      --bg: #f7f6f2;
+      --text: #171717;
+      --muted: #777;
+      --line: #d8d6cf;
+      --soft: #eceae3;
+      --serif: "Playfair Display", serif;
+      --sans: "DM Sans", sans-serif;
+    }
+
+
+    /* =========================================================
+       HEADER
+    ========================================================= */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 82px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 0 5vw;
+
+      background: rgba(247, 246, 242, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+
+      border-bottom: 1px solid rgba(23, 23, 23, 0.08);
+
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: -0.05em;
+    }
+
+    .logo span {
+      font-family: var(--serif);
+      font-style: italic;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    nav a {
+      position: relative;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 1px;
+      background: var(--text);
+      transition: width 0.25s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    #menu {
+      display: none;
+
+      width: 46px;
+      height: 46px;
+
+      border: 1px solid var(--text);
+      border-radius: 50%;
+
+      background: transparent;
+      color: var(--text);
+
+      cursor: pointer;
+
+      font-size: 1.15rem;
+      line-height: 1;
+
+      align-items: center;
+      justify-content: center;
+    }
+
+
+    /* =========================================================
+       MOBILE MENU
+    ========================================================= */
+
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+
+      background: var(--bg);
+
+      z-index: 999;
+
+      padding: 120px 7vw 50px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+
+      transform: translateY(-20px);
+
+      transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        visibility 0.3s ease;
+    }
+
+    .mobile-menu.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .mobile-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .mobile-nav a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 15px 0;
+
+      border-bottom: 1px solid var(--line);
+
+      font-size: clamp(1.6rem, 7vw, 3rem);
+      letter-spacing: -0.05em;
+      font-weight: 500;
+    }
+
+    .mobile-nav a span {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 0.8em;
+    }
+
+    .mobile-footer {
+      display: flex;
+      justify-content: space-between;
+
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+    }
+
+
+    /* =========================================================
+       GLOBAL SECTIONS
+    ========================================================= */
+
+    section {
+      padding: 130px 7vw;
+      border-bottom: 1px solid var(--line);
+      scroll-margin-top: 80px;
+    }
+
+    section > small {
+      display: block;
+
+      margin-bottom: 70px;
+
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+
+      color: var(--muted);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      line-height: 1.05;
+    }
+
+    h1,
+    h2 {
+      letter-spacing: -0.055em;
+    }
+
+    h1 i,
+    h2 i {
+      font-family: var(--serif);
+      font-weight: 500;
+    }
+
+    p {
+      color: #505050;
+    }
+
+    strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      min-height: 100vh;
+
+      padding: 150px 7vw 80px;
+
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
+      gap: 7vw;
+
+      align-items: center;
+
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .hero-name {
+      margin-bottom: 15px;
+
+      font-size: 0.72rem;
+      font-weight: 700;
+
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .hero-content > small {
+      display: block;
+
+      margin-bottom: 30px;
+
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+
+      color: var(--muted);
+    }
+
+    .hero h1 {
+      max-width: 850px;
+
+      font-size: clamp(3.4rem, 7vw, 7.8rem);
+
+      font-weight: 500;
+    }
+
+    .hero-keywords {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+
+      margin: 38px 0 28px;
+    }
+
+    .hero-keywords span {
+      padding: 8px 14px;
+
+      border: 1px solid var(--line);
+      border-radius: 999px;
+
+      font-size: 0.72rem;
+      font-weight: 500;
+    }
+
+    .hero-content > p {
+      max-width: 620px;
+
+      font-size: 1rem;
+    }
+
+
+    /* =========================================================
+       HERO BUTTONS
+    ========================================================= */
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+
+      margin-top: 38px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+
+      min-height: 50px;
+      padding: 13px 22px;
+
+      border: 1px solid var(--text);
+      border-radius: 999px;
+
+      background: var(--text);
+      color: var(--bg);
+
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+
+      transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn.ghost {
+      background: transparent;
+      color: var(--text);
+    }
+
+    .btn.ghost:hover {
+      background: var(--text);
+      color: var(--bg);
+    }
+
+
+    /* =========================================================
+       HERO EXPLORE NAVIGATION
+    ========================================================= */
+
+    .hero-explore {
+      margin-top: 55px;
+      max-width: 720px;
+    }
+
+    .hero-explore-label {
+      margin-bottom: 12px;
+
+      font-size: 0.66rem;
+      font-weight: 700;
+
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+
+      color: var(--muted);
+    }
+
+    .explore-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      border-top: 1px solid var(--text);
+      border-bottom: 1px solid var(--text);
+    }
+
+    .explore-item {
+      min-height: 72px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 14px 14px 14px 0;
+
+      font-size: 0.72rem;
+      font-weight: 700;
+
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+
+      transition:
+        padding 0.25s ease,
+        background 0.25s ease;
+    }
+
+    .explore-item:not(:last-child) {
+      border-right: 1px solid var(--line);
+      padding-right: 14px;
+      margin-right: 14px;
+    }
+
+    .explore-item:hover {
+      padding-left: 10px;
+    }
+
+    .explore-arrow {
+      font-size: 1rem;
+      transition: transform 0.25s ease;
+    }
+
+    .explore-item:hover .explore-arrow {
+      transform: translate(4px, -4px);
+    }
+
+
+    /* =========================================================
+       HERO PHOTO
+    ========================================================= */
+
+    .hero-photo {
+      width: min(100%, 440px);
+      justify-self: end;
+
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      aspect-ratio: 0.82;
+      object-fit: cover;
+
+      filter: grayscale(100%);
+
+      transition: filter 0.4s ease;
+    }
+
+    .hero-photo:hover img {
+      filter: grayscale(0%);
+    }
+
+    .initials {
+      position: absolute;
+
+      right: 2vw;
+      bottom: 5vw;
+
+      font-family: var(--serif);
+      font-size: clamp(5rem, 12vw, 13rem);
+      font-style: italic;
+
+      line-height: 0.8;
+
+      color: #e5e3dc;
+
+      z-index: 1;
+      pointer-events: none;
+    }
+
+
+    /* =========================================================
+       ABOUT
+    ========================================================= */
+
+    .grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 10vw;
+    }
+
+    .grid h2 {
+      font-size: clamp(3rem, 6vw, 6rem);
+      font-weight: 500;
+    }
+
+    .grid > div > p {
+      max-width: 650px;
+      margin-bottom: 24px;
+      font-size: 1.05rem;
+    }
+
+
+    /* =========================================================
+       EXPERIENCE
+    ========================================================= */
+
+    .experience-intro {
+      margin-bottom: 80px;
+    }
+
+    .experience-intro h2 {
+      font-size: clamp(3.5rem, 8vw, 8rem);
+      font-weight: 500;
+    }
+
+    .list {
+      border-top: 1px solid var(--text);
+    }
+
+    .list article {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 50px;
+
+      padding: 45px 0;
+
+      border-bottom: 1px solid var(--line);
+    }
+
+    .list time {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .list h3 {
+      margin-bottom: 8px;
+
+      font-size: clamp(1.5rem, 2.5vw, 2.4rem);
+      font-weight: 500;
+    }
+
+    .list h3 a {
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.25s ease;
+    }
+
+    .list h3 a:hover {
+      border-color: var(--text);
+    }
+
+    .list h4 {
+      margin-bottom: 18px;
+
+      font-size: 0.72rem;
+      font-weight: 700;
+
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+
+      color: var(--muted);
+    }
+
+    .list p {
+      max-width: 720px;
+    }
+
+
+    /* =========================================================
+       PROJECTS
+    ========================================================= */
+
+    .project-heading {
+      display: grid;
+      grid-template-columns: 1fr 0.8fr;
+      gap: 8vw;
+
+      margin-bottom: 80px;
+      align-items: end;
+    }
+
+    .project-heading h2 {
+      font-size: clamp(3.5rem, 8vw, 8rem);
+      font-weight: 500;
+    }
+
+    .project-heading p {
+      max-width: 480px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .project-link {
+      display: block;
+    }
+
+    .project-grid article {
+      height: 100%;
+      min-height: 390px;
+
+      padding: 32px;
+
+      display: flex;
+      flex-direction: column;
+
+      border: 1px solid var(--line);
+
+      transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+    }
+
+    .project-grid article:hover {
+      transform: translateY(-6px);
+      background: var(--soft);
+    }
+
+    .project-grid article.featured {
+      grid-column: span 2;
+      min-height: 460px;
+    }
+
+    .project-grid article > small {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+
+    .project-grid article h2 {
+      max-width: 650px;
+
+      margin-top: 70px;
+
+      font-size: clamp(2.2rem, 4.5vw, 5rem);
+      font-weight: 500;
+    }
+
+    .project-grid article p {
+      max-width: 650px;
+      margin-top: 24px;
+    }
+
+    .project-meta {
+      margin-top: auto;
+      padding-top: 45px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .project-meta > span {
+      color: var(--muted);
+    }
+
+    .project-meta strong {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      padding: 10px 14px;
+
+      border: 1px solid var(--text);
+      border-radius: 999px;
+
+      font-size: 0.65rem;
+
+      transition:
+        background 0.25s ease,
+        color 0.25s ease;
+    }
+
+    .project-grid article:hover .project-meta strong {
+      background: var(--text);
+      color: var(--bg);
+    }
+
+    .project-arrow {
+      font-size: 1rem;
+      transition: transform 0.25s ease;
+    }
+
+    .project-grid article:hover .project-arrow {
+      transform: translateX(4px);
+    }
+
+
+    /* =========================================================
+       SKILLS
+    ========================================================= */
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      gap: 10px;
+    }
+
+    .skills span {
+      padding: 12px 17px;
+
+      border: 1px solid var(--line);
+      border-radius: 999px;
+
+      font-size: 0.78rem;
+    }
+
+    .education-compact {
+      margin-top: 100px;
+      padding-top: 35px;
+
+      border-top: 1px solid var(--text);
+
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .education-compact small {
+      display: block;
+      margin-bottom: 15px;
+
+      font-size: 0.65rem;
+      font-weight: 700;
+
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+
+    .education-compact h2 {
+      margin-bottom: 8px;
+
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      font-weight: 500;
+    }
+
+    .education-gpa {
+      text-align: right;
+    }
+
+    .education-gpa strong {
+      font-family: var(--serif);
+      font-size: 3rem;
+      font-weight: 500;
+    }
+
+
+    /* =========================================================
+       CREATIVE
+    ========================================================= */
+
+    .creative-heading {
+      margin-bottom: 80px;
+    }
+
+    .creative-heading h2 {
+      font-size: clamp(3.5rem, 8vw, 8rem);
+      font-weight: 500;
+    }
+
+    .creative-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .creative-card {
+      padding: 32px;
+
+      border: 1px solid var(--line);
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    .creative-card-content small {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+
+    .creative-card-content h2 {
+      margin-top: 55px;
+
+      font-size: clamp(2rem, 4vw, 4rem);
+      font-weight: 500;
+    }
+
+    .creative-card-content p {
+      margin-top: 20px;
+    }
+
+    .creative-work {
+      margin-top: 35px;
+      overflow: hidden;
+    }
+
+    .creative-work img {
+      width: 100%;
+      transition: transform 0.4s ease;
+    }
+
+    .creative-card:hover .creative-work img {
+      transform: scale(1.02);
+    }
+
+    .creative-links {
+      margin-top: 25px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .creative-links a,
+    .tiktok-arrow a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+
+      min-width: 180px;
+      padding: 13px 22px;
+
+      border: 1px solid var(--text);
+      border-radius: 999px;
+
+      font-size: 0.68rem;
+      font-weight: 700;
+
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+
+      transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+    }
+
+    .creative-links a:hover,
+    .tiktok-arrow a:hover {
+      background: var(--text);
+      color: var(--bg);
+      transform: translateY(-3px);
+    }
+
+
+    /* =========================================================
+       TIKTOK
+    ========================================================= */
+
+    .tiktok-highlight {
+      margin-top: 35px;
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .tiktok-stat {
+      padding: 22px 10px;
+      text-align: center;
+    }
+
+    .tiktok-stat:not(:last-child) {
+      border-right: 1px solid var(--line);
+    }
+
+    .tiktok-stat strong {
+      display: block;
+
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 500;
+    }
+
+    .tiktok-stat span {
+      display: block;
+
+      margin-top: 5px;
+
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+
+      color: var(--muted);
+    }
+
+    .tiktok-insight-short {
+      margin-top: 25px;
+      font-size: 0.85rem;
+    }
+
+    .tiktok-profile {
+      margin-top: 35px;
+
+      overflow: hidden;
+    }
+
+    .tiktok-profile img {
+      width: 100%;
+    }
+
+    .tiktok-arrow {
+      margin-top: 25px;
+      display: flex;
+      justify-content: center;
+    }
+
+
+    /* =========================================================
+       CONTACT
+    ========================================================= */
+
+    .contact {
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .contact > small {
+      font-size: 0.65rem;
+      font-weight: 700;
+
+      letter-spacing: 0.14em;
+      color: var(--muted);
+    }
+
+    .contact h2 {
+      margin-top: 30px;
+
+      font-size: clamp(3.5rem, 8vw, 8rem);
+      font-weight: 500;
+    }
+
+    .contact p {
+      max-width: 580px;
+      margin: 35px auto;
+    }
+
+    .email {
+      display: inline-block;
+
+      margin-top: 10px;
+
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 3vw, 2.8rem);
+      font-style: italic;
+
+      border-bottom: 1px solid var(--text);
+
+      transition: opacity 0.25s ease;
+    }
+
+    .email:hover {
+      opacity: 0.55;
+    }
+
+    .social {
+      margin-top: 50px;
+
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .social a {
+      padding: 11px 17px;
+
+      border: 1px solid var(--line);
+      border-radius: 999px;
+
+      font-size: 0.68rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+
+      transition:
+        background 0.25s ease,
+        color 0.25s ease;
+    }
+
+    .social a:hover {
+      background: var(--text);
+      color: var(--bg);
+    }
+
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+      padding: 28px 7vw;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+
+      color: var(--muted);
+    }
+
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
+
+    @media (max-width: 900px) {
+
+      header {
+        height: 72px;
+        padding: 0 6vw;
+      }
+
+      header nav {
+        display: none;
+      }
+
+      #menu {
+        display: flex;
+      }
+
+      section {
+        padding: 105px 6vw;
+      }
+
+      section > small {
+        margin-bottom: 45px;
+      }
+
+      .hero {
+        min-height: auto;
+
+        padding: 125px 6vw 75px;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 55px;
+      }
+
+      .hero h1 {
+        font-size: clamp(3rem, 14vw, 6rem);
+      }
+
+      .hero-photo {
+        width: min(82vw, 430px);
+        align-self: center;
+      }
+
+      .initials {
+        right: 2vw;
+        bottom: 10vw;
+      }
+
+      .explore-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .explore-item {
+        min-height: 62px;
+      }
+
+      .explore-item:nth-child(2) {
+        border-right: 0;
+        margin-right: 0;
+        padding-right: 0;
+      }
+
+      .explore-item:nth-child(1),
+      .explore-item:nth-child(2) {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .list article {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .project-heading {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-grid article.featured {
+        grid-column: auto;
+      }
+
+      .creative-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .education-compact {
+        flex-direction: column;
+      }
+
+      .education-gpa {
+        text-align: left;
+      }
+
+    }
+
+
+    /* =========================================================
+       SMALL MOBILE
+    ========================================================= */
+
+    @media (max-width: 550px) {
+
+      section {
+        padding: 90px 5vw;
+      }
+
+      .hero {
+        padding-left: 5vw;
+        padding-right: 5vw;
+      }
+
+      .hero-keywords {
+        gap: 6px;
+      }
+
+      .hero-keywords span {
+        padding: 7px 11px;
+        font-size: 0.65rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .hero-explore {
+        margin-top: 45px;
+      }
+
+      .explore-item {
+        font-size: 0.65rem;
+        padding-right: 8px;
+      }
+
+      .explore-item:not(:last-child) {
+        padding-right: 8px;
+        margin-right: 8px;
+      }
+
+      .project-grid article,
+      .project-grid article.featured,
+      .creative-card {
+        min-height: 360px;
+        padding: 24px;
+      }
+
+      .project-grid article h2 {
+        margin-top: 50px;
+      }
+
+      .project-meta {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .project-meta strong {
+        align-self: flex-start;
+      }
+
+      .tiktok-highlight {
+        grid-template-columns: 1fr;
+      }
+
+      .tiktok-stat:not(:last-child) {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .email {
+        font-size: 1.35rem;
+        word-break: break-word;
+      }
+
+      footer {
+        padding: 25px 5vw;
+
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+    }
+
+  </style>
+
 </head>
 
-
 <body>
-
 
 <!-- =========================================================
      HEADER
@@ -39,24 +1302,92 @@
     TDL<span>.</span>
   </a>
 
-  <button id="menu" aria-label="Open navigation">
-    ☰
+<button
+id="menu"
+aria-label="Open navigation"
+aria-expanded="false"
+type="button"
+
+>
+
+```
+☰
+```
+
   </button>
 
   <nav>
 
-    <a href="#about">About</a>
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#creative">Creative</a>
-    <a href="#contact">Contact</a>
+```
+<a href="#about">About</a>
+<a href="#experience">Experience</a>
+<a href="#projects">Projects</a>
+<a href="#skills">Skills</a>
+<a href="#creative">Creative</a>
+<a href="#contact">Contact</a>
+```
 
   </nav>
 
 </header>
 
+<!-- =========================================================
+     MOBILE MENU
+========================================================= -->
 
+<div class="mobile-menu" id="mobileMenu">
+
+  <div class="mobile-nav">
+
+```
+<a href="#about">
+  About
+  <span>01 ↗</span>
+</a>
+
+<a href="#experience">
+  Experience
+  <span>02 ↗</span>
+</a>
+
+<a href="#projects">
+  Projects
+  <span>03 ↗</span>
+</a>
+
+<a href="#skills">
+  Skills
+  <span>04 ↗</span>
+</a>
+
+<a href="#creative">
+  Creative
+  <span>05 ↗</span>
+</a>
+
+<a href="#contact">
+  Contact
+  <span>06 ↗</span>
+</a>
+```
+
+  </div>
+
+  <div class="mobile-footer">
+
+```
+<span>
+  Tamimmah Disma Lestari
+</span>
+
+<span>
+  Marketing · Strategy · Creative
+</span>
+```
+
+  </div>
+
+</div>
 
 <!-- =========================================================
      HERO
@@ -66,75 +1397,115 @@
 
   <div class="hero-content">
 
-    <div class="hero-name">
-      TAMIMMAH DISMA LESTARI
-    </div>
+```
+<div class="hero-name">
+  TAMIMMAH DISMA LESTARI
+</div>
 
-    <small>
-      BUSINESS · MARKETING · CONSUMER INSIGHTS
-    </small>
+<small>
+  BUSINESS · MARKETING · CONSUMER INSIGHTS
+</small>
 
-    <h1>
-      Turning ideas into
-      <i>meaningful strategies.</i>
-    </h1>
+<h1>
+  Turning ideas into
+  <i>meaningful strategies.</i>
+</h1>
 
-    <div class="hero-keywords">
 
-      <span>Marketing</span>
-      <span>Consumer Research</span>
-      <span>Business Development</span>
-      <span>Creative Strategy</span>
+<div class="hero-keywords">
 
-    </div>
+  <span>Marketing</span>
+  <span>Consumer Research</span>
+  <span>Business Development</span>
+  <span>Creative Strategy</span>
 
-    <p>
-      Business Management graduate with hands-on experience in
-      <strong>marketing</strong>,
-      <strong>consumer research</strong>,
-      <strong>customer acquisition</strong>,
-      and <strong>business operations</strong>.
-    </p>
+</div>
 
-    <div class="hero-buttons">
 
-      <a class="btn" href="#projects">
-        Explore my work →
-      </a>
+<p>
+  Business Management graduate with hands-on experience in
+  <strong>marketing</strong>,
+  <strong>consumer research</strong>,
+  <strong>customer acquisition</strong>,
+  and <strong>business operations</strong>.
+</p>
 
-      <a
-        class="btn ghost"
-        href="resume.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        View CV →
-      </a>
 
-    </div>
+<!-- PRIMARY ACTIONS -->
+
+<div class="hero-buttons">
+
+  <a class="btn" href="#projects">
+    Explore my work →
+  </a>
+
+  <a
+    class="btn ghost"
+    href="resume.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    View CV →
+  </a>
+
+</div>
+
+
+<!-- NEW EXPLORATION NAVIGATION -->
+
+<div class="hero-explore">
+
+  <div class="hero-explore-label">
+    Explore my portfolio
+  </div>
+
+  <div class="explore-grid">
+
+    <a class="explore-item" href="#projects">
+      Work
+      <span class="explore-arrow">↗</span>
+    </a>
+
+    <a class="explore-item" href="#experience">
+      Experience
+      <span class="explore-arrow">↗</span>
+    </a>
+
+    <a class="explore-item" href="#projects">
+      Projects
+      <span class="explore-arrow">↗</span>
+    </a>
+
+    <a class="explore-item" href="#skills">
+      Skills
+      <span class="explore-arrow">↗</span>
+    </a>
 
   </div>
 
+</div>
+```
+
+  </div>
 
   <!-- PROFILE PHOTO -->
 
   <div class="hero-photo">
 
-    <img
-      src="images/profile-photo.jpg"
-      alt="Tamimmah Disma Lestari"
-    >
+```
+<img
+  src="images/profile-photo.jpg"
+  alt="Tamimmah Disma Lestari"
+>
+```
 
   </div>
-
 
   <div class="initials">
     TDL
   </div>
 
 </section>
-
-
 
 <!-- =========================================================
      ABOUT
@@ -148,41 +1519,41 @@
 
   <div class="grid">
 
-    <h2>
-      Business
-      <br>
-      meets
-      <br>
-      <i>creativity.</i>
-    </h2>
+```
+<h2>
+  Business
+  <br>
+  meets
+  <br>
+  <i>creativity.</i>
+</h2>
 
-    <div>
+<div>
 
-      <p>
-        I am a <strong>Business Management graduate from Institut
-        Teknologi Bandung</strong> with a concentration in
-        <strong>Management & Marketing</strong>.
-      </p>
+  <p>
+    I am a <strong>Business Management graduate from Institut
+    Teknologi Bandung</strong> with a concentration in
+    <strong>Management & Marketing</strong>.
+  </p>
 
-      <p>
-        My experience sits at the intersection of
-        <strong>marketing, consumer behavior, business development,
-        and entrepreneurship</strong>.
-      </p>
+  <p>
+    My experience sits at the intersection of
+    <strong>marketing, consumer behavior, business development,
+    and entrepreneurship</strong>.
+  </p>
 
-      <p>
-        I enjoy understanding what makes people choose,
-        engage with, and remember a product — then turning those
-        insights into <strong>practical business strategies</strong>.
-      </p>
+  <p>
+    I enjoy understanding what makes people choose,
+    engage with, and remember a product — then turning those
+    insights into <strong>practical business strategies</strong>.
+  </p>
 
-    </div>
+</div>
+```
 
   </div>
 
 </section>
-
-
 
 <!-- =========================================================
      EXPERIENCE
@@ -194,236 +1565,234 @@
     02 / EXPERIENCE
   </small>
 
-
   <div class="experience-intro">
 
-    <h2>
-      Building,
-      <br>
-      learning,
-      <br>
-      <i>doing.</i>
-    </h2>
+```
+<h2>
+  Building,
+  <br>
+  learning,
+  <br>
+  <i>doing.</i>
+</h2>
+```
 
   </div>
 
-
   <div class="list">
 
+```
+<!-- FOUNDERS LAB -->
 
-    <!-- FOUNDERS LAB -->
+<article>
 
-    <article>
+  <time>
+    2020–2021
+  </time>
 
-      <time>
-        2020–2021
-      </time>
+  <div>
 
-      <div>
+    <h3>
+      <a
+        href="https://www.instagram.com/thefounderslab/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        The Founders Lab →
+      </a>
+    </h3>
 
-        <h3>
-          <a
-            href="https://www.instagram.com/thefounderslab/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            The Founders Lab →
-          </a>
-        </h3>
+    <h4>
+      Co-Founder & Marketing Lead
+    </h4>
 
-        <h4>
-          Co-Founder & Marketing Lead
-        </h4>
+    <p>
+      Co-founded a platform for
+      <strong>business webinars and competitions</strong>
+      backed by CIEL SBM ITB. Led
+      <strong>marketing initiatives, event promotion,
+      audience engagement, and communications</strong>.
+    </p>
 
-        <p>
-          Co-founded a platform for
-          <strong>business webinars and competitions</strong>
-          backed by CIEL SBM ITB. Led
-          <strong>marketing initiatives, event promotion,
-          audience engagement, and communications</strong>.
-        </p>
+  </div>
 
-      </div>
+</article>
 
-    </article>
 
 
+<!-- SELLKPOPVT -->
 
-    <!-- SELLKPOPVT -->
+<article>
 
-    <article>
+  <time>
+    2021–2025
+  </time>
 
-      <time>
-        2021–2025
-      </time>
+  <div>
 
-      <div>
+    <h3>
+      <a
+        href="https://x.com/sellkpopvt"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        SellKpopVT →
+      </a>
+    </h3>
 
-        <h3>
-          <a
-            href="https://x.com/sellkpopvt"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            SellKpopVT →
-          </a>
-        </h3>
+    <h4>
+      Founder / Owner
+    </h4>
 
-        <h4>
-          Founder / Owner
-        </h4>
+    <p>
+      Built and managed an
+      <strong>international digital business</strong>
+      serving customers across
+      <strong>Indonesia, Malaysia, Singapore, Thailand,
+      India, the US, Europe, and the Middle East</strong>.
+      Managed pricing, customer acquisition, operations,
+      and retention.
+    </p>
 
-        <p>
-          Built and managed an
-          <strong>international digital business</strong>
-          serving customers across
-          <strong>Indonesia, Malaysia, Singapore, Thailand,
-          India, the US, Europe, and the Middle East</strong>.
-          Managed pricing, customer acquisition, operations,
-          and retention.
-        </p>
+  </div>
 
-      </div>
+</article>
 
-    </article>
 
 
+<!-- SARI RASA -->
 
-    <!-- SARI RASA -->
+<article>
 
-    <article>
+  <time>
+    2024–2026
+  </time>
 
-      <time>
-        2024–2026
-      </time>
+  <div>
 
-      <div>
+    <h3>
+      PT Sari Rasa
+    </h3>
 
-        <h3>
-          PT Sari Rasa
-        </h3>
+    <h4>
+      Business Partner
+    </h4>
 
-        <h4>
-          Business Partner
-        </h4>
+    <p>
+      Supported the distribution of
+      <strong>traditional snack products to local supermarkets</strong>.
+      Involved in business operations, market development,
+      distribution, and monitoring sales performance across
+      <strong>approximately 50 supermarkets</strong>.
+    </p>
 
-        <p>
-          Supported the distribution of
-          <strong>traditional snack products to local supermarkets</strong>.
-          Involved in business operations, market development,
-          distribution, and monitoring sales performance across
-          <strong>approximately 50 supermarkets</strong>.
-        </p>
+  </div>
 
-      </div>
+</article>
 
-    </article>
 
 
+<!-- CAHAYA SEGARA -->
 
-    <!-- CAHAYA SEGARA -->
+<article>
 
-    <article>
+  <time>
+    2026 · Project-Based
+  </time>
 
-      <time>
-        2026 · Project-Based
-      </time>
+  <div>
 
-      <div>
+    <h3>
+      PT Cahaya Segara Indonesia
+    </h3>
 
-        <h3>
-          PT Cahaya Segara Indonesia
-        </h3>
+    <h4>
+      Freelance Administrative & Executive Support
+    </h4>
 
-        <h4>
-          Freelance Administrative & Executive Support
-        </h4>
+    <p>
+      Prepared
+      <strong>business documentation, reports, proposals,
+      and tender materials</strong>, while supporting
+      administrative and project-related activities.
+    </p>
 
-        <p>
-          Prepared
-          <strong>business documentation, reports, proposals,
-          and tender materials</strong>, while supporting
-          administrative and project-related activities.
-        </p>
+  </div>
 
-      </div>
+</article>
 
-    </article>
 
 
+<!-- ECOPLAST -->
 
-    <!-- ECOPLAST -->
+<article>
 
-    <article>
+  <time>
+    2018–2019
+  </time>
 
-      <time>
-        2018–2019
-      </time>
+  <div>
 
-      <div>
+    <h3>
+      <a
+        href="https://www.instagram.com/ecoplastid/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        ECOPLAST ID →
+      </a>
+    </h3>
 
-        <h3>
-          <a
-            href="https://www.instagram.com/ecoplastid/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            ECOPLAST ID →
-          </a>
-        </h3>
+    <h4>
+      Chief Marketing Officer
+    </h4>
 
-        <h4>
-          Chief Marketing Officer
-        </h4>
+    <p>
+      Led
+      <strong>marketing and brand communication</strong>
+      for an early-stage environmental startup, including
+      promotional activities, audience engagement, and
+      marketing direction.
+    </p>
 
-        <p>
-          Led
-          <strong>marketing and brand communication</strong>
-          for an early-stage environmental startup, including
-          promotional activities, audience engagement, and
-          marketing direction.
-        </p>
+  </div>
 
-      </div>
+</article>
 
-    </article>
 
 
+<!-- TEC -->
 
-    <!-- TEC -->
+<article>
 
-    <article>
+  <time>
+    2018–2021
+  </time>
 
-      <time>
-        2018–2021
-      </time>
+  <div>
 
-      <div>
+    <h3>
+      Techno Entrepreneur Club (TEC), ITB
+    </h3>
 
-        <h3>
-          Techno Entrepreneur Club (TEC), ITB
-        </h3>
+    <h4>
+      Student Entrepreneur
+    </h4>
 
-        <h4>
-          Student Entrepreneur
-        </h4>
+    <p>
+      Participated in entrepreneurial activities involving
+      <strong>business development, marketing, project
+      execution, and startup-related initiatives</strong>.
+    </p>
 
-        <p>
-          Participated in entrepreneurial activities involving
-          <strong>business development, marketing, project
-          execution, and startup-related initiatives</strong>.
-        </p>
+  </div>
 
-      </div>
-
-    </article>
-
+</article>
+```
 
   </div>
 
 </section>
-
-
 
 <!-- =========================================================
      PROJECTS
@@ -435,209 +1804,207 @@
     03 / SELECTED PROJECTS
   </small>
 
-
   <div class="project-heading">
 
-    <h2>
-      Selected
-      <br>
-      <i>work.</i>
-    </h2>
+```
+<h2>
+  Selected
+  <br>
+  <i>work.</i>
+</h2>
 
-    <p>
-      A selection of projects exploring
-      <strong>consumer behavior, brand strategy,
-      marketing, and digital culture</strong>.
-    </p>
+<p>
+  A selection of projects exploring
+  <strong>consumer behavior, brand strategy,
+  marketing, and digital culture</strong>.
+</p>
+```
 
   </div>
 
-
   <div class="project-grid">
 
+```
+<!-- PROJECT 01 -->
 
-    <!-- PROJECT 01 -->
+<a
+  class="project-link"
+  href="Consumer_Purchase_Intention_Traditional_Chips.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+>
 
-    <a
-      class="project-link"
-      href="Consumer_Purchase_Intention_Traditional_Chips.pdf"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+  <article class="featured">
 
-      <article class="featured">
+    <small>
+      01 · CONSUMER RESEARCH
+    </small>
 
-        <small>
-          01 · CONSUMER RESEARCH
-        </small>
+    <h2>
+      Understanding
+      <i>Purchase Intention.</i>
+    </h2>
 
-        <h2>
-          Understanding
-          <i>Purchase Intention.</i>
-        </h2>
+    <p>
+      Quantitative research investigating the factors influencing
+      <strong>consumer purchase intention toward traditional
+      chips in local supermarkets in Jakarta</strong>.
+    </p>
 
-        <p>
-          Quantitative research investigating the factors influencing
-          <strong>consumer purchase intention toward traditional
-          chips in local supermarkets in Jakarta</strong>.
-        </p>
+    <div class="project-meta">
 
-        <div class="project-meta">
+      <span>
+        Thesis · SPSS · Regression
+      </span>
 
-          <span>
-            Thesis · SPSS · Regression
-          </span>
+      <strong>
+        VIEW PROJECT
+        <span class="project-arrow">→</span>
+      </strong>
 
-          <strong>
-            VIEW PROJECT
-            <span class="project-arrow">→</span>
-          </strong>
+    </div>
 
-        </div>
+  </article>
 
-      </article>
-
-    </a>
-
-
-
-    <!-- PROJECT 02 -->
-
-    <a
-      class="project-link"
-      href="buavita.html"
-    >
-
-      <article>
-
-        <small>
-          02 · BRAND STRATEGY
-        </small>
-
-        <h2>
-          Buavita
-          <i>Brand Strategy.</i>
-        </h2>
-
-        <p>
-          Brand strategy project focused on
-          <strong>consumer understanding, positioning,
-          communication, and strategic recommendations</strong>.
-        </p>
-
-        <div class="project-meta">
-
-          <span>
-            Consumer Research · Strategy
-          </span>
-
-          <strong>
-            VIEW PROJECT
-            <span class="project-arrow">→</span>
-          </strong>
-
-        </div>
-
-      </article>
-
-    </a>
+</a>
 
 
 
-    <!-- PROJECT 03 -->
+<!-- PROJECT 02 -->
 
-    <a
-      class="project-link"
-      href="https://marketing.co.id/menilik-strategi-branding-produk-kecantikan-korea/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+<a
+  class="project-link"
+  href="buavita.html"
+>
 
-      <article>
+  <article>
 
-        <small>
-          03 · PUBLISHED WORK
-        </small>
+    <small>
+      02 · BRAND STRATEGY
+    </small>
 
-        <h2>
-          Korean Beauty
-          <i>Branding.</i>
-        </h2>
+    <h2>
+      Buavita
+      <i>Brand Strategy.</i>
+    </h2>
 
-        <p>
-          Published article examining
-          <strong>branding strategies within the Korean beauty
-          industry</strong> and how brands create consumer appeal.
-        </p>
+    <p>
+      Brand strategy project focused on
+      <strong>consumer understanding, positioning,
+      communication, and strategic recommendations</strong>.
+    </p>
 
-        <div class="project-meta">
+    <div class="project-meta">
 
-          <span>
-            Marketing · Branding · Published
-          </span>
+      <span>
+        Consumer Research · Strategy
+      </span>
 
-          <strong>
-            READ ARTICLE
-            <span class="project-arrow">→</span>
-          </strong>
+      <strong>
+        VIEW PROJECT
+        <span class="project-arrow">→</span>
+      </strong>
 
-        </div>
+    </div>
 
-      </article>
+  </article>
 
-    </a>
+</a>
 
 
 
-    <!-- PROJECT 04 -->
+<!-- PROJECT 03 -->
 
-    <a
-      class="project-link"
-      href="https://tamimmah-disma.medium.com/the-rollercoaster-ride-of-twitch-acquisition-from-google-yahoo-to-amazon-70b8a2124df3"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+<a
+  class="project-link"
+  href="https://marketing.co.id/menilik-strategi-branding-produk-kecantikan-korea/"
+  target="_blank"
+  rel="noopener noreferrer"
+>
 
-      <article>
+  <article>
 
-        <small>
-          04 · INDEPENDENT WRITING
-        </small>
+    <small>
+      03 · PUBLISHED WORK
+    </small>
 
-        <h2>
-          The Rollercoaster Ride
-          <i>of Twitch.</i>
-        </h2>
+    <h2>
+      Korean Beauty
+      <i>Branding.</i>
+    </h2>
 
-        <p>
-          An independent analysis of Twitch's journey through
-          <strong>Google, Yahoo, and Amazon</strong>, exploring
-          acquisition strategy and digital platform growth.
-        </p>
+    <p>
+      Published article examining
+      <strong>branding strategies within the Korean beauty
+      industry</strong> and how brands create consumer appeal.
+    </p>
 
-        <div class="project-meta">
+    <div class="project-meta">
 
-          <span>
-            Business · Technology · Strategy
-          </span>
+      <span>
+        Marketing · Branding · Published
+      </span>
 
-          <strong>
-            READ ARTICLE
-            <span class="project-arrow">→</span>
-          </strong>
+      <strong>
+        READ ARTICLE
+        <span class="project-arrow">→</span>
+      </strong>
 
-        </div>
+    </div>
 
-      </article>
+  </article>
 
-    </a>
+</a>
 
+
+
+<!-- PROJECT 04 -->
+
+<a
+  class="project-link"
+  href="https://tamimmah-disma.medium.com/the-rollercoaster-ride-of-twitch-acquisition-from-google-yahoo-to-amazon-70b8a2124df3"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+
+  <article>
+
+    <small>
+      04 · INDEPENDENT WRITING
+    </small>
+
+    <h2>
+      The Rollercoaster Ride
+      <i>of Twitch.</i>
+    </h2>
+
+    <p>
+      An independent analysis of Twitch's journey through
+      <strong>Google, Yahoo, and Amazon</strong>, exploring
+      acquisition strategy and digital platform growth.
+    </p>
+
+    <div class="project-meta">
+
+      <span>
+        Business · Technology · Strategy
+      </span>
+
+      <strong>
+        READ ARTICLE
+        <span class="project-arrow">→</span>
+      </strong>
+
+    </div>
+
+  </article>
+
+</a>
+```
 
   </div>
 
 </section>
-
-
 
 <!-- =========================================================
      SKILLS
@@ -649,74 +2016,69 @@
     04 / SKILLS & EDUCATION
   </small>
 
-
   <div class="grid">
 
-    <h2>
-      What I
-      <br>
-      <i>bring.</i>
-    </h2>
+```
+<h2>
+  What I
+  <br>
+  <i>bring.</i>
+</h2>
 
 
-    <div class="skills">
+<div class="skills">
 
-      <span>Marketing Strategy</span>
+  <span>Marketing Strategy</span>
+  <span>Consumer & Market Research</span>
+  <span>Business Development</span>
+  <span>Brand Strategy</span>
+  <span>Customer Acquisition & Retention</span>
+  <span>Digital Marketing & Content</span>
 
-      <span>Consumer & Market Research</span>
-
-      <span>Business Development</span>
-
-      <span>Brand Strategy</span>
-
-      <span>Customer Acquisition & Retention</span>
-
-      <span>Digital Marketing & Content</span>
-
-    </div>
+</div>
+```
 
   </div>
-
 
   <!-- EDUCATION -->
 
   <div class="education-compact">
 
-    <div>
+```
+<div>
 
-      <small>
-        EDUCATION
-      </small>
+  <small>
+    EDUCATION
+  </small>
 
-      <h2>
-        Institut Teknologi Bandung
-      </h2>
+  <h2>
+    Institut Teknologi Bandung
+  </h2>
 
-      <p>
-        Bachelor of Business Management ·
-        <strong>Management & Marketing</strong>
-      </p>
+  <p>
+    Bachelor of Business Management ·
+    <strong>Management & Marketing</strong>
+  </p>
 
-    </div>
+</div>
 
 
-    <div class="education-gpa">
+<div class="education-gpa">
 
-      <small>
-        GPA
-      </small>
+  <small>
+    GPA
+  </small>
 
-      <strong>
-        3.44
-      </strong>
+  <strong>
+    3.44
+  </strong>
 
-    </div>
+</div>
+```
 
   </div>
 
 </section>
-
-
 
 <!-- =========================================================
      CREATIVE SKILLS
@@ -728,177 +2090,173 @@
     05 / CREATIVE SKILLS
   </small>
 
-
   <div class="creative-heading">
 
+```
+<h2>
+  Strategy is
+  <br>
+  also <i>visual.</i>
+</h2>
+```
+
+  </div>
+
+  <div class="creative-grid">
+
+```
+<!-- PHOTOSHOP -->
+
+<div class="creative-card">
+
+  <div class="creative-card-content">
+
+    <small>
+      ADOBE PHOTOSHOP
+    </small>
+
     <h2>
-      Strategy is
-      <br>
-      also <i>visual.</i>
+      Visual
+      <i>communication.</i>
     </h2>
+
+    <p>
+      Experience creating visual content with a focus on
+      <strong>composition, branding, social media,
+      and visual communication</strong>.
+    </p>
 
   </div>
 
 
-  <div class="creative-grid">
+  <div class="creative-work">
+
+    <img
+      src="images/photoshop-works.png"
+      alt="Photoshop creative works"
+    >
+
+  </div>
 
 
-    <!-- PHOTOSHOP -->
+  <div class="creative-links">
 
-    <div class="creative-card">
+    <a
+      href="https://id.pinterest.com/akonhjhjhj/my-art-works/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      View my Pinterest ↗
+    </a>
 
-      <div class="creative-card-content">
+  </div>
 
-        <small>
-          ADOBE PHOTOSHOP
-        </small>
-
-        <h2>
-          Visual
-          <i>communication.</i>
-        </h2>
-
-        <p>
-          Experience creating visual content with a focus on
-          <strong>composition, branding, social media,
-          and visual communication</strong>.
-        </p>
-
-      </div>
+</div>
 
 
-      <div class="creative-work">
 
-        <img
-          src="images/photoshop-works.png"
-          alt="Photoshop creative works"
-        >
+<!-- TIKTOK -->
 
-      </div>
+<div class="creative-card tiktok-card">
+
+  <div class="creative-card-content">
+
+    <small>
+      CONTENT & SOCIAL MEDIA
+    </small>
+
+    <h2>
+      Understanding
+      <i>attention.</i>
+    </h2>
+
+    <p>
+      Created and managed short-form content with a focus on
+      <strong>audience behavior, content performance,
+      and organic reach</strong>.
+    </p>
+
+  </div>
 
 
-      <div class="creative-links">
+  <div class="tiktok-highlight">
 
-        <a
-          href="https://id.pinterest.com/akonhjhjhj/my-art-works/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Pinterest →
-        </a>
+    <div class="tiktok-stat">
 
-      </div>
+      <strong>
+        984
+      </strong>
+
+      <span>
+        Followers
+      </span>
+
+    </div>
+
+
+    <div class="tiktok-stat">
+
+      <strong>
+        367K+
+      </strong>
+
+      <span>
+        Avg. Views / Post
+      </span>
 
     </div>
 
 
+    <div class="tiktok-stat">
 
-    <!-- TIKTOK -->
+      <strong>
+        2×
+      </strong>
 
-    <div class="creative-card tiktok-card">
-
-      <div class="creative-card-content">
-
-        <small>
-          CONTENT & SOCIAL MEDIA
-        </small>
-
-        <h2>
-          Understanding
-          <i>attention.</i>
-        </h2>
-
-        <p>
-          Created and managed short-form content with a focus on
-          <strong>audience behavior, content performance,
-          and organic reach</strong>.
-        </p>
-
-      </div>
-
-
-      <div class="tiktok-highlight">
-
-
-        <div class="tiktok-stat">
-
-          <strong>
-            984
-          </strong>
-
-          <span>
-            Followers
-          </span>
-
-        </div>
-
-
-        <div class="tiktok-stat">
-
-          <strong>
-            367K+
-          </strong>
-
-          <span>
-            Avg. Views / Post
-          </span>
-
-        </div>
-
-
-        <div class="tiktok-stat">
-
-          <strong>
-            2×
-          </strong>
-
-          <span>
-            1M+ Views
-          </span>
-
-        </div>
-
-
-      </div>
-
-
-      <p class="tiktok-insight-short">
-        Demonstrated ability to understand
-        <strong>what captures attention and drives engagement</strong>
-        in short-form content.
-      </p>
-
-
-      <div class="tiktok-profile">
-
-        <img
-          src="images/tiktok-profile.png"
-          alt="TikTok profile performance"
-        >
-
-      </div>
-
-
-      <div class="tiktok-arrow">
-
-        <a
-          href="https://www.tiktok.com/@baesminju"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          View TikTok →
-        </a>
-
-      </div>
+      <span>
+        1M+ Views
+      </span>
 
     </div>
 
+  </div>
+
+
+  <p class="tiktok-insight-short">
+    Demonstrated ability to understand
+    <strong>what captures attention and drives engagement</strong>
+    in short-form content.
+  </p>
+
+
+  <div class="tiktok-profile">
+
+    <img
+      src="images/tiktok-profile.png"
+      alt="TikTok profile performance"
+    >
+
+  </div>
+
+
+  <div class="tiktok-arrow">
+
+    <a
+      href="https://www.tiktok.com/@baesminju"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      View TikTok ↗
+    </a>
+
+  </div>
+
+</div>
+```
 
   </div>
 
 </section>
-
-
 
 <!-- =========================================================
      CONTACT
@@ -910,67 +2268,66 @@
     06 / CONTACT
   </small>
 
-
   <div class="contact">
 
-    <small>
-      LET'S WORK TOGETHER
-    </small>
+```
+<small>
+  LET'S WORK TOGETHER
+</small>
 
-    <h2>
-      Could I be a good fit?
-      <br>
-      <i>Let's talk.</i>
-    </h2>
+<h2>
+  Could I be a good fit?
+  <br>
+  <i>Let's talk.</i>
+</h2>
 
-    <p>
-      Open to opportunities in
-      <strong>marketing, business development,
-      consumer insights, and creative strategy</strong>.
-    </p>
-
-
-    <a
-      class="email"
-      href="mailto:tamimmadisma@gmail.com"
-    >
-      tamimmadisma@gmail.com
-    </a>
+<p>
+  Open to opportunities in
+  <strong>marketing, business development,
+  consumer insights, and creative strategy</strong>.
+</p>
 
 
-    <div class="social">
+<a
+  class="email"
+  href="mailto:tamimmadisma@gmail.com"
+>
+  tamimmadisma@gmail.com
+</a>
 
-      <a
-        href="https://wa.me/6282130815541"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        WhatsApp →
-      </a>
 
-      <a
-        href="https://www.instagram.com/miramimmah/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Instagram →
-      </a>
+<div class="social">
 
-      <a
-        href="https://www.instagram.com/tamidisma/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Instagram 02 →
-      </a>
+  <a
+    href="https://wa.me/6282130815541"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    WhatsApp ↗
+  </a>
 
-    </div>
+  <a
+    href="https://www.instagram.com/miramimmah/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Instagram ↗
+  </a>
+
+  <a
+    href="https://www.instagram.com/tamidisma/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Instagram 02 ↗
+  </a>
+
+</div>
+```
 
   </div>
 
 </section>
-
-
 
 <!-- =========================================================
      FOOTER
@@ -988,13 +2345,80 @@
 
 </footer>
 
-
-
 <!-- =========================================================
      JAVASCRIPT
 ========================================================= -->
 
-<script src="script.js"></script>
+<script>
+
+  const menuButton = document.getElementById("menu");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const mobileLinks = document.querySelectorAll(".mobile-nav a");
+
+  function openMenu() {
+
+    mobileMenu.classList.add("active");
+
+    menuButton.setAttribute("aria-expanded", "true");
+    menuButton.setAttribute("aria-label", "Close navigation");
+
+    menuButton.innerHTML = "×";
+
+    document.body.style.overflow = "hidden";
+  }
+
+
+  function closeMenu() {
+
+    mobileMenu.classList.remove("active");
+
+    menuButton.setAttribute("aria-expanded", "false");
+    menuButton.setAttribute("aria-label", "Open navigation");
+
+    menuButton.innerHTML = "☰";
+
+    document.body.style.overflow = "";
+  }
+
+
+  menuButton.addEventListener("click", function () {
+
+    if (mobileMenu.classList.contains("active")) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+
+  });
+
+
+  mobileLinks.forEach(function (link) {
+
+    link.addEventListener("click", function () {
+      closeMenu();
+    });
+
+  });
+
+
+  document.addEventListener("keydown", function (event) {
+
+    if (event.key === "Escape") {
+      closeMenu();
+    }
+
+  });
+
+
+  window.addEventListener("resize", function () {
+
+    if (window.innerWidth > 900) {
+      closeMenu();
+    }
+
+  });
+
+</script>
 
 </body>
 
