@@ -1,36 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Tamimmah Disma Lestari — Marketing & Consumer Insights</title>
 
   <meta
     name="description"
     content="Tamimmah Disma Lestari — Business Management graduate specializing in marketing, consumer insights, business development, and creative strategy."
-  >
-
-  <!-- =========================================================
-       GOOGLE FONTS
-  ========================================================== -->
+  />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;1,500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap"
     rel="stylesheet"
-  >
-
+  />
 
   <style>
 
     /* =========================================================
+       RESET
+    ========================================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+
+    /* =========================================================
        VARIABLES
-    ========================================================== */
+    ========================================================= */
 
     :root {
       --bg: #f7f6f2;
@@ -47,85 +77,84 @@
 
 
     /* =========================================================
-       RESET
-    ========================================================== */
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: var(--sans);
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    body.menu-open {
-      overflow: hidden;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    button {
-      font: inherit;
-    }
-
-    ::selection {
-      background: var(--text);
-      color: var(--bg);
-    }
-
-
-    /* =========================================================
-       CONTAINER
-    ========================================================== */
+       GLOBAL
+    ========================================================= */
 
     .container {
-      width: min(var(--container), calc(100% - 80px));
+      width: min(
+        var(--container),
+        calc(100% - 80px)
+      );
+
       margin: 0 auto;
+    }
+
+    section {
+      padding: 110px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+
+    .section-title {
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 0.98;
+      font-weight: 500;
+      letter-spacing: -0.04em;
+      max-width: 900px;
+    }
+
+    .section-title i {
+      font-family: var(--serif);
+      font-weight: 400;
+    }
+
+    .section-intro {
+      max-width: 650px;
+      margin-top: 35px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .small-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 700;
     }
 
 
     /* =========================================================
        HEADER
-    ========================================================== */
+    ========================================================= */
 
     header {
       position: fixed;
       top: 0;
       left: 0;
-
       width: 100%;
       height: 74px;
-
       z-index: 1000;
 
       background: rgba(247, 246, 242, 0.92);
+      backdrop-filter: blur(12px);
 
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-
-      border-bottom: 1px solid rgba(23, 23, 23, 0.08);
+      border-bottom: 1px solid var(--line);
     }
 
     .header-inner {
-      width: min(var(--container), calc(100% - 80px));
+      width: min(
+        var(--container),
+        calc(100% - 80px)
+      );
+
       height: 100%;
       margin: 0 auto;
 
@@ -135,118 +164,117 @@
     }
 
     .logo {
-      font-size: 1.2rem;
+      font-size: 14px;
       font-weight: 700;
-      letter-spacing: -0.06em;
+      letter-spacing: 0.08em;
+      text-decoration: none;
     }
 
-    .logo span {
-      font-family: var(--serif);
-      font-style: italic;
-    }
-
-
-    /* =========================================================
-       DESKTOP NAV
-    ========================================================== */
-
-    nav {
+    .desktop-nav {
       display: flex;
       align-items: center;
-      gap: 30px;
+      gap: 28px;
     }
 
-    nav a {
-      position: relative;
-
-      font-size: 0.67rem;
-      font-weight: 600;
-
+    .desktop-nav a {
+      font-size: 12px;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      transition: opacity 0.2s ease;
     }
 
-    nav a::after {
-      content: "";
-
-      position: absolute;
-      left: 0;
-      bottom: -6px;
-
-      width: 0;
-      height: 1px;
-
-      background: var(--text);
-
-      transition: width 0.25s ease;
-    }
-
-    nav a:hover::after {
-      width: 100%;
+    .desktop-nav a:hover {
+      opacity: 0.5;
     }
 
 
     /* =========================================================
-       MENU BUTTON
-    ========================================================== */
+       MOBILE MENU BUTTON
+    ========================================================= */
 
-    #menu {
+    .menu-button {
       display: none;
 
       width: 42px;
       height: 42px;
 
+      border: 1px solid var(--text);
+      background: transparent;
+
       align-items: center;
       justify-content: center;
 
-      border: 1px solid var(--text);
-      border-radius: 50%;
-
-      background: transparent;
-      color: var(--text);
-
       cursor: pointer;
-
-      font-size: 1.15rem;
-      line-height: 1;
+      position: relative;
+      z-index: 1100;
     }
 
-
-    /* =========================================================
-       MOBILE MENU
-    ========================================================== */
-
-    .mobile-menu {
-      position: fixed;
-      inset: 0;
-
-      z-index: 999;
-
-      padding: 105px 6vw 35px;
-
-      background: var(--bg);
-
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-
-      transform: translateY(-10px);
-
-      transition:
-        opacity 0.25s ease,
-        visibility 0.25s ease,
-        transform 0.25s ease;
+    .menu-icon {
+      width: 18px;
+      height: 12px;
 
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
 
+    .menu-icon span {
+      width: 100%;
+      height: 1px;
+      background: var(--text);
+      transition: transform 0.25s ease;
+    }
+
+    .menu-button.active .menu-icon span:first-child {
+      transform: translateY(5.5px) rotate(45deg);
+    }
+
+    .menu-button.active .menu-icon span:last-child {
+      transform: translateY(-5.5px) rotate(-45deg);
+    }
+
+
+    /* =========================================================
+       MOBILE MENU
+    ========================================================= */
+
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      z-index: 1050;
+
+      background: var(--bg);
+
+      padding: 120px 40px 40px;
+
+      display: flex;
+      flex-direction: column;
+
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+
+      transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+    }
+
     .mobile-menu.active {
       opacity: 1;
       visibility: visible;
       pointer-events: auto;
-      transform: translateY(0);
+    }
+
+    .mobile-menu-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+
+      color: var(--muted);
+
+      margin-bottom: 30px;
     }
 
     .mobile-nav {
@@ -255,100 +283,34 @@
     }
 
     .mobile-nav a {
-      padding: 15px 0;
+      padding: 18px 0;
+
+      border-bottom: 1px solid var(--line);
+
+      text-decoration: none;
 
       display: flex;
       align-items: center;
       justify-content: space-between;
 
-      border-bottom: 1px solid var(--line);
-
-      font-size: clamp(1.5rem, 7vw, 2.6rem);
-      letter-spacing: -0.05em;
+      font-size: 22px;
+      font-weight: 500;
     }
 
     .mobile-nav a span {
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: 0.55em;
-    }
-
-    .mobile-footer {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-
-      font-size: 0.58rem;
-
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-
+      font-size: 11px;
+      letter-spacing: 0.08em;
       color: var(--muted);
-    }
-
-
-    /* =========================================================
-       GENERAL SECTIONS
-    ========================================================== */
-
-    section {
-      padding: 105px 0;
-
-      border-bottom: 1px solid var(--line);
-
-      scroll-margin-top: 74px;
-    }
-
-    .section-heading {
-      margin-bottom: 55px;
-    }
-
-    .section-number {
-      display: block;
-
-      margin-bottom: 14px;
-
-      font-size: 0.63rem;
-      font-weight: 700;
-
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-
-      color: var(--muted);
-    }
-
-    .section-heading h2 {
-      font-size: clamp(2.8rem, 5vw, 5rem);
-
-      line-height: 0.98;
-      letter-spacing: -0.065em;
-
-      font-weight: 500;
-    }
-
-    .section-heading h2 i {
-      font-family: var(--serif);
-      font-weight: 500;
-    }
-
-    p {
-      color: #555;
-    }
-
-    strong {
-      color: var(--text);
-      font-weight: 600;
     }
 
 
     /* =========================================================
        HERO
-    ========================================================== */
+    ========================================================= */
 
     .hero {
       min-height: 100vh;
-
-      padding: 125px 0 80px;
+      padding-top: 74px;
 
       display: flex;
       align-items: center;
@@ -358,164 +320,104 @@
 
     .hero-grid {
       display: grid;
-
-      grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
-
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 80px;
-
       align-items: center;
-    }
 
-    .hero-name {
-      margin-bottom: 16px;
-
-      font-size: 0.65rem;
-      font-weight: 700;
-
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
+      padding: 90px 0;
     }
 
     .hero-kicker {
-      margin-bottom: 20px;
-
-      font-size: 0.65rem;
-
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      letter-spacing: 0.13em;
 
-      color: var(--muted);
+      margin-bottom: 28px;
     }
 
     .hero h1 {
-      max-width: 780px;
-
-      font-size: clamp(3.5rem, 6.3vw, 6.8rem);
-
-      line-height: 0.98;
-      letter-spacing: -0.07em;
-
+      font-size: clamp(52px, 7vw, 92px);
+      line-height: 0.94;
       font-weight: 500;
+      letter-spacing: -0.055em;
     }
 
     .hero h1 i {
       font-family: var(--serif);
-      font-weight: 500;
+      font-weight: 400;
     }
 
     .hero-description {
-      max-width: 650px;
+      max-width: 600px;
 
-      margin-top: 27px;
+      margin-top: 34px;
 
-      font-size: 0.96rem;
+      color: var(--muted);
+
+      font-size: 17px;
+      line-height: 1.8;
     }
-
-
-    /* =========================================================
-       HERO TAGS
-    ========================================================== */
 
     .hero-tags {
-      margin-top: 25px;
-
       display: flex;
       flex-wrap: wrap;
+      gap: 8px;
 
-      gap: 7px;
+      margin-top: 28px;
     }
 
-    .hero-tags span {
-      padding: 7px 12px;
+    .hero-tag {
+      padding: 8px 13px;
 
       border: 1px solid var(--line);
+
       border-radius: 999px;
 
-      font-size: 0.63rem;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
-
-    /* =========================================================
-       BUTTONS
-    ========================================================== */
-
-    .button-row {
-      margin-top: 28px;
-
+    .hero-buttons {
       display: flex;
       flex-wrap: wrap;
+      gap: 12px;
 
-      gap: 9px;
+      margin-top: 35px;
     }
 
     .button {
       display: inline-flex;
-
       align-items: center;
       justify-content: center;
 
-      gap: 9px;
-
-      padding: 11px 18px;
+      padding: 13px 20px;
 
       border: 1px solid var(--text);
-      border-radius: 999px;
 
-      background: var(--text);
-      color: var(--bg);
+      text-decoration: none;
 
-      font-size: 0.62rem;
-      font-weight: 700;
-
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
+      font-size: 12px;
+      font-weight: 600;
 
       transition:
-        background 0.25s ease,
-        color 0.25s ease,
-        transform 0.25s ease;
+        background 0.2s ease,
+        color 0.2s ease;
     }
 
     .button:hover {
-      background: transparent;
-      color: var(--text);
-
-      transform: translateY(-2px);
-    }
-
-    .button.secondary {
-      background: transparent;
-      color: var(--text);
-    }
-
-    .button.secondary:hover {
       background: var(--text);
       color: var(--bg);
     }
 
-
-    /* =========================================================
-       HERO PHOTO
-    ========================================================== */
-
-    .hero-visual {
-      position: relative;
-
-      display: flex;
-      justify-content: flex-end;
-    }
-
-    .hero-photo {
-      width: min(100%, 390px);
-
+    .hero-image {
       position: relative;
     }
 
-    .hero-photo img {
+    .hero-image img {
       width: 100%;
-
-      aspect-ratio: 0.82;
-
+      aspect-ratio: 0.85;
       object-fit: cover;
 
       filter: grayscale(100%);
@@ -523,216 +425,218 @@
       transition: filter 0.4s ease;
     }
 
-    .hero-photo:hover img {
+    .hero-image:hover img {
       filter: grayscale(0%);
-    }
-
-    .hero-photo::after {
-      content: "";
-
-      position: absolute;
-
-      right: -16px;
-      bottom: -16px;
-
-      width: 100%;
-      height: 100%;
-
-      border: 1px solid var(--line);
-
-      z-index: -1;
     }
 
     .hero-mark {
       position: absolute;
+      right: -20px;
+      bottom: -20px;
 
-      right: -22px;
-      bottom: 15px;
+      width: 90px;
+      height: 90px;
+
+      border: 1px solid var(--text);
+      background: var(--bg);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       font-family: var(--serif);
-
-      font-size: clamp(4rem, 8vw, 7rem);
-
-      font-style: italic;
-
-      line-height: 0.8;
-
-      color: #e3e1da;
-
-      z-index: -1;
+      font-size: 24px;
     }
 
 
     /* =========================================================
        EXPLORE PORTFOLIO
-    ========================================================== */
+       COLLAPSIBLE NAVIGATION
+    ========================================================= */
 
     .explore {
-      margin-top: 65px;
+      margin-top: 70px;
     }
 
-    .explore-title {
-      margin-bottom: 12px;
+    .explore-toggle {
+      width: 100%;
 
-      font-size: 0.63rem;
-      font-weight: 700;
-
-      text-transform: uppercase;
-      letter-spacing: 0.13em;
-
-      color: var(--muted);
-    }
-
-    .explore-grid {
-      display: grid;
-
-      grid-template-columns: repeat(3, 1fr);
+      padding: 24px 0;
 
       border-top: 1px solid var(--text);
       border-bottom: 1px solid var(--text);
+
+      background: transparent;
+      color: var(--text);
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      cursor: pointer;
+
+      font-family: var(--sans);
+
+      text-align: left;
     }
 
-    .explore-card {
-      min-height: 95px;
+    .explore-toggle-left {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
 
-      padding: 15px 18px;
+    .explore-toggle-label {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .explore-toggle-hint {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .explore-toggle-icon {
+      width: 32px;
+      height: 32px;
+
+      border: 1px solid var(--text);
+      border-radius: 50%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 18px;
+      font-weight: 400;
+
+      transition: transform 0.3s ease;
+    }
+
+    .explore-toggle.active .explore-toggle-icon {
+      transform: rotate(45deg);
+    }
+
+    .explore-menu {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      max-height: 0;
+      overflow: hidden;
+
+      opacity: 0;
+
+      transition:
+        max-height 0.45s ease,
+        opacity 0.3s ease;
+    }
+
+    .explore-menu.active {
+      max-height: 500px;
+      opacity: 1;
+    }
+
+    .explore-link {
+      min-height: 100px;
+
+      padding: 18px;
+
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
 
       display: flex;
       flex-direction: column;
       justify-content: space-between;
 
-      border-right: 1px solid var(--line);
+      text-decoration: none;
 
       transition:
         background 0.25s ease,
         color 0.25s ease;
     }
 
-    .explore-card:nth-child(3n) {
+    .explore-link:nth-child(3n) {
       border-right: 0;
     }
 
-    .explore-card:hover {
+    .explore-link:hover {
       background: var(--text);
       color: var(--bg);
     }
 
     .explore-number {
-      font-size: 0.58rem;
-      color: var(--muted);
-    }
-
-    .explore-card:hover .explore-number {
-      color: #aaa;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
     }
 
     .explore-name {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      font-size: 16px;
+      font-weight: 600;
+    }
 
-      font-size: 0.68rem;
-      font-weight: 700;
-
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
+    .explore-name span {
+      margin-left: 5px;
+      font-size: 13px;
     }
 
 
     /* =========================================================
        ABOUT
-    ========================================================== */
+    ========================================================= */
 
     .about-grid {
       display: grid;
-
-      grid-template-columns: 0.75fr 1.25fr;
-
-      gap: 80px;
-    }
-
-    .about-intro {
-      font-family: var(--serif);
-
-      font-size: clamp(1.7rem, 3vw, 2.6rem);
-
-      line-height: 1.2;
-
-      color: var(--text);
-    }
-
-    .about-content {
-      display: grid;
-
       grid-template-columns: 1fr 1fr;
+      gap: 100px;
 
-      gap: 45px;
+      margin-top: 70px;
     }
 
-    .about-content p {
-      margin-bottom: 20px;
-
-      font-size: 0.9rem;
+    .about-text {
+      font-size: 17px;
+      line-height: 1.9;
     }
 
-    .about-detail {
-      padding-top: 20px;
-
-      border-top: 1px solid var(--text);
+    .about-text p + p {
+      margin-top: 24px;
     }
 
-    .about-detail h3 {
-      margin-bottom: 15px;
-
-      font-size: 0.62rem;
-      font-weight: 700;
-
-      text-transform: uppercase;
-      letter-spacing: 0.11em;
+    .interest-list {
+      border-top: 1px solid var(--line);
     }
 
-    .about-detail ul {
-      list-style: none;
-    }
-
-    .about-detail li {
-      padding: 7px 0;
+    .interest-item {
+      padding: 17px 0;
 
       border-bottom: 1px solid var(--line);
 
-      font-size: 0.78rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+
+      font-size: 14px;
+    }
+
+    .interest-item span:last-child {
+      color: var(--muted);
     }
 
 
     /* =========================================================
        EXPERIENCE
-    ========================================================== */
-
-    .experience-header {
-      display: grid;
-
-      grid-template-columns: 0.75fr 1.25fr;
-
-      gap: 80px;
-
-      margin-bottom: 35px;
-    }
-
-    .experience-intro {
-      max-width: 480px;
-
-      font-size: 0.92rem;
-    }
+    ========================================================= */
 
     .experience-list {
+      margin-top: 70px;
       border-top: 1px solid var(--text);
     }
 
     .experience-item {
       display: grid;
-
       grid-template-columns: 130px minmax(0, 1fr);
-
       gap: 35px;
 
       padding: 28px 0;
@@ -743,35 +647,26 @@
     }
 
     .experience-date {
-      font-size: 0.62rem;
-      font-weight: 600;
-
       color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .experience-main {
+      display: grid;
+      grid-template-columns: minmax(220px, 0.7fr) 1.3fr;
+      gap: 50px;
     }
 
     .experience-item h3 {
-      margin-bottom: 4px;
-
-      font-size: clamp(1.35rem, 2vw, 1.8rem);
-
-      line-height: 1.1;
-
-      font-weight: 500;
-
-      letter-spacing: -0.04em;
+      font-size: 20px;
+      line-height: 1.2;
+      font-weight: 600;
     }
-
-    /*
-      ONLY ACTUAL LINKS GET THE INTERACTION.
-      This avoids making non-clickable jobs look clickable.
-    */
 
     .experience-item h3 a {
       text-decoration: none;
-
       text-underline-offset: 6px;
-
-      transition: opacity 0.2s ease;
     }
 
     .experience-item h3 a:hover {
@@ -779,213 +674,149 @@
     }
 
     .experience-role {
-      margin-bottom: 12px;
-
-      font-size: 0.6rem;
-      font-weight: 700;
-
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-
       color: var(--muted);
+      font-size: 12px;
+      margin-top: 7px;
     }
 
     .experience-description {
-      max-width: 700px;
-
-      font-size: 0.82rem;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
     }
 
 
     /* =========================================================
        PROJECTS
-    ========================================================== */
-
-    .projects-intro {
-      max-width: 650px;
-
-      margin-bottom: 35px;
-
-      font-size: 0.92rem;
-    }
+    ========================================================= */
 
     .project-grid {
+      margin-top: 70px;
+
       display: grid;
+      grid-template-columns: 1fr 1fr;
 
-      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
 
-      gap: 14px;
+      background: var(--line);
+
+      border: 1px solid var(--line);
     }
 
     .project-card {
-      min-height: 370px;
+      background: var(--bg);
 
-      padding: 28px;
+      padding: 35px;
+
+      min-height: 360px;
 
       display: flex;
       flex-direction: column;
-
-      border: 1px solid var(--line);
-
-      background: transparent;
-
-      transition:
-        background 0.3s ease,
-        transform 0.3s ease;
-    }
-
-    .project-card:hover {
-      background: var(--soft);
-
-      transform: translateY(-4px);
-    }
-
-    .project-card.featured {
-      grid-column: span 2;
-
-      min-height: 330px;
-    }
-
-    .project-type {
-      font-size: 0.6rem;
-      font-weight: 700;
-
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-
-      color: var(--muted);
-    }
-
-    .project-card h3 {
-      max-width: 800px;
-
-      margin-top: 45px;
-
-      font-size: clamp(2rem, 4vw, 4.2rem);
-
-      line-height: 1;
-
-      letter-spacing: -0.06em;
-
-      font-weight: 500;
-    }
-
-    .project-card:not(.featured) h3 {
-      font-size: clamp(1.8rem, 3vw, 3rem);
-    }
-
-    .project-card h3 i {
-      font-family: var(--serif);
-    }
-
-    .project-description {
-      max-width: 650px;
-
-      margin-top: 18px;
-
-      font-size: 0.82rem;
-    }
-
-    .project-bottom {
-      margin-top: auto;
-
-      padding-top: 30px;
-
-      display: flex;
-      align-items: center;
       justify-content: space-between;
 
-      gap: 20px;
-    }
-
-    .project-meta {
-      font-size: 0.58rem;
-
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-
-      color: var(--muted);
-    }
-
-    .project-link {
-      display: inline-flex;
-
-      align-items: center;
-      gap: 8px;
-
-      padding: 9px 14px;
-
-      border: 1px solid var(--text);
-      border-radius: 999px;
-
-      font-size: 0.58rem;
-      font-weight: 700;
-
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
+      text-decoration: none;
 
       transition:
         background 0.25s ease,
         color 0.25s ease;
     }
 
-    .project-card:hover .project-link {
+    .project-card.featured {
+      grid-column: span 2;
+      min-height: 400px;
+    }
+
+    .project-card:hover {
       background: var(--text);
       color: var(--bg);
+    }
+
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .project-category {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .project-arrow {
+      font-size: 20px;
+    }
+
+    .project-title {
+      font-size: clamp(28px, 4vw, 52px);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      font-weight: 500;
+    }
+
+    .project-title i {
+      font-family: var(--serif);
+      font-weight: 400;
+    }
+
+    .project-meta {
+      margin-top: 20px;
+
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .project-meta span {
+      padding: 6px 10px;
+
+      border: 1px solid var(--line);
+
+      border-radius: 999px;
+
+      font-size: 10px;
+    }
+
+    .project-card:hover .project-meta span {
+      border-color: rgba(255,255,255,0.35);
     }
 
 
     /* =========================================================
        SKILLS
-    ========================================================== */
+    ========================================================= */
 
     .skills-grid {
+      margin-top: 70px;
+
       display: grid;
-
-      grid-template-columns: 0.75fr 1.25fr;
-
-      gap: 80px;
-    }
-
-    .skills-intro {
-      font-family: var(--serif);
-
-      font-size: clamp(1.7rem, 3vw, 2.5rem);
-
-      line-height: 1.2;
-
-      color: var(--text);
-    }
-
-    .skill-groups {
-      display: grid;
-
       grid-template-columns: 1fr 1fr;
 
-      gap: 35px;
+      gap: 1px;
+
+      background: var(--line);
+
+      border: 1px solid var(--line);
     }
 
     .skill-group {
-      padding-top: 18px;
-
-      border-top: 1px solid var(--text);
+      background: var(--bg);
+      padding: 30px;
     }
 
     .skill-group h3 {
-      margin-bottom: 15px;
-
-      font-size: 0.62rem;
-      font-weight: 700;
-
+      font-size: 14px;
       text-transform: uppercase;
-      letter-spacing: 0.11em;
+      letter-spacing: 0.08em;
+
+      margin-bottom: 20px;
     }
 
     .skill-list {
       display: flex;
       flex-wrap: wrap;
-
-      gap: 7px;
+      gap: 8px;
     }
 
     .skill-list span {
@@ -994,406 +825,308 @@
       border: 1px solid var(--line);
       border-radius: 999px;
 
-      font-size: 0.65rem;
+      font-size: 11px;
     }
 
-
-    /* =========================================================
-       EDUCATION
-    ========================================================== */
-
     .education {
-      margin-top: 65px;
+      margin-top: 70px;
 
-      padding-top: 28px;
+      padding-top: 30px;
 
       border-top: 1px solid var(--text);
 
       display: grid;
+      grid-template-columns: 1fr 1fr;
 
-      grid-template-columns: 1fr auto;
-
-      gap: 30px;
+      gap: 50px;
     }
 
-    .education-label {
-      margin-bottom: 8px;
+    .education-title {
+      font-size: 24px;
+      font-weight: 600;
+    }
 
-      font-size: 0.6rem;
-      font-weight: 700;
-
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-
+    .education-info {
       color: var(--muted);
-    }
-
-    .education h3 {
-      margin-bottom: 5px;
-
-      font-size: 1.5rem;
-
-      font-weight: 500;
-
-      letter-spacing: -0.04em;
-    }
-
-    .education p {
-      font-size: 0.78rem;
-    }
-
-    .gpa {
-      text-align: right;
-    }
-
-    .gpa strong {
-      font-family: var(--serif);
-
-      font-size: 2.8rem;
-
-      font-weight: 500;
+      font-size: 14px;
+      line-height: 1.8;
     }
 
 
     /* =========================================================
        CREATIVE
-    ========================================================== */
-
-    .creative-intro {
-      max-width: 650px;
-
-      margin-bottom: 35px;
-
-      font-size: 0.92rem;
-    }
+    ========================================================= */
 
     .creative-grid {
-      display: grid;
+      margin-top: 70px;
 
+      display: grid;
       grid-template-columns: 1fr 1fr;
 
-      gap: 14px;
+      gap: 20px;
     }
 
-    .creative-card {
-      padding: 28px;
-
+    .creative-block {
       border: 1px solid var(--line);
+      padding: 30px;
     }
 
-    .creative-label {
-      font-size: 0.6rem;
-      font-weight: 700;
+    .creative-heading {
+      margin-bottom: 25px;
+    }
 
+    .creative-heading h3 {
+      font-size: 13px;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-
-      color: var(--muted);
+      letter-spacing: 0.1em;
     }
 
-    .creative-card h3 {
-      margin-top: 40px;
+    .creative-heading h2 {
+      margin-top: 12px;
 
-      font-size: clamp(2rem, 3.5vw, 3.5rem);
+      font-size: clamp(34px, 4vw, 55px);
 
       line-height: 1;
-
-      letter-spacing: -0.06em;
+      letter-spacing: -0.04em;
 
       font-weight: 500;
     }
 
-    .creative-card h3 i {
+    .creative-heading h2 i {
       font-family: var(--serif);
-    }
-
-    .creative-description {
-      margin-top: 17px;
-
-      font-size: 0.82rem;
+      font-weight: 400;
     }
 
     .creative-image {
-      margin-top: 28px;
+      margin-top: 30px;
 
       overflow: hidden;
+
+      border: 1px solid var(--line);
     }
 
     .creative-image img {
       width: 100%;
+      height: auto;
 
       transition: transform 0.4s ease;
     }
 
-    .creative-card:hover .creative-image img {
+    .creative-block:hover .creative-image img {
       transform: scale(1.02);
     }
 
-
-    /* =========================================================
-       CREATIVE CTA
-    ========================================================== */
-
-    .creative-cta {
-      margin-top: 22px;
-    }
-
-    .modern-link {
+    .creative-link {
       display: inline-flex;
+      margin-top: 25px;
 
-      align-items: center;
-      justify-content: center;
-
-      gap: 9px;
-
-      padding: 10px 16px;
+      padding: 10px 14px;
 
       border: 1px solid var(--text);
-      border-radius: 999px;
 
-      font-size: 0.6rem;
-      font-weight: 700;
+      text-decoration: none;
 
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
+      font-size: 11px;
+      font-weight: 600;
 
       transition:
-        background 0.25s ease,
-        color 0.25s ease,
-        transform 0.25s ease;
+        background 0.2s ease,
+        color 0.2s ease;
     }
 
-    .modern-link:hover {
+    .creative-link:hover {
       background: var(--text);
       color: var(--bg);
-
-      transform: translateY(-2px);
     }
 
-
-    /* =========================================================
-       TIKTOK
-    ========================================================== */
-
-    .tiktok-stats {
-      margin-top: 28px;
-
+    .creative-stats {
       display: grid;
-
       grid-template-columns: repeat(3, 1fr);
+
+      margin-top: 25px;
 
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
     }
 
-    .tiktok-stat {
-      padding: 17px 8px;
+    .creative-stat {
+      padding: 18px 10px;
+
+      border-right: 1px solid var(--line);
 
       text-align: center;
     }
 
-    .tiktok-stat:not(:last-child) {
-      border-right: 1px solid var(--line);
+    .creative-stat:last-child {
+      border-right: 0;
     }
 
-    .tiktok-stat strong {
+    .creative-stat strong {
       display: block;
-
-      font-family: var(--serif);
-
-      font-size: 1.8rem;
-
-      font-weight: 500;
+      font-size: 18px;
     }
 
-    .tiktok-stat span {
+    .creative-stat span {
       display: block;
 
-      margin-top: 2px;
-
-      font-size: 0.53rem;
-
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
+      margin-top: 3px;
 
       color: var(--muted);
+
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
     }
 
-    .tiktok-insight {
-      margin-top: 18px;
+    .creative-insight {
+      margin-top: 22px;
 
-      font-size: 0.76rem;
-    }
+      color: var(--muted);
 
-    .tiktok-profile {
-      margin-top: 25px;
-
-      overflow: hidden;
-    }
-
-    .tiktok-profile img {
-      width: 100%;
+      font-size: 13px;
+      line-height: 1.8;
     }
 
 
     /* =========================================================
        CONTACT
-    ========================================================== */
-
-    .contact-grid {
-      display: grid;
-
-      grid-template-columns: 0.75fr 1.25fr;
-
-      gap: 80px;
-
-      align-items: start;
-    }
-
-    .contact-intro {
-      font-family: var(--serif);
-
-      font-size: clamp(1.7rem, 3vw, 2.5rem);
-
-      line-height: 1.2;
-
-      color: var(--text);
-    }
+    ========================================================= */
 
     .contact-content {
-      padding-top: 5px;
+      margin-top: 70px;
+
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+
+      gap: 100px;
     }
 
-    .contact-content > p {
-      max-width: 650px;
+    .contact-title {
+      font-size: clamp(46px, 7vw, 90px);
 
-      margin-bottom: 28px;
+      line-height: 0.95;
 
-      font-size: 0.9rem;
+      font-weight: 500;
+
+      letter-spacing: -0.05em;
     }
 
-    .contact-email {
-      display: inline-block;
-
+    .contact-title i {
       font-family: var(--serif);
-
-      font-style: italic;
-
-      font-size: clamp(1.7rem, 3.2vw, 3rem);
-
-      line-height: 1.1;
-
-      border-bottom: 1px solid var(--text);
-
-      word-break: break-word;
-
-      transition: opacity 0.25s ease;
+      font-weight: 400;
     }
 
-    .contact-email:hover {
-      opacity: 0.55;
-    }
-
-    .social {
+    .contact-description {
       margin-top: 30px;
 
+      color: var(--muted);
+
+      max-width: 550px;
+
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .contact-links {
+      border-top: 1px solid var(--text);
+    }
+
+    .contact-link {
       display: flex;
-      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
 
-      gap: 8px;
+      padding: 18px 0;
+
+      border-bottom: 1px solid var(--line);
+
+      text-decoration: none;
+
+      font-size: 14px;
+
+      transition: opacity 0.2s ease;
     }
 
-    .social a {
-      padding: 9px 14px;
-
-      border: 1px solid var(--line);
-      border-radius: 999px;
-
-      font-size: 0.59rem;
-      font-weight: 600;
-
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-
-      transition:
-        background 0.25s ease,
-        color 0.25s ease;
+    .contact-link:hover {
+      opacity: 0.5;
     }
 
-    .social a:hover {
-      background: var(--text);
-      color: var(--bg);
+    .contact-link span:last-child {
+      color: var(--muted);
+      font-size: 13px;
     }
 
 
     /* =========================================================
        FOOTER
-    ========================================================== */
+    ========================================================= */
 
     footer {
-      padding: 25px 0;
+      padding: 28px 0;
     }
 
     .footer-inner {
-      width: min(var(--container), calc(100% - 80px));
+      width: min(
+        var(--container),
+        calc(100% - 80px)
+      );
+
       margin: 0 auto;
 
       display: flex;
-      align-items: center;
       justify-content: space-between;
-
-      font-size: 0.58rem;
-
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
+      gap: 20px;
 
       color: var(--muted);
+
+      font-size: 11px;
     }
 
 
     /* =========================================================
-       TABLET
-    ========================================================== */
+       RESPONSIVE — TABLET
+    ========================================================= */
 
     @media (max-width: 950px) {
 
       .container,
       .header-inner,
       .footer-inner {
-        width: min(var(--container), calc(100% - 60px));
-      }
-
-      nav {
-        gap: 20px;
+        width: min(
+          var(--container),
+          calc(100% - 60px)
+        );
       }
 
       .hero-grid {
+        grid-template-columns: 1fr 0.75fr;
         gap: 50px;
       }
 
-      .about-grid,
-      .experience-header,
-      .skills-grid,
-      .contact-grid {
-        grid-template-columns: 0.65fr 1.35fr;
-
-        gap: 45px;
+      .about-grid {
+        gap: 50px;
       }
 
-      .experience-item {
-        grid-template-columns: 100px minmax(0, 1fr);
-
-        gap: 22px;
+      .experience-main {
+        grid-template-columns: 1fr;
+        gap: 18px;
       }
 
+      .contact-content {
+        gap: 50px;
+      }
     }
 
 
     /* =========================================================
-       MOBILE
-    ========================================================== */
+       RESPONSIVE — MOBILE
+    ========================================================= */
 
     @media (max-width: 700px) {
+
+      html {
+        scroll-padding-top: 80px;
+      }
 
       .container,
       .header-inner,
@@ -1401,268 +1134,235 @@
         width: calc(100% - 40px);
       }
 
+      section {
+        padding: 80px 0;
+      }
+
+
+      /* Header */
+
       header {
         height: 68px;
       }
 
-      .header-inner {
-        width: calc(100% - 40px);
-      }
-
-      nav {
+      .desktop-nav {
         display: none;
       }
 
-      #menu {
+      .menu-button {
         display: flex;
       }
 
 
-      /* -------------------------------------------------------
-         HERO
-      -------------------------------------------------------- */
+      /* Hero */
 
       .hero {
         min-height: auto;
-
-        padding: 110px 0 65px;
+        padding-top: 68px;
       }
 
       .hero-grid {
         grid-template-columns: 1fr;
+        gap: 55px;
 
-        gap: 45px;
+        padding: 70px 0 80px;
       }
 
       .hero h1 {
-        font-size: clamp(3rem, 14vw, 4.8rem);
+        font-size: clamp(48px, 14vw, 72px);
       }
 
       .hero-description {
-        font-size: 0.87rem;
+        font-size: 15px;
       }
 
-      .hero-visual {
-        justify-content: center;
-      }
-
-      .hero-photo {
-        width: min(82vw, 380px);
-      }
-
-      .hero-photo::after {
-        right: -10px;
-        bottom: -10px;
+      .hero-image {
+        max-width: 520px;
       }
 
       .hero-mark {
-        right: -8px;
-        bottom: 10px;
+        right: -10px;
+        bottom: -10px;
+
+        width: 70px;
+        height: 70px;
       }
 
 
-      /* -------------------------------------------------------
-         EXPLORE
-      -------------------------------------------------------- */
+      /* Explore */
 
       .explore {
-        margin-top: 48px;
+        margin-top: 50px;
       }
 
-      .explore-grid {
+      .explore-toggle {
+        padding: 20px 0;
+      }
+
+      .explore-toggle-left {
+        display: block;
+      }
+
+      .explore-toggle-hint {
+        display: block;
+        margin-top: 4px;
+      }
+
+      .explore-menu {
         grid-template-columns: 1fr 1fr;
       }
 
-      .explore-card {
-        min-height: 82px;
+      .explore-link {
+        min-height: 90px;
       }
 
-      .explore-card:nth-child(2n) {
+      .explore-link:nth-child(3n) {
+        border-right: 1px solid var(--line);
+      }
+
+      .explore-link:nth-child(2n) {
         border-right: 0;
       }
 
-      .explore-card:nth-child(1),
-      .explore-card:nth-child(2),
-      .explore-card:nth-child(3),
-      .explore-card:nth-child(4) {
-        border-bottom: 1px solid var(--line);
+
+      /* Section titles */
+
+      .section-title {
+        font-size: clamp(42px, 13vw, 62px);
+      }
+
+      .section-intro {
+        font-size: 15px;
       }
 
 
-      /* -------------------------------------------------------
-         SECTIONS
-      -------------------------------------------------------- */
+      /* About */
 
-      section {
-        padding: 72px 0;
-      }
-
-      .section-heading {
-        margin-bottom: 38px;
-      }
-
-      .section-heading h2 {
-        font-size: clamp(2.7rem, 13vw, 4.4rem);
-      }
-
-
-      /* -------------------------------------------------------
-         ABOUT
-      -------------------------------------------------------- */
-
-      .about-grid,
-      .experience-header,
-      .skills-grid,
-      .contact-grid {
+      .about-grid {
         grid-template-columns: 1fr;
+        gap: 55px;
 
-        gap: 35px;
+        margin-top: 50px;
       }
 
-      .about-intro,
-      .skills-intro,
-      .contact-intro {
-        font-size: 1.7rem;
-      }
-
-      .about-content {
-        grid-template-columns: 1fr;
-
-        gap: 30px;
+      .about-text {
+        font-size: 15px;
       }
 
 
-      /* -------------------------------------------------------
-         EXPERIENCE
-      -------------------------------------------------------- */
+      /* Experience */
 
-      .experience-header {
-        margin-bottom: 28px;
+      .experience-list {
+        margin-top: 50px;
       }
 
       .experience-item {
         grid-template-columns: 1fr;
+        gap: 15px;
 
-        gap: 7px;
-
-        padding: 24px 0;
+        padding: 25px 0;
       }
 
-      .experience-date {
-        order: 0;
+      .experience-main {
+        gap: 18px;
+      }
+
+      .experience-description {
+        font-size: 13px;
       }
 
 
-      /* -------------------------------------------------------
-         PROJECTS
-      -------------------------------------------------------- */
+      /* Projects */
 
       .project-grid {
         grid-template-columns: 1fr;
-      }
 
-      .project-card.featured {
-        grid-column: auto;
+        margin-top: 50px;
       }
 
       .project-card,
       .project-card.featured {
-        min-height: 320px;
+        grid-column: span 1;
 
-        padding: 23px;
-      }
+        min-height: 300px;
 
-      .project-card h3,
-      .project-card:not(.featured) h3 {
-        margin-top: 38px;
-
-        font-size: 2.2rem;
-      }
-
-      .project-bottom {
-        align-items: flex-start;
-
-        flex-direction: column;
+        padding: 25px;
       }
 
 
-      /* -------------------------------------------------------
-         SKILLS
-      -------------------------------------------------------- */
+      /* Skills */
 
-      .skill-groups {
+      .skills-grid {
         grid-template-columns: 1fr;
 
-        gap: 28px;
+        margin-top: 50px;
+      }
+
+      .skill-group {
+        padding: 25px;
       }
 
       .education {
-        margin-top: 45px;
-
         grid-template-columns: 1fr;
+
+        margin-top: 50px;
+
+        gap: 20px;
       }
 
-      .gpa {
-        text-align: left;
-      }
 
-
-      /* -------------------------------------------------------
-         CREATIVE
-      -------------------------------------------------------- */
+      /* Creative */
 
       .creative-grid {
         grid-template-columns: 1fr;
+
+        margin-top: 50px;
       }
 
-      .creative-card {
-        padding: 23px;
+      .creative-block {
+        padding: 22px;
       }
 
-      .creative-card h3 {
-        margin-top: 35px;
-
-        font-size: 2.2rem;
-      }
-
-      .tiktok-stats {
+      .creative-stats {
         grid-template-columns: 1fr;
       }
 
-      .tiktok-stat:not(:last-child) {
+      .creative-stat {
         border-right: 0;
-
         border-bottom: 1px solid var(--line);
       }
 
-
-      /* -------------------------------------------------------
-         CONTACT
-      -------------------------------------------------------- */
-
-      .contact-email {
-        font-size: 1.45rem;
+      .creative-stat:last-child {
+        border-bottom: 0;
       }
 
 
-      /* -------------------------------------------------------
-         FOOTER
-      -------------------------------------------------------- */
+      /* Contact */
+
+      .contact-content {
+        grid-template-columns: 1fr;
+
+        margin-top: 50px;
+
+        gap: 55px;
+      }
+
+      .contact-title {
+        font-size: clamp(50px, 15vw, 76px);
+      }
+
+
+      /* Footer */
 
       .footer-inner {
-        align-items: flex-start;
-
         flex-direction: column;
-
-        gap: 7px;
       }
-
     }
 
 
     /* =========================================================
-       SMALL MOBILE
-    ========================================================== */
+       VERY SMALL MOBILE
+    ========================================================= */
 
     @media (max-width: 420px) {
 
@@ -1672,32 +1372,53 @@
         width: calc(100% - 30px);
       }
 
-      .hero h1 {
-        font-size: 2.8rem;
+      .mobile-menu {
+        padding-left: 30px;
+        padding-right: 30px;
       }
 
-      .hero-photo {
-        width: 85vw;
-      }
-
-      .explore-grid {
+      .explore-menu {
         grid-template-columns: 1fr;
       }
 
-      .explore-card {
-        border-right: 0 !important;
+      .explore-link,
+      .explore-link:nth-child(3n),
+      .explore-link:nth-child(2n) {
+        border-right: 0;
+      }
 
+      .explore-link {
+        min-height: 75px;
         border-bottom: 1px solid var(--line);
       }
 
-      .explore-card:last-child {
+      .explore-link:last-child {
         border-bottom: 0;
       }
 
+      .hero-tags {
+        gap: 6px;
+      }
+
+      .hero-tag {
+        font-size: 10px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .project-card,
+      .project-card.featured {
+        min-height: 280px;
+      }
     }
 
   </style>
-
 </head>
 
 
@@ -1713,33 +1434,33 @@
     <div class="header-inner">
 
       <a href="#home" class="logo">
-        TDL<span>.</span>
+        TDL
       </a>
 
-      <nav>
-
+      <nav class="desktop-nav">
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#creative">Creative</a>
         <a href="#contact">Contact</a>
-
       </nav>
 
       <button
-        id="menu"
-        type="button"
-        aria-label="Open navigation"
+        class="menu-button"
+        id="menuButton"
+        aria-label="Open menu"
         aria-expanded="false"
       >
-        ☰
+        <span class="menu-icon">
+          <span></span>
+          <span></span>
+        </span>
       </button>
 
     </div>
 
   </header>
-
 
 
   <!-- =======================================================
@@ -1748,130 +1469,125 @@
 
   <div class="mobile-menu" id="mobileMenu">
 
-    <div class="mobile-nav">
+    <div class="mobile-menu-label">
+      Navigation
+    </div>
+
+    <nav class="mobile-nav">
 
       <a href="#about">
+        <span>01</span>
         About
-        <span>01 ↗</span>
       </a>
 
       <a href="#experience">
+        <span>02</span>
         Experience
-        <span>02 ↗</span>
       </a>
 
       <a href="#projects">
-        Projects
-        <span>03 ↗</span>
+        <span>03</span>
+        Selected Projects
       </a>
 
       <a href="#skills">
-        Skills
-        <span>04 ↗</span>
+        <span>04</span>
+        Skills & Education
       </a>
 
       <a href="#creative">
-        Creative
-        <span>05 ↗</span>
+        <span>05</span>
+        Creative Skills
       </a>
 
       <a href="#contact">
+        <span>06</span>
         Contact
-        <span>06 ↗</span>
       </a>
 
-    </div>
-
-    <div class="mobile-footer">
-
-      <span>
-        Tamimmah Disma Lestari
-      </span>
-
-      <span>
-        Marketing · Strategy · Creative
-      </span>
-
-    </div>
+    </nav>
 
   </div>
 
 
-
-  <!-- =======================================================
-       HERO
-  ======================================================== -->
-
-  <section class="hero" id="home">
-
-    <div class="container">
-
-      <div class="hero-grid">
+  <main>
 
 
-        <div class="hero-content">
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
 
-          <div class="hero-name">
-            TAMIMMAH DISMA LESTARI
+    <section class="hero" id="home">
+
+      <div class="container">
+
+        <div class="hero-grid">
+
+          <div>
+
+            <div class="hero-kicker">
+              Business · Marketing · Consumer Insights
+            </div>
+
+            <h1>
+              Turning ideas into
+              <i>meaningful strategies.</i>
+            </h1>
+
+            <div class="hero-tags">
+
+              <span class="hero-tag">
+                Marketing
+              </span>
+
+              <span class="hero-tag">
+                Consumer Research
+              </span>
+
+              <span class="hero-tag">
+                Business Development
+              </span>
+
+              <span class="hero-tag">
+                Creative Strategy
+              </span>
+
+            </div>
+
+            <p class="hero-description">
+              Business Management graduate with hands-on experience
+              in marketing, consumer research, customer acquisition,
+              and business operations.
+            </p>
+
+            <div class="hero-buttons">
+
+              <a
+                href="resume.pdf"
+                class="button"
+                target="_blank"
+              >
+                View CV →
+              </a>
+
+              <a
+                href="#contact"
+                class="button"
+              >
+                Let's Talk →
+              </a>
+
+            </div>
+
           </div>
 
-          <div class="hero-kicker">
-            BUSINESS · MARKETING · CONSUMER INSIGHTS
-          </div>
 
-          <h1>
-            Turning ideas into
-            <i>meaningful strategies.</i>
-          </h1>
-
-          <div class="hero-tags">
-
-            <span>Marketing</span>
-            <span>Consumer Research</span>
-            <span>Business Development</span>
-            <span>Creative Strategy</span>
-
-          </div>
-
-          <p class="hero-description">
-            Business Management graduate with hands-on experience in
-            <strong>marketing</strong>,
-            <strong>consumer research</strong>,
-            <strong>customer acquisition</strong>,
-            and <strong>business operations</strong>.
-          </p>
-
-          <div class="button-row">
-
-            <a
-              class="button"
-              href="resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View CV ↗
-            </a>
-
-            <a
-              class="button secondary"
-              href="#contact"
-            >
-              Let's Talk
-            </a>
-
-          </div>
-
-        </div>
-
-
-        <div class="hero-visual">
-
-          <div class="hero-photo">
+          <div class="hero-image">
 
             <img
               src="images/profile-photo.jpg"
               alt="Tamimmah Disma Lestari"
-            >
+            />
 
             <div class="hero-mark">
               TDL
@@ -1881,190 +1597,178 @@
 
         </div>
 
-      </div>
+
+        <!-- =================================================
+             EXPLORE PORTFOLIO
+        ================================================== -->
+
+        <div class="explore">
+
+          <button
+            class="explore-toggle"
+            id="exploreToggle"
+            aria-expanded="false"
+          >
+
+            <div class="explore-toggle-left">
+
+              <div class="explore-toggle-label">
+                Explore my portfolio
+              </div>
+
+              <div class="explore-toggle-hint">
+                01 — 06 · Click to explore
+              </div>
+
+            </div>
+
+            <div class="explore-toggle-icon">
+              +
+            </div>
+
+          </button>
 
 
+          <nav
+            class="explore-menu"
+            id="exploreMenu"
+          >
 
-      <!-- =====================================================
-           EXPLORE
-      ====================================================== -->
+            <a
+              href="#about"
+              class="explore-link"
+            >
+              <span class="explore-number">
+                01
+              </span>
 
-      <div class="explore">
+              <span class="explore-name">
+                About <span>↗</span>
+              </span>
+            </a>
 
-        <div class="explore-title">
-          Explore my portfolio
+
+            <a
+              href="#experience"
+              class="explore-link"
+            >
+              <span class="explore-number">
+                02
+              </span>
+
+              <span class="explore-name">
+                Experience <span>↗</span>
+              </span>
+            </a>
+
+
+            <a
+              href="#projects"
+              class="explore-link"
+            >
+              <span class="explore-number">
+                03
+              </span>
+
+              <span class="explore-name">
+                Selected Projects <span>↗</span>
+              </span>
+            </a>
+
+
+            <a
+              href="#skills"
+              class="explore-link"
+            >
+              <span class="explore-number">
+                04
+              </span>
+
+              <span class="explore-name">
+                Skills & Education <span>↗</span>
+              </span>
+            </a>
+
+
+            <a
+              href="#creative"
+              class="explore-link"
+            >
+              <span class="explore-number">
+                05
+              </span>
+
+              <span class="explore-name">
+                Creative Skills <span>↗</span>
+              </span>
+            </a>
+
+
+            <a
+              href="#contact"
+              class="explore-link"
+            >
+              <span class="explore-number">
+                06
+              </span>
+
+              <span class="explore-name">
+                Contact <span>↗</span>
+              </span>
+            </a>
+
+          </nav>
+
         </div>
 
-        <div class="explore-grid">
-
-
-          <a
-            href="#about"
-            class="explore-card"
-          >
-
-            <span class="explore-number">
-              01
-            </span>
-
-            <span class="explore-name">
-              About
-              <span>↗</span>
-            </span>
-
-          </a>
-
-
-          <a
-            href="#experience"
-            class="explore-card"
-          >
-
-            <span class="explore-number">
-              02
-            </span>
-
-            <span class="explore-name">
-              Experience
-              <span>↗</span>
-            </span>
-
-          </a>
-
-
-          <a
-            href="#projects"
-            class="explore-card"
-          >
-
-            <span class="explore-number">
-              03
-            </span>
-
-            <span class="explore-name">
-              Selected Projects
-              <span>↗</span>
-            </span>
-
-          </a>
-
-
-          <a
-            href="#skills"
-            class="explore-card"
-          >
-
-            <span class="explore-number">
-              04
-            </span>
-
-            <span class="explore-name">
-              Skills & Education
-              <span>↗</span>
-            </span>
-
-          </a>
-
-
-          <a
-            href="#creative"
-            class="explore-card"
-          >
-
-            <span class="explore-number">
-              05
-            </span>
-
-            <span class="explore-name">
-              Creative Skills
-              <span>↗</span>
-            </span>
-
-          </a>
-
-
-          <a
-            href="#contact"
-            class="explore-card"
-          >
-
-            <span class="explore-number">
-              06
-            </span>
-
-            <span class="explore-name">
-              Contact
-              <span>↗</span>
-            </span>
-
-          </a>
-
-
-        </div>
-
       </div>
 
-    </div>
-
-  </section>
+    </section>
 
 
+    <!-- =====================================================
+         ABOUT
+    ====================================================== -->
 
-  <!-- =======================================================
-       01 / ABOUT
-  ======================================================== -->
+    <section id="about">
 
-  <section id="about">
+      <div class="container">
 
-    <div class="container">
+        <div class="section-label">
+          01 / About
+        </div>
 
-      <div class="section-heading">
-
-        <span class="section-number">
-          01 / ABOUT
-        </span>
-
-        <h2>
+        <h2 class="section-title">
           Business meets
           <i>creativity.</i>
         </h2>
 
-      </div>
+        <p class="section-intro">
+          I combine business thinking with an interest in people,
+          brands, and creative communication.
+        </p>
 
 
-      <div class="about-grid">
+        <div class="about-grid">
 
-
-        <div class="about-intro">
-
-          I combine business thinking with an interest in
-          people, brands, and creative communication.
-
-        </div>
-
-
-        <div class="about-content">
-
-          <div>
+          <div class="about-text">
 
             <p>
-              I am a <strong>Business Management graduate from
-              Institut Teknologi Bandung</strong> with a
-              concentration in <strong>Management &
-              Marketing</strong>.
+              I am a Business Management graduate from
+              Institut Teknologi Bandung, with a concentration
+              in Management & Marketing.
             </p>
 
             <p>
-              My experience sits at the intersection of
-              <strong>marketing, consumer behavior, business
-              development, and entrepreneurship</strong>.
+              My experience sits at the intersection of marketing,
+              consumer behavior, business development,
+              entrepreneurship, and creative work.
             </p>
 
             <p>
               I enjoy understanding what makes people choose,
-              engage with, and remember a product — then
-              turning those insights into
-              <strong>practical business strategies</strong>.
+              engage with, and remember a product — then turning
+              those insights into practical business strategies.
             </p>
 
           </div>
@@ -2072,21 +1776,36 @@
 
           <div>
 
-            <div class="about-detail">
+            <div class="small-label">
+              Areas of Interest
+            </div>
 
-              <h3>
-                Areas of Interest
-              </h3>
+            <div class="interest-list">
 
-              <ul>
+              <div class="interest-item">
+                <span>Consumer Behavior</span>
+                <span>01</span>
+              </div>
 
-                <li>Consumer Behavior</li>
-                <li>Marketing Strategy</li>
-                <li>Brand Development</li>
-                <li>Business Development</li>
-                <li>Creative Strategy</li>
+              <div class="interest-item">
+                <span>Marketing Strategy</span>
+                <span>02</span>
+              </div>
 
-              </ul>
+              <div class="interest-item">
+                <span>Brand Development</span>
+                <span>03</span>
+              </div>
+
+              <div class="interest-item">
+                <span>Business Development</span>
+                <span>04</span>
+              </div>
+
+              <div class="interest-item">
+                <span>Creative Strategy</span>
+                <span>05</span>
+              </div>
 
             </div>
 
@@ -2096,521 +1815,443 @@
 
       </div>
 
-    </div>
-
-  </section>
+    </section>
 
 
+    <!-- =====================================================
+         EXPERIENCE
+    ====================================================== -->
 
-  <!-- =======================================================
-       02 / EXPERIENCE
-  ======================================================== -->
+    <section id="experience">
 
-  <section id="experience">
+      <div class="container">
 
-    <div class="container">
+        <div class="section-label">
+          02 / Experience
+        </div>
 
-      <div class="section-heading">
-
-        <span class="section-number">
-          02 / EXPERIENCE
-        </span>
-
-        <h2>
+        <h2 class="section-title">
           Building, learning,
           <i>doing.</i>
         </h2>
 
-      </div>
-
-
-      <div class="experience-header">
-
-        <div></div>
-
-        <p class="experience-intro">
+        <p class="section-intro">
           Experience across entrepreneurship, marketing,
           business operations, digital business, and
           project-based work.
         </p>
 
+
+        <div class="experience-list">
+
+
+          <!-- THE FOUNDERS LAB -->
+
+          <div class="experience-item">
+
+            <div class="experience-date">
+              2020–2021
+            </div>
+
+            <div class="experience-main">
+
+              <div>
+
+                <h3>
+                  <a
+                    href="https://www.instagram.com/thefounderslab/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    The Founders Lab ↗
+                  </a>
+                </h3>
+
+                <div class="experience-role">
+                  Co-Founder & Marketing Lead
+                </div>
+
+              </div>
+
+              <p class="experience-description">
+                Co-founded a platform for business webinars
+                and competitions backed by CIEL SBM ITB.
+                Led marketing, event promotion, audience
+                engagement, and communication initiatives.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <!-- SELLKPOPVT -->
+
+          <div class="experience-item">
+
+            <div class="experience-date">
+              2021–2025
+            </div>
+
+            <div class="experience-main">
+
+              <div>
+
+                <h3>
+                  <a
+                    href="https://x.com/sellkpopvt"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    SellKpopVT ↗
+                  </a>
+                </h3>
+
+                <div class="experience-role">
+                  Founder / Owner
+                </div>
+
+              </div>
+
+              <p class="experience-description">
+                Built and operated an international digital
+                business serving customers across Indonesia,
+                Malaysia, Singapore, Thailand, India, the US,
+                Belgium, Europe, Qatar, Japan, and other markets.
+                Managed pricing, customer acquisition,
+                operations, and retention.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <!-- PT SARI RASA -->
+
+          <div class="experience-item">
+
+            <div class="experience-date">
+              2024–2026
+            </div>
+
+            <div class="experience-main">
+
+              <div>
+
+                <h3>
+                  PT Sari Rasa
+                </h3>
+
+                <div class="experience-role">
+                  Business Partner
+                </div>
+
+              </div>
+
+              <p class="experience-description">
+                Supported the distribution of traditional snack
+                products to local supermarkets, contributing to
+                business operations and market expansion across
+                approximately 50 supermarket locations.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <!-- PT CAHAYA SEGARA -->
+
+          <div class="experience-item">
+
+            <div class="experience-date">
+              2026 · Project-Based
+            </div>
+
+            <div class="experience-main">
+
+              <div>
+
+                <h3>
+                  PT Cahaya Segara Indonesia
+                </h3>
+
+                <div class="experience-role">
+                  Freelance Administrative & Executive Support
+                </div>
+
+              </div>
+
+              <p class="experience-description">
+                Prepared documentation, reports, proposals,
+                and tender-related materials while supporting
+                administrative and executive-level project needs.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <!-- ECOPLAST -->
+
+          <div class="experience-item">
+
+            <div class="experience-date">
+              2018–2019
+            </div>
+
+            <div class="experience-main">
+
+              <div>
+
+                <h3>
+                  <a
+                    href="https://www.instagram.com/ecoplastid/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    ECOPLAST ID ↗
+                  </a>
+                </h3>
+
+                <div class="experience-role">
+                  Chief Marketing Officer
+                </div>
+
+              </div>
+
+              <p class="experience-description">
+                Worked on marketing and brand communication
+                for an environmental startup, helping shape
+                messaging, promotional activities, and
+                audience engagement.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <!-- TEC -->
+
+          <div class="experience-item">
+
+            <div class="experience-date">
+              2018–2021
+            </div>
+
+            <div class="experience-main">
+
+              <div>
+
+                <h3>
+                  Techno Entrepreneur Club (TEC), ITB
+                </h3>
+
+                <div class="experience-role">
+                  Student Entrepreneur
+                </div>
+
+              </div>
+
+              <p class="experience-description">
+                Participated in entrepreneurship, business
+                development, marketing, and project execution
+                across startup initiatives and student-led
+                business activities.
+              </p>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
       </div>
 
+    </section>
 
-      <div class="experience-list">
 
+    <!-- =====================================================
+         PROJECTS
+    ====================================================== -->
 
-        <!-- THE FOUNDERS LAB -->
+    <section id="projects">
 
-        <article class="experience-item">
+      <div class="container">
 
-          <time class="experience-date">
-            2020–2021
-          </time>
+        <div class="section-label">
+          03 / Selected Projects
+        </div>
 
-          <div>
-
-            <h3>
-
-              <a
-                href="https://www.instagram.com/thefounderslab/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                The Founders Lab ↗
-              </a>
-
-            </h3>
-
-            <div class="experience-role">
-              Co-Founder & Marketing Lead
-            </div>
-
-            <p class="experience-description">
-              Co-founded a platform for
-              <strong>business webinars and competitions</strong>
-              backed by CIEL SBM ITB. Led
-              <strong>marketing initiatives, event promotion,
-              audience engagement, and communications</strong>.
-            </p>
-
-          </div>
-
-        </article>
-
-
-
-        <!-- SELLKPOPVT -->
-
-        <article class="experience-item">
-
-          <time class="experience-date">
-            2021–2025
-          </time>
-
-          <div>
-
-            <h3>
-
-              <a
-                href="https://x.com/sellkpopvt"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                SellKpopVT ↗
-              </a>
-
-            </h3>
-
-            <div class="experience-role">
-              Founder / Owner
-            </div>
-
-            <p class="experience-description">
-              Built and managed an
-              <strong>international digital business</strong>
-              serving customers across
-              <strong>Indonesia, Malaysia, Singapore, Thailand,
-              India, the US, Europe, and the Middle East</strong>.
-              Managed pricing, customer acquisition, operations,
-              and retention.
-            </p>
-
-          </div>
-
-        </article>
-
-
-
-        <!-- SARI RASA -->
-
-        <article class="experience-item">
-
-          <time class="experience-date">
-            2024–2026
-          </time>
-
-          <div>
-
-            <h3>
-              PT Sari Rasa
-            </h3>
-
-            <div class="experience-role">
-              Business Partner
-            </div>
-
-            <p class="experience-description">
-              Supported the distribution of
-              <strong>traditional snack products to local
-              supermarkets</strong>. Involved in business
-              operations, market development, distribution,
-              and monitoring sales performance across
-              <strong>approximately 50 supermarkets</strong>.
-            </p>
-
-          </div>
-
-        </article>
-
-
-
-        <!-- CAHAYA SEGARA -->
-
-        <article class="experience-item">
-
-          <time class="experience-date">
-            2026 · Project-Based
-          </time>
-
-          <div>
-
-            <h3>
-              PT Cahaya Segara Indonesia
-            </h3>
-
-            <div class="experience-role">
-              Freelance Administrative & Executive Support
-            </div>
-
-            <p class="experience-description">
-              Prepared
-              <strong>business documentation, reports,
-              proposals, and tender materials</strong>,
-              while supporting administrative and
-              project-related activities.
-            </p>
-
-          </div>
-
-        </article>
-
-
-
-        <!-- ECOPLAST -->
-
-        <article class="experience-item">
-
-          <time class="experience-date">
-            2018–2019
-          </time>
-
-          <div>
-
-            <h3>
-
-              <a
-                href="https://www.instagram.com/ecoplastid/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                ECOPLAST ID ↗
-              </a>
-
-            </h3>
-
-            <div class="experience-role">
-              Chief Marketing Officer
-            </div>
-
-            <p class="experience-description">
-              Led
-              <strong>marketing and brand communication</strong>
-              for an early-stage environmental startup,
-              including promotional activities, audience
-              engagement, and marketing direction.
-            </p>
-
-          </div>
-
-        </article>
-
-
-
-        <!-- TEC -->
-
-        <article class="experience-item">
-
-          <time class="experience-date">
-            2018–2021
-          </time>
-
-          <div>
-
-            <h3>
-              Techno Entrepreneur Club (TEC), ITB
-            </h3>
-
-            <div class="experience-role">
-              Student Entrepreneur
-            </div>
-
-            <p class="experience-description">
-              Participated in entrepreneurial activities
-              involving
-              <strong>business development, marketing,
-              project execution, and startup-related
-              initiatives</strong>.
-            </p>
-
-          </div>
-
-        </article>
-
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =======================================================
-       03 / PROJECTS
-  ======================================================== -->
-
-  <section id="projects">
-
-    <div class="container">
-
-      <div class="section-heading">
-
-        <span class="section-number">
-          03 / SELECTED PROJECTS
-        </span>
-
-        <h2>
+        <h2 class="section-title">
           Selected
           <i>work.</i>
         </h2>
 
-      </div>
+        <p class="section-intro">
+          A selection of work across consumer behavior,
+          brand strategy, marketing, business, and digital culture.
+        </p>
 
 
-      <p class="projects-intro">
-        A selection of projects exploring
-        <strong>consumer behavior, brand strategy,
-        marketing, business, and digital culture</strong>.
-      </p>
+        <div class="project-grid">
 
 
-      <div class="project-grid">
+          <!-- THESIS -->
 
+          <a
+            href="Consumer_Purchase_Intention_Traditional_Chips.pdf"
+            target="_blank"
+            class="project-card featured"
+          >
 
-        <!-- PROJECT 01 -->
+            <div class="project-top">
 
-        <a
-          href="Consumer_Purchase_Intention_Traditional_Chips.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+              <div class="project-category">
+                Consumer Research
+              </div>
 
-          <article class="project-card featured">
-
-            <div class="project-type">
-              01 · Consumer Research
-            </div>
-
-            <h3>
-              Understanding
-              <i>Purchase Intention.</i>
-            </h3>
-
-            <p class="project-description">
-              Quantitative research investigating the factors
-              influencing <strong>consumer purchase intention
-              toward traditional chips in local supermarkets
-              in Jakarta</strong>.
-            </p>
-
-            <div class="project-bottom">
-
-              <span class="project-meta">
-                Thesis · SPSS · Regression
-              </span>
-
-              <span class="project-link">
-                View Project ↗
-              </span>
+              <div class="project-arrow">
+                ↗
+              </div>
 
             </div>
 
-          </article>
+            <div>
 
-        </a>
+              <h3 class="project-title">
+                Understanding
+                <i>Purchase Intention.</i>
+              </h3>
 
+              <div class="project-meta">
 
+                <span>Thesis</span>
+                <span>SPSS</span>
+                <span>Regression</span>
 
-        <!-- PROJECT 02 -->
+              </div>
 
-        <a href="buavita.html">
-
-          <article class="project-card">
-
-            <div class="project-type">
-              02 · Brand Strategy
             </div>
 
-            <h3>
+          </a>
+
+
+          <!-- BUAVITA -->
+
+          <a
+            href="buavita.html"
+            class="project-card"
+          >
+
+            <div class="project-top">
+
+              <div class="project-category">
+                Brand Strategy
+              </div>
+
+              <div class="project-arrow">
+                ↗
+              </div>
+
+            </div>
+
+            <h3 class="project-title">
               Buavita
               <i>Brand Strategy.</i>
             </h3>
 
-            <p class="project-description">
-              Brand strategy project focused on
-              <strong>consumer understanding, positioning,
-              communication, and strategic recommendations</strong>.
-            </p>
+          </a>
 
-            <div class="project-bottom">
 
-              <span class="project-meta">
-                Consumer Research · Strategy
-              </span>
+          <!-- KOREAN BEAUTY -->
 
-              <span class="project-link">
-                View Project ↗
-              </span>
+          <a
+            href="https://marketing.co.id/menilik-strategi-branding-produk-kecantikan-korea/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-card"
+          >
+
+            <div class="project-top">
+
+              <div class="project-category">
+                Published Work
+              </div>
+
+              <div class="project-arrow">
+                ↗
+              </div>
 
             </div>
 
-          </article>
-
-        </a>
-
-
-
-        <!-- PROJECT 03 -->
-
-        <a
-          href="https://marketing.co.id/menilik-strategi-branding-produk-kecantikan-korea/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-
-          <article class="project-card">
-
-            <div class="project-type">
-              03 · Published Work
-            </div>
-
-            <h3>
+            <h3 class="project-title">
               Korean Beauty
               <i>Branding.</i>
             </h3>
 
-            <p class="project-description">
-              Published article examining
-              <strong>branding strategies within the Korean
-              beauty industry</strong> and how brands create
-              consumer appeal.
-            </p>
+          </a>
 
-            <div class="project-bottom">
 
-              <span class="project-meta">
-                Marketing · Branding · Published
-              </span>
+          <!-- TWITCH -->
 
-              <span class="project-link">
-                Read Article ↗
-              </span>
+          <a
+            href="https://tamimmah-disma.medium.com/the-rollercoaster-ride-of-twitch-acquisition-from-google-yahoo-to-amazon-70b8a2124df3"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-card"
+          >
+
+            <div class="project-top">
+
+              <div class="project-category">
+                Independent Writing
+              </div>
+
+              <div class="project-arrow">
+                ↗
+              </div>
 
             </div>
 
-          </article>
-
-        </a>
-
-
-
-        <!-- PROJECT 04 -->
-
-        <a
-          href="https://tamimmah-disma.medium.com/the-rollercoaster-ride-of-twitch-acquisition-from-google-yahoo-to-amazon-70b8a2124df3"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-
-          <article class="project-card">
-
-            <div class="project-type">
-              04 · Independent Writing
-            </div>
-
-            <h3>
+            <h3 class="project-title">
               The Rollercoaster Ride
               <i>of Twitch.</i>
             </h3>
 
-            <p class="project-description">
-              An independent analysis of Twitch's journey
-              through <strong>Google, Yahoo, and Amazon</strong>,
-              exploring acquisition strategy and digital
-              platform growth.
-            </p>
+          </a>
 
-            <div class="project-bottom">
 
-              <span class="project-meta">
-                Business · Technology · Strategy
-              </span>
-
-              <span class="project-link">
-                Read Article ↗
-              </span>
-
-            </div>
-
-          </article>
-
-        </a>
-
+        </div>
 
       </div>
 
-    </div>
-
-  </section>
+    </section>
 
 
+    <!-- =====================================================
+         SKILLS & EDUCATION
+    ====================================================== -->
 
-  <!-- =======================================================
-       04 / SKILLS & EDUCATION
-  ======================================================== -->
+    <section id="skills">
 
-  <section id="skills">
+      <div class="container">
 
-    <div class="container">
+        <div class="section-label">
+          04 / Skills & Education
+        </div>
 
-      <div class="section-heading">
-
-        <span class="section-number">
-          04 / SKILLS & EDUCATION
-        </span>
-
-        <h2>
+        <h2 class="section-title">
           What I
           <i>bring.</i>
         </h2>
 
-      </div>
 
-
-      <div class="skills-grid">
-
-
-        <div class="skills-intro">
-
-          A mix of analytical thinking,
-          commercial understanding,
-          and creative execution.
-
-        </div>
-
-
-        <div class="skill-groups">
+        <div class="skills-grid">
 
 
           <div class="skill-group">
@@ -2693,309 +2334,272 @@
 
         </div>
 
-      </div>
 
+        <div class="education">
 
+          <div>
 
-      <!-- EDUCATION -->
+            <div class="small-label">
+              Education
+            </div>
 
-      <div class="education">
+            <div class="education-title">
+              Institut Teknologi Bandung
+            </div>
 
-        <div>
-
-          <div class="education-label">
-            Education
           </div>
 
-          <h3>
-            Institut Teknologi Bandung
-          </h3>
+          <div class="education-info">
 
-          <p>
-            Bachelor of Business Management ·
-            <strong>Management & Marketing</strong>
-          </p>
+            Bachelor of Business Management
+            · Management & Marketing
 
-        </div>
+            <br>
 
+            GPA 3.44
 
-        <div class="gpa">
-
-          <div class="education-label">
-            GPA
           </div>
-
-          <strong>
-            3.44
-          </strong>
 
         </div>
 
       </div>
 
-    </div>
-
-  </section>
+    </section>
 
 
+    <!-- =====================================================
+         CREATIVE SKILLS
+    ====================================================== -->
 
-  <!-- =======================================================
-       05 / CREATIVE SKILLS
-  ======================================================== -->
+    <section id="creative">
 
-  <section id="creative">
+      <div class="container">
 
-    <div class="container">
+        <div class="section-label">
+          05 / Creative Skills
+        </div>
 
-      <div class="section-heading">
-
-        <span class="section-number">
-          05 / CREATIVE SKILLS
-        </span>
-
-        <h2>
+        <h2 class="section-title">
           Strategy is also
           <i>visual.</i>
         </h2>
 
-      </div>
+        <p class="section-intro">
+          Beyond strategy and analysis, I enjoy translating
+          ideas into visual communication and digital content.
+        </p>
 
 
-      <p class="creative-intro">
-        Beyond strategy and research, I also enjoy translating
-        ideas into visual and digital content.
-      </p>
+        <div class="creative-grid">
 
 
-      <div class="creative-grid">
+          <!-- PHOTOSHOP -->
 
+          <div class="creative-block">
 
-        <!-- PHOTOSHOP -->
+            <div class="creative-heading">
 
-        <article class="creative-card">
+              <h3>
+                Adobe Photoshop
+              </h3>
 
-          <div class="creative-label">
-            Adobe Photoshop
-          </div>
+              <h2>
+                Visual
+                <i>communication.</i>
+              </h2>
 
-          <h3>
-            Visual
-            <i>communication.</i>
-          </h3>
+            </div>
 
-          <p class="creative-description">
-            Experience creating visual content with a focus on
-            <strong>composition, branding, social media,
-            and visual communication</strong>.
-          </p>
+            <div class="creative-image">
 
+              <img
+                src="images/photoshop-works.png"
+                alt="Adobe Photoshop creative work"
+              />
 
-          <div class="creative-image">
-
-            <img
-              src="images/photoshop-works.png"
-              alt="Photoshop creative works"
-            >
-
-          </div>
-
-
-          <div class="creative-cta">
+            </div>
 
             <a
-              class="modern-link"
               href="https://id.pinterest.com/akonhjhjhj/my-art-works/"
               target="_blank"
               rel="noopener noreferrer"
+              class="creative-link"
             >
-              View my Pinterest ↗
+              View My Artworks ↗
             </a>
 
           </div>
 
-        </article>
 
+          <!-- TIKTOK -->
 
+          <div class="creative-block">
 
-        <!-- TIKTOK -->
+            <div class="creative-heading">
 
-        <article class="creative-card">
+              <h3>
+                Content & Social Media
+              </h3>
 
-          <div class="creative-label">
-            Content & Social Media
-          </div>
-
-          <h3>
-            Understanding
-            <i>attention.</i>
-          </h3>
-
-          <p class="creative-description">
-            Created and managed short-form content with a focus
-            on <strong>audience behavior, content performance,
-            and organic reach</strong>.
-          </p>
-
-
-          <div class="tiktok-stats">
-
-            <div class="tiktok-stat">
-
-              <strong>
-                984
-              </strong>
-
-              <span>
-                Followers
-              </span>
+              <h2>
+                Understanding
+                <i>attention.</i>
+              </h2>
 
             </div>
 
 
-            <div class="tiktok-stat">
+            <div class="creative-stats">
 
-              <strong>
-                367K+
-              </strong>
+              <div class="creative-stat">
 
-              <span>
-                Avg. Views / Post
-              </span>
+                <strong>
+                  984
+                </strong>
+
+                <span>
+                  Followers
+                </span>
+
+              </div>
+
+              <div class="creative-stat">
+
+                <strong>
+                  367K+
+                </strong>
+
+                <span>
+                  Avg. Views/Post
+                </span>
+
+              </div>
+
+              <div class="creative-stat">
+
+                <strong>
+                  2×
+                </strong>
+
+                <span>
+                  1M+ Views
+                </span>
+
+              </div>
 
             </div>
 
 
-            <div class="tiktok-stat">
+            <p class="creative-insight">
+              Built content around K-pop and entertainment
+              culture, focusing on audience interest,
+              content hooks, consistency, and discoverability.
+            </p>
 
-              <strong>
-                2×
-              </strong>
 
-              <span>
-                1M+ Views
-              </span>
+            <div class="creative-image">
+
+              <img
+                src="images/tiktok-profile.png"
+                alt="TikTok profile and content performance"
+              />
 
             </div>
 
-          </div>
-
-
-          <p class="tiktok-insight">
-            Demonstrated ability to understand
-            <strong>what captures attention and drives engagement</strong>
-            in short-form content.
-          </p>
-
-
-          <div class="tiktok-profile">
-
-            <img
-              src="images/tiktok-profile.png"
-              alt="TikTok profile performance"
-            >
-
-          </div>
-
-
-          <div class="creative-cta">
 
             <a
-              class="modern-link"
               href="https://www.tiktok.com/@baesminju"
               target="_blank"
               rel="noopener noreferrer"
+              class="creative-link"
             >
               View TikTok ↗
             </a>
 
           </div>
 
-        </article>
 
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =======================================================
-       06 / CONTACT
-  ======================================================== -->
-
-  <section id="contact">
-
-    <div class="container">
-
-      <div class="section-heading">
-
-        <span class="section-number">
-          06 / CONTACT
-        </span>
-
-        <h2>
-          Let's
-          <i>talk.</i>
-        </h2>
+        </div>
 
       </div>
 
+    </section>
 
-      <div class="contact-grid">
 
+    <!-- =====================================================
+         CONTACT
+    ====================================================== -->
 
-        <div class="contact-intro">
+    <section id="contact">
 
-          Open to opportunities where
-          strategy, business, and creativity
-          can work together.
+      <div class="container">
 
+        <div class="section-label">
+          06 / Contact
         </div>
 
 
         <div class="contact-content">
 
-          <p>
-            Open to opportunities in
-            <strong>marketing, business development,
-            consumer insights, and creative strategy</strong>.
-          </p>
+          <div>
+
+            <h2 class="contact-title">
+              Let's
+              <i>talk.</i>
+            </h2>
+
+            <p class="contact-description">
+              Open to opportunities where strategy, business,
+              and creativity can work together.
+            </p>
+
+            <p class="contact-description">
+              Particularly interested in marketing,
+              business development, consumer insights,
+              and creative strategy.
+            </p>
+
+          </div>
 
 
-          <a
-            class="contact-email"
-            href="mailto:tamimmadisma@gmail.com"
-          >
-            tamimmadisma@gmail.com
-          </a>
+          <div class="contact-links">
 
-
-          <div class="social">
+            <a
+              href="mailto:tamimmadisma@gmail.com"
+              class="contact-link"
+            >
+              <span>Email</span>
+              <span>↗</span>
+            </a>
 
             <a
               href="https://wa.me/6282130815541"
               target="_blank"
               rel="noopener noreferrer"
+              class="contact-link"
             >
-              WhatsApp ↗
+              <span>WhatsApp</span>
+              <span>↗</span>
             </a>
 
             <a
               href="https://www.instagram.com/miramimmah/"
               target="_blank"
               rel="noopener noreferrer"
+              class="contact-link"
             >
-              Instagram ↗
+              <span>Instagram</span>
+              <span>↗</span>
             </a>
 
             <a
               href="https://www.instagram.com/tamidisma/"
               target="_blank"
               rel="noopener noreferrer"
+              class="contact-link"
             >
-              Instagram 02 ↗
+              <span>Instagram 02</span>
+              <span>↗</span>
             </a>
 
           </div>
@@ -3004,10 +2608,10 @@
 
       </div>
 
-    </div>
+    </section>
 
-  </section>
 
+  </main>
 
 
   <!-- =======================================================
@@ -3031,126 +2635,173 @@
   </footer>
 
 
-
   <!-- =======================================================
        JAVASCRIPT
   ======================================================== -->
 
   <script>
 
-    const menuButton = document.getElementById("menu");
+    /* =======================================================
+       MOBILE MENU
+    ======================================================== */
+
+    const menuButton = document.getElementById("menuButton");
     const mobileMenu = document.getElementById("mobileMenu");
-    const mobileLinks = document.querySelectorAll(".mobile-nav a");
 
+    menuButton.addEventListener("click", () => {
 
-    function openMenu() {
+      const isOpen =
+        menuButton.classList.toggle("active");
 
-      mobileMenu.classList.add("active");
+      mobileMenu.classList.toggle(
+        "active",
+        isOpen
+      );
 
-      document.body.classList.add("menu-open");
+      document.body.classList.toggle(
+        "menu-open",
+        isOpen
+      );
 
       menuButton.setAttribute(
         "aria-expanded",
-        "true"
+        isOpen
       );
 
       menuButton.setAttribute(
         "aria-label",
-        "Close navigation"
+        isOpen
+          ? "Close menu"
+          : "Open menu"
       );
 
-      menuButton.innerHTML = "×";
-
-    }
+    });
 
 
-    function closeMenu() {
+    /* Close mobile menu after clicking a link */
 
-      mobileMenu.classList.remove("active");
+    document
+      .querySelectorAll(".mobile-nav a")
+      .forEach(link => {
 
-      document.body.classList.remove("menu-open");
+        link.addEventListener("click", () => {
 
-      menuButton.setAttribute(
-        "aria-expanded",
-        "false"
-      );
+          menuButton.classList.remove("active");
 
-      menuButton.setAttribute(
-        "aria-label",
-        "Open navigation"
-      );
+          mobileMenu.classList.remove("active");
 
-      menuButton.innerHTML = "☰";
+          document.body.classList.remove("menu-open");
 
-    }
+          menuButton.setAttribute(
+            "aria-expanded",
+            "false"
+          );
 
+          menuButton.setAttribute(
+            "aria-label",
+            "Open menu"
+          );
 
-    menuButton.addEventListener(
-      "click",
-      function () {
+        });
 
-        if (
-          mobileMenu.classList.contains("active")
-        ) {
-
-          closeMenu();
-
-        } else {
-
-          openMenu();
-
-        }
-
-      }
-    );
+      });
 
 
-    mobileLinks.forEach(
-      function (link) {
+    /* Close mobile menu with Escape */
 
-        link.addEventListener(
-          "click",
-          function () {
+    document.addEventListener("keydown", event => {
 
-            closeMenu();
+      if (event.key === "Escape") {
 
-          }
+        menuButton.classList.remove("active");
+
+        mobileMenu.classList.remove("active");
+
+        document.body.classList.remove("menu-open");
+
+        menuButton.setAttribute(
+          "aria-expanded",
+          "false"
         );
 
       }
-    );
+
+    });
 
 
-    document.addEventListener(
-      "keydown",
-      function (event) {
+    /* Close mobile menu when returning to desktop */
 
-        if (event.key === "Escape") {
+    window.addEventListener("resize", () => {
 
-          closeMenu();
+      if (window.innerWidth > 700) {
 
-        }
+        menuButton.classList.remove("active");
 
-      }
-    );
+        mobileMenu.classList.remove("active");
 
+        document.body.classList.remove("menu-open");
 
-    window.addEventListener(
-      "resize",
-      function () {
-
-        if (window.innerWidth > 700) {
-
-          closeMenu();
-
-        }
+        menuButton.setAttribute(
+          "aria-expanded",
+          "false"
+        );
 
       }
-    );
+
+    });
+
+
+    /* =======================================================
+       EXPLORE PORTFOLIO ACCORDION
+    ======================================================== */
+
+    const exploreToggle =
+      document.getElementById("exploreToggle");
+
+    const exploreMenu =
+      document.getElementById("exploreMenu");
+
+
+    exploreToggle.addEventListener("click", () => {
+
+      const isOpen =
+        exploreToggle.classList.toggle("active");
+
+      exploreMenu.classList.toggle(
+        "active",
+        isOpen
+      );
+
+      exploreToggle.setAttribute(
+        "aria-expanded",
+        isOpen
+      );
+
+    });
+
+
+    /* Close Explore menu after selecting a section */
+
+    document
+      .querySelectorAll(".explore-link")
+      .forEach(link => {
+
+        link.addEventListener("click", () => {
+
+          exploreToggle.classList.remove("active");
+
+          exploreMenu.classList.remove("active");
+
+          exploreToggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+        });
+
+      });
 
   </script>
 
-
 </body>
-
 </html>
