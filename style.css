@@ -1,6 +1,6 @@
-/* =========================
+/* =========================================================
    RESET
-========================= */
+========================================================= */
 
 * {
   box-sizing: border-box;
@@ -13,15 +13,11 @@ html {
 }
 
 body {
-  background: #faf8f4;
-  color: #242620;
+  background: #faf9f6;
+  color: #242720;
   font-family: "DM Sans", sans-serif;
   font-size: 14px;
   line-height: 1.6;
-}
-
-img {
-  max-width: 100%;
 }
 
 a {
@@ -29,97 +25,134 @@ a {
   text-decoration: none;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
 button {
-  font: inherit;
+  font-family: inherit;
 }
 
 
 
-/* =========================
-   VARIABLES
-========================= */
+/* =========================================================
+   ROOT
+========================================================= */
 
 :root {
-  --bg: #faf8f4;
-  --paper: #f4f1ec;
-  --sage: #eef2ea;
-  --text: #242620;
-  --muted: #686c64;
-  --light: #8b8d86;
-  --line: #e3ded6;
-  --pink: #b96f7f;
+  --background: #faf9f6;
+  --surface: #f3f1ec;
+  --surface-green: #eef2eb;
+
+  --text: #242720;
+  --muted: #62675f;
+  --soft: #8b8e87;
+
+  --line: #e3dfd7;
+
+  --accent: #b96f7f;
 }
 
 
 
-/* =========================
-   GLOBAL
-========================= */
+/* =========================================================
+   GLOBAL SECTION
+========================================================= */
 
 section {
-  padding: 72px 7vw;
+  padding: 75px 7vw;
   border-bottom: 1px solid var(--line);
 }
 
-.section-label,
-small {
+section > small {
   display: block;
+
+  color: var(--soft);
+
   font-size: 9px;
   font-weight: 700;
   letter-spacing: 0.14em;
   line-height: 1.4;
   text-transform: uppercase;
-  color: var(--light);
 }
 
 
 
-/* =========================
-   NAVIGATION
-========================= */
+/* =========================================================
+   TYPOGRAPHY
+========================================================= */
 
-.site-header {
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 500;
+}
+
+h1,
+h2,
+.creative-card h2 {
+  font-family: "Playfair Display", serif;
+}
+
+p {
+  color: var(--muted);
+}
+
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header {
   position: sticky;
   top: 0;
   z-index: 100;
+
+  height: 68px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  height: 68px;
   padding: 0 7vw;
 
-  background: rgba(250, 248, 244, 0.94);
+  background: rgba(250, 249, 246, 0.94);
   border-bottom: 1px solid var(--line);
 
   backdrop-filter: blur(10px);
 }
 
 .logo {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 700;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.05em;
 }
 
-.navigation {
+.logo span {
+  color: var(--accent);
+}
+
+header nav {
   display: flex;
   align-items: center;
   gap: 28px;
 }
 
-.navigation a {
+header nav a {
   position: relative;
+
+  color: var(--muted);
 
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-
-  color: var(--muted);
 }
 
-.navigation a::after {
+header nav a::after {
   content: "";
 
   position: absolute;
@@ -134,35 +167,28 @@ small {
   transition: width 0.25s ease;
 }
 
-.navigation a:hover::after {
+header nav a:hover::after {
   width: 100%;
 }
 
-.menu-toggle {
+#menu {
   display: none;
 
   border: 0;
   background: transparent;
 
+  color: var(--text);
+
+  font-size: 21px;
+
   cursor: pointer;
 }
 
-.menu-toggle span {
-  display: block;
-
-  width: 22px;
-  height: 1px;
-
-  background: var(--text);
-
-  margin: 5px 0;
-}
 
 
-
-/* =========================
+/* =========================================================
    HERO
-========================= */
+========================================================= */
 
 .hero {
   position: relative;
@@ -178,212 +204,221 @@ small {
   overflow: hidden;
 }
 
-.hero-content {
-  max-width: 850px;
+.hero > div:first-child {
+  position: relative;
+  z-index: 2;
+
+  max-width: 820px;
 }
 
 .hero h1 {
-  margin-top: 25px;
+  max-width: 850px;
 
-  font-family: "Playfair Display", serif;
-  font-size: clamp(52px, 7vw, 94px);
-  font-weight: 500;
+  margin-top: 24px;
+
+  font-size: clamp(52px, 7.2vw, 96px);
   line-height: 0.98;
   letter-spacing: -0.045em;
 }
 
-.hero h1 i,
-.section-intro h2 i,
-.creative-card h3 i {
+.hero h1 i {
   font-weight: 500;
 }
 
-.hero-description {
-  max-width: 510px;
+.hero p {
+  max-width: 530px;
 
-  margin-top: 30px;
+  margin-top: 28px;
 
-  color: var(--muted);
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.7;
 }
 
-.hero-links {
-  display: flex;
-  gap: 28px;
+.btn {
+  display: inline-block;
 
-  margin-top: 32px;
-}
+  margin-top: 30px;
+  margin-right: 22px;
 
-.hero-links a,
-.project-link,
-.creative-links a,
-.tiktok-arrow a {
+  padding-bottom: 4px;
+
+  border-bottom: 1px solid var(--accent);
+
+  color: var(--accent);
+
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
-
-  border-bottom: 1px solid currentColor;
-
-  padding-bottom: 3px;
 }
 
-.hero-links a:first-child {
-  color: var(--pink);
+.btn.ghost {
+  color: var(--text);
+  border-bottom-color: var(--text);
 }
 
-.hero-links span,
-.project-link {
-  margin-left: 4px;
-}
-
-.hero-mark {
+.initials {
   position: absolute;
 
-  right: 5vw;
+  right: 4vw;
   bottom: 5vh;
 
   font-family: "Playfair Display", serif;
-  font-size: clamp(100px, 18vw, 280px);
-  line-height: 0.8;
 
-  color: #eeebe5;
+  font-size: clamp(130px, 19vw, 285px);
+  line-height: 0.75;
+
+  color: #efede7;
 
   user-select: none;
 }
 
 
 
-/* =========================
-   SECTION INTRO
-========================= */
+/* =========================================================
+   GENERAL TWO-COLUMN GRID
+========================================================= */
 
-.section-intro {
+.grid {
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
+  grid-template-columns: 1fr 1fr;
+
   gap: 8vw;
 
-  margin-top: 28px;
+  margin-top: 30px;
 }
 
-.section-intro h2 {
+.grid > h2 {
   font-family: "Playfair Display", serif;
-  font-size: clamp(34px, 4.5vw, 58px);
-  font-weight: 500;
-  line-height: 1.05;
+
+  font-size: clamp(36px, 4.7vw, 60px);
+  line-height: 1.03;
   letter-spacing: -0.035em;
 }
 
-.intro-text {
-  max-width: 480px;
+.grid > div {
+  max-width: 500px;
 }
 
-.intro-text p,
-.section-intro > p {
+.grid p {
   margin-bottom: 18px;
 
-  color: var(--muted);
   font-size: 13px;
   line-height: 1.7;
 }
 
 
 
-/* =========================
+/* =========================================================
    EXPERIENCE
-========================= */
+========================================================= */
 
-.experience-list {
-  margin-top: 48px;
+.experience-intro {
+  margin-top: 30px;
 }
 
-.experience-item {
-  display: grid;
-  grid-template-columns: 170px 1fr;
+.experience-intro h2 {
+  font-family: "Playfair Display", serif;
 
-  padding: 28px 0;
+  font-size: clamp(36px, 4.7vw, 60px);
+  line-height: 1.03;
+  letter-spacing: -0.035em;
+}
+
+.list {
+  margin-top: 45px;
+}
+
+.list article {
+  display: grid;
+  grid-template-columns: 175px 1fr;
+
+  gap: 30px;
+
+  padding: 26px 0;
 
   border-top: 1px solid var(--line);
 }
 
-.experience-item:last-child {
+.list article:last-child {
   border-bottom: 1px solid var(--line);
 }
 
-.experience-date {
+.list time {
   padding-top: 3px;
 
-  color: var(--light);
-  font-size: 10px;
+  color: var(--soft);
+
+  font-size: 9px;
   font-weight: 600;
 }
 
-.experience-main {
-  max-width: 750px;
+.list article > div {
+  max-width: 720px;
 }
 
-.experience-role {
-  display: block;
+.list h3 {
+  font-family: "Playfair Display", serif;
 
-  color: var(--light);
+  font-size: 27px;
+  line-height: 1.1;
+}
+
+.list h4 {
+  margin-top: 3px;
+
+  color: var(--soft);
+
   font-size: 9px;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
-.experience-main h3 {
-  margin: 4px 0 8px;
-
-  font-family: "Playfair Display", serif;
-  font-size: 27px;
-  font-weight: 500;
-  line-height: 1.1;
-}
-
-.experience-main p {
+.list p {
   max-width: 650px;
 
-  color: var(--muted);
+  margin-top: 10px;
+
   font-size: 12px;
   line-height: 1.6;
 }
 
-.experience-tags {
-  margin-top: 12px;
 
-  color: var(--light);
-  font-size: 9px;
-  letter-spacing: 0.04em;
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.project-heading {
+  margin-bottom: 42px;
 }
 
-
-
-/* =========================
-   SELECTED WORK
-========================= */
+.project-heading p {
+  max-width: 460px;
+}
 
 .project-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
 
   gap: 16px;
-
-  margin-top: 45px;
 }
 
-.project-card {
-  position: relative;
+.project-link {
+  display: block;
+}
 
-  min-height: 310px;
+.project-grid article {
+  height: 100%;
+  min-height: 290px;
 
   display: flex;
   flex-direction: column;
 
-  padding: 27px;
+  padding: 26px;
 
-  background: var(--paper);
+  background: var(--surface);
   border: 1px solid var(--line);
 
   transition:
@@ -391,194 +426,140 @@ small {
     background 0.25s ease;
 }
 
-.project-card:hover {
+.project-grid article:hover {
   transform: translateY(-3px);
-  background: #f0ede7;
+  background: #efede7;
 }
 
-.project-large {
+.project-grid article.featured {
   grid-column: span 2;
-  min-height: 300px;
+
+  min-height: 270px;
 }
 
-.project-number {
-  position: absolute;
-  top: 24px;
-  right: 25px;
-
-  font-size: 9px;
-  color: var(--light);
+.project-grid article > small {
+  color: var(--soft);
 }
 
-.project-content {
-  max-width: 680px;
-  margin-top: 45px;
-}
+.project-grid article h2 {
+  max-width: 700px;
 
-.project-content h3 {
-  margin: 10px 0 14px;
+  margin-top: 14px;
 
   font-family: "Playfair Display", serif;
-  font-size: clamp(29px, 4vw, 44px);
-  font-weight: 500;
-  line-height: 1.02;
+
+  font-size: clamp(28px, 3.4vw, 43px);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
 }
 
-.project-content p {
-  max-width: 600px;
+.project-grid article p {
+  max-width: 650px;
 
-  color: var(--muted);
+  margin-top: 15px;
+
   font-size: 12px;
   line-height: 1.65;
 }
 
-.project-link {
-  display: inline-block;
+.project-grid article b {
+  display: block;
 
-  margin-top: 20px;
-
-  color: var(--pink);
-}
-
-.project-tags {
   margin-top: auto;
-  padding-top: 25px;
+  padding-top: 24px;
 
-  color: var(--light);
-  font-size: 9px;
+  color: var(--soft);
+
+  font-size: 8px;
+  font-weight: 600;
   letter-spacing: 0.04em;
 }
 
 
 
-/* =========================
-   ENTREPRENEURSHIP
-========================= */
+/* =========================================================
+   SKILLS
+========================================================= */
 
-.subsection-heading {
-  margin-top: 55px;
-  margin-bottom: 20px;
+#skills .grid {
+  margin-bottom: 48px;
 }
 
-.mini-project-grid {
+.skills {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-
-.mini-project {
-  padding: 25px;
-
-  border-right: 1px solid var(--line);
-}
-
-.mini-project:last-child {
-  border-right: 0;
-}
-
-.mini-project > span {
-  color: var(--light);
-  font-size: 9px;
-}
-
-.mini-project h3 {
-  margin: 15px 0 10px;
-
-  font-family: "Playfair Display", serif;
-  font-size: 25px;
-  font-weight: 500;
-}
-
-.mini-project p {
-  margin-bottom: 18px;
-
-  color: var(--muted);
-  font-size: 11px;
-  line-height: 1.6;
-}
-
-.mini-project small {
-  font-size: 8px;
-}
-
-
-
-/* =========================
-   EXPERTISE
-========================= */
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-
-  margin-top: 45px;
+  grid-template-columns: 1fr 1fr;
 
   border-top: 1px solid var(--line);
   border-left: 1px solid var(--line);
 }
 
-.skill {
-  min-height: 85px;
+.skills span {
+  min-height: 66px;
 
   display: flex;
   align-items: center;
-  gap: 18px;
 
-  padding: 20px;
+  padding: 17px 18px;
 
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 
   font-family: "Playfair Display", serif;
-  font-size: 18px;
+
+  font-size: 17px;
 }
 
-.skill span {
-  font-family: "DM Sans", sans-serif;
+.education-compact {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
 
-  color: var(--light);
-  font-size: 8px;
-  font-weight: 700;
-}
+  gap: 30px;
 
-.education {
-  margin-top: 55px;
   padding-top: 25px;
 
   border-top: 1px solid var(--line);
 }
 
-.education h3 {
-  margin-top: 12px;
+.education-compact h2 {
+  margin-top: 9px;
 
   font-family: "Playfair Display", serif;
-  font-size: 31px;
+
+  font-size: 30px;
+  line-height: 1.1;
+}
+
+.education-compact p {
+  margin-top: 6px;
+
+  font-size: 11px;
+}
+
+.education-gpa {
+  text-align: right;
+}
+
+.education-gpa small {
+  display: block;
+}
+
+.education-gpa strong {
+  display: block;
+
+  margin-top: 3px;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 35px;
   font-weight: 500;
 }
 
-.education p {
-  margin-top: 6px;
-
-  color: var(--muted);
-  font-size: 12px;
-}
-
-.education strong {
-  display: block;
-
-  margin-top: 15px;
-
-  font-size: 10px;
-  letter-spacing: 0.08em;
-}
 
 
-
-/* =========================
+/* =========================================================
    CREATIVE SKILLS
-========================= */
+========================================================= */
 
 #creative {
   padding-top: 60px;
@@ -586,49 +567,73 @@ small {
 }
 
 .creative-heading {
-  margin-top: 20px;
-  margin-bottom: 25px;
+  margin-top: 22px;
+  margin-bottom: 27px;
 }
+
+.creative-heading h2 {
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(36px, 4.7vw, 60px);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+}
+
+
+/* Main two-column layout */
 
 .creative-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
 
   align-items: start;
+
   gap: 16px;
 }
+
+
+/* Cards */
 
 .creative-card {
   padding: 22px;
 
-  background: var(--paper);
+  background: var(--surface);
   border: 1px solid var(--line);
 }
 
-.creative-card-content h3 {
-  margin: 7px 0;
+.creative-card-content small {
+  color: var(--soft);
+}
 
-  font-family: "Playfair Display", serif;
+.creative-card h2 {
+  margin-top: 8px;
+
   font-size: 29px;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+}
+
+.creative-card h2 i {
   font-weight: 500;
-  line-height: 1.1;
 }
 
 .creative-card-content p {
-  margin: 0 0 15px;
+  max-width: 530px;
 
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.5;
+  margin-top: 12px;
+
+  font-size: 12px;
+  line-height: 1.55;
 }
 
+
+/* Photoshop */
+
 .creative-work {
-  margin-top: 16px;
+  margin-top: 17px;
 }
 
 .creative-work img {
-  display: block;
-
   width: 100%;
   height: auto;
 
@@ -643,17 +648,25 @@ small {
 }
 
 .creative-links a {
-  color: var(--pink);
+  color: var(--accent);
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 3px;
 }
 
 
 
-/* =========================
+/* =========================================================
    TIKTOK
-========================= */
+========================================================= */
 
 .tiktok-card {
-  background: var(--sage);
+  background: var(--surface-green);
 }
 
 .tiktok-highlight {
@@ -662,11 +675,11 @@ small {
 
   gap: 8px;
 
-  margin-top: 16px;
-  padding: 13px 0;
+  margin-top: 17px;
+  padding: 14px 0;
 
-  border-top: 1px solid #d9ded5;
-  border-bottom: 1px solid #d9ded5;
+  border-top: 1px solid #dce1d8;
+  border-bottom: 1px solid #dce1d8;
 }
 
 .tiktok-stat strong {
@@ -682,7 +695,7 @@ small {
 
   margin-top: 5px;
 
-  color: var(--light);
+  color: var(--soft);
 
   font-size: 7px;
   font-weight: 700;
@@ -691,12 +704,10 @@ small {
 }
 
 .tiktok-insight-short {
-  margin: 14px 0;
+  margin-top: 13px !important;
 
-  color: var(--muted);
-
-  font-size: 11px;
-  line-height: 1.45;
+  font-size: 10.5px !important;
+  line-height: 1.5 !important;
 }
 
 .tiktok-profile {
@@ -706,8 +717,6 @@ small {
 }
 
 .tiktok-profile img {
-  display: block;
-
   width: 100%;
   height: auto;
 
@@ -719,76 +728,101 @@ small {
 }
 
 .tiktok-arrow a {
-  color: var(--pink);
+  color: var(--accent);
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 3px;
 }
 
 
 
-/* =========================
+/* =========================================================
    CONTACT
-========================= */
+========================================================= */
 
-.contact-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8vw;
-
-  margin-top: 30px;
+#contact {
+  padding-top: 70px;
+  padding-bottom: 70px;
 }
 
-.contact-layout h2 {
-  margin-top: 15px;
+.contact {
+  max-width: 900px;
+
+  margin-top: 32px;
+}
+
+.contact > small {
+  color: var(--soft);
+}
+
+.contact h2 {
+  margin-top: 14px;
 
   font-family: "Playfair Display", serif;
-  font-size: clamp(42px, 6vw, 75px);
-  font-weight: 500;
+
+  font-size: clamp(48px, 7vw, 85px);
   line-height: 0.98;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.045em;
 }
 
-.contact-right {
-  align-self: end;
-  max-width: 430px;
-}
+.contact p {
+  max-width: 480px;
 
-.contact-right p {
-  margin-bottom: 25px;
+  margin-top: 25px;
 
-  color: var(--muted);
   font-size: 13px;
   line-height: 1.7;
 }
 
-.email-link {
+.email {
   display: inline-block;
 
-  color: var(--pink);
+  margin-top: 22px;
 
-  font-size: 11px;
+  color: var(--accent);
+
+  font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
 
-  border-bottom: 1px solid var(--pink);
+  border-bottom: 1px solid var(--accent);
   padding-bottom: 4px;
 }
 
-.email-link span {
-  margin-left: 5px;
+.social {
+  display: flex;
+  gap: 22px;
+
+  margin-top: 35px;
+}
+
+.social a {
+  color: var(--soft);
+
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 
 
-/* =========================
+/* =========================================================
    FOOTER
-========================= */
+========================================================= */
 
 footer {
   display: flex;
   justify-content: space-between;
 
-  padding: 22px 7vw;
+  padding: 21px 7vw;
 
-  color: var(--light);
+  color: var(--soft);
 
   font-size: 8px;
   font-weight: 600;
@@ -798,35 +832,33 @@ footer {
 
 
 
-/* =========================
+/* =========================================================
    TABLET
-========================= */
+========================================================= */
 
 @media (max-width: 850px) {
 
   section {
-    padding: 60px 6vw;
+    padding-left: 6vw;
+    padding-right: 6vw;
   }
 
-  .site-header {
-    padding: 0 6vw;
+  header {
+    padding-left: 6vw;
+    padding-right: 6vw;
   }
 
-  .navigation {
-    gap: 17px;
+  header nav {
+    gap: 18px;
   }
 
-  .section-intro {
-    grid-template-columns: 1fr;
-    gap: 25px;
+  .grid {
+    gap: 5vw;
   }
 
-  .experience-item {
-    grid-template-columns: 125px 1fr;
-  }
-
-  .skills-grid {
-    grid-template-columns: 1fr 1fr;
+  .list article {
+    grid-template-columns: 130px 1fr;
+    gap: 20px;
   }
 
   .creative-grid {
@@ -837,29 +869,25 @@ footer {
 
 
 
-/* =========================
+/* =========================================================
    MOBILE
-========================= */
+========================================================= */
 
 @media (max-width: 650px) {
 
-  body {
-    font-size: 13px;
-  }
+  /* HEADER */
 
-
-  /* NAV */
-
-  .site-header {
+  header {
     height: 62px;
   }
 
-  .menu-toggle {
+  #menu {
     display: block;
   }
 
-  .navigation {
+  header nav {
     position: absolute;
+
     top: 62px;
     left: 0;
     right: 0;
@@ -870,26 +898,26 @@ footer {
 
     gap: 0;
 
-    padding: 15px 6vw 20px;
+    padding: 10px 6vw 18px;
 
-    background: var(--bg);
+    background: var(--background);
     border-bottom: 1px solid var(--line);
   }
 
-  .navigation.is-open {
+  header nav.active {
     display: flex;
   }
 
-  .navigation a {
+  header nav a {
     width: 100%;
 
-    padding: 12px 0;
+    padding: 11px 0;
 
     border-bottom: 1px solid var(--line);
   }
 
 
-  /* GENERAL */
+  /* SECTIONS */
 
   section {
     padding: 52px 6vw;
@@ -906,116 +934,128 @@ footer {
   }
 
   .hero h1 {
-    font-size: clamp(46px, 14vw, 68px);
+    font-size: clamp(45px, 13vw, 68px);
   }
 
-  .hero-description {
+  .hero p {
     max-width: 390px;
 
-    margin-top: 24px;
+    margin-top: 23px;
 
     font-size: 12px;
   }
 
-  .hero-links {
+  .btn {
     margin-top: 25px;
+    margin-right: 17px;
   }
 
-  .hero-mark {
-    right: -5vw;
-    bottom: 8vh;
+  .initials {
+    right: -4vw;
+    bottom: 7vh;
 
-    font-size: 110px;
+    font-size: 115px;
   }
 
 
-  /* INTRO */
+  /* GENERAL GRID */
 
-  .section-intro h2 {
-    font-size: 39px;
+  .grid {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+  .grid > h2,
+  .experience-intro h2,
+  .creative-heading h2 {
+    font-size: 38px;
   }
 
 
   /* EXPERIENCE */
 
-  .experience-list {
+  .experience-intro {
+    margin-top: 25px;
+  }
+
+  .list {
     margin-top: 30px;
   }
 
-  .experience-item {
+  .list article {
     grid-template-columns: 1fr;
 
-    gap: 8px;
+    gap: 7px;
 
     padding: 22px 0;
   }
 
-  .experience-date {
+  .list time {
     padding: 0;
   }
 
-  .experience-main h3 {
-    font-size: 25px;
+  .list h3 {
+    font-size: 24px;
   }
 
 
   /* PROJECTS */
 
-  .project-grid {
-    grid-template-columns: 1fr;
-
-    margin-top: 30px;
+  .project-heading {
+    margin-bottom: 30px;
   }
 
-  .project-large {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-grid article.featured {
     grid-column: auto;
   }
 
-  .project-card {
-    min-height: 280px;
+  .project-grid article,
+  .project-grid article.featured {
+    min-height: 275px;
 
     padding: 22px;
   }
 
-  .project-content {
-    margin-top: 35px;
-  }
-
-  .project-content h3 {
-    font-size: 32px;
-  }
-
-
-  /* MINI PROJECTS */
-
-  .mini-project-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .mini-project {
-    border-right: 0;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .mini-project:last-child {
-    border-bottom: 0;
+  .project-grid article h2 {
+    font-size: 30px;
   }
 
 
   /* SKILLS */
 
-  .skills-grid {
-    grid-template-columns: 1fr 1fr;
-
-    margin-top: 30px;
+  #skills .grid {
+    margin-bottom: 35px;
   }
 
-  .skill {
-    min-height: 75px;
+  .skills {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .skills span {
+    min-height: 62px;
 
     padding: 14px;
 
     font-size: 15px;
+  }
+
+  .education-compact {
+    grid-template-columns: 1fr auto;
+
+    gap: 20px;
+  }
+
+  .education-compact h2 {
+    font-size: 25px;
+  }
+
+  .education-gpa strong {
+    font-size: 30px;
   }
 
 
@@ -1034,28 +1074,26 @@ footer {
     padding: 20px;
   }
 
-  .creative-card-content h3 {
+  .creative-card h2 {
     font-size: 28px;
-  }
-
-  .tiktok-highlight {
-    gap: 5px;
-  }
-
-  .tiktok-stat strong {
-    font-size: 21px;
   }
 
 
   /* CONTACT */
 
-  .contact-layout {
-    grid-template-columns: 1fr;
-    gap: 35px;
+  #contact {
+    padding-top: 55px;
+    padding-bottom: 55px;
   }
 
-  .contact-layout h2 {
-    font-size: 50px;
+  .contact h2 {
+    font-size: 52px;
+  }
+
+  .contact p {
+    max-width: 390px;
+
+    font-size: 12px;
   }
 
 
@@ -1063,7 +1101,8 @@ footer {
 
   footer {
     flex-direction: column;
-    gap: 7px;
+
+    gap: 6px;
 
     padding: 20px 6vw;
   }
@@ -1072,24 +1111,33 @@ footer {
 
 
 
-/* =========================
-   SMALL MOBILE
-========================= */
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
 
 @media (max-width: 400px) {
 
-  .skills-grid {
+  .hero h1 {
+    font-size: 44px;
+  }
+
+  .skills {
     grid-template-columns: 1fr;
   }
 
-  .hero h1 {
-    font-size: 45px;
+  .education-compact {
+    grid-template-columns: 1fr;
+  }
+
+  .education-gpa {
+    text-align: left;
   }
 
   .creative-links {
     flex-direction: column;
-    gap: 10px;
     align-items: flex-start;
+
+    gap: 9px;
   }
 
 }
