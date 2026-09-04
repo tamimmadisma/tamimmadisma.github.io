@@ -23,6 +23,7 @@
   --turquoise-dark: #438f89;
 
   --yellow: #d9df57;
+
   --pink: #d8a4a5;
   --soft-pink: #d8a4a5;
 
@@ -1039,7 +1040,7 @@ h3 em {
 ========================================================= */
 
 .journey-section {
-  padding-bottom: 175px;
+  padding-bottom: 180px;
 }
 
 .journey-intro {
@@ -1050,11 +1051,11 @@ h3 em {
 
   align-items: end;
 
-  margin-bottom: 90px;
+  margin-bottom: 100px;
 }
 
 .journey-intro h2 {
-  max-width: 780px;
+  max-width: 800px;
 
   margin-top: 17px;
 }
@@ -1066,12 +1067,17 @@ h3 em {
   color: var(--muted);
 }
 
+
+/* ---------------------------------------------------------
+   ROADMAP
+--------------------------------------------------------- */
+
 .roadmap {
   width: 100%;
 
   position: relative;
 
-  padding: 20px 0 50px;
+  padding: 25px 0 60px;
 }
 
 .roadmap-line {
@@ -1081,7 +1087,7 @@ h3 em {
   top: 0;
   bottom: 0;
 
-  width: 2px;
+  width: 1px;
 
   transform: translateX(-50%);
 
@@ -1094,12 +1100,17 @@ h3 em {
       transparent 17px
     );
 
-  opacity: .5;
+  opacity: .55;
 }
+
+
+/* ---------------------------------------------------------
+   Milestone
+--------------------------------------------------------- */
 
 .milestone {
   width: 50%;
-  min-height: 205px;
+  min-height: 265px;
 
   position: relative;
 
@@ -1120,9 +1131,14 @@ h3 em {
   padding-left: 90px;
 }
 
+
+/* ---------------------------------------------------------
+   Marker
+--------------------------------------------------------- */
+
 .milestone-marker {
-  width: 45px;
-  height: 45px;
+  width: 47px;
+  height: 47px;
 
   position: absolute;
   top: 0;
@@ -1162,15 +1178,24 @@ h3 em {
   letter-spacing: .04em;
 }
 
-.milestone-card {
-  width: min(440px, 100%);
 
-  padding-bottom: 30px;
+/* ---------------------------------------------------------
+   Milestone card
+--------------------------------------------------------- */
+
+.milestone-card {
+  width: min(460px, 100%);
+
+  padding-bottom: 34px;
+
+  position: relative;
 
   cursor: pointer;
 }
 
 .milestone-era {
+  display: block;
+
   font-size: 8px;
   font-weight: 700;
 
@@ -1182,12 +1207,12 @@ h3 em {
 .milestone-card h3 {
   margin-top: 10px;
 
-  font-size: 27px;
-  line-height: 1.05;
+  font-size: 29px;
+  line-height: 1.02;
 
   font-weight: 500;
 
-  letter-spacing: -.035em;
+  letter-spacing: -.04em;
 }
 
 .milestone-hook {
@@ -1203,41 +1228,116 @@ h3 em {
 .milestone-detail {
   display: block;
 
-  margin-top: 9px;
+  margin-top: 11px;
 
   font-size: 9px;
+  line-height: 1.55;
 
   color: var(--muted);
 }
 
-.milestone-expanded {
-  display: block;
 
+/* ---------------------------------------------------------
+   Expanded milestone
+--------------------------------------------------------- */
+
+.milestone-expanded {
   max-height: 0;
 
   overflow: hidden;
 
   opacity: 0;
 
+  padding-top: 0;
+
   transition:
-    max-height .55s var(--ease),
-    opacity .3s ease,
-    padding .55s var(--ease);
+    max-height .65s var(--ease),
+    opacity .35s ease,
+    padding-top .5s var(--ease);
 }
 
 .milestone-expanded p {
-  max-width: 390px;
+  max-width: 425px;
 
   font-size: 11px;
-  line-height: 1.75;
+  line-height: 1.78;
 
   color: var(--muted);
 }
 
-.milestone.active .milestone-expanded {
-  max-height: 170px;
 
-  padding-top: 17px;
+/* ---------------------------------------------------------
+   Three skills
+--------------------------------------------------------- */
+
+.journey-skills {
+  margin-top: 20px;
+}
+
+.journey-skills-label {
+  display: block;
+
+  margin-bottom: 9px;
+
+  font-size: 7px;
+  font-weight: 800;
+
+  letter-spacing: .16em;
+  text-transform: uppercase;
+
+  color: var(--soft);
+}
+
+.journey-skill-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 6px;
+}
+
+.journey-skill {
+  display: inline-flex;
+  align-items: center;
+
+  min-height: 26px;
+
+  padding: 6px 10px;
+
+  border: 1px solid var(--line);
+  border-radius: 999px;
+
+  background: rgba(255,255,255,.3);
+
+  font-size: 7px;
+  font-weight: 700;
+
+  letter-spacing: .07em;
+  text-transform: uppercase;
+
+  color: var(--charcoal);
+
+  transition:
+    background .25s ease,
+    border-color .25s ease,
+    transform .25s var(--ease);
+}
+
+.journey-skill:hover {
+  background: var(--yellow);
+  border-color: var(--yellow);
+
+  transform: translateY(-2px);
+}
+
+
+/* ---------------------------------------------------------
+   Active milestone
+--------------------------------------------------------- */
+
+.milestone.active .milestone-expanded {
+  max-height: 330px;
+
+  padding-top: 18px;
 
   opacity: 1;
 }
@@ -1255,22 +1355,81 @@ h3 em {
   transform: translateX(-50%) scale(1.12);
 }
 
+.milestone.active .milestone-card h3 {
+  color: var(--green-dark);
+}
+
+
+/* ---------------------------------------------------------
+   Alternating decorative shapes
+--------------------------------------------------------- */
+
+.milestone-card::before {
+  content: "";
+
+  width: 9px;
+  height: 9px;
+
+  position: absolute;
+
+  border-radius: 50%;
+
+  background: var(--turquoise);
+
+  opacity: 0;
+
+  transform: scale(.4);
+
+  transition:
+    opacity .35s ease,
+    transform .4s var(--ease);
+}
+
+.milestone-left .milestone-card::before {
+  right: -42px;
+  top: 14px;
+}
+
+.milestone-right .milestone-card::before {
+  left: -42px;
+  top: 14px;
+}
+
+.milestone.active .milestone-card::before {
+  opacity: 1;
+
+  transform: scale(1);
+}
+
+.milestone:nth-child(3n) .milestone-card::before {
+  background: var(--pink);
+}
+
+
+/* ---------------------------------------------------------
+   Today
+--------------------------------------------------------- */
+
 .milestone-today {
   width: 100%;
-  min-height: 220px;
+  min-height: 250px;
 
-  margin-top: 25px;
+  margin-top: 30px;
 
   display: flex;
   align-items: center;
   justify-content: center;
+
+  position: relative;
+
+  z-index: 3;
 }
 
 .today-orbit {
-  width: 112px;
-  height: 112px;
+  width: 120px;
+  height: 120px;
 
-  margin-right: -35px;
+  margin-right: -38px;
 
   display: grid;
   place-items: center;
@@ -1279,18 +1438,36 @@ h3 em {
   border-radius: 50%;
 
   z-index: 2;
+
+  transform: rotate(-12deg);
+}
+
+.today-orbit::before {
+  content: "";
+
+  width: 14px;
+  height: 14px;
+
+  position: absolute;
+
+  top: 9px;
+  right: 10px;
+
+  border-radius: 50%;
+
+  background: var(--pink);
 }
 
 .today-orbit span {
-  font-size: 25px;
+  font-size: 28px;
 
   color: var(--yellow);
 }
 
 .today-card {
-  min-width: 410px;
+  min-width: 450px;
 
-  padding: 39px 65px 39px 78px;
+  padding: 42px 70px 42px 82px;
 
   position: relative;
 
@@ -1298,6 +1475,8 @@ h3 em {
   color: var(--cream);
 
   transform: rotate(-2deg);
+
+  box-shadow: 18px 18px 0 rgba(37,37,37,.08);
 }
 
 .today-card::after {
@@ -1324,14 +1503,17 @@ h3 em {
   margin-top: 9px;
 
   font-family: var(--serif);
-  font-size: 30px;
+  font-size: 32px;
   font-weight: 500;
 }
 
 .today-card p {
-  margin-top: 8px;
+  max-width: 450px;
+
+  margin-top: 10px;
 
   font-size: 10px;
+  line-height: 1.6;
 
   color: #c7c5bd;
 }
@@ -2550,11 +2732,6 @@ h3 em {
   background: var(--cream-dark);
 }
 
-
-/* ---------------------------------------------------------
-   Photoshop stage
---------------------------------------------------------- */
-
 .photoshop-stage {
   position: absolute;
 
@@ -2603,11 +2780,6 @@ h3 em {
   transform: rotate(18deg);
 }
 
-
-/* ---------------------------------------------------------
-   Photoshop frame
---------------------------------------------------------- */
-
 .photoshop-frame {
   position: absolute;
 
@@ -2651,11 +2823,6 @@ h3 em {
     translateY(var(--image-shift, 0px));
 }
 
-
-/* ---------------------------------------------------------
-   Photoshop sticker
---------------------------------------------------------- */
-
 .photoshop-sticker {
   position: absolute;
 
@@ -2690,11 +2857,6 @@ h3 em {
   box-shadow:
     5px 8px 0 rgba(24,24,24,.07);
 }
-
-
-/* ---------------------------------------------------------
-   Photoshop crop marks
---------------------------------------------------------- */
 
 .photoshop-mark {
   position: absolute;
@@ -2740,11 +2902,6 @@ h3 em {
   right: 7%;
 }
 
-
-/* ---------------------------------------------------------
-   Photoshop copy
---------------------------------------------------------- */
-
 .photoshop-copy {
   position: absolute;
 
@@ -2787,11 +2944,6 @@ h3 em {
   isolation: isolate;
 }
 
-
-/* ---------------------------------------------------------
-   Status
---------------------------------------------------------- */
-
 .tiktok-status {
   margin-left: auto;
 
@@ -2805,11 +2957,6 @@ h3 em {
 
   letter-spacing: .12em;
 }
-
-
-/* ---------------------------------------------------------
-   Background word
---------------------------------------------------------- */
 
 .tiktok-background-word {
   position: absolute;
@@ -2828,18 +2975,12 @@ h3 em {
 
   color: rgba(255,255,255,.2);
 
-  transform:
-    rotate(-90deg);
+  transform: rotate(-90deg);
 
   transform-origin: right bottom;
 
   pointer-events: none;
 }
-
-
-/* ---------------------------------------------------------
-   TikTok visual
---------------------------------------------------------- */
 
 .tiktok-visual {
   position: absolute;
@@ -2874,11 +3015,6 @@ h3 em {
     51% 49% 42% 58% /
     45% 57% 43% 55%;
 }
-
-
-/* ---------------------------------------------------------
-   TikTok screen
---------------------------------------------------------- */
 
 .tiktok-screen {
   position: absolute;
@@ -2961,9 +3097,6 @@ h3 em {
     7px 9px 0 rgba(24,24,24,.08);
 }
 
-
-/* 367K */
-
 .sticker-views {
   width: 175px;
   height: 175px;
@@ -2997,9 +3130,6 @@ h3 em {
 
   letter-spacing: .12em;
 }
-
-
-/* 1M */
 
 .sticker-million {
   width: 115px;
@@ -3040,11 +3170,6 @@ h3 em {
   line-height: 1.35;
 }
 
-
-/* ---------------------------------------------------------
-   Followers tag
---------------------------------------------------------- */
-
 .tiktok-tag {
   position: absolute;
 
@@ -3083,11 +3208,6 @@ h3 em {
   letter-spacing: .1em;
 }
 
-
-/* ---------------------------------------------------------
-   People × Attention
---------------------------------------------------------- */
-
 .tiktok-note {
   position: absolute;
 
@@ -3117,11 +3237,6 @@ h3 em {
   font-style: italic;
 }
 
-
-/* ---------------------------------------------------------
-   Arrow
---------------------------------------------------------- */
-
 .tiktok-arrow {
   position: absolute;
 
@@ -3137,11 +3252,6 @@ h3 em {
 
   transform: rotate(-15deg);
 }
-
-
-/* ---------------------------------------------------------
-   Attention label
---------------------------------------------------------- */
 
 .tiktok-label {
   position: absolute;
@@ -3182,11 +3292,6 @@ h3 em {
   font-weight: 500;
   font-style: italic;
 }
-
-
-/* ---------------------------------------------------------
-   TikTok story
---------------------------------------------------------- */
 
 .tiktok-story {
   position: absolute;
@@ -3497,9 +3602,7 @@ h3 em {
   }
 
 
-  /* -------------------------------------------------------
-     Navigation
-  ------------------------------------------------------- */
+  /* Navigation */
 
   .desktop-nav {
     display: none;
@@ -3515,9 +3618,7 @@ h3 em {
   }
 
 
-  /* -------------------------------------------------------
-     Hero
-  ------------------------------------------------------- */
+  /* Hero */
 
   .hero {
     min-height: auto;
@@ -3554,9 +3655,7 @@ h3 em {
   }
 
 
-  /* -------------------------------------------------------
-     General sections
-  ------------------------------------------------------- */
+  /* General sections */
 
   .about-grid,
   .journey-intro,
@@ -3577,9 +3676,22 @@ h3 em {
   }
 
 
-  /* -------------------------------------------------------
-     Experience
-  ------------------------------------------------------- */
+  /* Journey */
+
+  .milestone-left {
+    padding-right: 65px;
+  }
+
+  .milestone-right {
+    padding-left: 65px;
+  }
+
+  .milestone-card h3 {
+    font-size: 25px;
+  }
+
+
+  /* Experience */
 
   .experience-row {
     grid-template-columns:
@@ -3593,9 +3705,7 @@ h3 em {
   }
 
 
-  /* -------------------------------------------------------
-     Projects
-  ------------------------------------------------------- */
+  /* Projects */
 
   .project-featured {
     grid-column: 1 / 8;
@@ -3618,9 +3728,7 @@ h3 em {
   }
 
 
-  /* -------------------------------------------------------
-     Creative
-  ------------------------------------------------------- */
+  /* Creative */
 
   .creative-intro {
     grid-template-columns:
@@ -3642,9 +3750,7 @@ h3 em {
   }
 
 
-  /* -------------------------------------------------------
-     Contact
-  ------------------------------------------------------- */
+  /* Contact */
 
   .contact-content h2 {
     font-size: clamp(65px, 10vw, 108px);
@@ -3886,10 +3992,16 @@ h3 em {
      JOURNEY
   ======================================================= */
 
+  .journey-section {
+    padding-bottom: 105px;
+  }
+
   .journey-intro {
     grid-template-columns: 1fr;
 
     gap: 25px;
+
+    margin-bottom: 60px;
   }
 
   .journey-intro > p {
@@ -3918,7 +4030,7 @@ h3 em {
     padding:
       0
       0
-      55px
+      58px
       65px;
 
     justify-content: flex-start;
@@ -3950,16 +4062,53 @@ h3 em {
     font-size: 23px;
   }
 
+  .milestone-hook {
+    font-size: 16px;
+  }
+
+  .milestone-detail {
+    font-size: 9px;
+  }
+
   .milestone-expanded p {
     font-size: 11px;
+    line-height: 1.72;
   }
+
+  .milestone.active .milestone-expanded {
+    max-height: 470px;
+  }
+
+  .journey-skills {
+    margin-top: 17px;
+  }
+
+  .journey-skills-label {
+    font-size: 6.5px;
+  }
+
+  .journey-skill {
+    min-height: 25px;
+
+    padding: 6px 9px;
+
+    font-size: 6.5px;
+  }
+
+  .milestone-left .milestone-card::before,
+  .milestone-right .milestone-card::before {
+    display: none;
+  }
+
+
+  /* TODAY */
 
   .milestone-today {
     padding-left: 0;
 
     justify-content: flex-start;
 
-    margin-top: 10px;
+    margin-top: 5px;
 
     display: flex;
     align-items: center;
@@ -3974,11 +4123,17 @@ h3 em {
 
     min-width: 0;
 
-    padding: 28px 25px;
+    padding: 30px 25px;
+
+    transform: rotate(-1deg);
   }
 
   .today-card h3 {
     font-size: 25px;
+  }
+
+  .today-card p {
+    font-size: 9px;
   }
 
 
@@ -4250,9 +4405,7 @@ h3 em {
   }
 
 
-  /* -------------------------------------------------------
-     Photoshop mobile
-  ------------------------------------------------------- */
+  /* Photoshop */
 
   .photoshop-piece {
     min-height: 590px;
@@ -4317,9 +4470,7 @@ h3 em {
   }
 
 
-  /* -------------------------------------------------------
-     TikTok mobile
-  ------------------------------------------------------- */
+  /* TikTok */
 
   .tiktok-piece {
     min-height: 660px;
@@ -4613,9 +4764,7 @@ h3 em {
   }
 
 
-  /* -------------------------------------------------------
-     Skills
-  ------------------------------------------------------- */
+  /* Skills */
 
   .skills-map {
     height: 390px;
@@ -4662,9 +4811,61 @@ h3 em {
   }
 
 
-  /* -------------------------------------------------------
-     Creative
-  ------------------------------------------------------- */
+  /* Journey */
+
+  .journey-intro h2 {
+    font-size: 47px;
+  }
+
+  .milestone {
+    padding-left: 58px;
+  }
+
+  .roadmap-line {
+    left: 17px;
+  }
+
+  .milestone-marker,
+  .milestone-left .milestone-marker,
+  .milestone-right .milestone-marker {
+    width: 35px;
+    height: 35px;
+  }
+
+  .milestone-marker span {
+    font-size: 7px;
+  }
+
+  .milestone-card h3 {
+    font-size: 21px;
+  }
+
+  .milestone-hook {
+    font-size: 15px;
+  }
+
+  .milestone-expanded p {
+    font-size: 10px;
+  }
+
+  .journey-skill {
+    font-size: 6px;
+
+    padding: 5px 8px;
+  }
+
+  .today-card {
+    width: 100%;
+
+    padding: 27px 21px;
+  }
+
+  .today-card h3 {
+    font-size: 23px;
+  }
+
+
+  /* Creative */
 
   .photoshop-piece {
     min-height: 550px;
@@ -4742,10 +4943,20 @@ h3 em {
     transform: none;
   }
 
-  .creative-piece:hover,
-  .photoshop-piece:hover .photoshop-frame,
-  .tiktok-piece:hover .tiktok-screen {
+  .creative-piece:hover {
     transform: none;
+  }
+
+  .photoshop-piece:hover .photoshop-frame {
+    transform:
+      translateX(-50%)
+      rotate(-3deg);
+  }
+
+  .tiktok-piece:hover .tiktok-screen {
+    transform:
+      translate(-50%, -50%)
+      rotate(3deg);
   }
 
   .photoshop-frame {
