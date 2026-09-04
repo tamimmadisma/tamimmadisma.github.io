@@ -150,6 +150,7 @@
 
       background: rgba(247, 246, 242, 0.92);
       backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
 
       border-bottom: 1px solid var(--line);
     }
@@ -807,7 +808,6 @@
 
     .roadmap-today {
       margin-top: 65px;
-
       text-align: center;
     }
 
@@ -861,6 +861,7 @@
 
       background: rgba(23, 23, 23, 0.45);
       backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
 
       display: flex;
       align-items: center;
@@ -1440,6 +1441,63 @@
 
 
     /* =========================================================
+       BACK TO TOP
+    ========================================================= */
+
+    #backToTop {
+      position: fixed;
+      right: 30px;
+      bottom: 30px;
+
+      width: 48px;
+      height: 48px;
+
+      border: 1px solid var(--text);
+      border-radius: 50%;
+
+      background: var(--bg);
+      color: var(--text);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      cursor: pointer;
+
+      font-size: 20px;
+      line-height: 1;
+
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+
+      transform: translateY(10px);
+
+      transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease,
+        pointer-events 0.25s ease,
+        transform 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease;
+
+      z-index: 1500;
+    }
+
+    #backToTop.show {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    #backToTop:hover {
+      background: var(--text);
+      color: var(--bg);
+    }
+
+
+    /* =========================================================
        FOOTER
     ========================================================= */
 
@@ -1867,6 +1925,19 @@
       }
 
 
+      /* Back to top */
+
+      #backToTop {
+        right: 18px;
+        bottom: 18px;
+
+        width: 44px;
+        height: 44px;
+
+        font-size: 18px;
+      }
+
+
       /* Footer */
 
       .footer-inner {
@@ -1974,6 +2045,7 @@
       </nav>
 
       <button
+        type="button"
         class="menu-button"
         id="menuButton"
         aria-label="Open menu"
@@ -2098,6 +2170,7 @@
                 href="resume.pdf"
                 class="button"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 View CV →
               </a>
@@ -2137,9 +2210,11 @@
         <div class="explore">
 
           <button
+            type="button"
             class="explore-toggle"
             id="exploreToggle"
             aria-expanded="false"
+            aria-controls="exploreMenu"
           >
 
             <div class="explore-toggle-left">
@@ -2154,7 +2229,10 @@
 
             </div>
 
-            <div class="explore-toggle-icon">
+            <div
+              class="explore-toggle-icon"
+              aria-hidden="true"
+            >
               +
             </div>
 
@@ -2164,6 +2242,7 @@
           <nav
             class="explore-menu"
             id="exploreMenu"
+            aria-label="Portfolio sections"
           >
 
             <a href="#about" class="explore-link">
@@ -2350,6 +2429,7 @@
           <div class="roadmap-item">
 
             <button
+              type="button"
               class="roadmap-card"
               data-story="cookies"
             >
@@ -2373,7 +2453,7 @@
 
             </button>
 
-            <div class="roadmap-node">
+            <div class="roadmap-node" aria-hidden="true">
               🍪
             </div>
 
@@ -2385,6 +2465,7 @@
           <div class="roadmap-item">
 
             <button
+              type="button"
               class="roadmap-card"
               data-story="theatre"
             >
@@ -2408,7 +2489,7 @@
 
             </button>
 
-            <div class="roadmap-node">
+            <div class="roadmap-node" aria-hidden="true">
               🎭
             </div>
 
@@ -2420,6 +2501,7 @@
           <div class="roadmap-item">
 
             <button
+              type="button"
               class="roadmap-card"
               data-story="juice"
             >
@@ -2437,13 +2519,13 @@
               </div>
 
               <div class="roadmap-detail">
-                <span>Open story</span>
+                <span>~98% stock sold</span>
                 <span class="roadmap-arrow">↗</span>
               </div>
 
             </button>
 
-            <div class="roadmap-node">
+            <div class="roadmap-node" aria-hidden="true">
               🧃
             </div>
 
@@ -2455,6 +2537,7 @@
           <div class="roadmap-item">
 
             <button
+              type="button"
               class="roadmap-card"
               data-story="ecoplast"
             >
@@ -2472,13 +2555,13 @@
               </div>
 
               <div class="roadmap-detail">
-                <span>Open story</span>
+                <span>Pitching · Competitions</span>
                 <span class="roadmap-arrow">↗</span>
               </div>
 
             </button>
 
-            <div class="roadmap-node">
+            <div class="roadmap-node" aria-hidden="true">
               🌱
             </div>
 
@@ -2490,6 +2573,7 @@
           <div class="roadmap-item">
 
             <button
+              type="button"
               class="roadmap-card"
               data-story="kpop"
             >
@@ -2513,7 +2597,7 @@
 
             </button>
 
-            <div class="roadmap-node">
+            <div class="roadmap-node" aria-hidden="true">
               💜
             </div>
 
@@ -2525,6 +2609,7 @@
           <div class="roadmap-item">
 
             <button
+              type="button"
               class="roadmap-card"
               data-story="rice"
             >
@@ -2548,7 +2633,7 @@
 
             </button>
 
-            <div class="roadmap-node">
+            <div class="roadmap-node" aria-hidden="true">
               🍚
             </div>
 
@@ -2560,6 +2645,7 @@
           <div class="roadmap-item">
 
             <button
+              type="button"
               class="roadmap-card"
               data-story="sellkpopvt"
             >
@@ -2583,7 +2669,7 @@
 
             </button>
 
-            <div class="roadmap-node">
+            <div class="roadmap-node" aria-hidden="true">
               💼
             </div>
 
@@ -2595,6 +2681,7 @@
           <div class="roadmap-item">
 
             <button
+              type="button"
               class="roadmap-card"
               data-story="cahaya"
             >
@@ -2618,7 +2705,7 @@
 
             </button>
 
-            <div class="roadmap-node">
+            <div class="roadmap-node" aria-hidden="true">
               🗂️
             </div>
 
@@ -2673,6 +2760,7 @@
       >
 
         <button
+          type="button"
           class="story-close"
           id="storyClose"
           aria-label="Close story"
@@ -2987,6 +3075,7 @@
           <a
             href="Consumer_Purchase_Intention_Traditional_Chips.pdf"
             target="_blank"
+            rel="noopener noreferrer"
             class="project-card featured"
           >
 
@@ -3517,17 +3606,51 @@
 
 
   <!-- =======================================================
+       BACK TO TOP
+  ======================================================== -->
+
+  <button
+    type="button"
+    id="backToTop"
+    aria-label="Back to top"
+  >
+    ↑
+  </button>
+
+
+  <!-- =======================================================
        JAVASCRIPT
   ======================================================== -->
 
   <script>
 
     /* =======================================================
+       START AT TOP
+    ======================================================== */
+
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+
+    window.addEventListener("pageshow", () => {
+
+      if (!window.location.hash) {
+        window.scrollTo(0, 0);
+      }
+
+    });
+
+
+    /* =======================================================
        MOBILE MENU
     ======================================================== */
 
-    const menuButton = document.getElementById("menuButton");
-    const mobileMenu = document.getElementById("mobileMenu");
+    const menuButton =
+      document.getElementById("menuButton");
+
+    const mobileMenu =
+      document.getElementById("mobileMenu");
+
 
     function closeMobileMenu() {
 
@@ -3567,7 +3690,7 @@
 
       menuButton.setAttribute(
         "aria-expanded",
-        isOpen
+        String(isOpen)
       );
 
       menuButton.setAttribute(
@@ -3615,7 +3738,7 @@
 
       exploreToggle.setAttribute(
         "aria-expanded",
-        isOpen
+        String(isOpen)
       );
 
     });
@@ -3642,6 +3765,52 @@
 
 
     /* =======================================================
+       BACK TO TOP
+    ======================================================== */
+
+    const backToTop =
+      document.getElementById("backToTop");
+
+
+    function updateBackToTop() {
+
+      if (window.scrollY > 500) {
+
+        backToTop.classList.add("show");
+
+      } else {
+
+        backToTop.classList.remove("show");
+
+      }
+
+    }
+
+
+    window.addEventListener(
+      "scroll",
+      updateBackToTop,
+      { passive: true }
+    );
+
+
+    backToTop.addEventListener(
+      "click",
+      () => {
+
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+
+      }
+    );
+
+
+    updateBackToTop();
+
+
+    /* =======================================================
        STORY CONTENT
     ======================================================== */
 
@@ -3649,7 +3818,9 @@
 
       cookies: {
         label: "Junior High School · The Beginning",
+
         title: "It started with a box of <i>cookies.</i>",
+
         body: `
           <p>
             I don't think I discovered my interest in business
@@ -3702,7 +3873,9 @@
 
       theatre: {
         label: "Senior High School · The Theatre Club",
+
         title: "I didn't just enjoy selling. I enjoyed <i>helping people.</i>",
+
         body: `
           <p>
             A few years later, in senior high school, I joined
@@ -3751,7 +3924,9 @@
 
       juice: {
         label: "University · Techno Entrepreneur Club",
+
         title: "University taught me that I love <i>making things happen.</i>",
+
         body: `
           <p>
             When I entered Institut Teknologi Bandung, I joined
@@ -3780,8 +3955,8 @@
           </p>
 
           <p>
-            Most of the time, we could get around 90% of our stock
-            sold.
+            Most of the time, we could get around
+            <strong>98% of our stock sold.</strong>
           </p>
 
           <div class="story-quote">
@@ -3813,7 +3988,9 @@
 
       ecoplast: {
         label: "University · ECOPLAST",
+
         title: "Confidence became <i>communication.</i>",
+
         body: `
           <p>
             Another experience came through ECOPLAST, an
@@ -3865,7 +4042,9 @@
 
       kpop: {
         label: "Thesis Era · Community Building",
+
         title: "I couldn't just sit around. So I started <i>building communities.</i>",
+
         body: `
           <p>
             During my thesis era, I spent a lot of time at home.
@@ -3918,7 +4097,9 @@
 
       rice: {
         label: "After University · ICE BSD",
+
         title: "25 rice bowls. One folding table. <i>One concert.</i>",
+
         body: `
           <p>
             After university and during my thesis era, I somehow
@@ -3975,7 +4156,9 @@
 
       sellkpopvt: {
         label: "2021–2025 · SellKpopVT",
+
         title: "Then I turned a community into <i>a business.</i>",
+
         body: `
           <p>
             Building fandom communities eventually led me to
@@ -4027,7 +4210,9 @@
 
       cahaya: {
         label: "2026 · PT Cahaya Segara Indonesia",
+
         title: "My title said admin. The work taught me <i>much more.</i>",
+
         body: `
           <p>
             I joined PT Cahaya Segara Indonesia in an administrative
