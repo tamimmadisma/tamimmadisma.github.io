@@ -44,12 +44,17 @@
       overflow-x: hidden;
     }
 
-    body.menu-open {
+    body.menu-open,
+    body.story-open {
       overflow: hidden;
     }
 
     a {
       color: inherit;
+    }
+
+    button {
+      font-family: inherit;
     }
 
     img {
@@ -173,13 +178,13 @@
     .desktop-nav {
       display: flex;
       align-items: center;
-      gap: 28px;
+      gap: 22px;
     }
 
     .desktop-nav a {
-      font-size: 12px;
+      font-size: 11px;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.07em;
       text-decoration: none;
       transition: opacity 0.2s ease;
     }
@@ -293,7 +298,7 @@
       align-items: center;
       justify-content: space-between;
 
-      font-size: 22px;
+      font-size: 21px;
       font-weight: 500;
     }
 
@@ -451,7 +456,6 @@
 
     /* =========================================================
        EXPLORE PORTFOLIO
-       COLLAPSIBLE NAVIGATION
     ========================================================= */
 
     .explore {
@@ -474,8 +478,6 @@
       justify-content: space-between;
 
       cursor: pointer;
-
-      font-family: var(--sans);
 
       text-align: left;
     }
@@ -510,7 +512,6 @@
       justify-content: center;
 
       font-size: 18px;
-      font-weight: 400;
 
       transition: transform 0.3s ease;
     }
@@ -534,7 +535,7 @@
     }
 
     .explore-menu.active {
-      max-height: 500px;
+      max-height: 600px;
       opacity: 1;
     }
 
@@ -622,6 +623,387 @@
 
     .interest-item span:last-child {
       color: var(--muted);
+    }
+
+
+    /* =========================================================
+       JOURNEY / ROADMAP
+    ========================================================= */
+
+    .journey-section {
+      overflow: hidden;
+    }
+
+    .journey-heading {
+      display: grid;
+      grid-template-columns: 1fr 0.7fr;
+      gap: 80px;
+      align-items: end;
+    }
+
+    .journey-heading-copy {
+      max-width: 600px;
+    }
+
+    .journey-intro {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+      max-width: 430px;
+      justify-self: end;
+    }
+
+    .roadmap {
+      position: relative;
+      margin-top: 85px;
+      padding: 30px 0 50px;
+    }
+
+    .roadmap-line {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+
+      width: 1px;
+      background: var(--line);
+
+      transform: translateX(-50%);
+    }
+
+    .roadmap-item {
+      position: relative;
+
+      display: grid;
+      grid-template-columns: 1fr 70px 1fr;
+      align-items: center;
+
+      min-height: 150px;
+
+      margin-bottom: 25px;
+    }
+
+    .roadmap-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .roadmap-card {
+      width: 100%;
+      max-width: 430px;
+
+      padding: 25px;
+
+      border: 1px solid var(--line);
+      background: var(--bg);
+
+      text-align: left;
+
+      cursor: pointer;
+
+      transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .roadmap-card:hover {
+      background: var(--text);
+      color: var(--bg);
+      border-color: var(--text);
+      transform: translateY(-3px);
+    }
+
+    .roadmap-item:nth-child(odd) .roadmap-card {
+      grid-column: 1;
+      justify-self: end;
+    }
+
+    .roadmap-item:nth-child(even) .roadmap-card {
+      grid-column: 3;
+      justify-self: start;
+    }
+
+    .roadmap-node {
+      grid-column: 2;
+      grid-row: 1;
+
+      width: 58px;
+      height: 58px;
+
+      margin: 0 auto;
+
+      border: 1px solid var(--text);
+      background: var(--bg);
+
+      border-radius: 50%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 25px;
+
+      position: relative;
+      z-index: 2;
+    }
+
+    .roadmap-year {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+
+      color: var(--muted);
+
+      margin-bottom: 7px;
+    }
+
+    .roadmap-card:hover .roadmap-year {
+      color: rgba(255,255,255,0.6);
+    }
+
+    .roadmap-title {
+      font-size: 21px;
+      line-height: 1.15;
+      font-weight: 600;
+    }
+
+    .roadmap-subtitle {
+      margin-top: 7px;
+
+      font-family: var(--serif);
+      font-style: italic;
+
+      font-size: 15px;
+    }
+
+    .roadmap-detail {
+      margin-top: 14px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      color: var(--muted);
+
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .roadmap-card:hover .roadmap-detail {
+      color: rgba(255,255,255,0.6);
+    }
+
+    .roadmap-arrow {
+      font-size: 16px;
+      color: var(--text);
+    }
+
+    .roadmap-card:hover .roadmap-arrow {
+      color: var(--bg);
+    }
+
+    .roadmap-today {
+      margin-top: 65px;
+
+      text-align: center;
+    }
+
+    .roadmap-today-line {
+      width: 1px;
+      height: 45px;
+      background: var(--line);
+      margin: 0 auto 25px;
+    }
+
+    .roadmap-today-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+    }
+
+    .roadmap-today-title {
+      margin-top: 8px;
+
+      font-size: 30px;
+      line-height: 1;
+      font-weight: 500;
+    }
+
+    .roadmap-today-title i {
+      font-family: var(--serif);
+      font-weight: 400;
+    }
+
+    .roadmap-today-copy {
+      max-width: 480px;
+      margin: 15px auto 0;
+
+      color: var(--muted);
+
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+
+    /* =========================================================
+       STORY MODAL
+    ========================================================= */
+
+    .story-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+
+      background: rgba(23, 23, 23, 0.45);
+      backdrop-filter: blur(8px);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 35px;
+
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+
+      transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+    }
+
+    .story-overlay.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .story-modal {
+      width: min(900px, 100%);
+      max-height: min(820px, 90vh);
+
+      background: var(--bg);
+      border: 1px solid var(--text);
+
+      overflow-y: auto;
+
+      position: relative;
+
+      transform: translateY(20px);
+      transition: transform 0.35s ease;
+    }
+
+    .story-overlay.active .story-modal {
+      transform: translateY(0);
+    }
+
+    .story-close {
+      position: sticky;
+      top: 20px;
+      float: right;
+
+      margin: 20px 20px 0 0;
+
+      width: 40px;
+      height: 40px;
+
+      border: 1px solid var(--text);
+      background: var(--bg);
+
+      border-radius: 50%;
+
+      cursor: pointer;
+
+      font-size: 20px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      z-index: 5;
+    }
+
+    .story-content {
+      padding: 70px 70px 75px;
+      clear: both;
+    }
+
+    .story-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+
+      color: var(--muted);
+
+      margin-bottom: 20px;
+    }
+
+    .story-title {
+      font-size: clamp(42px, 6vw, 70px);
+      line-height: 0.98;
+      letter-spacing: -0.045em;
+      font-weight: 500;
+
+      max-width: 750px;
+    }
+
+    .story-title i {
+      font-family: var(--serif);
+      font-weight: 400;
+    }
+
+    .story-body {
+      max-width: 700px;
+      margin-top: 45px;
+
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .story-body p + p {
+      margin-top: 24px;
+    }
+
+    .story-body strong {
+      font-weight: 700;
+    }
+
+    .story-quote {
+      margin: 45px 0;
+
+      padding: 30px 0;
+
+      border-top: 1px solid var(--text);
+      border-bottom: 1px solid var(--text);
+
+      font-family: var(--serif);
+      font-size: clamp(24px, 4vw, 38px);
+      line-height: 1.2;
+    }
+
+    .story-lessons {
+      margin-top: 45px;
+
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .story-lesson {
+      padding: 8px 12px;
+
+      border: 1px solid var(--line);
+      border-radius: 999px;
+
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
 
@@ -1098,12 +1480,24 @@
         );
       }
 
+      .desktop-nav {
+        gap: 14px;
+      }
+
+      .desktop-nav a {
+        font-size: 10px;
+      }
+
       .hero-grid {
         grid-template-columns: 1fr 0.75fr;
         gap: 50px;
       }
 
       .about-grid {
+        gap: 50px;
+      }
+
+      .journey-heading {
         gap: 50px;
       }
 
@@ -1151,6 +1545,13 @@
 
       .menu-button {
         display: flex;
+      }
+
+
+      /* Mobile menu */
+
+      .mobile-menu {
+        padding: 105px 40px 40px;
       }
 
 
@@ -1247,6 +1648,120 @@
 
       .about-text {
         font-size: 15px;
+      }
+
+
+      /* Journey */
+
+      .journey-heading {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .journey-intro {
+        justify-self: start;
+      }
+
+      .roadmap {
+        margin-top: 55px;
+        padding-left: 0;
+      }
+
+      .roadmap-line {
+        left: 28px;
+        transform: none;
+      }
+
+      .roadmap-item {
+        display: grid;
+        grid-template-columns: 56px minmax(0, 1fr);
+
+        min-height: auto;
+
+        margin-bottom: 16px;
+      }
+
+      .roadmap-node {
+        grid-column: 1;
+        grid-row: 1;
+
+        width: 56px;
+        height: 56px;
+
+        font-size: 23px;
+      }
+
+      .roadmap-item:nth-child(odd) .roadmap-card,
+      .roadmap-item:nth-child(even) .roadmap-card {
+        grid-column: 2;
+        grid-row: 1;
+
+        justify-self: start;
+
+        max-width: none;
+      }
+
+      .roadmap-card {
+        padding: 20px;
+        margin-left: 14px;
+      }
+
+      .roadmap-title {
+        font-size: 18px;
+      }
+
+      .roadmap-subtitle {
+        font-size: 14px;
+      }
+
+      .roadmap-detail {
+        margin-top: 11px;
+      }
+
+      .roadmap-today {
+        margin-top: 45px;
+      }
+
+      .roadmap-today-line {
+        margin-left: 28px;
+        margin-bottom: 20px;
+      }
+
+
+      /* Story modal */
+
+      .story-overlay {
+        padding: 15px;
+      }
+
+      .story-modal {
+        max-height: 94vh;
+      }
+
+      .story-content {
+        padding: 55px 25px 45px;
+      }
+
+      .story-close {
+        margin: 15px 15px 0 0;
+
+        width: 36px;
+        height: 36px;
+      }
+
+      .story-title {
+        font-size: clamp(38px, 12vw, 58px);
+      }
+
+      .story-body {
+        margin-top: 35px;
+        font-size: 14px;
+        line-height: 1.85;
+      }
+
+      .story-quote {
+        margin: 35px 0;
+        font-size: 27px;
       }
 
 
@@ -1389,11 +1904,6 @@
 
       .explore-link {
         min-height: 75px;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .explore-link:last-child {
-        border-bottom: 0;
       }
 
       .hero-tags {
@@ -1415,6 +1925,22 @@
       .project-card,
       .project-card.featured {
         min-height: 280px;
+      }
+
+      .roadmap-card {
+        padding: 17px;
+      }
+
+      .roadmap-title {
+        font-size: 16px;
+      }
+
+      .roadmap-subtitle {
+        font-size: 13px;
+      }
+
+      .roadmap-detail {
+        font-size: 9px;
       }
     }
 
@@ -1439,6 +1965,7 @@
 
       <nav class="desktop-nav">
         <a href="#about">About</a>
+        <a href="#journey">Journey</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
@@ -1480,28 +2007,33 @@
         About
       </a>
 
-      <a href="#experience">
+      <a href="#journey">
         <span>02</span>
+        My Journey
+      </a>
+
+      <a href="#experience">
+        <span>03</span>
         Experience
       </a>
 
       <a href="#projects">
-        <span>03</span>
+        <span>04</span>
         Selected Projects
       </a>
 
       <a href="#skills">
-        <span>04</span>
+        <span>05</span>
         Skills & Education
       </a>
 
       <a href="#creative">
-        <span>05</span>
+        <span>06</span>
         Creative Skills
       </a>
 
       <a href="#contact">
-        <span>06</span>
+        <span>07</span>
         Contact
       </a>
 
@@ -1557,7 +2089,7 @@
             <p class="hero-description">
               Business Management graduate with hands-on experience
               in marketing, consumer research, customer acquisition,
-              and business operations.
+              business development, and business operations.
             </p>
 
             <div class="hero-buttons">
@@ -1617,7 +2149,7 @@
               </div>
 
               <div class="explore-toggle-hint">
-                01 — 06 · Click to explore
+                01 — 07 · Click to explore
               </div>
 
             </div>
@@ -1634,87 +2166,39 @@
             id="exploreMenu"
           >
 
-            <a
-              href="#about"
-              class="explore-link"
-            >
-              <span class="explore-number">
-                01
-              </span>
-
-              <span class="explore-name">
-                About <span>↗</span>
-              </span>
+            <a href="#about" class="explore-link">
+              <span class="explore-number">01</span>
+              <span class="explore-name">About <span>↗</span></span>
             </a>
 
-
-            <a
-              href="#experience"
-              class="explore-link"
-            >
-              <span class="explore-number">
-                02
-              </span>
-
-              <span class="explore-name">
-                Experience <span>↗</span>
-              </span>
+            <a href="#journey" class="explore-link">
+              <span class="explore-number">02</span>
+              <span class="explore-name">My Journey <span>↗</span></span>
             </a>
 
-
-            <a
-              href="#projects"
-              class="explore-link"
-            >
-              <span class="explore-number">
-                03
-              </span>
-
-              <span class="explore-name">
-                Selected Projects <span>↗</span>
-              </span>
+            <a href="#experience" class="explore-link">
+              <span class="explore-number">03</span>
+              <span class="explore-name">Experience <span>↗</span></span>
             </a>
 
-
-            <a
-              href="#skills"
-              class="explore-link"
-            >
-              <span class="explore-number">
-                04
-              </span>
-
-              <span class="explore-name">
-                Skills & Education <span>↗</span>
-              </span>
+            <a href="#projects" class="explore-link">
+              <span class="explore-number">04</span>
+              <span class="explore-name">Selected Projects <span>↗</span></span>
             </a>
 
-
-            <a
-              href="#creative"
-              class="explore-link"
-            >
-              <span class="explore-number">
-                05
-              </span>
-
-              <span class="explore-name">
-                Creative Skills <span>↗</span>
-              </span>
+            <a href="#skills" class="explore-link">
+              <span class="explore-number">05</span>
+              <span class="explore-name">Skills & Education <span>↗</span></span>
             </a>
 
+            <a href="#creative" class="explore-link">
+              <span class="explore-number">06</span>
+              <span class="explore-name">Creative Skills <span>↗</span></span>
+            </a>
 
-            <a
-              href="#contact"
-              class="explore-link"
-            >
-              <span class="explore-number">
-                06
-              </span>
-
-              <span class="explore-name">
-                Contact <span>↗</span>
-              </span>
+            <a href="#contact" class="explore-link">
+              <span class="explore-number">07</span>
+              <span class="explore-name">Contact <span>↗</span></span>
             </a>
 
           </nav>
@@ -1819,6 +2303,399 @@
 
 
     <!-- =====================================================
+         JOURNEY / ROADMAP
+    ====================================================== -->
+
+    <section id="journey" class="journey-section">
+
+      <div class="container">
+
+        <div class="section-label">
+          02 / My Journey
+        </div>
+
+
+        <div class="journey-heading">
+
+          <div class="journey-heading-copy">
+
+            <h2 class="section-title">
+              It started with
+              <i>a box of cookies.</i>
+            </h2>
+
+          </div>
+
+          <p class="journey-intro">
+            Long before I knew exactly what marketing was,
+            I kept finding myself doing the same thing:
+            meeting people, spotting opportunities, and
+            figuring out how to make something happen.
+          </p>
+
+        </div>
+
+
+        <!-- =================================================
+             ROADMAP
+        ================================================== -->
+
+        <div class="roadmap">
+
+          <div class="roadmap-line"></div>
+
+
+          <!-- COOKIE -->
+
+          <div class="roadmap-item">
+
+            <button
+              class="roadmap-card"
+              data-story="cookies"
+            >
+
+              <div class="roadmap-year">
+                Junior High School
+              </div>
+
+              <div class="roadmap-title">
+                The Cookie Experiment
+              </div>
+
+              <div class="roadmap-subtitle">
+                Learning to sell.
+              </div>
+
+              <div class="roadmap-detail">
+                <span>Open story</span>
+                <span class="roadmap-arrow">↗</span>
+              </div>
+
+            </button>
+
+            <div class="roadmap-node">
+              🍪
+            </div>
+
+          </div>
+
+
+          <!-- THEATRE -->
+
+          <div class="roadmap-item">
+
+            <button
+              class="roadmap-card"
+              data-story="theatre"
+            >
+
+              <div class="roadmap-year">
+                Senior High School
+              </div>
+
+              <div class="roadmap-title">
+                The Theatre Club
+              </div>
+
+              <div class="roadmap-subtitle">
+                Learning to serve.
+              </div>
+
+              <div class="roadmap-detail">
+                <span>Open story</span>
+                <span class="roadmap-arrow">↗</span>
+              </div>
+
+            </button>
+
+            <div class="roadmap-node">
+              🎭
+            </div>
+
+          </div>
+
+
+          <!-- TEC / JUICE -->
+
+          <div class="roadmap-item">
+
+            <button
+              class="roadmap-card"
+              data-story="juice"
+            >
+
+              <div class="roadmap-year">
+                University · ITB
+              </div>
+
+              <div class="roadmap-title">
+                Making Things Happen
+              </div>
+
+              <div class="roadmap-subtitle">
+                Learning to execute.
+              </div>
+
+              <div class="roadmap-detail">
+                <span>Open story</span>
+                <span class="roadmap-arrow">↗</span>
+              </div>
+
+            </button>
+
+            <div class="roadmap-node">
+              🧃
+            </div>
+
+          </div>
+
+
+          <!-- ECOPLAST -->
+
+          <div class="roadmap-item">
+
+            <button
+              class="roadmap-card"
+              data-story="ecoplast"
+            >
+
+              <div class="roadmap-year">
+                University · ECOPLAST
+              </div>
+
+              <div class="roadmap-title">
+                Learning to Influence
+              </div>
+
+              <div class="roadmap-subtitle">
+                When confidence became communication.
+              </div>
+
+              <div class="roadmap-detail">
+                <span>Open story</span>
+                <span class="roadmap-arrow">↗</span>
+              </div>
+
+            </button>
+
+            <div class="roadmap-node">
+              🌱
+            </div>
+
+          </div>
+
+
+          <!-- KPOP -->
+
+          <div class="roadmap-item">
+
+            <button
+              class="roadmap-card"
+              data-story="kpop"
+            >
+
+              <div class="roadmap-year">
+                Thesis Era
+              </div>
+
+              <div class="roadmap-title">
+                Building Communities
+              </div>
+
+              <div class="roadmap-subtitle">
+                Learning how audiences work.
+              </div>
+
+              <div class="roadmap-detail">
+                <span>10K+ × 3 accounts</span>
+                <span class="roadmap-arrow">↗</span>
+              </div>
+
+            </button>
+
+            <div class="roadmap-node">
+              💜
+            </div>
+
+          </div>
+
+
+          <!-- RICE BOWL -->
+
+          <div class="roadmap-item">
+
+            <button
+              class="roadmap-card"
+              data-story="rice"
+            >
+
+              <div class="roadmap-year">
+                After University
+              </div>
+
+              <div class="roadmap-title">
+                The Rice Bowl Experiment
+              </div>
+
+              <div class="roadmap-subtitle">
+                Learning to adapt.
+              </div>
+
+              <div class="roadmap-detail">
+                <span>25 → 22 sold</span>
+                <span class="roadmap-arrow">↗</span>
+              </div>
+
+            </button>
+
+            <div class="roadmap-node">
+              🍚
+            </div>
+
+          </div>
+
+
+          <!-- SELLKPOPVT -->
+
+          <div class="roadmap-item">
+
+            <button
+              class="roadmap-card"
+              data-story="sellkpopvt"
+            >
+
+              <div class="roadmap-year">
+                2021–2025
+              </div>
+
+              <div class="roadmap-title">
+                Turning Community Into Business
+              </div>
+
+              <div class="roadmap-subtitle">
+                Learning to build and scale.
+              </div>
+
+              <div class="roadmap-detail">
+                <span>International customers</span>
+                <span class="roadmap-arrow">↗</span>
+              </div>
+
+            </button>
+
+            <div class="roadmap-node">
+              💼
+            </div>
+
+          </div>
+
+
+          <!-- CAHAYA SEGARA -->
+
+          <div class="roadmap-item">
+
+            <button
+              class="roadmap-card"
+              data-story="cahaya"
+            >
+
+              <div class="roadmap-year">
+                2026
+              </div>
+
+              <div class="roadmap-title">
+                Beyond the Admin Title
+              </div>
+
+              <div class="roadmap-subtitle">
+                Learning to connect the dots.
+              </div>
+
+              <div class="roadmap-detail">
+                <span>Research · Field · Business</span>
+                <span class="roadmap-arrow">↗</span>
+              </div>
+
+            </button>
+
+            <div class="roadmap-node">
+              🗂️
+            </div>
+
+          </div>
+
+
+          <!-- TODAY -->
+
+          <div class="roadmap-today">
+
+            <div class="roadmap-today-line"></div>
+
+            <div class="roadmap-today-label">
+              Today
+            </div>
+
+            <div class="roadmap-today-title">
+              People × Business ×
+              <i>Creativity.</i>
+            </div>
+
+            <p class="roadmap-today-copy">
+              Every chapter taught me something different.
+              Together, they shaped the way I approach
+              marketing, business, and people today.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         STORY MODAL
+    ====================================================== -->
+
+    <div
+      class="story-overlay"
+      id="storyOverlay"
+      aria-hidden="true"
+    >
+
+      <div
+        class="story-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="storyTitle"
+      >
+
+        <button
+          class="story-close"
+          id="storyClose"
+          aria-label="Close story"
+        >
+          ×
+        </button>
+
+        <div class="story-content">
+
+          <div class="story-label" id="storyLabel"></div>
+
+          <h2 class="story-title" id="storyTitle"></h2>
+
+          <div class="story-body" id="storyBody"></div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =====================================================
          EXPERIENCE
     ====================================================== -->
 
@@ -1827,7 +2704,7 @@
       <div class="container">
 
         <div class="section-label">
-          02 / Experience
+          03 / Experience
         </div>
 
         <h2 class="section-title">
@@ -1984,9 +2861,12 @@
               </div>
 
               <p class="experience-description">
-                Prepared documentation, reports, proposals,
-                and tender-related materials while supporting
-                administrative and executive-level project needs.
+                Supported a major tender pursuit by preparing
+                reports, proposals, documentation, and
+                project materials. Translated technical research
+                findings and field observations from marine
+                operations into clear, structured business
+                documentation.
               </p>
 
             </div>
@@ -2024,8 +2904,9 @@
 
               <p class="experience-description">
                 Worked on marketing and brand communication
-                for an environmental startup, helping shape
-                messaging, promotional activities, and
+                for an environmental startup, representing
+                the business in competitions and investor-facing
+                pitches while helping shape messaging and
                 audience engagement.
               </p>
 
@@ -2084,7 +2965,7 @@
       <div class="container">
 
         <div class="section-label">
-          03 / Selected Projects
+          04 / Selected Projects
         </div>
 
         <h2 class="section-title">
@@ -2242,7 +3123,7 @@
       <div class="container">
 
         <div class="section-label">
-          04 / Skills & Education
+          05 / Skills & Education
         </div>
 
         <h2 class="section-title">
@@ -2376,7 +3257,7 @@
       <div class="container">
 
         <div class="section-label">
-          05 / Creative Skills
+          06 / Creative Skills
         </div>
 
         <h2 class="section-title">
@@ -2535,7 +3416,7 @@
       <div class="container">
 
         <div class="section-label">
-          06 / Contact
+          07 / Contact
         </div>
 
 
@@ -2648,6 +3529,27 @@
     const menuButton = document.getElementById("menuButton");
     const mobileMenu = document.getElementById("mobileMenu");
 
+    function closeMobileMenu() {
+
+      menuButton.classList.remove("active");
+
+      mobileMenu.classList.remove("active");
+
+      document.body.classList.remove("menu-open");
+
+      menuButton.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
+      menuButton.setAttribute(
+        "aria-label",
+        "Open menu"
+      );
+
+    }
+
+
     menuButton.addEventListener("click", () => {
 
       const isOpen =
@@ -2678,81 +3580,20 @@
     });
 
 
-    /* Close mobile menu after clicking a link */
-
     document
       .querySelectorAll(".mobile-nav a")
       .forEach(link => {
 
-        link.addEventListener("click", () => {
-
-          menuButton.classList.remove("active");
-
-          mobileMenu.classList.remove("active");
-
-          document.body.classList.remove("menu-open");
-
-          menuButton.setAttribute(
-            "aria-expanded",
-            "false"
-          );
-
-          menuButton.setAttribute(
-            "aria-label",
-            "Open menu"
-          );
-
-        });
+        link.addEventListener(
+          "click",
+          closeMobileMenu
+        );
 
       });
 
 
-    /* Close mobile menu with Escape */
-
-    document.addEventListener("keydown", event => {
-
-      if (event.key === "Escape") {
-
-        menuButton.classList.remove("active");
-
-        mobileMenu.classList.remove("active");
-
-        document.body.classList.remove("menu-open");
-
-        menuButton.setAttribute(
-          "aria-expanded",
-          "false"
-        );
-
-      }
-
-    });
-
-
-    /* Close mobile menu when returning to desktop */
-
-    window.addEventListener("resize", () => {
-
-      if (window.innerWidth > 700) {
-
-        menuButton.classList.remove("active");
-
-        mobileMenu.classList.remove("active");
-
-        document.body.classList.remove("menu-open");
-
-        menuButton.setAttribute(
-          "aria-expanded",
-          "false"
-        );
-
-      }
-
-    });
-
-
     /* =======================================================
-       EXPLORE PORTFOLIO ACCORDION
+       EXPLORE PORTFOLIO
     ======================================================== */
 
     const exploreToggle =
@@ -2780,8 +3621,6 @@
     });
 
 
-    /* Close Explore menu after selecting a section */
-
     document
       .querySelectorAll(".explore-link")
       .forEach(link => {
@@ -2800,6 +3639,584 @@
         });
 
       });
+
+
+    /* =======================================================
+       STORY CONTENT
+    ======================================================== */
+
+    const stories = {
+
+      cookies: {
+        label: "Junior High School · The Beginning",
+        title: "It started with a box of <i>cookies.</i>",
+        body: `
+          <p>
+            I don't think I discovered my interest in business
+            through a textbook.
+          </p>
+
+          <p>
+            In junior high school, our class had a project where
+            each team had to create and sell a product. My team
+            decided to sell cookies.
+          </p>
+
+          <p>
+            There was just one problem: the students weren't
+            really interested. As the time went on, we still had
+            plenty of cookies left.
+          </p>
+
+          <p>
+            Instead of going home with unsold stock, I walked
+            outside the school building to the gates, where
+            parents were waiting for their children. I started
+            approaching them and offering our cookies.
+          </p>
+
+          <p>
+            Eventually, every single cookie was sold.
+          </p>
+
+          <div class="story-quote">
+            “Oh. I think I want to be a boss.”
+          </div>
+
+          <p>
+            It sounds funny now, but that moment stayed with me.
+            I liked figuring out how to make something sell.
+            I liked talking to people. Most importantly, I liked
+            <strong>taking action when something wasn't working.</strong>
+          </p>
+
+          <div class="story-lessons">
+            <span class="story-lesson">Initiative</span>
+            <span class="story-lesson">Salesmanship</span>
+            <span class="story-lesson">Resourcefulness</span>
+            <span class="story-lesson">Problem Solving</span>
+          </div>
+        `
+      },
+
+
+      theatre: {
+        label: "Senior High School · The Theatre Club",
+        title: "I didn't just enjoy selling. I enjoyed <i>helping people.</i>",
+        body: `
+          <p>
+            A few years later, in senior high school, I joined
+            a theatre club.
+          </p>
+
+          <p>
+            I wasn't part of the performance itself, so I found
+            another way to contribute: I took care of ticketing.
+          </p>
+
+          <p>
+            I checked tickets, welcomed people, and helped them
+            find their seats. It was a small role, but I genuinely
+            enjoyed it. I liked being around people and making
+            sure they had a good experience.
+          </p>
+
+          <p>
+            Weeks later, during a meeting with my seniors, one
+            of them remembered me. They told me that I had been
+            very kind and that my service was really good.
+          </p>
+
+          <div class="story-quote">
+            I didn't just enjoy selling.<br>
+            <strong>I enjoyed helping people.</strong>
+          </div>
+
+          <p>
+            That moment changed how I thought about business.
+            I realized I was drawn not only to selling, but to
+            <strong>customer experience, communication, empathy,
+            and relationships.</strong>
+          </p>
+
+          <div class="story-lessons">
+            <span class="story-lesson">Customer Orientation</span>
+            <span class="story-lesson">Empathy</span>
+            <span class="story-lesson">Communication</span>
+            <span class="story-lesson">Service Mindset</span>
+          </div>
+        `
+      },
+
+
+      juice: {
+        label: "University · Techno Entrepreneur Club",
+        title: "University taught me that I love <i>making things happen.</i>",
+        body: `
+          <p>
+            When I entered Institut Teknologi Bandung, I joined
+            the Techno Entrepreneur Club (TEC), a student
+            organization filled with people from different
+            backgrounds, including many engineering students.
+          </p>
+
+          <p>
+            Somehow, I kept getting recruited into different
+            projects. I guess they figured out I would say yes.
+          </p>
+
+          <p>
+            One project involved selling fresh juices to canteens
+            around ITB. I explored Pasar Caringin to find affordable
+            fruit that we could buy in bulk. We prepared the juices
+            ourselves in our club room, then woke up early to
+            distribute them to around 10–15 canteens.
+          </p>
+
+          <p>
+            But selling to the canteens wasn't always enough.
+            If we still had stock left, I would take the products
+            directly to SBM ITB students and sell around campus.
+          </p>
+
+          <p>
+            Most of the time, we could get around 90% of our stock
+            sold.
+          </p>
+
+          <div class="story-quote">
+            I never really got tired of it.
+          </div>
+
+          <p>
+            I enjoyed finding the product, figuring out the
+            economics, going into the field, talking to people,
+            selling, checking what was left, and figuring out
+            what to do next.
+          </p>
+
+          <p>
+            That's when I realized I genuinely enjoy
+            <strong>making things happen.</strong>
+          </p>
+
+          <div class="story-lessons">
+            <span class="story-lesson">Initiative</span>
+            <span class="story-lesson">Commercial Awareness</span>
+            <span class="story-lesson">Adaptability</span>
+            <span class="story-lesson">Operations</span>
+            <span class="story-lesson">Sales</span>
+          </div>
+        `
+      },
+
+
+      ecoplast: {
+        label: "University · ECOPLAST",
+        title: "Confidence became <i>communication.</i>",
+        body: `
+          <p>
+            Another experience came through ECOPLAST, an
+            environmental startup.
+          </p>
+
+          <p>
+            I was initially recruited partly because I was an
+            ITB student and they believed I could represent the
+            company well in pitching and competitions.
+          </p>
+
+          <p>
+            I've always been comfortable speaking in front of
+            people, explaining ideas, and connecting with an
+            audience.
+          </p>
+
+          <p>
+            Through ECOPLAST, I represented the business in
+            competitions and investor-facing situations, and
+            we went on to win several business idea competitions.
+          </p>
+
+          <div class="story-quote">
+            Communication isn't just confidence on stage.
+          </div>
+
+          <p>
+            It's about understanding an idea deeply enough to
+            make other people believe in it too.
+          </p>
+
+          <p>
+            That experience strengthened my ability to
+            <strong>persuade, tell stories, represent ideas,
+            and communicate with different stakeholders.</strong>
+          </p>
+
+          <div class="story-lessons">
+            <span class="story-lesson">Public Speaking</span>
+            <span class="story-lesson">Persuasion</span>
+            <span class="story-lesson">Storytelling</span>
+            <span class="story-lesson">Leadership</span>
+          </div>
+        `
+      },
+
+
+      kpop: {
+        label: "Thesis Era · Community Building",
+        title: "I couldn't just sit around. So I started <i>building communities.</i>",
+        body: `
+          <p>
+            During my thesis era, I spent a lot of time at home.
+            At the same time, I was very passionate about K-pop.
+          </p>
+
+          <p>
+            And somehow, I couldn't just sit around.
+          </p>
+
+          <p>
+            I joined online communities, became active, built
+            trust with other members, and eventually started
+            building communities of my own.
+          </p>
+
+          <p>
+            I initiated several fandom communities across
+            three accounts, with each one eventually growing
+            to more than <strong>10,000 followers.</strong>
+          </p>
+
+          <p>
+            Along the way, I learned by actually watching how
+            communities work: what people respond to, what makes
+            them participate, how trust develops, and why people
+            keep coming back.
+          </p>
+
+          <div class="story-quote">
+            I wasn't studying audiences.<br>
+            I was building one.
+          </div>
+
+          <p>
+            That experience became a bridge between my interest
+            in people and my interest in business.
+          </p>
+
+          <div class="story-lessons">
+            <span class="story-lesson">Community Building</span>
+            <span class="story-lesson">Audience Understanding</span>
+            <span class="story-lesson">Trust Building</span>
+            <span class="story-lesson">Content</span>
+            <span class="story-lesson">Social Media</span>
+          </div>
+        `
+      },
+
+
+      rice: {
+        label: "After University · ICE BSD",
+        title: "25 rice bowls. One folding table. <i>One concert.</i>",
+        body: `
+          <p>
+            After university and during my thesis era, I somehow
+            ended up at a concert at ICE BSD — alone — selling
+            rice bowls.
+          </p>
+
+          <p>
+            There wasn't a fixed selling area, so I had to compete
+            with plenty of other people selling around the venue.
+          </p>
+
+          <p>
+            Instead of staying in one place, I kept moving.
+            I approached people, asked if they wanted to buy,
+            watched where demand seemed stronger, and looked
+            for a better opportunity.
+          </p>
+
+          <p>
+            Eventually, I found an exit gate where there weren't
+            as many sellers. I placed my folding table there,
+            put up my posters, and started selling.
+          </p>
+
+          <div class="story-quote">
+            25 rice bowls → only 3 left.
+          </div>
+
+          <p>
+            I didn't have a fancy booth or a team behind me.
+            I had a folding table, some posters, my products,
+            and the willingness to keep moving until I found
+            the right spot.
+          </p>
+
+          <p>
+            It was a simple experience, but it reinforced
+            something I've always enjoyed:
+            <strong>observe the situation, adapt, and make
+            something work.</strong>
+          </p>
+
+          <div class="story-lessons">
+            <span class="story-lesson">Field Sales</span>
+            <span class="story-lesson">Mobility</span>
+            <span class="story-lesson">Adaptability</span>
+            <span class="story-lesson">Consumer Sensing</span>
+            <span class="story-lesson">Resourcefulness</span>
+          </div>
+        `
+      },
+
+
+      sellkpopvt: {
+        label: "2021–2025 · SellKpopVT",
+        title: "Then I turned a community into <i>a business.</i>",
+        body: `
+          <p>
+            Building fandom communities eventually led me to
+            something bigger: SellKpopVT.
+          </p>
+
+          <p>
+            I built and operated the business around K-pop
+            digital voting, serving customers from Indonesia,
+            Malaysia, Singapore, Thailand, India, the US,
+            Belgium, Europe, Qatar, Japan, and other markets.
+          </p>
+
+          <p>
+            What started from understanding online communities
+            became an actual business operation.
+          </p>
+
+          <p>
+            I handled pricing, customer acquisition, customer
+            communication, operations, and retention. I also
+            worked with people in Indonesia and the Philippines —
+            mainly two people, who in turn distributed work to
+            their own friends.
+          </p>
+
+          <div class="story-quote">
+            Community taught me how people gather.<br>
+            Business taught me how to build around it.
+          </div>
+
+          <p>
+            This was where I learned how to manage customers,
+            coordinate people, build trust, handle international
+            communication, and turn something I understood
+            personally into something with commercial value.
+          </p>
+
+          <div class="story-lessons">
+            <span class="story-lesson">Entrepreneurship</span>
+            <span class="story-lesson">Customer Acquisition</span>
+            <span class="story-lesson">Retention</span>
+            <span class="story-lesson">International Business</span>
+            <span class="story-lesson">Team Coordination</span>
+          </div>
+        `
+      },
+
+
+      cahaya: {
+        label: "2026 · PT Cahaya Segara Indonesia",
+        title: "My title said admin. The work taught me <i>much more.</i>",
+        body: `
+          <p>
+            I joined PT Cahaya Segara Indonesia in an administrative
+            role, but the work quickly became much broader.
+          </p>
+
+          <p>
+            I helped the company pursue and prepare for a major
+            tender involving Danantara-related corporations,
+            supporting the documentation, reports, proposals,
+            and materials needed throughout the process.
+          </p>
+
+          <p>
+            One of the most interesting parts was preparing
+            operational reports that brought together two very
+            different sources: <strong>technical research findings
+            from a professor and observations from the diving
+            team working in the field.</strong>
+          </p>
+
+          <p>
+            Because much of the company's work takes place in
+            marine areas, the information wasn't coming from
+            a desk alone. I had to understand what was happening
+            in the field, organize observations, and turn technical
+            information into clear, structured documentation.
+          </p>
+
+          <div class="story-quote">
+            Research. Field observation. Business.<br>
+            I learned to connect the three.
+          </div>
+
+          <p>
+            It taught me to be extremely punctual, detail-oriented,
+            organized, and careful with information — especially
+            when a document could contribute to a real business
+            opportunity.
+          </p>
+
+          <div class="story-lessons">
+            <span class="story-lesson">Documentation</span>
+            <span class="story-lesson">Attention to Detail</span>
+            <span class="story-lesson">Research</span>
+            <span class="story-lesson">Field Operations</span>
+            <span class="story-lesson">Punctuality</span>
+          </div>
+        `
+      }
+
+    };
+
+
+    /* =======================================================
+       STORY MODAL
+    ======================================================== */
+
+    const storyOverlay =
+      document.getElementById("storyOverlay");
+
+    const storyClose =
+      document.getElementById("storyClose");
+
+    const storyLabel =
+      document.getElementById("storyLabel");
+
+    const storyTitle =
+      document.getElementById("storyTitle");
+
+    const storyBody =
+      document.getElementById("storyBody");
+
+
+    function openStory(storyKey) {
+
+      const story = stories[storyKey];
+
+      if (!story) return;
+
+      storyLabel.innerHTML = story.label;
+
+      storyTitle.innerHTML = story.title;
+
+      storyBody.innerHTML = story.body;
+
+      storyOverlay.classList.add("active");
+
+      storyOverlay.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+      document.body.classList.add("story-open");
+
+      storyClose.focus();
+
+    }
+
+
+    function closeStory() {
+
+      storyOverlay.classList.remove("active");
+
+      storyOverlay.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+      document.body.classList.remove("story-open");
+
+    }
+
+
+    document
+      .querySelectorAll(".roadmap-card")
+      .forEach(card => {
+
+        card.addEventListener("click", () => {
+
+          const storyKey =
+            card.getAttribute("data-story");
+
+          openStory(storyKey);
+
+        });
+
+      });
+
+
+    storyClose.addEventListener(
+      "click",
+      closeStory
+    );
+
+
+    storyOverlay.addEventListener(
+      "click",
+      event => {
+
+        if (event.target === storyOverlay) {
+          closeStory();
+        }
+
+      }
+    );
+
+
+    /* =======================================================
+       ESCAPE KEY
+    ======================================================== */
+
+    document.addEventListener(
+      "keydown",
+      event => {
+
+        if (event.key !== "Escape") return;
+
+        closeStory();
+
+        closeMobileMenu();
+
+        exploreToggle.classList.remove("active");
+
+        exploreMenu.classList.remove("active");
+
+        exploreToggle.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+      }
+    );
+
+
+    /* =======================================================
+       CLOSE MOBILE MENU ON DESKTOP
+    ======================================================== */
+
+    window.addEventListener(
+      "resize",
+      () => {
+
+        if (window.innerWidth > 700) {
+          closeMobileMenu();
+        }
+
+      }
+    );
 
   </script>
 
