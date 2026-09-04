@@ -400,6 +400,45 @@ h2 i {
 
 
 /* =========================
+   CREATIVE SKILLS
+========================= */
+
+.creative-work {
+  margin-top: 50px;
+  width: 100%;
+}
+
+.creative-work img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #e5e0d8;
+}
+
+.creative-links {
+  display: flex;
+  gap: 30px;
+  margin-top: 24px;
+}
+
+.creative-links a {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  color: #b96f7f;
+  border-bottom: 1px solid #b96f7f;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.creative-links a:hover {
+  color: #30342f;
+  border-color: #30342f;
+}
+
+
+/* =========================
    CONTACT
 ========================= */
 
@@ -428,6 +467,23 @@ h2 i {
 }
 
 .email:hover {
+  color: #b96f7f;
+}
+
+.contact-details {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 20px;
+  font-size: 13px;
+}
+
+.contact-details a {
+  color: #62675f;
+  transition: color 0.2s ease;
+}
+
+.contact-details a:hover {
   color: #b96f7f;
 }
 
@@ -553,6 +609,15 @@ footer {
 
   .project-proof {
     margin-top: 18px;
+  }
+
+  .creative-work {
+    margin-top: 30px;
+  }
+
+  .creative-links {
+    flex-direction: column;
+    gap: 14px;
   }
 
 }
