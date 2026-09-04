@@ -123,6 +123,11 @@ h2 i {
   color: #62675f;
 }
 
+
+/* =========================
+   HERO INITIALS
+========================= */
+
 .initials {
   width: 230px;
   height: 230px;
@@ -149,7 +154,9 @@ h2 i {
   color: white;
   font-weight: 700;
   font-size: 13px;
-  transition: transform 0.2s ease, background 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
 }
 
 .btn:hover {
@@ -191,6 +198,19 @@ h2 i {
 
 
 /* =========================
+   EMPHASIZED TEXT
+========================= */
+
+.hero strong,
+.grid strong,
+.list strong,
+.cards strong {
+  font-weight: 700;
+  color: #30342f;
+}
+
+
+/* =========================
    EXPERIENCE
 ========================= */
 
@@ -214,6 +234,14 @@ h2 i {
 .list h4 {
   color: #b96f7f;
   margin: 3px 0 12px;
+}
+
+.list h4 a {
+  transition: color 0.2s ease;
+}
+
+.list h4 a:hover {
+  color: #30342f;
 }
 
 .list p {
@@ -297,6 +325,29 @@ h2 i {
 
 
 /* =========================
+   BUSINESS / PROOF LINKS
+========================= */
+
+.project-proof {
+  display: inline-block;
+  align-self: flex-start;
+  margin-top: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #b96f7f;
+  border-bottom: 1px solid #b96f7f;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.project-proof:hover {
+  color: #30342f;
+  border-color: #30342f;
+}
+
+
+/* =========================
    SKILLS
 ========================= */
 
@@ -312,12 +363,16 @@ h2 i {
   border-radius: 25px;
   padding: 10px 14px;
   font-size: 13px;
-  transition: background 0.2s ease, border-color 0.2s ease;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .skills span:hover {
   background: #eef2ea;
   border-color: #bfc7ba;
+  transform: translateY(-2px);
 }
 
 
@@ -477,6 +532,10 @@ footer {
     gap: 5px;
   }
 
+  .list h3 {
+    font-size: 20px;
+  }
+
   .edu,
   footer {
     flex-direction: column;
@@ -489,6 +548,10 @@ footer {
   }
 
   .btn {
+    margin-top: 18px;
+  }
+
+  .project-proof {
     margin-top: 18px;
   }
 
