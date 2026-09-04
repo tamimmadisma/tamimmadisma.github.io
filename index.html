@@ -1,2867 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Tamimmah Disma Lestari — Marketing & Consumer Insights</title>
+  <title>Tamimmah Disma Lestari — Marketing & Consumer Insights</title>
 
-<meta
-  name="description"
-  content="Tamimmah Disma Lestari — Marketing, Consumer Insights, Business Development & Creative Strategy."
->
+  <meta
+    name="description"
+    content="Portfolio of Tamimmah Disma Lestari — Marketing, Consumer Insights, Business Development and Creative Strategy."
+  >
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link
-  href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap"
-  rel="stylesheet"
->
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
+    rel="stylesheet"
+  >
 
-<style>
-
-/* =========================================================
-   ROOT
-========================================================= */
-
-:root {
-  --cream: #f7f4ee;
-  --ink: #252525;
-  --green: #6f8f78;
-  --turquoise: #63b7b0;
-  --yellow: #d9df57;
-  --pink: #d8a4a5;
-  --muted: #66675f;
-  --soft: #8a8982;
-  --line: #dedad1;
-
-  --serif: "Playfair Display", Georgia, serif;
-  --sans: "DM Sans", Arial, sans-serif;
-
-  --page: min(1240px, calc(100% - 64px));
-}
-
-
-/* =========================================================
-   RESET
-========================================================= */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background: var(--cream);
-  color: var(--ink);
-  font-family: var(--sans);
-  overflow-x: hidden;
-  line-height: 1.5;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button {
-  font: inherit;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-::selection {
-  background: var(--yellow);
-  color: var(--ink);
-}
-
-
-/* =========================================================
-   GLOBAL
-========================================================= */
-
-.section {
-  width: var(--page);
-  margin: 0 auto;
-  padding: 130px 0;
-}
-
-.section-label {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-
-  color: var(--muted);
-}
-
-.section-label::before {
-  content: "";
-  width: 26px;
-  height: 1px;
-  background: var(--ink);
-}
-
-.serif {
-  font-family: var(--serif);
-  font-style: italic;
-  font-weight: 500;
-}
-
-.eyebrow {
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: .13em;
-  font-weight: 700;
-}
-
-.muted {
-  color: var(--muted);
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition:
-    opacity .8s ease,
-    transform .8s cubic-bezier(.2,.8,.2,1);
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-
-/* =========================================================
-   HEADER
-========================================================= */
-
-.site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 78px;
-
-  z-index: 1000;
-
-  background: rgba(247,244,238,.88);
-  backdrop-filter: blur(14px);
-
-  border-bottom: 1px solid transparent;
-
-  transition:
-    height .3s ease,
-    border-color .3s ease,
-    background .3s ease;
-}
-
-.site-header.scrolled {
-  height: 68px;
-  border-color: var(--line);
-  background: rgba(247,244,238,.94);
-}
-
-.header-inner {
-  width: var(--page);
-  height: 100%;
-  margin: auto;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: -.02em;
-}
-
-.logo span {
-  color: var(--green);
-}
-
-.desktop-nav {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-}
-
-.desktop-nav a {
-  position: relative;
-
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-
-  color: var(--muted);
-  transition: color .25s ease;
-}
-
-.desktop-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -7px;
-
-  width: 0;
-  height: 1px;
-
-  background: var(--ink);
-
-  transition: width .25s ease;
-}
-
-.desktop-nav a:hover {
-  color: var(--ink);
-}
-
-.desktop-nav a:hover::after {
-  width: 100%;
-}
-
-.header-contact {
-  padding: 10px 17px;
-
-  border: 1px solid var(--ink);
-  border-radius: 100px;
-
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-
-  transition:
-    background .25s ease,
-    color .25s ease;
-}
-
-.header-contact:hover {
-  background: var(--ink);
-  color: var(--cream);
-}
-
-
-/* MOBILE MENU */
-
-.menu-toggle {
-  display: none;
-
-  width: 42px;
-  height: 42px;
-
-  border: 1px solid var(--line);
-  border-radius: 50%;
-
-  background: transparent;
-  cursor: pointer;
-
-  position: relative;
-  z-index: 1002;
-}
-
-.menu-toggle span,
-.menu-toggle span::after {
-  content: "";
-
-  position: absolute;
-  left: 12px;
-
-  width: 17px;
-  height: 1px;
-
-  background: var(--ink);
-
-  transition: transform .3s ease;
-}
-
-.menu-toggle span {
-  top: 16px;
-}
-
-.menu-toggle span::after {
-  left: 0;
-  top: 7px;
-}
-
-.menu-toggle.open span {
-  transform: rotate(45deg) translate(3px, 3px);
-}
-
-.menu-toggle.open span::after {
-  transform: rotate(-90deg);
-  top: 0;
-}
-
-.mobile-menu {
-  position: fixed;
-  inset: 0;
-
-  z-index: 1001;
-
-  background: var(--cream);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-
-  transition: opacity .35s ease, visibility .35s ease;
-}
-
-.mobile-menu.open {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
-.mobile-menu nav {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  text-align: center;
-}
-
-.mobile-menu a {
-  font-size: clamp(30px, 8vw, 48px);
-  font-weight: 600;
-  letter-spacing: -.05em;
-}
-
-
-/* =========================================================
-   HERO
-========================================================= */
-
-.hero {
-  min-height: 100vh;
-  width: var(--page);
-
-  margin: 0 auto;
-  padding-top: 78px;
-
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-
-  position: relative;
-}
-
-.hero-copy {
-  align-self: center;
-  position: relative;
-  z-index: 5;
-
-  padding-bottom: 35px;
-}
-
-.hero-kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-
-  margin-bottom: 25px;
-
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-
-  color: var(--muted);
-}
-
-.hero-kicker::before {
-  content: "";
-  width: 8px;
-  height: 8px;
-
-  background: var(--turquoise);
-  border-radius: 50%;
-}
-
-.hero h1 {
-  font-size: clamp(76px, 9.5vw, 150px);
-  line-height: .82;
-  letter-spacing: -.075em;
-  font-weight: 700;
-}
-
-.hero h1 .second {
-  margin-left: 72px;
-  font-family: var(--serif);
-  font-style: italic;
-  font-weight: 500;
-}
-
-.hero-positioning {
-  max-width: 510px;
-  margin-top: 43px;
-
-  display: grid;
-  grid-template-columns: 3px 1fr;
-  gap: 18px;
-}
-
-.hero-positioning::before {
-  content: "";
-  background: var(--green);
-  border-radius: 5px;
-}
-
-.hero-positioning p {
-  font-size: 18px;
-  line-height: 1.55;
-  color: var(--muted);
-}
-
-.hero-positioning strong {
-  color: var(--ink);
-}
-
-.hero-actions {
-  display: flex;
-  align-items: center;
-  gap: 11px;
-
-  margin-top: 32px;
-}
-
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-
-  padding: 14px 20px;
-
-  border-radius: 100px;
-
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-
-  border: 1px solid var(--ink);
-
-  transition:
-    transform .25s ease,
-    background .25s ease,
-    color .25s ease;
-}
-
-.button:hover {
-  transform: translateY(-3px);
-}
-
-.button.primary {
-  background: var(--ink);
-  color: var(--cream);
-}
-
-.button.primary:hover {
-  background: var(--green);
-  border-color: var(--green);
-}
-
-.button.secondary {
-  background: transparent;
-}
-
-.button.secondary:hover {
-  background: var(--yellow);
-  border-color: var(--yellow);
-}
-
-
-/* HERO VISUAL */
-
-.hero-visual {
-  position: relative;
-  min-height: 680px;
-}
-
-.hero-photo-frame {
-  position: absolute;
-
-  width: min(380px, 70%);
-  aspect-ratio: .78;
-
-  top: 50%;
-  left: 50%;
-
-  transform:
-    translate(-40%, -48%)
-    rotate(4deg);
-
-  padding: 12px;
-
-  background: #fffdf8;
-
-  box-shadow: 0 25px 70px rgba(37,37,37,.12);
-
-  z-index: 4;
-}
-
-.hero-photo-frame::before {
-  content: "";
-
-  position: absolute;
-  inset: -15px;
-
-  border: 1px solid var(--line);
-
-  transform: rotate(-7deg);
-
-  z-index: -1;
-}
-
-.hero-photo {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-  object-position: center;
-
-  filter: saturate(.88);
-}
-
-.hero-photo-label {
-  position: absolute;
-
-  bottom: -22px;
-  left: -38px;
-
-  padding: 11px 15px;
-
-  background: var(--yellow);
-
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-
-  transform: rotate(-5deg);
-}
-
-.hero-blob {
-  position: absolute;
-
-  width: 410px;
-  height: 410px;
-
-  top: 50%;
-  left: 51%;
-
-  transform: translate(-50%, -50%);
-
-  background: var(--turquoise);
-
-  border-radius:
-    53% 47% 62% 38% /
-    43% 57% 43% 57%;
-
-  z-index: 1;
-}
-
-.hero-blob-two {
-  position: absolute;
-
-  width: 160px;
-  height: 160px;
-
-  top: 13%;
-  right: 7%;
-
-  background: var(--pink);
-
-  border-radius: 57% 43% 41% 59% /
-             44% 55% 45% 56%;
-
-  transform: rotate(18deg);
-
-  z-index: 0;
-}
-
-.star {
-  position: absolute;
-
-  font-size: 50px;
-  line-height: 1;
-
-  color: var(--yellow);
-
-  z-index: 8;
-
-  animation: float 5s ease-in-out infinite;
-}
-
-.star.one {
-  top: 19%;
-  left: 12%;
-}
-
-.star.two {
-  right: 5%;
-  bottom: 18%;
-
-  font-size: 30px;
-  color: var(--green);
-
-  animation-delay: 1s;
-}
-
-.hero-note {
-  position: absolute;
-
-  right: 0;
-  bottom: 11%;
-
-  max-width: 150px;
-
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 16px;
-  line-height: 1.35;
-
-  color: var(--muted);
-
-  transform: rotate(-5deg);
-}
-
-.scroll-cue {
-  position: absolute;
-
-  left: 0;
-  bottom: 34px;
-
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-
-  color: var(--soft);
-}
-
-.scroll-cue span {
-  display: block;
-
-  width: 32px;
-  height: 1px;
-
-  background: var(--soft);
-}
-
-
-/* =========================================================
-   ABOUT
-========================================================= */
-
-.about {
-  position: relative;
-}
-
-.about-layout {
-  margin-top: 65px;
-
-  display: grid;
-  grid-template-columns: .8fr 1.4fr;
-  gap: 90px;
-}
-
-.about-intro {
-  position: relative;
-}
-
-.about-intro h2 {
-  font-size: clamp(42px, 5vw, 72px);
-  line-height: .98;
-  letter-spacing: -.055em;
-}
-
-.about-intro h2 em {
-  font-family: var(--serif);
-  font-weight: 500;
-}
-
-.about-sticker {
-  position: absolute;
-
-  top: -40px;
-  right: 0;
-
-  width: 80px;
-  height: 80px;
-
-  border: 1px solid var(--ink);
-  border-radius: 50%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 8px;
-  font-weight: 700;
-  letter-spacing: .08em;
-  text-align: center;
-  text-transform: uppercase;
-
-  transform: rotate(12deg);
-}
-
-.about-copy {
-  max-width: 670px;
-}
-
-.about-copy .lead {
-  font-size: clamp(23px, 2.3vw, 33px);
-  line-height: 1.3;
-  letter-spacing: -.025em;
-
-  margin-bottom: 30px;
-}
-
-.about-copy p {
-  color: var(--muted);
-  font-size: 16px;
-  line-height: 1.75;
-}
-
-.about-proof {
-  margin-top: 50px;
-
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-
-.proof {
-  padding: 24px 20px 24px 0;
-}
-
-.proof + .proof {
-  padding-left: 25px;
-  border-left: 1px solid var(--line);
-}
-
-.proof strong {
-  display: block;
-
-  font-size: 30px;
-  line-height: 1;
-  letter-spacing: -.06em;
-
-  margin-bottom: 8px;
-}
-
-.proof span {
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  color: var(--muted);
-}
-
-
-/* =========================================================
-   JOURNEY
-========================================================= */
-
-.journey {
-  position: relative;
-  overflow: hidden;
-}
-
-.journey-intro {
-  margin-top: 30px;
-
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-
-  gap: 40px;
-}
-
-.journey-intro h2 {
-  max-width: 650px;
-
-  font-size: clamp(50px, 6vw, 88px);
-  line-height: .9;
-  letter-spacing: -.07em;
-}
-
-.journey-intro p {
-  max-width: 290px;
-
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.65;
-}
-
-
-/* ROADMAP */
-
-.roadmap {
-  position: relative;
-
-  width: 100%;
-  max-width: 1000px;
-
-  height: 810px;
-
-  margin: 85px auto 0;
-}
-
-.road-path {
-  position: absolute;
-
-  inset: 35px 50px;
-
-  width: calc(100% - 100px);
-  height: calc(100% - 70px);
-
-  overflow: visible;
-}
-
-.road-path path {
-  fill: none;
-
-  stroke: var(--ink);
-  stroke-width: 1.5;
-
-  stroke-dasharray: 5 8;
-
-  opacity: .28;
-}
-
-
-/* MILESTONES */
-
-.milestone {
-  position: absolute;
-
-  width: 245px;
-
-  cursor: pointer;
-
-  z-index: 5;
-}
-
-.milestone:nth-child(1) { left: 1%; top: 4%; }
-.milestone:nth-child(2) { right: 0; top: 12%; }
-.milestone:nth-child(3) { left: 6%; top: 29%; }
-.milestone:nth-child(4) { right: 7%; top: 37%; }
-.milestone:nth-child(5) { left: 2%; top: 53%; }
-.milestone:nth-child(6) { right: 1%; top: 61%; }
-.milestone:nth-child(7) { left: 9%; top: 76%; }
-.milestone:nth-child(8) { right: 10%; top: 83%; }
-
-.milestone-dot {
-  width: 20px;
-  height: 20px;
-
-  margin-bottom: 11px;
-
-  border-radius: 50%;
-
-  background: var(--cream);
-  border: 2px solid var(--ink);
-
-  position: relative;
-
-  transition:
-    transform .3s ease,
-    background .3s ease;
-}
-
-.milestone:nth-child(2n) .milestone-dot {
-  margin-left: auto;
-}
-
-.milestone:nth-child(1) .milestone-dot,
-.milestone:nth-child(3) .milestone-dot,
-.milestone:nth-child(5) .milestone-dot,
-.milestone:nth-child(7) .milestone-dot {
-  background: var(--turquoise);
-}
-
-.milestone:nth-child(2) .milestone-dot,
-.milestone:nth-child(6) .milestone-dot {
-  background: var(--yellow);
-}
-
-.milestone:nth-child(4) .milestone-dot {
-  background: var(--pink);
-}
-
-.milestone:nth-child(8) .milestone-dot {
-  background: var(--green);
-}
-
-.milestone-content {
-  padding: 18px 20px;
-
-  background: rgba(255,253,248,.72);
-
-  border: 1px solid var(--line);
-
-  transition:
-    transform .3s ease,
-    border-color .3s ease,
-    box-shadow .3s ease;
-}
-
-.milestone:nth-child(2n) .milestone-content {
-  text-align: right;
-}
-
-.milestone:hover .milestone-content,
-.milestone.active .milestone-content {
-  transform: translateY(-5px);
-  border-color: var(--ink);
-  box-shadow: 10px 12px 0 rgba(37,37,37,.05);
-}
-
-.milestone:hover .milestone-dot,
-.milestone.active .milestone-dot {
-  transform: scale(1.25);
-}
-
-.milestone-year {
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: .13em;
-  color: var(--soft);
-}
-
-.milestone h3 {
-  margin-top: 5px;
-
-  font-size: 17px;
-  line-height: 1.1;
-  letter-spacing: -.035em;
-}
-
-.milestone h3 span {
-  display: block;
-
-  margin-top: 3px;
-
-  font-family: var(--serif);
-  font-style: italic;
-  font-weight: 500;
-
-  color: var(--green);
-}
-
-.milestone-caption {
-  margin-top: 9px;
-
-  font-size: 10px;
-  line-height: 1.5;
-
-  color: var(--muted);
-}
-
-.milestone-detail {
-  max-height: 0;
-  overflow: hidden;
-
-  font-size: 11px;
-  line-height: 1.55;
-
-  color: var(--muted);
-
-  transition:
-    max-height .45s ease,
-    margin-top .45s ease;
-}
-
-.milestone.active .milestone-detail {
-  max-height: 100px;
-  margin-top: 13px;
-}
-
-.journey-end {
-  position: absolute;
-
-  left: 50%;
-  bottom: -7px;
-
-  transform: translateX(-50%);
-
-  width: 145px;
-  height: 145px;
-
-  background: var(--ink);
-  color: var(--cream);
-
-  border-radius: 48% 52% 44% 56% /
-             53% 46% 54% 47%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  text-align: center;
-
-  padding: 20px;
-
-  font-size: 11px;
-  font-weight: 700;
-  line-height: 1.3;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-
-  transform-origin: center;
-  animation: slowRotate 14s linear infinite;
-}
-
-
-/* =========================================================
-   EXPERIENCE
-========================================================= */
-
-.experience {
-  position: relative;
-}
-
-.experience-head {
-  margin-top: 32px;
-
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-
-  gap: 50px;
-}
-
-.experience-head h2 {
-  font-size: clamp(54px, 6vw, 88px);
-  line-height: .88;
-  letter-spacing: -.07em;
-}
-
-.experience-head h2 em {
-  font-family: var(--serif);
-  font-weight: 500;
-}
-
-.experience-head p {
-  max-width: 300px;
-
-  font-size: 14px;
-  line-height: 1.6;
-
-  color: var(--muted);
-}
-
-.experience-list {
-  margin-top: 70px;
-
-  border-top: 1px solid var(--ink);
-}
-
-.experience-row {
-  min-height: 108px;
-
-  display: grid;
-  grid-template-columns: 70px minmax(0, 1fr) 180px 30px;
-  align-items: center;
-  gap: 25px;
-
-  position: relative;
-
-  border-bottom: 1px solid var(--line);
-
-  transition:
-    padding .3s ease,
-    background .3s ease;
-}
-
-.experience-row::before {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  background: var(--green);
-
-  opacity: 0;
-
-  transform: scaleY(.2);
-
-  transition:
-    opacity .3s ease,
-    transform .35s cubic-bezier(.2,.8,.2,1);
-}
-
-.experience-row:hover {
-  padding-left: 18px;
-  padding-right: 18px;
-}
-
-.experience-row:hover::before {
-  opacity: .06;
-  transform: scaleY(1);
-}
-
-.experience-number {
-  position: relative;
-
-  font-family: var(--serif);
-  font-size: 27px;
-  font-style: italic;
-
-  color: var(--soft);
-}
-
-.experience-main {
-  position: relative;
-}
-
-.experience-company {
-  font-size: 21px;
-  font-weight: 600;
-  letter-spacing: -.035em;
-}
-
-.experience-role {
-  margin-top: 4px;
-
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-
-  color: var(--muted);
-}
-
-.experience-impact {
-  position: relative;
-
-  font-size: 11px;
-  line-height: 1.5;
-
-  color: var(--muted);
-}
-
-.experience-date {
-  position: relative;
-
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: .07em;
-  text-align: right;
-
-  color: var(--soft);
-}
-
-.experience-arrow {
-  position: relative;
-
-  width: 25px;
-  height: 25px;
-
-  border: 1px solid var(--line);
-  border-radius: 50%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 12px;
-
-  transition:
-    background .25s ease,
-    border-color .25s ease,
-    transform .25s ease;
-}
-
-.experience-row:hover .experience-arrow {
-  background: var(--ink);
-  color: var(--cream);
-  border-color: var(--ink);
-  transform: rotate(45deg);
-}
-
-
-/* =========================================================
-   PROJECTS
-========================================================= */
-
-.projects {
-  position: relative;
-}
-
-.projects-header {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-
-  margin-bottom: 65px;
-}
-
-.projects-header h2 {
-  font-size: clamp(54px, 6vw, 88px);
-  line-height: .88;
-  letter-spacing: -.07em;
-}
-
-.projects-header h2 em {
-  font-family: var(--serif);
-  font-weight: 500;
-}
-
-.projects-header p {
-  max-width: 360px;
-
-  align-self: end;
-
-  font-size: 14px;
-  line-height: 1.65;
-
-  color: var(--muted);
-}
-
-
-/* PROJECT GRID */
-
-.project-grid {
-  display: grid;
-
-  grid-template-columns: 1.45fr .8fr .8fr;
-  grid-template-rows: 330px 270px;
-
-  gap: 18px;
-}
-
-.project {
-  position: relative;
-
-  overflow: hidden;
-
-  border: 1px solid var(--line);
-
-  background: #efebe2;
-
-  transition:
-    transform .35s cubic-bezier(.2,.8,.2,1),
-    box-shadow .35s ease;
-}
-
-.project:hover {
-  transform: translateY(-6px);
-  box-shadow: 12px 16px 0 rgba(37,37,37,.06);
-}
-
-.project.feature {
-  grid-row: span 2;
-
-  background: var(--green);
-  color: var(--cream);
-
-  padding: 36px;
-}
-
-.project:nth-child(2) {
-  background: var(--yellow);
-}
-
-.project:nth-child(3) {
-  background: var(--pink);
-}
-
-.project:nth-child(4) {
-  background: var(--turquoise);
-}
-
-.project-number {
-  position: absolute;
-
-  top: 22px;
-  right: 24px;
-
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 19px;
-}
-
-.project.feature .project-number {
-  color: rgba(247,244,238,.65);
-}
-
-.project-content {
-  position: absolute;
-
-  left: 25px;
-  right: 25px;
-  bottom: 24px;
-}
-
-.project.feature .project-content {
-  left: 36px;
-  right: 36px;
-  bottom: 35px;
-}
-
-.project-type {
-  margin-bottom: 11px;
-
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: .13em;
-  text-transform: uppercase;
-
-  opacity: .72;
-}
-
-.project h3 {
-  max-width: 450px;
-
-  font-size: 27px;
-  line-height: 1;
-  letter-spacing: -.05em;
-}
-
-.project.feature h3 {
-  font-size: clamp(40px, 4vw, 64px);
-  line-height: .92;
-}
-
-.project h3 em {
-  font-family: var(--serif);
-  font-weight: 500;
-}
-
-.project-description {
-  max-width: 390px;
-
-  margin-top: 18px;
-
-  font-size: 12px;
-  line-height: 1.55;
-
-  opacity: .78;
-}
-
-.project-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-
-  margin-top: 20px;
-
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-
-  border-bottom: 1px solid currentColor;
-  padding-bottom: 4px;
-}
-
-.project-graphic {
-  position: absolute;
-
-  top: 40px;
-  left: 50%;
-
-  width: 180px;
-  height: 180px;
-
-  transform: translateX(-50%) rotate(-8deg);
-
-  border: 1px solid rgba(37,37,37,.18);
-
-  border-radius:
-    46% 54% 60% 40% /
-    52% 41% 59% 48%;
-}
-
-.project-graphic::after {
-  content: "";
-
-  position: absolute;
-  inset: 17px;
-
-  border: 1px dashed rgba(37,37,37,.25);
-
-  border-radius: 50%;
-}
-
-.project.feature .project-graphic {
-  top: 70px;
-  right: 50px;
-  left: auto;
-
-  width: 230px;
-  height: 230px;
-
-  transform: rotate(15deg);
-
-  border-color: rgba(247,244,238,.3);
-}
-
-.project.feature .project-graphic::after {
-  border-color: rgba(247,244,238,.3);
-}
-
-.project-tag {
-  position: absolute;
-
-  top: 27px;
-  left: 25px;
-
-  padding: 8px 11px;
-
-  border: 1px solid rgba(37,37,37,.25);
-  border-radius: 100px;
-
-  font-size: 8px;
-  font-weight: 700;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-}
-
-
-/* =========================================================
-   SKILLS
-========================================================= */
-
-.skills {
-  position: relative;
-}
-
-.skills-head {
-  margin-top: 35px;
-
-  display: grid;
-  grid-template-columns: 1fr .75fr;
-  gap: 80px;
-}
-
-.skills-head h2 {
-  font-size: clamp(54px, 6vw, 88px);
-  line-height: .88;
-  letter-spacing: -.07em;
-}
-
-.skills-head h2 em {
-  font-family: var(--serif);
-  font-weight: 500;
-}
-
-.skills-head p {
-  align-self: end;
-
-  max-width: 350px;
-
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.65;
-}
-
-
-/* SKILL MAP */
-
-.skill-map {
-  position: relative;
-
-  width: 720px;
-  max-width: 100%;
-
-  height: 590px;
-
-  margin: 65px auto 0;
-}
-
-.skill-center {
-  position: absolute;
-
-  left: 50%;
-  top: 50%;
-
-  transform: translate(-50%, -50%);
-
-  width: 180px;
-  height: 180px;
-
-  border-radius: 50%;
-
-  background: var(--ink);
-  color: var(--cream);
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  text-align: center;
-
-  z-index: 5;
-
-  box-shadow: 0 20px 50px rgba(37,37,37,.13);
-}
-
-.skill-center small {
-  font-size: 8px;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-
-  opacity: .6;
-
-  margin-bottom: 8px;
-}
-
-.skill-center strong {
-  font-family: var(--serif);
-  font-size: 32px;
-  font-style: italic;
-  font-weight: 500;
-}
-
-.skill-orbit {
-  position: absolute;
-
-  left: 50%;
-  top: 50%;
-
-  width: 400px;
-  height: 400px;
-
-  transform: translate(-50%, -50%);
-
-  border: 1px dashed var(--line);
-  border-radius: 50%;
-}
-
-.skill-line {
-  position: absolute;
-
-  left: 50%;
-  top: 50%;
-
-  width: 330px;
-  height: 1px;
-
-  transform-origin: left center;
-
-  background: var(--line);
-}
-
-.skill-line:nth-child(1) { transform: rotate(0deg); }
-.skill-line:nth-child(2) { transform: rotate(60deg); }
-.skill-line:nth-child(3) { transform: rotate(120deg); }
-
-.skill-node {
-  position: absolute;
-
-  width: 150px;
-  min-height: 95px;
-
-  padding: 17px;
-
-  background: rgba(255,253,248,.7);
-
-  border: 1px solid var(--line);
-
-  transition:
-    transform .3s ease,
-    border-color .3s ease,
-    background .3s ease;
-}
-
-.skill-node:hover {
-  transform: translateY(-6px) rotate(-1deg);
-  border-color: var(--ink);
-  background: #fffdf8;
-}
-
-.skill-node:nth-of-type(1) {
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.skill-node:nth-of-type(1):hover {
-  transform: translateX(-50%) translateY(-6px);
-}
-
-.skill-node:nth-of-type(2) {
-  top: 105px;
-  right: 0;
-}
-
-.skill-node:nth-of-type(3) {
-  bottom: 35px;
-  right: 55px;
-}
-
-.skill-node:nth-of-type(4) {
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.skill-node:nth-of-type(4):hover {
-  transform: translateX(-50%) translateY(-6px);
-}
-
-.skill-node:nth-of-type(5) {
-  bottom: 35px;
-  left: 55px;
-}
-
-.skill-node:nth-of-type(6) {
-  top: 105px;
-  left: 0;
-}
-
-.skill-node h3 {
-  font-size: 12px;
-  letter-spacing: .02em;
-  text-transform: uppercase;
-}
-
-.skill-node p {
-  margin-top: 8px;
-
-  font-size: 9px;
-  line-height: 1.45;
-
-  color: var(--muted);
-}
-
-.tool-strip {
-  margin-top: 40px;
-
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
-}
-
-.tool {
-  padding: 9px 13px;
-
-  border: 1px solid var(--line);
-  border-radius: 100px;
-
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: .04em;
-
-  color: var(--muted);
-}
-
-.education {
-  margin-top: 70px;
-
-  border-top: 1px solid var(--ink);
-  border-bottom: 1px solid var(--ink);
-
-  padding: 28px 0;
-
-  display: grid;
-  grid-template-columns: 170px 1fr auto;
-  align-items: center;
-  gap: 30px;
-}
-
-.education-label {
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-}
-
-.education-main strong {
-  display: block;
-
-  font-size: 21px;
-  letter-spacing: -.035em;
-}
-
-.education-main span {
-  display: block;
-
-  margin-top: 4px;
-
-  font-size: 11px;
-  color: var(--muted);
-}
-
-.education-gpa {
-  text-align: right;
-}
-
-.education-gpa strong {
-  font-family: var(--serif);
-  font-size: 25px;
-  font-style: italic;
-}
-
-.education-gpa span {
-  display: block;
-
-  font-size: 8px;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  color: var(--muted);
-}
-
-
-/* =========================================================
-   CREATIVE
-========================================================= */
-
-.creative {
-  position: relative;
-}
-
-.creative-header {
-  margin-top: 35px;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-
-  gap: 40px;
-}
-
-.creative-header h2 {
-  font-size: clamp(54px, 6vw, 88px);
-  line-height: .88;
-  letter-spacing: -.07em;
-}
-
-.creative-header h2 em {
-  font-family: var(--serif);
-  font-weight: 500;
-}
-
-.creative-header p {
-  max-width: 310px;
-
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-.creative-board {
-  margin-top: 65px;
-
-  display: grid;
-  grid-template-columns: 1.1fr .9fr;
-  gap: 20px;
-
-  min-height: 600px;
-}
-
-.creative-panel {
-  position: relative;
-
-  overflow: hidden;
-
-  border: 1px solid var(--line);
-
-  background: #ece7dd;
-}
-
-.creative-panel.photoshop {
-  min-height: 580px;
-}
-
-.creative-panel.tiktok {
-  min-height: 580px;
-
-  background: var(--turquoise);
-}
-
-.creative-label {
-  position: absolute;
-
-  top: 25px;
-  left: 27px;
-
-  z-index: 4;
-
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: .13em;
-  text-transform: uppercase;
-}
-
-.creative-title {
-  position: absolute;
-
-  left: 27px;
-  bottom: 28px;
-
-  z-index: 4;
-
-  max-width: 350px;
-
-  font-size: 38px;
-  line-height: .95;
-  letter-spacing: -.06em;
-}
-
-.creative-title em {
-  font-family: var(--serif);
-  font-weight: 500;
-}
-
-.creative-image {
-  position: absolute;
-
-  width: 73%;
-  height: 67%;
-
-  top: 55px;
-  left: 50%;
-
-  transform:
-    translateX(-44%)
-    rotate(-4deg);
-
-  object-fit: cover;
-
-  border: 10px solid #fffdf8;
-
-  box-shadow: 18px 20px 0 rgba(37,37,37,.08);
-
-  z-index: 2;
-}
-
-.crop-mark {
-  position: absolute;
-
-  width: 25px;
-  height: 25px;
-
-  border-left: 1px solid var(--ink);
-  border-top: 1px solid var(--ink);
-
-  opacity: .45;
-}
-
-.crop-mark.one {
-  top: 40px;
-  left: 40px;
-}
-
-.crop-mark.two {
-  top: 40px;
-  right: 40px;
-
-  transform: rotate(90deg);
-}
-
-.crop-mark.three {
-  bottom: 40px;
-  right: 40px;
-
-  transform: rotate(180deg);
-}
-
-.creative-note {
-  position: absolute;
-
-  top: 80px;
-  right: 30px;
-
-  padding: 10px 13px;
-
-  background: var(--yellow);
-
-  font-family: var(--serif);
-  font-size: 13px;
-  font-style: italic;
-
-  transform: rotate(7deg);
-
-  z-index: 5;
-}
-
-
-/* TIKTOK */
-
-.tiktok-big {
-  position: absolute;
-
-  left: 25px;
-  top: 90px;
-
-  font-size: clamp(85px, 9vw, 135px);
-  font-weight: 700;
-
-  line-height: .75;
-  letter-spacing: -.09em;
-
-  z-index: 1;
-}
-
-.tiktok-image {
-  position: absolute;
-
-  width: 200px;
-  height: 330px;
-
-  right: 70px;
-  top: 85px;
-
-  object-fit: cover;
-
-  border: 8px solid #fffdf8;
-
-  box-shadow: 15px 17px 0 rgba(37,37,37,.12);
-
-  transform: rotate(5deg);
-
-  z-index: 3;
-}
-
-.tiktok-stats {
-  position: absolute;
-
-  left: 27px;
-  bottom: 120px;
-
-  z-index: 5;
-}
-
-.tiktok-stat {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-
-  margin-top: 9px;
-}
-
-.tiktok-stat strong {
-  font-size: 24px;
-  letter-spacing: -.05em;
-}
-
-.tiktok-stat span {
-  font-size: 9px;
-  text-transform: uppercase;
-  letter-spacing: .08em;
-}
-
-.creative-button {
-  position: absolute;
-
-  right: 25px;
-  bottom: 27px;
-
-  z-index: 7;
-
-  padding: 11px 15px;
-
-  border: 1px solid var(--ink);
-  border-radius: 100px;
-
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: .09em;
-  text-transform: uppercase;
-
-  background: rgba(247,244,238,.65);
-
-  transition:
-    background .25s ease,
-    transform .25s ease;
-}
-
-.creative-button:hover {
-  background: var(--ink);
-  color: var(--cream);
-  transform: translateY(-3px);
-}
-
-
-/* =========================================================
-   CONTACT
-========================================================= */
-
-.contact {
-  width: var(--page);
-
-  margin: 0 auto;
-  padding: 130px 0 80px;
-
-  position: relative;
-}
-
-.contact-poster {
-  position: relative;
-
-  min-height: 650px;
-
-  overflow: hidden;
-
-  background: var(--ink);
-  color: var(--cream);
-
-  padding: 60px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.contact-shape {
-  position: absolute;
-
-  width: 420px;
-  height: 420px;
-
-  right: -80px;
-  top: -100px;
-
-  background: var(--turquoise);
-
-  border-radius:
-    60% 40% 45% 55% /
-    48% 58% 42% 52%;
-
-  transform: rotate(18deg);
-
-  opacity: .95;
-}
-
-.contact-shape-two {
-  position: absolute;
-
-  width: 190px;
-  height: 190px;
-
-  right: 270px;
-  bottom: -70px;
-
-  background: var(--green);
-
-  border-radius: 50%;
-
-  opacity: .8;
-}
-
-.contact-top {
-  position: relative;
-  z-index: 3;
-}
-
-.contact-top .section-label {
-  color: rgba(247,244,238,.6);
-}
-
-.contact-top .section-label::before {
-  background: var(--cream);
-}
-
-.contact-heading {
-  position: relative;
-  z-index: 3;
-
-  margin-top: 80px;
-
-  max-width: 850px;
-
-  font-size: clamp(62px, 8vw, 120px);
-  line-height: .83;
-  letter-spacing: -.075em;
-}
-
-.contact-heading em {
-  font-family: var(--serif);
-  font-weight: 500;
-}
-
-.contact-bottom {
-  position: relative;
-  z-index: 4;
-
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-
-  gap: 40px;
-}
-
-.contact-copy {
-  max-width: 360px;
-
-  font-size: 13px;
-  line-height: 1.6;
-
-  color: rgba(247,244,238,.65);
-}
-
-.contact-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: end;
-  gap: 9px;
-}
-
-.contact-link {
-  padding: 13px 18px;
-
-  border: 1px solid rgba(247,244,238,.35);
-  border-radius: 100px;
-
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-
-  transition:
-    background .25s ease,
-    color .25s ease,
-    border-color .25s ease;
-}
-
-.contact-link:hover {
-  background: var(--cream);
-  color: var(--ink);
-  border-color: var(--cream);
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer {
-  width: var(--page);
-
-  margin: auto;
-
-  padding: 24px 0 30px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  border-top: 1px solid var(--line);
-
-  font-size: 9px;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-
-  color: var(--soft);
-}
-
-
-/* =========================================================
-   FLOATING DETAILS
-========================================================= */
-
-.float-star {
-  position: absolute;
-
-  font-size: 22px;
-
-  color: var(--yellow);
-
-  animation: float 4s ease-in-out infinite;
-}
-
-
-/* =========================================================
-   ANIMATIONS
-========================================================= */
-
-@keyframes float {
-  0%,100% {
-    transform: translateY(0) rotate(0deg);
-  }
-
-  50% {
-    transform: translateY(-10px) rotate(7deg);
-  }
-}
-
-@keyframes slowRotate {
-  from {
-    transform: translateX(-50%) rotate(0deg);
-  }
-
-  to {
-    transform: translateX(-50%) rotate(360deg);
-  }
-}
-
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 1000px) {
-
-  :root {
-    --page: min(900px, calc(100% - 44px));
-  }
-
-  .desktop-nav {
-    gap: 18px;
-  }
-
-  .hero {
-    grid-template-columns: .95fr 1.05fr;
-  }
-
-  .hero h1 {
-    font-size: clamp(65px, 10vw, 105px);
-  }
-
-  .hero h1 .second {
-    margin-left: 35px;
-  }
-
-  .hero-blob {
-    width: 340px;
-    height: 340px;
-  }
-
-  .about-layout {
-    grid-template-columns: 1fr 1.3fr;
-    gap: 50px;
-  }
-
-  .roadmap {
-    transform: scale(.88);
-    transform-origin: top center;
-
-    width: 113%;
-    margin-left: -6.5%;
-
-    margin-bottom: -90px;
-  }
-
-  .project-grid {
-    grid-template-columns: 1.3fr 1fr;
-    grid-template-rows: 330px 260px 260px;
-  }
-
-  .project.feature {
-    grid-row: span 2;
-  }
-
-  .project:nth-child(4) {
-    grid-column: span 2;
-  }
-
-  .skill-map {
-    width: 650px;
-  }
-
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 800px) {
-
-  :root {
-    --page: calc(100% - 34px);
-  }
-
-  .section {
-    padding: 88px 0;
-  }
-
-  .site-header {
-    height: 68px;
-  }
-
-  .desktop-nav,
-  .header-contact {
-    display: none;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-
-  /* HERO */
-
-  .hero {
-    min-height: auto;
-
-    padding-top: 105px;
-    padding-bottom: 80px;
-
-    display: flex;
-    flex-direction: column;
-  }
-
-  .hero-copy {
-    padding-bottom: 0;
-  }
-
-  .hero-kicker {
-    margin-bottom: 20px;
-  }
-
-  .hero h1 {
-    font-size: clamp(65px, 19vw, 105px);
-  }
-
-  .hero h1 .second {
-    margin-left: 28px;
-  }
-
-  .hero-positioning {
-    margin-top: 30px;
-  }
-
-  .hero-positioning p {
-    font-size: 15px;
-  }
-
-  .hero-actions {
-    flex-wrap: wrap;
-  }
-
-  .button {
-    padding: 12px 16px;
-  }
-
-  .hero-visual {
-    min-height: 480px;
-    margin-top: 30px;
-  }
-
-  .hero-photo-frame {
-    width: 250px;
-
-    top: 52%;
-    left: 50%;
-
-    transform:
-      translate(-50%, -50%)
-      rotate(4deg);
-  }
-
-  .hero-blob {
-    width: 300px;
-    height: 300px;
-
-    left: 50%;
-  }
-
-  .hero-blob-two {
-    width: 110px;
-    height: 110px;
-
-    top: 8%;
-    right: 3%;
-  }
-
-  .hero-note {
-    right: 2%;
-    bottom: 3%;
-
-    font-size: 13px;
-  }
-
-  .star.one {
-    left: 1%;
-    top: 10%;
-  }
-
-
-  /* ABOUT */
-
-  .about-layout {
-    margin-top: 45px;
-
-    display: block;
-  }
-
-  .about-intro h2 {
-    font-size: 50px;
-  }
-
-  .about-sticker {
-    top: -25px;
-    right: 5px;
-
-    width: 65px;
-    height: 65px;
-  }
-
-  .about-copy {
-    margin-top: 48px;
-  }
-
-  .about-copy .lead {
-    font-size: 21px;
-  }
-
-  .about-copy p {
-    font-size: 14px;
-  }
-
-  .about-proof {
-    grid-template-columns: 1fr;
-  }
-
-  .proof {
-    padding: 19px 0;
-  }
-
-  .proof + .proof {
-    padding-left: 0;
-    border-left: 0;
-    border-top: 1px solid var(--line);
-  }
-
-
-  /* JOURNEY */
-
-  .journey-intro {
-    display: block;
-  }
-
-  .journey-intro h2 {
-    font-size: 54px;
-  }
-
-  .journey-intro p {
-    margin-top: 25px;
-  }
-
-  .roadmap {
-    height: auto;
-
-    margin-top: 55px;
-
-    width: 100%;
-    margin-left: 0;
-
-    transform: none;
-  }
-
-  .road-path {
-    display: none;
-  }
-
-  .milestone {
-    position: relative !important;
-
-    inset: auto !important;
-
-    width: 100%;
-
-    margin-bottom: 15px;
-
-    display: grid;
-    grid-template-columns: 30px 1fr;
-
-    gap: 12px;
-  }
-
-  .milestone:nth-child(2n) {
-    direction: ltr;
-  }
-
-  .milestone-dot,
-  .milestone:nth-child(2n) .milestone-dot {
-    margin: 18px 0 0;
-  }
-
-  .milestone-content,
-  .milestone:nth-child(2n) .milestone-content {
-    text-align: left;
-  }
-
-  .milestone-content {
-    padding: 17px;
-  }
-
-  .journey-end {
-    position: relative;
-
-    left: auto;
-    bottom: auto;
-
-    margin: 30px auto 0;
-
-    transform: none;
-
-    animation: none;
-  }
-
-
-  /* EXPERIENCE */
-
-  .experience-head {
-    display: block;
-  }
-
-  .experience-head h2 {
-    font-size: 56px;
-  }
-
-  .experience-head p {
-    margin-top: 25px;
-  }
-
-  .experience-list {
-    margin-top: 48px;
-  }
-
-  .experience-row {
-    min-height: 120px;
-
-    grid-template-columns: 38px minmax(0,1fr) 20px;
-
-    gap: 12px;
-  }
-
-  .experience-impact {
-    display: none;
-  }
-
-  .experience-date {
-    grid-column: 2;
-
-    text-align: left;
-
-    margin-top: -38px;
-
-    font-size: 9px;
-  }
-
-  .experience-arrow {
-    grid-column: 3;
-    grid-row: 1 / span 2;
-  }
-
-  .experience-company {
-    font-size: 17px;
-  }
-
-  .experience-role {
-    font-size: 9px;
-  }
-
-
-  /* PROJECTS */
-
-  .projects-header {
-    display: block;
-  }
-
-  .projects-header h2 {
-    font-size: 56px;
-  }
-
-  .projects-header p {
-    margin-top: 25px;
-  }
-
-  .project-grid {
-    margin-top: 0;
-
-    display: flex;
-    flex-direction: column;
-
-    gap: 14px;
-  }
-
-  .project,
-  .project.feature,
-  .project:nth-child(4) {
-    min-height: 330px;
-  }
-
-  .project.feature {
-    min-height: 460px;
-  }
-
-  .project.feature .project-graphic {
-    width: 180px;
-    height: 180px;
-
-    top: 65px;
-    right: 25px;
-  }
-
-  .project.feature h3 {
-    font-size: 43px;
-  }
-
-
-  /* SKILLS */
-
-  .skills-head {
-    display: block;
-  }
-
-  .skills-head h2 {
-    font-size: 56px;
-  }
-
-  .skills-head p {
-    margin-top: 25px;
-  }
-
-  .skill-map {
-    height: auto;
-
-    width: 100%;
-
-    margin-top: 50px;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
-    gap: 10px;
-  }
-
-  .skill-center,
-  .skill-orbit,
-  .skill-line {
-    display: none;
-  }
-
-  .skill-node {
-    position: relative !important;
-
-    inset: auto !important;
-
-    width: 100%;
-    min-height: 110px;
-
-    transform: none !important;
-  }
-
-  .tool-strip {
-    justify-content: flex-start;
-  }
-
-  .education {
-    grid-template-columns: 1fr;
-    gap: 17px;
-  }
-
-  .education-gpa {
-    text-align: left;
-  }
-
-
-  /* CREATIVE */
-
-  .creative-header {
-    display: block;
-  }
-
-  .creative-header h2 {
-    font-size: 56px;
-  }
-
-  .creative-header p {
-    margin-top: 25px;
-  }
-
-  .creative-board {
-    display: flex;
-    flex-direction: column;
-
-    min-height: 0;
-  }
-
-  .creative-panel.photoshop,
-  .creative-panel.tiktok {
-    min-height: 500px;
-  }
-
-  .creative-image {
-    width: 70%;
-    height: 62%;
-  }
-
-  .tiktok-big {
-    font-size: 92px;
-  }
-
-  .tiktok-image {
-    width: 170px;
-    height: 285px;
-
-    right: 28px;
-  }
-
-
-  /* CONTACT */
-
-  .contact {
-    padding: 88px 0 40px;
-  }
-
-  .contact-poster {
-    min-height: 590px;
-
-    padding: 30px;
-  }
-
-  .contact-shape {
-    width: 300px;
-    height: 300px;
-
-    right: -110px;
-    top: -60px;
-  }
-
-  .contact-heading {
-    margin-top: 60px;
-
-    font-size: clamp(53px, 15vw, 78px);
-  }
-
-  .contact-bottom {
-    display: block;
-  }
-
-  .contact-copy {
-    margin-bottom: 25px;
-  }
-
-  .contact-links {
-    justify-content: flex-start;
-  }
-
-  footer {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 9px;
-
-    padding-bottom: 25px;
-  }
-
-}
-
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
-@media (max-width: 430px) {
-
-  :root {
-    --page: calc(100% - 26px);
-  }
-
-  .hero h1 {
-    font-size: 67px;
-  }
-
-  .hero h1 .second {
-    margin-left: 15px;
-  }
-
-  .hero-visual {
-    min-height: 400px;
-  }
-
-  .hero-photo-frame {
-    width: 220px;
-  }
-
-  .hero-blob {
-    width: 260px;
-    height: 260px;
-  }
-
-  .about-intro h2,
-  .journey-intro h2,
-  .experience-head h2,
-  .projects-header h2,
-  .skills-head h2,
-  .creative-header h2 {
-    font-size: 48px;
-  }
-
-  .skill-map {
-    grid-template-columns: 1fr;
-  }
-
-  .project.feature h3 {
-    font-size: 39px;
-  }
-
-  .creative-panel.photoshop,
-  .creative-panel.tiktok {
-    min-height: 450px;
-  }
-
-  .tiktok-image {
-    width: 145px;
-    height: 250px;
-
-    right: 15px;
-  }
-
-  .tiktok-big {
-    font-size: 76px;
-  }
-
-  .contact-poster {
-    padding: 25px;
-  }
-
-  .contact-heading {
-    font-size: 51px;
-  }
-
-}
-
-</style>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
+  <!-- =========================================
+       HEADER
+  ========================================== -->
 
-<!-- =======================================================
-     HEADER
-======================================================= -->
-
-<header class="site-header" id="header">
-
-  <div class="header-inner">
+  <header class="site-header" id="siteHeader">
 
     <a href="#top" class="logo">
-      TAMIMMAH<span>.</span>
+      <span>T</span>
+      <span class="logo-name">TAMIMMAH</span>
     </a>
 
     <nav class="desktop-nav">
@@ -2870,90 +41,48 @@ footer {
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
-      <a href="#creative">Creative</a>
+      <a href="#contact">Contact</a>
     </nav>
 
-    <a href="#contact" class="header-contact">
-      Let's Talk
+    <a href="resume.pdf" class="header-resume" target="_blank">
+      Resume <span>↗</span>
     </a>
 
     <button
       class="menu-toggle"
       id="menuToggle"
-      aria-label="Open menu"
+      aria-label="Toggle navigation"
       aria-expanded="false"
     >
       <span></span>
+      <span></span>
     </button>
 
-  </div>
-
-</header>
+  </header>
 
 
-<!-- =======================================================
-     MOBILE MENU
-======================================================= -->
+  <!-- =========================================
+       MOBILE NAV
+  ========================================== -->
 
-<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-nav" id="mobileNav">
 
-  <nav>
+    <div class="mobile-nav-inner">
 
-    <a href="#about">01 / About</a>
-    <a href="#journey">02 / Journey</a>
-    <a href="#experience">03 / Experience</a>
-    <a href="#projects">04 / Projects</a>
-    <a href="#skills">05 / Skills</a>
-    <a href="#creative">06 / Creative</a>
-    <a href="#contact">07 / Contact</a>
+      <small>MENU</small>
 
-  </nav>
+      <nav>
+        <a href="#about">01 <span>About</span></a>
+        <a href="#journey">02 <span>Journey</span></a>
+        <a href="#experience">03 <span>Experience</span></a>
+        <a href="#projects">04 <span>Projects</span></a>
+        <a href="#skills">05 <span>Skills</span></a>
+        <a href="#creative">06 <span>Creative</span></a>
+        <a href="#contact">07 <span>Contact</span></a>
+      </nav>
 
-</div>
-
-
-<main id="top">
-
-
-<!-- =======================================================
-     HERO
-======================================================= -->
-
-<section class="hero">
-
-  <div class="hero-copy reveal">
-
-    <div class="hero-kicker">
-      Business Management · Marketing
-    </div>
-
-    <h1>
-      TAMIMMAH
-      <br>
-      <span class="second">Disma.</span>
-    </h1>
-
-    <div class="hero-positioning">
-
-      <p>
-        I work at the intersection of
-        <strong>marketing, consumer insight,
-        business development, and creativity</strong>
-        — turning observations about people into
-        ideas that can actually move a business.
-      </p>
-
-    </div>
-
-    <div class="hero-actions">
-
-      <a href="#experience" class="button primary">
-        Explore My Work
-        <span>↓</span>
-      </a>
-
-      <a href="#contact" class="button secondary">
-        Let's Connect
+      <a href="resume.pdf" class="mobile-resume" target="_blank">
+        View Resume ↗
       </a>
 
     </div>
@@ -2961,1556 +90,1533 @@ footer {
   </div>
 
 
-  <div class="hero-visual reveal">
+  <main id="top">
 
-    <div class="hero-blob"></div>
 
-    <div class="hero-blob-two"></div>
+    <!-- =========================================
+         HERO
+    ========================================== -->
 
-    <div class="star one">✦</div>
-    <div class="star two">✦</div>
+    <section class="hero">
 
-    <div class="hero-photo-frame">
-
-      <img
-        src="images/profile-photo.jpg"
-        alt="Tamimmah Disma Lestari"
-        class="hero-photo"
-      >
-
-      <div class="hero-photo-label">
-        Marketing · Business · Creative
+      <div class="hero-background-word">
+        MARKETING
       </div>
 
-    </div>
+      <div class="hero-shape hero-shape-green"></div>
+      <div class="hero-shape hero-shape-turquoise"></div>
+      <div class="hero-shape hero-shape-pink"></div>
 
-    <div class="hero-note">
-      curious about people,
-      obsessed with making
-      things happen.
-    </div>
+      <div class="hero-star hero-star-one">✦</div>
+      <div class="hero-star hero-star-two">✦</div>
+      <div class="hero-star hero-star-three">+</div>
 
-  </div>
+      <div class="hero-content">
 
-
-  <div class="scroll-cue">
-    <span></span>
-    Scroll to explore
-  </div>
-
-</section>
-
-
-
-<!-- =======================================================
-     ABOUT
-======================================================= -->
-
-<section class="section about" id="about">
-
-  <div class="section-label">
-    01 / About
-  </div>
-
-
-  <div class="about-layout">
-
-    <div class="about-intro reveal">
-
-      <div class="about-sticker">
-        people<br>
-        ×<br>
-        business
-      </div>
-
-      <h2>
-        More than
-        <br>
-        <em>a marketer.</em>
-      </h2>
-
-    </div>
-
-
-    <div class="about-copy reveal">
-
-      <p class="lead">
-        I'm a Business Management graduate who likes
-        understanding <strong>why people choose,
-        what makes them stay, and how businesses
-        can respond.</strong>
-      </p>
-
-      <p>
-        My experience has never followed one straight
-        corporate path. I've built communities, worked
-        on startups, sold products, managed digital
-        operations, conducted consumer research, and
-        supported project-based business operations.
-      </p>
-
-      <br>
-
-      <p>
-        That combination shaped the way I work:
-        commercially minded, curious about consumers,
-        comfortable getting my hands dirty, and
-        interested in the space where
-        <strong>strategy becomes execution.</strong>
-      </p>
-
-
-      <div class="about-proof">
-
-        <div class="proof">
-          <strong>10K+</strong>
-          <span>Community built</span>
+        <div class="hero-kicker">
+          <span class="status-dot"></span>
+          MARKETING · CONSUMER INSIGHTS · BUSINESS DEVELOPMENT
         </div>
 
-        <div class="proof">
+        <h1>
+          Hi, I'm
+          <span class="hero-name">Tamimmah.</span>
+        </h1>
+
+        <div class="hero-bottom">
+
+          <div class="hero-description">
+            <p>
+              A business management graduate who enjoys understanding
+              <strong>people, brands, and the business behind them.</strong>
+            </p>
+
+            <div class="hero-actions">
+              <a href="#experience" class="button button-dark">
+                Explore my work
+                <span>↓</span>
+              </a>
+
+              <a href="resume.pdf" target="_blank" class="button button-outline">
+                Resume <span>↗</span>
+              </a>
+            </div>
+          </div>
+
+
+          <div class="hero-portrait">
+
+            <div class="portrait-frame">
+
+              <img
+                src="images/profile-photo.jpg"
+                alt="Tamimmah Disma Lestari"
+              >
+
+              <div class="portrait-note">
+                <span>BASED IN</span>
+                <strong>INDONESIA</strong>
+              </div>
+
+            </div>
+
+            <div class="portrait-caption">
+              <span>01</span>
+              <span>Business × Creativity</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="hero-scroll">
+        <span>SCROLL TO EXPLORE</span>
+        <span class="scroll-line"></span>
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         ABOUT
+    ========================================== -->
+
+    <section class="section about-section" id="about">
+
+      <div class="section-heading">
+
+        <span class="section-number">01 / ABOUT</span>
+
+        <span class="section-side-note">
+          PEOPLE × BUSINESS × CREATIVITY
+        </span>
+
+      </div>
+
+
+      <div class="about-grid">
+
+        <div class="about-title">
+
+          <p class="eyebrow">THE SHORT VERSION</p>
+
+          <h2>
+            I like figuring out
+            <em>why people choose.</em>
+          </h2>
+
+          <div class="about-stamp">
+            <span>CURIOUS</span>
+            <span>COMMERCIAL</span>
+            <span>CREATIVE</span>
+          </div>
+
+        </div>
+
+
+        <div class="about-copy">
+
+          <p class="lead">
+            My background sits at the intersection of
+            <strong>marketing, business, consumer research, and creative work.</strong>
+          </p>
+
+          <p>
+            From selling small products as a student to building an
+            international digital business, leading marketing projects,
+            conducting consumer research, and supporting real business
+            operations — I've learned by actually making things happen.
+          </p>
+
+          <p>
+            Today, I'm interested in roles where I can combine
+            <strong>commercial thinking with a genuine understanding of people.</strong>
+          </p>
+
+          <a href="#journey" class="text-link">
+            See how I got here <span>↘</span>
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="proof-strip">
+
+        <div class="proof-item">
           <strong>50+</strong>
-          <span>Retail points reached</span>
+          <span>SUPERMARKETS<br>REACHED</span>
         </div>
 
-        <div class="proof">
-          <strong>6+</strong>
-          <span>Years of projects</span>
+        <div class="proof-item">
+          <strong>10K+</strong>
+          <span>COMMUNITY<br>FOLLOWERS</span>
         </div>
 
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =======================================================
-     JOURNEY
-======================================================= -->
-
-<section class="section journey" id="journey">
-
-  <div class="section-label">
-    02 / My Journey
-  </div>
-
-
-  <div class="journey-intro reveal">
-
-    <h2>
-      Learning by
-      <br>
-      <span class="serif">doing.</span>
-    </h2>
-
-    <p>
-      Before I had job titles, I had experiments.
-      Each one taught me something about customers,
-      execution, leadership, or business.
-    </p>
-
-  </div>
-
-
-  <div class="roadmap reveal">
-
-
-    <svg
-      class="road-path"
-      viewBox="0 0 900 740"
-      preserveAspectRatio="none"
-      aria-hidden="true"
-    >
-
-      <path
-        d="
-        M100 55
-        C380 20 660 90 720 170
-        C790 260 180 260 150 350
-        C120 440 700 390 755 485
-        C805 570 220 565 190 655
-        C170 705 450 700 700 690
-        "
-      />
-
-    </svg>
-
-
-    <!-- 01 -->
-
-    <article class="milestone">
-
-      <div class="milestone-dot"></div>
-
-      <div class="milestone-content">
-
-        <div class="milestone-year">
-          JUNIOR HIGH
+        <div class="proof-item">
+          <strong>6</strong>
+          <span>MARKETING &<br>BUSINESS AREAS</span>
         </div>
 
-        <h3>
-          The Cookie Experiment
-          <span>Learning to sell.</span>
-        </h3>
-
-        <p class="milestone-caption">
-          School project · Sold out
-        </p>
-
-        <p class="milestone-detail">
-          My first taste of pricing, promotion,
-          customers, and the satisfaction of
-          actually selling something I made.
-        </p>
-
-      </div>
-
-    </article>
-
-
-    <!-- 02 -->
-
-    <article class="milestone">
-
-      <div class="milestone-dot"></div>
-
-      <div class="milestone-content">
-
-        <div class="milestone-year">
-          SENIOR HIGH
-        </div>
-
-        <h3>
-          The Theatre Club
-          <span>Learning to serve.</span>
-        </h3>
-
-        <p class="milestone-caption">
-          Ticketing · Guest experience
-        </p>
-
-        <p class="milestone-detail">
-          Learned that a good experience is often
-          built through hundreds of small operational
-          details that customers never see.
-        </p>
-
-      </div>
-
-    </article>
-
-
-    <!-- 03 -->
-
-    <article class="milestone">
-
-      <div class="milestone-dot"></div>
-
-      <div class="milestone-content">
-
-        <div class="milestone-year">
-          ITB
-        </div>
-
-        <h3>
-          Making Things Happen
-          <span>Learning to execute.</span>
-        </h3>
-
-        <p class="milestone-caption">
-          ~15 canteens · ~98% stock sold
-        </p>
-
-        <p class="milestone-detail">
-          Worked on a beverage business and learned
-          how marketing decisions connect directly
-          to distribution and daily operations.
-        </p>
-
-      </div>
-
-    </article>
-
-
-    <!-- 04 -->
-
-    <article class="milestone">
-
-      <div class="milestone-dot"></div>
-
-      <div class="milestone-content">
-
-        <div class="milestone-year">
-          ECOPLAST
-        </div>
-
-        <h3>
-          Learning to Influence
-          <span>Learning to pitch.</span>
-        </h3>
-
-        <p class="milestone-caption">
-          Startup · Marketing · Competitions
-        </p>
-
-        <p class="milestone-detail">
-          Became involved in startup pitching,
-          marketing strategy, competitions,
-          and communicating ideas clearly.
-        </p>
-
-      </div>
-
-    </article>
-
-
-    <!-- 05 -->
-
-    <article class="milestone">
-
-      <div class="milestone-dot"></div>
-
-      <div class="milestone-content">
-
-        <div class="milestone-year">
-          K-POP ERA
-        </div>
-
-        <h3>
-          Building Communities
-          <span>Learning what makes people stay.</span>
-        </h3>
-
-        <p class="milestone-caption">
-          10K+ followers · 3 communities
-        </p>
-
-        <p class="milestone-detail">
-          Built digital communities around shared
-          interests and learned first-hand about
-          engagement, retention, and audience behavior.
-        </p>
-
-      </div>
-
-    </article>
-
-
-    <!-- 06 -->
-
-    <article class="milestone">
-
-      <div class="milestone-dot"></div>
-
-      <div class="milestone-content">
-
-        <div class="milestone-year">
-          ICE BSD
-        </div>
-
-        <h3>
-          The Rice Bowl Experiment
-          <span>Learning from the numbers.</span>
-        </h3>
-
-        <p class="milestone-caption">
-          25 prepared · 22 sold
-        </p>
-
-        <p class="milestone-detail">
-          A small experiment that reinforced how
-          inventory, demand, pricing, and execution
-          interact in the real world.
-        </p>
-
-      </div>
-
-    </article>
-
-
-    <!-- 07 -->
-
-    <article class="milestone">
-
-      <div class="milestone-dot"></div>
-
-      <div class="milestone-content">
-
-        <div class="milestone-year">
-          SELLKPOPVT
-        </div>
-
-        <h3>
-          Turning Community
-          <span>into business.</span>
-        </h3>
-
-        <p class="milestone-caption">
-          International customers · Operations
-        </p>
-
-        <p class="milestone-detail">
-          Turned an online audience into a digital
-          business serving customers across multiple
-          countries while managing pricing and operations.
-        </p>
-
-      </div>
-
-    </article>
-
-
-    <!-- 08 -->
-
-    <article class="milestone">
-
-      <div class="milestone-dot"></div>
-
-      <div class="milestone-content">
-
-        <div class="milestone-year">
-          PT CAHAYA SEGARA
-        </div>
-
-        <h3>
-          Beyond the Admin Title
-          <span>Learning the business behind the paperwork.</span>
-        </h3>
-
-        <p class="milestone-caption">
-          Project-based · Business support
-        </p>
-
-        <p class="milestone-detail">
-          Worked across documentation, reports,
-          proposals, and project support — seeing
-          how business decisions become execution.
-        </p>
-
-      </div>
-
-    </article>
-
-
-    <div class="journey-end">
-      PEOPLE<br>
-      ×<br>
-      BUSINESS<br>
-      ×<br>
-      CREATIVITY
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =======================================================
-     EXPERIENCE
-======================================================= -->
-
-<section class="section experience" id="experience">
-
-  <div class="section-label">
-    03 / Experience
-  </div>
-
-
-  <div class="experience-head reveal">
-
-    <h2>
-      Things I've
-      <br>
-      <em>built.</em>
-    </h2>
-
-    <p>
-      A mix of entrepreneurship, marketing,
-      community building, research, and
-      project-based business experience.
-    </p>
-
-  </div>
-
-
-  <div class="experience-list reveal">
-
-
-    <!-- 01 -->
-
-    <a
-      href="https://www.instagram.com/thefounderslab/"
-      target="_blank"
-      class="experience-row"
-    >
-
-      <div class="experience-number">01</div>
-
-      <div class="experience-main">
-
-        <div class="experience-company">
-          The Founders Lab
-        </div>
-
-        <div class="experience-role">
-          Co-Founder & Marketing Lead
+        <div class="proof-item proof-highlight">
+          <strong>3.44</strong>
+          <span>GPA · BUSINESS<br>MANAGEMENT</span>
         </div>
 
       </div>
 
-      <div class="experience-impact">
-        Built a platform around webinars,
-        competitions, and entrepreneurial communities.
-      </div>
+    </section>
 
-      <div class="experience-date">
-        2020–21
-      </div>
 
-      <div class="experience-arrow">
-        ↗
-      </div>
+    <!-- =========================================
+         JOURNEY
+    ========================================== -->
 
-    </a>
+    <section class="section journey-section" id="journey">
 
+      <div class="section-heading">
 
-    <!-- 02 -->
+        <span class="section-number">02 / MY JOURNEY</span>
 
-    <a
-      href="https://x.com/sellkpopvt"
-      target="_blank"
-      class="experience-row"
-    >
-
-      <div class="experience-number">02</div>
-
-      <div class="experience-main">
-
-        <div class="experience-company">
-          SellKpopVT
-        </div>
-
-        <div class="experience-role">
-          Founder / Owner
-        </div>
-
-      </div>
-
-      <div class="experience-impact">
-        Ran an international digital business
-        across customer acquisition and operations.
-      </div>
-
-      <div class="experience-date">
-        2021–25
-      </div>
-
-      <div class="experience-arrow">
-        ↗
-      </div>
-
-    </a>
-
-
-    <!-- 03 -->
-
-    <div class="experience-row">
-
-      <div class="experience-number">03</div>
-
-      <div class="experience-main">
-
-        <div class="experience-company">
-          PT Sari Rasa
-        </div>
-
-        <div class="experience-role">
-          Business Partner
-        </div>
-
-      </div>
-
-      <div class="experience-impact">
-        Supported a traditional snack distribution
-        business reaching supermarket channels.
-      </div>
-
-      <div class="experience-date">
-        2024–26
-      </div>
-
-      <div class="experience-arrow">
-        →
-      </div>
-
-    </div>
-
-
-    <!-- 04 -->
-
-    <div class="experience-row">
-
-      <div class="experience-number">04</div>
-
-      <div class="experience-main">
-
-        <div class="experience-company">
-          PT Cahaya Segara Indonesia
-        </div>
-
-        <div class="experience-role">
-          Freelance Administrative & Executive Support
-        </div>
-
-      </div>
-
-      <div class="experience-impact">
-        Documentation, reports, proposals,
-        tender preparation, and project support.
-      </div>
-
-      <div class="experience-date">
-        2026
-      </div>
-
-      <div class="experience-arrow">
-        →
-      </div>
-
-    </div>
-
-
-    <!-- 05 -->
-
-    <a
-      href="https://www.instagram.com/ecoplastid/"
-      target="_blank"
-      class="experience-row"
-    >
-
-      <div class="experience-number">05</div>
-
-      <div class="experience-main">
-
-        <div class="experience-company">
-          ECOPLAST ID
-        </div>
-
-        <div class="experience-role">
-          Chief Marketing Officer
-        </div>
-
-      </div>
-
-      <div class="experience-impact">
-        Developed marketing direction for an
-        environmentally focused startup initiative.
-      </div>
-
-      <div class="experience-date">
-        2018–19
-      </div>
-
-      <div class="experience-arrow">
-        ↗
-      </div>
-
-    </a>
-
-
-    <!-- 06 -->
-
-    <div class="experience-row">
-
-      <div class="experience-number">06</div>
-
-      <div class="experience-main">
-
-        <div class="experience-company">
-          Techno Entrepreneur Club
-        </div>
-
-        <div class="experience-role">
-          Student Entrepreneur · ITB
-        </div>
-
-      </div>
-
-      <div class="experience-impact">
-        Participated in entrepreneurial projects,
-        business development, and student initiatives.
-      </div>
-
-      <div class="experience-date">
-        2018–21
-      </div>
-
-      <div class="experience-arrow">
-        →
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =======================================================
-     PROJECTS
-======================================================= -->
-
-<section class="section projects" id="projects">
-
-  <div class="section-label">
-    04 / Selected Projects
-  </div>
-
-
-  <div class="projects-header reveal">
-
-    <h2>
-      How I
-      <br>
-      <em>think.</em>
-    </h2>
-
-    <p>
-      Selected work showing how I approach consumer
-      research, brand strategy, marketing communication,
-      and independent analysis.
-    </p>
-
-  </div>
-
-
-  <div class="project-grid reveal">
-
-
-    <!-- FEATURE -->
-
-    <a
-      href="Consumer_Purchase_Intention_Traditional_Chips.pdf"
-      target="_blank"
-      class="project feature"
-    >
-
-      <div class="project-number">
-        01
-      </div>
-
-      <div class="project-tag">
-        Consumer Research
-      </div>
-
-      <div class="project-graphic"></div>
-
-      <div class="project-content">
-
-        <div class="project-type">
-          Thesis · SPSS · Regression
-        </div>
-
-        <h3>
-          Understanding
-          <br>
-          <em>Purchase Intention.</em>
-        </h3>
-
-        <p class="project-description">
-          A quantitative study exploring the factors
-          associated with consumers' purchase intention
-          toward traditional chips in Jakarta supermarkets.
-          The research became an exercise in understanding
-          not only what the data says — but also what it
-          doesn't explain.
-        </p>
-
-        <span class="project-link">
-          Read Research ↗
+        <span class="section-side-note">
+          LEARNING BY DOING
         </span>
 
       </div>
 
-    </a>
 
+      <div class="journey-intro">
 
-    <!-- BUAVITA -->
+        <div>
+          <p class="eyebrow">NOT A STRAIGHT LINE</p>
 
-    <a
-      href="buavita.html"
-      class="project"
-    >
-
-      <div class="project-number">
-        02
-      </div>
-
-      <div class="project-graphic"></div>
-
-      <div class="project-content">
-
-        <div class="project-type">
-          Brand Strategy
+          <h2>
+            Every chapter taught me
+            <em>something useful.</em>
+          </h2>
         </div>
 
-        <h3>
-          Buavita
-          <br>
-          <em>Brand Strategy.</em>
-        </h3>
+        <p>
+          A few unconventional experiences ended up becoming the foundation
+          of how I think about customers, businesses, and marketing.
+        </p>
 
-        <span class="project-link">
-          View Project ↗
+      </div>
+
+
+      <div class="roadmap">
+
+        <div class="roadmap-line"></div>
+
+        <!-- 01 -->
+
+        <article class="milestone milestone-left active" data-milestone="1">
+
+          <div class="milestone-marker">
+            <span>01</span>
+          </div>
+
+          <div class="milestone-card">
+
+            <span class="milestone-era">JUNIOR HIGH</span>
+
+            <h3>
+              🍪 The Cookie Experiment
+            </h3>
+
+            <p class="milestone-hook">
+              Learning to sell.
+            </p>
+
+            <span class="milestone-detail">
+              School project → sold out
+            </span>
+
+            <div class="milestone-expanded">
+              <p>
+                My first tiny experiment in understanding what people
+                wanted, how to present it, and how to actually make a sale.
+              </p>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- 02 -->
+
+        <article class="milestone milestone-right" data-milestone="2">
+
+          <div class="milestone-marker">
+            <span>02</span>
+          </div>
+
+          <div class="milestone-card">
+
+            <span class="milestone-era">SENIOR HIGH</span>
+
+            <h3>
+              🎭 The Theatre Club
+            </h3>
+
+            <p class="milestone-hook">
+              Learning to serve.
+            </p>
+
+            <span class="milestone-detail">
+              Ticketing · Guest experience
+            </span>
+
+            <div class="milestone-expanded">
+              <p>
+                I started seeing business from the other side:
+                not only selling something, but creating an experience
+                people were willing to pay for.
+              </p>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- 03 -->
+
+        <article class="milestone milestone-left" data-milestone="3">
+
+          <div class="milestone-marker">
+            <span>03</span>
+          </div>
+
+          <div class="milestone-card">
+
+            <span class="milestone-era">ITB</span>
+
+            <h3>
+              🧃 Making Things Happen
+            </h3>
+
+            <p class="milestone-hook">
+              Learning to execute.
+            </p>
+
+            <span class="milestone-detail">
+              ~15 canteens · ~98% stock sold
+            </span>
+
+            <div class="milestone-expanded">
+              <p>
+                A hands-on sales and distribution experience that taught
+                me about inventory, customers, execution, and the reality
+                of getting a product into people's hands.
+              </p>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- 04 -->
+
+        <article class="milestone milestone-right" data-milestone="4">
+
+          <div class="milestone-marker">
+            <span>04</span>
+          </div>
+
+          <div class="milestone-card">
+
+            <span class="milestone-era">ECOPLAST</span>
+
+            <h3>
+              🌱 Learning to Influence
+            </h3>
+
+            <p class="milestone-hook">
+              Learning to pitch.
+            </p>
+
+            <span class="milestone-detail">
+              Startup · Pitching · Competitions
+            </span>
+
+            <div class="milestone-expanded">
+              <p>
+                Working in an early-stage startup environment taught me
+                how to turn an idea into a story people could understand
+                and believe in.
+              </p>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- 05 -->
+
+        <article class="milestone milestone-left" data-milestone="5">
+
+          <div class="milestone-marker">
+            <span>05</span>
+          </div>
+
+          <div class="milestone-card">
+
+            <span class="milestone-era">K-POP ERA</span>
+
+            <h3>
+              💜 Building Communities
+            </h3>
+
+            <p class="milestone-hook">
+              Learning what makes people stay.
+            </p>
+
+            <span class="milestone-detail">
+              10K+ followers × 3 communities
+            </span>
+
+            <div class="milestone-expanded">
+              <p>
+                Running online communities became an unexpected lesson
+                in attention, loyalty, content, community behavior,
+                and retention.
+              </p>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- 06 -->
+
+        <article class="milestone milestone-right" data-milestone="6">
+
+          <div class="milestone-marker">
+            <span>06</span>
+          </div>
+
+          <div class="milestone-card">
+
+            <span class="milestone-era">ICE BSD</span>
+
+            <h3>
+              🍚 The Rice Bowl Experiment
+            </h3>
+
+            <p class="milestone-hook">
+              Learning from the numbers.
+            </p>
+
+            <span class="milestone-detail">
+              25 prepared → 22 sold
+            </span>
+
+            <div class="milestone-expanded">
+              <p>
+                A simple sales experiment became a practical lesson
+                in demand forecasting, preparation, pricing, and
+                learning from actual customer behavior.
+              </p>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- 07 -->
+
+        <article class="milestone milestone-left" data-milestone="7">
+
+          <div class="milestone-marker">
+            <span>07</span>
+          </div>
+
+          <div class="milestone-card">
+
+            <span class="milestone-era">SELLKPOPVT</span>
+
+            <h3>
+              💼 Turning Community into Business
+            </h3>
+
+            <p class="milestone-hook">
+              Learning to operate.
+            </p>
+
+            <span class="milestone-detail">
+              International customers · Operations
+            </span>
+
+            <div class="milestone-expanded">
+              <p>
+                I turned knowledge of an online community into a
+                functioning digital business serving customers across
+                multiple countries.
+              </p>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- 08 -->
+
+        <article class="milestone milestone-right" data-milestone="8">
+
+          <div class="milestone-marker">
+            <span>08</span>
+          </div>
+
+          <div class="milestone-card">
+
+            <span class="milestone-era">PT CAHAYA SEGARA</span>
+
+            <h3>
+              🗂️ Beyond the Admin Title
+            </h3>
+
+            <p class="milestone-hook">
+              Learning the business behind the paperwork.
+            </p>
+
+            <span class="milestone-detail">
+              Project-based · Business support
+            </span>
+
+            <div class="milestone-expanded">
+              <p>
+                Working close to real business operations gave me
+                exposure to documentation, reporting, proposals,
+                project preparation, and the details behind execution.
+              </p>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- TODAY -->
+
+        <article class="milestone milestone-today">
+
+          <div class="today-orbit">
+            <span>✦</span>
+          </div>
+
+          <div class="today-card">
+
+            <span class="milestone-era">TODAY</span>
+
+            <h3>
+              People × Business × Creativity
+            </h3>
+
+            <p>
+              Bringing everything together.
+            </p>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         EXPERIENCE
+    ========================================== -->
+
+    <section class="section experience-section" id="experience">
+
+      <div class="section-heading">
+
+        <span class="section-number">03 / EXPERIENCE</span>
+
+        <span class="section-side-note">
+          WHAT I'VE ACTUALLY DONE
         </span>
 
       </div>
 
-    </a>
 
+      <div class="experience-intro">
 
-    <!-- KOREAN BEAUTY -->
+        <h2>
+          Experience that goes
+          <em>beyond job titles.</em>
+        </h2>
 
-    <a
-      href="https://marketing.co.id/menilik-strategi-branding-produk-kecantikan-korea/"
-      target="_blank"
-      class="project"
-    >
+        <p>
+          I've worked across marketing, entrepreneurship, communities,
+          operations, and business projects — often wearing more than one hat.
+        </p>
 
-      <div class="project-number">
-        03
       </div>
 
-      <div class="project-graphic"></div>
 
-      <div class="project-content">
+      <div class="experience-list">
 
-        <div class="project-type">
-          Published Work
-        </div>
 
-        <h3>
-          Korean Beauty
-          <br>
-          <em>Branding.</em>
-        </h3>
+        <!-- EXPERIENCE 01 -->
 
-        <span class="project-link">
-          Read Article ↗
+        <article class="experience-row" data-index="01">
+
+          <div class="experience-number">01</div>
+
+          <div class="experience-main">
+
+            <div class="experience-company">
+              <a
+                href="https://www.instagram.com/thefounderslab/"
+                target="_blank"
+                rel="noopener"
+              >
+                The Founders Lab
+                <span>↗</span>
+              </a>
+            </div>
+
+            <h3>Co-Founder & Marketing Lead</h3>
+
+            <p>
+              Led marketing initiatives for a platform covering webinars
+              and business competitions backed by CIEL SBM ITB.
+            </p>
+
+          </div>
+
+          <div class="experience-date">
+            2020 — 2021
+          </div>
+
+          <div class="experience-impact">
+            <span>01</span>
+            Marketing<br>
+            Leadership
+          </div>
+
+        </article>
+
+
+        <!-- EXPERIENCE 02 -->
+
+        <article class="experience-row" data-index="02">
+
+          <div class="experience-number">02</div>
+
+          <div class="experience-main">
+
+            <div class="experience-company">
+              <a
+                href="https://x.com/sellkpopvt"
+                target="_blank"
+                rel="noopener"
+              >
+                SellKpopVT
+                <span>↗</span>
+              </a>
+            </div>
+
+            <h3>Founder / Owner</h3>
+
+            <p>
+              Built and operated a digital K-pop voting business serving
+              customers across Indonesia, Malaysia, Singapore, Thailand,
+              India, the US, Europe, Japan, and more.
+            </p>
+
+          </div>
+
+          <div class="experience-date">
+            2021 — 2025
+          </div>
+
+          <div class="experience-impact">
+            <span>02</span>
+            Digital<br>
+            Business
+          </div>
+
+        </article>
+
+
+        <!-- EXPERIENCE 03 -->
+
+        <article class="experience-row" data-index="03">
+
+          <div class="experience-number">03</div>
+
+          <div class="experience-main">
+
+            <div class="experience-company">
+              PT Sari Rasa
+            </div>
+
+            <h3>Business Partner</h3>
+
+            <p>
+              Supported a traditional snack distribution business reaching
+              approximately 50 supermarkets, with hands-on exposure to
+              distribution and commercial operations.
+            </p>
+
+          </div>
+
+          <div class="experience-date">
+            2024 — 2026
+          </div>
+
+          <div class="experience-impact">
+            <span>03</span>
+            Commercial<br>
+            Operations
+          </div>
+
+        </article>
+
+
+        <!-- EXPERIENCE 04 -->
+
+        <article class="experience-row" data-index="04">
+
+          <div class="experience-number">04</div>
+
+          <div class="experience-main">
+
+            <div class="experience-company">
+              PT Cahaya Segara Indonesia
+            </div>
+
+            <h3>Freelance Administrative & Executive Support</h3>
+
+            <p>
+              Prepared documentation, reports, proposals, and tender-related
+              materials while supporting project-based business activities.
+            </p>
+
+          </div>
+
+          <div class="experience-date">
+            2026
+          </div>
+
+          <div class="experience-impact">
+            <span>04</span>
+            Business<br>
+            Support
+          </div>
+
+        </article>
+
+
+        <!-- EXPERIENCE 05 -->
+
+        <article class="experience-row" data-index="05">
+
+          <div class="experience-number">05</div>
+
+          <div class="experience-main">
+
+            <div class="experience-company">
+              <a
+                href="https://www.instagram.com/ecoplastid/"
+                target="_blank"
+                rel="noopener"
+              >
+                ECOPLAST ID
+                <span>↗</span>
+              </a>
+            </div>
+
+            <h3>Chief Marketing Officer</h3>
+
+            <p>
+              Worked on startup marketing, communication, pitching,
+              and competition preparation.
+            </p>
+
+          </div>
+
+          <div class="experience-date">
+            2018 — 2019
+          </div>
+
+          <div class="experience-impact">
+            <span>05</span>
+            Startup<br>
+            Marketing
+          </div>
+
+        </article>
+
+
+        <!-- EXPERIENCE 06 -->
+
+        <article class="experience-row" data-index="06">
+
+          <div class="experience-number">06</div>
+
+          <div class="experience-main">
+
+            <div class="experience-company">
+              Techno Entrepreneur Club — ITB
+            </div>
+
+            <h3>Student Entrepreneur</h3>
+
+            <p>
+              Participated in entrepreneurial projects spanning product,
+              marketing, sales, and business execution.
+            </p>
+
+          </div>
+
+          <div class="experience-date">
+            2018 — 2021
+          </div>
+
+          <div class="experience-impact">
+            <span>06</span>
+            Entrepreneurship
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         PROJECTS
+    ========================================== -->
+
+    <section class="section projects-section" id="projects">
+
+      <div class="section-heading">
+
+        <span class="section-number">04 / SELECTED PROJECTS</span>
+
+        <span class="section-side-note">
+          THINKING IN PRACTICE
         </span>
 
       </div>
 
-    </a>
 
+      <div class="projects-intro">
 
-    <!-- TWITCH -->
+        <h2>
+          A few things I've
+          <em>thought through.</em>
+        </h2>
 
-    <a
-      href="https://tamimmah-disma.medium.com/the-rollercoaster-ride-of-twitch-acquisition-from-google-yahoo-to-amazon-70b8a2124df3"
-      target="_blank"
-      class="project"
-    >
+        <p>
+          Research, strategy, writing, and creative work —
+          selected to show how I approach problems.
+        </p>
 
-      <div class="project-number">
-        04
       </div>
 
-      <div class="project-content">
 
-        <div class="project-type">
-          Independent Writing
-        </div>
+      <div class="project-gallery">
 
-        <h3>
-          The Rollercoaster
-          <br>
-          <em>Ride of Twitch.</em>
-        </h3>
 
-        <span class="project-link">
-          Read Analysis ↗
+        <!-- FEATURED PROJECT -->
+
+        <article class="project project-featured">
+
+          <div class="project-visual project-research">
+
+            <span class="project-big-type">
+              WHY
+            </span>
+
+            <div class="research-paper">
+
+              <small>
+                CONSUMER RESEARCH
+              </small>
+
+              <div class="paper-line paper-long"></div>
+              <div class="paper-line"></div>
+              <div class="paper-line paper-medium"></div>
+
+              <div class="paper-chart">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+
+              <strong>
+                PURCHASE<br>
+                INTENTION
+              </strong>
+
+            </div>
+
+            <div class="project-number">
+              01
+            </div>
+
+          </div>
+
+          <div class="project-info">
+
+            <div>
+              <span class="project-category">
+                THESIS · CONSUMER RESEARCH
+              </span>
+
+              <h3>
+                Understanding
+                <em>Purchase Intention.</em>
+              </h3>
+            </div>
+
+            <div class="project-bottom">
+
+              <p>
+                Quantitative research examining factors influencing
+                consumers' purchase intention toward traditional chips
+                in local supermarkets.
+              </p>
+
+              <a
+                href="Consumer_Purchase_Intention_Traditional_Chips.pdf"
+                target="_blank"
+                class="project-link"
+              >
+                Read research <span>↗</span>
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- PROJECT 02 -->
+
+        <article class="project project-buavita">
+
+          <div class="project-visual">
+
+            <div class="buavita-label">
+              BRAND<br>
+              STRATEGY
+            </div>
+
+            <div class="fruit-shape"></div>
+
+            <span class="visual-word">
+              REFRESH
+            </span>
+
+            <div class="project-number">
+              02
+            </div>
+
+          </div>
+
+          <div class="project-info">
+
+            <span class="project-category">
+              BRAND STRATEGY
+            </span>
+
+            <h3>
+              Buavita
+              <em>Brand Strategy.</em>
+            </h3>
+
+            <a
+              href="buavita.html"
+              class="project-link"
+            >
+              View project <span>↗</span>
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- PROJECT 03 -->
+
+        <article class="project project-kbeauty">
+
+          <div class="project-visual">
+
+            <span class="beauty-word">
+              K-BEAUTY
+            </span>
+
+            <div class="beauty-circle">
+              <span>BRAND</span>
+              <strong>IMAGE</strong>
+            </div>
+
+            <div class="project-number">
+              03
+            </div>
+
+          </div>
+
+          <div class="project-info">
+
+            <span class="project-category">
+              PUBLISHED WORK
+            </span>
+
+            <h3>
+              Korean Beauty
+              <em>Branding.</em>
+            </h3>
+
+            <a
+              href="https://marketing.co.id/menilik-strategi-branding-produk-kecantikan-korea/"
+              target="_blank"
+              rel="noopener"
+              class="project-link"
+            >
+              Read article <span>↗</span>
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- PROJECT 04 -->
+
+        <article class="project project-twitch">
+
+          <div class="project-visual">
+
+            <div class="twitch-grid">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <span class="twitch-word">
+              TWITCH
+            </span>
+
+            <div class="project-number">
+              04
+            </div>
+
+          </div>
+
+          <div class="project-info">
+
+            <span class="project-category">
+              INDEPENDENT WRITING
+            </span>
+
+            <h3>
+              The Rollercoaster
+              <em>Ride of Twitch.</em>
+            </h3>
+
+            <a
+              href="https://tamimmah-disma.medium.com/the-rollercoaster-ride-of-twitch-acquisition-from-google-yahoo-to-amazon-70b8a2124df3"
+              target="_blank"
+              rel="noopener"
+              class="project-link"
+            >
+              Read on Medium <span>↗</span>
+            </a>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         SKILLS
+    ========================================== -->
+
+    <section class="section skills-section" id="skills">
+
+      <div class="section-heading">
+
+        <span class="section-number">05 / SKILLS & EDUCATION</span>
+
+        <span class="section-side-note">
+          WHAT I BRING
         </span>
 
       </div>
 
-    </a>
 
-  </div>
+      <div class="skills-intro">
 
-</section>
+        <h2>
+          Different disciplines.
+          <em>One way of thinking.</em>
+        </h2>
 
-
-
-<!-- =======================================================
-     SKILLS
-======================================================= -->
-
-<section class="section skills" id="skills">
-
-  <div class="section-label">
-    05 / Skills & Education
-  </div>
-
-
-  <div class="skills-head reveal">
-
-    <h2>
-      What I bring
-      <br>
-      <em>to the table.</em>
-    </h2>
-
-    <p>
-      A cross-functional toolkit built from marketing,
-      business, research, entrepreneurship, and creative
-      work rather than from one narrow job description.
-    </p>
-
-  </div>
-
-
-  <div class="skill-map reveal">
-
-    <div class="skill-orbit"></div>
-
-    <div class="skill-line"></div>
-    <div class="skill-line"></div>
-    <div class="skill-line"></div>
-
-
-    <div class="skill-center">
-
-      <small>
-        Core identity
-      </small>
-
-      <strong>
-        Tamimmah
-      </strong>
-
-    </div>
-
-
-    <div class="skill-node">
-
-      <h3>
-        Consumer Insights
-      </h3>
-
-      <p>
-        Consumer behavior · Research ·
-        Market analysis · Data interpretation
-      </p>
-
-    </div>
-
-
-    <div class="skill-node">
-
-      <h3>
-        Marketing
-      </h3>
-
-      <p>
-        Marketing strategy · Digital marketing ·
-        Content strategy · Promotion
-      </p>
-
-    </div>
-
-
-    <div class="skill-node">
-
-      <h3>
-        Business
-      </h3>
-
-      <p>
-        Business development · Customer acquisition ·
-        Retention · Entrepreneurship
-      </p>
-
-    </div>
-
-
-    <div class="skill-node">
-
-      <h3>
-        Strategy
-      </h3>
-
-      <p>
-        Brand strategy · Creative strategy ·
-        Market positioning · Planning
-      </p>
-
-    </div>
-
-
-    <div class="skill-node">
-
-      <h3>
-        Research
-      </h3>
-
-      <p>
-        SPSS · Regression analysis ·
-        PCA · Quantitative research
-      </p>
-
-    </div>
-
-
-    <div class="skill-node">
-
-      <h3>
-        Creative
-      </h3>
-
-      <p>
-        Adobe Photoshop · Visual communication ·
-        Social media · Content creation
-      </p>
-
-    </div>
-
-  </div>
-
-
-  <div class="tool-strip reveal">
-
-    <span class="tool">Marketing Strategy</span>
-    <span class="tool">Brand Strategy</span>
-    <span class="tool">Consumer Research</span>
-    <span class="tool">Digital Marketing</span>
-    <span class="tool">SPSS</span>
-    <span class="tool">Regression</span>
-    <span class="tool">PCA</span>
-    <span class="tool">Adobe Photoshop</span>
-    <span class="tool">Content Strategy</span>
-    <span class="tool">Business Development</span>
-    <span class="tool">Customer Acquisition</span>
-    <span class="tool">Operations</span>
-
-  </div>
-
-
-  <div class="education reveal">
-
-    <div class="education-label">
-      Education
-    </div>
-
-    <div class="education-main">
-
-      <strong>
-        Institut Teknologi Bandung
-      </strong>
-
-      <span>
-        Bachelor of Business Management ·
-        Management & Marketing
-      </span>
-
-    </div>
-
-    <div class="education-gpa">
-
-      <strong>
-        3.44
-      </strong>
-
-      <span>
-        GPA
-      </span>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =======================================================
-     CREATIVE
-======================================================= -->
-
-<section class="section creative" id="creative">
-
-  <div class="section-label">
-    06 / Creative Skills
-  </div>
-
-
-  <div class="creative-header reveal">
-
-    <h2>
-      The visual
-      <br>
-      <em>side of me.</em>
-    </h2>
-
-    <p>
-      Creativity is not separate from marketing for me.
-      It's another way of understanding attention,
-      communication, and how people experience a brand.
-    </p>
-
-  </div>
-
-
-  <div class="creative-board reveal">
-
-
-    <!-- PHOTOSHOP -->
-
-    <div class="creative-panel photoshop">
-
-      <div class="creative-label">
-        Adobe Photoshop
-      </div>
-
-      <div class="crop-mark one"></div>
-      <div class="crop-mark two"></div>
-      <div class="crop-mark three"></div>
-
-      <img
-        src="images/photoshop-works.png"
-        alt="Selected Adobe Photoshop work"
-        class="creative-image"
-      >
-
-      <div class="creative-note">
-        visual communication
-      </div>
-
-      <div class="creative-title">
-
-        Making ideas
-        <br>
-        <em>look like ideas.</em>
+        <p>
+          I connect customer understanding, commercial thinking,
+          analysis, and creative execution.
+        </p>
 
       </div>
 
-      <a
-        href="https://id.pinterest.com/akonhjhjhj/my-art-works/"
-        target="_blank"
-        class="creative-button"
-      >
-        View More Work ↗
-      </a>
 
-    </div>
+      <div class="skills-map">
 
+        <div class="skills-orbit orbit-one"></div>
+        <div class="skills-orbit orbit-two"></div>
 
-    <!-- TIKTOK -->
-
-    <div class="creative-panel tiktok">
-
-      <div class="creative-label">
-        Content & Social Media
-      </div>
-
-      <div class="tiktok-big">
-        367K+
-      </div>
-
-      <img
-        src="images/tiktok-profile.png"
-        alt="TikTok profile"
-        class="tiktok-image"
-      >
-
-      <div class="tiktok-stats">
-
-        <div class="tiktok-stat">
-          <strong>984</strong>
-          <span>followers</span>
+        <div class="skill-center">
+          <span>THIS IS</span>
+          <strong>TAMIMMAH</strong>
+          <small>BUSINESS × PEOPLE</small>
         </div>
 
-        <div class="tiktok-stat">
-          <strong>2×</strong>
-          <span>1M+ views</span>
+
+        <button class="skill-node node-top" data-skill="strategy">
+          <span>01</span>
+          <strong>STRATEGY</strong>
+        </button>
+
+        <button class="skill-node node-right" data-skill="brand">
+          <span>02</span>
+          <strong>BRAND</strong>
+        </button>
+
+        <button class="skill-node node-bottom-right" data-skill="business">
+          <span>03</span>
+          <strong>BUSINESS</strong>
+        </button>
+
+        <button class="skill-node node-bottom-left" data-skill="creative">
+          <span>04</span>
+          <strong>CREATIVE</strong>
+        </button>
+
+        <button class="skill-node node-left" data-skill="research">
+          <span>05</span>
+          <strong>RESEARCH</strong>
+        </button>
+
+        <button class="skill-node node-top-left" data-skill="consumer">
+          <span>06</span>
+          <strong>CONSUMER<br>INSIGHTS</strong>
+        </button>
+
+      </div>
+
+
+      <div class="skill-details">
+
+        <div class="skill-detail active" data-detail="strategy">
+          <span>STRATEGY</span>
+          <p>
+            Marketing Strategy · Content Strategy · Creative Strategy ·
+            Market Analysis
+          </p>
+        </div>
+
+        <div class="skill-detail" data-detail="brand">
+          <span>BRAND</span>
+          <p>
+            Brand Strategy · Positioning · Consumer Communication ·
+            Visual Communication
+          </p>
+        </div>
+
+        <div class="skill-detail" data-detail="business">
+          <span>BUSINESS</span>
+          <p>
+            Business Development · Customer Acquisition · Customer Retention ·
+            Entrepreneurship · Operations · Project Management
+          </p>
+        </div>
+
+        <div class="skill-detail" data-detail="creative">
+          <span>CREATIVE</span>
+          <p>
+            Adobe Photoshop · Content Creation · Social Media ·
+            Creative Direction
+          </p>
+        </div>
+
+        <div class="skill-detail" data-detail="research">
+          <span>RESEARCH</span>
+          <p>
+            Consumer Research · Market Research · SPSS · Regression Analysis ·
+            Data Interpretation
+          </p>
+        </div>
+
+        <div class="skill-detail" data-detail="consumer">
+          <span>CONSUMER INSIGHTS</span>
+          <p>
+            Consumer Behavior · Customer Understanding · Market Observation ·
+            Purchase Intention Analysis
+          </p>
         </div>
 
       </div>
 
-      <div class="creative-title">
 
-        Understanding
-        <br>
-        <em>attention.</em>
+      <!-- TOOL PILLS -->
 
-      </div>
+      <div class="tools-row">
 
-      <a
-        href="https://www.tiktok.com/@baesminju"
-        target="_blank"
-        class="creative-button"
-      >
-        See Content ↗
-      </a>
+        <span>TOOLS</span>
 
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =======================================================
-     CONTACT
-======================================================= -->
-
-<section class="contact" id="contact">
-
-  <div class="contact-poster reveal">
-
-    <div class="contact-shape"></div>
-    <div class="contact-shape-two"></div>
-
-    <div class="contact-top">
-
-      <div class="section-label">
-        07 / Contact
-      </div>
-
-      <h2 class="contact-heading">
-
-        Let's make
-        <br>
-        something
-        <br>
-        <em>meaningful.</em>
-
-      </h2>
-
-    </div>
-
-
-    <div class="contact-bottom">
-
-      <p class="contact-copy">
-        Looking for someone who can connect
-        customer thinking with business execution?
-        I'd love to hear what you're working on.
-      </p>
-
-
-      <div class="contact-links">
-
-        <a
-          href="mailto:tamimmadisma@gmail.com"
-          class="contact-link"
-        >
-          Email
-        </a>
-
-        <a
-          href="https://wa.me/6282130815541"
-          target="_blank"
-          class="contact-link"
-        >
-          WhatsApp
-        </a>
-
-        <a
-          href="https://www.instagram.com/miramimmah/"
-          target="_blank"
-          class="contact-link"
-        >
-          Instagram
-        </a>
-
-        <a
-          href="https://www.instagram.com/tamidisma/"
-          target="_blank"
-          class="contact-link"
-        >
-          Instagram 02
-        </a>
+        <div class="tool-pills">
+          <span>SPSS</span>
+          <span>Regression</span>
+          <span>Adobe Photoshop</span>
+          <span>Social Media</span>
+          <span>Market Research</span>
+          <span>Digital Marketing</span>
+          <span>Content Strategy</span>
+        </div>
 
       </div>
 
-    </div>
 
-  </div>
+      <!-- EDUCATION -->
 
-</section>
+      <div class="education-block">
 
+        <div class="education-label">
+          EDUCATION
+        </div>
 
-</main>
+        <div class="education-main">
 
+          <span>INSTITUT TEKNOLOGI BANDUNG</span>
 
-<!-- =======================================================
-     FOOTER
-======================================================= -->
+          <h3>
+            Bachelor of Business Management
+          </h3>
 
-<footer>
+          <p>
+            Management & Marketing
+          </p>
 
-  <span>
-    © 2026 Tamimmah Disma Lestari
-  </span>
+        </div>
 
-  <span>
-    Built with intention.
-  </span>
+        <div class="education-gpa">
 
-</footer>
+          <span>GPA</span>
 
+          <strong>3.44</strong>
 
+          <small>/ 4.00</small>
 
-<!-- =======================================================
-     JAVASCRIPT
-======================================================= -->
+        </div>
 
-<script>
+      </div>
 
-/* =========================================================
-   HEADER SCROLL
-========================================================= */
+    </section>
 
-const header = document.getElementById("header");
 
-window.addEventListener("scroll", () => {
+    <!-- =========================================
+         CREATIVE
+    ========================================== -->
 
-  if (window.scrollY > 30) {
-    header.classList.add("scrolled");
-  } else {
-    header.classList.remove("scrolled");
-  }
+    <section class="section creative-section" id="creative">
 
-});
+      <div class="section-heading">
 
+        <span class="section-number">06 / CREATIVE SKILLS</span>
 
-/* =========================================================
-   MOBILE MENU
-========================================================= */
+        <span class="section-side-note">
+          THE OTHER SIDE OF THE BRAIN
+        </span>
 
-const menuToggle = document.getElementById("menuToggle");
-const mobileMenu = document.getElementById("mobileMenu");
+      </div>
 
-function closeMenu() {
 
-  menuToggle.classList.remove("open");
-  mobileMenu.classList.remove("open");
+      <div class="creative-intro">
 
-  menuToggle.setAttribute("aria-expanded", "false");
-  menuToggle.setAttribute("aria-label", "Open menu");
+        <h2>
+          Marketing is also about
+          <em>how things feel.</em>
+        </h2>
 
-  document.body.style.overflow = "";
+        <p>
+          My creative work helps me think visually, understand attention,
+          and communicate ideas beyond words.
+        </p>
 
-}
+      </div>
 
-function openMenu() {
 
-  menuToggle.classList.add("open");
-  mobileMenu.classList.add("open");
+      <div class="creative-board">
 
-  menuToggle.setAttribute("aria-expanded", "true");
-  menuToggle.setAttribute("aria-label", "Close menu");
 
-  document.body.style.overflow = "hidden";
+        <!-- PHOTOSHOP -->
 
-}
+        <article class="creative-piece photoshop-piece">
 
-menuToggle.addEventListener("click", () => {
+          <div class="piece-header">
 
-  if (mobileMenu.classList.contains("open")) {
-    closeMenu();
-  } else {
-    openMenu();
-  }
+            <span>01</span>
 
-});
+            <div>
+              <small>ADOBE PHOTOSHOP</small>
+              <strong>VISUAL COMMUNICATION</strong>
+            </div>
 
+          </div>
 
-document.querySelectorAll(".mobile-menu a").forEach(link => {
 
-  link.addEventListener("click", () => {
-    closeMenu();
-  });
+          <div class="photoshop-image">
 
-});
+            <img
+              src="images/photoshop-works.png"
+              alt="Adobe Photoshop work by Tamimmah"
+            >
 
+            <div class="crop-mark crop-one"></div>
+            <div class="crop-mark crop-two"></div>
 
-document.addEventListener("keydown", event => {
+          </div>
 
-  if (event.key === "Escape") {
-    closeMenu();
-  }
 
-});
+          <div class="piece-footer">
 
+            <p>
+              Exploring visual composition, image editing,
+              and communication through design.
+            </p>
 
-window.addEventListener("resize", () => {
+            <a
+              href="https://id.pinterest.com/akonhjhjhj/my-art-works/"
+              target="_blank"
+              rel="noopener"
+              class="button button-dark"
+            >
+              See my work <span>↗</span>
+            </a>
 
-  if (window.innerWidth > 800) {
-    closeMenu();
-  }
+          </div>
 
-});
+        </article>
 
 
-/* =========================================================
-   JOURNEY INTERACTION
-========================================================= */
+        <!-- TIKTOK -->
 
-document.querySelectorAll(".milestone").forEach(item => {
+        <article class="creative-piece tiktok-piece">
 
-  item.addEventListener("click", () => {
+          <div class="piece-header">
 
-    const isActive = item.classList.contains("active");
+            <span>02</span>
 
-    document
-      .querySelectorAll(".milestone")
-      .forEach(other => {
-        other.classList.remove("active");
-      });
+            <div>
+              <small>CONTENT & SOCIAL MEDIA</small>
+              <strong>UNDERSTANDING ATTENTION</strong>
+            </div>
 
-    if (!isActive) {
-      item.classList.add("active");
-    }
+          </div>
 
-  });
 
-});
+          <div class="tiktok-stage">
 
+            <div class="tiktok-big-number">
+              367K<span>+</span>
+            </div>
 
-/* =========================================================
-   REVEAL ON SCROLL
-========================================================= */
+            <p>
+              average views / post
+            </p>
 
-const revealElements = document.querySelectorAll(".reveal");
+            <div class="tiktok-stat">
+              <strong>2×</strong>
+              <span>1M+<br>views</span>
+            </div>
 
-const observer = new IntersectionObserver(
-  entries => {
+            <div class="tiktok-profile">
 
-    entries.forEach(entry => {
+              <img
+                src="images/tiktok-profile.png"
+                alt="TikTok profile"
+              >
 
-      if (entry.isIntersecting) {
+              <span>@baesminju</span>
 
-        entry.target.classList.add("visible");
+            </div>
 
-        observer.unobserve(entry.target);
+          </div>
 
-      }
 
-    });
+          <div class="piece-footer">
 
-  },
-  {
-    threshold: .12
-  }
-);
+            <p>
+              A hands-on experiment in understanding content,
+              audience behavior, and what makes people stop scrolling.
+            </p>
 
+            <a
+              href="https://www.tiktok.com/@baesminju"
+              target="_blank"
+              rel="noopener"
+              class="button button-outline"
+            >
+              Visit TikTok <span>↗</span>
+            </a>
 
-revealElements.forEach(element => {
+          </div>
 
-  observer.observe(element);
+        </article>
 
-});
+      </div>
 
+    </section>
 
-/* =========================================================
-   SMOOTH ANCHOR OFFSET
-========================================================= */
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    <!-- =========================================
+         CONTACT
+    ========================================== -->
 
-  anchor.addEventListener("click", function(event) {
+    <section class="contact-section" id="contact">
 
-    const target = document.querySelector(this.getAttribute("href"));
+      <div class="contact-shape contact-green"></div>
+      <div class="contact-shape contact-turquoise"></div>
+      <div class="contact-shape contact-yellow"></div>
 
-    if (!target) return;
+      <div class="contact-star contact-star-one">✦</div>
+      <div class="contact-star contact-star-two">✦</div>
 
-    event.preventDefault();
+      <div class="contact-inner">
 
-    const headerHeight = 70;
+        <div class="section-heading contact-heading">
 
-    const targetPosition =
-      target.getBoundingClientRect().top +
-      window.scrollY -
-      headerHeight;
+          <span class="section-number">07 / CONTACT</span>
 
-    window.scrollTo({
-      top: targetPosition,
-      behavior: "smooth"
-    });
+          <span class="section-side-note">
+            LET'S TALK
+          </span>
 
-  });
+        </div>
 
-});
 
+        <div class="contact-content">
 
-/* =========================================================
-   PROJECT HOVER MICRO-MOTION
-========================================================= */
+          <p class="eyebrow">
+            OPEN TO OPPORTUNITIES
+          </p>
 
-document.querySelectorAll(".project").forEach(project => {
+          <h2>
+            Let's make something
+            <em>meaningful.</em>
+          </h2>
 
-  project.addEventListener("mousemove", event => {
+          <p class="contact-description">
+            Looking for someone who can connect business thinking,
+            consumer understanding, and creative execution?
+            Let's talk.
+          </p>
 
-    if (window.innerWidth <= 800) return;
 
-    const rect = project.getBoundingClientRect();
+          <div class="contact-links">
 
-    const x =
-      (event.clientX - rect.left) / rect.width - .5;
+            <a
+              href="mailto:tamimmadisma@gmail.com"
+              class="contact-link"
+            >
+              <span class="contact-link-label">EMAIL</span>
+              <strong>tamimmadisma@gmail.com</strong>
+              <span class="contact-arrow">↗</span>
+            </a>
 
-    const y =
-      (event.clientY - rect.top) / rect.height - .5;
+            <a
+              href="https://wa.me/6282130815541"
+              target="_blank"
+              rel="noopener"
+              class="contact-link"
+            >
+              <span class="contact-link-label">WHATSAPP</span>
+              <strong>Let's connect</strong>
+              <span class="contact-arrow">↗</span>
+            </a>
 
-    const graphic =
-      project.querySelector(".project-graphic");
+            <a
+              href="https://www.instagram.com/miramimmah/"
+              target="_blank"
+              rel="noopener"
+              class="contact-link"
+            >
+              <span class="contact-link-label">INSTAGRAM</span>
+              <strong>@miramimmah</strong>
+              <span class="contact-arrow">↗</span>
+            </a>
 
-    if (!graphic) return;
+          </div>
 
-    graphic.style.transform =
-      `translate(${x * 8}px, ${y * 8}px) rotate(${x * 5}deg)`;
+        </div>
 
-  });
 
+        <div class="contact-bottom">
 
-  project.addEventListener("mouseleave", () => {
+          <span>
+            TAMIMMAH DISMA LESTARI
+          </span>
 
-    const graphic =
-      project.querySelector(".project-graphic");
+          <span>
+            MARKETING · CONSUMER INSIGHTS · BUSINESS DEVELOPMENT
+          </span>
 
-    if (!graphic) return;
+        </div>
 
-    graphic.style.transform = "";
+      </div>
 
-  });
+    </section>
 
-});
+  </main>
 
 
-/* =========================================================
-   CONTACT YEAR
-========================================================= */
+  <!-- =========================================
+       FOOTER
+  ========================================== -->
 
-const currentYear = new Date().getFullYear();
+  <footer class="site-footer">
 
-const footerYear =
-  document.querySelector("footer span");
+    <span>
+      © <span id="currentYear">2026</span>
+      Tamimmah Disma Lestari
+    </span>
 
-if (footerYear) {
+    <span>
+      Built with intention.
+    </span>
 
-  footerYear.textContent =
-    `© ${currentYear} Tamimmah Disma Lestari`;
+  </footer>
 
-}
 
-</script>
+  <script src="script.js"></script>
 
 </body>
 </html>
