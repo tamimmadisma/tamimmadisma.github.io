@@ -13,79 +13,78 @@
     content="Tamimmah Disma Lestari — Business Management graduate specializing in marketing, consumer insights, business development, and creative strategy."
   >
 
-  <meta name="theme-color" content="#f7f6f2">
-
-  <!-- =====================================================
+  <!-- =========================================================
        GOOGLE FONTS
-  ====================================================== -->
+  ========================================================== -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;1,500&display=swap"
     rel="stylesheet"
   >
 
 
   <style>
 
-    /* =====================================================
+    /* =========================================================
        VARIABLES
-    ====================================================== */
+    ========================================================== */
 
     :root {
-
       --bg: #f7f6f2;
       --text: #171717;
       --muted: #737373;
-      --line: #d8d6cf;
-      --soft: #ebe9e2;
+      --line: #d7d5ce;
+      --soft: #eceae3;
 
       --sans: "DM Sans", sans-serif;
       --serif: "Playfair Display", serif;
 
       --container: 1180px;
-
-      --header-height: 74px;
-
     }
 
 
-    /* =====================================================
+    /* =========================================================
        RESET
-    ====================================================== */
+    ========================================================== */
 
-    *,
-    *::before,
-    *::after {
+    * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-
     html {
       scroll-behavior: smooth;
     }
 
-
     body {
+      font-family: var(--sans);
       background: var(--bg);
       color: var(--text);
-
-      font-family: var(--sans);
-      font-size: 16px;
       line-height: 1.6;
-
       overflow-x: hidden;
     }
-
 
     body.menu-open {
       overflow: hidden;
     }
 
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    button {
+      font: inherit;
+    }
 
     ::selection {
       background: var(--text);
@@ -93,132 +92,86 @@
     }
 
 
-    img {
-      display: block;
-      max-width: 100%;
+    /* =========================================================
+       CONTAINER
+    ========================================================== */
+
+    .container {
+      width: min(var(--container), calc(100% - 80px));
+      margin: 0 auto;
     }
 
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-
-    button {
-      font: inherit;
-    }
-
-
-    /* =====================================================
-       GLOBAL CONTAINER
-    ====================================================== */
-
-    .container,
-    .header-inner,
-    .footer-inner {
-
-      width: min(
-        var(--container),
-        calc(100% - 80px)
-      );
-
-      margin-inline: auto;
-
-    }
-
-
-    /* =====================================================
+    /* =========================================================
        HEADER
-    ====================================================== */
+    ========================================================== */
 
     header {
-
       position: fixed;
-      inset: 0 0 auto 0;
+      top: 0;
+      left: 0;
 
-      height: var(--header-height);
+      width: 100%;
+      height: 74px;
 
       z-index: 1000;
 
-      background: rgba(247, 246, 242, 0.9);
+      background: rgba(247, 246, 242, 0.92);
 
-      border-bottom: 1px solid rgba(23, 23, 23, 0.09);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
 
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-
+      border-bottom: 1px solid rgba(23, 23, 23, 0.08);
     }
 
-
     .header-inner {
-
+      width: min(var(--container), calc(100% - 80px));
       height: 100%;
+      margin: 0 auto;
 
       display: flex;
       align-items: center;
       justify-content: space-between;
-
     }
-
 
     .logo {
-
       font-size: 1.2rem;
       font-weight: 700;
-
-      letter-spacing: -0.07em;
-
+      letter-spacing: -0.06em;
     }
-
 
     .logo span {
-
       font-family: var(--serif);
       font-style: italic;
-
-      font-weight: 500;
-
     }
 
 
-    /* =====================================================
+    /* =========================================================
        DESKTOP NAV
-    ====================================================== */
+    ========================================================== */
 
     nav {
-
       display: flex;
       align-items: center;
-
-      gap: 32px;
-
+      gap: 30px;
     }
 
-
     nav a {
-
       position: relative;
 
-      font-size: 0.64rem;
-      font-weight: 700;
+      font-size: 0.67rem;
+      font-weight: 600;
 
       text-transform: uppercase;
       letter-spacing: 0.1em;
-
-      color: var(--text);
-
     }
 
-
     nav a::after {
-
       content: "";
 
       position: absolute;
-
       left: 0;
-      bottom: -7px;
+      bottom: -6px;
 
       width: 0;
       height: 1px;
@@ -226,24 +179,18 @@
       background: var(--text);
 
       transition: width 0.25s ease;
-
     }
 
-
-    nav a:hover::after,
-    nav a:focus-visible::after {
-
+    nav a:hover::after {
       width: 100%;
-
     }
 
 
-    /* =====================================================
-       MOBILE MENU BUTTON
-    ====================================================== */
+    /* =========================================================
+       MENU BUTTON
+    ========================================================== */
 
     #menu {
-
       display: none;
 
       width: 42px;
@@ -262,34 +209,20 @@
 
       font-size: 1.15rem;
       line-height: 1;
-
     }
 
 
-    #menu:focus-visible {
-
-      outline: 2px solid var(--text);
-      outline-offset: 4px;
-
-    }
-
-
-    /* =====================================================
+    /* =========================================================
        MOBILE MENU
-    ====================================================== */
+    ========================================================== */
 
     .mobile-menu {
-
       position: fixed;
       inset: 0;
 
       z-index: 999;
 
-      padding: 105px 6vw 32px;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      padding: 105px 6vw 35px;
 
       background: var(--bg);
 
@@ -297,38 +230,32 @@
       visibility: hidden;
       pointer-events: none;
 
-      transform: translateY(-12px);
+      transform: translateY(-10px);
 
       transition:
         opacity 0.25s ease,
         visibility 0.25s ease,
         transform 0.25s ease;
 
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
-
     .mobile-menu.active {
-
       opacity: 1;
       visibility: visible;
       pointer-events: auto;
-
       transform: translateY(0);
-
     }
-
 
     .mobile-nav {
-
       display: flex;
       flex-direction: column;
-
     }
 
-
     .mobile-nav a {
-
-      padding: 16px 0;
+      padding: 15px 0;
 
       display: flex;
       align-items: center;
@@ -336,110 +263,77 @@
 
       border-bottom: 1px solid var(--line);
 
-      font-size: clamp(1.55rem, 7vw, 2.7rem);
-
-      line-height: 1;
-
-      letter-spacing: -0.055em;
-
+      font-size: clamp(1.5rem, 7vw, 2.6rem);
+      letter-spacing: -0.05em;
     }
-
 
     .mobile-nav a span {
-
       font-family: var(--serif);
       font-style: italic;
-
-      font-size: 0.48em;
-
-      letter-spacing: 0;
-
+      font-size: 0.55em;
     }
 
-
     .mobile-footer {
-
       display: flex;
       justify-content: space-between;
-
       gap: 20px;
 
-      color: var(--muted);
-
-      font-size: 0.57rem;
+      font-size: 0.58rem;
 
       text-transform: uppercase;
       letter-spacing: 0.1em;
 
+      color: var(--muted);
     }
 
 
-    /* =====================================================
-       SECTIONS
-    ====================================================== */
+    /* =========================================================
+       GENERAL SECTIONS
+    ========================================================== */
 
     section {
-
-      padding: 115px 0;
+      padding: 105px 0;
 
       border-bottom: 1px solid var(--line);
 
-      scroll-margin-top: var(--header-height);
-
+      scroll-margin-top: 74px;
     }
-
 
     .section-heading {
-
-      margin-bottom: 58px;
-
+      margin-bottom: 55px;
     }
 
-
     .section-number {
-
       display: block;
 
-      margin-bottom: 15px;
+      margin-bottom: 14px;
 
-      color: var(--muted);
-
-      font-size: 0.62rem;
+      font-size: 0.63rem;
       font-weight: 700;
 
       text-transform: uppercase;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.14em;
 
+      color: var(--muted);
     }
-
 
     .section-heading h2 {
+      font-size: clamp(2.8rem, 5vw, 5rem);
 
-      font-size: clamp(3rem, 5.5vw, 5.5rem);
+      line-height: 0.98;
+      letter-spacing: -0.065em;
 
       font-weight: 500;
-
-      line-height: 0.95;
-
-      letter-spacing: -0.07em;
-
     }
-
 
     .section-heading h2 i {
-
       font-family: var(--serif);
-      font-style: italic;
-
       font-weight: 500;
-
     }
-
 
     p {
       color: #555;
     }
-
 
     strong {
       color: var(--text);
@@ -447,157 +341,122 @@
     }
 
 
-    /* =====================================================
+    /* =========================================================
        HERO
-    ====================================================== */
+    ========================================================== */
 
     .hero {
-
       min-height: 100vh;
 
-      padding: 135px 0 75px;
+      padding: 125px 0 80px;
 
       display: flex;
       align-items: center;
 
       border-bottom: 1px solid var(--line);
-
     }
-
 
     .hero-grid {
-
       display: grid;
 
-      grid-template-columns:
-        minmax(0, 1fr)
-        minmax(330px, 0.52fr);
+      grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
 
-      gap: 90px;
+      gap: 80px;
 
       align-items: center;
-
     }
 
-
     .hero-name {
+      margin-bottom: 16px;
 
-      margin-bottom: 17px;
-
-      font-size: 0.64rem;
+      font-size: 0.65rem;
       font-weight: 700;
 
       text-transform: uppercase;
       letter-spacing: 0.15em;
-
     }
 
-
     .hero-kicker {
+      margin-bottom: 20px;
 
-      margin-bottom: 22px;
-
-      color: var(--muted);
-
-      font-size: 0.64rem;
+      font-size: 0.65rem;
 
       text-transform: uppercase;
       letter-spacing: 0.13em;
 
+      color: var(--muted);
     }
-
 
     .hero h1 {
-
       max-width: 780px;
 
-      font-size: clamp(3.7rem, 6.4vw, 6.9rem);
+      font-size: clamp(3.5rem, 6.3vw, 6.8rem);
+
+      line-height: 0.98;
+      letter-spacing: -0.07em;
 
       font-weight: 500;
-
-      line-height: 0.94;
-
-      letter-spacing: -0.075em;
-
     }
-
 
     .hero h1 i {
-
       font-family: var(--serif);
-      font-style: italic;
-
       font-weight: 500;
-
     }
-
 
     .hero-description {
+      max-width: 650px;
 
-      max-width: 610px;
+      margin-top: 27px;
 
-      margin-top: 29px;
-
-      font-size: 0.92rem;
-
+      font-size: 0.96rem;
     }
 
 
-    /* =====================================================
+    /* =========================================================
        HERO TAGS
-    ====================================================== */
+    ========================================================== */
 
     .hero-tags {
-
       margin-top: 25px;
 
       display: flex;
       flex-wrap: wrap;
 
       gap: 7px;
-
     }
 
-
     .hero-tags span {
-
       padding: 7px 12px;
 
       border: 1px solid var(--line);
       border-radius: 999px;
 
-      font-size: 0.61rem;
-
+      font-size: 0.63rem;
     }
 
 
-    /* =====================================================
+    /* =========================================================
        BUTTONS
-    ====================================================== */
+    ========================================================== */
 
     .button-row {
-
-      margin-top: 29px;
+      margin-top: 28px;
 
       display: flex;
       flex-wrap: wrap;
 
       gap: 9px;
-
     }
 
-
     .button {
-
-      min-height: 42px;
-
-      padding: 10px 18px;
-
       display: inline-flex;
+
       align-items: center;
       justify-content: center;
 
-      gap: 8px;
+      gap: 9px;
+
+      padding: 11px 18px;
 
       border: 1px solid var(--text);
       border-radius: 999px;
@@ -605,7 +464,7 @@
       background: var(--text);
       color: var(--bg);
 
-      font-size: 0.61rem;
+      font-size: 0.62rem;
       font-weight: 700;
 
       text-transform: uppercase;
@@ -615,61 +474,44 @@
         background 0.25s ease,
         color 0.25s ease,
         transform 0.25s ease;
-
     }
 
-
     .button:hover {
-
       background: transparent;
       color: var(--text);
 
       transform: translateY(-2px);
-
     }
-
 
     .button.secondary {
-
       background: transparent;
       color: var(--text);
-
     }
-
 
     .button.secondary:hover {
-
       background: var(--text);
       color: var(--bg);
-
     }
 
 
-    /* =====================================================
+    /* =========================================================
        HERO PHOTO
-    ====================================================== */
+    ========================================================== */
 
     .hero-visual {
-
       position: relative;
 
       display: flex;
       justify-content: flex-end;
-
     }
-
 
     .hero-photo {
+      width: min(100%, 390px);
 
       position: relative;
-
-      width: min(100%, 405px);
-
     }
 
-
     .hero-photo img {
-
       width: 100%;
 
       aspect-ratio: 0.82;
@@ -678,41 +520,34 @@
 
       filter: grayscale(100%);
 
-      transition: filter 0.45s ease;
-
+      transition: filter 0.4s ease;
     }
-
 
     .hero-photo:hover img {
-
       filter: grayscale(0%);
-
     }
 
-
     .hero-photo::after {
-
       content: "";
 
       position: absolute;
 
-      inset: 16px -16px -16px 16px;
+      right: -16px;
+      bottom: -16px;
+
+      width: 100%;
+      height: 100%;
 
       border: 1px solid var(--line);
 
       z-index: -1;
-
     }
 
-
     .hero-mark {
-
       position: absolute;
 
-      right: -25px;
-      bottom: 8px;
-
-      color: #e1dfd8;
+      right: -22px;
+      bottom: 15px;
 
       font-family: var(--serif);
 
@@ -722,52 +557,43 @@
 
       line-height: 0.8;
 
-      z-index: -1;
+      color: #e3e1da;
 
+      z-index: -1;
     }
 
 
-    /* =====================================================
-       EXPLORE
-    ====================================================== */
+    /* =========================================================
+       EXPLORE PORTFOLIO
+    ========================================================== */
 
     .explore {
-
-      margin-top: 67px;
-
+      margin-top: 65px;
     }
 
-
     .explore-title {
-
       margin-bottom: 12px;
 
-      color: var(--muted);
-
-      font-size: 0.62rem;
+      font-size: 0.63rem;
       font-weight: 700;
 
       text-transform: uppercase;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.13em;
 
+      color: var(--muted);
     }
 
-
     .explore-grid {
-
       display: grid;
 
       grid-template-columns: repeat(3, 1fr);
 
       border-top: 1px solid var(--text);
       border-bottom: 1px solid var(--text);
-
     }
 
-
     .explore-card {
-
-      min-height: 105px;
+      min-height: 95px;
 
       padding: 15px 18px;
 
@@ -780,331 +606,221 @@
       transition:
         background 0.25s ease,
         color 0.25s ease;
-
     }
-
 
     .explore-card:nth-child(3n) {
-
       border-right: 0;
-
     }
-
-
-    .explore-card:nth-child(-n + 3) {
-
-      border-bottom: 1px solid var(--line);
-
-    }
-
 
     .explore-card:hover {
-
       background: var(--text);
       color: var(--bg);
-
     }
-
 
     .explore-number {
-
+      font-size: 0.58rem;
       color: var(--muted);
-
-      font-size: 0.57rem;
-
     }
-
 
     .explore-card:hover .explore-number {
-
       color: #aaa;
-
     }
 
-
     .explore-name {
-
       display: flex;
       align-items: center;
       justify-content: space-between;
 
-      font-size: 0.67rem;
+      font-size: 0.68rem;
       font-weight: 700;
 
       text-transform: uppercase;
-      letter-spacing: 0.07em;
-
+      letter-spacing: 0.06em;
     }
 
 
-    /* =====================================================
+    /* =========================================================
        ABOUT
-    ====================================================== */
+    ========================================================== */
 
     .about-grid {
-
       display: grid;
 
-      grid-template-columns: minmax(250px, 0.72fr) minmax(0, 1.28fr);
+      grid-template-columns: 0.75fr 1.25fr;
 
-      gap: 90px;
-
+      gap: 80px;
     }
-
 
     .about-intro {
-
       font-family: var(--serif);
 
+      font-size: clamp(1.7rem, 3vw, 2.6rem);
+
+      line-height: 1.2;
+
       color: var(--text);
-
-      font-size: clamp(1.8rem, 3vw, 2.65rem);
-
-      line-height: 1.17;
-
     }
-
 
     .about-content {
-
       display: grid;
 
-      grid-template-columns: 1fr 0.72fr;
+      grid-template-columns: 1fr 1fr;
 
-      gap: 50px;
-
+      gap: 45px;
     }
-
 
     .about-content p {
-
       margin-bottom: 20px;
 
-      font-size: 0.88rem;
-
+      font-size: 0.9rem;
     }
-
 
     .about-detail {
-
-      padding-top: 19px;
+      padding-top: 20px;
 
       border-top: 1px solid var(--text);
-
     }
 
-
     .about-detail h3 {
+      margin-bottom: 15px;
 
-      margin-bottom: 14px;
-
-      font-size: 0.61rem;
+      font-size: 0.62rem;
       font-weight: 700;
 
       text-transform: uppercase;
       letter-spacing: 0.11em;
-
     }
-
 
     .about-detail ul {
-
       list-style: none;
-
     }
 
-
     .about-detail li {
-
       padding: 7px 0;
 
       border-bottom: 1px solid var(--line);
 
-      font-size: 0.76rem;
-
+      font-size: 0.78rem;
     }
 
 
-    /* =====================================================
+    /* =========================================================
        EXPERIENCE
-    ====================================================== */
+    ========================================================== */
 
     .experience-header {
-
       display: grid;
 
-      grid-template-columns:
-        minmax(250px, 0.72fr)
-        minmax(0, 1.28fr);
+      grid-template-columns: 0.75fr 1.25fr;
 
-      gap: 90px;
+      gap: 80px;
 
-      margin-bottom: 38px;
-
+      margin-bottom: 35px;
     }
-
 
     .experience-intro {
+      max-width: 480px;
 
-      max-width: 610px;
-
-      font-size: 0.9rem;
-
+      font-size: 0.92rem;
     }
-
 
     .experience-list {
-
       border-top: 1px solid var(--text);
-
     }
 
-
     .experience-item {
-
       display: grid;
 
-      grid-template-columns:
-        125px
-        minmax(0, 1fr)
-        40px;
+      grid-template-columns: 130px minmax(0, 1fr);
 
       gap: 35px;
 
-      padding: 29px 0;
+      padding: 28px 0;
 
       border-bottom: 1px solid var(--line);
 
       align-items: start;
-
     }
-
 
     .experience-date {
-
-      color: var(--muted);
-
-      font-size: 0.61rem;
+      font-size: 0.62rem;
       font-weight: 600;
 
+      color: var(--muted);
     }
 
-
     .experience-item h3 {
+      margin-bottom: 4px;
 
-      margin-bottom: 5px;
-
-      font-size: clamp(1.35rem, 2vw, 1.75rem);
-
-      font-weight: 500;
+      font-size: clamp(1.35rem, 2vw, 1.8rem);
 
       line-height: 1.1;
 
-      letter-spacing: -0.045em;
+      font-weight: 500;
 
+      letter-spacing: -0.04em;
     }
 
+    /*
+      ONLY ACTUAL LINKS GET THE INTERACTION.
+      This avoids making non-clickable jobs look clickable.
+    */
 
     .experience-item h3 a {
+      text-decoration: none;
+
+      text-underline-offset: 6px;
 
       transition: opacity 0.2s ease;
-
     }
-
 
     .experience-item h3 a:hover {
-
-      opacity: 0.55;
-
+      text-decoration: underline;
     }
 
-
     .experience-role {
-
       margin-bottom: 12px;
 
-      color: var(--muted);
-
-      font-size: 0.59rem;
+      font-size: 0.6rem;
       font-weight: 700;
 
       text-transform: uppercase;
       letter-spacing: 0.1em;
 
+      color: var(--muted);
     }
-
 
     .experience-description {
-
       max-width: 700px;
 
-      font-size: 0.8rem;
-
+      font-size: 0.82rem;
     }
 
 
-    .experience-arrow {
-
-      width: 35px;
-      height: 35px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      border: 1px solid var(--line);
-      border-radius: 50%;
-
-      color: var(--text);
-
-      font-size: 0.67rem;
-
-      transition:
-        background 0.2s ease,
-        color 0.2s ease;
-
-    }
-
-
-    .experience-item:hover .experience-arrow {
-
-      background: var(--text);
-      color: var(--bg);
-
-    }
-
-
-    /* =====================================================
+    /* =========================================================
        PROJECTS
-    ====================================================== */
+    ========================================================== */
 
     .projects-intro {
+      max-width: 650px;
 
-      max-width: 680px;
+      margin-bottom: 35px;
 
-      margin-bottom: 38px;
-
-      font-size: 0.9rem;
-
+      font-size: 0.92rem;
     }
-
 
     .project-grid {
-
       display: grid;
 
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(2, 1fr);
 
       gap: 14px;
-
     }
 
-
     .project-card {
+      min-height: 370px;
 
-      min-height: 375px;
-
-      padding: 29px;
+      padding: 28px;
 
       display: flex;
       flex-direction: column;
@@ -1116,87 +832,63 @@
       transition:
         background 0.3s ease,
         transform 0.3s ease;
-
     }
 
-
     .project-card:hover {
-
       background: var(--soft);
 
       transform: translateY(-4px);
-
     }
-
 
     .project-card.featured {
+      grid-column: span 2;
 
-      grid-column: 1 / -1;
-
-      min-height: 345px;
-
+      min-height: 330px;
     }
 
-
     .project-type {
-
-      color: var(--muted);
-
-      font-size: 0.59rem;
+      font-size: 0.6rem;
       font-weight: 700;
 
       text-transform: uppercase;
       letter-spacing: 0.12em;
 
+      color: var(--muted);
     }
-
 
     .project-card h3 {
+      max-width: 800px;
 
-      max-width: 850px;
+      margin-top: 45px;
 
-      margin-top: 46px;
+      font-size: clamp(2rem, 4vw, 4.2rem);
 
-      font-size: clamp(2.1rem, 4vw, 4.2rem);
+      line-height: 1;
+
+      letter-spacing: -0.06em;
 
       font-weight: 500;
-
-      line-height: 0.98;
-
-      letter-spacing: -0.065em;
-
     }
-
 
     .project-card:not(.featured) h3 {
-
       font-size: clamp(1.8rem, 3vw, 3rem);
-
     }
-
 
     .project-card h3 i {
-
       font-family: var(--serif);
-      font-style: italic;
-
     }
 
-
     .project-description {
-
-      max-width: 670px;
+      max-width: 650px;
 
       margin-top: 18px;
 
-      font-size: 0.81rem;
-
+      font-size: 0.82rem;
     }
 
-
     .project-bottom {
-
       margin-top: auto;
+
       padding-top: 30px;
 
       display: flex;
@@ -1204,150 +896,115 @@
       justify-content: space-between;
 
       gap: 20px;
-
     }
 
-
     .project-meta {
-
-      color: var(--muted);
-
-      font-size: 0.57rem;
+      font-size: 0.58rem;
 
       text-transform: uppercase;
       letter-spacing: 0.07em;
 
+      color: var(--muted);
     }
 
-
     .project-link {
-
       display: inline-flex;
+
       align-items: center;
-      justify-content: center;
+      gap: 8px;
 
-      min-height: 35px;
-
-      padding: 8px 14px;
+      padding: 9px 14px;
 
       border: 1px solid var(--text);
       border-radius: 999px;
 
-      font-size: 0.57rem;
+      font-size: 0.58rem;
       font-weight: 700;
 
       text-transform: uppercase;
       letter-spacing: 0.07em;
 
-      white-space: nowrap;
-
       transition:
         background 0.25s ease,
         color 0.25s ease;
-
     }
-
 
     .project-card:hover .project-link {
-
       background: var(--text);
       color: var(--bg);
-
     }
 
 
-    /* =====================================================
+    /* =========================================================
        SKILLS
-    ====================================================== */
+    ========================================================== */
 
     .skills-grid {
-
       display: grid;
 
-      grid-template-columns:
-        minmax(250px, 0.72fr)
-        minmax(0, 1.28fr);
+      grid-template-columns: 0.75fr 1.25fr;
 
-      gap: 90px;
-
+      gap: 80px;
     }
-
 
     .skills-intro {
-
-      color: var(--text);
-
       font-family: var(--serif);
 
-      font-size: clamp(1.8rem, 3vw, 2.55rem);
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
 
-      line-height: 1.17;
+      line-height: 1.2;
 
+      color: var(--text);
     }
-
 
     .skill-groups {
-
       display: grid;
 
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr 1fr;
 
-      gap: 38px 30px;
-
+      gap: 35px;
     }
 
-
     .skill-group {
-
       padding-top: 18px;
 
       border-top: 1px solid var(--text);
-
     }
 
-
     .skill-group h3 {
-
       margin-bottom: 15px;
 
-      font-size: 0.61rem;
+      font-size: 0.62rem;
       font-weight: 700;
 
       text-transform: uppercase;
       letter-spacing: 0.11em;
-
     }
 
-
     .skill-list {
-
       display: flex;
       flex-wrap: wrap;
 
       gap: 7px;
-
     }
 
-
     .skill-list span {
-
-      padding: 7px 10px;
+      padding: 8px 11px;
 
       border: 1px solid var(--line);
       border-radius: 999px;
 
-      font-size: 0.62rem;
-
+      font-size: 0.65rem;
     }
 
 
-    /* =====================================================
+    /* =========================================================
        EDUCATION
-    ====================================================== */
+    ========================================================== */
 
     .education {
+      margin-top: 65px;
 
-      margin-top: 70px;
       padding-top: 28px;
 
       border-top: 1px solid var(--text);
@@ -1357,203 +1014,144 @@
       grid-template-columns: 1fr auto;
 
       gap: 30px;
-
     }
 
-
     .education-label {
-
       margin-bottom: 8px;
 
-      color: var(--muted);
-
-      font-size: 0.59rem;
+      font-size: 0.6rem;
       font-weight: 700;
 
       text-transform: uppercase;
       letter-spacing: 0.12em;
 
+      color: var(--muted);
     }
 
-
     .education h3 {
-
       margin-bottom: 5px;
 
       font-size: 1.5rem;
 
       font-weight: 500;
 
-      line-height: 1.1;
-
       letter-spacing: -0.04em;
-
     }
-
 
     .education p {
-
-      font-size: 0.77rem;
-
+      font-size: 0.78rem;
     }
-
 
     .gpa {
-
       text-align: right;
-
     }
-
 
     .gpa strong {
-
       font-family: var(--serif);
 
-      font-size: 2.9rem;
+      font-size: 2.8rem;
 
       font-weight: 500;
-
-      line-height: 1;
-
     }
 
 
-    /* =====================================================
+    /* =========================================================
        CREATIVE
-    ====================================================== */
+    ========================================================== */
 
     .creative-intro {
+      max-width: 650px;
 
-      max-width: 680px;
+      margin-bottom: 35px;
 
-      margin-bottom: 38px;
-
-      font-size: 0.9rem;
-
+      font-size: 0.92rem;
     }
-
 
     .creative-grid {
-
       display: grid;
 
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: 1fr 1fr;
 
       gap: 14px;
-
     }
-
 
     .creative-card {
-
-      padding: 29px;
+      padding: 28px;
 
       border: 1px solid var(--line);
-
     }
 
-
     .creative-label {
-
-      color: var(--muted);
-
-      font-size: 0.59rem;
+      font-size: 0.6rem;
       font-weight: 700;
 
       text-transform: uppercase;
       letter-spacing: 0.12em;
 
+      color: var(--muted);
     }
 
-
     .creative-card h3 {
-
-      margin-top: 42px;
+      margin-top: 40px;
 
       font-size: clamp(2rem, 3.5vw, 3.5rem);
 
+      line-height: 1;
+
+      letter-spacing: -0.06em;
+
       font-weight: 500;
-
-      line-height: 0.98;
-
-      letter-spacing: -0.065em;
-
     }
-
 
     .creative-card h3 i {
-
       font-family: var(--serif);
-      font-style: italic;
-
     }
-
 
     .creative-description {
+      margin-top: 17px;
 
-      margin-top: 18px;
-
-      font-size: 0.81rem;
-
+      font-size: 0.82rem;
     }
-
-
-    /* =====================================================
-       CREATIVE IMAGES
-    ====================================================== */
 
     .creative-image {
-
-      margin-top: 29px;
+      margin-top: 28px;
 
       overflow: hidden;
-
     }
-
 
     .creative-image img {
-
       width: 100%;
 
-      transition: transform 0.45s ease;
-
+      transition: transform 0.4s ease;
     }
-
 
     .creative-card:hover .creative-image img {
-
       transform: scale(1.02);
-
     }
 
 
-    /* =====================================================
-       CREATIVE BUTTON
-    ====================================================== */
+    /* =========================================================
+       CREATIVE CTA
+    ========================================================== */
 
     .creative-cta {
-
       margin-top: 22px;
-
     }
 
-
     .modern-link {
-
-      min-height: 38px;
-
-      padding: 9px 15px;
-
       display: inline-flex;
+
       align-items: center;
       justify-content: center;
 
-      gap: 8px;
+      gap: 9px;
+
+      padding: 10px 16px;
 
       border: 1px solid var(--text);
       border-radius: 999px;
 
-      font-size: 0.58rem;
+      font-size: 0.6rem;
       font-weight: 700;
 
       text-transform: uppercase;
@@ -1563,27 +1161,22 @@
         background 0.25s ease,
         color 0.25s ease,
         transform 0.25s ease;
-
     }
 
-
     .modern-link:hover {
-
       background: var(--text);
       color: var(--bg);
 
       transform: translateY(-2px);
-
     }
 
 
-    /* =====================================================
-       TIKTOK STATS
-    ====================================================== */
+    /* =========================================================
+       TIKTOK
+    ========================================================== */
 
     .tiktok-stats {
-
-      margin-top: 29px;
+      margin-top: 28px;
 
       display: grid;
 
@@ -1591,28 +1184,19 @@
 
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
-
     }
 
-
     .tiktok-stat {
-
       padding: 17px 8px;
 
       text-align: center;
-
     }
-
 
     .tiktok-stat:not(:last-child) {
-
       border-right: 1px solid var(--line);
-
     }
 
-
     .tiktok-stat strong {
-
       display: block;
 
       font-family: var(--serif);
@@ -1620,116 +1204,82 @@
       font-size: 1.8rem;
 
       font-weight: 500;
-
-      line-height: 1;
-
     }
 
-
     .tiktok-stat span {
-
       display: block;
 
-      margin-top: 5px;
+      margin-top: 2px;
 
-      color: var(--muted);
-
-      font-size: 0.51rem;
+      font-size: 0.53rem;
 
       text-transform: uppercase;
       letter-spacing: 0.08em;
 
+      color: var(--muted);
     }
 
-
     .tiktok-insight {
-
       margin-top: 18px;
 
       font-size: 0.76rem;
-
     }
-
 
     .tiktok-profile {
-
-      margin-top: 26px;
+      margin-top: 25px;
 
       overflow: hidden;
-
     }
-
 
     .tiktok-profile img {
-
       width: 100%;
-
     }
 
 
-    /* =====================================================
+    /* =========================================================
        CONTACT
-    ====================================================== */
+    ========================================================== */
 
     .contact-grid {
-
       display: grid;
 
-      grid-template-columns:
-        minmax(250px, 0.72fr)
-        minmax(0, 1.28fr);
+      grid-template-columns: 0.75fr 1.25fr;
 
-      gap: 90px;
+      gap: 80px;
 
       align-items: start;
-
     }
-
 
     .contact-intro {
-
-      color: var(--text);
-
       font-family: var(--serif);
 
-      font-size: clamp(1.8rem, 3vw, 2.55rem);
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
 
-      line-height: 1.17;
+      line-height: 1.2;
 
+      color: var(--text);
     }
-
 
     .contact-content {
-
       padding-top: 5px;
-
     }
-
 
     .contact-content > p {
-
       max-width: 650px;
 
-      margin-bottom: 29px;
+      margin-bottom: 28px;
 
-      font-size: 0.89rem;
-
+      font-size: 0.9rem;
     }
 
-
     .contact-email {
-
       display: inline-block;
-
-      max-width: 100%;
-
-      color: var(--text);
 
       font-family: var(--serif);
 
-      font-size: clamp(1.65rem, 3.1vw, 3rem);
-
       font-style: italic;
+
+      font-size: clamp(1.7rem, 3.2vw, 3rem);
 
       line-height: 1.1;
 
@@ -1738,43 +1288,28 @@
       word-break: break-word;
 
       transition: opacity 0.25s ease;
-
     }
-
 
     .contact-email:hover {
-
-      opacity: 0.5;
-
+      opacity: 0.55;
     }
 
-
     .social {
-
       margin-top: 30px;
 
       display: flex;
       flex-wrap: wrap;
 
       gap: 8px;
-
     }
 
-
     .social a {
-
-      min-height: 37px;
-
       padding: 9px 14px;
-
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
 
       border: 1px solid var(--line);
       border-radius: 999px;
 
-      font-size: 0.58rem;
+      font-size: 0.59rem;
       font-weight: 600;
 
       text-transform: uppercase;
@@ -1783,584 +1318,380 @@
       transition:
         background 0.25s ease,
         color 0.25s ease;
-
     }
-
 
     .social a:hover {
-
       background: var(--text);
       color: var(--bg);
-
     }
 
 
-    /* =====================================================
+    /* =========================================================
        FOOTER
-    ====================================================== */
+    ========================================================== */
 
     footer {
-
-      padding: 27px 0;
-
+      padding: 25px 0;
     }
 
-
     .footer-inner {
+      width: min(var(--container), calc(100% - 80px));
+      margin: 0 auto;
 
       display: flex;
       align-items: center;
       justify-content: space-between;
 
-      gap: 20px;
-
-      color: var(--muted);
-
-      font-size: 0.57rem;
+      font-size: 0.58rem;
 
       text-transform: uppercase;
       letter-spacing: 0.08em;
 
+      color: var(--muted);
     }
 
 
-    /* =====================================================
+    /* =========================================================
        TABLET
-    ====================================================== */
+    ========================================================== */
 
     @media (max-width: 950px) {
 
       .container,
       .header-inner,
       .footer-inner {
-
-        width: min(
-          var(--container),
-          calc(100% - 60px)
-        );
-
+        width: min(var(--container), calc(100% - 60px));
       }
-
 
       nav {
-
         gap: 20px;
-
       }
-
 
       .hero-grid {
-
-        gap: 55px;
-
-        grid-template-columns:
-          minmax(0, 1fr)
-          minmax(280px, 0.55fr);
-
+        gap: 50px;
       }
-
 
       .about-grid,
       .experience-header,
       .skills-grid,
       .contact-grid {
+        grid-template-columns: 0.65fr 1.35fr;
 
-        gap: 50px;
-
+        gap: 45px;
       }
-
-
-      .about-content {
-
-        grid-template-columns: 1fr;
-
-        gap: 30px;
-
-      }
-
 
       .experience-item {
-
-        grid-template-columns:
-          105px
-          minmax(0, 1fr)
-          35px;
+        grid-template-columns: 100px minmax(0, 1fr);
 
         gap: 22px;
-
-      }
-
-
-      .project-card {
-
-        padding: 24px;
-
-      }
-
-
-      .creative-card {
-
-        padding: 24px;
-
       }
 
     }
 
 
-    /* =====================================================
+    /* =========================================================
        MOBILE
-    ====================================================== */
+    ========================================================== */
 
     @media (max-width: 700px) {
-
-      :root {
-
-        --header-height: 68px;
-
-      }
-
 
       .container,
       .header-inner,
       .footer-inner {
-
         width: calc(100% - 40px);
-
       }
-
 
       header {
-
-        height: var(--header-height);
-
+        height: 68px;
       }
 
+      .header-inner {
+        width: calc(100% - 40px);
+      }
 
       nav {
-
         display: none;
-
       }
-
 
       #menu {
-
         display: flex;
-
       }
 
 
-      /* HERO */
+      /* -------------------------------------------------------
+         HERO
+      -------------------------------------------------------- */
 
       .hero {
-
         min-height: auto;
 
-        padding: 108px 0 65px;
-
+        padding: 110px 0 65px;
       }
-
 
       .hero-grid {
-
         grid-template-columns: 1fr;
 
-        gap: 48px;
-
+        gap: 45px;
       }
-
 
       .hero h1 {
-
-        font-size: clamp(
-          3.05rem,
-          14vw,
-          4.8rem
-        );
-
+        font-size: clamp(3rem, 14vw, 4.8rem);
       }
-
 
       .hero-description {
-
-        font-size: 0.86rem;
-
+        font-size: 0.87rem;
       }
-
 
       .hero-visual {
-
         justify-content: center;
-
       }
-
 
       .hero-photo {
-
-        width: min(84vw, 390px);
-
+        width: min(82vw, 380px);
       }
-
 
       .hero-photo::after {
-
-        inset: 10px -10px -10px 10px;
-
+        right: -10px;
+        bottom: -10px;
       }
-
 
       .hero-mark {
-
-        right: -7px;
-
-        bottom: 8px;
-
+        right: -8px;
+        bottom: 10px;
       }
 
 
-      /* EXPLORE */
+      /* -------------------------------------------------------
+         EXPLORE
+      -------------------------------------------------------- */
 
       .explore {
-
-        margin-top: 50px;
-
+        margin-top: 48px;
       }
-
 
       .explore-grid {
-
-        grid-template-columns: repeat(2, 1fr);
-
+        grid-template-columns: 1fr 1fr;
       }
-
 
       .explore-card {
-
-        min-height: 84px;
-
+        min-height: 82px;
       }
-
-
-      .explore-card:nth-child(3n) {
-
-        border-right: 1px solid var(--line);
-
-      }
-
 
       .explore-card:nth-child(2n) {
-
         border-right: 0;
-
       }
 
-
-      .explore-card:nth-child(-n + 4) {
-
+      .explore-card:nth-child(1),
+      .explore-card:nth-child(2),
+      .explore-card:nth-child(3),
+      .explore-card:nth-child(4) {
         border-bottom: 1px solid var(--line);
-
       }
 
 
-      .explore-card:nth-child(5),
-      .explore-card:nth-child(6) {
-
-        border-bottom: 0;
-
-      }
-
-
-      /* SECTIONS */
+      /* -------------------------------------------------------
+         SECTIONS
+      -------------------------------------------------------- */
 
       section {
-
-        padding: 76px 0;
-
+        padding: 72px 0;
       }
-
 
       .section-heading {
-
-        margin-bottom: 39px;
-
+        margin-bottom: 38px;
       }
-
 
       .section-heading h2 {
-
-        font-size: clamp(
-          2.8rem,
-          13vw,
-          4.5rem
-        );
-
+        font-size: clamp(2.7rem, 13vw, 4.4rem);
       }
 
 
-      /* ABOUT */
+      /* -------------------------------------------------------
+         ABOUT
+      -------------------------------------------------------- */
 
       .about-grid,
       .experience-header,
       .skills-grid,
       .contact-grid {
-
         grid-template-columns: 1fr;
 
         gap: 35px;
-
       }
-
 
       .about-intro,
       .skills-intro,
       .contact-intro {
+        font-size: 1.7rem;
+      }
 
-        font-size: 1.72rem;
+      .about-content {
+        grid-template-columns: 1fr;
 
+        gap: 30px;
       }
 
 
-      /* EXPERIENCE */
+      /* -------------------------------------------------------
+         EXPERIENCE
+      -------------------------------------------------------- */
 
       .experience-header {
-
         margin-bottom: 28px;
-
       }
 
-
       .experience-item {
-
         grid-template-columns: 1fr;
 
         gap: 7px;
 
         padding: 24px 0;
+      }
 
+      .experience-date {
+        order: 0;
       }
 
 
-      .experience-arrow {
-
-        display: none;
-
-      }
-
-
-      /* PROJECTS */
+      /* -------------------------------------------------------
+         PROJECTS
+      -------------------------------------------------------- */
 
       .project-grid {
-
         grid-template-columns: 1fr;
-
       }
-
 
       .project-card.featured {
-
         grid-column: auto;
-
       }
-
 
       .project-card,
       .project-card.featured {
-
         min-height: 320px;
 
         padding: 23px;
-
       }
-
 
       .project-card h3,
       .project-card:not(.featured) h3 {
-
         margin-top: 38px;
 
         font-size: 2.2rem;
-
       }
-
 
       .project-bottom {
-
-        flex-direction: column;
-
         align-items: flex-start;
 
+        flex-direction: column;
       }
 
 
-      /* SKILLS */
+      /* -------------------------------------------------------
+         SKILLS
+      -------------------------------------------------------- */
 
       .skill-groups {
-
         grid-template-columns: 1fr;
 
         gap: 28px;
-
       }
-
 
       .education {
-
-        margin-top: 48px;
+        margin-top: 45px;
 
         grid-template-columns: 1fr;
-
       }
-
 
       .gpa {
-
         text-align: left;
-
       }
 
 
-      /* CREATIVE */
+      /* -------------------------------------------------------
+         CREATIVE
+      -------------------------------------------------------- */
 
       .creative-grid {
-
         grid-template-columns: 1fr;
-
       }
-
 
       .creative-card {
-
         padding: 23px;
-
       }
 
-
       .creative-card h3 {
-
         margin-top: 35px;
 
         font-size: 2.2rem;
-
       }
-
 
       .tiktok-stats {
-
         grid-template-columns: 1fr;
-
       }
 
-
       .tiktok-stat:not(:last-child) {
-
         border-right: 0;
 
         border-bottom: 1px solid var(--line);
-
       }
 
 
-      /* CONTACT */
+      /* -------------------------------------------------------
+         CONTACT
+      -------------------------------------------------------- */
 
       .contact-email {
-
-        font-size: 1.48rem;
-
+        font-size: 1.45rem;
       }
 
 
-      /* FOOTER */
+      /* -------------------------------------------------------
+         FOOTER
+      -------------------------------------------------------- */
 
       .footer-inner {
-
         align-items: flex-start;
 
         flex-direction: column;
 
         gap: 7px;
-
       }
 
     }
 
 
-    /* =====================================================
+    /* =========================================================
        SMALL MOBILE
-    ====================================================== */
+    ========================================================== */
 
     @media (max-width: 420px) {
 
       .container,
       .header-inner,
       .footer-inner {
-
         width: calc(100% - 30px);
-
       }
-
 
       .hero h1 {
-
-        font-size: 2.85rem;
-
+        font-size: 2.8rem;
       }
-
 
       .hero-photo {
-
-        width: 86vw;
-
+        width: 85vw;
       }
-
 
       .explore-grid {
-
         grid-template-columns: 1fr;
-
       }
-
 
       .explore-card {
-
         border-right: 0 !important;
 
-        border-bottom: 1px solid var(--line) !important;
-
+        border-bottom: 1px solid var(--line);
       }
-
 
       .explore-card:last-child {
-
-        border-bottom: 0 !important;
-
-      }
-
-
-      .contact-email {
-
-        font-size: 1.25rem;
-
-      }
-
-    }
-
-
-    /* =====================================================
-       REDUCED MOTION
-    ====================================================== */
-
-    @media (prefers-reduced-motion: reduce) {
-
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-
-        transition: none !important;
-
+        border-bottom: 0;
       }
 
     }
@@ -2373,24 +1704,19 @@
 <body>
 
 
-  <!-- =====================================================
+  <!-- =======================================================
        HEADER
-  ====================================================== -->
+  ======================================================== -->
 
   <header>
 
     <div class="header-inner">
 
-      <a
-        href="#home"
-        class="logo"
-        aria-label="Back to home"
-      >
+      <a href="#home" class="logo">
         TDL<span>.</span>
       </a>
 
-
-      <nav aria-label="Main navigation">
+      <nav>
 
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
@@ -2401,13 +1727,11 @@
 
       </nav>
 
-
       <button
         id="menu"
         type="button"
         aria-label="Open navigation"
         aria-expanded="false"
-        aria-controls="mobileMenu"
       >
         ☰
       </button>
@@ -2418,20 +1742,13 @@
 
 
 
-  <!-- =====================================================
+  <!-- =======================================================
        MOBILE MENU
-  ====================================================== -->
+  ======================================================== -->
 
-  <div
-    class="mobile-menu"
-    id="mobileMenu"
-    aria-hidden="true"
-  >
+  <div class="mobile-menu" id="mobileMenu">
 
-    <nav
-      class="mobile-nav"
-      aria-label="Mobile navigation"
-    >
+    <div class="mobile-nav">
 
       <a href="#about">
         About
@@ -2463,8 +1780,7 @@
         <span>06 ↗</span>
       </a>
 
-    </nav>
-
+    </div>
 
     <div class="mobile-footer">
 
@@ -2482,14 +1798,11 @@
 
 
 
-  <!-- =====================================================
+  <!-- =======================================================
        HERO
-  ====================================================== -->
+  ======================================================== -->
 
-  <section
-    class="hero"
-    id="home"
-  >
+  <section class="hero" id="home">
 
     <div class="container">
 
@@ -2506,12 +1819,10 @@
             BUSINESS · MARKETING · CONSUMER INSIGHTS
           </div>
 
-
           <h1>
             Turning ideas into
             <i>meaningful strategies.</i>
           </h1>
-
 
           <div class="hero-tags">
 
@@ -2522,17 +1833,13 @@
 
           </div>
 
-
           <p class="hero-description">
-
-            Business Management graduate with hands-on
-            experience in <strong>marketing</strong>,
+            Business Management graduate with hands-on experience in
+            <strong>marketing</strong>,
             <strong>consumer research</strong>,
             <strong>customer acquisition</strong>,
             and <strong>business operations</strong>.
-
           </p>
-
 
           <div class="button-row">
 
@@ -2557,20 +1864,16 @@
         </div>
 
 
-
         <div class="hero-visual">
 
           <div class="hero-photo">
 
             <img
               src="images/profile-photo.jpg"
-              alt="Portrait of Tamimmah Disma Lestari"
+              alt="Tamimmah Disma Lestari"
             >
 
-            <div
-              class="hero-mark"
-              aria-hidden="true"
-            >
+            <div class="hero-mark">
               TDL
             </div>
 
@@ -2582,16 +1885,15 @@
 
 
 
-      <!-- =================================================
-           EXPLORE PORTFOLIO
-      ================================================== -->
+      <!-- =====================================================
+           EXPLORE
+      ====================================================== -->
 
       <div class="explore">
 
         <div class="explore-title">
           Explore my portfolio
         </div>
-
 
         <div class="explore-grid">
 
@@ -2708,14 +2010,13 @@
 
 
 
-  <!-- =====================================================
+  <!-- =======================================================
        01 / ABOUT
-  ====================================================== -->
+  ======================================================== -->
 
   <section id="about">
 
     <div class="container">
-
 
       <div class="section-heading">
 
@@ -2731,17 +2032,15 @@
       </div>
 
 
-
       <div class="about-grid">
 
 
         <div class="about-intro">
 
-          I combine business thinking with an interest
-          in people, brands, and creative communication.
+          I combine business thinking with an interest in
+          people, brands, and creative communication.
 
         </div>
-
 
 
         <div class="about-content">
@@ -2749,36 +2048,26 @@
           <div>
 
             <p>
-
-              I am a
-              <strong>Business Management graduate from
-              Institut Teknologi Bandung</strong>
-              with a concentration in
-              <strong>Management & Marketing</strong>.
-
+              I am a <strong>Business Management graduate from
+              Institut Teknologi Bandung</strong> with a
+              concentration in <strong>Management &
+              Marketing</strong>.
             </p>
 
-
             <p>
-
               My experience sits at the intersection of
-              <strong>marketing, consumer behavior,
-              business development, and entrepreneurship</strong>.
-
+              <strong>marketing, consumer behavior, business
+              development, and entrepreneurship</strong>.
             </p>
 
-
             <p>
-
-              I enjoy understanding what makes people
-              choose, engage with, and remember a product —
-              then turning those insights into
+              I enjoy understanding what makes people choose,
+              engage with, and remember a product — then
+              turning those insights into
               <strong>practical business strategies</strong>.
-
             </p>
 
           </div>
-
 
 
           <div>
@@ -2789,35 +2078,19 @@
                 Areas of Interest
               </h3>
 
-
               <ul>
 
-                <li>
-                  Consumer Behavior
-                </li>
-
-                <li>
-                  Marketing Strategy
-                </li>
-
-                <li>
-                  Brand Development
-                </li>
-
-                <li>
-                  Business Development
-                </li>
-
-                <li>
-                  Creative Strategy
-                </li>
+                <li>Consumer Behavior</li>
+                <li>Marketing Strategy</li>
+                <li>Brand Development</li>
+                <li>Business Development</li>
+                <li>Creative Strategy</li>
 
               </ul>
 
             </div>
 
           </div>
-
 
         </div>
 
@@ -2829,14 +2102,13 @@
 
 
 
-  <!-- =====================================================
+  <!-- =======================================================
        02 / EXPERIENCE
-  ====================================================== -->
+  ======================================================== -->
 
   <section id="experience">
 
     <div class="container">
-
 
       <div class="section-heading">
 
@@ -2852,21 +2124,17 @@
       </div>
 
 
-
       <div class="experience-header">
 
         <div></div>
 
         <p class="experience-intro">
-
-          Experience across entrepreneurship,
-          marketing, business operations, digital business,
-          and project-based work.
-
+          Experience across entrepreneurship, marketing,
+          business operations, digital business, and
+          project-based work.
         </p>
 
       </div>
-
 
 
       <div class="experience-list">
@@ -2879,7 +2147,6 @@
           <time class="experience-date">
             2020–2021
           </time>
-
 
           <div>
 
@@ -2895,30 +2162,18 @@
 
             </h3>
 
-
             <div class="experience-role">
               Co-Founder & Marketing Lead
             </div>
 
-
             <p class="experience-description">
-
               Co-founded a platform for
               <strong>business webinars and competitions</strong>
               backed by CIEL SBM ITB. Led
               <strong>marketing initiatives, event promotion,
               audience engagement, and communications</strong>.
-
             </p>
 
-          </div>
-
-
-          <div
-            class="experience-arrow"
-            aria-hidden="true"
-          >
-            ↗
           </div>
 
         </article>
@@ -2932,7 +2187,6 @@
           <time class="experience-date">
             2021–2025
           </time>
-
 
           <div>
 
@@ -2948,14 +2202,11 @@
 
             </h3>
 
-
             <div class="experience-role">
               Founder / Owner
             </div>
 
-
             <p class="experience-description">
-
               Built and managed an
               <strong>international digital business</strong>
               serving customers across
@@ -2963,17 +2214,8 @@
               India, the US, Europe, and the Middle East</strong>.
               Managed pricing, customer acquisition, operations,
               and retention.
-
             </p>
 
-          </div>
-
-
-          <div
-            class="experience-arrow"
-            aria-hidden="true"
-          >
-            ↗
           </div>
 
         </article>
@@ -2988,38 +2230,25 @@
             2024–2026
           </time>
 
-
           <div>
 
             <h3>
               PT Sari Rasa
             </h3>
 
-
             <div class="experience-role">
               Business Partner
             </div>
 
-
             <p class="experience-description">
-
               Supported the distribution of
               <strong>traditional snack products to local
               supermarkets</strong>. Involved in business
               operations, market development, distribution,
               and monitoring sales performance across
               <strong>approximately 50 supermarkets</strong>.
-
             </p>
 
-          </div>
-
-
-          <div
-            class="experience-arrow"
-            aria-hidden="true"
-          >
-            ↗
           </div>
 
         </article>
@@ -3034,37 +2263,24 @@
             2026 · Project-Based
           </time>
 
-
           <div>
 
             <h3>
               PT Cahaya Segara Indonesia
             </h3>
 
-
             <div class="experience-role">
               Freelance Administrative & Executive Support
             </div>
 
-
             <p class="experience-description">
-
               Prepared
               <strong>business documentation, reports,
               proposals, and tender materials</strong>,
               while supporting administrative and
               project-related activities.
-
             </p>
 
-          </div>
-
-
-          <div
-            class="experience-arrow"
-            aria-hidden="true"
-          >
-            ↗
           </div>
 
         </article>
@@ -3078,7 +2294,6 @@
           <time class="experience-date">
             2018–2019
           </time>
-
 
           <div>
 
@@ -3094,30 +2309,18 @@
 
             </h3>
 
-
             <div class="experience-role">
               Chief Marketing Officer
             </div>
 
-
             <p class="experience-description">
-
               Led
               <strong>marketing and brand communication</strong>
               for an early-stage environmental startup,
               including promotional activities, audience
               engagement, and marketing direction.
-
             </p>
 
-          </div>
-
-
-          <div
-            class="experience-arrow"
-            aria-hidden="true"
-          >
-            ↗
           </div>
 
         </article>
@@ -3132,37 +2335,24 @@
             2018–2021
           </time>
 
-
           <div>
 
             <h3>
               Techno Entrepreneur Club (TEC), ITB
             </h3>
 
-
             <div class="experience-role">
               Student Entrepreneur
             </div>
 
-
             <p class="experience-description">
-
               Participated in entrepreneurial activities
               involving
               <strong>business development, marketing,
               project execution, and startup-related
               initiatives</strong>.
-
             </p>
 
-          </div>
-
-
-          <div
-            class="experience-arrow"
-            aria-hidden="true"
-          >
-            ↗
           </div>
 
         </article>
@@ -3176,14 +2366,13 @@
 
 
 
-  <!-- =====================================================
+  <!-- =======================================================
        03 / PROJECTS
-  ====================================================== -->
+  ======================================================== -->
 
   <section id="projects">
 
     <div class="container">
-
 
       <div class="section-heading">
 
@@ -3199,15 +2388,11 @@
       </div>
 
 
-
       <p class="projects-intro">
-
         A selection of projects exploring
         <strong>consumer behavior, brand strategy,
         marketing, business, and digital culture</strong>.
-
       </p>
-
 
 
       <div class="project-grid">
@@ -3227,30 +2412,23 @@
               01 · Consumer Research
             </div>
 
-
             <h3>
               Understanding
               <i>Purchase Intention.</i>
             </h3>
 
-
             <p class="project-description">
-
-              Quantitative research investigating the
-              factors influencing
-              <strong>consumer purchase intention toward
-              traditional chips in local supermarkets
+              Quantitative research investigating the factors
+              influencing <strong>consumer purchase intention
+              toward traditional chips in local supermarkets
               in Jakarta</strong>.
-
             </p>
-
 
             <div class="project-bottom">
 
               <span class="project-meta">
                 Thesis · SPSS · Regression
               </span>
-
 
               <span class="project-link">
                 View Project ↗
@@ -3274,28 +2452,22 @@
               02 · Brand Strategy
             </div>
 
-
             <h3>
               Buavita
               <i>Brand Strategy.</i>
             </h3>
 
-
             <p class="project-description">
-
               Brand strategy project focused on
               <strong>consumer understanding, positioning,
               communication, and strategic recommendations</strong>.
-
             </p>
-
 
             <div class="project-bottom">
 
               <span class="project-meta">
                 Consumer Research · Strategy
               </span>
-
 
               <span class="project-link">
                 View Project ↗
@@ -3323,29 +2495,23 @@
               03 · Published Work
             </div>
 
-
             <h3>
               Korean Beauty
               <i>Branding.</i>
             </h3>
 
-
             <p class="project-description">
-
               Published article examining
               <strong>branding strategies within the Korean
               beauty industry</strong> and how brands create
               consumer appeal.
-
             </p>
-
 
             <div class="project-bottom">
 
               <span class="project-meta">
                 Marketing · Branding · Published
               </span>
-
 
               <span class="project-link">
                 Read Article ↗
@@ -3373,29 +2539,23 @@
               04 · Independent Writing
             </div>
 
-
             <h3>
               The Rollercoaster Ride
               <i>of Twitch.</i>
             </h3>
 
-
             <p class="project-description">
-
               An independent analysis of Twitch's journey
               through <strong>Google, Yahoo, and Amazon</strong>,
               exploring acquisition strategy and digital
               platform growth.
-
             </p>
-
 
             <div class="project-bottom">
 
               <span class="project-meta">
                 Business · Technology · Strategy
               </span>
-
 
               <span class="project-link">
                 Read Article ↗
@@ -3416,14 +2576,13 @@
 
 
 
-  <!-- =====================================================
+  <!-- =======================================================
        04 / SKILLS & EDUCATION
-  ====================================================== -->
+  ======================================================== -->
 
   <section id="skills">
 
     <div class="container">
-
 
       <div class="section-heading">
 
@@ -3439,7 +2598,6 @@
       </div>
 
 
-
       <div class="skills-grid">
 
 
@@ -3450,7 +2608,6 @@
           and creative execution.
 
         </div>
-
 
 
         <div class="skill-groups">
@@ -3476,7 +2633,6 @@
           </div>
 
 
-
           <div class="skill-group">
 
             <h3>
@@ -3497,7 +2653,6 @@
           </div>
 
 
-
           <div class="skill-group">
 
             <h3>
@@ -3515,7 +2670,6 @@
             </div>
 
           </div>
-
 
 
           <div class="skill-group">
@@ -3547,18 +2701,15 @@
 
       <div class="education">
 
-
         <div>
 
           <div class="education-label">
             Education
           </div>
 
-
           <h3>
             Institut Teknologi Bandung
           </h3>
-
 
           <p>
             Bachelor of Business Management ·
@@ -3580,7 +2731,6 @@
 
         </div>
 
-
       </div>
 
     </div>
@@ -3589,14 +2739,13 @@
 
 
 
-  <!-- =====================================================
+  <!-- =======================================================
        05 / CREATIVE SKILLS
-  ====================================================== -->
+  ======================================================== -->
 
   <section id="creative">
 
     <div class="container">
-
 
       <div class="section-heading">
 
@@ -3612,14 +2761,10 @@
       </div>
 
 
-
       <p class="creative-intro">
-
-        Beyond strategy and research, I also enjoy
-        translating ideas into visual and digital content.
-
+        Beyond strategy and research, I also enjoy translating
+        ideas into visual and digital content.
       </p>
-
 
 
       <div class="creative-grid">
@@ -3633,19 +2778,15 @@
             Adobe Photoshop
           </div>
 
-
           <h3>
             Visual
             <i>communication.</i>
           </h3>
 
-
           <p class="creative-description">
-
-            Experience creating visual content with a focus
-            on <strong>composition, branding, social media,
+            Experience creating visual content with a focus on
+            <strong>composition, branding, social media,
             and visual communication</strong>.
-
           </p>
 
 
@@ -3653,7 +2794,7 @@
 
             <img
               src="images/photoshop-works.png"
-              alt="Selected Adobe Photoshop creative works"
+              alt="Photoshop creative works"
             >
 
           </div>
@@ -3684,24 +2825,19 @@
             Content & Social Media
           </div>
 
-
           <h3>
             Understanding
             <i>attention.</i>
           </h3>
 
-
           <p class="creative-description">
-
-            Created and managed short-form content with
-            a focus on <strong>audience behavior, content
-            performance, and organic reach</strong>.
-
+            Created and managed short-form content with a focus
+            on <strong>audience behavior, content performance,
+            and organic reach</strong>.
           </p>
 
 
           <div class="tiktok-stats">
-
 
             <div class="tiktok-stat">
 
@@ -3741,16 +2877,13 @@
 
             </div>
 
-
           </div>
 
 
           <p class="tiktok-insight">
-
             Demonstrated ability to understand
-            <strong>what captures attention and drives
-            engagement</strong> in short-form content.
-
+            <strong>what captures attention and drives engagement</strong>
+            in short-form content.
           </p>
 
 
@@ -3788,14 +2921,13 @@
 
 
 
-  <!-- =====================================================
+  <!-- =======================================================
        06 / CONTACT
-  ====================================================== -->
+  ======================================================== -->
 
   <section id="contact">
 
     <div class="container">
-
 
       <div class="section-heading">
 
@@ -3811,27 +2943,24 @@
       </div>
 
 
-
       <div class="contact-grid">
 
 
         <div class="contact-intro">
 
-          Open to opportunities where strategy,
-          business, and creativity can work together.
+          Open to opportunities where
+          strategy, business, and creativity
+          can work together.
 
         </div>
-
 
 
         <div class="contact-content">
 
           <p>
-
             Open to opportunities in
             <strong>marketing, business development,
             consumer insights, and creative strategy</strong>.
-
           </p>
 
 
@@ -3845,7 +2974,6 @@
 
           <div class="social">
 
-
             <a
               href="https://wa.me/6282130815541"
               target="_blank"
@@ -3853,7 +2981,6 @@
             >
               WhatsApp ↗
             </a>
-
 
             <a
               href="https://www.instagram.com/miramimmah/"
@@ -3863,7 +2990,6 @@
               Instagram ↗
             </a>
 
-
             <a
               href="https://www.instagram.com/tamidisma/"
               target="_blank"
@@ -3872,11 +2998,9 @@
               Instagram 02 ↗
             </a>
 
-
           </div>
 
         </div>
-
 
       </div>
 
@@ -3886,9 +3010,9 @@
 
 
 
-  <!-- =====================================================
+  <!-- =======================================================
        FOOTER
-  ====================================================== -->
+  ======================================================== -->
 
   <footer>
 
@@ -3908,30 +3032,20 @@
 
 
 
-  <!-- =====================================================
+  <!-- =======================================================
        JAVASCRIPT
-  ====================================================== -->
+  ======================================================== -->
 
   <script>
 
-    const menuButton =
-      document.getElementById("menu");
-
-    const mobileMenu =
-      document.getElementById("mobileMenu");
-
-    const mobileLinks =
-      document.querySelectorAll(".mobile-nav a");
+    const menuButton = document.getElementById("menu");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileLinks = document.querySelectorAll(".mobile-nav a");
 
 
     function openMenu() {
 
       mobileMenu.classList.add("active");
-
-      mobileMenu.setAttribute(
-        "aria-hidden",
-        "false"
-      );
 
       document.body.classList.add("menu-open");
 
@@ -3953,11 +3067,6 @@
     function closeMenu() {
 
       mobileMenu.classList.remove("active");
-
-      mobileMenu.setAttribute(
-        "aria-hidden",
-        "true"
-      );
 
       document.body.classList.remove("menu-open");
 
@@ -4001,7 +3110,11 @@
 
         link.addEventListener(
           "click",
-          closeMenu
+          function () {
+
+            closeMenu();
+
+          }
         );
 
       }
@@ -4012,10 +3125,7 @@
       "keydown",
       function (event) {
 
-        if (
-          event.key === "Escape" &&
-          mobileMenu.classList.contains("active")
-        ) {
+        if (event.key === "Escape") {
 
           closeMenu();
 
