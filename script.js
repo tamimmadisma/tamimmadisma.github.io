@@ -12,11 +12,8 @@
 const body = document.body;
 
 const header = document.getElementById("siteHeader");
-
 const menuToggle = document.getElementById("menuToggle");
-
 const mobileNav = document.getElementById("mobileNav");
-
 const currentYear = document.getElementById("currentYear");
 
 const prefersReducedMotion = window.matchMedia(
@@ -74,6 +71,35 @@ updateHeader();
    MOBILE MENU
 ========================================================= */
 
+function syncMenuAccessibility() {
+
+  if (!mobileNav || !menuToggle) {
+    return;
+  }
+
+  const isOpen =
+    mobileNav.classList.contains("active");
+
+  mobileNav.setAttribute(
+    "aria-hidden",
+    isOpen ? "false" : "true"
+  );
+
+  menuToggle.setAttribute(
+    "aria-expanded",
+    isOpen ? "true" : "false"
+  );
+
+  menuToggle.setAttribute(
+    "aria-label",
+    isOpen
+      ? "Close navigation"
+      : "Open navigation"
+  );
+
+}
+
+
 function openMenu() {
 
   if (!mobileNav || !menuToggle) {
@@ -82,18 +108,9 @@ function openMenu() {
 
   mobileNav.classList.add("active");
   menuToggle.classList.add("active");
-
   body.classList.add("menu-open");
 
-  menuToggle.setAttribute(
-    "aria-expanded",
-    "true"
-  );
-
-  menuToggle.setAttribute(
-    "aria-label",
-    "Close navigation"
-  );
+  syncMenuAccessibility();
 
 }
 
@@ -106,18 +123,9 @@ function closeMenu() {
 
   mobileNav.classList.remove("active");
   menuToggle.classList.remove("active");
-
   body.classList.remove("menu-open");
 
-  menuToggle.setAttribute(
-    "aria-expanded",
-    "false"
-  );
-
-  menuToggle.setAttribute(
-    "aria-label",
-    "Open navigation"
-  );
+  syncMenuAccessibility();
 
 }
 
@@ -156,7 +164,9 @@ mobileLinks.forEach(link => {
   link.addEventListener(
     "click",
     () => {
+
       closeMenu();
+
     }
   );
 
@@ -178,6 +188,10 @@ document.addEventListener(
     ) {
 
       closeMenu();
+
+      if (menuToggle) {
+        menuToggle.focus();
+      }
 
     }
 
@@ -270,8 +284,8 @@ anchorLinks.forEach(link => {
       });
 
       /*
-        Update URL without forcing
-        another jump.
+        Update the URL without causing
+        another browser jump.
       */
 
       if (
@@ -294,7 +308,7 @@ anchorLinks.forEach(link => {
 
 
 /* =========================================================
-   JOURNEY — MILESTONES
+   JOURNEY — INTERACTIVE ROADMAP
 ========================================================= */
 
 const milestones = document.querySelectorAll(
@@ -302,19 +316,24 @@ const milestones = document.querySelectorAll(
 );
 
 
+/*
+  Close every milestone except
+  the one supplied.
+*/
+
 function closeAllMilestones(
   except = null
 ) {
 
-  milestones.forEach(item => {
+  milestones.forEach(milestone => {
 
-    if (item === except) {
+    if (milestone === except) {
       return;
     }
 
-    item.classList.remove("active");
+    milestone.classList.remove("active");
 
-    item.setAttribute(
+    milestone.setAttribute(
       "aria-expanded",
       "false"
     );
@@ -323,6 +342,10 @@ function closeAllMilestones(
 
 }
 
+
+/*
+  Open / close a milestone.
+*/
 
 function toggleMilestone(
   milestone
@@ -351,12 +374,12 @@ function toggleMilestone(
 }
 
 
+/*
+  Initialize every roadmap milestone.
+*/
+
 milestones.forEach(
   (milestone, index) => {
-
-    /*
-      Accessibility
-    */
 
     milestone.setAttribute(
       "tabindex",
@@ -375,7 +398,7 @@ milestones.forEach(
 
 
     /*
-      Click
+      Click interaction
     */
 
     milestone.addEventListener(
@@ -391,7 +414,7 @@ milestones.forEach(
 
 
     /*
-      Keyboard
+      Keyboard interaction
     */
 
     milestone.addEventListener(
@@ -416,7 +439,7 @@ milestones.forEach(
 
 
     /*
-      Stagger
+      Small stagger on entrance.
     */
 
     if (!prefersReducedMotion) {
@@ -425,6 +448,36 @@ milestones.forEach(
         `${Math.min(index * 45, 250)}ms`;
 
     }
+
+  }
+);
+
+
+/* =========================================================
+   JOURNEY — SKILL CHIPS
+========================================================= */
+
+/*
+  Skill chips are intentionally static.
+
+  They do not need separate interaction.
+  Their purpose is to make each milestone
+  immediately scannable for employers.
+*/
+
+const journeySkills =
+  document.querySelectorAll(
+    ".journey-skill"
+  );
+
+
+journeySkills.forEach(
+  skill => {
+
+    skill.setAttribute(
+      "tabindex",
+      "-1"
+    );
 
   }
 );
@@ -559,6 +612,8 @@ const revealSelector = [
 
   ".journey-intro",
 
+  ".roadmap",
+
   ".milestone",
 
   ".experience-row",
@@ -655,8 +710,8 @@ if (
 } else {
 
   /*
-    Reduced motion / old browsers:
-    show everything immediately.
+    Reduced motion / unsupported browsers:
+    reveal everything immediately.
   */
 
   revealTargets.forEach(
@@ -699,17 +754,6 @@ experienceRows.forEach(
 /* =========================================================
    PROJECT MICRO-MOTION
 ========================================================= */
-
-/*
-  Desktop only.
-
-  The project visual follows the cursor
-  very slightly.
-
-  Kept intentionally subtle so the
-  portfolio still feels editorial
-  and professional.
-*/
 
 const projectCards =
   document.querySelectorAll(
@@ -850,7 +894,7 @@ function updatePhotoshopParallax() {
 
 
   /*
-    Don't calculate when the image
+    Stop calculations when the image
     is completely outside the viewport.
   */
 
@@ -927,14 +971,8 @@ if (photoshopImage) {
 
 
 /* =========================================================
-   CREATIVE — PIECE HOVER
+   CREATIVE — TACTILE HOVER
 ========================================================= */
-
-/*
-  Gives the Creative section a little
-  physical / tactile feeling without
-  adding unnecessary animation.
-*/
 
 const creativePieces =
   document.querySelectorAll(
@@ -1125,7 +1163,7 @@ window.addEventListener(
 
 
           /*
-            Reset project transforms.
+            Reset project visual transforms.
           */
 
           projectCards.forEach(
@@ -1181,8 +1219,8 @@ images.forEach(
       () => {
 
         /*
-          Keep the layout intact if an
-          image cannot be loaded.
+          Keep the surrounding layout intact
+          if an image fails to load.
         */
 
         image.style.opacity =
@@ -1222,83 +1260,12 @@ if (menuToggle) {
 }
 
 
-/* =========================================================
-   INITIAL MOBILE NAV STATE
-========================================================= */
-
 if (mobileNav) {
 
   mobileNav.setAttribute(
     "aria-hidden",
     "true"
   );
-
-}
-
-
-/* =========================================================
-   KEEP ARIA STATE IN SYNC
-========================================================= */
-
-if (
-  menuToggle &&
-  mobileNav
-) {
-
-  const syncMenuAccessibility =
-    () => {
-
-      const isOpen =
-        mobileNav.classList.contains(
-          "active"
-        );
-
-
-      mobileNav.setAttribute(
-        "aria-hidden",
-        isOpen
-          ? "false"
-          : "true"
-      );
-
-    };
-
-
-  const originalOpenMenu =
-    openMenu;
-
-
-  const originalCloseMenu =
-    closeMenu;
-
-
-  /*
-    The menu's visual state is already
-    controlled by openMenu / closeMenu.
-    Sync accessibility after each
-    state change through the toggle.
-  */
-
-  menuToggle.addEventListener(
-    "click",
-    () => {
-
-      window.requestAnimationFrame(
-        syncMenuAccessibility
-      );
-
-    }
-  );
-
-
-  if (mobileNav) {
-
-    mobileNav.addEventListener(
-      "transitionend",
-      syncMenuAccessibility
-    );
-
-  }
 
 }
 
@@ -1312,6 +1279,8 @@ document.addEventListener(
   () => {
 
     updateHeader();
+
+    syncMenuAccessibility();
 
     updatePhotoshopParallax();
 
