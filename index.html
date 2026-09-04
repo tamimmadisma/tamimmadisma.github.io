@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
@@ -9,14 +8,12 @@
 
   <title>Tamimmah Disma Lestari — Marketing & Consumer Insights</title>
 
-<meta
-name="description"
-content="Tamimmah Disma Lestari — Business Management graduate specializing in marketing, consumer insights, business development, and creative strategy."
-
->
+  <meta
+    name="description"
+    content="Tamimmah Disma Lestari — Business Management graduate specializing in marketing, consumer insights, business development, and creative strategy."
+  >
 
   <!-- GOOGLE FONTS -->
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -24,6 +21,7 @@ content="Tamimmah Disma Lestari — Business Management graduate specializing in
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;1,500&display=swap"
     rel="stylesheet"
   >
+
 
   <style>
 
@@ -80,12 +78,24 @@ content="Tamimmah Disma Lestari — Business Management graduate specializing in
     :root {
       --bg: #f7f6f2;
       --text: #171717;
-      --muted: #777;
-      --line: #d8d6cf;
+      --muted: #737373;
+      --line: #d7d5ce;
       --soft: #eceae3;
 
       --sans: "DM Sans", sans-serif;
       --serif: "Playfair Display", serif;
+
+      --container: 1180px;
+    }
+
+
+    /* =========================================================
+       GLOBAL CONTAINER
+    ========================================================= */
+
+    .container {
+      width: min(var(--container), calc(100% - 80px));
+      margin: 0 auto;
     }
 
 
@@ -97,26 +107,32 @@ content="Tamimmah Disma Lestari — Business Management graduate specializing in
       position: fixed;
       top: 0;
       left: 0;
+
       width: 100%;
-      height: 76px;
+      height: 74px;
 
-      padding: 0 5vw;
+      z-index: 1000;
 
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      background: rgba(247, 246, 242, 0.92);
 
-      background: rgba(247, 246, 242, 0.9);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
 
       border-bottom: 1px solid rgba(23, 23, 23, 0.08);
+    }
 
-      z-index: 1000;
+    .header-inner {
+      width: min(var(--container), calc(100% - 80px));
+      height: 100%;
+      margin: 0 auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
     .logo {
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       font-weight: 700;
       letter-spacing: -0.06em;
     }
@@ -129,17 +145,17 @@ content="Tamimmah Disma Lestari — Business Management graduate specializing in
     nav {
       display: flex;
       align-items: center;
-      gap: 28px;
+      gap: 30px;
     }
 
     nav a {
       position: relative;
 
-      font-size: 0.72rem;
+      font-size: 0.67rem;
       font-weight: 600;
 
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
     }
 
     nav a::after {
@@ -147,7 +163,7 @@ content="Tamimmah Disma Lestari — Business Management graduate specializing in
 
       position: absolute;
       left: 0;
-      bottom: -5px;
+      bottom: -6px;
 
       width: 0;
       height: 1px;
@@ -161,11 +177,19 @@ content="Tamimmah Disma Lestari — Business Management graduate specializing in
       width: 100%;
     }
 
+
+    /* =========================================================
+       MENU BUTTON
+    ========================================================= */
+
     #menu {
       display: none;
 
-      width: 44px;
-      height: 44px;
+      width: 42px;
+      height: 42px;
+
+      align-items: center;
+      justify-content: center;
 
       border: 1px solid var(--text);
       border-radius: 50%;
@@ -175,10 +199,8 @@ content="Tamimmah Disma Lestari — Business Management graduate specializing in
 
       cursor: pointer;
 
-      align-items: center;
-      justify-content: center;
-
-      font-size: 1.1rem;
+      font-size: 1.15rem;
+      line-height: 1;
     }
 
 
@@ -192,24 +214,24 @@ content="Tamimmah Disma Lestari — Business Management graduate specializing in
 
       z-index: 999;
 
-      padding: 105px 7vw 35px;
+      padding: 105px 6vw 35px;
 
       background: var(--bg);
-
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
 
       opacity: 0;
       visibility: hidden;
       pointer-events: none;
 
-      transform: translateY(-15px);
+      transform: translateY(-10px);
 
       transition:
         opacity 0.25s ease,
-        transform 0.25s ease,
-        visibility 0.25s ease;
+        visibility 0.25s ease,
+        transform 0.25s ease;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .mobile-menu.active {
@@ -225,32 +247,31 @@ content="Tamimmah Disma Lestari — Business Management graduate specializing in
     }
 
     .mobile-nav a {
+      padding: 15px 0;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
 
-      padding: 14px 0;
-
       border-bottom: 1px solid var(--line);
 
-      font-size: clamp(1.5rem, 6vw, 2.5rem);
-
+      font-size: clamp(1.5rem, 7vw, 2.6rem);
       letter-spacing: -0.05em;
     }
 
     .mobile-nav a span {
       font-family: var(--serif);
       font-style: italic;
-      font-size: 0.75em;
+      font-size: 0.55em;
     }
 
     .mobile-footer {
       display: flex;
       justify-content: space-between;
+
       gap: 20px;
 
-      font-size: 0.6rem;
-
+      font-size: 0.58rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
 
@@ -259,26 +280,27 @@ content="Tamimmah Disma Lestari — Business Management graduate specializing in
 
 
     /* =========================================================
-       GENERAL
+       GENERAL SECTIONS
     ========================================================= */
 
     section {
-      padding: 95px 7vw;
+      padding: 105px 0;
+
       border-bottom: 1px solid var(--line);
 
-      scroll-margin-top: 76px;
+      scroll-margin-top: 74px;
     }
 
-    .section-layout {
-      display: grid;
-      grid-template-columns: minmax(220px, 0.65fr) minmax(0, 1.35fr);
-      gap: 8vw;
-
-      align-items: start;
+    .section-heading {
+      margin-bottom: 55px;
     }
 
-    .section-label {
-      font-size: 0.65rem;
+    .section-number {
+      display: block;
+
+      margin-bottom: 14px;
+
+      font-size: 0.63rem;
       font-weight: 700;
 
       text-transform: uppercase;
@@ -287,18 +309,16 @@ content="Tamimmah Disma Lestari — Business Management graduate specializing in
       color: var(--muted);
     }
 
-    .section-title {
-      margin-top: 25px;
+    .section-heading h2 {
+      font-size: clamp(2.8rem, 5vw, 5rem);
 
-      font-size: clamp(2.6rem, 4.7vw, 5.2rem);
-
-      line-height: 1.02;
-      letter-spacing: -0.06em;
+      line-height: 0.98;
+      letter-spacing: -0.065em;
 
       font-weight: 500;
     }
 
-    .section-title i {
+    .section-heading h2 i {
       font-family: var(--serif);
       font-weight: 500;
     }
@@ -320,46 +340,52 @@ content="Tamimmah Disma Lestari — Business Management graduate specializing in
     .hero {
       min-height: 100vh;
 
-      padding: 125px 7vw 70px;
+      padding: 125px 0 80px;
 
-      display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(250px, 0.55fr);
-
-      gap: 7vw;
-
+      display: flex;
       align-items: center;
 
-      position: relative;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-grid {
+      display: grid;
+
+      grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
+
+      gap: 80px;
+
+      align-items: center;
     }
 
     .hero-name {
-      margin-bottom: 12px;
+      margin-bottom: 16px;
 
-      font-size: 0.68rem;
+      font-size: 0.65rem;
       font-weight: 700;
 
       text-transform: uppercase;
       letter-spacing: 0.15em;
     }
 
-    .hero-content > small {
-      display: block;
-
-      margin-bottom: 22px;
+    .hero-kicker {
+      margin-bottom: 20px;
 
       font-size: 0.65rem;
-      letter-spacing: 0.12em;
+
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
 
       color: var(--muted);
     }
 
     .hero h1 {
-      max-width: 760px;
+      max-width: 780px;
 
-      font-size: clamp(3rem, 5.5vw, 6rem);
+      font-size: clamp(3.5rem, 6.3vw, 6.8rem);
 
-      line-height: 1.03;
-      letter-spacing: -0.06em;
+      line-height: 0.98;
+      letter-spacing: -0.07em;
 
       font-weight: 500;
     }
@@ -369,44 +395,60 @@ content="Tamimmah Disma Lestari — Business Management graduate specializing in
       font-weight: 500;
     }
 
-    .hero-keywords {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
+    .hero-description {
+      max-width: 650px;
 
-      margin: 27px 0 22px;
+      margin-top: 27px;
+
+      font-size: 0.96rem;
     }
 
-    .hero-keywords span {
+
+    /* =========================================================
+       HERO TAGS
+    ========================================================= */
+
+    .hero-tags {
+      margin-top: 25px;
+
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 7px;
+    }
+
+    .hero-tags span {
       padding: 7px 12px;
 
       border: 1px solid var(--line);
       border-radius: 999px;
 
-      font-size: 0.65rem;
-    }
-
-    .hero-content > p {
-      max-width: 600px;
-      font-size: 0.95rem;
+      font-size: 0.63rem;
     }
 
 
     /* =========================================================
-       HERO CV BUTTON
+       BUTTONS
     ========================================================= */
 
-    .hero-buttons {
+    .button-row {
       margin-top: 28px;
+
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 9px;
     }
 
-    .btn {
+    .button {
       display: inline-flex;
+
       align-items: center;
       justify-content: center;
-      gap: 10px;
 
-      padding: 12px 20px;
+      gap: 9px;
+
+      padding: 11px 18px;
 
       border: 1px solid var(--text);
       border-radius: 999px;
@@ -414,58 +456,136 @@ content="Tamimmah Disma Lestari — Business Management graduate specializing in
       background: var(--text);
       color: var(--bg);
 
-      font-size: 0.67rem;
+      font-size: 0.62rem;
       font-weight: 700;
 
       text-transform: uppercase;
       letter-spacing: 0.08em;
 
       transition:
-        transform 0.25s ease,
         background 0.25s ease,
-        color 0.25s ease;
+        color 0.25s ease,
+        transform 0.25s ease;
     }
 
-    .btn:hover {
-      transform: translateY(-3px);
+    .button:hover {
+      background: transparent;
+      color: var(--text);
+
+      transform: translateY(-2px);
+    }
+
+    .button.secondary {
       background: transparent;
       color: var(--text);
     }
 
-
-    /* =========================================================
-       EXPLORE PORTFOLIO
-    ========================================================= */
-
-    .hero-explore {
-      margin-top: 38px;
-      max-width: 760px;
+    .button.secondary:hover {
+      background: var(--text);
+      color: var(--bg);
     }
 
-    .explore-label {
-      margin-bottom: 10px;
 
-      font-size: 0.62rem;
+    /* =========================================================
+       HERO PHOTO
+    ========================================================= */
+
+    .hero-visual {
+      position: relative;
+
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .hero-photo {
+      width: min(100%, 390px);
+
+      position: relative;
+    }
+
+    .hero-photo img {
+      width: 100%;
+
+      aspect-ratio: 0.82;
+
+      object-fit: cover;
+
+      filter: grayscale(100%);
+
+      transition: filter 0.4s ease;
+    }
+
+    .hero-photo:hover img {
+      filter: grayscale(0%);
+    }
+
+    .hero-photo::after {
+      content: "";
+
+      position: absolute;
+
+      right: -16px;
+      bottom: -16px;
+
+      width: 100%;
+      height: 100%;
+
+      border: 1px solid var(--line);
+
+      z-index: -1;
+    }
+
+    .hero-mark {
+      position: absolute;
+
+      right: -22px;
+      bottom: 15px;
+
+      font-family: var(--serif);
+      font-size: clamp(4rem, 8vw, 7rem);
+      font-style: italic;
+
+      line-height: 0.8;
+
+      color: #e3e1da;
+
+      z-index: -1;
+    }
+
+
+    /* =========================================================
+       EXPLORE
+    ========================================================= */
+
+    .explore {
+      margin-top: 65px;
+    }
+
+    .explore-title {
+      margin-bottom: 12px;
+
+      font-size: 0.63rem;
       font-weight: 700;
 
       text-transform: uppercase;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.13em;
 
       color: var(--muted);
     }
 
     .explore-grid {
       display: grid;
+
       grid-template-columns: repeat(4, 1fr);
 
       border-top: 1px solid var(--text);
       border-bottom: 1px solid var(--text);
     }
 
-    .explore-item {
-      min-height: 75px;
+    .explore-card {
+      min-height: 95px;
 
-      padding: 12px 15px;
+      padding: 15px 18px;
 
       display: flex;
       flex-direction: column;
@@ -475,25 +595,24 @@ content="Tamimmah Disma Lestari — Business Management graduate specializing in
 
       transition:
         background 0.25s ease,
-        padding 0.25s ease;
+        color 0.25s ease;
     }
 
-    .explore-item:last-child {
+    .explore-card:last-child {
       border-right: 0;
     }
 
-    .explore-item:hover {
+    .explore-card:hover {
       background: var(--text);
       color: var(--bg);
-      padding-left: 20px;
     }
 
     .explore-number {
-      font-size: 0.6rem;
+      font-size: 0.58rem;
       color: var(--muted);
     }
 
-    .explore-item:hover .explore-number {
+    .explore-card:hover .explore-number {
       color: #aaa;
     }
 
@@ -511,62 +630,67 @@ content="Tamimmah Disma Lestari — Business Management graduate specializing in
 
 
     /* =========================================================
-       HERO PHOTO
-    ========================================================= */
-
-    .hero-photo {
-      width: min(100%, 380px);
-      justify-self: end;
-
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero-photo img {
-      width: 100%;
-      aspect-ratio: 0.82;
-
-      object-fit: cover;
-
-      filter: grayscale(100%);
-
-      transition: filter 0.4s ease;
-    }
-
-    .hero-photo:hover img {
-      filter: grayscale(0%);
-    }
-
-    .initials {
-      position: absolute;
-
-      right: 1vw;
-      bottom: 3vw;
-
-      font-family: var(--serif);
-      font-size: clamp(5rem, 10vw, 10rem);
-      font-style: italic;
-
-      line-height: 0.8;
-
-      color: #e5e3dc;
-
-      pointer-events: none;
-      z-index: 1;
-    }
-
-
-    /* =========================================================
        ABOUT
     ========================================================= */
 
-    .about-copy {
-      max-width: 680px;
+    .about-grid {
+      display: grid;
+
+      grid-template-columns: 0.75fr 1.25fr;
+
+      gap: 80px;
     }
 
-    .about-copy p {
-      margin-bottom: 22px;
-      font-size: 0.98rem;
+    .about-intro {
+      font-family: var(--serif);
+
+      font-size: clamp(1.7rem, 3vw, 2.6rem);
+
+      line-height: 1.2;
+
+      color: var(--text);
+    }
+
+    .about-content {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 45px;
+    }
+
+    .about-content p {
+      margin-bottom: 20px;
+
+      font-size: 0.9rem;
+    }
+
+    .about-detail {
+      padding-top: 20px;
+
+      border-top: 1px solid var(--text);
+    }
+
+    .about-detail h3 {
+      margin-bottom: 15px;
+
+      font-size: 0.62rem;
+      font-weight: 700;
+
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+    }
+
+    .about-detail ul {
+      list-style: none;
+    }
+
+    .about-detail li {
+      padding: 7px 0;
+
+      border-bottom: 1px solid var(--line);
+
+      font-size: 0.78rem;
     }
 
 
@@ -574,32 +698,54 @@ content="Tamimmah Disma Lestari — Business Management graduate specializing in
        EXPERIENCE
     ========================================================= */
 
+    .experience-header {
+      display: grid;
+
+      grid-template-columns: 0.75fr 1.25fr;
+
+      gap: 80px;
+
+      margin-bottom: 35px;
+    }
+
+    .experience-intro {
+      max-width: 480px;
+
+      font-size: 0.92rem;
+    }
+
     .experience-list {
       border-top: 1px solid var(--text);
     }
 
     .experience-item {
       display: grid;
-      grid-template-columns: 115px 1fr;
 
-      gap: 30px;
+      grid-template-columns: 130px minmax(0, 1fr) auto;
+
+      gap: 35px;
 
       padding: 28px 0;
 
       border-bottom: 1px solid var(--line);
+
+      align-items: start;
     }
 
     .experience-date {
-      font-size: 0.65rem;
+      font-size: 0.62rem;
       font-weight: 600;
 
       color: var(--muted);
     }
 
     .experience-item h3 {
-      margin-bottom: 5px;
+      margin-bottom: 4px;
 
-      font-size: clamp(1.35rem, 2.2vw, 2rem);
+      font-size: clamp(1.35rem, 2vw, 1.8rem);
+
+      line-height: 1.1;
+
       font-weight: 500;
 
       letter-spacing: -0.04em;
@@ -607,13 +753,13 @@ content="Tamimmah Disma Lestari — Business Management graduate specializing in
 
     .experience-item h3 a:hover {
       text-decoration: underline;
-      text-underline-offset: 4px;
+      text-underline-offset: 5px;
     }
 
-    .experience-item h4 {
+    .experience-role {
       margin-bottom: 12px;
 
-      font-size: 0.62rem;
+      font-size: 0.6rem;
       font-weight: 700;
 
       text-transform: uppercase;
@@ -622,9 +768,24 @@ content="Tamimmah Disma Lestari — Business Management graduate specializing in
       color: var(--muted);
     }
 
-    .experience-item p {
-      max-width: 700px;
-      font-size: 0.88rem;
+    .experience-description {
+      max-width: 650px;
+
+      font-size: 0.82rem;
+    }
+
+    .experience-arrow {
+      width: 34px;
+      height: 34px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid var(--line);
+      border-radius: 50%;
+
+      font-size: 0.7rem;
     }
 
 
@@ -633,48 +794,48 @@ content="Tamimmah Disma Lestari — Business Management graduate specializing in
     ========================================================= */
 
     .projects-intro {
-      margin-bottom: 32px;
-
       max-width: 650px;
-    }
 
-    .projects-intro p {
-      font-size: 0.95rem;
+      margin-bottom: 35px;
+
+      font-size: 0.92rem;
     }
 
     .project-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
 
-    .project-link {
-      display: block;
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 14px;
     }
 
     .project-card {
-      min-height: 310px;
+      min-height: 370px;
 
-      padding: 25px;
+      padding: 28px;
 
       display: flex;
       flex-direction: column;
 
       border: 1px solid var(--line);
 
+      background: transparent;
+
       transition:
-        transform 0.25s ease,
-        background 0.25s ease;
+        background 0.3s ease,
+        transform 0.3s ease;
     }
 
     .project-card:hover {
-      transform: translateY(-4px);
       background: var(--soft);
+
+      transform: translateY(-4px);
     }
 
     .project-card.featured {
       grid-column: span 2;
-      min-height: 340px;
+
+      min-height: 330px;
     }
 
     .project-type {
@@ -687,55 +848,63 @@ content="Tamimmah Disma Lestari — Business Management graduate specializing in
       color: var(--muted);
     }
 
-    .project-card h2 {
-      max-width: 650px;
+    .project-card h3 {
+      max-width: 800px;
 
       margin-top: 45px;
 
-      font-size: clamp(1.9rem, 3.5vw, 3.8rem);
+      font-size: clamp(2rem, 4vw, 4.2rem);
 
-      line-height: 1.04;
-      letter-spacing: -0.055em;
+      line-height: 1;
+
+      letter-spacing: -0.06em;
 
       font-weight: 500;
     }
 
-    .project-card h2 i {
+    .project-card:not(.featured) h3 {
+      font-size: clamp(1.8rem, 3vw, 3rem);
+    }
+
+    .project-card h3 i {
       font-family: var(--serif);
     }
 
-    .project-card p {
-      max-width: 620px;
+    .project-description {
+      max-width: 650px;
 
-      margin-top: 16px;
+      margin-top: 18px;
 
-      font-size: 0.84rem;
+      font-size: 0.82rem;
     }
 
-    .project-meta {
+    .project-bottom {
       margin-top: auto;
-      padding-top: 28px;
+      padding-top: 30px;
 
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 15px;
 
-      font-size: 0.6rem;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
+      gap: 20px;
     }
 
-    .project-meta span {
+    .project-meta {
+      font-size: 0.58rem;
+
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+
       color: var(--muted);
     }
 
-    .project-cta {
+    .project-link {
       display: inline-flex;
+
       align-items: center;
       gap: 8px;
 
-      padding: 9px 13px;
+      padding: 9px 14px;
 
       border: 1px solid var(--text);
       border-radius: 999px;
@@ -743,12 +912,15 @@ content="Tamimmah Disma Lestari — Business Management graduate specializing in
       font-size: 0.58rem;
       font-weight: 700;
 
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+
       transition:
         background 0.25s ease,
         color 0.25s ease;
     }
 
-    .project-card:hover .project-cta {
+    .project-card:hover .project-link {
       background: var(--text);
       color: var(--bg);
     }
@@ -758,36 +930,85 @@ content="Tamimmah Disma Lestari — Business Management graduate specializing in
        SKILLS
     ========================================================= */
 
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
+    .skills-grid {
+      display: grid;
+
+      grid-template-columns: 0.75fr 1.25fr;
+
+      gap: 80px;
     }
 
-    .skills span {
-      padding: 10px 14px;
+    .skills-intro {
+      font-family: var(--serif);
+
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
+
+      line-height: 1.2;
+
+      color: var(--text);
+    }
+
+    .skill-groups {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 35px;
+    }
+
+    .skill-group {
+      padding-top: 18px;
+
+      border-top: 1px solid var(--text);
+    }
+
+    .skill-group h3 {
+      margin-bottom: 15px;
+
+      font-size: 0.62rem;
+      font-weight: 700;
+
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 7px;
+    }
+
+    .skill-list span {
+      padding: 8px 11px;
 
       border: 1px solid var(--line);
       border-radius: 999px;
 
-      font-size: 0.7rem;
+      font-size: 0.65rem;
     }
 
-    .education {
-      margin-top: 60px;
 
-      padding-top: 25px;
+    /* =========================================================
+       EDUCATION
+    ========================================================= */
+
+    .education {
+      margin-top: 65px;
+
+      padding-top: 28px;
 
       border-top: 1px solid var(--text);
 
       display: grid;
+
       grid-template-columns: 1fr auto;
 
       gap: 30px;
     }
 
     .education-label {
-      margin-bottom: 10px;
+      margin-bottom: 8px;
 
       font-size: 0.6rem;
       font-weight: 700;
@@ -802,13 +1023,14 @@ content="Tamimmah Disma Lestari — Business Management graduate specializing in
       margin-bottom: 5px;
 
       font-size: 1.5rem;
+
       font-weight: 500;
 
       letter-spacing: -0.04em;
     }
 
     .education p {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
     }
 
     .gpa {
@@ -817,7 +1039,9 @@ content="Tamimmah Disma Lestari — Business Management graduate specializing in
 
     .gpa strong {
       font-family: var(--serif);
-      font-size: 2.6rem;
+
+      font-size: 2.8rem;
+
       font-weight: 500;
     }
 
@@ -826,19 +1050,26 @@ content="Tamimmah Disma Lestari — Business Management graduate specializing in
        CREATIVE
     ========================================================= */
 
+    .creative-intro {
+      max-width: 650px;
+
+      margin-bottom: 35px;
+
+      font-size: 0.92rem;
+    }
+
     .creative-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 14px;
     }
 
     .creative-card {
-      padding: 25px;
+      padding: 28px;
 
       border: 1px solid var(--line);
-
-      display: flex;
-      flex-direction: column;
     }
 
     .creative-label {
@@ -851,40 +1082,41 @@ content="Tamimmah Disma Lestari — Business Management graduate specializing in
       color: var(--muted);
     }
 
-    .creative-card h2 {
-      margin-top: 45px;
+    .creative-card h3 {
+      margin-top: 40px;
 
-      font-size: clamp(1.9rem, 3.5vw, 3.8rem);
+      font-size: clamp(2rem, 3.5vw, 3.5rem);
 
-      line-height: 1.04;
-      letter-spacing: -0.055em;
+      line-height: 1;
+
+      letter-spacing: -0.06em;
 
       font-weight: 500;
     }
 
-    .creative-card h2 i {
+    .creative-card h3 i {
       font-family: var(--serif);
     }
 
-    .creative-card > p {
-      margin-top: 16px;
+    .creative-description {
+      margin-top: 17px;
 
-      font-size: 0.84rem;
+      font-size: 0.82rem;
     }
 
-    .creative-work {
+    .creative-image {
       margin-top: 28px;
 
       overflow: hidden;
     }
 
-    .creative-work img {
+    .creative-image img {
       width: 100%;
 
       transition: transform 0.4s ease;
     }
 
-    .creative-card:hover .creative-work img {
+    .creative-card:hover .creative-image img {
       transform: scale(1.02);
     }
 
@@ -893,28 +1125,24 @@ content="Tamimmah Disma Lestari — Business Management graduate specializing in
        CREATIVE CTA
     ========================================================= */
 
-    .creative-links,
-    .tiktok-arrow {
+    .creative-cta {
       margin-top: 22px;
-
-      display: flex;
-      justify-content: center;
     }
 
     .modern-link {
       display: inline-flex;
+
       align-items: center;
       justify-content: center;
+
       gap: 9px;
 
-      min-width: 175px;
-
-      padding: 11px 19px;
+      padding: 10px 16px;
 
       border: 1px solid var(--text);
       border-radius: 999px;
 
-      font-size: 0.62rem;
+      font-size: 0.6rem;
       font-weight: 700;
 
       text-transform: uppercase;
@@ -929,7 +1157,8 @@ content="Tamimmah Disma Lestari — Business Management graduate specializing in
     .modern-link:hover {
       background: var(--text);
       color: var(--bg);
-      transform: translateY(-3px);
+
+      transform: translateY(-2px);
     }
 
 
@@ -937,10 +1166,11 @@ content="Tamimmah Disma Lestari — Business Management graduate specializing in
        TIKTOK
     ========================================================= */
 
-    .tiktok-highlight {
+    .tiktok-stats {
       margin-top: 28px;
 
       display: grid;
+
       grid-template-columns: repeat(3, 1fr);
 
       border-top: 1px solid var(--line);
@@ -961,29 +1191,34 @@ content="Tamimmah Disma Lestari — Business Management graduate specializing in
       display: block;
 
       font-family: var(--serif);
+
       font-size: 1.8rem;
+
       font-weight: 500;
     }
 
     .tiktok-stat span {
       display: block;
 
-      margin-top: 3px;
+      margin-top: 2px;
 
-      font-size: 0.55rem;
+      font-size: 0.53rem;
+
       text-transform: uppercase;
       letter-spacing: 0.08em;
 
       color: var(--muted);
     }
 
-    .tiktok-insight-short {
+    .tiktok-insight {
       margin-top: 18px;
-      font-size: 0.78rem;
+
+      font-size: 0.76rem;
     }
 
     .tiktok-profile {
       margin-top: 25px;
+
       overflow: hidden;
     }
 
@@ -996,27 +1231,52 @@ content="Tamimmah Disma Lestari — Business Management graduate specializing in
        CONTACT
     ========================================================= */
 
+    .contact-grid {
+      display: grid;
+
+      grid-template-columns: 0.75fr 1.25fr;
+
+      gap: 80px;
+
+      align-items: start;
+    }
+
+    .contact-intro {
+      font-family: var(--serif);
+
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
+
+      line-height: 1.2;
+
+      color: var(--text);
+    }
+
     .contact-content {
-      text-align: left;
+      padding-top: 5px;
     }
 
     .contact-content > p {
-      max-width: 600px;
+      max-width: 650px;
 
       margin-bottom: 28px;
 
-      font-size: 0.95rem;
+      font-size: 0.9rem;
     }
 
     .contact-email {
       display: inline-block;
 
       font-family: var(--serif);
+
       font-style: italic;
 
-      font-size: clamp(1.5rem, 3vw, 2.7rem);
+      font-size: clamp(1.7rem, 3.2vw, 3rem);
+
+      line-height: 1.1;
 
       border-bottom: 1px solid var(--text);
+
+      word-break: break-word;
 
       transition: opacity 0.25s ease;
     }
@@ -1030,6 +1290,7 @@ content="Tamimmah Disma Lestari — Business Management graduate specializing in
 
       display: flex;
       flex-wrap: wrap;
+
       gap: 8px;
     }
 
@@ -1039,7 +1300,7 @@ content="Tamimmah Disma Lestari — Business Management graduate specializing in
       border: 1px solid var(--line);
       border-radius: 999px;
 
-      font-size: 0.6rem;
+      font-size: 0.59rem;
       font-weight: 600;
 
       text-transform: uppercase;
@@ -1061,13 +1322,18 @@ content="Tamimmah Disma Lestari — Business Management graduate specializing in
     ========================================================= */
 
     footer {
-      padding: 25px 7vw;
+      padding: 25px 0;
+    }
+
+    .footer-inner {
+      width: min(var(--container), calc(100% - 80px));
+      margin: 0 auto;
 
       display: flex;
       align-items: center;
       justify-content: space-between;
 
-      font-size: 0.6rem;
+      font-size: 0.58rem;
 
       text-transform: uppercase;
       letter-spacing: 0.08em;
@@ -1080,51 +1346,35 @@ content="Tamimmah Disma Lestari — Business Management graduate specializing in
        TABLET
     ========================================================= */
 
-    @media (max-width: 900px) {
+    @media (max-width: 950px) {
 
-      header {
-        height: 70px;
-        padding: 0 6vw;
+      .container,
+      .header-inner,
+      .footer-inner {
+        width: min(var(--container), calc(100% - 60px));
       }
 
-      header nav {
-        display: none;
+      nav {
+        gap: 20px;
       }
 
-      #menu {
-        display: flex;
-      }
-
-      section {
-        padding: 80px 6vw;
-      }
-
-      .hero {
-        min-height: auto;
-
-        padding: 110px 6vw 70px;
-
-        grid-template-columns: 1fr;
-
+      .hero-grid {
         gap: 50px;
       }
 
-      .hero-photo {
-        width: min(70vw, 400px);
-        justify-self: center;
+      .about-grid,
+      .experience-header,
+      .skills-grid,
+      .contact-grid {
+        grid-template-columns: 0.65fr 1.35fr;
+
+        gap: 45px;
       }
 
-      .section-layout {
-        grid-template-columns: 0.6fr 1.4fr;
-        gap: 7vw;
-      }
+      .experience-item {
+        grid-template-columns: 100px minmax(0, 1fr) auto;
 
-      .project-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .project-card.featured {
-        grid-column: auto;
+        gap: 22px;
       }
 
     }
@@ -1134,89 +1384,197 @@ content="Tamimmah Disma Lestari — Business Management graduate specializing in
        MOBILE
     ========================================================= */
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
+
+      .container,
+      .header-inner,
+      .footer-inner {
+        width: calc(100% - 40px);
+      }
 
       header {
-        padding: 0 5vw;
+        height: 68px;
       }
 
-      section {
-        padding: 70px 5vw;
+      .header-inner {
+        width: calc(100% - 40px);
       }
+
+      nav {
+        display: none;
+      }
+
+      #menu {
+        display: flex;
+      }
+
+
+      /* HERO */
 
       .hero {
-        padding: 105px 5vw 60px;
-        gap: 40px;
+        min-height: auto;
+
+        padding: 110px 0 65px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
       }
 
       .hero h1 {
-        font-size: clamp(2.8rem, 13vw, 4.5rem);
+        font-size: clamp(3rem, 14vw, 4.8rem);
       }
 
-      .hero-keywords {
-        margin-top: 22px;
+      .hero-description {
+        font-size: 0.87rem;
       }
 
-      .hero-content > p {
-        font-size: 0.88rem;
+      .hero-visual {
+        justify-content: center;
       }
 
       .hero-photo {
-        width: 78vw;
+        width: min(82vw, 380px);
+      }
+
+      .hero-photo::after {
+        right: -10px;
+        bottom: -10px;
+      }
+
+      .hero-mark {
+        right: -8px;
+        bottom: 10px;
+      }
+
+      .explore {
+        margin-top: 48px;
       }
 
       .explore-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr 1fr;
       }
 
-      .explore-item:nth-child(2) {
+      .explore-card {
+        min-height: 82px;
+      }
+
+      .explore-card:nth-child(2) {
         border-right: 0;
       }
 
-      .explore-item:nth-child(1),
-      .explore-item:nth-child(2) {
+      .explore-card:nth-child(1),
+      .explore-card:nth-child(2) {
         border-bottom: 1px solid var(--line);
       }
 
-      .section-layout {
+
+      /* SECTIONS */
+
+      section {
+        padding: 72px 0;
+      }
+
+      .section-heading {
+        margin-bottom: 38px;
+      }
+
+      .section-heading h2 {
+        font-size: clamp(2.7rem, 13vw, 4.4rem);
+      }
+
+
+      /* ABOUT */
+
+      .about-grid,
+      .experience-header,
+      .skills-grid,
+      .contact-grid {
         grid-template-columns: 1fr;
+
         gap: 35px;
       }
 
-      .section-title {
-        margin-top: 12px;
+      .about-intro,
+      .skills-intro,
+      .contact-intro {
+        font-size: 1.7rem;
+      }
 
-        font-size: clamp(2.6rem, 12vw, 4.5rem);
+      .about-content {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+      }
+
+
+      /* EXPERIENCE */
+
+      .experience-header {
+        margin-bottom: 28px;
       }
 
       .experience-item {
         grid-template-columns: 1fr;
+
         gap: 7px;
 
-        padding: 23px 0;
+        padding: 24px 0;
+      }
+
+      .experience-arrow {
+        display: none;
       }
 
       .experience-date {
-        margin-bottom: 3px;
+        order: 0;
+      }
+
+
+      /* PROJECTS */
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card.featured {
+        grid-column: auto;
       }
 
       .project-card,
       .project-card.featured {
-        min-height: 300px;
-        padding: 22px;
+        min-height: 320px;
+
+        padding: 23px;
       }
 
-      .project-card h2,
-      .creative-card h2 {
+      .project-card h3,
+      .project-card:not(.featured) h3 {
         margin-top: 38px;
+
+        font-size: 2.2rem;
       }
 
-      .project-meta {
+      .project-bottom {
         align-items: flex-start;
+
         flex-direction: column;
       }
 
+
+      /* SKILLS */
+
+      .skill-groups {
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+      }
+
       .education {
+        margin-top: 45px;
+
         grid-template-columns: 1fr;
       }
 
@@ -1224,40 +1582,86 @@ content="Tamimmah Disma Lestari — Business Management graduate specializing in
         text-align: left;
       }
 
+
+      /* CREATIVE */
+
       .creative-grid {
         grid-template-columns: 1fr;
       }
 
       .creative-card {
-        padding: 22px;
+        padding: 23px;
       }
 
-      .tiktok-highlight {
+      .creative-card h3 {
+        margin-top: 35px;
+
+        font-size: 2.2rem;
+      }
+
+      .tiktok-stats {
         grid-template-columns: 1fr;
       }
 
       .tiktok-stat:not(:last-child) {
         border-right: 0;
+
         border-bottom: 1px solid var(--line);
       }
 
+
+      /* CONTACT */
+
       .contact-email {
-        font-size: 1.35rem;
-        word-break: break-word;
+        font-size: 1.45rem;
       }
 
-      footer {
-        padding: 22px 5vw;
 
+      /* FOOTER */
+
+      .footer-inner {
         align-items: flex-start;
+
         flex-direction: column;
 
-        gap: 6px;
+        gap: 7px;
       }
 
-      .mobile-footer {
-        flex-direction: column;
-        gap: 5px;
+    }
+
+
+    /* =========================================================
+       SMALL MOBILE
+    ========================================================= */
+
+    @media (max-width: 420px) {
+
+      .container,
+      .header-inner,
+      .footer-inner {
+        width: calc(100% - 30px);
+      }
+
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+
+      .hero-photo {
+        width: 85vw;
+      }
+
+      .explore-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .explore-card {
+        border-right: 0 !important;
+
+        border-bottom: 1px solid var(--line);
+      }
+
+      .explore-card:last-child {
+        border-bottom: 0;
       }
 
     }
@@ -1266,1218 +1670,1459 @@ content="Tamimmah Disma Lestari — Business Management graduate specializing in
 
 </head>
 
+
 <body>
 
-<!-- =========================================================
-     HEADER
-========================================================= -->
 
-<header>
+  <!-- =======================================================
+       HEADER
+  ======================================================== -->
 
-  <a href="#home" class="logo">
-    TDL<span>.</span>
-  </a>
+  <header>
 
-  <nav>
+    <div class="header-inner">
 
-```
-<a href="#about">About</a>
-<a href="#experience">Experience</a>
-<a href="#projects">Projects</a>
-<a href="#skills">Skills</a>
-<a href="#creative">Creative</a>
-<a href="#contact">Contact</a>
-```
+      <a href="#home" class="logo">
+        TDL<span>.</span>
+      </a>
 
-  </nav>
+      <nav>
 
-<button
-id="menu"
-type="button"
-aria-label="Open navigation"
-aria-expanded="false"
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#creative">Creative</a>
+        <a href="#contact">Contact</a>
 
->
+      </nav>
 
-```
-☰
-```
+      <button
+        id="menu"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
 
-  </button>
+    </div>
 
-</header>
-
-<!-- =========================================================
-     MOBILE NAVIGATION
-========================================================= -->
-
-<div class="mobile-menu" id="mobileMenu">
-
-  <div class="mobile-nav">
-
-```
-<a href="#about">
-  About
-  <span>01 ↗</span>
-</a>
-
-<a href="#experience">
-  Experience
-  <span>02 ↗</span>
-</a>
-
-<a href="#projects">
-  Projects
-  <span>03 ↗</span>
-</a>
-
-<a href="#skills">
-  Skills
-  <span>04 ↗</span>
-</a>
-
-<a href="#creative">
-  Creative
-  <span>05 ↗</span>
-</a>
-
-<a href="#contact">
-  Contact
-  <span>06 ↗</span>
-</a>
-```
-
-  </div>
-
-  <div class="mobile-footer">
-
-```
-<span>
-  Tamimmah Disma Lestari
-</span>
-
-<span>
-  Marketing · Strategy · Creative
-</span>
-```
-
-  </div>
-
-</div>
-
-<!-- =========================================================
-     HERO
-========================================================= -->
-
-<section id="home" class="hero">
-
-  <div class="hero-content">
-
-```
-<div class="hero-name">
-  TAMIMMAH DISMA LESTARI
-</div>
-
-<small>
-  BUSINESS · MARKETING · CONSUMER INSIGHTS
-</small>
-
-<h1>
-  Turning ideas into
-  <i>meaningful strategies.</i>
-</h1>
+  </header>
 
 
-<div class="hero-keywords">
 
-  <span>Marketing</span>
-  <span>Consumer Research</span>
-  <span>Business Development</span>
-  <span>Creative Strategy</span>
+  <!-- =======================================================
+       MOBILE MENU
+  ======================================================== -->
 
-</div>
+  <div class="mobile-menu" id="mobileMenu">
 
+    <div class="mobile-nav">
 
-<p>
-  Business Management graduate with hands-on experience in
-  <strong>marketing</strong>,
-  <strong>consumer research</strong>,
-  <strong>customer acquisition</strong>,
-  and <strong>business operations</strong>.
-</p>
+      <a href="#about">
+        About
+        <span>01 ↗</span>
+      </a>
 
-
-<div class="hero-buttons">
-
-  <a
-    class="btn"
-    href="resume.pdf"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    View CV ↗
-  </a>
-
-</div>
-
-
-<!-- =====================================================
-     EXPLORE PORTFOLIO
-===================================================== -->
-
-<div class="hero-explore">
-
-  <div class="explore-label">
-    Explore my portfolio
-  </div>
-
-  <div class="explore-grid">
-
-    <a
-      class="explore-item"
-      href="#projects"
-    >
-
-      <span class="explore-number">
-        01
-      </span>
-
-      <span class="explore-name">
-        Work
-        <span>↗</span>
-      </span>
-
-    </a>
-
-
-    <a
-      class="explore-item"
-      href="#experience"
-    >
-
-      <span class="explore-number">
-        02
-      </span>
-
-      <span class="explore-name">
+      <a href="#experience">
         Experience
-        <span>↗</span>
-      </span>
+        <span>02 ↗</span>
+      </a>
 
-    </a>
-
-
-    <a
-      class="explore-item"
-      href="#projects"
-    >
-
-      <span class="explore-number">
-        03
-      </span>
-
-      <span class="explore-name">
+      <a href="#projects">
         Projects
-        <span>↗</span>
-      </span>
+        <span>03 ↗</span>
+      </a>
 
-    </a>
-
-
-    <a
-      class="explore-item"
-      href="#skills"
-    >
-
-      <span class="explore-number">
-        04
-      </span>
-
-      <span class="explore-name">
+      <a href="#skills">
         Skills
-        <span>↗</span>
+        <span>04 ↗</span>
+      </a>
+
+      <a href="#creative">
+        Creative
+        <span>05 ↗</span>
+      </a>
+
+      <a href="#contact">
+        Contact
+        <span>06 ↗</span>
+      </a>
+
+    </div>
+
+    <div class="mobile-footer">
+
+      <span>
+        Tamimmah Disma Lestari
       </span>
 
-    </a>
+      <span>
+        Marketing · Strategy · Creative
+      </span>
+
+    </div>
 
   </div>
 
-</div>
-```
-
-  </div>
-
-  <!-- PROFILE PHOTO -->
-
-  <div class="hero-photo">
-
-```
-<img
-  src="images/profile-photo.jpg"
-  alt="Tamimmah Disma Lestari"
->
-```
-
-  </div>
-
-  <div class="initials">
-    TDL
-  </div>
-
-</section>
-
-<!-- =========================================================
-     ABOUT
-========================================================= -->
-
-<section id="about">
-
-  <div class="section-layout">
-
-```
-<div>
-
-  <div class="section-label">
-    01 / ABOUT
-  </div>
-
-  <h2 class="section-title">
-    Business
-    <br>
-    meets
-    <br>
-    <i>creativity.</i>
-  </h2>
-
-</div>
 
 
-<div class="about-copy">
+  <!-- =======================================================
+       HERO
+  ======================================================== -->
 
-  <p>
-    I am a <strong>Business Management graduate from Institut
-    Teknologi Bandung</strong> with a concentration in
-    <strong>Management & Marketing</strong>.
-  </p>
+  <section class="hero" id="home">
 
-  <p>
-    My experience sits at the intersection of
-    <strong>marketing, consumer behavior, business development,
-    and entrepreneurship</strong>.
-  </p>
+    <div class="container">
 
-  <p>
-    I enjoy understanding what makes people choose,
-    engage with, and remember a product — then turning those
-    insights into <strong>practical business strategies</strong>.
-  </p>
-
-</div>
-```
-
-  </div>
-
-</section>
-
-<!-- =========================================================
-     EXPERIENCE
-========================================================= -->
-
-<section id="experience">
-
-  <div class="section-layout">
-
-```
-<div>
-
-  <div class="section-label">
-    02 / EXPERIENCE
-  </div>
-
-  <h2 class="section-title">
-    Building,
-    <br>
-    learning,
-    <br>
-    <i>doing.</i>
-  </h2>
-
-</div>
+      <div class="hero-grid">
 
 
-<div class="experience-list">
+        <!-- HERO TEXT -->
+
+        <div class="hero-content">
+
+          <div class="hero-name">
+            TAMIMMAH DISMA LESTARI
+          </div>
+
+          <div class="hero-kicker">
+            BUSINESS · MARKETING · CONSUMER INSIGHTS
+          </div>
+
+          <h1>
+            Turning ideas into
+            <i>meaningful strategies.</i>
+          </h1>
+
+          <div class="hero-tags">
+
+            <span>Marketing</span>
+            <span>Consumer Research</span>
+            <span>Business Development</span>
+            <span>Creative Strategy</span>
+
+          </div>
+
+          <p class="hero-description">
+            Business Management graduate with hands-on experience in
+            <strong>marketing</strong>,
+            <strong>consumer research</strong>,
+            <strong>customer acquisition</strong>,
+            and <strong>business operations</strong>.
+          </p>
+
+          <div class="button-row">
+
+            <a
+              class="button"
+              href="resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View CV ↗
+            </a>
+
+            <a
+              class="button secondary"
+              href="#contact"
+            >
+              Let's Talk
+            </a>
+
+          </div>
+
+        </div>
 
 
-  <!-- FOUNDERS LAB -->
+        <!-- HERO PHOTO -->
 
-  <article class="experience-item">
+        <div class="hero-visual">
 
-    <time class="experience-date">
-      2020–2021
-    </time>
+          <div class="hero-photo">
 
-    <div>
+            <img
+              src="images/profile-photo.jpg"
+              alt="Tamimmah Disma Lestari"
+            >
 
-      <h3>
+            <div class="hero-mark">
+              TDL
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- EXPLORE -->
+
+      <div class="explore">
+
+        <div class="explore-title">
+          Explore my portfolio
+        </div>
+
+        <div class="explore-grid">
+
+          <a
+            href="#projects"
+            class="explore-card"
+          >
+
+            <span class="explore-number">
+              01
+            </span>
+
+            <span class="explore-name">
+              Work
+              <span>↗</span>
+            </span>
+
+          </a>
+
+
+          <a
+            href="#experience"
+            class="explore-card"
+          >
+
+            <span class="explore-number">
+              02
+            </span>
+
+            <span class="explore-name">
+              Experience
+              <span>↗</span>
+            </span>
+
+          </a>
+
+
+          <a
+            href="#projects"
+            class="explore-card"
+          >
+
+            <span class="explore-number">
+              03
+            </span>
+
+            <span class="explore-name">
+              Projects
+              <span>↗</span>
+            </span>
+
+          </a>
+
+
+          <a
+            href="#skills"
+            class="explore-card"
+          >
+
+            <span class="explore-number">
+              04
+            </span>
+
+            <span class="explore-name">
+              Skills
+              <span>↗</span>
+            </span>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================================================
+       ABOUT
+  ======================================================== -->
+
+  <section id="about">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-number">
+          01 / ABOUT
+        </span>
+
+        <h2>
+          Business meets
+          <i>creativity.</i>
+        </h2>
+
+      </div>
+
+
+      <div class="about-grid">
+
+
+        <div class="about-intro">
+
+          I combine business thinking with an interest in
+          people, brands, and creative communication.
+
+        </div>
+
+
+        <div class="about-content">
+
+          <div>
+
+            <p>
+              I am a <strong>Business Management graduate from
+              Institut Teknologi Bandung</strong> with a
+              concentration in <strong>Management &
+              Marketing</strong>.
+            </p>
+
+            <p>
+              My experience sits at the intersection of
+              <strong>marketing, consumer behavior, business
+              development, and entrepreneurship</strong>.
+            </p>
+
+            <p>
+              I enjoy understanding what makes people choose,
+              engage with, and remember a product — then
+              turning those insights into
+              <strong>practical business strategies</strong>.
+            </p>
+
+          </div>
+
+
+          <div>
+
+            <div class="about-detail">
+
+              <h3>
+                Areas of Interest
+              </h3>
+
+              <ul>
+
+                <li>
+                  Consumer Behavior
+                </li>
+
+                <li>
+                  Marketing Strategy
+                </li>
+
+                <li>
+                  Brand Development
+                </li>
+
+                <li>
+                  Business Development
+                </li>
+
+                <li>
+                  Creative Strategy
+                </li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================================================
+       EXPERIENCE
+  ======================================================== -->
+
+  <section id="experience">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-number">
+          02 / EXPERIENCE
+        </span>
+
+        <h2>
+          Building, learning,
+          <i>doing.</i>
+        </h2>
+
+      </div>
+
+
+      <div class="experience-header">
+
+        <div></div>
+
+        <p class="experience-intro">
+          Experience across entrepreneurship, marketing,
+          business operations, digital business, and
+          project-based work.
+        </p>
+
+      </div>
+
+
+      <div class="experience-list">
+
+
+        <!-- THE FOUNDERS LAB -->
+
+        <article class="experience-item">
+
+          <time class="experience-date">
+            2020–2021
+          </time>
+
+          <div>
+
+            <h3>
+              <a
+                href="https://www.instagram.com/thefounderslab/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                The Founders Lab ↗
+              </a>
+            </h3>
+
+            <div class="experience-role">
+              Co-Founder & Marketing Lead
+            </div>
+
+            <p class="experience-description">
+              Co-founded a platform for
+              <strong>business webinars and competitions</strong>
+              backed by CIEL SBM ITB. Led
+              <strong>marketing initiatives, event promotion,
+              audience engagement, and communications</strong>.
+            </p>
+
+          </div>
+
+          <div class="experience-arrow">
+            ↗
+          </div>
+
+        </article>
+
+
+        <!-- SELLKPOPVT -->
+
+        <article class="experience-item">
+
+          <time class="experience-date">
+            2021–2025
+          </time>
+
+          <div>
+
+            <h3>
+              <a
+                href="https://x.com/sellkpopvt"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                SellKpopVT ↗
+              </a>
+            </h3>
+
+            <div class="experience-role">
+              Founder / Owner
+            </div>
+
+            <p class="experience-description">
+              Built and managed an
+              <strong>international digital business</strong>
+              serving customers across
+              <strong>Indonesia, Malaysia, Singapore, Thailand,
+              India, the US, Europe, and the Middle East</strong>.
+              Managed pricing, customer acquisition, operations,
+              and retention.
+            </p>
+
+          </div>
+
+          <div class="experience-arrow">
+            ↗
+          </div>
+
+        </article>
+
+
+        <!-- SARI RASA -->
+
+        <article class="experience-item">
+
+          <time class="experience-date">
+            2024–2026
+          </time>
+
+          <div>
+
+            <h3>
+              PT Sari Rasa
+            </h3>
+
+            <div class="experience-role">
+              Business Partner
+            </div>
+
+            <p class="experience-description">
+              Supported the distribution of
+              <strong>traditional snack products to local
+              supermarkets</strong>. Involved in business
+              operations, market development, distribution,
+              and monitoring sales performance across
+              <strong>approximately 50 supermarkets</strong>.
+            </p>
+
+          </div>
+
+          <div class="experience-arrow">
+            ↗
+          </div>
+
+        </article>
+
+
+        <!-- CAHAYA SEGARA -->
+
+        <article class="experience-item">
+
+          <time class="experience-date">
+            2026 · Project-Based
+          </time>
+
+          <div>
+
+            <h3>
+              PT Cahaya Segara Indonesia
+            </h3>
+
+            <div class="experience-role">
+              Freelance Administrative & Executive Support
+            </div>
+
+            <p class="experience-description">
+              Prepared
+              <strong>business documentation, reports,
+              proposals, and tender materials</strong>,
+              while supporting administrative and
+              project-related activities.
+            </p>
+
+          </div>
+
+          <div class="experience-arrow">
+            ↗
+          </div>
+
+        </article>
+
+
+        <!-- ECOPLAST -->
+
+        <article class="experience-item">
+
+          <time class="experience-date">
+            2018–2019
+          </time>
+
+          <div>
+
+            <h3>
+              <a
+                href="https://www.instagram.com/ecoplastid/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                ECOPLAST ID ↗
+              </a>
+            </h3>
+
+            <div class="experience-role">
+              Chief Marketing Officer
+            </div>
+
+            <p class="experience-description">
+              Led
+              <strong>marketing and brand communication</strong>
+              for an early-stage environmental startup,
+              including promotional activities, audience
+              engagement, and marketing direction.
+            </p>
+
+          </div>
+
+          <div class="experience-arrow">
+            ↗
+          </div>
+
+        </article>
+
+
+        <!-- TEC -->
+
+        <article class="experience-item">
+
+          <time class="experience-date">
+            2018–2021
+          </time>
+
+          <div>
+
+            <h3>
+              Techno Entrepreneur Club (TEC), ITB
+            </h3>
+
+            <div class="experience-role">
+              Student Entrepreneur
+            </div>
+
+            <p class="experience-description">
+              Participated in entrepreneurial activities
+              involving
+              <strong>business development, marketing,
+              project execution, and startup-related
+              initiatives</strong>.
+            </p>
+
+          </div>
+
+          <div class="experience-arrow">
+            ↗
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================================================
+       PROJECTS
+  ======================================================== -->
+
+  <section id="projects">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-number">
+          03 / SELECTED PROJECTS
+        </span>
+
+        <h2>
+          Selected
+          <i>work.</i>
+        </h2>
+
+      </div>
+
+
+      <p class="projects-intro">
+        A selection of projects exploring
+        <strong>consumer behavior, brand strategy,
+        marketing, business, and digital culture</strong>.
+      </p>
+
+
+      <div class="project-grid">
+
+
+        <!-- PROJECT 01 -->
+
         <a
-          href="https://www.instagram.com/thefounderslab/"
+          href="Consumer_Purchase_Intention_Traditional_Chips.pdf"
           target="_blank"
           rel="noopener noreferrer"
         >
-          The Founders Lab ↗
+
+          <article class="project-card featured">
+
+            <div class="project-type">
+              01 · Consumer Research
+            </div>
+
+            <h3>
+              Understanding
+              <i>Purchase Intention.</i>
+            </h3>
+
+            <p class="project-description">
+              Quantitative research investigating the factors
+              influencing <strong>consumer purchase intention
+              toward traditional chips in local supermarkets
+              in Jakarta</strong>.
+            </p>
+
+            <div class="project-bottom">
+
+              <span class="project-meta">
+                Thesis · SPSS · Regression
+              </span>
+
+              <span class="project-link">
+                View Project ↗
+              </span>
+
+            </div>
+
+          </article>
+
         </a>
-      </h3>
-
-      <h4>
-        Co-Founder & Marketing Lead
-      </h4>
-
-      <p>
-        Co-founded a platform for
-        <strong>business webinars and competitions</strong>
-        backed by CIEL SBM ITB. Led
-        <strong>marketing initiatives, event promotion,
-        audience engagement, and communications</strong>.
-      </p>
-
-    </div>
-
-  </article>
 
 
-  <!-- SELLKPOPVT -->
+        <!-- PROJECT 02 -->
 
-  <article class="experience-item">
+        <a href="buavita.html">
 
-    <time class="experience-date">
-      2021–2025
-    </time>
+          <article class="project-card">
 
-    <div>
+            <div class="project-type">
+              02 · Brand Strategy
+            </div>
 
-      <h3>
+            <h3>
+              Buavita
+              <i>Brand Strategy.</i>
+            </h3>
+
+            <p class="project-description">
+              Brand strategy project focused on
+              <strong>consumer understanding, positioning,
+              communication, and strategic recommendations</strong>.
+            </p>
+
+            <div class="project-bottom">
+
+              <span class="project-meta">
+                Consumer Research · Strategy
+              </span>
+
+              <span class="project-link">
+                View Project ↗
+              </span>
+
+            </div>
+
+          </article>
+
+        </a>
+
+
+        <!-- PROJECT 03 -->
+
         <a
-          href="https://x.com/sellkpopvt"
+          href="https://marketing.co.id/menilik-strategi-branding-produk-kecantikan-korea/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          SellKpopVT ↗
+
+          <article class="project-card">
+
+            <div class="project-type">
+              03 · Published Work
+            </div>
+
+            <h3>
+              Korean Beauty
+              <i>Branding.</i>
+            </h3>
+
+            <p class="project-description">
+              Published article examining
+              <strong>branding strategies within the Korean
+              beauty industry</strong> and how brands create
+              consumer appeal.
+            </p>
+
+            <div class="project-bottom">
+
+              <span class="project-meta">
+                Marketing · Branding · Published
+              </span>
+
+              <span class="project-link">
+                Read Article ↗
+              </span>
+
+            </div>
+
+          </article>
+
         </a>
-      </h3>
-
-      <h4>
-        Founder / Owner
-      </h4>
-
-      <p>
-        Built and managed an
-        <strong>international digital business</strong>
-        serving customers across
-        <strong>Indonesia, Malaysia, Singapore, Thailand,
-        India, the US, Europe, and the Middle East</strong>.
-        Managed pricing, customer acquisition, operations,
-        and retention.
-      </p>
-
-    </div>
-
-  </article>
 
 
-  <!-- SARI RASA -->
+        <!-- PROJECT 04 -->
 
-  <article class="experience-item">
-
-    <time class="experience-date">
-      2024–2026
-    </time>
-
-    <div>
-
-      <h3>
-        PT Sari Rasa
-      </h3>
-
-      <h4>
-        Business Partner
-      </h4>
-
-      <p>
-        Supported the distribution of
-        <strong>traditional snack products to local supermarkets</strong>.
-        Involved in business operations, market development,
-        distribution, and monitoring sales performance across
-        <strong>approximately 50 supermarkets</strong>.
-      </p>
-
-    </div>
-
-  </article>
-
-
-  <!-- CAHAYA SEGARA -->
-
-  <article class="experience-item">
-
-    <time class="experience-date">
-      2026 · Project-Based
-    </time>
-
-    <div>
-
-      <h3>
-        PT Cahaya Segara Indonesia
-      </h3>
-
-      <h4>
-        Freelance Administrative & Executive Support
-      </h4>
-
-      <p>
-        Prepared
-        <strong>business documentation, reports, proposals,
-        and tender materials</strong>, while supporting
-        administrative and project-related activities.
-      </p>
-
-    </div>
-
-  </article>
-
-
-  <!-- ECOPLAST -->
-
-  <article class="experience-item">
-
-    <time class="experience-date">
-      2018–2019
-    </time>
-
-    <div>
-
-      <h3>
         <a
-          href="https://www.instagram.com/ecoplastid/"
+          href="https://tamimmah-disma.medium.com/the-rollercoaster-ride-of-twitch-acquisition-from-google-yahoo-to-amazon-70b8a2124df3"
           target="_blank"
           rel="noopener noreferrer"
         >
-          ECOPLAST ID ↗
+
+          <article class="project-card">
+
+            <div class="project-type">
+              04 · Independent Writing
+            </div>
+
+            <h3>
+              The Rollercoaster Ride
+              <i>of Twitch.</i>
+            </h3>
+
+            <p class="project-description">
+              An independent analysis of Twitch's journey
+              through <strong>Google, Yahoo, and Amazon</strong>,
+              exploring acquisition strategy and digital
+              platform growth.
+            </p>
+
+            <div class="project-bottom">
+
+              <span class="project-meta">
+                Business · Technology · Strategy
+              </span>
+
+              <span class="project-link">
+                Read Article ↗
+              </span>
+
+            </div>
+
+          </article>
+
         </a>
-      </h3>
 
-      <h4>
-        Chief Marketing Officer
-      </h4>
 
-      <p>
-        Led
-        <strong>marketing and brand communication</strong>
-        for an early-stage environmental startup, including
-        promotional activities, audience engagement, and
-        marketing direction.
-      </p>
-
-    </div>
-
-  </article>
-
-
-  <!-- TEC -->
-
-  <article class="experience-item">
-
-    <time class="experience-date">
-      2018–2021
-    </time>
-
-    <div>
-
-      <h3>
-        Techno Entrepreneur Club (TEC), ITB
-      </h3>
-
-      <h4>
-        Student Entrepreneur
-      </h4>
-
-      <p>
-        Participated in entrepreneurial activities involving
-        <strong>business development, marketing, project
-        execution, and startup-related initiatives</strong>.
-      </p>
-
-    </div>
-
-  </article>
-
-</div>
-```
-
-  </div>
-
-</section>
-
-<!-- =========================================================
-     PROJECTS
-========================================================= -->
-
-<section id="projects">
-
-  <div class="section-layout">
-
-```
-<div>
-
-  <div class="section-label">
-    03 / SELECTED PROJECTS
-  </div>
-
-  <h2 class="section-title">
-    Selected
-    <br>
-    <i>work.</i>
-  </h2>
-
-</div>
-
-
-<div>
-
-  <div class="projects-intro">
-
-    <p>
-      A selection of projects exploring
-      <strong>consumer behavior, brand strategy,
-      marketing, and digital culture</strong>.
-    </p>
-
-  </div>
-
-
-  <div class="project-grid">
-
-
-    <!-- PROJECT 01 -->
-
-    <a
-      class="project-link"
-      href="Consumer_Purchase_Intention_Traditional_Chips.pdf"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-
-      <article class="project-card featured">
-
-        <div class="project-type">
-          01 · Consumer Research
-        </div>
-
-        <h2>
-          Understanding
-          <i>Purchase Intention.</i>
-        </h2>
-
-        <p>
-          Quantitative research investigating the factors
-          influencing <strong>consumer purchase intention
-          toward traditional chips in local supermarkets
-          in Jakarta</strong>.
-        </p>
-
-        <div class="project-meta">
-
-          <span>
-            Thesis · SPSS · Regression
-          </span>
-
-          <strong class="project-cta">
-            View Project ↗
-          </strong>
-
-        </div>
-
-      </article>
-
-    </a>
-
-
-    <!-- PROJECT 02 -->
-
-    <a
-      class="project-link"
-      href="buavita.html"
-    >
-
-      <article class="project-card">
-
-        <div class="project-type">
-          02 · Brand Strategy
-        </div>
-
-        <h2>
-          Buavita
-          <i>Brand Strategy.</i>
-        </h2>
-
-        <p>
-          Brand strategy project focused on
-          <strong>consumer understanding, positioning,
-          communication, and strategic recommendations</strong>.
-        </p>
-
-        <div class="project-meta">
-
-          <span>
-            Consumer Research · Strategy
-          </span>
-
-          <strong class="project-cta">
-            View Project ↗
-          </strong>
-
-        </div>
-
-      </article>
-
-    </a>
-
-
-    <!-- PROJECT 03 -->
-
-    <a
-      class="project-link"
-      href="https://marketing.co.id/menilik-strategi-branding-produk-kecantikan-korea/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-
-      <article class="project-card">
-
-        <div class="project-type">
-          03 · Published Work
-        </div>
-
-        <h2>
-          Korean Beauty
-          <i>Branding.</i>
-        </h2>
-
-        <p>
-          Published article examining
-          <strong>branding strategies within the Korean
-          beauty industry</strong> and how brands create
-          consumer appeal.
-        </p>
-
-        <div class="project-meta">
-
-          <span>
-            Marketing · Branding · Published
-          </span>
-
-          <strong class="project-cta">
-            Read Article ↗
-          </strong>
-
-        </div>
-
-      </article>
-
-    </a>
-
-
-    <!-- PROJECT 04 -->
-
-    <a
-      class="project-link"
-      href="https://tamimmah-disma.medium.com/the-rollercoaster-ride-of-twitch-acquisition-from-google-yahoo-to-amazon-70b8a2124df3"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-
-      <article class="project-card">
-
-        <div class="project-type">
-          04 · Independent Writing
-        </div>
-
-        <h2>
-          The Rollercoaster Ride
-          <i>of Twitch.</i>
-        </h2>
-
-        <p>
-          An independent analysis of Twitch's journey through
-          <strong>Google, Yahoo, and Amazon</strong>, exploring
-          acquisition strategy and digital platform growth.
-        </p>
-
-        <div class="project-meta">
-
-          <span>
-            Business · Technology · Strategy
-          </span>
-
-          <strong class="project-cta">
-            Read Article ↗
-          </strong>
-
-        </div>
-
-      </article>
-
-    </a>
-
-
-  </div>
-
-</div>
-```
-
-  </div>
-
-</section>
-
-<!-- =========================================================
-     SKILLS
-========================================================= -->
-
-<section id="skills">
-
-  <div class="section-layout">
-
-```
-<div>
-
-  <div class="section-label">
-    04 / SKILLS & EDUCATION
-  </div>
-
-  <h2 class="section-title">
-    What I
-    <br>
-    <i>bring.</i>
-  </h2>
-
-</div>
-
-
-<div>
-
-  <div class="skills">
-
-    <span>Marketing Strategy</span>
-
-    <span>Consumer & Market Research</span>
-
-    <span>Business Development</span>
-
-    <span>Brand Strategy</span>
-
-    <span>Customer Acquisition & Retention</span>
-
-    <span>Digital Marketing & Content</span>
-
-  </div>
-
-
-  <div class="education">
-
-    <div>
-
-      <div class="education-label">
-        Education
       </div>
 
-      <h3>
-        Institut Teknologi Bandung
-      </h3>
-
-      <p>
-        Bachelor of Business Management ·
-        <strong>Management & Marketing</strong>
-      </p>
-
     </div>
 
-
-    <div class="gpa">
-
-      <div class="education-label">
-        GPA
-      </div>
-
-      <strong>
-        3.44
-      </strong>
-
-    </div>
-
-  </div>
-
-</div>
-```
-
-  </div>
-
-</section>
-
-<!-- =========================================================
-     CREATIVE SKILLS
-========================================================= -->
-
-<section id="creative">
-
-  <div class="section-layout">
-
-```
-<div>
-
-  <div class="section-label">
-    05 / CREATIVE SKILLS
-  </div>
-
-  <h2 class="section-title">
-    Strategy is
-    <br>
-    also <i>visual.</i>
-  </h2>
-
-</div>
+  </section>
 
 
-<div class="creative-grid">
 
+  <!-- =======================================================
+       SKILLS
+  ======================================================== -->
 
-  <!-- PHOTOSHOP -->
+  <section id="skills">
 
-  <div class="creative-card">
+    <div class="container">
 
-    <div class="creative-label">
-      Adobe Photoshop
-    </div>
+      <div class="section-heading">
 
-    <h2>
-      Visual
-      <i>communication.</i>
-    </h2>
-
-    <p>
-      Experience creating visual content with a focus on
-      <strong>composition, branding, social media,
-      and visual communication</strong>.
-    </p>
-
-
-    <div class="creative-work">
-
-      <img
-        src="images/photoshop-works.png"
-        alt="Photoshop creative works"
-      >
-
-    </div>
-
-
-    <div class="creative-links">
-
-      <a
-        class="modern-link"
-        href="https://id.pinterest.com/akonhjhjhj/my-art-works/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        View my Pinterest ↗
-      </a>
-
-    </div>
-
-  </div>
-
-
-  <!-- TIKTOK -->
-
-  <div class="creative-card">
-
-    <div class="creative-label">
-      Content & Social Media
-    </div>
-
-    <h2>
-      Understanding
-      <i>attention.</i>
-    </h2>
-
-    <p>
-      Created and managed short-form content with a focus on
-      <strong>audience behavior, content performance,
-      and organic reach</strong>.
-    </p>
-
-
-    <div class="tiktok-highlight">
-
-
-      <div class="tiktok-stat">
-
-        <strong>
-          984
-        </strong>
-
-        <span>
-          Followers
+        <span class="section-number">
+          04 / SKILLS & EDUCATION
         </span>
 
+        <h2>
+          What I
+          <i>bring.</i>
+        </h2>
+
       </div>
 
 
-      <div class="tiktok-stat">
+      <div class="skills-grid">
 
-        <strong>
-          367K+
-        </strong>
+        <div class="skills-intro">
 
-        <span>
-          Avg. Views / Post
+          A mix of analytical thinking,
+          commercial understanding,
+          and creative execution.
+
+        </div>
+
+
+        <div class="skill-groups">
+
+
+          <div class="skill-group">
+
+            <h3>
+              Marketing & Strategy
+            </h3>
+
+            <div class="skill-list">
+
+              <span>Marketing Strategy</span>
+
+              <span>Brand Strategy</span>
+
+              <span>Consumer Research</span>
+
+              <span>Market Research</span>
+
+              <span>Digital Marketing</span>
+
+              <span>Content Strategy</span>
+
+            </div>
+
+          </div>
+
+
+          <div class="skill-group">
+
+            <h3>
+              Business
+            </h3>
+
+            <div class="skill-list">
+
+              <span>Business Development</span>
+
+              <span>Customer Acquisition</span>
+
+              <span>Customer Retention</span>
+
+              <span>Entrepreneurship</span>
+
+              <span>Operations</span>
+
+              <span>Project Management</span>
+
+            </div>
+
+          </div>
+
+
+          <div class="skill-group">
+
+            <h3>
+              Research & Analytics
+            </h3>
+
+            <div class="skill-list">
+
+              <span>Consumer Behavior</span>
+
+              <span>SPSS</span>
+
+              <span>Regression Analysis</span>
+
+              <span>Data Interpretation</span>
+
+              <span>Market Analysis</span>
+
+            </div>
+
+          </div>
+
+
+          <div class="skill-group">
+
+            <h3>
+              Creative
+            </h3>
+
+            <div class="skill-list">
+
+              <span>Adobe Photoshop</span>
+
+              <span>Visual Communication</span>
+
+              <span>Social Media</span>
+
+              <span>Content Creation</span>
+
+              <span>Creative Strategy</span>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+      <!-- EDUCATION -->
+
+      <div class="education">
+
+        <div>
+
+          <div class="education-label">
+            Education
+          </div>
+
+          <h3>
+            Institut Teknologi Bandung
+          </h3>
+
+          <p>
+            Bachelor of Business Management ·
+            <strong>Management & Marketing</strong>
+          </p>
+
+        </div>
+
+
+        <div class="gpa">
+
+          <div class="education-label">
+            GPA
+          </div>
+
+          <strong>
+            3.44
+          </strong>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================================================
+       CREATIVE
+  ======================================================== -->
+
+  <section id="creative">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-number">
+          05 / CREATIVE SKILLS
         </span>
 
+        <h2>
+          Strategy is also
+          <i>visual.</i>
+        </h2>
+
       </div>
 
 
-      <div class="tiktok-stat">
+      <p class="creative-intro">
+        Beyond strategy and research, I also enjoy translating
+        ideas into visual and digital content.
+      </p>
 
-        <strong>
-          2×
-        </strong>
 
-        <span>
-          1M+ Views
+      <div class="creative-grid">
+
+
+        <!-- PHOTOSHOP -->
+
+        <article class="creative-card">
+
+          <div class="creative-label">
+            Adobe Photoshop
+          </div>
+
+          <h3>
+            Visual
+            <i>communication.</i>
+          </h3>
+
+          <p class="creative-description">
+            Experience creating visual content with a focus on
+            <strong>composition, branding, social media,
+            and visual communication</strong>.
+          </p>
+
+
+          <div class="creative-image">
+
+            <img
+              src="images/photoshop-works.png"
+              alt="Photoshop creative works"
+            >
+
+          </div>
+
+
+          <div class="creative-cta">
+
+            <a
+              class="modern-link"
+              href="https://id.pinterest.com/akonhjhjhj/my-art-works/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View my Pinterest ↗
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- TIKTOK -->
+
+        <article class="creative-card">
+
+          <div class="creative-label">
+            Content & Social Media
+          </div>
+
+          <h3>
+            Understanding
+            <i>attention.</i>
+          </h3>
+
+          <p class="creative-description">
+            Created and managed short-form content with a focus
+            on <strong>audience behavior, content performance,
+            and organic reach</strong>.
+          </p>
+
+
+          <div class="tiktok-stats">
+
+            <div class="tiktok-stat">
+
+              <strong>
+                984
+              </strong>
+
+              <span>
+                Followers
+              </span>
+
+            </div>
+
+
+            <div class="tiktok-stat">
+
+              <strong>
+                367K+
+              </strong>
+
+              <span>
+                Avg. Views / Post
+              </span>
+
+            </div>
+
+
+            <div class="tiktok-stat">
+
+              <strong>
+                2×
+              </strong>
+
+              <span>
+                1M+ Views
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <p class="tiktok-insight">
+            Demonstrated ability to understand
+            <strong>what captures attention and drives engagement</strong>
+            in short-form content.
+          </p>
+
+
+          <div class="tiktok-profile">
+
+            <img
+              src="images/tiktok-profile.png"
+              alt="TikTok profile performance"
+            >
+
+          </div>
+
+
+          <div class="creative-cta">
+
+            <a
+              class="modern-link"
+              href="https://www.tiktok.com/@baesminju"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View TikTok ↗
+            </a>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================================================
+       CONTACT
+  ======================================================== -->
+
+  <section id="contact">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-number">
+          06 / CONTACT
         </span>
 
+        <h2>
+          Let's
+          <i>talk.</i>
+        </h2>
+
+      </div>
+
+
+      <div class="contact-grid">
+
+        <div class="contact-intro">
+
+          Open to opportunities where
+          strategy, business, and creativity
+          can work together.
+
+        </div>
+
+
+        <div class="contact-content">
+
+          <p>
+            Open to opportunities in
+            <strong>marketing, business development,
+            consumer insights, and creative strategy</strong>.
+          </p>
+
+
+          <a
+            class="contact-email"
+            href="mailto:tamimmadisma@gmail.com"
+          >
+            tamimmadisma@gmail.com
+          </a>
+
+
+          <div class="social">
+
+            <a
+              href="https://wa.me/6282130815541"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              WhatsApp ↗
+            </a>
+
+            <a
+              href="https://www.instagram.com/miramimmah/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Instagram ↗
+            </a>
+
+            <a
+              href="https://www.instagram.com/tamidisma/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Instagram 02 ↗
+            </a>
+
+          </div>
+
+        </div>
+
       </div>
 
     </div>
 
-
-    <p class="tiktok-insight-short">
-      Demonstrated ability to understand
-      <strong>what captures attention and drives engagement</strong>
-      in short-form content.
-    </p>
+  </section>
 
 
-    <div class="tiktok-profile">
 
-      <img
-        src="images/tiktok-profile.png"
-        alt="TikTok profile performance"
-      >
+  <!-- =======================================================
+       FOOTER
+  ======================================================== -->
 
-    </div>
+  <footer>
 
+    <div class="footer-inner">
 
-    <div class="tiktok-arrow">
+      <span>
+        © 2026 Tamimmah Disma Lestari
+      </span>
 
-      <a
-        class="modern-link"
-        href="https://www.tiktok.com/@baesminju"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        View TikTok ↗
-      </a>
+      <span>
+        Built with intention.
+      </span>
 
     </div>
 
-  </div>
+  </footer>
 
 
-</div>
-```
 
-  </div>
+  <!-- =======================================================
+       JAVASCRIPT
+  ======================================================== -->
 
-</section>
+  <script>
 
-<!-- =========================================================
-     CONTACT
-========================================================= -->
-
-<section id="contact">
-
-  <div class="section-layout">
-
-```
-<div>
-
-  <div class="section-label">
-    06 / CONTACT
-  </div>
-
-  <h2 class="section-title">
-    Let's
-    <br>
-    <i>talk.</i>
-  </h2>
-
-</div>
+    const menuButton = document.getElementById("menu");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileLinks = document.querySelectorAll(".mobile-nav a");
 
 
-<div class="contact-content">
+    function openMenu() {
 
-  <p>
-    Open to opportunities in
-    <strong>marketing, business development,
-    consumer insights, and creative strategy</strong>.
-  </p>
+      mobileMenu.classList.add("active");
 
+      document.body.classList.add("menu-open");
 
-  <a
-    class="contact-email"
-    href="mailto:tamimmadisma@gmail.com"
-  >
-    tamimmadisma@gmail.com
-  </a>
+      menuButton.setAttribute(
+        "aria-expanded",
+        "true"
+      );
 
+      menuButton.setAttribute(
+        "aria-label",
+        "Close navigation"
+      );
 
-  <div class="social">
-
-    <a
-      href="https://wa.me/6282130815541"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      WhatsApp ↗
-    </a>
-
-    <a
-      href="https://www.instagram.com/miramimmah/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Instagram ↗
-    </a>
-
-    <a
-      href="https://www.instagram.com/tamidisma/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Instagram 02 ↗
-    </a>
-
-  </div>
-
-</div>
-```
-
-  </div>
-
-</section>
-
-<!-- =========================================================
-     FOOTER
-========================================================= -->
-
-<footer>
-
-  <span>
-    © 2026 Tamimmah Disma Lestari
-  </span>
-
-  <span>
-    Built with intention.
-  </span>
-
-</footer>
-
-<!-- =========================================================
-     JAVASCRIPT
-========================================================= -->
-
-<script>
-
-  const menuButton = document.getElementById("menu");
-  const mobileMenu = document.getElementById("mobileMenu");
-  const mobileLinks = document.querySelectorAll(".mobile-nav a");
-
-
-  function openMenu() {
-
-    mobileMenu.classList.add("active");
-
-    document.body.classList.add("menu-open");
-
-    menuButton.setAttribute("aria-expanded", "true");
-    menuButton.setAttribute("aria-label", "Close navigation");
-
-    menuButton.innerHTML = "×";
-
-  }
-
-
-  function closeMenu() {
-
-    mobileMenu.classList.remove("active");
-
-    document.body.classList.remove("menu-open");
-
-    menuButton.setAttribute("aria-expanded", "false");
-    menuButton.setAttribute("aria-label", "Open navigation");
-
-    menuButton.innerHTML = "☰";
-
-  }
-
-
-  menuButton.addEventListener("click", function () {
-
-    if (mobileMenu.classList.contains("active")) {
-
-      closeMenu();
-
-    } else {
-
-      openMenu();
+      menuButton.innerHTML = "×";
 
     }
 
-  });
 
+    function closeMenu() {
 
-  mobileLinks.forEach(function (link) {
+      mobileMenu.classList.remove("active");
 
-    link.addEventListener("click", function () {
+      document.body.classList.remove("menu-open");
 
-      closeMenu();
+      menuButton.setAttribute(
+        "aria-expanded",
+        "false"
+      );
 
-    });
+      menuButton.setAttribute(
+        "aria-label",
+        "Open navigation"
+      );
 
-  });
-
-
-  document.addEventListener("keydown", function (event) {
-
-    if (event.key === "Escape") {
-
-      closeMenu();
-
-    }
-
-  });
-
-
-  window.addEventListener("resize", function () {
-
-    if (window.innerWidth > 900) {
-
-      closeMenu();
+      menuButton.innerHTML = "☰";
 
     }
 
-  });
 
-</script>
+    menuButton.addEventListener(
+      "click",
+      function () {
+
+        if (
+          mobileMenu.classList.contains("active")
+        ) {
+
+          closeMenu();
+
+        } else {
+
+          openMenu();
+
+        }
+
+      }
+    );
+
+
+    mobileLinks.forEach(
+      function (link) {
+
+        link.addEventListener(
+          "click",
+          function () {
+
+            closeMenu();
+
+          }
+        );
+
+      }
+    );
+
+
+    document.addEventListener(
+      "keydown",
+      function (event) {
+
+        if (event.key === "Escape") {
+
+          closeMenu();
+
+        }
+
+      }
+    );
+
+
+    window.addEventListener(
+      "resize",
+      function () {
+
+        if (window.innerWidth > 700) {
+
+          closeMenu();
+
+        }
+
+      }
+    );
+
+  </script>
+
 
 </body>
 
