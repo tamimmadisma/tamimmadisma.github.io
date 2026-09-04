@@ -5008,3 +5008,180 @@ h3 em {
     transform: translateX(-50%);
   }
 }
+
+/* =========================================================
+   JOURNEY TAKEAWAYS — ORGANIC SKILL SHAPES
+   ========================================================= */
+
+.milestone-takeaway {
+  margin-top: 24px;
+}
+
+.takeaway-label {
+  display: block;
+  margin-bottom: 13px;
+
+  font-family: var(--sans);
+  font-size: 8px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+
+  color: var(--soft);
+}
+
+.takeaway-skills {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 9px;
+  max-width: 450px;
+}
+
+.takeaway-skill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 34px;
+  padding: 9px 14px;
+
+  font-family: var(--sans);
+  font-size: 9px;
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: 0;
+
+  color: var(--charcoal);
+
+  border: 1px solid rgba(37, 37, 37, .10);
+  box-shadow: 2px 3px 0 rgba(37, 37, 37, .06);
+
+  transition:
+    transform .25s var(--ease),
+    box-shadow .25s ease,
+    filter .25s ease;
+}
+
+.takeaway-skill.shape-one {
+  background: var(--yellow);
+  border-radius: 48% 52% 45% 55% / 55% 45% 55% 45%;
+  transform: rotate(-2deg);
+}
+
+.takeaway-skill.shape-two {
+  background: var(--turquoise);
+  border-radius: 55% 45% 52% 48% / 45% 55% 48% 52%;
+  transform: rotate(2deg);
+}
+
+.takeaway-skill.shape-three {
+  background: var(--pink);
+  border-radius: 45% 55% 48% 52% / 52% 48% 55% 45%;
+  transform: rotate(-1deg);
+}
+
+.takeaway-skill:hover {
+  filter: brightness(.98);
+  box-shadow: 4px 6px 0 rgba(37, 37, 37, .08);
+  transform: translateY(-3px) rotate(0deg);
+}
+
+/* Keep the same DM Sans family on the final TODAY takeaway pills. */
+.today-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 20px;
+}
+
+.today-skill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 34px;
+  padding: 9px 14px;
+
+  font-family: var(--sans);
+  font-size: 9px;
+  line-height: 1.15;
+  font-weight: 600;
+
+  color: var(--cream);
+  border: 1px solid rgba(255,255,255,.15);
+  box-shadow: 2px 3px 0 rgba(0,0,0,.10);
+}
+
+.today-skill.shape-one {
+  background: var(--green-dark);
+  border-radius: 48% 52% 45% 55% / 55% 45% 55% 45%;
+  transform: rotate(-2deg);
+}
+
+.today-skill.shape-two {
+  background: var(--turquoise-dark);
+  border-radius: 55% 45% 52% 48% / 45% 55% 48% 52%;
+  transform: rotate(2deg);
+}
+
+.today-skill.shape-three {
+  background: var(--pink);
+  color: var(--charcoal);
+  border-radius: 45% 55% 48% 52% / 52% 48% 55% 45%;
+  transform: rotate(-1deg);
+}
+
+.today-skill:hover {
+  transform: translateY(-3px) rotate(0deg);
+}
+
+/* =========================================================
+   JOURNEY TAKEAWAYS — RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .takeaway-skill,
+  .today-skill {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 760px) {
+  .milestone-takeaway {
+    margin-top: 19px;
+  }
+
+  .takeaway-label {
+    margin-bottom: 10px;
+    font-size: 6.5px;
+  }
+
+  .takeaway-skills,
+  .today-skills {
+    gap: 7px;
+    max-width: 100%;
+  }
+
+  .takeaway-skill,
+  .today-skill {
+    min-height: 30px;
+    padding: 8px 11px;
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .takeaway-skills,
+  .today-skills {
+    gap: 6px;
+  }
+
+  .takeaway-skill,
+  .today-skill {
+    min-height: 29px;
+    padding: 7px 10px;
+    font-size: 7.5px;
+  }
+}
