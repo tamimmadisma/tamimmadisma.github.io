@@ -13,8 +13,8 @@ html {
 }
 
 body {
-  background: #faf9f6;
-  color: #242720;
+  background: #f7f4ee;
+  color: #252525;
   font-family: "DM Sans", sans-serif;
   font-size: 14px;
   line-height: 1.6;
@@ -41,17 +41,18 @@ button {
 ========================================================= */
 
 :root {
-  --background: #faf9f6;
-  --surface: #f3f1ec;
-  --surface-green: #eef2eb;
+  --background: #f7f4ee;
+  --surface: #f0ede6;
+  --surface-green: #e8ece5;
 
-  --text: #242720;
-  --muted: #62675f;
-  --soft: #8b8e87;
+  --text: #252525;
+  --muted: #66675f;
+  --soft: #8a8982;
 
-  --line: #e3dfd7;
+  --line: #dedad1;
 
-  --accent: #b96f7f;
+  --accent: #7a8b78;
+  --accent-secondary: #c99a9a;
 }
 
 
@@ -119,7 +120,7 @@ header {
 
   padding: 0 7vw;
 
-  background: rgba(250, 249, 246, 0.94);
+  background: rgba(247, 244, 238, 0.94);
   border-bottom: 1px solid var(--line);
 
   backdrop-filter: blur(10px);
@@ -268,7 +269,7 @@ header nav a:hover::after {
   font-size: clamp(130px, 19vw, 285px);
   line-height: 0.75;
 
-  color: #efede7;
+  color: #ebe7de;
 
   user-select: none;
 }
@@ -428,7 +429,7 @@ header nav a:hover::after {
 
 .project-grid article:hover {
   transform: translateY(-3px);
-  background: #efede7;
+  background: #ebe7de;
 }
 
 .project-grid article.featured {
@@ -678,8 +679,8 @@ header nav a:hover::after {
   margin-top: 17px;
   padding: 14px 0;
 
-  border-top: 1px solid #dce1d8;
-  border-bottom: 1px solid #dce1d8;
+  border-top: 1px solid #d9dfd5;
+  border-bottom: 1px solid #d9dfd5;
 }
 
 .tiktok-stat strong {
