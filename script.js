@@ -11,17 +11,28 @@
 
 const body = document.body;
 
-const header =
-  document.getElementById("siteHeader");
+const header = document.getElementById("siteHeader");
 
-const menuToggle =
-  document.getElementById("menuToggle");
+const menuToggle = document.getElementById("menuToggle");
 
-const mobileNav =
-  document.getElementById("mobileNav");
+const mobileNav = document.getElementById("mobileNav");
 
-const currentYear =
-  document.getElementById("currentYear");
+const currentYear = document.getElementById("currentYear");
+
+const prefersReducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)"
+).matches;
+
+const supportsHover = window.matchMedia(
+  "(hover: hover) and (pointer: fine)"
+).matches;
+
+
+/* =========================================================
+   PAGE READY
+========================================================= */
+
+document.documentElement.classList.add("js-enabled");
 
 
 /* =========================================================
@@ -29,8 +40,7 @@ const currentYear =
 ========================================================= */
 
 if (currentYear) {
-  currentYear.textContent =
-    new Date().getFullYear();
+  currentYear.textContent = new Date().getFullYear();
 }
 
 
@@ -44,11 +54,10 @@ function updateHeader() {
     return;
   }
 
-  if (window.scrollY > 40) {
-    header.classList.add("scrolled");
-  } else {
-    header.classList.remove("scrolled");
-  }
+  header.classList.toggle(
+    "scrolled",
+    window.scrollY > 40
+  );
 
 }
 
@@ -138,10 +147,9 @@ if (menuToggle && mobileNav) {
    MOBILE NAV LINKS
 ========================================================= */
 
-const mobileLinks =
-  document.querySelectorAll(
-    ".mobile-nav a"
-  );
+const mobileLinks = document.querySelectorAll(
+  ".mobile-nav a"
+);
 
 mobileLinks.forEach(link => {
 
@@ -201,10 +209,9 @@ if (mobileNav) {
    SMOOTH ANCHOR SCROLL
 ========================================================= */
 
-const anchorLinks =
-  document.querySelectorAll(
-    'a[href^="#"]'
-  );
+const anchorLinks = document.querySelectorAll(
+  'a[href^="#"]'
+);
 
 anchorLinks.forEach(link => {
 
@@ -225,10 +232,14 @@ anchorLinks.forEach(link => {
       let target = null;
 
       try {
+
         target =
           document.querySelector(targetID);
-      } catch {
+
+      } catch (error) {
+
         return;
+
       }
 
       if (!target) {
@@ -248,9 +259,33 @@ anchorLinks.forEach(link => {
         headerOffset;
 
       window.scrollTo({
+
         top: targetPosition,
-        behavior: "smooth"
+
+        behavior:
+          prefersReducedMotion
+            ? "auto"
+            : "smooth"
+
       });
+
+      /*
+        Update URL without forcing
+        another jump.
+      */
+
+      if (
+        history.replaceState &&
+        targetID !== "#"
+      ) {
+
+        history.replaceState(
+          null,
+          "",
+          targetID
+        );
+
+      }
 
     }
   );
@@ -262,26 +297,36 @@ anchorLinks.forEach(link => {
    JOURNEY — MILESTONES
 ========================================================= */
 
-const milestones =
-  document.querySelectorAll(
-    ".milestone[data-milestone]"
-  );
+const milestones = document.querySelectorAll(
+  ".milestone[data-milestone]"
+);
 
 
-function closeAllMilestones() {
+function closeAllMilestones(
+  except = null
+) {
 
   milestones.forEach(item => {
+
+    if (item === except) {
+      return;
+    }
+
     item.classList.remove("active");
+
     item.setAttribute(
       "aria-expanded",
       "false"
     );
+
   });
 
 }
 
 
-function toggleMilestone(milestone) {
+function toggleMilestone(
+  milestone
+) {
 
   if (!milestone) {
     return;
@@ -306,73 +351,101 @@ function toggleMilestone(milestone) {
 }
 
 
-milestones.forEach(milestone => {
+milestones.forEach(
+  (milestone, index) => {
 
-  milestone.addEventListener(
-    "click",
-    () => {
-      toggleMilestone(milestone);
-    }
-  );
+    /*
+      Accessibility
+    */
 
+    milestone.setAttribute(
+      "tabindex",
+      "0"
+    );
 
-  /* Keyboard accessibility */
+    milestone.setAttribute(
+      "role",
+      "button"
+    );
 
-  milestone.setAttribute(
-    "tabindex",
-    "0"
-  );
-
-  milestone.setAttribute(
-    "role",
-    "button"
-  );
-
-  milestone.setAttribute(
-    "aria-expanded",
-    "false"
-  );
+    milestone.setAttribute(
+      "aria-expanded",
+      "false"
+    );
 
 
-  milestone.addEventListener(
-    "keydown",
-    event => {
+    /*
+      Click
+    */
 
-      if (
-        event.key === "Enter" ||
-        event.key === " "
-      ) {
-
-        event.preventDefault();
+    milestone.addEventListener(
+      "click",
+      () => {
 
         toggleMilestone(
           milestone
         );
 
       }
+    );
+
+
+    /*
+      Keyboard
+    */
+
+    milestone.addEventListener(
+      "keydown",
+      event => {
+
+        if (
+          event.key === "Enter" ||
+          event.key === " "
+        ) {
+
+          event.preventDefault();
+
+          toggleMilestone(
+            milestone
+          );
+
+        }
+
+      }
+    );
+
+
+    /*
+      Stagger
+    */
+
+    if (!prefersReducedMotion) {
+
+      milestone.style.transitionDelay =
+        `${Math.min(index * 45, 250)}ms`;
 
     }
-  );
 
-});
+  }
+);
 
 
 /* =========================================================
    SKILLS CONSTELLATION
 ========================================================= */
 
-const skillNodes =
-  document.querySelectorAll(
-    ".skill-node[data-skill]"
-  );
+const skillNodes = document.querySelectorAll(
+  ".skill-node[data-skill]"
+);
 
-const skillDetails =
-  document.querySelectorAll(
-    ".skill-detail[data-detail]"
-  );
+const skillDetails = document.querySelectorAll(
+  ".skill-detail[data-detail]"
+);
 
 
-function activateSkill(skillName) {
+function activateSkill(
+  skillName
+) {
 
   if (!skillName) {
     return;
@@ -429,6 +502,10 @@ skillNodes.forEach(node => {
   );
 
 
+  /*
+    Mouse
+  */
+
   node.addEventListener(
     "click",
     () => {
@@ -440,6 +517,10 @@ skillNodes.forEach(node => {
     }
   );
 
+
+  /*
+    Keyboard
+  */
 
   node.addEventListener(
     "keydown",
@@ -469,22 +550,39 @@ skillNodes.forEach(node => {
 ========================================================= */
 
 const revealSelector = [
+
   ".section-heading",
+
   ".about-grid",
+
   ".proof-strip",
+
   ".journey-intro",
+
   ".milestone",
+
   ".experience-row",
+
   ".projects-intro",
+
   ".project",
+
   ".skills-intro",
+
   ".skills-map",
+
   ".skill-details",
+
   ".tools-row",
+
   ".education-block",
+
   ".creative-intro",
+
   ".creative-piece",
+
   ".contact-content"
+
 ].join(", ");
 
 
@@ -496,12 +594,17 @@ const revealTargets =
 
 revealTargets.forEach(
   element => {
-    element.classList.add("reveal");
+
+    element.classList.add(
+      "reveal"
+    );
+
   }
 );
 
 
 if (
+  !prefersReducedMotion &&
   "IntersectionObserver" in window
 ) {
 
@@ -509,27 +612,30 @@ if (
     new IntersectionObserver(
       entries => {
 
-        entries.forEach(entry => {
+        entries.forEach(
+          entry => {
 
-          if (
-            !entry.isIntersecting
-          ) {
-            return;
+            if (
+              !entry.isIntersecting
+            ) {
+              return;
+            }
+
+            entry.target.classList.add(
+              "visible"
+            );
+
+            revealObserver.unobserve(
+              entry.target
+            );
+
           }
-
-          entry.target.classList.add(
-            "visible"
-          );
-
-          revealObserver.unobserve(
-            entry.target
-          );
-
-        });
+        );
 
       },
       {
         threshold: 0.08,
+
         rootMargin:
           "0px 0px -45px 0px"
       }
@@ -538,17 +644,28 @@ if (
 
   revealTargets.forEach(
     element => {
-      revealObserver.observe(element);
+
+      revealObserver.observe(
+        element
+      );
+
     }
   );
 
 } else {
 
+  /*
+    Reduced motion / old browsers:
+    show everything immediately.
+  */
+
   revealTargets.forEach(
     element => {
+
       element.classList.add(
         "visible"
       );
+
     }
   );
 
@@ -568,21 +685,11 @@ const experienceRows =
 experienceRows.forEach(
   (row, index) => {
 
+    if (prefersReducedMotion) {
+      return;
+    }
+
     row.style.transitionDelay =
-      `${Math.min(index * 45, 250)}ms`;
-
-  }
-);
-
-
-/* =========================================================
-   STAGGER JOURNEY
-========================================================= */
-
-milestones.forEach(
-  (item, index) => {
-
-    item.style.transitionDelay =
       `${Math.min(index * 45, 250)}ms`;
 
   }
@@ -594,13 +701,14 @@ milestones.forEach(
 ========================================================= */
 
 /*
-   Desktop only.
+  Desktop only.
 
-   This creates a subtle movement when the
-   employer moves the cursor over a project.
+  The project visual follows the cursor
+  very slightly.
 
-   It intentionally stays very small so the
-   portfolio remains professional.
+  Kept intentionally subtle so the
+  portfolio still feels editorial
+  and professional.
 */
 
 const projectCards =
@@ -609,81 +717,90 @@ const projectCards =
   );
 
 
-const supportsHover =
-  window.matchMedia(
-    "(hover: hover) and (pointer: fine)"
-  ).matches;
+if (
+  supportsHover &&
+  !prefersReducedMotion
+) {
+
+  projectCards.forEach(
+    project => {
+
+      const visual =
+        project.querySelector(
+          ".project-visual"
+        );
 
 
-if (supportsHover) {
+      if (!visual) {
+        return;
+      }
 
-  projectCards.forEach(project => {
 
-    const visual =
-      project.querySelector(
-        ".project-visual"
+      project.addEventListener(
+        "mousemove",
+        event => {
+
+          const rect =
+            project.getBoundingClientRect();
+
+
+          if (
+            !rect.width ||
+            !rect.height
+          ) {
+            return;
+          }
+
+
+          const x =
+            (
+              event.clientX -
+              rect.left
+            ) /
+            rect.width;
+
+
+          const y =
+            (
+              event.clientY -
+              rect.top
+            ) /
+            rect.height;
+
+
+          const moveX =
+            (x - 0.5) * 5;
+
+
+          const moveY =
+            (y - 0.5) * 5;
+
+
+          visual.style.transform =
+            `translate(${moveX}px, ${moveY}px)`;
+
+        }
       );
 
 
-    if (!visual) {
-      return;
+      project.addEventListener(
+        "mouseleave",
+        () => {
+
+          visual.style.transform =
+            "translate(0, 0)";
+
+        }
+      );
+
     }
-
-
-    project.addEventListener(
-      "mousemove",
-      event => {
-
-        const rect =
-          project.getBoundingClientRect();
-
-
-        const x =
-          (
-            event.clientX -
-            rect.left
-          ) / rect.width;
-
-
-        const y =
-          (
-            event.clientY -
-            rect.top
-          ) / rect.height;
-
-
-        const moveX =
-          (x - 0.5) * 5;
-
-
-        const moveY =
-          (y - 0.5) * 5;
-
-
-        visual.style.transform =
-          `translate(${moveX}px, ${moveY}px)`;
-
-      }
-    );
-
-
-    project.addEventListener(
-      "mouseleave",
-      () => {
-
-        visual.style.transform =
-          "translate(0, 0)";
-
-      }
-    );
-
-  });
+  );
 
 }
 
 
 /* =========================================================
-   PHOTOSHOP IMAGE PARALLAX
+   CREATIVE — PHOTOSHOP PARALLAX
 ========================================================= */
 
 const photoshopImage =
@@ -695,13 +812,32 @@ const photoshopImage =
 let parallaxTicking = false;
 
 
+function resetPhotoshopParallax() {
+
+  if (!photoshopImage) {
+    return;
+  }
+
+  photoshopImage.style.setProperty(
+    "--image-shift",
+    "0px"
+  );
+
+}
+
+
 function updatePhotoshopParallax() {
 
   if (
     !photoshopImage ||
+    prefersReducedMotion ||
     window.innerWidth <= 700
   ) {
+
+    resetPhotoshopParallax();
+
     return;
+
   }
 
 
@@ -713,11 +849,18 @@ function updatePhotoshopParallax() {
     window.innerHeight;
 
 
+  /*
+    Don't calculate when the image
+    is completely outside the viewport.
+  */
+
   if (
     rect.bottom < 0 ||
     rect.top > viewportHeight
   ) {
+
     return;
+
   }
 
 
@@ -744,34 +887,94 @@ function updatePhotoshopParallax() {
 }
 
 
+function requestPhotoshopParallax() {
+
+  if (parallaxTicking) {
+    return;
+  }
+
+  parallaxTicking = true;
+
+  window.requestAnimationFrame(
+    () => {
+
+      updatePhotoshopParallax();
+
+      parallaxTicking = false;
+
+    }
+  );
+
+}
+
+
 if (photoshopImage) {
 
   window.addEventListener(
     "scroll",
-    () => {
-
-      if (!parallaxTicking) {
-
-        window.requestAnimationFrame(
-          () => {
-
-            updatePhotoshopParallax();
-
-            parallaxTicking = false;
-
-          }
-        );
-
-        parallaxTicking = true;
-
-      }
-
-    },
+    requestPhotoshopParallax,
     { passive: true }
   );
 
+  window.addEventListener(
+    "resize",
+    requestPhotoshopParallax
+  );
 
   updatePhotoshopParallax();
+
+}
+
+
+/* =========================================================
+   CREATIVE — PIECE HOVER
+========================================================= */
+
+/*
+  Gives the Creative section a little
+  physical / tactile feeling without
+  adding unnecessary animation.
+*/
+
+const creativePieces =
+  document.querySelectorAll(
+    ".creative-piece"
+  );
+
+
+if (
+  supportsHover &&
+  !prefersReducedMotion
+) {
+
+  creativePieces.forEach(
+    piece => {
+
+      piece.addEventListener(
+        "mouseenter",
+        () => {
+
+          piece.classList.add(
+            "is-hovered"
+          );
+
+        }
+      );
+
+
+      piece.addEventListener(
+        "mouseleave",
+        () => {
+
+          piece.classList.remove(
+            "is-hovered"
+          );
+
+        }
+      );
+
+    }
+  );
 
 }
 
@@ -796,12 +999,19 @@ function setActiveNavigation(
   sectionID
 ) {
 
+  if (!sectionID) {
+    return;
+  }
+
   desktopNavLinks.forEach(
     link => {
 
+      const href =
+        link.getAttribute("href");
+
+
       const isActive =
-        link.getAttribute("href") ===
-        `#${sectionID}`;
+        href === `#${sectionID}`;
 
 
       link.classList.toggle(
@@ -817,17 +1027,13 @@ function setActiveNavigation(
 
 if (
   sections.length &&
+  desktopNavLinks.length &&
   "IntersectionObserver" in window
 ) {
 
   const sectionObserver =
     new IntersectionObserver(
       entries => {
-
-        /*
-          Sort by visibility so the most
-          visible section wins.
-        */
 
         const visibleSections =
           entries
@@ -856,23 +1062,28 @@ if (
 
       },
       {
+
         threshold: [
           0.15,
           0.3,
           0.5,
           0.7
         ],
+
         rootMargin:
           "-15% 0px -45% 0px"
+
       }
     );
 
 
   sections.forEach(
     section => {
+
       sectionObserver.observe(
         section
       );
+
     }
   );
 
@@ -883,60 +1094,70 @@ if (
    RESIZE SAFETY
 ========================================================= */
 
-let resizeTimer;
+let resizeTimer = null;
 
 
 window.addEventListener(
   "resize",
   () => {
 
-    clearTimeout(resizeTimer);
+    clearTimeout(
+      resizeTimer
+    );
 
 
     resizeTimer =
-      setTimeout(() => {
+      setTimeout(
+        () => {
 
-        /*
-          Close mobile navigation
-          when returning to desktop.
-        */
+          /*
+            Close mobile navigation
+            when returning to desktop.
+          */
 
-        if (
-          window.innerWidth > 700
-        ) {
+          if (
+            window.innerWidth > 700
+          ) {
 
-          closeMenu();
-
-        }
-
-
-        /*
-          Reset project transforms.
-        */
-
-        projectCards.forEach(
-          project => {
-
-            const visual =
-              project.querySelector(
-                ".project-visual"
-              );
-
-
-            if (visual) {
-
-              visual.style.transform =
-                "translate(0, 0)";
-
-            }
+            closeMenu();
 
           }
-        );
 
 
-        updatePhotoshopParallax();
+          /*
+            Reset project transforms.
+          */
 
-      }, 150);
+          projectCards.forEach(
+            project => {
+
+              const visual =
+                project.querySelector(
+                  ".project-visual"
+                );
+
+
+              if (visual) {
+
+                visual.style.transform =
+                  "translate(0, 0)";
+
+              }
+
+            }
+          );
+
+
+          /*
+            Recalculate Photoshop
+            parallax after resizing.
+          */
+
+          updatePhotoshopParallax();
+
+        },
+        150
+      );
 
   }
 );
@@ -952,29 +1173,34 @@ const images =
   );
 
 
-images.forEach(image => {
+images.forEach(
+  image => {
 
-  image.addEventListener(
-    "error",
-    () => {
+    image.addEventListener(
+      "error",
+      () => {
 
-      /*
-        Instead of collapsing the layout,
-        keep a neutral placeholder area.
-      */
+        /*
+          Keep the layout intact if an
+          image cannot be loaded.
+        */
 
-      image.style.opacity = "0";
+        image.style.opacity =
+          "0";
 
-      image.setAttribute(
-        "aria-hidden",
-        "true"
-      );
+        image.setAttribute(
+          "aria-hidden",
+          "true"
+        );
 
-    },
-    { once: true }
-  );
+      },
+      {
+        once: true
+      }
+    );
 
-});
+  }
+);
 
 
 /* =========================================================
@@ -997,9 +1223,97 @@ if (menuToggle) {
 
 
 /* =========================================================
-   PAGE READY
+   INITIAL MOBILE NAV STATE
 ========================================================= */
 
-document.documentElement.classList.add(
-  "js-enabled"
+if (mobileNav) {
+
+  mobileNav.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+}
+
+
+/* =========================================================
+   KEEP ARIA STATE IN SYNC
+========================================================= */
+
+if (
+  menuToggle &&
+  mobileNav
+) {
+
+  const syncMenuAccessibility =
+    () => {
+
+      const isOpen =
+        mobileNav.classList.contains(
+          "active"
+        );
+
+
+      mobileNav.setAttribute(
+        "aria-hidden",
+        isOpen
+          ? "false"
+          : "true"
+      );
+
+    };
+
+
+  const originalOpenMenu =
+    openMenu;
+
+
+  const originalCloseMenu =
+    closeMenu;
+
+
+  /*
+    The menu's visual state is already
+    controlled by openMenu / closeMenu.
+    Sync accessibility after each
+    state change through the toggle.
+  */
+
+  menuToggle.addEventListener(
+    "click",
+    () => {
+
+      window.requestAnimationFrame(
+        syncMenuAccessibility
+      );
+
+    }
+  );
+
+
+  if (mobileNav) {
+
+    mobileNav.addEventListener(
+      "transitionend",
+      syncMenuAccessibility
+    );
+
+  }
+
+}
+
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
+
+document.addEventListener(
+  "DOMContentLoaded",
+  () => {
+
+    updateHeader();
+
+    updatePhotoshopParallax();
+
+  }
 );
