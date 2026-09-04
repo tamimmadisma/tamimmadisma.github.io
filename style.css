@@ -439,6 +439,243 @@ h2 i {
 
 
 /* =========================
+   TIKTOK ORGANIC MARKETING
+========================= */
+
+.tiktok-block {
+  margin-top: 120px;
+  padding-top: 80px;
+  border-top: 1px solid #e5e0d8;
+}
+
+
+/* =========================
+   PERFORMANCE HIGHLIGHT
+========================= */
+
+.tiktok-highlight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+  margin-top: 60px;
+  padding: 45px 20px;
+  border-top: 1px solid #e5e0d8;
+  border-bottom: 1px solid #e5e0d8;
+}
+
+.tiktok-stat {
+  text-align: center;
+}
+
+.tiktok-stat strong {
+  display: block;
+  font-size: 36px;
+  font-weight: 700;
+  color: #30342f;
+}
+
+.tiktok-stat span {
+  display: block;
+  margin-top: 8px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8a8d86;
+}
+
+.tiktok-arrow {
+  font-size: 24px;
+  color: #b96f7f;
+}
+
+
+/* =========================
+   SCALE
+========================= */
+
+.tiktok-scale {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 70px;
+  text-align: center;
+}
+
+.tiktok-scale strong {
+  font-size: 76px;
+  line-height: 1;
+  font-weight: 700;
+  color: #b96f7f;
+}
+
+.tiktok-scale span {
+  margin-top: 14px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #62675f;
+}
+
+
+/* =========================
+   STRATEGIC INSIGHT
+========================= */
+
+.tiktok-insight {
+  margin-top: 100px;
+  padding-top: 70px;
+  border-top: 1px solid #e5e0d8;
+}
+
+.tiktok-insight .grid {
+  margin-top: 0;
+}
+
+.tiktok-insight p {
+  color: #62675f;
+}
+
+
+/* =========================
+   MARKETING PROCESS
+========================= */
+
+.tiktok-process {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 70px;
+  padding: 40px 20px;
+  border-top: 1px solid #e5e0d8;
+  border-bottom: 1px solid #e5e0d8;
+}
+
+.tiktok-process > div {
+  text-align: center;
+}
+
+.tiktok-process > div:not(:nth-child(even)) {
+  min-width: 120px;
+}
+
+.tiktok-process > div:nth-child(even) {
+  font-size: 20px;
+  color: #b96f7f;
+}
+
+.tiktok-process strong {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: #b96f7f;
+}
+
+.tiktok-process span {
+  display: block;
+  margin-top: 8px;
+  font-size: 11px;
+  line-height: 1.45;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #62675f;
+}
+
+
+/* =========================
+   SUPPORTING METRICS
+========================= */
+
+.tiktok-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 55px;
+}
+
+.tiktok-metrics div {
+  padding: 28px 15px;
+  text-align: center;
+  border: 1px solid #e5e0d8;
+}
+
+.tiktok-metrics strong {
+  display: block;
+  font-size: 23px;
+  font-weight: 700;
+  color: #30342f;
+}
+
+.tiktok-metrics span {
+  display: block;
+  margin-top: 8px;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #8a8d86;
+}
+
+
+/* =========================
+   ORGANIC STATEMENT
+========================= */
+
+.tiktok-organic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  padding: 28px 20px;
+  text-align: center;
+  background: #f8f5f1;
+}
+
+.tiktok-organic strong {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: #30342f;
+}
+
+.tiktok-organic span {
+  margin-top: 9px;
+  font-size: 12px;
+  color: #62675f;
+}
+
+
+/* =========================
+   TIKTOK PROFILE
+========================= */
+
+.tiktok-visuals {
+  margin-top: 65px;
+}
+
+.tiktok-visuals > small {
+  display: block;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  font-size: 10px;
+  color: #777;
+}
+
+.tiktok-profile {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.tiktok-profile img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #e5e0d8;
+}
+
+
+/* =========================
    CONTACT
 ========================= */
 
@@ -619,6 +856,87 @@ footer {
   .creative-links {
     flex-direction: column;
     gap: 14px;
+  }
+
+
+  /* =========================
+     TIKTOK MOBILE
+  ========================= */
+
+  .tiktok-block {
+    margin-top: 80px;
+    padding-top: 50px;
+  }
+
+  .tiktok-highlight {
+    flex-direction: column;
+    gap: 22px;
+    margin-top: 40px;
+    padding: 35px 15px;
+  }
+
+  .tiktok-arrow {
+    transform: rotate(90deg);
+  }
+
+  .tiktok-scale {
+    margin-top: 55px;
+  }
+
+  .tiktok-scale strong {
+    font-size: 60px;
+  }
+
+  .tiktok-scale span {
+    max-width: 280px;
+  }
+
+  .tiktok-insight {
+    margin-top: 70px;
+    padding-top: 50px;
+  }
+
+  .tiktok-process {
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 50px;
+    padding: 35px 15px;
+  }
+
+  .tiktok-process > div:not(:nth-child(even)) {
+    min-width: 0;
+  }
+
+  .tiktok-process > div:nth-child(even) {
+    transform: rotate(90deg);
+    margin: -4px 0;
+  }
+
+  .tiktok-metrics {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 40px;
+  }
+
+  .tiktok-metrics div {
+    padding: 22px 10px;
+  }
+
+  .tiktok-organic {
+    margin-top: 40px;
+    padding: 25px 15px;
+  }
+
+  .tiktok-organic span {
+    max-width: 280px;
+  }
+
+  .tiktok-visuals {
+    margin-top: 45px;
+  }
+
+  .tiktok-profile {
+    width: 100%;
   }
 
 }
