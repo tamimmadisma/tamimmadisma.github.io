@@ -547,75 +547,55 @@
         8px 12px 0 rgba(37,37,37,.07);
     }
 
-
-    /* individual compositions */
-
     .bvt-file-card:nth-child(1) {
       grid-column: span 7;
-
       background: var(--bvt-yellow);
-
       min-height: 420px;
     }
 
     .bvt-file-card:nth-child(2) {
       grid-column: span 5;
-
       background: #fffdf8;
-
       transform: rotate(1deg);
     }
 
     .bvt-file-card:nth-child(3) {
       grid-column: span 5;
-
       background: var(--bvt-turquoise);
-
       transform: rotate(-1deg);
     }
 
     .bvt-file-card:nth-child(4) {
       grid-column: span 7;
-
       background: #fffdf8;
     }
 
     .bvt-file-card:nth-child(5) {
       grid-column: span 12;
-
       min-height: 480px;
-
       background: var(--bvt-green);
-
       color: white;
     }
 
     .bvt-file-card:nth-child(6) {
       grid-column: span 4;
-
       background: var(--bvt-pink);
     }
 
     .bvt-file-card:nth-child(7) {
       grid-column: span 4;
-
       background: #fffdf8;
     }
 
     .bvt-file-card:nth-child(8) {
       grid-column: span 4;
-
       background: var(--bvt-yellow);
     }
-
-
-    /* card content */
 
     .bvt-file-top {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-
       gap: 20px;
     }
 
@@ -704,8 +684,7 @@
       font-size: 23px;
       line-height: 1;
 
-      transition:
-        transform .25s ease;
+      transition: transform .25s ease;
     }
 
     .bvt-file-card:hover .bvt-file-arrow {
@@ -1307,15 +1286,54 @@
       line-height: 1.8;
     }
 
-    .bvt-email {
-      display: inline-flex;
+    /* CONTACT LINKS */
 
-      padding-bottom: 6px;
+    .bvt-contact-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
 
-      border-bottom: 1px solid var(--bvt-charcoal);
+      margin-top: 30px;
+    }
 
-      font-size: 10px;
+    .bvt-contact-link {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 7px;
+
+      min-width: 190px;
+
+      padding: 15px 18px;
+
+      border: 1px solid rgba(37,37,37,.35);
+
+      text-align: left;
+
+      transition:
+        transform .25s ease,
+        background .25s ease;
+    }
+
+    .bvt-contact-link:hover {
+      transform: translateY(-4px);
+
+      background: rgba(255,255,255,.18);
+    }
+
+    .bvt-contact-link span {
+      font-size: 7px;
       line-height: 1;
+
+      font-weight: 700;
+      letter-spacing: .16em;
+    }
+
+    .bvt-contact-link strong {
+      font-size: 10px;
+      line-height: 1.2;
+
       font-weight: 700;
     }
 
@@ -1496,6 +1514,16 @@
         min-height: 65vh;
       }
 
+      .bvt-contact-links {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .bvt-contact-link {
+        width: 100%;
+        min-width: 0;
+      }
+
       .bvt-sticker {
         transform: scale(.78);
       }
@@ -1637,8 +1665,6 @@
       </div>
 
 
-      <!-- CASE FILE VISUAL -->
-
       <div
         class="bvt-hero-visual"
         aria-hidden="true"
@@ -1721,7 +1747,6 @@
     <section class="bvt-overview">
 
       <div class="bvt-overview-grid">
-
 
         <div class="bvt-overview-title">
 
@@ -1808,10 +1833,6 @@
       <div class="bvt-files-grid">
 
 
-        <!-- ===================================================
-             FILE 01
-             =================================================== -->
-
         <a
           class="bvt-file-card"
           href="https://tamimmah-disma.medium.com/brand-inventory-of-buavita-a9347f192b35"
@@ -1877,10 +1898,6 @@
         </a>
 
 
-        <!-- ===================================================
-             FILE 02
-             =================================================== -->
-
         <a
           class="bvt-file-card"
           href="https://tamimmah-disma.medium.com/who-are-buavita-s-goal-customers-and-rivals-48ff3c3909b0"
@@ -1939,10 +1956,6 @@
 
         </a>
 
-
-        <!-- ===================================================
-             FILE 03
-             =================================================== -->
 
         <a
           class="bvt-file-card"
@@ -2007,10 +2020,6 @@
         </a>
 
 
-        <!-- ===================================================
-             FILE 04
-             =================================================== -->
-
         <a
           class="bvt-file-card"
           href="https://tamimmah-disma.medium.com/brand-communications-of-buavita-9f6d4746de29"
@@ -2069,10 +2078,6 @@
 
         </a>
 
-
-        <!-- ===================================================
-             FILE 05 — TURNING POINT
-             =================================================== -->
 
         <a
           class="bvt-file-card"
@@ -2139,10 +2144,6 @@
         </a>
 
 
-        <!-- ===================================================
-             FILE 06
-             =================================================== -->
-
         <a
           class="bvt-file-card"
           href="https://tamimmah-disma.medium.com/buavitas-netnography-61ecbf5b9eec"
@@ -2202,10 +2203,6 @@
         </a>
 
 
-        <!-- ===================================================
-             FILE 07
-             =================================================== -->
-
         <a
           class="bvt-file-card"
           href="https://tamimmah-disma.medium.com/buavitas-brand-exploratory-178ee6244a86"
@@ -2264,10 +2261,6 @@
 
         </a>
 
-
-        <!-- ===================================================
-             FILE 08
-             =================================================== -->
 
         <a
           class="bvt-file-card"
@@ -2367,7 +2360,6 @@
 
       <div class="bvt-map-line">
 
-
         <div class="bvt-map-step">
 
           <div class="bvt-map-dot">
@@ -2452,7 +2444,6 @@
 
         </div>
 
-
       </div>
 
     </section>
@@ -2465,7 +2456,6 @@
     <section class="bvt-capabilities">
 
       <div class="bvt-cap-grid">
-
 
         <div class="bvt-cap-title">
 
@@ -2570,7 +2560,6 @@
 
 
       <div class="bvt-approach-list">
-
 
         <article class="bvt-approach-item">
 
@@ -2679,7 +2668,6 @@
 
         </article>
 
-
       </div>
 
     </section>
@@ -2749,26 +2737,52 @@
       <div class="bvt-contact-inner">
 
         <span class="bvt-contact-label">
-          06 / Contact
+          07 / Contact
         </span>
 
         <h2>
-          Have an idea?
-          <em>Let's talk.</em>
+          Let's make something
+          <em>meaningful.</em>
         </h2>
 
         <p>
-          Open to opportunities involving marketing,
-          consumer insights, business development,
-          and related projects.
+          Looking for someone who can connect business thinking,
+          consumer understanding, and creative execution? Let's talk.
         </p>
 
-        <a
-          class="bvt-email"
-          href="mailto:your.email@example.com"
-        >
-          your.email@example.com ↗
-        </a>
+
+        <div class="bvt-contact-links">
+
+          <a
+            class="bvt-contact-link"
+            href="mailto:tamimmadisma@gmail.com"
+          >
+            <span>
+              EMAIL
+            </span>
+
+            <strong>
+              tamimmadisma@gmail.com ↗
+            </strong>
+          </a>
+
+
+          <a
+            class="bvt-contact-link"
+            href="https://www.instagram.com/miramimmah/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>
+              INSTAGRAM
+            </span>
+
+            <strong>
+              @miramimmah ↗
+            </strong>
+          </a>
+
+        </div>
 
       </div>
 
