@@ -20,6 +20,7 @@
   >
 
   <!-- GOOGLE FONTS -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
   <link
@@ -31,6 +32,19 @@
   <style>
 
     /* =====================================================
+       COLOR PALETTE
+    =====================================================
+
+       #D8DE56  — Lime / Primary Accent
+       #5D8274  — Deep Green
+       #6FB3AC  — Teal
+       #252525  — Charcoal
+       #7C9783  — Sage
+
+    ===================================================== */
+
+
+    /* =====================================================
        RESET
     ===================================================== */
 
@@ -40,22 +54,30 @@
       padding: 0;
     }
 
+
     html {
       scroll-behavior: smooth;
     }
 
+
     body {
       font-family: "DM Sans", sans-serif;
-      background: #f7f6f2;
-      color: #171717;
+
+      background: #f8f8f4;
+
+      color: #252525;
+
       line-height: 1.6;
+
       overflow-x: hidden;
     }
+
 
     a {
       color: inherit;
       text-decoration: none;
     }
+
 
 
     /* =====================================================
@@ -64,62 +86,97 @@
 
     header {
       width: 100%;
+
       padding: 24px 5%;
-      border-bottom: 1px solid #dcdad4;
+
+      border-bottom: 1px solid #7c9783;
 
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
 
-      background: #f7f6f2;
+      background: #f8f8f4;
 
       position: sticky;
+
       top: 0;
+
       z-index: 100;
     }
 
 
     .brand {
       display: flex;
+
       align-items: center;
+
       gap: 12px;
 
       font-size: 13px;
+
       font-weight: 700;
+
       letter-spacing: 0.14em;
     }
 
 
     .brand-mark {
       width: 34px;
+
       height: 34px;
 
-      border: 1px solid #171717;
+      border: 1px solid #252525;
 
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
       font-family: "Playfair Display", serif;
+
       font-size: 18px;
+
       font-weight: 500;
+
+      background: #d8de56;
+
+      transition:
+        background 0.25s ease,
+        color 0.25s ease;
+    }
+
+
+    .brand:hover .brand-mark {
+      background: #6fb3ac;
+
+      color: #252525;
     }
 
 
     .back-home {
       font-size: 11px;
+
       font-weight: 700;
 
       letter-spacing: 0.13em;
+
       text-transform: uppercase;
 
-      transition: opacity 0.2s ease;
+      transition:
+        color 0.2s ease,
+        opacity 0.2s ease;
     }
 
 
     .back-home:hover {
-      opacity: 0.45;
+      color: #5d8274;
+
+      opacity: 0.8;
     }
+
 
 
     /* =====================================================
@@ -128,31 +185,45 @@
 
     .hero {
       width: 90%;
+
       max-width: 1200px;
 
       margin: 0 auto;
 
       padding: 100px 0 85px;
 
-      border-bottom: 1px solid #dcdad4;
+      border-bottom: 1px solid #7c9783;
     }
 
 
     .section-number {
       font-size: 11px;
+
       font-weight: 700;
 
       letter-spacing: 0.16em;
+
       text-transform: uppercase;
 
-      color: #77756f;
+      color: #7c9783;
 
       margin-bottom: 28px;
     }
 
 
     .section-number span {
-      color: #171717;
+      color: #5d8274;
+    }
+
+
+    .section-number::before {
+      content: "✦";
+
+      color: #d8de56;
+
+      margin-right: 8px;
+
+      font-size: 9px;
     }
 
 
@@ -179,6 +250,8 @@
       line-height: 0.98;
 
       letter-spacing: -0.03em;
+
+      color: #252525;
     }
 
 
@@ -189,8 +262,9 @@
 
       line-height: 1.8;
 
-      color: #64625d;
+      color: #5d8274;
     }
+
 
 
     /* =====================================================
@@ -199,6 +273,7 @@
 
     .calendar-section {
       width: 90%;
+
       max-width: 1200px;
 
       margin: 0 auto;
@@ -211,6 +286,7 @@
       display: flex;
 
       justify-content: space-between;
+
       align-items: flex-end;
 
       margin-bottom: 35px;
@@ -219,7 +295,9 @@
 
     .calendar-heading-left {
       display: flex;
+
       flex-direction: column;
+
       gap: 5px;
     }
 
@@ -233,7 +311,7 @@
 
       text-transform: uppercase;
 
-      color: #77756f;
+      color: #7c9783;
     }
 
 
@@ -245,6 +323,8 @@
       font-weight: 500;
 
       line-height: 1;
+
+      color: #252525;
     }
 
 
@@ -255,8 +335,9 @@
 
       letter-spacing: 0.14em;
 
-      color: #77756f;
+      color: #5d8274;
     }
+
 
 
     /* =====================================================
@@ -268,10 +349,11 @@
 
       grid-template-columns: repeat(7, 1fr);
 
-      border-top: 1px solid #cfcdbf;
-      border-left: 1px solid #cfcdbf;
+      border-top: 1px solid #7c9783;
 
-      background: #f7f6f2;
+      border-left: 1px solid #7c9783;
+
+      background: #f8f8f4;
     }
 
 
@@ -280,8 +362,9 @@
 
       padding: 13px 14px;
 
-      border-right: 1px solid #cfcdbf;
-      border-bottom: 1px solid #cfcdbf;
+      border-right: 1px solid #7c9783;
+
+      border-bottom: 1px solid #7c9783;
 
       font-size: 9px;
 
@@ -291,7 +374,7 @@
 
       text-transform: uppercase;
 
-      color: #77756f;
+      color: #5d8274;
     }
 
 
@@ -300,16 +383,18 @@
 
       padding: 15px;
 
-      border-right: 1px solid #cfcdbf;
-      border-bottom: 1px solid #cfcdbf;
+      border-right: 1px solid #7c9783;
+
+      border-bottom: 1px solid #7c9783;
 
       position: relative;
 
-      background: #f7f6f2;
+      background: #f8f8f4;
 
       transition:
         background 0.25s ease,
-        color 0.25s ease;
+        color 0.25s ease,
+        transform 0.2s ease;
     }
 
 
@@ -317,37 +402,68 @@
       font-size: 12px;
 
       font-weight: 600;
+
+      color: #252525;
     }
 
 
     .day.empty {
-      color: #aaa8a1;
+      color: #7c9783;
 
-      background: #f1f0ec;
+      background: #eef0e9;
+    }
+
+
+    .day.empty .day-number {
+      color: #7c9783;
     }
 
 
     .day:not(.empty):not(.has-entry) {
-      color: #77756f;
+      color: #5d8274;
     }
 
 
-    .day.has-entry {
-      background: #171717;
+    .day:not(.empty):not(.has-entry):hover {
+      background: #eef5f1;
+    }
 
-      color: #ffffff;
+
+    /* =====================================================
+       ACTIVE JOURNAL DATE
+    ===================================================== */
+
+    .day.has-entry {
+      background: #d8de56;
+
+      color: #252525;
 
       cursor: pointer;
+
+      position: relative;
     }
 
 
     .day.has-entry:hover {
-      background: #333331;
+      background: #6fb3ac;
+
+      color: #252525;
+
+      transform: translateY(-2px);
     }
 
 
     .day.has-entry .day-number {
-      color: #ffffff;
+      color: #252525;
+
+      font-weight: 700;
+    }
+
+
+    .day.today {
+      outline: 2px solid #5d8274;
+
+      outline-offset: -5px;
     }
 
 
@@ -355,6 +471,7 @@
       position: absolute;
 
       left: 15px;
+
       right: 15px;
 
       bottom: 15px;
@@ -363,35 +480,32 @@
 
       line-height: 1.4;
 
-      font-weight: 600;
+      font-weight: 700;
 
       letter-spacing: 0.08em;
 
       text-transform: uppercase;
 
-      opacity: 0.72;
+      color: #252525;
     }
 
 
     .entry-dot {
-      width: 5px;
-      height: 5px;
+      width: 7px;
+
+      height: 7px;
 
       border-radius: 50%;
 
-      background: #ffffff;
+      background: #5d8274;
 
       position: absolute;
 
       top: 16px;
+
       right: 16px;
     }
 
-
-    .day.today {
-      outline: 1px solid #171717;
-      outline-offset: -4px;
-    }
 
 
     /* =====================================================
@@ -409,20 +523,24 @@
 
       font-size: 10px;
 
-      color: #77756f;
+      color: #7c9783;
 
       letter-spacing: 0.05em;
     }
 
 
     .calendar-note-mark {
-      width: 6px;
-      height: 6px;
+      width: 7px;
 
-      background: #171717;
+      height: 7px;
+
+      background: #d8de56;
+
+      border: 1px solid #5d8274;
 
       border-radius: 50%;
     }
+
 
 
     /* =====================================================
@@ -431,6 +549,7 @@
 
     .entry-section {
       width: 90%;
+
       max-width: 1200px;
 
       margin: 0 auto;
@@ -442,7 +561,7 @@
     .entry-header {
       padding-top: 30px;
 
-      border-top: 1px solid #dcdad4;
+      border-top: 1px solid #7c9783;
     }
 
 
@@ -471,7 +590,7 @@
 
       text-transform: uppercase;
 
-      color: #77756f;
+      color: #5d8274;
 
       margin-bottom: 10px;
     }
@@ -483,6 +602,8 @@
       font-size: 24px;
 
       font-weight: 500;
+
+      color: #252525;
     }
 
 
@@ -497,11 +618,16 @@
 
       text-transform: uppercase;
 
-      color: #77756f;
+      color: #7c9783;
 
       line-height: 1.8;
     }
 
+
+
+    /* =====================================================
+       ENTRY CONTENT
+    ===================================================== */
 
     .entry-main {
       max-width: 760px;
@@ -520,6 +646,8 @@
       letter-spacing: -0.025em;
 
       margin-bottom: 48px;
+
+      color: #252525;
     }
 
 
@@ -528,13 +656,14 @@
 
       line-height: 1.9;
 
-      color: #4e4c47;
+      color: #5d8274;
     }
 
 
     .entry-content p {
       margin-bottom: 25px;
     }
+
 
 
     /* =====================================================
@@ -546,7 +675,7 @@
 
       padding: 35px 0 35px 30px;
 
-      border-left: 1px solid #171717;
+      border-left: 4px solid #d8de56;
 
       font-family: "Playfair Display", serif;
 
@@ -554,8 +683,9 @@
 
       line-height: 1.45;
 
-      color: #171717;
+      color: #252525;
     }
+
 
 
     /* =====================================================
@@ -567,7 +697,7 @@
 
       padding-top: 35px;
 
-      border-top: 1px solid #dcdad4;
+      border-top: 1px solid #7c9783;
     }
 
 
@@ -580,9 +710,20 @@
 
       text-transform: uppercase;
 
-      color: #77756f;
+      color: #5d8274;
 
       margin-bottom: 20px;
+    }
+
+
+    .learning-label::before {
+      content: "✦";
+
+      color: #d8de56;
+
+      margin-right: 8px;
+
+      font-size: 9px;
     }
 
 
@@ -593,7 +734,7 @@
 
       line-height: 1.4;
 
-      color: #171717;
+      color: #252525;
 
       margin-bottom: 18px;
     }
@@ -604,8 +745,9 @@
 
       font-weight: 700;
 
-      color: #171717;
+      color: #5d8274;
     }
+
 
 
     /* =====================================================
@@ -614,13 +756,14 @@
 
     footer {
       width: 90%;
+
       max-width: 1200px;
 
       margin: 0 auto;
 
       padding: 30px 0;
 
-      border-top: 1px solid #dcdad4;
+      border-top: 1px solid #7c9783;
 
       display: flex;
 
@@ -632,8 +775,9 @@
 
       letter-spacing: 0.07em;
 
-      color: #77756f;
+      color: #7c9783;
     }
+
 
 
     /* =====================================================
@@ -641,6 +785,7 @@
     ===================================================== */
 
     @media (max-width: 760px) {
+
 
       header {
         padding: 20px 5%;
@@ -680,7 +825,8 @@
 
 
       .calendar {
-        grid-template-columns: repeat(7, minmax(0, 1fr));
+        grid-template-columns:
+          repeat(7, minmax(0, 1fr));
       }
 
 
@@ -713,10 +859,12 @@
 
 
       .entry-dot {
-        width: 4px;
-        height: 4px;
+        width: 5px;
+
+        height: 5px;
 
         top: 10px;
+
         right: 10px;
       }
 
@@ -771,6 +919,8 @@
 
         padding-left: 20px;
 
+        border-left-width: 3px;
+
         font-size: 22px;
       }
 
@@ -799,6 +949,7 @@
 </head>
 
 
+
 <body>
 
 
@@ -807,6 +958,7 @@
   ===================================================== -->
 
   <header>
+
 
     <a
       href="index.html"
@@ -832,6 +984,7 @@
       ← Portfolio
     </a>
 
+
   </header>
 
 
@@ -849,16 +1002,22 @@
 
     <section class="hero">
 
+
       <div class="section-number">
+
         <span>08</span> / JOURNAL
+
       </div>
 
 
       <div class="hero-grid">
 
+
         <h1>
+
           Notes on work,<br>
           learning & growth.
+
         </h1>
 
 
@@ -870,7 +1029,9 @@
 
         </p>
 
+
       </div>
+
 
     </section>
 
@@ -885,22 +1046,33 @@
 
       <div class="calendar-heading">
 
+
         <div class="calendar-heading-left">
 
+
           <div class="calendar-label">
+
             Journal Archive
+
           </div>
 
+
           <h2 class="calendar-month">
+
             September
+
           </h2>
+
 
         </div>
 
 
         <div class="calendar-year">
+
           2026
+
         </div>
+
 
       </div>
 
@@ -912,12 +1084,19 @@
         <!-- WEEKDAYS -->
 
         <div class="weekday">Mon</div>
+
         <div class="weekday">Tue</div>
+
         <div class="weekday">Wed</div>
+
         <div class="weekday">Thu</div>
+
         <div class="weekday">Fri</div>
+
         <div class="weekday">Sat</div>
+
         <div class="weekday">Sun</div>
+
 
 
         <!-- AUGUST -->
@@ -931,38 +1110,76 @@
         </div>
 
 
+
         <!-- SEPTEMBER -->
 
         <div class="day">
-          <span class="day-number">1</span>
+
+          <span class="day-number">
+            1
+          </span>
+
         </div>
+
 
         <div class="day">
-          <span class="day-number">2</span>
+
+          <span class="day-number">
+            2
+          </span>
+
         </div>
+
 
         <div class="day">
-          <span class="day-number">3</span>
+
+          <span class="day-number">
+            3
+          </span>
+
         </div>
+
 
         <div class="day">
-          <span class="day-number">4</span>
+
+          <span class="day-number">
+            4
+          </span>
+
         </div>
+
 
         <div class="day">
-          <span class="day-number">5</span>
+
+          <span class="day-number">
+            5
+          </span>
+
         </div>
+
 
         <div class="day">
-          <span class="day-number">6</span>
+
+          <span class="day-number">
+            6
+          </span>
+
         </div>
+
 
         <div class="day">
-          <span class="day-number">7</span>
+
+          <span class="day-number">
+            7
+          </span>
+
         </div>
 
 
-        <!-- 08 SEPTEMBER — JOURNAL ENTRY -->
+
+        <!-- =================================================
+             08 SEPTEMBER — JOURNAL ENTRY
+        ================================================== -->
 
         <a
           href="#2026-09-08"
@@ -974,135 +1191,276 @@
             8
           </span>
 
+
           <span class="entry-dot"></span>
 
+
           <span class="entry-mini">
+
             Maybe “I Can't”<br>
             Was Too Easy
+
           </span>
+
 
         </a>
 
 
-        <div class="day">
-          <span class="day-number">9</span>
-        </div>
 
         <div class="day">
-          <span class="day-number">10</span>
+
+          <span class="day-number">
+            9
+          </span>
+
         </div>
 
-        <div class="day">
-          <span class="day-number">11</span>
-        </div>
 
         <div class="day">
-          <span class="day-number">12</span>
+
+          <span class="day-number">
+            10
+          </span>
+
         </div>
 
-        <div class="day">
-          <span class="day-number">13</span>
-        </div>
 
         <div class="day">
-          <span class="day-number">14</span>
+
+          <span class="day-number">
+            11
+          </span>
+
         </div>
 
-        <div class="day">
-          <span class="day-number">15</span>
-        </div>
 
         <div class="day">
-          <span class="day-number">16</span>
+
+          <span class="day-number">
+            12
+          </span>
+
         </div>
 
-        <div class="day">
-          <span class="day-number">17</span>
-        </div>
 
         <div class="day">
-          <span class="day-number">18</span>
+
+          <span class="day-number">
+            13
+          </span>
+
         </div>
 
-        <div class="day">
-          <span class="day-number">19</span>
-        </div>
 
         <div class="day">
-          <span class="day-number">20</span>
+
+          <span class="day-number">
+            14
+          </span>
+
         </div>
 
-        <div class="day">
-          <span class="day-number">21</span>
-        </div>
 
         <div class="day">
-          <span class="day-number">22</span>
+
+          <span class="day-number">
+            15
+          </span>
+
         </div>
 
-        <div class="day">
-          <span class="day-number">23</span>
-        </div>
 
         <div class="day">
-          <span class="day-number">24</span>
+
+          <span class="day-number">
+            16
+          </span>
+
         </div>
 
-        <div class="day">
-          <span class="day-number">25</span>
-        </div>
 
         <div class="day">
-          <span class="day-number">26</span>
+
+          <span class="day-number">
+            17
+          </span>
+
         </div>
 
-        <div class="day">
-          <span class="day-number">27</span>
-        </div>
 
         <div class="day">
-          <span class="day-number">28</span>
+
+          <span class="day-number">
+            18
+          </span>
+
         </div>
 
-        <div class="day">
-          <span class="day-number">29</span>
-        </div>
 
         <div class="day">
-          <span class="day-number">30</span>
+
+          <span class="day-number">
+            19
+          </span>
+
         </div>
+
+
+        <div class="day">
+
+          <span class="day-number">
+            20
+          </span>
+
+        </div>
+
+
+        <div class="day">
+
+          <span class="day-number">
+            21
+          </span>
+
+        </div>
+
+
+        <div class="day">
+
+          <span class="day-number">
+            22
+          </span>
+
+        </div>
+
+
+        <div class="day">
+
+          <span class="day-number">
+            23
+          </span>
+
+        </div>
+
+
+        <div class="day">
+
+          <span class="day-number">
+            24
+          </span>
+
+        </div>
+
+
+        <div class="day">
+
+          <span class="day-number">
+            25
+          </span>
+
+        </div>
+
+
+        <div class="day">
+
+          <span class="day-number">
+            26
+          </span>
+
+        </div>
+
+
+        <div class="day">
+
+          <span class="day-number">
+            27
+          </span>
+
+        </div>
+
+
+        <div class="day">
+
+          <span class="day-number">
+            28
+          </span>
+
+        </div>
+
+
+        <div class="day">
+
+          <span class="day-number">
+            29
+          </span>
+
+        </div>
+
+
+        <div class="day">
+
+          <span class="day-number">
+            30
+          </span>
+
+        </div>
+
 
 
         <!-- OCTOBER -->
 
         <div class="day empty">
-          <span class="day-number">1</span>
+
+          <span class="day-number">
+            1
+          </span>
+
         </div>
 
-        <div class="day empty">
-          <span class="day-number">2</span>
-        </div>
 
         <div class="day empty">
-          <span class="day-number">3</span>
+
+          <span class="day-number">
+            2
+          </span>
+
         </div>
 
+
         <div class="day empty">
-          <span class="day-number">4</span>
+
+          <span class="day-number">
+            3
+          </span>
+
         </div>
+
+
+        <div class="day empty">
+
+          <span class="day-number">
+            4
+          </span>
+
+        </div>
+
 
       </div>
 
 
+
       <div class="calendar-note">
 
+
         <span class="calendar-note-mark"></span>
+
 
         <span>
           Click a marked date to read the entry
         </span>
 
+
       </div>
+
 
     </section>
 
@@ -1110,7 +1468,7 @@
 
     <!-- ===================================================
          JOURNAL ENTRY
-    =================================================== -->
+    ===================================================== -->
 
     <section
       class="entry-section"
@@ -1128,15 +1486,23 @@
 
           <aside class="entry-side">
 
+
             <div>
 
+
               <div class="entry-date">
+
                 08 SEP 2026
+
               </div>
 
+
               <div class="entry-number">
+
                 01
+
               </div>
+
 
             </div>
 
@@ -1149,6 +1515,7 @@
 
             </div>
 
+
           </aside>
 
 
@@ -1159,37 +1526,47 @@
 
 
             <h2 class="entry-title">
+
               Maybe “I Can't” Was Too Easy
+
             </h2>
+
 
 
             <div class="entry-content">
 
 
               <p>
+
                 Today was one of those days where several
                 things seemed to happen at once.
+
               </p>
 
 
               <p>
+
                 A business partner from the Philippines
                 reached out about an upcoming M COUNTDOWN
                 live voting period. They were looking for
                 around 3,000 votes, while with my current
                 manpower, I could realistically handle
                 around 1,500.
+
               </p>
 
 
               <p>
+
                 Rather than immediately turning the request
                 down, I decided to see if I could find a
                 way to increase my capacity.
+
               </p>
 
 
               <p>
+
                 I started reaching out to potential new
                 employees through Threads. This wasn't easy
                 to do alongside everything else. I was
@@ -1197,29 +1574,38 @@
                 digital business, managing my existing team,
                 handling ongoing work, and making sure
                 everything continued moving.
+
               </p>
 
 
               <p>
+
                 I reached out to around 20 people.
+
               </p>
 
 
               <p>
+
                 In the end, only one person was able to
                 handle the programming and workflow required.
+
               </p>
 
 
               <p>
+
                 It wasn't the number I initially hoped for,
                 but it was still progress. It also reminded
                 me that building a team isn't simply about
                 finding more people. It's about finding the
                 right people who can actually contribute.
+
               </p>
 
 
+
+              <!-- HIGHLIGHT -->
 
               <div class="entry-highlight">
 
@@ -1233,20 +1619,24 @@
 
 
               <p>
+
                 The same day also brought some encouraging
                 developments in my career. An opportunity I
                 had been pursuing moved forward, while
                 another professional opportunity was
                 progressing through its assessment stage.
+
               </p>
 
 
               <p>
+
                 Having different things develop at the same
                 time made the day feel significant. It was
                 a reminder that the work I've been putting
                 into my business, my skills, and my career
                 is gradually creating new possibilities.
+
               </p>
 
 
@@ -1257,38 +1647,50 @@
 
 
                 <div class="learning-label">
+
                   What I learned today
+
                 </div>
 
 
                 <p class="learning-main">
+
                   Maybe I don't need to have enough
                   before I begin.
+
                 </p>
 
 
                 <p class="learning-main">
+
                   Sometimes, I just need to begin —
                   and figure out what “enough” looks like
                   along the way.
+
                 </p>
 
 
                 <p class="learning-final">
+
                   Maybe “I can't” was too easy.
+
                 </p>
+
 
               </div>
 
 
             </div>
 
+
           </article>
 
 
         </div>
 
+
       </div>
+
 
     </section>
 
@@ -1303,13 +1705,20 @@
 
   <footer>
 
-    <span>
-      © 2026 Tamimmah Disma Lestari
-    </span>
 
     <span>
-      Built with intention.
+
+      © 2026 Tamimmah Disma Lestari
+
     </span>
+
+
+    <span>
+
+      Built with intention.
+
+    </span>
+
 
   </footer>
 
