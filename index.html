@@ -97,13 +97,11 @@ content="Portfolio of Tamimmah Disma Lestari — Marketing, Consumer Insights, B
 
 </nav>
 
-
-<!-- PASSWORD-PROTECTED RESUME -->
-
 <a
-  href="#"
+  href="resume.pdf"
+  target="_blank"
+  rel="noopener"
   class="header-resume"
-  onclick="openResume(event)"
 >
 
   Resume
@@ -111,7 +109,6 @@ content="Portfolio of Tamimmah Disma Lestari — Marketing, Consumer Insights, B
   <span>↗</span>
 
 </a>
-
 
 <button
   class="menu-toggle"
@@ -185,12 +182,11 @@ content="Portfolio of Tamimmah Disma Lestari — Marketing, Consumer Insights, B
   </nav>
 
 
-  <!-- PASSWORD-PROTECTED RESUME -->
-
   <a
-    href="#"
+    href="resume.pdf"
+    target="_blank"
+    rel="noopener"
     class="mobile-resume"
-    onclick="openResume(event)"
   >
     View Resume ↗
   </a>
@@ -289,11 +285,10 @@ content="Portfolio of Tamimmah Disma Lestari — Marketing, Consumer Insights, B
           </a>
 
 
-          <!-- PASSWORD-PROTECTED RESUME -->
-
           <a
-            href="#"
-            onclick="openResume(event)"
+            href="resume.pdf"
+            target="_blank"
+            rel="noopener"
             class="button button-outline"
           >
 
@@ -3048,36 +3043,6 @@ content="Portfolio of Tamimmah Disma Lestari — Marketing, Consumer Insights, B
 </span>
 
   </footer>
-
-  <!-- =====================================================
-       PASSWORD-PROTECTED RESUME SCRIPT
-  ====================================================== -->
-
-  <script>
-
-    function openResume(event) {
-
-      event.preventDefault();
-
-      const password = prompt("Enter password to access the resume:");
-
-      if (password === "12345") {
-
-        window.open(
-          "https://tamimmadisma.github.io/resume.pdf",
-          "_blank",
-          "noopener"
-        );
-
-      } else if (password !== null) {
-
-        alert("Incorrect password.");
-
-      }
-
-    }
-
-  </script>
 
   <!-- =====================================================
        JAVASCRIPT
