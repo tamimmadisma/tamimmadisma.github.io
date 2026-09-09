@@ -27,7 +27,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
   <link
-    rel="preconnect" href="https://fonts.googleapis.com"
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
     crossorigin
   >
 
@@ -72,6 +73,327 @@
 
     .project-visual-link .project-visual {
       width: 100%;
+    }
+
+
+    /* =====================================================
+       HERO — GET TO KNOW ME MENU
+    ====================================================== */
+
+    .hero-actions {
+      position: relative;
+    }
+
+
+    .get-to-know-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+
+    .get-to-know-menu {
+      position: absolute;
+
+      left: 0;
+
+      top: calc(100% + 16px);
+
+      width: min(460px, 85vw);
+
+      background: #F8F4EE;
+
+      border: 1.5px solid #000000;
+
+      box-shadow: 8px 8px 0 #000000;
+
+      padding: 24px;
+
+      z-index: 50;
+
+      opacity: 0;
+
+      visibility: hidden;
+
+      transform: translateY(-8px);
+
+      transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease,
+        transform 0.25s ease;
+
+      pointer-events: none;
+    }
+
+
+    .get-to-know-menu.is-open {
+
+      opacity: 1;
+
+      visibility: visible;
+
+      transform: translateY(0);
+
+      pointer-events: auto;
+
+    }
+
+
+    .get-to-know-heading {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      padding-bottom: 16px;
+
+      margin-bottom: 4px;
+
+      border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+
+    }
+
+
+    .get-to-know-heading span:first-child {
+
+      font-size: 10px;
+
+      font-weight: 700;
+
+      letter-spacing: 0.14em;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .get-to-know-heading span:last-child {
+
+      font-size: 10px;
+
+      font-weight: 600;
+
+      color: #438F89;
+
+      letter-spacing: 0.08em;
+
+    }
+
+
+    .get-to-know-option {
+
+      display: grid;
+
+      grid-template-columns: 38px 1fr 24px;
+
+      align-items: center;
+
+      gap: 12px;
+
+      width: 100%;
+
+      padding: 17px 10px;
+
+      border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+
+      color: #000000;
+
+      text-decoration: none;
+
+      transition:
+        background 0.2s ease,
+        padding-left 0.2s ease;
+
+    }
+
+
+    .get-to-know-option:last-child {
+
+      border-bottom: none;
+
+    }
+
+
+    .get-to-know-option:hover {
+
+      background: #D9DF57;
+
+      padding-left: 16px;
+
+    }
+
+
+    .get-to-know-number {
+
+      font-size: 10px;
+
+      font-weight: 700;
+
+      letter-spacing: 0.08em;
+
+      color: #438F89;
+
+    }
+
+
+    .get-to-know-copy {
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 2px;
+
+    }
+
+
+    .get-to-know-title {
+
+      font-family: "Playfair Display", serif;
+
+      font-size: 20px;
+
+      line-height: 1.1;
+
+      font-weight: 600;
+
+    }
+
+
+    .get-to-know-description {
+
+      font-size: 10px;
+
+      line-height: 1.4;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.06em;
+
+      opacity: 0.65;
+
+    }
+
+
+    .get-to-know-arrow {
+
+      font-size: 18px;
+
+      transition: transform 0.2s ease;
+
+    }
+
+
+    .get-to-know-option:hover .get-to-know-arrow {
+
+      transform: translate(3px, -3px);
+
+    }
+
+
+    /* small pink accent */
+
+    .get-to-know-option:nth-child(3) .get-to-know-number {
+
+      color: #D8A4A5;
+
+    }
+
+
+    /* =====================================================
+       GET TO KNOW BUTTON STATE
+    ====================================================== */
+
+    .get-to-know-button {
+
+      transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.2s ease;
+
+    }
+
+
+    .get-to-know-button.is-active {
+
+      background: #D9DF57;
+
+      color: #000000;
+
+    }
+
+
+    .get-to-know-button.is-active span {
+
+      display: inline-block;
+
+      transform: rotate(0deg);
+
+    }
+
+
+    /* =====================================================
+       MOBILE
+    ====================================================== */
+
+    @media (max-width: 700px) {
+
+      .get-to-know-wrapper {
+
+        width: 100%;
+
+      }
+
+
+      .get-to-know-menu {
+
+        position: absolute;
+
+        width: calc(100vw - 40px);
+
+        max-width: none;
+
+        left: 50%;
+
+        transform: translate(-50%, -8px);
+
+        box-shadow: 6px 6px 0 #000000;
+
+      }
+
+
+      .get-to-know-menu.is-open {
+
+        transform: translate(-50%, 0);
+
+      }
+
+
+      .get-to-know-option {
+
+        grid-template-columns: 30px 1fr 20px;
+
+        padding: 15px 7px;
+
+      }
+
+
+      .get-to-know-title {
+
+        font-size: 18px;
+
+      }
+
+
+      .get-to-know-description {
+
+        font-size: 9px;
+
+      }
+
     }
 
   </style>
@@ -312,19 +634,192 @@
             </p>
 
 
+            <!-- =================================================
+                 HERO ACTIONS
+            ================================================== -->
+
             <div class="hero-actions">
 
-              <a
-                href="#experience"
-                class="button button-dark"
-              >
 
-                View my experience
+              <!-- GET TO KNOW ME -->
 
-                <span>↓</span>
+              <div class="get-to-know-wrapper">
 
-              </a>
+                <button
+                  type="button"
+                  class="button button-dark get-to-know-button"
+                  id="getToKnowButton"
+                  aria-expanded="false"
+                  aria-controls="getToKnowMenu"
+                >
 
+                  <span class="button-text">
+                    Get to know me
+                  </span>
+
+                  <span class="button-arrow">
+                    ↓
+                  </span>
+
+                </button>
+
+
+                <!-- =================================================
+                     POP-UP MENU
+                ================================================== -->
+
+                <div
+                  class="get-to-know-menu"
+                  id="getToKnowMenu"
+                  aria-hidden="true"
+                >
+
+                  <div class="get-to-know-heading">
+
+                    <span>
+                      GET TO KNOW ME
+                    </span>
+
+                    <span>
+                      CHOOSE A PATH
+                    </span>
+
+                  </div>
+
+
+                  <!-- MY STORY -->
+
+                  <a
+                    href="#about"
+                    class="get-to-know-option"
+                  >
+
+                    <span class="get-to-know-number">
+                      01
+                    </span>
+
+
+                    <span class="get-to-know-copy">
+
+                      <span class="get-to-know-title">
+                        My Story
+                      </span>
+
+                      <span class="get-to-know-description">
+                        How I got here
+                      </span>
+
+                    </span>
+
+
+                    <span class="get-to-know-arrow">
+                      ↘
+                    </span>
+
+                  </a>
+
+
+                  <!-- WHAT I DO -->
+
+                  <a
+                    href="#experience"
+                    class="get-to-know-option"
+                  >
+
+                    <span class="get-to-know-number">
+                      02
+                    </span>
+
+
+                    <span class="get-to-know-copy">
+
+                      <span class="get-to-know-title">
+                        What I Do
+                      </span>
+
+                      <span class="get-to-know-description">
+                        Marketing × people × business
+                      </span>
+
+                    </span>
+
+
+                    <span class="get-to-know-arrow">
+                      ↘
+                    </span>
+
+                  </a>
+
+
+                  <!-- WHAT I'VE BUILT -->
+
+                  <a
+                    href="#projects"
+                    class="get-to-know-option"
+                  >
+
+                    <span class="get-to-know-number">
+                      03
+                    </span>
+
+
+                    <span class="get-to-know-copy">
+
+                      <span class="get-to-know-title">
+                        What I've Built
+                      </span>
+
+                      <span class="get-to-know-description">
+                        Projects, businesses & communities
+                      </span>
+
+                    </span>
+
+
+                    <span class="get-to-know-arrow">
+                      ↘
+                    </span>
+
+                  </a>
+
+
+                  <!-- HOW I THINK -->
+
+                  <a
+                    href="#skills"
+                    class="get-to-know-option"
+                  >
+
+                    <span class="get-to-know-number">
+                      04
+                    </span>
+
+
+                    <span class="get-to-know-copy">
+
+                      <span class="get-to-know-title">
+                        How I Think
+                      </span>
+
+                      <span class="get-to-know-description">
+                        Consumer insight × creativity × strategy
+                      </span>
+
+                    </span>
+
+
+                    <span class="get-to-know-arrow">
+                      ↘
+                    </span>
+
+                  </a>
+
+                </div>
+
+              </div>
+
+
+              <!-- RESUME -->
 
               <a
                 href="resume.pdf"
@@ -338,6 +833,7 @@
                 <span>↗</span>
 
               </a>
+
 
             </div>
 
@@ -1199,6 +1695,7 @@
                 <strong>
                   observe → test → adapt.
                 </strong>
+
               </p>
 
 
@@ -3127,10 +3624,197 @@
 
 
   <!-- =====================================================
-       JAVASCRIPT
+       EXISTING JAVASCRIPT
   ====================================================== -->
 
   <script src="script.js"></script>
+
+
+  <!-- =====================================================
+       GET TO KNOW ME INTERACTION
+  ====================================================== -->
+
+  <script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const button =
+        document.getElementById("getToKnowButton");
+
+      const menu =
+        document.getElementById("getToKnowMenu");
+
+      const wrapper =
+        document.querySelector(".get-to-know-wrapper");
+
+
+      if (!button || !menu || !wrapper) {
+        return;
+      }
+
+
+      function openMenu() {
+
+        menu.classList.add("is-open");
+
+        button.classList.add("is-active");
+
+        button.setAttribute(
+          "aria-expanded",
+          "true"
+        );
+
+        menu.setAttribute(
+          "aria-hidden",
+          "false"
+        );
+
+
+        const buttonText =
+          button.querySelector(".button-text");
+
+        const buttonArrow =
+          button.querySelector(".button-arrow");
+
+
+        if (buttonText) {
+
+          buttonText.textContent =
+            "Close menu";
+
+        }
+
+
+        if (buttonArrow) {
+
+          buttonArrow.textContent =
+            "↑";
+
+        }
+
+      }
+
+
+      function closeMenu() {
+
+        menu.classList.remove("is-open");
+
+        button.classList.remove("is-active");
+
+        button.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+        menu.setAttribute(
+          "aria-hidden",
+          "true"
+        );
+
+
+        const buttonText =
+          button.querySelector(".button-text");
+
+        const buttonArrow =
+          button.querySelector(".button-arrow");
+
+
+        if (buttonText) {
+
+          buttonText.textContent =
+            "Get to know me";
+
+        }
+
+
+        if (buttonArrow) {
+
+          buttonArrow.textContent =
+            "↓";
+
+        }
+
+      }
+
+
+      button.addEventListener(
+        "click",
+        function (event) {
+
+          event.preventDefault();
+
+          event.stopPropagation();
+
+
+          const isOpen =
+            menu.classList.contains("is-open");
+
+
+          if (isOpen) {
+
+            closeMenu();
+
+          } else {
+
+            openMenu();
+
+          }
+
+        }
+      );
+
+
+      menu.addEventListener(
+        "click",
+        function (event) {
+
+          const link =
+            event.target.closest("a");
+
+
+          if (link) {
+
+            closeMenu();
+
+          }
+
+        }
+      );
+
+
+      document.addEventListener(
+        "click",
+        function (event) {
+
+          if (!wrapper.contains(event.target)) {
+
+            closeMenu();
+
+          }
+
+        }
+      );
+
+
+      document.addEventListener(
+        "keydown",
+        function (event) {
+
+          if (event.key === "Escape") {
+
+            closeMenu();
+
+            button.focus();
+
+          }
+
+        }
+      );
+
+    });
+
+  </script>
+
 
 </body>
 
