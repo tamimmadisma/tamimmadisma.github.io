@@ -2649,6 +2649,9 @@ h3 em {
    14 — EDUCATION
 ========================================================= */
 
+.skills-education {
+  grid-column: 1 / -1;
+}
 .education-block {
   min-height: 175px;
 
