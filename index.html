@@ -6965,7 +6965,109 @@
     });
 
   </script>
+<!-- FLOATING BACK TO TOP -->
+<button
+  id="backToTop"
+  class="back-to-top"
+  aria-label="Back to top"
+  title="Back to top"
+>
+  ↑
+</button>
 
+<style>
+  .back-to-top {
+    position: fixed;
+    right: 28px;
+    bottom: 28px;
+    width: 54px;
+    height: 54px;
+    border: 1px solid #252525;
+    border-radius: 50%;
+    background: #D8DE56;
+    color: #252525;
+    font-family: "DM Sans", sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    cursor: pointer;
+    z-index: 9998;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px) rotate(-8deg);
+
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease,
+      transform 0.3s ease,
+      background 0.2s ease;
+  }
+
+  .back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) rotate(-8deg);
+  }
+
+  .back-to-top:hover {
+    background: #6FB3AC;
+    transform: translateY(-5px) rotate(0deg);
+  }
+
+  .back-to-top:active {
+    transform: translateY(-2px) scale(0.95);
+  }
+
+  @media (max-width: 700px) {
+    .back-to-top {
+      right: 18px;
+      bottom: 18px;
+      width: 48px;
+      height: 48px;
+      font-size: 20px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .back-to-top {
+      transition: opacity 0.2s ease, visibility 0.2s ease;
+    }
+
+    .back-to-top:hover,
+    .back-to-top.show {
+      transform: none;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const backToTop = document.getElementById("backToTop");
+
+    if (!backToTop) return;
+
+    function toggleBackToTop() {
+      if (window.scrollY > 500) {
+        backToTop.classList.add("show");
+      } else {
+        backToTop.classList.remove("show");
+      }
+    }
+
+    window.addEventListener("scroll", toggleBackToTop, {
+      passive: true
+    });
+
+    backToTop.addEventListener("click", function () {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+
+    toggleBackToTop();
+  });
+</script>
 
 </body>
 
