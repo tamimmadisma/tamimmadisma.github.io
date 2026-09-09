@@ -5940,24 +5940,28 @@ h3 em {
 
   flex-wrap: wrap;
 
-  gap: 8px;
+  gap: 9px;
 
   max-width: 850px;
 }
 
-.tools-list span {
+.tool-chip {
   display: inline-flex;
 
   align-items: center;
   justify-content: center;
 
-  min-height: 34px;
+  min-height: 36px;
 
-  padding: 9px 14px;
+  padding: 9px 15px;
 
   border: 1px solid rgba(37, 37, 37, .22);
 
   border-radius: 999px;
+
+  background: transparent;
+
+  color: inherit;
 
   font-family: var(--sans, "DM Sans", sans-serif);
 
@@ -5969,23 +5973,92 @@ h3 em {
 
   text-transform: uppercase;
 
+  cursor: default;
+
   transition:
     transform .25s ease,
-    background .25s ease,
-    border-color .25s ease;
-}
-
-.tools-list span:hover {
-  background: var(--yellow, #D8DE56);
-
-  border-color: var(--yellow, #D8DE56);
-
-  transform:
-    translateY(-3px)
-    rotate(-1deg);
+    background-color .25s ease,
+    border-color .25s ease,
+    color .25s ease,
+    box-shadow .25s ease;
 }
 
 
+/* =========================================================
+   TOOL HOVER
+   ========================================================= */
+
+@media (hover: hover) and (pointer: fine) {
+
+  .tool-chip:hover {
+    background: var(--yellow, #D8DE56);
+
+    border-color: var(--yellow, #D8DE56);
+
+    color: var(--ink, #252525);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+      0 7px 18px rgba(37, 37, 37, .08);
+  }
+
+}
+
+
+/* =========================================================
+   MORE TO COME
+   ========================================================= */
+
+.tool-chip-more {
+  opacity: .7;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .skills-tools {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+  .tools-list {
+    max-width: 100%;
+
+    gap: 8px;
+  }
+
+  .tool-chip {
+    min-height: 34px;
+
+    padding: 8px 13px;
+
+    font-size: 7.5px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .tool-chip {
+    transition: none;
+  }
+
+  .tool-chip:hover {
+    transform: none;
+  }
+
+}
 /* =========================================================
    EDUCATION
    ========================================================= */
