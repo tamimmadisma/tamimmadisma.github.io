@@ -24,14 +24,6 @@
     ".milestone[data-milestone]"
   );
 
-  /*
-     UPDATED:
-     The Journey skill shapes now use:
-     .takeaway-skill
-
-     We also include .today-skill in case your
-     current HTML uses that class elsewhere.
-  */
   const journeySkills = document.querySelectorAll(
     ".takeaway-skill, .today-skill"
   );
@@ -469,23 +461,7 @@
 
   /* =========================================================
      JOURNEY — INTERACTIVE ROADMAP
-  =========================================================
-
-     Each milestone works as a small story module.
-
-     CLOSED:
-       → title
-       → hook
-       → short detail
-
-     OPEN:
-       → full story
-       → takeaway skills
-       → organic skill shapes
-
-     Only one milestone stays open at a time.
   ========================================================= */
-
 
   function closeAllMilestones(
     except = null
@@ -615,12 +591,6 @@
       );
 
 
-      /*
-         IMPORTANT:
-         Keep the existing HTML's initial
-         .active state instead of forcing
-         every milestone closed.
-      */
       milestone.setAttribute(
         "aria-expanded",
         milestone.classList.contains(
@@ -638,12 +608,6 @@
       milestone.addEventListener(
         "click",
         event => {
-
-          /*
-             Prevent accidental double-triggering
-             when clicking interactive elements
-             inside the card.
-          */
 
           const interactive =
             event.target.closest(
@@ -710,27 +674,10 @@
 
   /* =========================================================
      JOURNEY — ORGANIC SKILL SHAPES
-  =========================================================
-
-     These are intentionally NOT interactive.
-
-     Their purpose is visual:
-       → playful
-       → organic
-       → employer-friendly
-       → same typography as the site
-
-     CSS controls the actual shape, color,
-     rotation and hover treatment.
   ========================================================= */
 
   journeySkills.forEach(
     skill => {
-
-      /*
-         Remove old chip behaviour.
-         These are visual labels, not buttons.
-      */
 
       skill.removeAttribute(
         "tabindex"
@@ -748,18 +695,27 @@
   );
 
 
-   /* =========================================================
-     SKILLS — INTERACTIVE CARD SYSTEM
+  /* =========================================================
+     SKILLS — INTERACTIVE UNIVERSE
   =========================================================
 
-     The Skills section uses:
-       .skill-card
-       .skill-details
-       .skill-detail
+     Six interactive skill circles:
 
-     Each card controls one corresponding detail panel.
+       Strategy
+       Brand
+       Business
+       Creative
+       Research
+       Consumer Insights
 
-     The interaction works with:
+     Each circle controls:
+
+       → its active state
+       → its matching detail panel
+       → its matching SVG connection line
+
+     Interaction works with:
+
        → mouse click
        → keyboard Enter
        → keyboard Space
@@ -767,23 +723,30 @@
      Only one skill is active at a time.
   ========================================================= */
 
+  const universeSkills =
+    document.querySelectorAll(
+      ".universe-skill[data-skill]"
+    );
 
-  const skillCards = document.querySelectorAll(
-    ".skill-card[data-skill]"
-  );
 
-  const skillDetailItems = document.querySelectorAll(
-    ".skill-detail[data-detail]"
-  );
+  const skillInfoPanels =
+    document.querySelectorAll(
+      ".skill-info-panel[data-info]"
+    );
+
+
+  const skillConnections =
+    document.querySelectorAll(
+      ".connection[data-line]"
+    );
 
 
   /* =========================================================
-     ACTIVATE SKILL
+     ACTIVATE UNIVERSE SKILL
   ========================================================= */
 
-  function activateSkill(
-    skillName,
-    shouldScroll = false
+  function activateUniverseSkill(
+    skillName
   ) {
 
     if (!skillName) {
@@ -792,23 +755,23 @@
 
 
     /* -----------------------------------------
-       UPDATE CARDS
+       UPDATE SKILL CIRCLES
     ----------------------------------------- */
 
-    skillCards.forEach(
-      card => {
+    universeSkills.forEach(
+      skill => {
 
         const active =
-          card.dataset.skill === skillName;
+          skill.dataset.skill === skillName;
 
 
-        card.classList.toggle(
+        skill.classList.toggle(
           "active",
           active
         );
 
 
-        card.setAttribute(
+        skill.setAttribute(
           "aria-pressed",
           active
             ? "true"
@@ -823,14 +786,14 @@
        UPDATE DETAIL PANELS
     ----------------------------------------- */
 
-    skillDetailItems.forEach(
-      detail => {
+    skillInfoPanels.forEach(
+      panel => {
 
         const active =
-          detail.dataset.detail === skillName;
+          panel.dataset.info === skillName;
 
 
-        detail.classList.toggle(
+        panel.classList.toggle(
           "active",
           active
         );
@@ -840,79 +803,51 @@
 
 
     /* -----------------------------------------
-       OPTIONAL MOBILE SCROLL
+       UPDATE SVG CONNECTIONS
     ----------------------------------------- */
 
-    if (
-      shouldScroll &&
-      window.innerWidth <= 700
-    ) {
+    skillConnections.forEach(
+      line => {
 
-      const details =
-        document.querySelector(
-          ".skill-details"
+        const active =
+          line.dataset.line === skillName;
+
+
+        line.classList.toggle(
+          "active",
+          active
         );
 
-
-      if (details) {
-
-        const headerOffset =
-          getHeaderOffset();
-
-
-        const targetPosition =
-          details.getBoundingClientRect().top +
-          window.scrollY -
-          headerOffset -
-          15;
-
-
-        window.scrollTo({
-
-          top:
-            Math.max(
-              0,
-              targetPosition
-            ),
-
-          behavior:
-            reducedMotion()
-              ? "auto"
-              : "smooth"
-
-        });
-
       }
-
-    }
+    );
 
   }
 
 
   /* =========================================================
-     INITIALIZE SKILL CARDS
+     INITIALIZE UNIVERSE SKILLS
   ========================================================= */
 
-  skillCards.forEach(
-    (card, index) => {
+  universeSkills.forEach(
+    (skill, index) => {
 
       /* -----------------------------------------
          ACCESSIBILITY
       ----------------------------------------- */
 
-      card.setAttribute(
+      skill.setAttribute(
         "role",
         "button"
       );
 
 
-      card.setAttribute(
+      skill.setAttribute(
         "tabindex",
         "0"
       );
 
 
-      card.setAttribute(
+      skill.setAttribute(
         "aria-pressed",
         "false"
       );
@@ -922,13 +857,12 @@
          CLICK
       ----------------------------------------- */
 
-      card.addEventListener(
+      skill.addEventListener(
         "click",
         () => {
 
-          activateSkill(
-            card.dataset.skill,
-            true
+          activateUniverseSkill(
+            skill.dataset.skill
           );
 
         }
@@ -939,7 +873,7 @@
          KEYBOARD
       ----------------------------------------- */
 
-      card.addEventListener(
+      skill.addEventListener(
         "keydown",
         event => {
 
@@ -951,9 +885,8 @@
             event.preventDefault();
 
 
-            activateSkill(
-              card.dataset.skill,
-              true
+            activateUniverseSkill(
+              skill.dataset.skill
             );
 
           }
@@ -968,10 +901,10 @@
 
       if (!reducedMotion()) {
 
-        card.style.transitionDelay =
+        skill.style.transitionDelay =
           `${Math.min(
-            index * 45,
-            225
+            index * 60,
+            300
           )}ms`;
 
       }
@@ -982,37 +915,26 @@
 
   /* =========================================================
      INITIAL ACTIVE SKILL
-  =========================================================
-
-     If HTML already contains:
-       .skill-card.active
-
-     use that skill.
-
-     Otherwise activate the first card.
   ========================================================= */
 
-
-  if (skillCards.length) {
+  if (universeSkills.length) {
 
     const existingActive =
       document.querySelector(
-        ".skill-card.active[data-skill]"
+        ".universe-skill.active[data-skill]"
       );
 
 
     if (existingActive) {
 
-      activateSkill(
-        existingActive.dataset.skill,
-        false
+      activateUniverseSkill(
+        existingActive.dataset.skill
       );
 
     } else {
 
-      activateSkill(
-        skillCards[0].dataset.skill,
-        false
+      activateUniverseSkill(
+        universeSkills[0].dataset.skill
       );
 
     }
@@ -1021,13 +943,7 @@
 
 
   /* =========================================================
-     HOVER MICRO-INTERACTION
-  =========================================================
-
-     Desktop only.
-
-     Adds a subtle visual response without
-     interfering with the click interaction.
+     SKILLS — DESKTOP HOVER
   ========================================================= */
 
   if (
@@ -1035,14 +951,14 @@
     !reducedMotion()
   ) {
 
-    skillCards.forEach(
-      card => {
+    universeSkills.forEach(
+      skill => {
 
-        card.addEventListener(
+        skill.addEventListener(
           "mouseenter",
           () => {
 
-            card.classList.add(
+            skill.classList.add(
               "is-hovered"
             );
 
@@ -1050,11 +966,11 @@
         );
 
 
-        card.addEventListener(
+        skill.addEventListener(
           "mouseleave",
           () => {
 
-            card.classList.remove(
+            skill.classList.remove(
               "is-hovered"
             );
 
@@ -1065,6 +981,8 @@
     );
 
   }
+
+
   /* =========================================================
      REVEAL ANIMATIONS
   ========================================================= */
@@ -1091,13 +1009,13 @@
 
     ".skills-intro",
 
-    ".skills-map",
+    ".skill-universe",
 
-    ".skill-details",
+    ".skill-info",
 
-    ".tools-row",
+    ".skills-tools",
 
-    ".education-block",
+    ".skills-education",
 
     ".creative-intro",
 
@@ -1219,11 +1137,6 @@
 
   /* =========================================================
      PROJECT MICRO-MOTION
-  =========================================================
-
-     Very subtle movement only.
-
-     No aggressive 3D effect.
   ========================================================= */
 
   if (
