@@ -20,11 +20,10 @@
     content="Portfolio of Tamimmah Disma Lestari — Marketing, Consumer Insights, Business Development and Creative Strategy."
   >
 
-  <!-- =====================================================
-       GOOGLE FONTS
-  ====================================================== -->
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
 
   <link
     rel="preconnect"
@@ -33,907 +32,791 @@
   >
 
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
     rel="stylesheet"
   >
-
-  <!-- =====================================================
-       STYLES
-  ====================================================== -->
 
   <link
     rel="stylesheet"
     href="style.css"
   >
 
-
-  <!-- =====================================================
-       CLICKABLE PROJECT VISUALS
-       + EXPLORE MENU
-  ====================================================== -->
-
   <style>
 
-    .project-visual-link {
-      display: block;
+    /* =========================================================
+       CLICKABLE EXPERIENCE
+    ========================================================= */
+
+    .experience-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 42px;
+    }
+
+    .experience-card {
+      position: relative;
       width: 100%;
-      color: inherit;
-      text-decoration: none;
+      border: 1px solid rgba(37,37,37,.18);
+      background: #f8f8f3;
+      cursor: pointer;
+      overflow: hidden;
+      transition:
+        transform .35s ease,
+        border-color .35s ease,
+        background .35s ease,
+        box-shadow .35s ease;
+    }
+
+    .experience-card:hover {
+      transform: translateY(-4px);
+      border-color: #252525;
+      background: #D8DE56;
+      box-shadow: 8px 8px 0 #252525;
+    }
+
+    .experience-card-inner {
+      display: grid;
+      grid-template-columns: 80px minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 26px;
+      padding: 28px 30px;
+    }
+
+    .experience-number {
+      font-family: "Playfair Display", serif;
+      font-size: 2.4rem;
+      line-height: 1;
+      color: #5D8274;
+    }
+
+    .experience-company {
+      margin: 0 0 7px;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .experience-role {
+      margin: 0;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(1.25rem, 2vw, 1.7rem);
+      line-height: 1.2;
+    }
+
+    .experience-date {
+      margin-top: 8px;
+      font-size: .8rem;
+      letter-spacing: .08em;
+      opacity: .65;
+    }
+
+    .experience-open {
+      width: 46px;
+      height: 46px;
+      border: 1px solid #252525;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      transition:
+        transform .35s ease,
+        background .35s ease;
+    }
+
+    .experience-card:hover .experience-open {
+      transform: rotate(45deg);
+      background: #252525;
+      color: #fff;
+    }
+
+    /* =========================================================
+       EXPERIENCE MODAL
+    ========================================================= */
+
+    .experience-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .experience-modal.is-open {
+      display: flex;
+    }
+
+    .experience-modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(37,37,37,.82);
+      backdrop-filter: blur(8px);
+    }
+
+    .experience-modal-panel {
+      position: relative;
+      z-index: 2;
+      width: min(1080px, 100%);
+      max-height: min(90vh, 900px);
+      overflow-y: auto;
+      background: #f8f8f3;
+      color: #252525;
+      box-shadow: 14px 14px 0 #D8DE56;
+      animation: experienceModalIn .35s ease both;
+    }
+
+    @keyframes experienceModalIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px) scale(.97);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .experience-modal-close {
+      position: sticky;
+      top: 18px;
+      float: right;
+      z-index: 5;
+      margin: 18px 18px 0 0;
+      width: 48px;
+      height: 48px;
+      border: 1px solid #252525;
+      border-radius: 50%;
+      background: #f8f8f3;
+      color: #252525;
+      cursor: pointer;
+      font-size: 1.4rem;
+      transition:
+        transform .25s ease,
+        background .25s ease,
+        color .25s ease;
+    }
+
+    .experience-modal-close:hover {
+      transform: rotate(90deg);
+      background: #252525;
+      color: #fff;
+    }
+
+    .experience-modal-header {
+      padding: 68px 72px 42px;
+      border-bottom: 1px solid rgba(37,37,37,.15);
+    }
+
+    .experience-modal-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: #5D8274;
+    }
+
+    .experience-modal-kicker::before {
+      content: "";
+      width: 28px;
+      height: 2px;
+      background: #D8A4A5;
+    }
+
+    .experience-modal-title {
+      margin: 0;
+      max-width: 850px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.5rem, 6vw, 5.8rem);
+      line-height: .98;
+    }
+
+    .experience-modal-subtitle {
+      margin: 22px 0 0;
+      max-width: 720px;
+      font-size: 1rem;
+      line-height: 1.7;
+      opacity: .75;
+    }
+
+    .experience-modal-body {
+      padding: 54px 72px 72px;
+    }
+
+    .experience-story-intro {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(240px, .7fr);
+      gap: 50px;
+      margin-bottom: 58px;
+    }
+
+    .experience-story-lead {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(1.55rem, 3vw, 2.5rem);
+      line-height: 1.25;
+      margin: 0;
+    }
+
+    .experience-meta {
+      border-left: 2px solid #D8A4A5;
+      padding-left: 22px;
+    }
+
+    .experience-meta-item {
+      margin-bottom: 22px;
+    }
+
+    .experience-meta-label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: #5D8274;
+    }
+
+    .experience-meta-value {
+      font-size: .95rem;
+      line-height: 1.5;
+    }
+
+    .experience-story-section {
+      margin-bottom: 54px;
+    }
+
+    .experience-story-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .experience-story-heading {
+      display: flex;
+      align-items: baseline;
+      gap: 15px;
+      margin-bottom: 22px;
+    }
+
+    .experience-story-heading-number {
+      font-family: "Playfair Display", serif;
+      font-size: 1.15rem;
+      color: #D8A4A5;
+    }
+
+    .experience-story-heading h3 {
+      margin: 0;
+      font-size: .8rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .experience-story-section p {
+      max-width: 850px;
+      margin: 0 0 16px;
+      font-size: 1rem;
+      line-height: 1.85;
+    }
+
+    .experience-story-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .experience-proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .experience-proof {
+      min-height: 130px;
+      padding: 24px;
+      background: #6FB3AC;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .experience-proof:nth-child(2) {
+      background: #D8A4A5;
+    }
+
+    .experience-proof:nth-child(3) {
+      background: #D8DE56;
+    }
+
+    .experience-proof strong {
+      font-family: "Playfair Display", serif;
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    .experience-proof span {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .experience-learning {
+      margin-top: 28px;
+      padding: 32px;
+      background: #5D8274;
+      color: #fff;
+    }
+
+    .experience-learning-label {
+      display: block;
+      margin-bottom: 12px;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: #D8DE56;
+    }
+
+    .experience-learning p {
+      max-width: none;
+      margin: 0;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(1.25rem, 2.5vw, 1.9rem);
+      line-height: 1.45;
+    }
+
+    .experience-loop {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 25px;
+    }
+
+    .experience-loop span {
+      padding: 9px 13px;
+      border: 1px solid rgba(37,37,37,.2);
+      border-radius: 999px;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+    }
+
+    .experience-modal-footer {
+      padding: 26px 72px;
+      background: #252525;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .experience-modal-footer span {
+      font-size: .7rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      opacity: .65;
+    }
+
+    .experience-modal-footer button {
+      border: 0;
+      background: transparent;
+      color: #D8DE56;
+      font: inherit;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
       cursor: pointer;
     }
 
-    .project-visual-link:hover {
-      color: inherit;
-      text-decoration: none;
+    body.experience-modal-open {
+      overflow: hidden;
     }
 
-    .project-visual-link:focus-visible {
-      outline: 2px solid currentColor;
-      outline-offset: 6px;
+    @media (max-width: 800px) {
+
+      .experience-card-inner {
+        grid-template-columns: 50px minmax(0, 1fr) auto;
+        gap: 15px;
+        padding: 22px 18px;
+      }
+
+      .experience-number {
+        font-size: 1.8rem;
+      }
+
+      .experience-open {
+        width: 40px;
+        height: 40px;
+      }
+
+      .experience-modal {
+        padding: 10px;
+      }
+
+      .experience-modal-panel {
+        max-height: 94vh;
+        box-shadow: 7px 7px 0 #D8DE56;
+      }
+
+      .experience-modal-header {
+        padding: 60px 28px 32px;
+      }
+
+      .experience-modal-body {
+        padding: 38px 28px 50px;
+      }
+
+      .experience-story-intro {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        margin-bottom: 45px;
+      }
+
+      .experience-proof-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .experience-modal-footer {
+        padding: 22px 28px;
+      }
+
     }
 
-    .project-visual-link .project-visual {
-      width: 100%;
+    @media (max-width: 500px) {
+
+      .experience-card-inner {
+        grid-template-columns: 38px 1fr;
+      }
+
+      .experience-open {
+        grid-column: 2;
+        justify-self: start;
+        margin-top: 10px;
+      }
+
+      .experience-company {
+        font-size: .68rem;
+      }
+
+      .experience-role {
+        font-size: 1.2rem;
+      }
+
     }
 
+    /* =========================================================
+       CLICKABLE PROJECT VISUALS
+    ========================================================= */
 
-    /* =====================================================
-       HERO — GET TO KNOW ME BUTTON
-    ====================================================== */
-
-    .hero-actions {
+    .project-visual {
+      cursor: pointer;
       position: relative;
     }
 
-
-    .get-to-know-wrapper {
-      position: relative;
-      display: inline-block;
+    .project-visual::after {
+      content: "OPEN PROJECT ↗";
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      padding: 10px 14px;
+      background: #252525;
+      color: #fff;
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: .3s ease;
     }
 
-
-    .get-to-know-button {
-      transition:
-        background 0.25s ease,
-        color 0.25s ease,
-        transform 0.2s ease;
-    }
-
-
-    .get-to-know-button:hover {
-      transform: translateY(-2px);
-    }
-
-
-    .get-to-know-button.is-active {
-      background: #D9DF57;
-      color: #000000;
-    }
-
-
-    .get-to-know-button.is-active .button-arrow {
-      display: inline-block;
+    .project-visual:hover::after {
+      opacity: 1;
       transform: translateY(0);
     }
 
-
-    /* =====================================================
-       EXPLORE — FULL SCREEN OVERLAY
-    ====================================================== */
+    /* =========================================================
+       GET TO KNOW ME OVERLAY
+    ========================================================= */
 
     .get-to-know-overlay {
-
       position: fixed;
-
       inset: 0;
-
-      width: 100%;
-
-      height: 100vh;
-
-      height: 100dvh;
-
-      z-index: 9999;
-
-      background: rgba(0, 0, 0, 0.35);
-
-      opacity: 0;
-
-      visibility: hidden;
-
+      z-index: 10000;
       pointer-events: none;
-
+      visibility: hidden;
+      opacity: 0;
       transition:
-        opacity 0.3s ease,
-        visibility 0.3s ease;
-
-      overflow: hidden;
-
+        opacity .35s ease,
+        visibility .35s ease;
     }
-
 
     .get-to-know-overlay.is-open {
-
-      opacity: 1;
-
-      visibility: visible;
-
       pointer-events: auto;
-
+      visibility: visible;
+      opacity: 1;
     }
 
-
-    /* Background layer */
-
-    .get-to-know-overlay-backdrop {
-
+    .get-to-know-backdrop {
       position: absolute;
-
       inset: 0;
-
-      background: rgba(0, 0, 0, 0.28);
-
-      backdrop-filter: blur(3px);
-
-      -webkit-backdrop-filter: blur(3px);
-
+      background: rgba(37,37,37,.8);
+      backdrop-filter: blur(8px);
     }
-
-
-    /* =====================================================
-       EXPLORE PANEL
-    ====================================================== */
 
     .get-to-know-panel {
-
-      position: relative;
-
-      z-index: 2;
-
-      width: 100%;
-
-      height: 100%;
-
-      min-height: 100vh;
-
-      min-height: 100dvh;
-
-      max-height: 100vh;
-
-      max-height: 100dvh;
-
+      position: absolute;
+      inset: 0;
       overflow-y: auto;
-
-      overflow-x: hidden;
-
-      overscroll-behavior: contain;
-
-      -webkit-overflow-scrolling: touch;
-
-      background: #F8F4EE;
-
-      color: #000000;
-
-      padding:
-
-        max(34px, env(safe-area-inset-top))
-
-        clamp(24px, 5vw, 80px)
-
-        max(40px, env(safe-area-inset-bottom));
-
-      box-sizing: border-box;
-
-      transform: translateY(18px);
-
-      transition:
-        transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-
+      background: #f8f8f3;
+      transform: translateY(100%);
+      transition: transform .55s cubic-bezier(.77,0,.18,1);
     }
-
 
     .get-to-know-overlay.is-open .get-to-know-panel {
-
       transform: translateY(0);
-
     }
-
-
-    /* =====================================================
-       EXPLORE TOP BAR
-    ====================================================== */
 
     .explore-top {
-
+      position: sticky;
+      top: 0;
+      z-index: 3;
       display: flex;
-
-      align-items: center;
-
       justify-content: space-between;
-
-      gap: 24px;
-
-      width: 100%;
-
-      padding-bottom: 18px;
-
-      border-bottom: 1px solid rgba(0, 0, 0, 0.18);
-
+      align-items: center;
+      padding: 25px 5vw;
+      background: rgba(248,248,243,.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(37,37,37,.12);
     }
 
-
-    .explore-brand {
-
-      font-size: 10px;
-
+    .explore-logo {
+      font-size: .75rem;
       font-weight: 700;
-
-      letter-spacing: 0.16em;
-
-      text-transform: uppercase;
-
+      letter-spacing: .16em;
     }
-
 
     .explore-close {
-
-      appearance: none;
-
-      -webkit-appearance: none;
-
-      border: none;
-
-      background: transparent;
-
-      color: #000000;
-
-      padding: 6px 0;
-
-      margin: 0;
-
-      font-family: "DM Sans", sans-serif;
-
-      font-size: 11px;
-
-      font-weight: 700;
-
-      letter-spacing: 0.12em;
-
-      text-transform: uppercase;
-
+      border: 0;
+      background: none;
       cursor: pointer;
-
-      transition:
-        opacity 0.2s ease,
-        transform 0.2s ease;
-
-    }
-
-
-    .explore-close:hover {
-
-      opacity: 0.6;
-
-      transform: translateX(-3px);
-
-    }
-
-
-    .explore-close:focus-visible {
-
-      outline: 2px solid #000000;
-
-      outline-offset: 6px;
-
-    }
-
-
-    /* =====================================================
-       EXPLORE HEADER
-    ====================================================== */
-
-    .explore-header {
-
-      padding-top: clamp(44px, 8vh, 100px);
-
-      padding-bottom: clamp(36px, 6vh, 70px);
-
-    }
-
-
-    .explore-eyebrow {
-
-      margin: 0 0 12px;
-
-      font-size: 10px;
-
+      font: inherit;
+      font-size: .72rem;
       font-weight: 700;
-
-      letter-spacing: 0.16em;
-
-      text-transform: uppercase;
-
-      color: #438F89;
-
+      letter-spacing: .14em;
     }
 
-
-    .explore-title {
-
-      margin: 0;
-
-      font-family: "Playfair Display", serif;
-
-      font-size: clamp(58px, 11vw, 150px);
-
-      line-height: 0.86;
-
-      font-weight: 600;
-
-      letter-spacing: -0.055em;
-
-    }
-
-
-    .explore-title em {
-
-      font-weight: 500;
-
-    }
-
-
-    /* =====================================================
-       EXPLORE NAV
-    ====================================================== */
-
-    .explore-navigation {
-
-      width: 100%;
-
-      border-top: 1px solid #000000;
-
-    }
-
-
-    .explore-option {
-
-      position: relative;
-
-      display: grid;
-
-      grid-template-columns: clamp(48px, 7vw, 90px) 1fr auto;
-
+    .explore-close span {
+      display: inline-flex;
       align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      margin-left: 8px;
+      border: 1px solid #252525;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      transition: transform .3s ease;
+    }
 
-      gap: clamp(16px, 3vw, 48px);
+    .explore-close:hover span {
+      transform: rotate(90deg);
+    }
 
-      width: 100%;
+    .explore-content {
+      width: min(1200px, 90%);
+      margin: 0 auto;
+      padding: 9vh 0 6vh;
+    }
 
-      min-height: clamp(92px, 10vw, 140px);
+    .explore-kicker {
+      margin-bottom: 15px;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      color: #5D8274;
+    }
 
-      padding: 18px 0;
+    .explore-heading {
+      max-width: 850px;
+      margin: 0 0 55px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(3rem, 8vw, 8rem);
+      line-height: .9;
+    }
 
-      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    .explore-heading em {
+      color: #5D8274;
+      font-weight: 500;
+    }
 
-      color: #000000;
+    .explore-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
 
+    .explore-link {
+      position: relative;
+      display: block;
+      padding: 30px;
+      min-height: 175px;
       text-decoration: none;
-
-      box-sizing: border-box;
-
+      color: #252525;
+      border: 1px solid rgba(37,37,37,.16);
       overflow: hidden;
-
       transition:
-        padding-left 0.3s ease,
-        padding-right 0.3s ease;
-
+        transform .35s ease,
+        box-shadow .35s ease;
     }
 
-
-    .explore-option::before {
-
-      content: "";
-
-      position: absolute;
-
-      inset: 0;
-
-      background: #D9DF57;
-
-      transform: translateX(-101%);
-
-      transition:
-        transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-
-      z-index: -1;
-
+    .explore-link:hover {
+      transform: translate(-4px,-4px);
+      box-shadow: 8px 8px 0 #252525;
     }
 
-
-    .explore-option:hover::before,
-
-    .explore-option:focus-visible::before {
-
-      transform: translateX(0);
-
+    .explore-link:nth-child(1) {
+      background: #D8DE56;
     }
 
-
-    .explore-option:hover,
-
-    .explore-option:focus-visible {
-
-      padding-left: clamp(12px, 2vw, 30px);
-
-      padding-right: clamp(12px, 2vw, 30px);
-
+    .explore-link:nth-child(2) {
+      background: #6FB3AC;
     }
 
-
-    .explore-option:focus-visible {
-
-      outline: none;
-
+    .explore-link:nth-child(3) {
+      background: #D8A4A5;
     }
 
+    .explore-link:nth-child(4) {
+      background: #7C9783;
+      color: #fff;
+    }
+
+    .explore-link:nth-child(5) {
+      background: #5D8274;
+      color: #fff;
+    }
+
+    .explore-link:nth-child(6) {
+      background: #D8DE56;
+    }
+
+    .explore-link:nth-child(7) {
+      background: #D8A4A5;
+    }
+
+    .explore-link:nth-child(8) {
+      background: #6FB3AC;
+    }
 
     .explore-number {
-
-      position: relative;
-
-      z-index: 1;
-
-      font-size: 11px;
-
+      display: block;
+      margin-bottom: 40px;
+      font-size: .68rem;
       font-weight: 700;
-
-      letter-spacing: 0.1em;
-
-      color: #438F89;
-
-      transition:
-        color 0.25s ease,
-        transform 0.3s ease;
-
+      letter-spacing: .15em;
+      opacity: .7;
     }
 
-
-    .explore-option:hover .explore-number {
-
-      color: #000000;
-
-      transform: translateX(4px);
-
-    }
-
-
-    .explore-copy {
-
-      position: relative;
-
-      z-index: 1;
-
-      display: flex;
-
-      flex-direction: column;
-
-      gap: 5px;
-
-      min-width: 0;
-
-    }
-
-
-    .explore-option-title {
-
+    .explore-link-title {
+      display: block;
       font-family: "Playfair Display", serif;
+      font-size: clamp(1.8rem, 3vw, 3rem);
+      line-height: 1;
+    }
 
-      font-size: clamp(28px, 4vw, 54px);
-
-      line-height: 0.98;
-
+    .explore-link-description {
+      display: block;
+      margin-top: 10px;
+      font-size: .75rem;
       font-weight: 600;
-
-      letter-spacing: -0.025em;
-
-      transition:
-        transform 0.3s ease;
-
-    }
-
-
-    .explore-option:hover .explore-option-title {
-
-      transform: translateX(6px);
-
-    }
-
-
-    .explore-option-description {
-
-      font-size: 10px;
-
-      line-height: 1.4;
-
-      font-weight: 500;
-
-      letter-spacing: 0.08em;
-
+      letter-spacing: .08em;
       text-transform: uppercase;
-
-      opacity: 0.58;
-
+      opacity: .65;
     }
-
-
-    .explore-arrow {
-
-      position: relative;
-
-      z-index: 1;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      width: clamp(34px, 4vw, 54px);
-
-      height: clamp(34px, 4vw, 54px);
-
-      border: 1px solid rgba(0, 0, 0, 0.35);
-
-      border-radius: 50%;
-
-      font-size: 18px;
-
-      flex-shrink: 0;
-
-      transition:
-        transform 0.3s ease,
-        background 0.25s ease;
-
-    }
-
-
-    .explore-option:hover .explore-arrow {
-
-      transform: rotate(-45deg);
-
-      background: #F8F4EE;
-
-    }
-
-
-    /* Individual accents */
-
-    .explore-option:nth-child(2)::before {
-
-      background: #6FB3AC;
-
-    }
-
-
-    .explore-option:nth-child(3)::before {
-
-      background: #D8A4A5;
-
-    }
-
-
-    .explore-option:nth-child(4)::before {
-
-      background: #D8DE56;
-
-    }
-
-
-    .explore-option:nth-child(5)::before {
-
-      background: #7C9783;
-
-    }
-
-
-    .explore-option:nth-child(6)::before {
-
-      background: #6FB3AC;
-
-    }
-
-
-    .explore-option:nth-child(7)::before {
-
-      background: #D8A4A5;
-
-    }
-
-
-    .explore-option:nth-child(8)::before {
-
-      background: #D8DE56;
-
-    }
-
-
-    /* =====================================================
-       EXPLORE FOOTER
-    ====================================================== */
 
     .explore-footer {
-
+      margin-top: 55px;
+      padding-top: 25px;
+      border-top: 1px solid rgba(37,37,37,.18);
       display: flex;
-
-      align-items: flex-end;
-
+      align-items: center;
       justify-content: space-between;
-
-      gap: 30px;
-
-      padding-top: clamp(38px, 7vh, 80px);
-
-      padding-bottom: 20px;
-
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
-
-    .explore-footer-note {
-
-      max-width: 420px;
-
-      font-size: 10px;
-
-      line-height: 1.6;
-
-      letter-spacing: 0.07em;
-
+    .explore-footer-copy {
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .14em;
       text-transform: uppercase;
-
-      opacity: 0.58;
-
     }
-
 
     .explore-resume {
-
       display: inline-flex;
-
       align-items: center;
-
-      gap: 8px;
-
-      padding: 12px 18px;
-
-      background: #000000;
-
-      color: #FFFFFF;
-
+      gap: 10px;
+      color: #252525;
       text-decoration: none;
-
-      font-size: 10px;
-
+      font-size: .7rem;
       font-weight: 700;
-
-      letter-spacing: 0.1em;
-
+      letter-spacing: .14em;
       text-transform: uppercase;
-
-      flex-shrink: 0;
-
-      transition:
-        background 0.2s ease,
-        color 0.2s ease,
-        transform 0.2s ease;
-
     }
-
-
-    .explore-resume:hover {
-
-      background: #D9DF57;
-
-      color: #000000;
-
-      transform: translateY(-2px);
-
-    }
-
-
-    .explore-resume:focus-visible {
-
-      outline: 2px solid #000000;
-
-      outline-offset: 5px;
-
-    }
-
-
-    /* =====================================================
-       LOCK BACKGROUND SCROLL
-    ====================================================== */
 
     body.get-to-know-open {
-
       overflow: hidden;
-
     }
 
-
-    /* =====================================================
-       MOBILE EXPLORE
-    ====================================================== */
+    .hero-explore-btn.is-active {
+      background: #252525 !important;
+      color: #fff !important;
+    }
 
     @media (max-width: 700px) {
 
-      .get-to-know-wrapper {
-
-        width: auto;
-
+      .explore-content {
+        width: 88%;
+        padding: 7vh 0 5vh;
       }
 
-
-      .get-to-know-overlay {
-
-        height: 100dvh;
-
+      .explore-grid {
+        grid-template-columns: 1fr;
       }
 
-
-      .get-to-know-panel {
-
-        height: 100dvh;
-
-        min-height: 100dvh;
-
-        max-height: 100dvh;
-
-        padding:
-
-          max(22px, env(safe-area-inset-top))
-
-          20px
-
-          max(28px, env(safe-area-inset-bottom));
-
+      .explore-link {
+        min-height: 150px;
+        padding: 25px;
       }
-
-
-      .explore-top {
-
-        padding-bottom: 15px;
-
-      }
-
-
-      .explore-header {
-
-        padding-top: 48px;
-
-        padding-bottom: 40px;
-
-      }
-
-
-      .explore-title {
-
-        font-size: clamp(58px, 19vw, 100px);
-
-      }
-
-
-      .explore-navigation {
-
-        border-top: 1px solid #000000;
-
-      }
-
-
-      .explore-option {
-
-        grid-template-columns: 34px 1fr 34px;
-
-        gap: 10px;
-
-        min-height: 88px;
-
-        padding: 16px 0;
-
-      }
-
-
-      .explore-option:hover,
-
-      .explore-option:focus-visible {
-
-        padding-left: 8px;
-
-        padding-right: 8px;
-
-      }
-
-
-      .explore-option-title {
-
-        font-size: clamp(27px, 8.5vw, 42px);
-
-      }
-
-
-      .explore-option-description {
-
-        font-size: 8px;
-
-        letter-spacing: 0.06em;
-
-      }
-
 
       .explore-number {
-
-        font-size: 9px;
-
+        margin-bottom: 28px;
       }
 
-
-      .explore-arrow {
-
-        width: 32px;
-
-        height: 32px;
-
-        font-size: 14px;
-
-      }
-
-
-      .explore-footer {
-
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        padding-top: 42px;
-
-        gap: 24px;
-
-      }
-
-
-      .explore-footer-note {
-
-        max-width: 280px;
-
-      }
-
-
-      .explore-resume {
-
-        width: 100%;
-
-        justify-content: center;
-
+      .explore-top {
+        padding: 20px 6%;
       }
 
     }
 
-
-    /* =====================================================
-       REDUCE MOTION
-    ====================================================== */
-
     @media (prefers-reduced-motion: reduce) {
 
-      .get-to-know-overlay,
       .get-to-know-panel,
-      .explore-option,
-      .explore-option::before,
-      .explore-option-title,
-      .explore-number,
-      .explore-arrow {
-
+      .get-to-know-overlay,
+      .experience-modal-panel,
+      .experience-card,
+      .experience-open,
+      .explore-link {
         transition: none !important;
-
+        animation: none !important;
       }
 
     }
@@ -943,166 +826,131 @@
 </head>
 
 
-<body>
+<body id="top">
 
 
-  <!-- =====================================================
+  <!-- =======================================================
        HEADER
-  ====================================================== -->
+  ======================================================== -->
 
-  <header
-    class="site-header"
-    id="siteHeader"
-  >
+  <header class="site-header">
 
     <a
       href="#top"
-      class="logo"
+      class="site-logo"
       aria-label="Back to top"
     >
-
-      <span>T</span>
-
-      <span class="logo-name">
-        TAMIMMAH
-      </span>
-
+      <span class="site-logo-mark">T</span>
+      <span class="site-logo-name">TAMIMMAH</span>
     </a>
 
 
     <nav
       class="desktop-nav"
-      aria-label="Main navigation"
+      aria-label="Primary navigation"
     >
 
       <a href="#about">About</a>
-
       <a href="#journey">Journey</a>
-
       <a href="#experience">Experience</a>
-
       <a href="#projects">Projects</a>
-
       <a href="#skills">Skills</a>
-
       <a href="#creative">Creative</a>
-
       <a href="#contact">Contact</a>
-
       <a href="journal.html">Journal</a>
 
     </nav>
 
 
-    <a
-      href="resume.pdf"
-      target="_blank"
-      rel="noopener"
-      class="header-resume"
-    >
+    <div class="header-actions">
 
-      Resume
+      <a
+        href="resume.pdf"
+        class="resume-link"
+        target="_blank"
+      >
+        Resume ↗
+      </a>
 
-      <span>↗</span>
+      <button
+        class="mobile-menu-toggle"
+        id="mobileMenuToggle"
+        aria-label="Open navigation"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+      </button>
 
-    </a>
-
-
-    <button
-      class="menu-toggle"
-      id="menuToggle"
-      type="button"
-      aria-label="Open navigation"
-      aria-expanded="false"
-      aria-controls="mobileNav"
-    >
-
-      <span></span>
-      <span></span>
-
-    </button>
+    </div>
 
   </header>
 
 
-  <!-- =====================================================
-       MOBILE NAVIGATION
-  ====================================================== -->
+  <!-- =======================================================
+       MOBILE NAV
+  ======================================================== -->
 
-  <div
+  <nav
     class="mobile-nav"
     id="mobileNav"
+    aria-hidden="true"
   >
 
-    <div class="mobile-nav-inner">
+    <a href="#about">
+      <span>01</span>
+      About
+    </a>
 
-      <small>
-        MENU
-      </small>
+    <a href="#journey">
+      <span>02</span>
+      Journey
+    </a>
 
+    <a href="#experience">
+      <span>03</span>
+      Experience
+    </a>
 
-      <nav aria-label="Mobile navigation">
+    <a href="#projects">
+      <span>04</span>
+      Projects
+    </a>
 
-        <a href="#about">
-          01
-          <span>About</span>
-        </a>
+    <a href="#skills">
+      <span>05</span>
+      Skills
+    </a>
 
-        <a href="#journey">
-          02
-          <span>Journey</span>
-        </a>
+    <a href="#creative">
+      <span>06</span>
+      Creative
+    </a>
 
-        <a href="#experience">
-          03
-          <span>Experience</span>
-        </a>
+    <a href="#contact">
+      <span>07</span>
+      Contact
+    </a>
 
-        <a href="#projects">
-          04
-          <span>Projects</span>
-        </a>
+    <a href="journal.html">
+      <span>08</span>
+      Journal
+    </a>
 
-        <a href="#skills">
-          05
-          <span>Skills</span>
-        </a>
+    <a
+      href="resume.pdf"
+      target="_blank"
+    >
+      <span>↗</span>
+      Resume
+    </a>
 
-        <a href="#creative">
-          06
-          <span>Creative</span>
-        </a>
-
-        <a href="#contact">
-          07
-          <span>Contact</span>
-        </a>
-
-        <a href="journal.html">
-          08
-          <span>Journal</span>
-        </a>
-
-      </nav>
-
-
-      <a
-        href="resume.pdf"
-        target="_blank"
-        rel="noopener"
-        class="mobile-resume"
-      >
-        View Resume ↗
-      </a>
-
-    </div>
-
-  </div>
+  </nav>
 
 
-  <!-- =====================================================
-       EXPLORE FULL SCREEN MENU
-  ====================================================== -->
+  <!-- =======================================================
+       GET TO KNOW ME OVERLAY
+  ======================================================== -->
 
   <div
     class="get-to-know-overlay"
@@ -1111,7 +959,7 @@
   >
 
     <div
-      class="get-to-know-overlay-backdrop"
+      class="get-to-know-backdrop"
       id="getToKnowBackdrop"
     ></div>
 
@@ -1121,20 +969,14 @@
       id="getToKnowPanel"
       role="dialog"
       aria-modal="true"
-      aria-labelledby="exploreTitle"
+      aria-labelledby="exploreHeading"
     >
-
-
-      <!-- =================================================
-           TOP BAR
-      ================================================== -->
 
       <div class="explore-top">
 
-        <span class="explore-brand">
+        <div class="explore-logo">
           TAMIMMAH
-        </span>
-
+        </div>
 
         <button
           type="button"
@@ -1142,518 +984,257 @@
           id="exploreClose"
           aria-label="Close explore menu"
         >
-
-          × CLOSE
-
+          CLOSE
+          <span>×</span>
         </button>
 
       </div>
 
 
-      <!-- =================================================
-           EXPLORE HEADER
-      ================================================== -->
+      <div class="explore-content">
 
-      <div class="explore-header">
-
-        <p class="explore-eyebrow">
+        <div class="explore-kicker">
           GET TO KNOW ME
-        </p>
-
+        </div>
 
         <h2
-          class="explore-title"
-          id="exploreTitle"
+          class="explore-heading"
+          id="exploreHeading"
         >
-          EXPLORE
+          GET TO KNOW ME
+          <br>
+          <em>EXPLORE.</em>
         </h2>
 
-      </div>
 
+        <div class="explore-grid">
 
-      <!-- =================================================
-           EXPLORE NAVIGATION
-      ================================================== -->
-
-      <nav
-        class="explore-navigation"
-        aria-label="Explore portfolio"
-      >
-
-
-        <!-- 01 ABOUT -->
-
-        <a
-          href="#about"
-          class="explore-option"
-        >
-
-          <span class="explore-number">
-            01
-          </span>
-
-
-          <span class="explore-copy">
-
-            <span class="explore-option-title">
-              ABOUT
-            </span>
-
-            <span class="explore-option-description">
+          <a
+            href="#about"
+            class="explore-link"
+          >
+            <span class="explore-number">01</span>
+            <span class="explore-link-title">ABOUT</span>
+            <span class="explore-link-description">
               Who I am
             </span>
-
-          </span>
-
-
-          <span class="explore-arrow">
-            ↘
-          </span>
-
-        </a>
+          </a>
 
 
-        <!-- 02 JOURNEY -->
-
-        <a
-          href="#journey"
-          class="explore-option"
-        >
-
-          <span class="explore-number">
-            02
-          </span>
-
-
-          <span class="explore-copy">
-
-            <span class="explore-option-title">
-              JOURNEY
-            </span>
-
-            <span class="explore-option-description">
+          <a
+            href="#journey"
+            class="explore-link"
+          >
+            <span class="explore-number">02</span>
+            <span class="explore-link-title">JOURNEY</span>
+            <span class="explore-link-description">
               How I got here
             </span>
-
-          </span>
-
-
-          <span class="explore-arrow">
-            ↘
-          </span>
-
-        </a>
+          </a>
 
 
-        <!-- 03 EXPERIENCE -->
-
-        <a
-          href="#experience"
-          class="explore-option"
-        >
-
-          <span class="explore-number">
-            03
-          </span>
-
-
-          <span class="explore-copy">
-
-            <span class="explore-option-title">
-              EXPERIENCE
-            </span>
-
-            <span class="explore-option-description">
+          <a
+            href="#experience"
+            class="explore-link"
+          >
+            <span class="explore-number">03</span>
+            <span class="explore-link-title">EXPERIENCE</span>
+            <span class="explore-link-description">
               Where I've worked
             </span>
-
-          </span>
-
-
-          <span class="explore-arrow">
-            ↘
-          </span>
-
-        </a>
+          </a>
 
 
-        <!-- 04 PROJECTS -->
-
-        <a
-          href="#projects"
-          class="explore-option"
-        >
-
-          <span class="explore-number">
-            04
-          </span>
-
-
-          <span class="explore-copy">
-
-            <span class="explore-option-title">
-              PROJECTS
-            </span>
-
-            <span class="explore-option-description">
+          <a
+            href="#projects"
+            class="explore-link"
+          >
+            <span class="explore-number">04</span>
+            <span class="explore-link-title">PROJECTS</span>
+            <span class="explore-link-description">
               What I've worked on
             </span>
-
-          </span>
-
-
-          <span class="explore-arrow">
-            ↘
-          </span>
-
-        </a>
+          </a>
 
 
-        <!-- 05 SKILLS -->
-
-        <a
-          href="#skills"
-          class="explore-option"
-        >
-
-          <span class="explore-number">
-            05
-          </span>
-
-
-          <span class="explore-copy">
-
-            <span class="explore-option-title">
-              SKILLS
-            </span>
-
-            <span class="explore-option-description">
+          <a
+            href="#skills"
+            class="explore-link"
+          >
+            <span class="explore-number">05</span>
+            <span class="explore-link-title">SKILLS</span>
+            <span class="explore-link-description">
               What I bring
             </span>
-
-          </span>
-
-
-          <span class="explore-arrow">
-            ↘
-          </span>
-
-        </a>
+          </a>
 
 
-        <!-- 06 CREATIVE -->
-
-        <a
-          href="#creative"
-          class="explore-option"
-        >
-
-          <span class="explore-number">
-            06
-          </span>
-
-
-          <span class="explore-copy">
-
-            <span class="explore-option-title">
-              CREATIVE
-            </span>
-
-            <span class="explore-option-description">
+          <a
+            href="#creative"
+            class="explore-link"
+          >
+            <span class="explore-number">06</span>
+            <span class="explore-link-title">CREATIVE</span>
+            <span class="explore-link-description">
               What I make
             </span>
-
-          </span>
-
-
-          <span class="explore-arrow">
-            ↘
-          </span>
-
-        </a>
+          </a>
 
 
-        <!-- 07 CONTACT -->
-
-        <a
-          href="#contact"
-          class="explore-option"
-        >
-
-          <span class="explore-number">
-            07
-          </span>
-
-
-          <span class="explore-copy">
-
-            <span class="explore-option-title">
-              CONTACT
-            </span>
-
-            <span class="explore-option-description">
+          <a
+            href="#contact"
+            class="explore-link"
+          >
+            <span class="explore-number">07</span>
+            <span class="explore-link-title">CONTACT</span>
+            <span class="explore-link-description">
               Let's connect
             </span>
-
-          </span>
-
-
-          <span class="explore-arrow">
-            ↘
-          </span>
-
-        </a>
+          </a>
 
 
-        <!-- 08 JOURNAL -->
-
-        <a
-          href="journal.html"
-          class="explore-option"
-        >
-
-          <span class="explore-number">
-            08
-          </span>
-
-
-          <span class="explore-copy">
-
-            <span class="explore-option-title">
-              JOURNAL
-            </span>
-
-            <span class="explore-option-description">
+          <a
+            href="journal.html"
+            class="explore-link"
+          >
+            <span class="explore-number">08</span>
+            <span class="explore-link-title">JOURNAL</span>
+            <span class="explore-link-description">
               What I'm doing now
             </span>
+          </a>
 
-          </span>
-
-
-          <span class="explore-arrow">
-            ↗
-          </span>
-
-        </a>
-
-      </nav>
+        </div>
 
 
-      <!-- =================================================
-           EXPLORE FOOTER
-      ================================================== -->
+        <div class="explore-footer">
 
-      <div class="explore-footer">
+          <div class="explore-footer-copy">
+            PEOPLE × BUSINESS × CREATIVITY
+            <br>
+            Marketing · Consumer Insights · Brand Strategy
+          </div>
 
-        <p class="explore-footer-note">
+          <a
+            href="resume.pdf"
+            class="explore-resume"
+            target="_blank"
+          >
+            View Resume ↗
+          </a>
 
-          PEOPLE × BUSINESS × CREATIVITY
-          <br>
-          Marketing · Consumer Insights · Brand Strategy
-
-        </p>
-
-
-        <a
-          href="resume.pdf"
-          target="_blank"
-          rel="noopener"
-          class="explore-resume"
-        >
-
-          View Resume
-
-          <span>↗</span>
-
-        </a>
+        </div>
 
       </div>
-
 
     </div>
 
   </div>
 
 
-  <main id="top">
+  <!-- =======================================================
+       HERO
+  ======================================================== -->
 
+  <main>
 
-    <!-- =====================================================
-         HERO
-    ====================================================== -->
-
-    <section class="hero">
+    <section
+      class="hero"
+      id="hero"
+    >
 
       <div class="hero-background-word">
         MARKETING
       </div>
 
+
       <div class="hero-shape hero-shape-green"></div>
-
-      <div class="hero-shape hero-shape-turquoise"></div>
-
+      <div class="hero-shape hero-shape-teal"></div>
       <div class="hero-shape hero-shape-pink"></div>
 
-      <div class="hero-star hero-star-one">
-        ✦
-      </div>
-
-      <div class="hero-star hero-star-two">
-        ✦
-      </div>
-
-      <div class="hero-star hero-star-three">
-        +
-      </div>
+      <div class="hero-star hero-star-one">✦</div>
+      <div class="hero-star hero-star-two">✦</div>
 
 
       <div class="hero-content">
 
-        <div class="hero-kicker">
+        <div class="hero-copy">
 
-          <span class="status-dot"></span>
-
-          MARKETING · CONSUMER INSIGHTS · BRAND STRATEGY
-
-        </div>
-
-
-        <h1>
-
-          Hi, I'm
-
-          <span class="hero-name">
-            Tamimmah.
-          </span>
-
-        </h1>
-
-
-        <div class="hero-bottom">
-
-          <div class="hero-description">
-
-            <p class="hero-role">
-              Marketing & Consumer Insights
-            </p>
-
-            <p>
-
-              I turn consumer understanding into practical
-
-              <strong>
-                marketing, brand, and business decisions.
-              </strong>
-
-            </p>
-
-            <p class="hero-target">
-              Open to Marketing · Brand Strategy · Consumer Insights · Business Development
-            </p>
-
-
-            <!-- =================================================
-                 HERO ACTIONS
-            ================================================== -->
-
-            <div class="hero-actions">
-
-
-              <!-- GET TO KNOW ME -->
-
-              <div class="get-to-know-wrapper">
-
-                <button
-                  type="button"
-                  class="button button-dark get-to-know-button"
-                  id="getToKnowButton"
-                  aria-expanded="false"
-                  aria-controls="getToKnowOverlay"
-                >
-
-                  <span class="button-text">
-                    Get to know me
-                  </span>
-
-                  <span class="button-arrow">
-                    ↓
-                  </span>
-
-                </button>
-
-              </div>
-
-
-              <!-- RESUME -->
-
-              <a
-                href="resume.pdf"
-                target="_blank"
-                rel="noopener"
-                class="button button-outline"
-              >
-
-                Resume
-
-                <span>↗</span>
-
-              </a>
-
-
-            </div>
-
+          <div class="hero-kicker">
+            MARKETING · CONSUMER INSIGHTS · BRAND STRATEGY
           </div>
 
+          <h1>
+            Hi, I'm
+            <span>Tamimmah.</span>
+          </h1>
 
-          <div class="hero-portrait">
+          <div class="hero-role">
+            Marketing & Consumer Insights
+          </div>
 
-            <div class="portrait-frame">
+          <p class="hero-description">
+            I turn consumer understanding into practical marketing,
+            brand, and business decisions.
+          </p>
 
-              <img
-                src="images/profile-photo.jpg"
-                alt="Tamimmah Disma Lestari"
-              >
-
-
-              <div class="portrait-note">
-
-                <span>
-                  BASED IN
-                </span>
-
-                <strong>
-                  INDONESIA
-                </strong>
-
-              </div>
-
-            </div>
+          <p class="hero-target">
+            Open to Marketing · Brand Strategy · Consumer Insights ·
+            Business Development
+          </p>
 
 
-            <div class="portrait-caption">
+          <div class="hero-actions">
 
-              <span>01</span>
+            <button
+              type="button"
+              class="hero-explore-btn"
+              id="getToKnowBtn"
+              aria-expanded="false"
+              aria-controls="getToKnowOverlay"
+            >
+              Get to know me
+              <span>↓</span>
+            </button>
 
-              <span>
-                Business × Creativity
-              </span>
-
-            </div>
+            <a
+              href="resume.pdf"
+              class="hero-resume-btn"
+              target="_blank"
+            >
+              Resume ↗
+            </a>
 
           </div>
 
         </div>
 
-      </div>
+
+        <div class="hero-image-wrap">
+
+          <div class="hero-image-frame">
+
+            <img
+              src="images/profile-photo.jpg"
+              alt="Tamimmah Disma Lestari"
+            >
+
+          </div>
 
 
-      <div class="hero-scroll">
+          <div class="hero-location">
 
-        <span>
-          SCROLL TO EXPLORE
-        </span>
+            <span>BASED IN</span>
+            <strong>INDONESIA</strong>
 
-        <span class="scroll-line"></span>
+          </div>
+
+
+          <div class="hero-caption">
+            Business × Creativity
+          </div>
+
+        </div>
 
       </div>
 
@@ -1669,96 +1250,48 @@
       id="about"
     >
 
-      <div class="section-heading">
-
-        <span class="section-number">
-          01 / ABOUT
-        </span>
-
-        <span class="section-side-note">
-          PEOPLE × BUSINESS × CREATIVITY
-        </span>
-
+      <div class="section-label">
+        01 / ABOUT
       </div>
 
 
       <div class="about-grid">
 
-        <div class="about-title">
-
-          <p class="eyebrow">
-            THE SHORT VERSION
-          </p>
-
+        <div class="about-heading">
 
           <h2>
-
             I like figuring out
-
-            <em>
-              why people choose.
-            </em>
-
+            <em>why people choose.</em>
           </h2>
-
-
-          <div class="about-stamp">
-
-            <span>CURIOUS</span>
-            <span>COMMERCIAL</span>
-            <span>CREATIVE</span>
-
-          </div>
 
         </div>
 
 
         <div class="about-copy">
 
-          <p class="lead">
-
-            I combine
-
-            <strong>
-              consumer understanding, marketing strategy, and hands-on business experience
-            </strong>
-
-            to turn ideas into practical decisions.
-
+          <p class="large-copy">
+            I’m interested in what happens between a person seeing
+            something and deciding it is worth choosing.
           </p>
-
 
           <p>
-
-            From selling small products as a student to building an
-            international digital business, leading marketing projects,
-            conducting consumer research, and supporting real business
-            operations — I've learned by actually making things happen.
-
+            That curiosity has shaped how I approach marketing:
+            starting with consumer understanding, translating it into
+            strategy, and then getting close enough to the business
+            to see whether the idea actually works.
           </p>
-
 
           <p>
-
-            Today, I'm interested in roles where I can combine
-
-            <strong>
-              commercial thinking with a genuine understanding of people.
-            </strong>
-
+            My experience sits across marketing, consumer insights,
+            business development, entrepreneurship, community building,
+            and creative work.
           </p>
 
-
-          <a
-            href="#journey"
-            class="text-link"
-          >
-
-            See how I got here
-
-            <span>↘</span>
-
-          </a>
+          <p>
+            I like the space where
+            <strong>people × business × creativity</strong>
+            overlap.
+          </p>
 
         </div>
 
@@ -1767,133 +1300,54 @@
 
       <div class="proof-strip">
 
-        <div class="proof-item proof-highlight">
-
+        <div class="proof-item">
           <strong>4.25M+</strong>
-
-          <span>
-            TOTAL CONTENT
-            <br>
-            VIEWS
-          </span>
-
+          <span>Total Content Views</span>
         </div>
 
-
         <div class="proof-item">
-
           <strong>30K+</strong>
-
-          <span>
-            COMMUNITY
-            <br>
-            FOLLOWERS
-          </span>
-
+          <span>Community Followers</span>
         </div>
 
-
         <div class="proof-item">
-
           <strong>50+</strong>
-
-          <span>
-            SUPERMARKETS
-            <br>
-            REACHED
-          </span>
-
+          <span>Supermarkets Reached</span>
         </div>
 
-
         <div class="proof-item">
-
           <strong>7+</strong>
-
-          <span>
-            BUSINESSES
-            <br>
-            CO-FOUNDED
-          </span>
-
+          <span>Businesses Co-Founded</span>
         </div>
 
-
         <div class="proof-item">
-
           <strong>3×</strong>
-
-          <span>
-            BUSINESS IDEA
-            <br>
-            COMPETITIONS WON
-          </span>
-
+          <span>Business Idea Competitions Won</span>
         </div>
 
-
         <div class="proof-item">
-
           <strong>10</strong>
-
-          <span>
-            UNIVERSITY
-            <br>
-            CANTEENS REACHED
-          </span>
-
+          <span>University Canteens Reached</span>
         </div>
 
-
         <div class="proof-item">
-
           <strong>3</strong>
-
-          <span>
-            COMMUNITIES
-            <br>
-            BUILT
-          </span>
-
+          <span>Communities Built</span>
         </div>
 
-
         <div class="proof-item">
-
           <strong>TOP 3</strong>
-
-          <span>
-            INTERN
-            <br>
-            PERFORMER
-          </span>
-
+          <span>Intern Performer</span>
         </div>
 
-
         <div class="proof-item">
-
           <strong>2</strong>
-
-          <span>
-            TEAM LEADS
-            <br>
-            MANAGED ACROSS 2 COUNTRIES
-          </span>
-
+          <span>Team Leads Managed Across 2 Countries</span>
         </div>
 
-
         <div class="proof-item">
-
           <strong>3.44</strong>
-
-          <span>
-            GPA · BUSINESS
-            <br>
-            MANAGEMENT
-          </span>
-
+          <span>GPA · Business Management</span>
         </div>
 
       </div>
@@ -1910,825 +1364,325 @@
       id="journey"
     >
 
-      <div class="section-heading">
-
-        <span class="section-number">
-          02 / MY JOURNEY
-        </span>
-
-        <span class="section-side-note">
-          LEARNING BY DOING
-        </span>
-
+      <div class="section-label">
+        02 / JOURNEY
       </div>
 
 
-      <div class="journey-intro">
+      <div class="section-intro">
 
-        <div>
-
-          <p class="eyebrow">
-            NOT A STRAIGHT LINE
-          </p>
-
-
-          <h2>
-
-            Every chapter taught me
-
-            <em>
-              something useful.
-            </em>
-
-          </h2>
-
-        </div>
-
+        <h2>
+          Every experiment
+          <em>taught me something.</em>
+        </h2>
 
         <p>
-
-          My career story didn't begin with a job title.
-          It began with small experiments, unexpected interests,
-          and learning what happens when an idea meets real people.
-
+          I didn’t build my career from one perfectly planned path.
+          I learned by trying things, selling things, building things,
+          breaking things, and paying attention to what happened next.
         </p>
 
       </div>
 
 
-      <div class="roadmap">
-
-        <div class="roadmap-line"></div>
+      <div class="journey-list">
 
 
-        <!-- =================================================
-             01 · COOKIE
-        ================================================== -->
+        <article class="journey-item">
 
-        <article
-          class="milestone milestone-left active"
-          data-milestone="1"
-        >
-
-          <div class="milestone-marker">
-            <span>01</span>
+          <div class="journey-number">
+            01
           </div>
 
-
-          <div class="milestone-card">
-
-            <span class="milestone-era">
-              JUNIOR HIGH
-            </span>
-
+          <div class="journey-main">
 
             <h3>
-              🍪 The Cookie Experiment
+              Cookie Experiment
             </h3>
 
-
-            <p class="milestone-hook">
-              Learning to sell.
-            </p>
-
-
-            <span class="milestone-detail">
-              School project → sold out
-            </span>
-
-
-            <div class="milestone-expanded">
-
-              <p>
-                My first experience with business started with a
-                simple school project: making and selling cookies.
-                When they didn't sell among students, I moved to
-                the school gate and sold them there instead.
-              </p>
-
-
-              <p>
-                It was a small experiment, but it taught me early
-                that selling isn't just about having something good.
-                You have to notice where demand is and be willing
-                to change your approach.
-              </p>
-
-
-              <div class="milestone-takeaway">
-
-                <span class="takeaway-label">
-                  What stayed with me
-                </span>
-
-
-                <div class="takeaway-skills">
-
-                  <span class="takeaway-skill shape-one">
-                    Customer understanding
-                  </span>
-
-                  <span class="takeaway-skill shape-two">
-                    Direct selling
-                  </span>
-
-                  <span class="takeaway-skill shape-three">
-                    Adaptability
-                  </span>
-
-                </div>
-
-              </div>
-
+            <div class="journey-subtitle">
+              Learning to sell
             </div>
 
+            <p>
+              A school project that became my first real lesson in
+              selling. I made cookies, promoted them, interacted with
+              people, and eventually sold out.
+            </p>
+
+          </div>
+
+          <div class="journey-proof">
+            School project
+            <br>
+            → Sold out
           </div>
 
         </article>
 
 
-        <!-- =================================================
-             02 · THEATRE
-        ================================================== -->
+        <article class="journey-item">
 
-        <article
-          class="milestone milestone-right"
-          data-milestone="2"
-        >
-
-          <div class="milestone-marker">
-            <span>02</span>
+          <div class="journey-number">
+            02
           </div>
 
-
-          <div class="milestone-card">
-
-            <span class="milestone-era">
-              SENIOR HIGH
-            </span>
-
+          <div class="journey-main">
 
             <h3>
-              🎭 The Theatre Club
+              Theatre Club
             </h3>
 
-
-            <p class="milestone-hook">
-              Learning to serve.
-            </p>
-
-
-            <span class="milestone-detail">
-              Ticketing · Guest experience
-            </span>
-
-
-            <div class="milestone-expanded">
-
-              <p>
-                Theatre introduced me to another side of business:
-                the experience around the transaction.
-              </p>
-
-
-              <p>
-                Through ticketing and guest-related activities,
-                I learned to interact with people, handle their
-                needs, and understand the experience from the
-                customer's side — not simply the seller's.
-              </p>
-
-
-              <div class="milestone-takeaway">
-
-                <span class="takeaway-label">
-                  What stayed with me
-                </span>
-
-
-                <div class="takeaway-skills">
-
-                  <span class="takeaway-skill shape-one">
-                    Customer service
-                  </span>
-
-                  <span class="takeaway-skill shape-two">
-                    Communication
-                  </span>
-
-                  <span class="takeaway-skill shape-three">
-                    Experience management
-                  </span>
-
-                </div>
-
-              </div>
-
+            <div class="journey-subtitle">
+              Learning to serve
             </div>
 
+            <p>
+              Theatre taught me that the experience around a product
+              matters. Ticketing, guest experience, communication, and
+              making people feel welcomed all became part of the work.
+            </p>
+
+          </div>
+
+          <div class="journey-proof">
+            Ticketing
+            <br>
+            Guest experience
           </div>
 
         </article>
 
 
-        <!-- =================================================
-             03 · ITB
-        ================================================== -->
+        <article class="journey-item">
 
-        <article
-          class="milestone milestone-left"
-          data-milestone="3"
-        >
-
-          <div class="milestone-marker">
-            <span>03</span>
+          <div class="journey-number">
+            03
           </div>
 
-
-          <div class="milestone-card">
-
-            <span class="milestone-era">
-              ITB
-            </span>
-
+          <div class="journey-main">
 
             <h3>
-              🧃 Making Things Happen
+              ITB / Making Things Happen
             </h3>
 
-
-            <p class="milestone-hook">
-              Learning to execute.
-            </p>
-
-
-            <span class="milestone-detail">
-              ~15 canteens · ~98% stock sold
-            </span>
-
-
-            <div class="milestone-expanded">
-
-              <p>
-                At ITB, my business experiments became more hands-on.
-                I started working with actual products, customers,
-                distribution, and inventory.
-              </p>
-
-
-              <p>
-                One experience involved supplying beverages to around
-                15 ITB canteens, with approximately 98% of stock sold.
-                It taught me what happens after the idea: coordinating
-                products, managing execution, and paying attention to
-                whether the numbers actually work.
-              </p>
-
-
-              <div class="milestone-takeaway">
-
-                <span class="takeaway-label">
-                  What stayed with me
-                </span>
-
-
-                <div class="takeaway-skills">
-
-                  <span class="takeaway-skill shape-one">
-                    Operations
-                  </span>
-
-                  <span class="takeaway-skill shape-two">
-                    Project execution
-                  </span>
-
-                  <span class="takeaway-skill shape-three">
-                    Sales management
-                  </span>
-
-                </div>
-
-              </div>
-
+            <div class="journey-subtitle">
+              Learning to execute
             </div>
 
+            <p>
+              University entrepreneurship gave me opportunities to
+              experiment with products, sales, distribution, operations,
+              and customer feedback.
+            </p>
+
+          </div>
+
+          <div class="journey-proof">
+            ~15 canteens
+            <br>
+            ~98% stock sold
           </div>
 
         </article>
 
 
-        <!-- =================================================
-             04 · ECOPLAST
-        ================================================== -->
+        <article class="journey-item">
 
-        <article
-          class="milestone milestone-right"
-          data-milestone="4"
-        >
-
-          <div class="milestone-marker">
-            <span>04</span>
+          <div class="journey-number">
+            04
           </div>
 
+          <div class="journey-main">
 
-          <div class="milestone-card">
-
-            <span class="milestone-era">
+            <h3>
               ECOPLAST
-            </span>
-
-
-            <h3>
-              🌱 Learning to Influence
             </h3>
 
-
-            <p class="milestone-hook">
-              Learning to pitch.
-            </p>
-
-
-            <span class="milestone-detail">
-              Startup · Pitching · Competitions
-            </span>
-
-
-            <div class="milestone-expanded">
-
-              <p>
-                As Chief Marketing Officer of ECOPLAST, I moved
-                beyond simply executing tasks.
-              </p>
-
-
-              <p>
-                Working in an early-stage startup environment taught
-                me how to communicate a business idea, develop its
-                marketing direction, and represent the startup through
-                pitching and competitions.
-              </p>
-
-
-              <p>
-                I learned that marketing isn't simply about making
-                something attractive. You need to understand the
-                problem, communicate the value clearly, and convince
-                people that the solution matters.
-              </p>
-
-
-              <div class="milestone-takeaway">
-
-                <span class="takeaway-label">
-                  What stayed with me
-                </span>
-
-
-                <div class="takeaway-skills">
-
-                  <span class="takeaway-skill shape-one">
-                    Marketing communication
-                  </span>
-
-                  <span class="takeaway-skill shape-two">
-                    Pitching
-                  </span>
-
-                  <span class="takeaway-skill shape-three">
-                    Persuasion
-                  </span>
-
-                </div>
-
-              </div>
-
+            <div class="journey-subtitle">
+              Learning to pitch
             </div>
 
+            <p>
+              Working with engineering students taught me how to
+              translate technical ideas into something people could
+              understand, believe in, and eventually support.
+            </p>
+
+          </div>
+
+          <div class="journey-proof">
+            Startup
+            <br>
+            Pitching · Competitions
           </div>
 
         </article>
 
 
-        <!-- =================================================
-             05 · COMMUNITY
-        ================================================== -->
+        <article class="journey-item">
 
-        <article
-          class="milestone milestone-left"
-          data-milestone="5"
-        >
-
-          <div class="milestone-marker">
-            <span>05</span>
+          <div class="journey-number">
+            05
           </div>
 
-
-          <div class="milestone-card">
-
-            <span class="milestone-era">
-              K-POP ERA
-            </span>
-
+          <div class="journey-main">
 
             <h3>
-              💜 Building Communities
+              K-pop Communities
             </h3>
 
-
-            <p class="milestone-hook">
-              Learning what makes people stay.
-            </p>
-
-
-            <span class="milestone-detail">
-              10K+ followers × 3 communities
-            </span>
-
-
-            <div class="milestone-expanded">
-
-              <p>
-                I began building online communities around something
-                I genuinely understood as a consumer. Over time,
-                I built and managed three separate K-pop communities,
-                each reaching more than 10,000 followers.
-              </p>
-
-
-              <p>
-                Beyond growing the audience, I learned through
-                experience what people respond to, what makes them
-                engage, and what gives them a reason to come back.
-              </p>
-
-
-              <p>
-                This became an unexpected, hands-on education in
-                audience behavior, content, engagement, community
-                building, and retention.
-              </p>
-
-
-              <div class="milestone-takeaway">
-
-                <span class="takeaway-label">
-                  What stayed with me
-                </span>
-
-
-                <div class="takeaway-skills">
-
-                  <span class="takeaway-skill shape-one">
-                    Community building
-                  </span>
-
-                  <span class="takeaway-skill shape-two">
-                    Content strategy
-                  </span>
-
-                  <span class="takeaway-skill shape-three">
-                    Audience engagement
-                  </span>
-
-                </div>
-
-              </div>
-
+            <div class="journey-subtitle">
+              Learning what makes people stay
             </div>
 
+            <p>
+              Building communities taught me how content, consistency,
+              timing, trust, and shared interests can turn an audience
+              into a real network.
+            </p>
+
+          </div>
+
+          <div class="journey-proof">
+            10K+ followers
+            <br>
+            × 3 communities
           </div>
 
         </article>
 
 
-        <!-- =================================================
-             06 · ICE BSD
-        ================================================== -->
+        <article class="journey-item">
 
-        <article
-          class="milestone milestone-right"
-          data-milestone="6"
-        >
-
-          <div class="milestone-marker">
-            <span>06</span>
+          <div class="journey-number">
+            06
           </div>
 
-
-          <div class="milestone-card">
-
-            <span class="milestone-era">
-              ICE BSD
-            </span>
-
+          <div class="journey-main">
 
             <h3>
-              🍚 The Rice Bowl Experiment
+              ICE BSD / Rice Bowl Experiment
             </h3>
 
-
-            <p class="milestone-hook">
-              Learning from the numbers.
-            </p>
-
-
-            <span class="milestone-detail">
-              25 prepared → 22 sold
-            </span>
-
-
-            <div class="milestone-expanded">
-
-              <p>
-                At ICE BSD, I put my selling instincts into another
-                real-world test. I prepared 25 portions and sold 22.
-              </p>
-
-
-              <p>
-                The important lesson wasn't simply the sell-through
-                rate. I had to observe the environment, understand
-                customer movement, recognize an opportunity, and make
-                decisions based on what was happening around me.
-              </p>
-
-
-              <p>
-                It reinforced an approach that has continued
-                throughout my journey:
-
-                <strong>
-                  observe → test → adapt.
-                </strong>
-
-              </p>
-
-
-              <div class="milestone-takeaway">
-
-                <span class="takeaway-label">
-                  What stayed with me
-                </span>
-
-
-                <div class="takeaway-skills">
-
-                  <span class="takeaway-skill shape-one">
-                    Market observation
-                  </span>
-
-                  <span class="takeaway-skill shape-two">
-                    Field sales
-                  </span>
-
-                  <span class="takeaway-skill shape-three">
-                    Decision-making
-                  </span>
-
-                </div>
-
-              </div>
-
+            <div class="journey-subtitle">
+              Learning from the numbers
             </div>
 
+            <p>
+              A simple sales experiment reminded me that assumptions
+              are not enough. I prepared 25 portions and sold 22,
+              giving me another practical lesson in demand and
+              inventory.
+            </p>
+
+          </div>
+
+          <div class="journey-proof">
+            25 prepared
+            <br>
+            22 sold
           </div>
 
         </article>
 
 
-        <!-- =================================================
-             07 · SELLKPOPVT
-        ================================================== -->
+        <article class="journey-item">
 
-        <article
-          class="milestone milestone-left"
-          data-milestone="7"
-        >
-
-          <div class="milestone-marker">
-            <span>07</span>
+          <div class="journey-number">
+            07
           </div>
 
-
-          <div class="milestone-card">
-
-            <span class="milestone-era">
-              SELLKPOPVT
-            </span>
-
+          <div class="journey-main">
 
             <h3>
-              💼 Turning Community Into Business
+              SellKpopVT
             </h3>
 
-
-            <p class="milestone-hook">
-              From audience to revenue.
-            </p>
-
-
-            <span class="milestone-detail">
-              International customers · Operations
-            </span>
-
-
-            <div class="milestone-expanded">
-
-              <p>
-                My experience building K-pop communities eventually
-                became a business.
-              </p>
-
-
-              <p>
-                I founded SellKpopVT, turning my understanding of an
-                online audience into a digital business serving
-                customers internationally.
-              </p>
-
-
-              <p>
-                I handled the business end-to-end — including
-                customer acquisition, communication, pricing,
-                fulfillment, operations, and retention — while also
-                developing an operating structure with employees.
-              </p>
-
-
-              <div class="milestone-takeaway">
-
-                <span class="takeaway-label">
-                  What stayed with me
-                </span>
-
-
-                <div class="takeaway-skills">
-
-                  <span class="takeaway-skill shape-one">
-                    Entrepreneurship
-                  </span>
-
-                  <span class="takeaway-skill shape-two">
-                    Customer acquisition
-                  </span>
-
-                  <span class="takeaway-skill shape-three">
-                    Business operations
-                  </span>
-
-                </div>
-
-              </div>
-
+            <div class="journey-subtitle">
+              Turning Community Into Business
             </div>
 
+            <p>
+              I learned how to turn an online community into a
+              commercial operation: acquiring customers, building
+              trust, managing resources, working with partners,
+              and learning from the market in real time.
+            </p>
+
+          </div>
+
+          <div class="journey-proof">
+            International customers
+            <br>
+            Operations
           </div>
 
         </article>
 
 
-        <!-- =================================================
-             08 · CAHAYA SEGARA
-        ================================================== -->
+        <article class="journey-item">
 
-        <article
-          class="milestone milestone-right"
-          data-milestone="8"
-        >
-
-          <div class="milestone-marker">
-            <span>08</span>
+          <div class="journey-number">
+            08
           </div>
 
-
-          <div class="milestone-card">
-
-            <span class="milestone-era">
-              PT CAHAYA SEGARA
-            </span>
-
+          <div class="journey-main">
 
             <h3>
-              🗂️ Beyond the Admin Title
+              PT Cahaya Segara
             </h3>
 
-
-            <p class="milestone-hook">
-              Learning the business behind the paperwork.
-            </p>
-
-
-            <span class="milestone-detail">
-              Project-based · Business support
-            </span>
-
-
-            <div class="milestone-expanded">
-
-              <p>
-                My project-based experience with PT Cahaya Segara
-                gave me exposure to a side of business I hadn't
-                experienced as closely before.
-              </p>
-
-
-              <p>
-                I worked on documentation, reports, proposals, and
-                tender preparation, giving me a closer look at the
-                processes that support commercial projects behind
-                the scenes.
-              </p>
-
-
-              <p>
-                It showed me that business isn't only about the
-                visible customer-facing side. Strong execution also
-                depends on organization, coordination, accuracy,
-                and the systems supporting a project.
-              </p>
-
-
-              <div class="milestone-takeaway">
-
-                <span class="takeaway-label">
-                  What stayed with me
-                </span>
-
-
-                <div class="takeaway-skills">
-
-                  <span class="takeaway-skill shape-one">
-                    Project coordination
-                  </span>
-
-                  <span class="takeaway-skill shape-two">
-                    Business administration
-                  </span>
-
-                  <span class="takeaway-skill shape-three">
-                    Attention to detail
-                  </span>
-
-                </div>
-
-              </div>
-
+            <div class="journey-subtitle">
+              Learning the business behind the paperwork
             </div>
 
+            <p>
+              What started as administrative support became exposure
+              to B2B customers, tenders, proposals, technical
+              expertise, and the pressure of finishing commercial
+              work under very short deadlines.
+            </p>
+
+          </div>
+
+          <div class="journey-proof">
+            Project-based
+            <br>
+            Business support
           </div>
 
         </article>
 
 
-        <!-- =================================================
-             09 · TODAY
-        ================================================== -->
+        <article class="journey-item journey-item-today">
 
-        <article
-          class="milestone milestone-today"
-          data-milestone="9"
-        >
-
-          <div class="today-orbit">
-
-            <span>✦</span>
-
+          <div class="journey-number">
+            09
           </div>
 
-
-          <div class="today-card">
-
-            <span class="milestone-era">
-              TODAY
-            </span>
-
+          <div class="journey-main">
 
             <h3>
+              Today
+            </h3>
+
+            <div class="journey-subtitle">
               People × Business × Creativity
-            </h3>
-
-
-            <p class="today-hook">
-              Bringing everything together.
-            </p>
-
-
-            <div class="today-skills">
-
-              <span class="today-skill shape-one">
-                Strategic thinking
-              </span>
-
-              <span class="today-skill shape-two">
-                Consumer understanding
-              </span>
-
-              <span class="today-skill shape-three">
-                Creative problem-solving
-              </span>
-
             </div>
 
+            <p>
+              Today, these experiences come together in the way I
+              think: understand people, understand the business,
+              then build something practical.
+            </p>
+
+          </div>
+
+          <div class="journey-proof">
+            Marketing
+            <br>
+            Consumer Insights
           </div>
 
         </article>
@@ -2747,37 +1701,22 @@
       id="experience"
     >
 
-      <div class="section-heading">
-
-        <span class="section-number">
-          03 / EXPERIENCE
-        </span>
-
-        <span class="section-side-note">
-          WHAT I'VE ACTUALLY DONE
-        </span>
-
+      <div class="section-label">
+        03 / EXPERIENCE
       </div>
 
 
-      <div class="experience-intro">
+      <div class="section-intro">
 
         <h2>
-
-          Experience that goes
-
-          <em>
-            beyond job titles.
-          </em>
-
+          I learned by
+          <em>actually doing.</em>
         </h2>
 
-
         <p>
-
-          I've worked across marketing, entrepreneurship, communities,
-          operations, and business projects — often wearing more than one hat.
-
+          Click into each experience to see what happened behind
+          the title — the problems, decisions, experiments, and
+          lessons that shaped how I work.
         </p>
 
       </div>
@@ -2786,328 +1725,246 @@
       <div class="experience-list">
 
 
+        <!-- SELLKPOPVT -->
+
         <article
-          class="experience-row"
-          data-index="01"
+          class="experience-card"
+          tabindex="0"
+          role="button"
+          data-experience="sellkpopvt"
+          aria-label="Open SellKpopVT experience"
         >
 
-          <div class="experience-number">
-            01
-          </div>
+          <div class="experience-card-inner">
 
-
-          <div class="experience-main">
-
-            <div class="experience-company">
-
-              <a
-                href="https://www.instagram.com/thefounderslab/"
-                target="_blank"
-                rel="noopener"
-              >
-
-                The Founders Lab
-
-                <span>↗</span>
-
-              </a>
-
+            <div class="experience-number">
+              01
             </div>
 
+            <div>
 
-            <h3>
-              Co-Founder & Marketing Lead
-            </h3>
-
-
-            <p>
-              Co-founded and led marketing for a business-focused
-              platform delivering webinars and competitions in
-              collaboration with CIEL SBM ITB.
-            </p>
-
-          </div>
-
-
-          <div class="experience-date">
-            2020 — 2021
-          </div>
-
-
-          <div class="experience-impact">
-
-            <span>01</span>
-
-            Marketing
-            <br>
-            Leadership
-
-          </div>
-
-        </article>
-
-
-        <article
-          class="experience-row"
-          data-index="02"
-        >
-
-          <div class="experience-number">
-            02
-          </div>
-
-
-          <div class="experience-main">
-
-            <div class="experience-company">
-
-              <a
-                href="https://x.com/sellkpopvt"
-                target="_blank"
-                rel="noopener"
-              >
-
+              <p class="experience-company">
                 SellKpopVT
+              </p>
 
-                <span>↗</span>
+              <h3 class="experience-role">
+                Founder / Owner
+              </h3>
 
-              </a>
+              <div class="experience-date">
+                2021–2025
+              </div>
 
             </div>
 
-
-            <h3>
-              Founder / Owner
-            </h3>
-
-
-            <p>
-              Built and operated an international digital business,
-              managing customer acquisition, sales, pricing, fulfillment,
-              communication, and day-to-day operations across multiple markets.
-            </p>
-
-          </div>
-
-
-          <div class="experience-date">
-            2021 — 2025
-          </div>
-
-
-          <div class="experience-impact">
-
-            <span>02</span>
-
-            Digital
-            <br>
-            Business
+            <div class="experience-open">
+              ↗
+            </div>
 
           </div>
 
         </article>
 
 
+        <!-- PT SARI RASA -->
+
         <article
-          class="experience-row"
-          data-index="03"
+          class="experience-card"
+          tabindex="0"
+          role="button"
+          data-experience="sari-rasa"
+          aria-label="Open PT Sari Rasa experience"
         >
 
-          <div class="experience-number">
-            03
-          </div>
+          <div class="experience-card-inner">
 
-
-          <div class="experience-main">
-
-            <div class="experience-company">
-              PT Sari Rasa
+            <div class="experience-number">
+              02
             </div>
 
+            <div>
 
-            <h3>
-              Business Partner
-            </h3>
+              <p class="experience-company">
+                PT Sari Rasa
+              </p>
 
+              <h3 class="experience-role">
+                Business Partner
+              </h3>
 
-            <p>
-              Supported the growth and distribution of a traditional
-              snack business across approximately 50 supermarkets,
-              gaining hands-on experience in commercial and distribution operations.
-            </p>
+              <div class="experience-date">
+                2024–2026
+              </div>
 
-          </div>
+            </div>
 
-
-          <div class="experience-date">
-            2024 — 2026
-          </div>
-
-
-          <div class="experience-impact">
-
-            <span>03</span>
-
-            Commercial
-            <br>
-            Operations
+            <div class="experience-open">
+              ↗
+            </div>
 
           </div>
 
         </article>
 
 
+        <!-- THE FOUNDERS LAB -->
+
         <article
-          class="experience-row"
-          data-index="04"
+          class="experience-card"
+          tabindex="0"
+          role="button"
+          data-experience="founders-lab"
+          aria-label="Open The Founders Lab experience"
         >
 
-          <div class="experience-number">
-            04
-          </div>
+          <div class="experience-card-inner">
 
-
-          <div class="experience-main">
-
-            <div class="experience-company">
-              PT Cahaya Segara Indonesia
+            <div class="experience-number">
+              03
             </div>
 
+            <div>
 
-            <h3>
-              Freelance Administrative & Executive Support
-            </h3>
+              <p class="experience-company">
+                The Founders Lab
+              </p>
 
+              <h3 class="experience-role">
+                Co-Founder & Marketing Lead
+              </h3>
 
-            <p>
-              Supported project-based business activities through
-              documentation, reporting, proposal preparation, and
-              tender-related work requiring accuracy and coordination.
-            </p>
+              <div class="experience-date">
+                2020–2021
+              </div>
 
-          </div>
+            </div>
 
-
-          <div class="experience-date">
-            2026
-          </div>
-
-
-          <div class="experience-impact">
-
-            <span>04</span>
-
-            Business
-            <br>
-            Support
+            <div class="experience-open">
+              ↗
+            </div>
 
           </div>
 
         </article>
 
 
+        <!-- CAHAYA SEGARA -->
+
         <article
-          class="experience-row"
-          data-index="05"
+          class="experience-card"
+          tabindex="0"
+          role="button"
+          data-experience="cahaya-segara"
+          aria-label="Open PT Cahaya Segara Indonesia experience"
         >
 
-          <div class="experience-number">
-            05
+          <div class="experience-card-inner">
+
+            <div class="experience-number">
+              04
+            </div>
+
+            <div>
+
+              <p class="experience-company">
+                PT Cahaya Segara Indonesia
+              </p>
+
+              <h3 class="experience-role">
+                Freelance Administrative & Executive Support
+              </h3>
+
+              <div class="experience-date">
+                2026
+              </div>
+
+            </div>
+
+            <div class="experience-open">
+              ↗
+            </div>
+
           </div>
 
+        </article>
 
-          <div class="experience-main">
 
-            <div class="experience-company">
+        <!-- ECOPLAST -->
 
-              <a
-                href="https://www.instagram.com/ecoplastid/"
-                target="_blank"
-                rel="noopener"
-              >
+        <article
+          class="experience-card"
+          tabindex="0"
+          role="button"
+          data-experience="ecoplast"
+          aria-label="Open ECOPLAST ID experience"
+        >
 
+          <div class="experience-card-inner">
+
+            <div class="experience-number">
+              05
+            </div>
+
+            <div>
+
+              <p class="experience-company">
                 ECOPLAST ID
+              </p>
 
-                <span>↗</span>
+              <h3 class="experience-role">
+                Chief Marketing Officer
+              </h3>
 
-              </a>
+              <div class="experience-date">
+                2018–2019
+              </div>
 
             </div>
 
-
-            <h3>
-              Chief Marketing Officer
-            </h3>
-
-
-            <p>
-              Shaped early-stage startup marketing and communication,
-              while representing the business through pitching and
-              business idea competitions.
-            </p>
-
-          </div>
-
-
-          <div class="experience-date">
-            2018 — 2019
-          </div>
-
-
-          <div class="experience-impact">
-
-            <span>05</span>
-
-            Startup
-            <br>
-            Marketing
+            <div class="experience-open">
+              ↗
+            </div>
 
           </div>
 
         </article>
 
 
+        <!-- TEC ITB -->
+
         <article
-          class="experience-row"
-          data-index="06"
+          class="experience-card"
+          tabindex="0"
+          role="button"
+          data-experience="tec"
+          aria-label="Open Techno Entrepreneur Club experience"
         >
 
-          <div class="experience-number">
-            06
-          </div>
+          <div class="experience-card-inner">
 
-
-          <div class="experience-main">
-
-            <div class="experience-company">
-              Techno Entrepreneur Club — ITB
+            <div class="experience-number">
+              06
             </div>
 
+            <div>
 
-            <h3>
-              Student Entrepreneur
-            </h3>
+              <p class="experience-company">
+                Techno Entrepreneur Club — ITB
+              </p>
 
+              <h3 class="experience-role">
+                Board of Director · Student Entrepreneur
+              </h3>
 
-            <p>
-              Developed and executed entrepreneurial projects across
-              product development, marketing, sales, and day-to-day
-              business operations.
-            </p>
+              <div class="experience-date">
+                2018–2021
+              </div>
 
-          </div>
+            </div>
 
-
-          <div class="experience-date">
-            2018 — 2021
-          </div>
-
-
-          <div class="experience-impact">
-
-            <span>06</span>
-
-            Entrepreneurship
+            <div class="experience-open">
+              ↗
+            </div>
 
           </div>
 
@@ -3116,6 +1973,87 @@
       </div>
 
     </section>
+
+
+    <!-- =====================================================
+         EXPERIENCE MODAL
+    ====================================================== -->
+
+    <div
+      class="experience-modal"
+      id="experienceModal"
+      aria-hidden="true"
+    >
+
+      <div
+        class="experience-modal-backdrop"
+        id="experienceModalBackdrop"
+      ></div>
+
+
+      <div
+        class="experience-modal-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="experienceModalTitle"
+      >
+
+        <button
+          type="button"
+          class="experience-modal-close"
+          id="experienceModalClose"
+          aria-label="Close experience"
+        >
+          ×
+        </button>
+
+
+        <div class="experience-modal-header">
+
+          <div
+            class="experience-modal-kicker"
+            id="experienceModalKicker"
+          >
+            EXPERIENCE
+          </div>
+
+          <h2
+            class="experience-modal-title"
+            id="experienceModalTitle"
+          ></h2>
+
+          <p
+            class="experience-modal-subtitle"
+            id="experienceModalSubtitle"
+          ></p>
+
+        </div>
+
+
+        <div
+          class="experience-modal-body"
+          id="experienceModalBody"
+        ></div>
+
+
+        <div class="experience-modal-footer">
+
+          <span>
+            Experience · Learning · Proof
+          </span>
+
+          <button
+            type="button"
+            id="experienceModalFooterClose"
+          >
+            Close experience ×
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
 
 
     <!-- =====================================================
@@ -3127,385 +2065,209 @@
       id="projects"
     >
 
-      <div class="section-heading">
-
-        <span class="section-number">
-          04 / SELECTED PROJECTS
-        </span>
-
-        <span class="section-side-note">
-          THINKING IN PRACTICE
-        </span>
-
+      <div class="section-label">
+        04 / PROJECTS
       </div>
 
 
-      <div class="projects-intro">
+      <div class="section-intro">
 
         <h2>
-
-          A few things I've
-
-          <em>
-            thought through.
-          </em>
-
+          Questions turned
+          <em>into projects.</em>
         </h2>
 
-
         <p>
-          Research, strategy, writing, and creative work —
-          selected to show how I approach problems.
+          A selection of research, strategy, writing, and marketing
+          work where I explored how consumers, brands, and businesses
+          make decisions.
         </p>
 
       </div>
 
 
-      <div class="project-gallery">
+      <div class="projects-grid">
 
 
-        <!-- RESEARCH -->
-
-        <article
-          class="project project-featured"
+        <a
+          href="Consumer_Purchase_Intention_Traditional_Chips.pdf"
+          target="_blank"
+          class="project-card"
         >
 
-          <a
-            href="Consumer_Purchase_Intention_Traditional_Chips.pdf"
-            target="_blank"
-            rel="noopener"
-            class="project-visual-link"
-            aria-label="Open Consumer Purchase Intention research"
-          >
+          <div class="project-visual purchase-intention-visual">
 
-            <div
-              class="project-visual project-research"
-            >
+            <span class="project-visual-word">
+              WHY?
+            </span>
 
-              <span class="project-big-type">
-                WHY
-              </span>
-
-
-              <div class="research-paper">
-
-                <small>
-                  CONSUMER RESEARCH
-                </small>
-
-                <div class="paper-line paper-long"></div>
-
-                <div class="paper-line"></div>
-
-                <div class="paper-line paper-medium"></div>
-
-
-                <div class="paper-chart">
-
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-
-                </div>
-
-
-                <strong>
-                  PURCHASE
-                  <br>
-                  INTENTION
-                </strong>
-
-              </div>
-
-
-              <div class="project-number">
-                01
-              </div>
-
-            </div>
-
-          </a>
-
-
-          <div class="project-info">
-
-            <div>
-
-              <span class="project-category">
-                THESIS · CONSUMER RESEARCH
-              </span>
-
-
-              <h3>
-
-                Understanding
-
-                <em>
-                  Purchase Intention.
-                </em>
-
-              </h3>
-
-
-            </div>
-
-
-            <div class="project-bottom">
-
-              <p>
-                Quantitative research examining factors influencing
-                consumers' purchase intention toward traditional chips
-                in local supermarkets.
-              </p>
-
-
-              <a
-                href="Consumer_Purchase_Intention_Traditional_Chips.pdf"
-                target="_blank"
-                rel="noopener"
-                class="project-link"
-              >
-
-                Read research
-
-                <span>↗</span>
-
-              </a>
-
-            </div>
+            <span class="project-visual-subword">
+              PURCHASE
+              <br>
+              INTENTION
+            </span>
 
           </div>
 
-        </article>
 
+          <div class="project-info">
 
-        <!-- BUAVITA -->
-
-        <article
-          class="project project-buavita"
-        >
-
-          <a
-            href="buavita.html"
-            class="project-visual-link"
-            aria-label="Open Buavita brand strategy project"
-          >
-
-            <div class="project-visual">
-
-              <div class="buavita-label">
-                BRAND
-                <br>
-                STRATEGY
-              </div>
-
-
-              <div class="fruit-shape"></div>
-
-
-              <span class="visual-word">
-                REFRESH
-              </span>
-
-
-              <div class="project-number">
-                02
-              </div>
-
+            <div class="project-category">
+              Thesis · Consumer Research
             </div>
 
-          </a>
+            <h3>
+              Understanding Purchase Intention
+            </h3>
+
+            <p>
+              Research into the factors influencing consumer
+              purchase intention toward traditional chips.
+            </p>
+
+            <span class="project-arrow">
+              Open research ↗
+            </span>
+
+          </div>
+
+        </a>
+
+
+        <a
+          href="buavita.html"
+          class="project-card"
+        >
+
+          <div class="project-visual buavita-visual">
+
+            <span class="project-visual-word">
+              BUAVITA
+            </span>
+
+            <span class="project-visual-subword">
+              BRAND
+              <br>
+              STRATEGY
+            </span>
+
+          </div>
 
 
           <div class="project-info">
 
-            <span class="project-category">
-              BRAND STRATEGY
-            </span>
-
+            <div class="project-category">
+              Brand Strategy
+            </div>
 
             <h3>
-
               Buavita
-
-              <em>
-                Brand Strategy.
-              </em>
-
             </h3>
 
+            <p>
+              A strategic exploration of brand positioning,
+              consumer communication, and market relevance.
+            </p>
 
-            <a
-              href="buavita.html"
-              class="project-link"
-            >
-
-              View project
-
-              <span>↗</span>
-
-            </a>
+            <span class="project-arrow">
+              Explore project ↗
+            </span>
 
           </div>
 
-        </article>
+        </a>
 
 
-        <!-- K-BEAUTY -->
-
-        <article
-          class="project project-kbeauty"
+        <a
+          href="https://marketing.co.id/menilik-strategi-branding-produk-kecantikan-korea/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="project-card"
         >
 
-          <a
-            href="https://marketing.co.id/menilik-strategi-branding-produk-kecantikan-korea/"
-            target="_blank"
-            rel="noopener"
-            class="project-visual-link"
-            aria-label="Read Korean beauty branding article"
-          >
+          <div class="project-visual korean-beauty-visual">
 
-            <div class="project-visual">
+            <span class="project-visual-word">
+              K-BEAUTY
+            </span>
 
-              <span class="beauty-word">
-                K-BEAUTY
-              </span>
+            <span class="project-visual-subword">
+              BRANDING
+              <br>
+              STRATEGY
+            </span>
 
-
-              <div class="beauty-circle">
-
-                <span>
-                  BRAND
-                </span>
-
-                <strong>
-                  IMAGE
-                </strong>
-
-              </div>
-
-
-              <div class="project-number">
-                03
-              </div>
-
-            </div>
-
-          </a>
+          </div>
 
 
           <div class="project-info">
 
-            <span class="project-category">
-              PUBLISHED WORK
-            </span>
-
+            <div class="project-category">
+              Marketing Article
+            </div>
 
             <h3>
-
-              Korean Beauty
-
-              <em>
-                Branding.
-              </em>
-
+              What Makes Korean Beauty Brands Stand Out?
             </h3>
 
+            <p>
+              Exploring how Korean beauty brands build distinct
+              identities and cultural relevance.
+            </p>
 
-            <a
-              href="https://marketing.co.id/menilik-strategi-branding-produk-kecantikan-korea/"
-              target="_blank"
-              rel="noopener"
-              class="project-link"
-            >
-
-              Read article
-
-              <span>↗</span>
-
-            </a>
+            <span class="project-arrow">
+              Read article ↗
+            </span>
 
           </div>
 
-        </article>
+        </a>
 
 
-        <!-- TWITCH -->
-
-        <article
-          class="project project-twitch"
+        <a
+          href="https://tamimmah-disma.medium.com/the-rollercoaster-ride-of-twitch-acquisition-from-google-yahoo-to-amazon-70b8a2124df3"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="project-card"
         >
 
-          <a
-            href="https://tamimmah-disma.medium.com/the-rollercoaster-ride-of-twitch-acquisition-from-google-yahoo-to-amazon-70b8a2124df3"
-            target="_blank"
-            rel="noopener"
-            class="project-visual-link"
-            aria-label="Read Twitch acquisition article on Medium"
-          >
+          <div class="project-visual twitch-visual">
 
-            <div class="project-visual">
+            <span class="project-visual-word">
+              TWITCH
+            </span>
 
-              <div class="twitch-grid">
+            <span class="project-visual-subword">
+              BUSINESS
+              <br>
+              STRATEGY
+            </span>
 
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-
-              </div>
-
-
-              <span class="twitch-word">
-                TWITCH
-              </span>
-
-
-              <div class="project-number">
-                04
-              </div>
-
-            </div>
-
-          </a>
+          </div>
 
 
           <div class="project-info">
 
-            <span class="project-category">
-              INDEPENDENT WRITING
-            </span>
-
+            <div class="project-category">
+              Business Analysis
+            </div>
 
             <h3>
-
-              The Rollercoaster
-
-              <em>
-                Ride of Twitch.
-              </em>
-
+              The Rollercoaster Ride of Twitch
             </h3>
 
+            <p>
+              Looking at Twitch's acquisition journey and the
+              strategic decisions behind its changing ownership.
+            </p>
 
-            <a
-              href="https://tamimmah-disma.medium.com/the-rollercoaster-ride-of-twitch-acquisition-from-google-yahoo-to-amazon-70b8a2124df3"
-              target="_blank"
-              rel="noopener"
-              class="project-link"
-            >
-
-              Read on Medium
-
-              <span>↗</span>
-
-            </a>
+            <span class="project-arrow">
+              Read article ↗
+            </span>
 
           </div>
 
-        </article>
+        </a>
 
       </div>
 
@@ -3513,7 +2275,7 @@
 
 
     <!-- =====================================================
-         SKILLS & EDUCATION
+         SKILLS
     ====================================================== -->
 
     <section
@@ -3521,50 +2283,90 @@
       id="skills"
     >
 
-      <div class="section-heading">
-
-        <span class="section-number">
-          05 / SKILLS & EDUCATION
-        </span>
-
-        <span class="section-side-note">
-          WHAT I BRING
-        </span>
-
+      <div class="section-label">
+        05 / SKILLS & EDUCATION
       </div>
 
 
-      <div class="skills-intro">
+      <div class="section-intro">
 
         <h2>
-
-          Different disciplines.
-
-          <em>
-            One way of thinking.
-          </em>
-
+          Different skills.
+          <em>One way of thinking.</em>
         </h2>
 
-
         <p>
-
-          I connect customer understanding, commercial thinking,
-          analysis, and creative execution.
-
+          I work across strategy, brand, business, creative,
+          research, and consumer understanding — because the best
+          marketing decisions rarely sit inside only one box.
         </p>
 
       </div>
 
 
-      <div class="skills-map">
+      <div class="skills-orbit">
 
-        <div class="skills-orbit orbit-one"></div>
+        <div class="orbit-ring orbit-ring-one"></div>
+        <div class="orbit-ring orbit-ring-two"></div>
 
-        <div class="skills-orbit orbit-two"></div>
+
+        <button
+          class="skill-node skill-node-one active"
+          data-skill="strategy"
+        >
+          <span>01</span>
+          STRATEGY
+        </button>
 
 
-        <div class="skill-center">
+        <button
+          class="skill-node skill-node-two"
+          data-skill="brand"
+        >
+          <span>02</span>
+          BRAND
+        </button>
+
+
+        <button
+          class="skill-node skill-node-three"
+          data-skill="business"
+        >
+          <span>03</span>
+          BUSINESS
+        </button>
+
+
+        <button
+          class="skill-node skill-node-four"
+          data-skill="creative"
+        >
+          <span>04</span>
+          CREATIVE
+        </button>
+
+
+        <button
+          class="skill-node skill-node-five"
+          data-skill="research"
+        >
+          <span>05</span>
+          RESEARCH
+        </button>
+
+
+        <button
+          class="skill-node skill-node-six"
+          data-skill="consumer"
+        >
+          <span>06</span>
+          CONSUMER
+          <br>
+          INSIGHTS
+        </button>
+
+
+        <div class="skills-center">
 
           <span>
             THIS IS
@@ -3580,117 +2382,26 @@
 
         </div>
 
-
-        <button
-          class="skill-node node-top"
-          type="button"
-          data-skill="strategy"
-        >
-
-          <span>01</span>
-
-          <strong>
-            STRATEGY
-          </strong>
-
-        </button>
-
-
-        <button
-          class="skill-node node-right"
-          type="button"
-          data-skill="brand"
-        >
-
-          <span>02</span>
-
-          <strong>
-            BRAND
-          </strong>
-
-        </button>
-
-
-        <button
-          class="skill-node node-bottom-right"
-          type="button"
-          data-skill="business"
-        >
-
-          <span>03</span>
-
-          <strong>
-            BUSINESS
-          </strong>
-
-        </button>
-
-
-        <button
-          class="skill-node node-bottom-left"
-          type="button"
-          data-skill="creative"
-        >
-
-          <span>04</span>
-
-          <strong>
-            CREATIVE
-          </strong>
-
-        </button>
-
-
-        <button
-          class="skill-node node-left"
-          type="button"
-          data-skill="research"
-        >
-
-          <span>05</span>
-
-          <strong>
-            RESEARCH
-          </strong>
-
-        </button>
-
-
-        <button
-          class="skill-node node-top-left"
-          type="button"
-          data-skill="consumer"
-        >
-
-          <span>06</span>
-
-          <strong>
-            CONSUMER
-            <br>
-            INSIGHTS
-          </strong>
-
-        </button>
-
       </div>
 
 
-      <div class="skill-details">
-
+      <div class="skill-detail-grid">
 
         <div
           class="skill-detail active"
           data-detail="strategy"
         >
 
-          <span>
-            STRATEGY
-          </span>
+          <h3>
+            Strategy
+          </h3>
 
-          <p>
-            Marketing Strategy · Content Strategy · Creative Strategy ·
-            Market Analysis
-          </p>
+          <div class="skill-tags">
+            <span>Marketing Strategy</span>
+            <span>Content Strategy</span>
+            <span>Creative Strategy</span>
+            <span>Market Analysis</span>
+          </div>
 
         </div>
 
@@ -3700,14 +2411,16 @@
           data-detail="brand"
         >
 
-          <span>
-            BRAND
-          </span>
+          <h3>
+            Brand
+          </h3>
 
-          <p>
-            Brand Strategy · Positioning · Consumer Communication ·
-            Visual Communication
-          </p>
+          <div class="skill-tags">
+            <span>Brand Strategy</span>
+            <span>Positioning</span>
+            <span>Consumer Communication</span>
+            <span>Visual Communication</span>
+          </div>
 
         </div>
 
@@ -3717,15 +2430,18 @@
           data-detail="business"
         >
 
-          <span>
-            BUSINESS
-          </span>
+          <h3>
+            Business
+          </h3>
 
-          <p>
-            Business Development · Customer Acquisition ·
-            Customer Retention · Entrepreneurship · Operations ·
-            Project Management
-          </p>
+          <div class="skill-tags">
+            <span>Business Development</span>
+            <span>Customer Acquisition</span>
+            <span>Customer Retention</span>
+            <span>Entrepreneurship</span>
+            <span>Operations</span>
+            <span>Project Management</span>
+          </div>
 
         </div>
 
@@ -3735,14 +2451,17 @@
           data-detail="creative"
         >
 
-          <span>
-            CREATIVE
-          </span>
+          <h3>
+            Creative
+          </h3>
 
-          <p>
-            Adobe Photoshop · Canva · Content Creation · Social Media ·
-            Creative Direction
-          </p>
+          <div class="skill-tags">
+            <span>Adobe Photoshop</span>
+            <span>Canva</span>
+            <span>Content Creation</span>
+            <span>Social Media</span>
+            <span>Creative Direction</span>
+          </div>
 
         </div>
 
@@ -3752,14 +2471,17 @@
           data-detail="research"
         >
 
-          <span>
-            RESEARCH
-          </span>
+          <h3>
+            Research
+          </h3>
 
-          <p>
-            Consumer Research · Market Research · SPSS ·
-            Regression Analysis · Data Interpretation
-          </p>
+          <div class="skill-tags">
+            <span>Consumer Research</span>
+            <span>Market Research</span>
+            <span>SPSS</span>
+            <span>Regression Analysis</span>
+            <span>Data Interpretation</span>
+          </div>
 
         </div>
 
@@ -3769,47 +2491,39 @@
           data-detail="consumer"
         >
 
-          <span>
-            CONSUMER INSIGHTS
-          </span>
+          <h3>
+            Consumer Insights
+          </h3>
 
-          <p>
-            Consumer Behavior · Customer Understanding ·
-            Market Observation · Purchase Intention Analysis
-          </p>
+          <div class="skill-tags">
+            <span>Consumer Behavior</span>
+            <span>Customer Understanding</span>
+            <span>Market Observation</span>
+            <span>Purchase Intention Analysis</span>
+          </div>
 
         </div>
 
       </div>
 
 
-      <div class="tools-row">
+      <div class="tools-section">
 
-        <span>
-          TOOLS
-        </span>
+        <div class="tools-heading">
+          TOOLS & METHODS
+        </div>
 
-
-        <div class="tool-pills">
+        <div class="tools-cloud">
 
           <span>SPSS</span>
-
           <span>Regression</span>
-
           <span>Adobe Photoshop</span>
-
           <span>Canva</span>
-
           <span>GitHub</span>
-
           <span>HTML / CSS</span>
-
           <span>Social Media</span>
-
           <span>Market Research</span>
-
           <span>Digital Marketing</span>
-
           <span>Content Strategy</span>
 
         </div>
@@ -3823,23 +2537,21 @@
           EDUCATION
         </div>
 
-
         <div class="education-main">
 
-          <span>
-            INSTITUT TEKNOLOGI BANDUNG
-          </span>
-
           <h3>
-            Bachelor of Business Management
+            INSTITUT TEKNOLOGI BANDUNG
           </h3>
+
+          <p>
+            Bachelor of Business Management
+          </p>
 
           <p>
             Management & Marketing
           </p>
 
         </div>
-
 
         <div class="education-gpa">
 
@@ -3848,12 +2560,8 @@
           </span>
 
           <strong>
-            3.44
+            3.44 / 4.00
           </strong>
-
-          <small>
-            / 4.00
-          </small>
 
         </div>
 
@@ -3871,335 +2579,141 @@
       id="creative"
     >
 
-      <div class="section-heading">
-
-        <span class="section-number">
-          06 / CREATIVE SKILLS
-        </span>
-
-        <span class="section-side-note">
-          THE OTHER SIDE OF THE BRAIN
-        </span>
-
+      <div class="section-label">
+        06 / CREATIVE
       </div>
 
 
-      <div class="creative-intro">
+      <div class="section-intro">
 
-        <div>
-
-          <p class="eyebrow">
-            CREATIVE PRACTICE
-          </p>
-
-
-          <h2>
-
-            Marketing is also about
-
-            <em>
-              how things feel.
-            </em>
-
-          </h2>
-
-        </div>
-
+        <h2>
+          Marketing is also
+          <em>making things.</em>
+        </h2>
 
         <p>
-
-          Alongside strategy and research, I enjoy working with visual
-          communication, content, and the creative side of understanding
-          an audience.
-
+          Outside formal projects, I experiment with visual
+          communication and social content to understand what
+          catches attention — and why.
         </p>
 
       </div>
 
 
-      <div class="creative-board">
+      <div class="creative-grid">
 
 
-        <!-- PHOTOSHOP -->
-
-        <article
-          class="creative-piece photoshop-piece"
+        <a
+          href="https://id.pinterest.com/akonhjhjhj/my-art-works/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="creative-card"
         >
 
-          <div class="piece-topline">
+          <div class="creative-image">
 
-            <span class="piece-number">
-              01
-            </span>
-
-            <span class="piece-category">
-              ADOBE PHOTOSHOP
-            </span>
-
-          </div>
-
-
-          <div class="photoshop-stage">
-
-            <div
-              class="photoshop-shape photoshop-green"
-            ></div>
-
-
-            <div
-              class="photoshop-shape photoshop-pink"
-            ></div>
-
-
-            <div class="photoshop-sticker">
-
-              VISUAL
-              <br>
-              COMMUNICATION
-
-            </div>
-
-
-            <div class="photoshop-frame">
-
-              <img
-                src="images/photoshop-works.png"
-                alt="Selected Adobe Photoshop work by Tamimmah Disma Lestari"
-                class="photoshop-image"
-              >
-
-            </div>
-
-
-            <div class="photoshop-mark mark-one"></div>
-
-            <div class="photoshop-mark mark-two"></div>
-
-          </div>
-
-
-          <div class="photoshop-copy">
-
-            <div>
-
-              <span class="piece-kicker">
-                VISUAL DESIGN
-              </span>
-
-
-              <h3>
-
-                Making ideas
-
-                <em>
-                  visible.
-                </em>
-
-              </h3>
-
-            </div>
-
-
-            <a
-              href="https://id.pinterest.com/akonhjhjhj/my-art-works/"
-              target="_blank"
-              rel="noopener"
-              class="creative-button"
+            <img
+              src="images/photoshop-works.png"
+              alt="Photoshop creative works"
             >
 
-              See my artwork
+          </div>
 
-              <span>↗</span>
+          <div class="creative-card-info">
 
-            </a>
+            <span>
+              CREATIVE WORK
+            </span>
+
+            <h3>
+              Photoshop
+            </h3>
+
+            <p>
+              Visual experimentation, editing, composition,
+              and digital creative work.
+            </p>
+
+            <strong>
+              View works ↗
+            </strong>
 
           </div>
 
-        </article>
+        </a>
 
 
-        <!-- TIKTOK -->
-
-        <article
-          class="creative-piece tiktok-piece"
+        <a
+          href="https://www.tiktok.com/@baesminju"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="creative-card"
         >
 
-          <div class="piece-topline">
+          <div class="creative-image">
 
-            <span class="piece-number">
-              02
-            </span>
-
-            <span class="piece-category">
-              CONTENT / SOCIAL MEDIA
-            </span>
-
-            <span class="tiktok-status">
-              ORGANIC
-            </span>
+            <img
+              src="images/tiktok-profile.png"
+              alt="TikTok profile"
+            >
 
           </div>
 
+          <div class="creative-card-info">
 
-          <span class="tiktok-background-word">
-            REACH
-          </span>
+            <span>
+              SOCIAL CONTENT
+            </span>
 
+            <h3>
+              TikTok
+            </h3>
 
-          <div class="tiktok-visual">
+            <p>
+              Building content around attention, timing, music,
+              captions, hashtags, and audience behavior.
+            </p>
 
-            <div
-              class="tiktok-sticker sticker-views"
-            >
+            <div class="creative-stats">
 
-              <span class="sticker-small">
-                AVG. VIEWS
-              </span>
-
-              <strong>
-                367K+
-              </strong>
-
-              <span class="sticker-small">
-                / POST
-              </span>
-
-            </div>
-
-
-            <div class="tiktok-screen">
-
-              <div class="screen-bar">
-
-                <span></span>
-                <span></span>
-                <span></span>
-
+              <div>
+                <strong>367K+</strong>
+                <span>AVG VIEWS / POST</span>
               </div>
 
+              <div>
+                <strong>2×</strong>
+                <span>1M+ VIEWS</span>
+              </div>
 
-              <img
-                src="images/tiktok-profile.png"
-                alt="TikTok profile showing content performance"
-              >
-
-            </div>
-
-
-            <div
-              class="tiktok-sticker sticker-million"
-            >
-
-              <strong>
-                2×
-              </strong>
-
-              <span>
-                1M+
-                <br>
-                VIEWS
-              </span>
+              <div>
+                <strong>984</strong>
+                <span>FOLLOWERS</span>
+              </div>
 
             </div>
 
-
-            <div class="tiktok-tag">
-
-              <strong>
-                984
-              </strong>
-
-              <span>
-                FOLLOWERS
-              </span>
-
-            </div>
-
-
-            <div class="tiktok-note">
-
-              <span>PEOPLE</span>
-
-              <strong>×</strong>
-
-              <span>ATTENTION</span>
-
-            </div>
-
-
-            <div class="tiktok-arrow">
-              ↗
-            </div>
-
-
-            <div class="tiktok-label">
-
-              <span>
-                UNDERSTANDING
-              </span>
-
-              <strong>
-                ATTENTION.
-              </strong>
-
-            </div>
+            <strong>
+              Visit profile ↗
+            </strong>
 
           </div>
 
+        </a>
 
-          <div class="tiktok-story">
-
-            <div class="tiktok-story-title">
-
-              <span class="piece-kicker">
-                CONTENT EXPERIMENT
-              </span>
+      </div>
 
 
-              <h3>
+      <div class="creative-statement">
 
-                Small audience.
+        <span>
+          PEOPLE × ATTENTION
+        </span>
 
-                <br>
-
-                <em>
-                  Disproportionate reach.
-                </em>
-
-              </h3>
-
-            </div>
-
-
-            <div class="tiktok-story-copy">
-
-              <p>
-
-                A hands-on experiment in understanding what makes
-                people stop, look, and engage — using primarily
-                photo-based content rather than video.
-
-              </p>
-
-
-              <a
-                href="https://www.tiktok.com/@baesminju"
-                target="_blank"
-                rel="noopener"
-                class="creative-button creative-button-light"
-              >
-
-                Visit TikTok
-
-                <span>↗</span>
-
-              </a>
-
-            </div>
-
-          </div>
-
-        </article>
+        <p>
+          I like creating things because making content forces
+          me to observe people differently.
+        </p>
 
       </div>
 
@@ -4211,147 +2725,58 @@
     ====================================================== -->
 
     <section
-      class="contact-section"
+      class="section contact-section"
       id="contact"
     >
 
-      <div class="contact-shape contact-green"></div>
-
-      <div class="contact-shape contact-turquoise"></div>
-
-      <div class="contact-shape contact-yellow"></div>
-
-
-      <div class="contact-star contact-star-one">
-        ✦
-      </div>
-
-      <div class="contact-star contact-star-two">
-        ✦
+      <div class="section-label">
+        07 / CONTACT
       </div>
 
 
-      <div class="contact-inner">
+      <div class="contact-content">
 
-        <div class="section-heading contact-heading">
+        <div>
 
-          <span class="section-number">
-            07 / CONTACT
-          </span>
-
-          <span class="section-side-note">
-            LET'S TALK
-          </span>
-
-        </div>
-
-
-        <div class="contact-content">
-
-          <p class="eyebrow">
-            OPEN TO OPPORTUNITIES
-          </p>
-
-
-          <h2>
-
-            Let's make something
-
-            <em>
-              meaningful.
-            </em>
-
-          </h2>
-
-
-          <p class="contact-description">
-
-            Looking for someone who can connect business thinking,
-            consumer understanding, and creative execution?
-            Let's talk.
-
-          </p>
-
-
-          <div class="contact-links">
-
-            <a
-              href="mailto:tamimmadisma@gmail.com"
-              class="contact-link"
-            >
-
-              <span class="contact-link-label">
-                EMAIL
-              </span>
-
-              <strong>
-                tamimmadisma@gmail.com
-              </strong>
-
-              <span class="contact-arrow">
-                ↗
-              </span>
-
-            </a>
-
-
-            <a
-              href="https://wa.me/6282130815541"
-              target="_blank"
-              rel="noopener"
-              class="contact-link"
-            >
-
-              <span class="contact-link-label">
-                WHATSAPP
-              </span>
-
-              <strong>
-                Let's connect
-              </strong>
-
-              <span class="contact-arrow">
-                ↗
-              </span>
-
-            </a>
-
-
-            <a
-              href="https://www.instagram.com/miramimmah/"
-              target="_blank"
-              rel="noopener"
-              class="contact-link"
-            >
-
-              <span class="contact-link-label">
-                INSTAGRAM
-              </span>
-
-              <strong>
-                @miramimmah
-              </strong>
-
-              <span class="contact-arrow">
-                ↗
-              </span>
-
-            </a>
-
+          <div class="contact-kicker">
+            LET'S CONNECT
           </div>
 
+          <h2>
+            Let's build something
+            <em>worth choosing.</em>
+          </h2>
+
         </div>
 
 
-        <div class="contact-bottom">
+        <div class="contact-links">
 
-          <span>
-            TAMIMMAH DISMA LESTARI
-          </span>
+          <a href="mailto:tamimmadisma@gmail.com">
+            <span>Email</span>
+            tamimmadisma@gmail.com
+            ↗
+          </a>
 
-          <span>
-            MARKETING · CONSUMER INSIGHTS · BUSINESS DEVELOPMENT
-          </span>
+          <a
+            href="https://wa.me/6282130815541"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>WhatsApp</span>
+            Let's talk
+            ↗
+          </a>
+
+          <a
+            href="https://www.instagram.com/miramimmah/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>Instagram</span>
+            @miramimmah
+            ↗
+          </a>
 
         </div>
 
@@ -4359,235 +2784,975 @@
 
     </section>
 
+
   </main>
 
 
-  <!-- =====================================================
+  <!-- =======================================================
        FOOTER
-  ====================================================== -->
+  ======================================================== -->
 
   <footer class="site-footer">
 
-    <span>
+    <div>
+      © 2026 Tamimmah Disma Lestari
+    </div>
 
-      ©
-
-      <span id="currentYear">
-        2026
-      </span>
-
-      Tamimmah Disma Lestari
-
-    </span>
-
-
-    <span>
+    <div>
       Built with intention.
-    </span>
+    </div>
 
   </footer>
 
 
-  <!-- =====================================================
-       EXISTING JAVASCRIPT
-  ====================================================== -->
+  <!-- =======================================================
+       EXISTING EXTERNAL SCRIPT
+  ======================================================== -->
 
   <script src="script.js"></script>
 
 
-  <!-- =====================================================
-       EXPLORE MENU INTERACTION
-  ====================================================== -->
+  <!-- =======================================================
+       EXPERIENCE DATA + INTERACTION
+  ======================================================== -->
 
   <script>
 
     document.addEventListener("DOMContentLoaded", function () {
 
-      const button =
-        document.getElementById("getToKnowButton");
 
-      const overlay =
-        document.getElementById("getToKnowOverlay");
+      /* =====================================================
+         EXPERIENCE CONTENT
+      ===================================================== */
 
-      const panel =
-        document.getElementById("getToKnowPanel");
+      const experienceData = {
 
-      const backdrop =
-        document.getElementById("getToKnowBackdrop");
+        "sellkpopvt": {
 
-      const closeButton =
-        document.getElementById("exploreClose");
+          kicker: "01 / SELLKPOPVT · FOUNDER / OWNER",
+
+          title: "From building communities to building a business.",
+
+          subtitle:
+            "2021–2025 · Community building · Customer acquisition · Commerce · Operations",
+
+          lead:
+            "I learned that having something people want is only the beginning. You still have to make them notice you, trust you, choose you, and give them a reason to come back.",
+
+          meta: [
+            ["ROLE", "Founder / Owner"],
+            ["PERIOD", "2021–2025"],
+            ["SCOPE", "Community · Commerce · Operations"],
+            ["REACH", "International customers · 2 countries"]
+          ],
+
+          sections: [
+
+            {
+              heading: "Learning to build an audience",
+              text: [
+                "My experience started inside online communities. In one existing community, I was responsible for around 20% of the total sales. That made me realize that I was not only interested in participating in the community — I was interested in understanding why people followed, trusted, and responded to it.",
+                "One of my early Philippine collaborators was particularly strong at community building. They taught me how to grow an audience from 0 to 1,000 followers in roughly one month, eventually reaching around 10,000 followers in about three months. That experience changed how I thought about attention: it could be built intentionally."
+              ]
+            },
+
+            {
+              heading: "Turning community into business",
+              text: [
+                "After the original collaboration changed because of different commitments, I continued working with three Filipino friends and one Indonesian friend. When another large account was later suspended, we built two new communities around the same broader interest.",
+                "One focused on daily information — schedules, activities, updates, content, and advertising. The other focused more on creative promotion: connecting the Korean girl group with other groups and using content and copywriting to make the group more visible.",
+                "The communities became more than fan spaces. They became places where I could observe what people cared about and how they responded to different forms of communication."
+              ]
+            },
+
+            {
+              heading: "Building trust before asking for a sale",
+              text: [
+                "Before building my own business, I had already been involved in an international community around LE SSERAFIM and had made international payments and donations to support voting. Eventually I realized that the same operational knowledge could become a service.",
+                "At first, the idea was simple: take around 20% dividends from each sale. But the more I thought about the process, the more I realized that I was already thinking like an owner — about customers, margins, trust, distribution, and how to create a repeatable system. That became the foundation for SellKpopVT.",
+                "The difficult part was not simply finding people who needed the service. I needed people to notice the business first and trust it enough to transact."
+              ]
+            },
+
+            {
+              heading: "Turning attention into customer acquisition",
+              text: [
+                "I ran several vote giveaways and collaborated with other communities to get traction toward the SellKpopVT page. These activities helped me understand that customer acquisition was not one single channel — it was a combination of visibility, credibility, relationships, and timing.",
+                "Eventually, the account became verified on Twitter/X. For me, that became another layer of credibility and discoverability, helping people who encountered the business feel that it was a real operation rather than an anonymous seller."
+              ]
+            },
+
+            {
+              heading: "Turning competitors into distribution",
+              text: [
+                "One decision that differentiated the business was opening reseller opportunities. Many sellers did not want to do this, but I saw that other people already had relationships with customers I did not have.",
+                "I became one of the early sellers to openly allow resellers and negotiate pricing with them. Eventually there were around one to three resellers in Indonesia and one in the Philippines.",
+                "The resellers were not simply another sales layer. They also became a customer-acquisition network. Instead of treating other sellers only as competitors, I learned to see where collaboration could create distribution."
+              ]
+            },
+
+            {
+              heading: "Learning the market in real time",
+              text: [
+                "Because I was directly interacting with customers and communities, I learned which products people cared about, when they cared about them, what opportunities were worth pursuing, and what kinds of communication created responses.",
+                "The business also taught me a hard lesson about capacity. There were more opportunities than our available manpower could handle. I could not pursue everything, so I had to choose selected voting opportunities where our resources could create the strongest result."
+              ]
+            }
+
+          ],
+
+          proof: [
+            ["0 → 1K", "followers in roughly one month"],
+            ["10K+", "followers in roughly three months"],
+            ["3", "communities built"],
+            ["2", "countries in the operating network"],
+            ["1–3 + 1", "resellers across Indonesia & Philippines"]
+          ],
+
+          learning:
+            "I learned how to turn a community into a business — without losing sight of the people inside it.",
+
+          loop: [
+            "Community",
+            "Insight",
+            "Visibility",
+            "Trust",
+            "Conversion",
+            "Distribution",
+            "Learning",
+            "Prioritization"
+          ]
+
+        },
 
 
-      if (
-        !button ||
-        !overlay ||
-        !panel ||
-        !backdrop ||
-        !closeButton
-      ) {
+        "sari-rasa": {
 
-        return;
+          kicker: "02 / PT SARI RASA · BUSINESS PARTNER",
 
-      }
+          title: "Understanding how a consumer business moves from supply chain to profit.",
+
+          subtitle:
+            "2024–2026 · Investment · Consumer products · Supply chain · Financing · Commercial economics",
+
+          lead:
+            "This experience changed the way I look at consumer businesses. A good product is only one part of the equation — the business also needs the right supply chain, capital structure, margins, distribution, and returns.",
+
+          meta: [
+            ["ROLE", "Business Partner"],
+            ["PERIOD", "2024–2026"],
+            ["FOCUS", "Investment · Commercial economics"],
+            ["BUSINESS REACH", "50+ supermarkets"]
+          ],
+
+          sections: [
+
+            {
+              heading: "Seeing an investment opportunity",
+              text: [
+                "My involvement started from an investment perspective. I became interested in how the business sourced snacks, how its warehouses worked, what the products cost to produce, and what products were actually being sold.",
+                "Instead of looking only at the consumer-facing product, I started following the economics behind it."
+              ]
+            },
+
+            {
+              heading: "Understanding the supply chain",
+              text: [
+                "I was exposed to the movement from production to warehouse, distribution, supermarket, and eventually consumer.",
+                "I also visited supermarkets and was introduced to owners, which helped me see how a consumer product actually enters a retail environment and how different parts of the business depend on each other."
+              ]
+            },
+
+            {
+              heading: "Learning the regulatory and financing side",
+              text: [
+                "I learned about BPOM approval and how regulatory requirements become part of the practical reality of selling consumer products.",
+                "I was also exposed to the banking and financing side of the business, including MOU structures, dividends, break-even point, and business performance. The business received financing from a government-owned bank, which gave me another perspective on how businesses can use external financing to support growth."
+              ]
+            },
+
+            {
+              heading: "Understanding returns",
+              text: [
+                "As a business partner, I receive recurring monthly dividends. That changed my perspective again: marketing and sales are important, but ultimately a business has to make economic sense.",
+                "The experience taught me to connect consumer products with COGS, selling price, margin, BEP, capital, financing, and returns."
+              ]
+            }
+
+          ],
+
+          proof: [
+            ["50+", "supermarkets reached by the business"],
+            ["BPOM", "regulatory exposure"],
+            ["Monthly", "recurring dividend returns"],
+            ["Bank", "financing from a government-owned bank"],
+            ["End-to-end", "supply chain exposure"]
+          ],
+
+          learning:
+            "I learned to look beyond the product and marketing — toward commercial viability, capital, growth, and returns.",
+
+          loop: [
+            "Product",
+            "COGS",
+            "Margin",
+            "Distribution",
+            "Retail",
+            "Capital",
+            "BEP",
+            "Returns"
+          ]
+
+        },
 
 
-      const buttonText =
-        button.querySelector(".button-text");
+        "founders-lab": {
 
-      const buttonArrow =
-        button.querySelector(".button-arrow");
+          kicker: "03 / THE FOUNDERS LAB · CO-FOUNDER & MARKETING LEAD",
+
+          title: "Building a startup ecosystem — and the marketing system behind it.",
+
+          subtitle:
+            "2020–2021 · Marketing systems · Partnerships · Data · Community · Startup ecosystem",
+
+          lead:
+            "The Founders Lab taught me that marketing is not just posting content. It is designing a system where the right people hear about something through the right channels and where the result can actually be measured.",
+
+          meta: [
+            ["ROLE", "Co-Founder & Marketing Lead"],
+            ["PERIOD", "2020–2021"],
+            ["FOCUS", "Marketing · Partnerships · Data"],
+            ["ECOSYSTEM", "ITB communities · Startup network"]
+          ],
+
+          sections: [
+
+            {
+              heading: "Building a startup ecosystem",
+              text: [
+                "The Founders Lab started from a WhatsApp group of startup owners. With support from KM ITB, we developed a database of ITB communities and used it to approach communities as media partners.",
+                "The objective was practical: build partnerships, cross-promote programs, find webinar representatives, and create a network that could help startup-related programs reach more people."
+              ]
+            },
+
+            {
+              heading: "Learning marketing through data",
+              text: [
+                "For webinars, participant numbers became one of the key marketing metrics. I monitored where participants heard about the event, how many came through each media partner, and how many came from outside ITB.",
+                "This gave me a practical lesson in channel contribution. Instead of simply saying a promotion worked, I could ask which channel actually brought people in."
+              ]
+            },
+
+            {
+              heading: "Building an omnichannel system",
+              text: [
+                "Marketing did not happen on Instagram alone. We worked across Instagram, LinkedIn, LINE, WhatsApp communities and groups, faculty email, and media partners.",
+                "We also used personal networks. Friends with larger follower bases could help distribute promotional content across faculties, creating borrowed reach instead of relying only on the organization's existing audience."
+              ]
+            },
+
+            {
+              heading: "Making the operation repeatable",
+              text: [
+                "I created certificates and even wrote a simple computer program to automate participant naming. I also created annual and weekly Gantt charts mapping project timelines against marketing activities.",
+                "The system connected project timelines, Instagram content planning, marketing partnerships, webinar organization, registration, and attendance. That made marketing part of the project workflow rather than an afterthought."
+              ]
+            },
+
+            {
+              heading: "Connecting people to startup teams",
+              text: [
+                "For business competitions, we also stored startup information and mapped the main roles within established startup teams using the Hustler–Hipster–Hacker framework.",
+                "We connected startup data with CIEL SBM ITB and The Greater Hub, while also identifying people who wanted to join startups but did not yet have a team. By understanding whether someone was closer to a Hustler, Hipster, or Hacker role, we could explore how complementary people might fit together."
+              ]
+            },
+
+            {
+              heading: "Instagram Takeover Series",
+              text: [
+                "One example was an Instagram Takeover Series built around a 24-hour 'day in the life' concept with a startup incubator perspective. The program included an incubator partner introduction, question box, day-in-the-life content, startup and industry insights, Q&A, tips for startups seeking incubation, and promotion of Startup School and co-branding.",
+                "The takeover was designed around a deliberate story flow: video and photo content, text for silent viewers, early question collection, Q&A responses, and a clear ending. The content plan called for around 10–15 stories beyond the opening promotional poster and final Startup School poster."
+              ]
+            },
+
+            {
+              heading: "Building partnership products",
+              text: [
+                "We also developed partnership structures covering community partners, premium media partners, social distribution, WhatsApp groups, LINE, LinkedIn, faculty email, and cross-promotion.",
+                "The experience taught me that a marketing partnership is itself a product: it needs an offer, a distribution system, requirements, pricing, and a clear exchange of value."
+              ]
+            }
+
+          ],
+
+          proof: [
+            ["19+", "exclusive webinars through Idealogy"],
+            ["10+", "distribution channels used"],
+            ["90+", "community members in media resources"],
+            ["Data", "channel contribution tracking"],
+            ["System", "annual + weekly marketing planning"]
+          ],
+
+          learning:
+            "I learned to think of marketing as a system: audience → channel → partnership → content → measurement → improvement.",
+
+          loop: [
+            "Audience",
+            "Channel",
+            "Partnership",
+            "Content",
+            "Measurement",
+            "Learning",
+            "Optimization"
+          ]
+
+        },
 
 
-      let lastFocusedElement = null;
+        "cahaya-segara": {
+
+          kicker: "04 / PT CAHAYA SEGARA INDONESIA · FREELANCE SUPPORT",
+
+          title: "Learning B2B business under real commercial pressure.",
+
+          subtitle:
+            "2026 · Executive support · B2B · Tender · Proposal development · Maritime & industrial exposure",
+
+          lead:
+            "I entered with almost no knowledge of the industry. I left with a much clearer understanding of how technical knowledge becomes a commercial proposal — and how quickly that has to happen when a tender deadline is close.",
+
+          meta: [
+            ["ROLE", "Freelance Administrative & Executive Support"],
+            ["PERIOD", "2026"],
+            ["FOCUS", "Research · Proposal · Executive support"],
+            ["ENVIRONMENT", "B2B · Maritime · Industrial"]
+          ],
+
+          sections: [
+
+            {
+              heading: "Starting with zero industry knowledge",
+              text: [
+                "My formal work involved converting different pieces of research into one proposal, progress report, and final report.",
+                "But working closely with the CEO exposed me to the larger commercial context: B2B customers, tenders, programs, and projects involving shipyards, gas, ships, and maritime operations."
+              ]
+            },
+
+            {
+              heading: "Seeing how the company evolved",
+              text: [
+                "The company originally operated around repair work for businesses connected to the sea and maritime industry, then expanded into consulting and operational expertise.",
+                "That gave me a practical example of how a company can evolve from technical execution into a broader business model."
+              ]
+            },
+
+            {
+              heading: "Commercial expertise × technical expertise",
+              text: [
+                "One of the most interesting things I observed was the relationship between commercial and technical knowledge. The CEO did not need to personally know everything.",
+                "Instead, the company worked with a professor from a reputable company as a business partner who could provide knowledge and technical thinking, while the CEO focused on commercializing that expertise."
+              ]
+            },
+
+            {
+              heading: "Learning how pitching actually works",
+              text: [
+                "The value proposition was not simply 'we know something technical.' The team had to diagnose what went wrong with a business product or operation, combine expertise with an affordable approach, and explain how the work could repair the issue and demonstrate the result.",
+                "That made proposal writing feel very different from academic writing. The document had to answer a commercial question: why should the customer trust this solution?"
+              ]
+            },
+
+            {
+              heading: "Working under extreme time pressure",
+              text: [
+                "Tender timelines can be extremely short. Working closely with a highly driven and emotionally invested founder taught me how to keep moving when the deadline is not flexible.",
+                "I had to help turn incomplete information into something usable, keep track of what needed to be finished, and support the project until it was ready."
+              ]
+            }
+
+          ],
+
+          proof: [
+            ["B2B", "customer & tender exposure"],
+            ["Rapid", "proposal development"],
+            ["Research", "research → proposal → report"],
+            ["Industry", "maritime & industrial exposure"],
+            ["Executive", "direct CEO collaboration"]
+          ],
+
+          learning:
+            "I learned that business execution is as much about people as it is about knowledge.",
+
+          loop: [
+            "Problem",
+            "Knowledge",
+            "Solution",
+            "Commercialization",
+            "Execution",
+            "Result"
+          ]
+
+        },
 
 
-      /* =================================================
-         OPEN MENU
-      ================================================== */
+        "ecoplast": {
 
-      function openMenu() {
+          kicker: "05 / ECOPLAST ID · CHIEF MARKETING OFFICER",
 
-        lastFocusedElement = document.activeElement;
+          title: "Learning how to make people believe in a business.",
 
-        overlay.classList.add("is-open");
+          subtitle:
+            "2018–2019 · Startup competitions · Pitching · Marketing · Interdisciplinary teamwork",
 
-        overlay.setAttribute(
+          lead:
+            "I joined an interdisciplinary team where my teammates were stronger technically and I was stronger in interpersonal communication and presentation. The experience taught me that good marketing is not about making yourself look impressive — it is about making the whole idea believable.",
+
+          meta: [
+            ["ROLE", "Chief Marketing Officer"],
+            ["PERIOD", "2018–2019"],
+            ["TEAM", "3 people"],
+            ["FOCUS", "Pitching · Marketing · Communication"]
+          ],
+
+          sections: [
+
+            {
+              heading: "An unexpected invitation",
+              text: [
+                "When I was just entering university, engineering students I knew through Techno Entrepreneur Club invited me to join their team.",
+                "They were technically strong and already thinking about business ideas, incubation, and competitions. I joined because I saw an opportunity to contribute through communication, presentation, and marketing."
+              ]
+            },
+
+            {
+              heading: "Turning an idea into something marketable",
+              text: [
+                "The incubation process taught us how different strengths could fit together. My teammates could go deep into the technical side while I focused more on how the idea should be communicated and perceived.",
+                "We worked together to build the pitch deck and script rather than treating marketing as something separate from the product."
+              ]
+            },
+
+            {
+              heading: "Learning to convince, not just present",
+              text: [
+                "The hardest part was convincing judges that the business was actually marketable. It was not enough to speak confidently or make attractive slides.",
+                "We needed to make the audience understand the problem, the opportunity, the solution, and why our team could make it work."
+              ]
+            },
+
+            {
+              heading: "Learning to work as three people",
+              text: [
+                "The biggest lesson was teamwork. I learned that I cannot win by standing out alone. If one person looks impressive while the rest of the team feels disconnected, the overall business becomes less convincing.",
+                "The experience made me much more conscious of how audiences see not just the idea, but the people behind it."
+              ]
+            },
+
+            {
+              heading: "Proof through results",
+              text: [
+                "The team eventually won several business idea competitions. For me, those results were evidence that communication was doing more than decorating the idea — it was helping the idea become understandable and credible."
+              ]
+            }
+
+          ],
+
+          proof: [
+            ["3", "people in interdisciplinary team"],
+            ["Several", "business idea competitions won"],
+            ["Pitch deck", "built with the team"],
+            ["Script", "written with the team"],
+            ["Incubation", "startup development exposure"]
+          ],
+
+          learning:
+            "Good communication is not just about speaking confidently. It is about making someone else understand why they should believe in what you are building.",
+
+          loop: [
+            "Technical Idea",
+            "Consumer View",
+            "Story",
+            "Pitch",
+            "Belief",
+            "Result"
+          ]
+
+        },
+
+
+        "tec": {
+
+          kicker: "06 / TECHNO ENTREPRENEUR CLUB — ITB · BOARD OF DIRECTOR",
+
+          title: "Learning entrepreneurship by actually running a business.",
+
+          subtitle:
+            "2018–2021 · Student entrepreneurship · Sales · Operations · Distribution · Product development",
+
+          lead:
+            "TEC was where entrepreneurship stopped being a theory. I learned by cooking, selling, negotiating with stores, listening to customers, managing operations, and figuring out what could realistically be done with the resources available.",
+
+          meta: [
+            ["ROLE", "Board of Director · Student Entrepreneur"],
+            ["PERIOD", "2018–2021"],
+            ["FOCUS", "Entrepreneurship · Operations · Sales"],
+            ["EXPOSURE", "ITB · Malaysia · Singapore · Thailand"]
+          ],
+
+          sections: [
+
+            {
+              heading: "Becoming a Board of Director early",
+              text: [
+                "I became a Board of Director in my first year because I was active and my presence was recognized by several businesses that were already running with TEC members from the same and senior years.",
+                "I remember being exposed to around three different business initiatives, each showing me a different side of entrepreneurship."
+              ]
+            },
+
+            {
+              heading: "Learning demand through fried macaroni",
+              text: [
+                "One of the simplest businesses taught me one of the most useful lessons. I noticed that around ten other TEC members were engineering students, while the buying power around SBM ITB was stronger for our product.",
+                "So instead of trying to distribute everywhere, we focused sales around SBM ITB. Promotion happened through social media, WhatsApp group chats, friends sharing promotions, and direct selling.",
+                "The product repeatedly sold out. Customer feedback about flavors also became input for R&D."
+              ]
+            },
+
+            {
+              heading: "Learning operations the hard way",
+              text: [
+                "At home, I sometimes cooked through the night or early morning to keep the product quality consistent.",
+                "Packing and quality control became part of the brand experience. I learned that the customer does not separate operations from marketing — they experience both as one product."
+              ]
+            },
+
+            {
+              heading: "Supplying drinks to campus canteens",
+              text: [
+                "Another business involved juices distributed to around ten ITB canteens. This taught me how different stores think about margins, rent, unsold inventory, storage, and product requirements.",
+                "Because the drinks had a short three-day expiry, the operational challenge was significant. Some canteens prioritized unsold drinks and freezer use differently, while other partners allowed storage."
+              ]
+            },
+
+            {
+              heading: "Understanding the supply chain",
+              text: [
+                "The process could start with buying fruit at Pasar Caringin, continue through production in the club room, and then move into late-day or early distribution around campus.",
+                "Initially the team handled distribution ourselves. As workload increased, we eventually hired employees. That was an early lesson in recognizing when a founder's own time was no longer the most efficient resource."
+              ]
+            },
+
+            {
+              heading: "Looking beyond campus",
+              text: [
+                "TEC also exposed me to international entrepreneurship learning journeys in Malaysia, Singapore, and Thailand.",
+                "In Singapore, I met people from the venture capital ecosystem and saw examples of startups they had incubated. It gave me a broader perspective on how businesses are pitched, funded, and scaled beyond the university environment."
+              ]
+            }
+
+          ],
+
+          proof: [
+            ["3+", "business initiatives experienced"],
+            ["10", "ITB canteens reached"],
+            ["3", "countries explored"],
+            ["Sold out", "repeated product sales"],
+            ["Operations", "production → distribution → store"]
+          ],
+
+          learning:
+            "I learned entrepreneurship by getting my hands dirty — then looking beyond my campus to understand how businesses are built, funded, and scaled.",
+
+          loop: [
+            "Product",
+            "Customer",
+            "Sales",
+            "Operations",
+            "Distribution",
+            "Feedback",
+            "Scale"
+          ]
+
+        }
+
+      };
+
+
+      /* =====================================================
+         EXPERIENCE MODAL ELEMENTS
+      ===================================================== */
+
+      const experienceCards =
+        document.querySelectorAll(".experience-card");
+
+      const experienceModal =
+        document.getElementById("experienceModal");
+
+      const experienceModalBackdrop =
+        document.getElementById("experienceModalBackdrop");
+
+      const experienceModalClose =
+        document.getElementById("experienceModalClose");
+
+      const experienceModalFooterClose =
+        document.getElementById("experienceModalFooterClose");
+
+      const experienceModalKicker =
+        document.getElementById("experienceModalKicker");
+
+      const experienceModalTitle =
+        document.getElementById("experienceModalTitle");
+
+      const experienceModalSubtitle =
+        document.getElementById("experienceModalSubtitle");
+
+      const experienceModalBody =
+        document.getElementById("experienceModalBody");
+
+      let lastExperienceTrigger = null;
+
+
+      function openExperience(key, trigger) {
+
+        const data = experienceData[key];
+
+        if (!data) return;
+
+        lastExperienceTrigger = trigger || null;
+
+        experienceModalKicker.textContent = data.kicker;
+
+        experienceModalTitle.textContent = data.title;
+
+        experienceModalSubtitle.textContent = data.subtitle;
+
+
+        let html = `
+
+          <div class="experience-story-intro">
+
+            <p class="experience-story-lead">
+              ${data.lead}
+            </p>
+
+            <div class="experience-meta">
+
+        `;
+
+
+        data.meta.forEach(function (item) {
+
+          html += `
+
+            <div class="experience-meta-item">
+
+              <span class="experience-meta-label">
+                ${item[0]}
+              </span>
+
+              <div class="experience-meta-value">
+                ${item[1]}
+              </div>
+
+            </div>
+
+          `;
+
+        });
+
+
+        html += `
+            </div>
+          </div>
+        `;
+
+
+        data.sections.forEach(function (section, index) {
+
+          html += `
+
+            <section class="experience-story-section">
+
+              <div class="experience-story-heading">
+
+                <span class="experience-story-heading-number">
+                  ${String(index + 1).padStart(2, "0")}
+                </span>
+
+                <h3>
+                  ${section.heading}
+                </h3>
+
+              </div>
+
+          `;
+
+
+          section.text.forEach(function (paragraph) {
+
+            html += `
+              <p>${paragraph}</p>
+            `;
+
+          });
+
+
+          html += `
+            </section>
+          `;
+
+        });
+
+
+        if (data.proof && data.proof.length) {
+
+          html += `
+
+            <section class="experience-story-section">
+
+              <div class="experience-story-heading">
+
+                <span class="experience-story-heading-number">
+                  +
+                </span>
+
+                <h3>
+                  Proof
+                </h3>
+
+              </div>
+
+              <div class="experience-proof-grid">
+
+          `;
+
+
+          data.proof.forEach(function (proof) {
+
+            html += `
+
+              <div class="experience-proof">
+
+                <strong>
+                  ${proof[0]}
+                </strong>
+
+                <span>
+                  ${proof[1]}
+                </span>
+
+              </div>
+
+            `;
+
+          });
+
+
+          html += `
+
+              </div>
+
+            </section>
+
+          `;
+
+        }
+
+
+        html += `
+
+          <section class="experience-story-section">
+
+            <div class="experience-story-heading">
+
+              <span class="experience-story-heading-number">
+                →
+              </span>
+
+              <h3>
+                Biggest learning
+              </h3>
+
+            </div>
+
+            <div class="experience-learning">
+
+              <span class="experience-learning-label">
+                What I took with me
+              </span>
+
+              <p>
+                ${data.learning}
+              </p>
+
+            </div>
+
+          </section>
+
+        `;
+
+
+        if (data.loop && data.loop.length) {
+
+          html += `
+
+            <section class="experience-story-section">
+
+              <div class="experience-story-heading">
+
+                <span class="experience-story-heading-number">
+                  ∞
+                </span>
+
+                <h3>
+                  The way I think about it
+                </h3>
+
+              </div>
+
+              <div class="experience-loop">
+
+          `;
+
+
+          data.loop.forEach(function (item) {
+
+            html += `
+              <span>${item}</span>
+            `;
+
+          });
+
+
+          html += `
+
+              </div>
+
+            </section>
+
+          `;
+
+        }
+
+
+        experienceModalBody.innerHTML = html;
+
+        experienceModal.classList.add("is-open");
+
+        experienceModal.setAttribute(
           "aria-hidden",
           "false"
         );
-
-        button.setAttribute(
-          "aria-expanded",
-          "true"
-        );
-
-        button.classList.add("is-active");
 
         document.body.classList.add(
-          "get-to-know-open"
+          "experience-modal-open"
         );
 
+        experienceModalClose.focus();
 
-        if (buttonText) {
+        const panel =
+          experienceModal.querySelector(
+            ".experience-modal-panel"
+          );
 
-          buttonText.textContent =
-            "Close menu";
-
+        if (panel) {
+          panel.scrollTop = 0;
         }
-
-
-        if (buttonArrow) {
-
-          buttonArrow.textContent =
-            "↑";
-
-        }
-
-
-        /*
-         * Reset overlay scroll to the top
-         * every time it opens.
-         */
-
-        panel.scrollTop = 0;
-
-
-        /*
-         * Move focus into the overlay.
-         */
-
-        setTimeout(function () {
-
-          closeButton.focus();
-
-        }, 50);
 
       }
 
 
-      /* =================================================
-         CLOSE MENU
-      ================================================== */
+      function closeExperience() {
 
-      function closeMenu(returnFocus = true) {
+        experienceModal.classList.remove(
+          "is-open"
+        );
 
-        overlay.classList.remove("is-open");
-
-        overlay.setAttribute(
+        experienceModal.setAttribute(
           "aria-hidden",
           "true"
         );
 
-        button.setAttribute(
-          "aria-expanded",
-          "false"
-        );
-
-        button.classList.remove("is-active");
-
         document.body.classList.remove(
-          "get-to-know-open"
+          "experience-modal-open"
         );
 
+        if (lastExperienceTrigger) {
 
-        if (buttonText) {
-
-          buttonText.textContent =
-            "Get to know me";
-
-        }
-
-
-        if (buttonArrow) {
-
-          buttonArrow.textContent =
-            "↓";
-
-        }
-
-
-        if (
-          returnFocus &&
-          lastFocusedElement &&
-          typeof lastFocusedElement.focus === "function"
-        ) {
-
-          setTimeout(function () {
-
-            lastFocusedElement.focus();
-
-          }, 50);
+          lastExperienceTrigger.focus();
 
         }
 
       }
 
 
-      /* =================================================
-         BUTTON
-      ================================================== */
+      experienceCards.forEach(function (card) {
 
-      button.addEventListener(
+        card.addEventListener(
+          "click",
+          function () {
+
+            openExperience(
+              card.dataset.experience,
+              card
+            );
+
+          }
+        );
+
+
+        card.addEventListener(
+          "keydown",
+          function (event) {
+
+            if (
+              event.key === "Enter" ||
+              event.key === " "
+            ) {
+
+              event.preventDefault();
+
+              openExperience(
+                card.dataset.experience,
+                card
+              );
+
+            }
+
+          }
+        );
+
+      });
+
+
+      experienceModalClose.addEventListener(
         "click",
+        closeExperience
+      );
+
+
+      experienceModalFooterClose.addEventListener(
+        "click",
+        closeExperience
+      );
+
+
+      experienceModalBackdrop.addEventListener(
+        "click",
+        closeExperience
+      );
+
+
+      document.addEventListener(
+        "keydown",
         function (event) {
 
-          event.preventDefault();
+          if (
+            event.key === "Escape" &&
+            experienceModal.classList.contains("is-open")
+          ) {
 
-          event.stopPropagation();
-
-
-          const isOpen =
-            overlay.classList.contains("is-open");
-
-
-          if (isOpen) {
-
-            closeMenu();
-
-          } else {
-
-            openMenu();
+            closeExperience();
 
           }
 
@@ -4595,41 +3760,265 @@
       );
 
 
-      /* =================================================
-         CLOSE BUTTON
-      ================================================== */
+      /* =====================================================
+         EXPERIENCE MODAL FOCUS TRAP
+      ===================================================== */
 
-      closeButton.addEventListener(
-        "click",
-        function () {
+      experienceModal.addEventListener(
+        "keydown",
+        function (event) {
 
-          closeMenu();
+          if (event.key !== "Tab") return;
+
+          const focusable =
+            experienceModal.querySelectorAll(
+              'button, a, input, select, textarea, [tabindex]:not([tabindex="-1"])'
+            );
+
+          if (!focusable.length) return;
+
+          const first = focusable[0];
+          const last = focusable[focusable.length - 1];
+
+          if (
+            event.shiftKey &&
+            document.activeElement === first
+          ) {
+
+            event.preventDefault();
+            last.focus();
+
+          } else if (
+            !event.shiftKey &&
+            document.activeElement === last
+          ) {
+
+            event.preventDefault();
+            first.focus();
+
+          }
 
         }
       );
 
 
-      /* =================================================
-         BACKDROP
-      ================================================== */
+      /* =====================================================
+         SKILLS ORBIT
+      ===================================================== */
 
-      backdrop.addEventListener(
+      const skillNodes =
+        document.querySelectorAll(".skill-node");
+
+      const skillDetails =
+        document.querySelectorAll(".skill-detail");
+
+
+      skillNodes.forEach(function (node) {
+
+        node.addEventListener(
+          "click",
+          function () {
+
+            const target =
+              node.dataset.skill;
+
+            skillNodes.forEach(function (item) {
+
+              item.classList.remove(
+                "active"
+              );
+
+            });
+
+
+            skillDetails.forEach(function (detail) {
+
+              detail.classList.remove(
+                "active"
+              );
+
+            });
+
+
+            node.classList.add(
+              "active"
+            );
+
+
+            const detail =
+              document.querySelector(
+                `.skill-detail[data-detail="${target}"]`
+              );
+
+
+            if (detail) {
+
+              detail.classList.add(
+                "active"
+              );
+
+            }
+
+          }
+        );
+
+      });
+
+
+      /* =====================================================
+         GET TO KNOW ME OVERLAY
+      ===================================================== */
+
+      const getToKnowBtn =
+        document.getElementById(
+          "getToKnowBtn"
+        );
+
+      const getToKnowOverlay =
+        document.getElementById(
+          "getToKnowOverlay"
+        );
+
+      const getToKnowPanel =
+        document.getElementById(
+          "getToKnowPanel"
+        );
+
+      const getToKnowBackdrop =
+        document.getElementById(
+          "getToKnowBackdrop"
+        );
+
+      const exploreClose =
+        document.getElementById(
+          "exploreClose"
+        );
+
+
+      let lastExploreFocus = null;
+
+
+      function openExploreMenu() {
+
+        lastExploreFocus =
+          document.activeElement;
+
+        getToKnowOverlay.classList.add(
+          "is-open"
+        );
+
+        getToKnowOverlay.setAttribute(
+          "aria-hidden",
+          "false"
+        );
+
+        getToKnowBtn.setAttribute(
+          "aria-expanded",
+          "true"
+        );
+
+        getToKnowBtn.classList.add(
+          "is-active"
+        );
+
+        document.body.classList.add(
+          "get-to-know-open"
+        );
+
+
+        getToKnowBtn.innerHTML =
+          `Close menu <span>↑</span>`;
+
+
+        getToKnowPanel.scrollTop = 0;
+
+        setTimeout(function () {
+
+          exploreClose.focus();
+
+        }, 100);
+
+      }
+
+
+      function closeExploreMenu() {
+
+        getToKnowOverlay.classList.remove(
+          "is-open"
+        );
+
+        getToKnowOverlay.setAttribute(
+          "aria-hidden",
+          "true"
+        );
+
+        getToKnowBtn.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+        getToKnowBtn.classList.remove(
+          "is-active"
+        );
+
+        document.body.classList.remove(
+          "get-to-know-open"
+        );
+
+
+        getToKnowBtn.innerHTML =
+          `Get to know me <span>↓</span>`;
+
+
+        if (
+          lastExploreFocus &&
+          typeof lastExploreFocus.focus === "function"
+        ) {
+
+          lastExploreFocus.focus();
+
+        }
+
+      }
+
+
+      getToKnowBtn.addEventListener(
         "click",
         function () {
 
-          closeMenu();
+          if (
+            getToKnowOverlay.classList.contains(
+              "is-open"
+            )
+          ) {
+
+            closeExploreMenu();
+
+          } else {
+
+            openExploreMenu();
+
+          }
 
         }
       );
 
 
-      /* =================================================
-         EXPLORE LINKS
-      ================================================== */
+      exploreClose.addEventListener(
+        "click",
+        closeExploreMenu
+      );
+
+
+      getToKnowBackdrop.addEventListener(
+        "click",
+        closeExploreMenu
+      );
+
 
       const exploreLinks =
-        overlay.querySelectorAll(
-          ".explore-option"
+        document.querySelectorAll(
+          ".explore-link"
         );
 
 
@@ -4643,11 +4032,6 @@
               link.getAttribute("href");
 
 
-            /*
-             * Internal section links:
-             * close first, then smoothly scroll.
-             */
-
             if (
               href &&
               href.startsWith("#")
@@ -4655,13 +4039,14 @@
 
               event.preventDefault();
 
-              closeMenu(false);
-
+              closeExploreMenu();
 
               setTimeout(function () {
 
                 const target =
-                  document.querySelector(href);
+                  document.querySelector(
+                    href
+                  );
 
 
                 if (target) {
@@ -4673,18 +4058,7 @@
 
                 }
 
-              }, 100);
-
-            }
-
-            /*
-             * journal.html:
-             * allow normal browser navigation.
-             */
-
-            else {
-
-              closeMenu(false);
+              }, 350);
 
             }
 
@@ -4694,22 +4068,18 @@
       });
 
 
-      /* =================================================
-         ESCAPE KEY
-      ================================================== */
-
       document.addEventListener(
         "keydown",
         function (event) {
 
           if (
             event.key === "Escape" &&
-            overlay.classList.contains("is-open")
+            getToKnowOverlay.classList.contains(
+              "is-open"
+            )
           ) {
 
-            event.preventDefault();
-
-            closeMenu();
+            closeExploreMenu();
 
           }
 
@@ -4717,71 +4087,60 @@
       );
 
 
-      /* =================================================
-         BASIC FOCUS TRAP
-      ================================================== */
+      /* =====================================================
+         GET TO KNOW ME FOCUS TRAP
+      ===================================================== */
 
-      overlay.addEventListener(
+      getToKnowOverlay.addEventListener(
         "keydown",
         function (event) {
 
+          if (event.key !== "Tab") return;
+
           if (
-            event.key !== "Tab" ||
-            !overlay.classList.contains("is-open")
-          ) {
-
-            return;
-
-          }
+            !getToKnowOverlay.classList.contains(
+              "is-open"
+            )
+          ) return;
 
 
-          const focusableElements =
-            overlay.querySelectorAll(
-              'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+          const focusable =
+            getToKnowOverlay.querySelectorAll(
+              'button, a, input, select, textarea, [tabindex]:not([tabindex="-1"])'
             );
 
 
-          if (!focusableElements.length) {
-
-            return;
-
-          }
+          if (!focusable.length) return;
 
 
-          const firstElement =
-            focusableElements[0];
+          const first =
+            focusable[0];
 
-          const lastElement =
-            focusableElements[
-              focusableElements.length - 1
-            ];
+          const last =
+            focusable[focusable.length - 1];
 
 
           if (
             event.shiftKey &&
-            document.activeElement === firstElement
+            document.activeElement === first
           ) {
 
             event.preventDefault();
+            last.focus();
 
-            lastElement.focus();
-
-          }
-
-
-          else if (
+          } else if (
             !event.shiftKey &&
-            document.activeElement === lastElement
+            document.activeElement === last
           ) {
 
             event.preventDefault();
-
-            firstElement.focus();
+            first.focus();
 
           }
 
         }
       );
+
 
     });
 
