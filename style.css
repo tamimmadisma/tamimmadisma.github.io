@@ -2462,8 +2462,7 @@ h3 em {
 
   width: 100%;
 
-  margin-top: clamp(80px, 10vw, 125px);
-
+margin-top: 35px;
   padding-top: 23px;
 
   border-top: 1px solid rgba(37, 37, 37, .18);
