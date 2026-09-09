@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 
 <html lang="en">
@@ -29,7 +28,7 @@
 
   <link
     rel="preconnect"
-    href="https://fonts.googleapis.com"
+    href="https://fonts.gstatic.com"
     crossorigin
   >
 
@@ -47,9 +46,41 @@
     href="style.css"
   >
 
+  <!-- =====================================================
+       CLICKABLE PROJECT VISUALS
+  ====================================================== -->
+
+  <style>
+
+    .project-visual-link {
+      display: block;
+      width: 100%;
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .project-visual-link:hover {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .project-visual-link:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 6px;
+    }
+
+    .project-visual-link .project-visual {
+      width: 100%;
+    }
+
+  </style>
+
 </head>
 
+
 <body>
+
 
   <!-- =====================================================
        HEADER
@@ -197,7 +228,9 @@
         rel="noopener"
         class="mobile-resume"
       >
+
         View Resume ↗
+
       </a>
 
     </div>
@@ -1393,18 +1426,16 @@
         ================================================== -->
 
         <article
-          class="milestone milestone-today"
+          class="milestone milestone-left milestone-today"
           data-milestone="9"
         >
 
-          <div class="today-orbit">
-
-            <span>✦</span>
-
+          <div class="milestone-marker">
+            <span>09</span>
           </div>
 
 
-          <div class="today-card">
+          <div class="milestone-card">
 
             <span class="milestone-era">
               TODAY
@@ -1412,28 +1443,68 @@
 
 
             <h3>
-              People × Business × Creativity
+              🎯 Connecting the Dots
             </h3>
 
 
-            <p class="today-hook">
-              Bringing everything together.
+            <p class="milestone-hook">
+              Learning to think strategically.
             </p>
 
 
-            <div class="today-skills">
+            <span class="milestone-detail">
+              Marketing · Consumer Insights · Business
+            </span>
 
-              <span class="today-skill shape-one">
-                Strategic thinking
-              </span>
 
-              <span class="today-skill shape-two">
-                Consumer understanding
-              </span>
+            <div class="milestone-expanded">
 
-              <span class="today-skill shape-three">
-                Creative problem-solving
-              </span>
+              <p>
+                Everything I've done so far has gradually pointed
+                toward the same thing: understanding people,
+                identifying opportunities, and turning those
+                observations into action.
+              </p>
+
+
+              <p>
+                Today, I'm most interested in work that sits between
+                consumer understanding, marketing strategy, and
+                business decisions.
+              </p>
+
+
+              <p>
+                I'm especially drawn to questions around why people
+                choose, what makes brands matter, and how businesses
+                can respond meaningfully.
+              </p>
+
+
+              <div class="milestone-takeaway">
+
+                <span class="takeaway-label">
+                  What stayed with me
+                </span>
+
+
+                <div class="takeaway-skills">
+
+                  <span class="today-skill shape-one">
+                    Strategic thinking
+                  </span>
+
+                  <span class="today-skill shape-two">
+                    Consumer understanding
+                  </span>
+
+                  <span class="today-skill shape-three">
+                    Creative problem-solving
+                  </span>
+
+                </div>
+
+              </div>
 
             </div>
 
@@ -1862,8 +1933,10 @@
 
 
         <p>
+
           Research, strategy, writing, and creative work —
           selected to show how I approach problems.
+
         </p>
 
       </div>
@@ -1872,59 +1945,73 @@
       <div class="project-gallery">
 
 
-        <!-- RESEARCH -->
+        <!-- =================================================
+             RESEARCH
+        ================================================== -->
 
         <article
           class="project project-featured"
         >
 
-          <div
-            class="project-visual project-research"
+          <a
+            href="Consumer_Purchase_Intention_Traditional_Chips.pdf"
+            target="_blank"
+            rel="noopener"
+            class="project-visual-link"
+            aria-label="Open Consumer Purchase Intention research"
           >
 
-            <span class="project-big-type">
-              WHY
-            </span>
+            <div
+              class="project-visual project-research"
+            >
+
+              <span class="project-big-type">
+                WHY
+              </span>
 
 
-            <div class="research-paper">
+              <div class="research-paper">
 
-              <small>
-                CONSUMER RESEARCH
-              </small>
+                <small>
+                  CONSUMER RESEARCH
+                </small>
 
-              <div class="paper-line paper-long"></div>
+                <div class="paper-line paper-long"></div>
 
-              <div class="paper-line"></div>
+                <div class="paper-line"></div>
 
-              <div class="paper-line paper-medium"></div>
+                <div class="paper-line paper-medium"></div>
 
 
-              <div class="paper-chart">
+                <div class="paper-chart">
 
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+
+                </div>
+
+
+                <strong>
+
+                  PURCHASE
+                  <br>
+                  INTENTION
+
+                </strong>
 
               </div>
 
 
-              <strong>
-                PURCHASE
-                <br>
-                INTENTION
-              </strong>
+              <div class="project-number">
+                01
+              </div>
 
             </div>
 
-
-            <div class="project-number">
-              01
-            </div>
-
-          </div>
+          </a>
 
 
           <div class="project-info">
@@ -1946,16 +2033,17 @@
 
               </h3>
 
-
             </div>
 
 
             <div class="project-bottom">
 
               <p>
+
                 Quantitative research examining factors influencing
                 consumers' purchase intention toward traditional chips
                 in local supermarkets.
+
               </p>
 
 
@@ -1979,34 +2067,46 @@
         </article>
 
 
-        <!-- BUAVITA -->
+        <!-- =================================================
+             BUAVITA
+        ================================================== -->
 
         <article
           class="project project-buavita"
         >
 
-          <div class="project-visual">
+          <a
+            href="buavita.html"
+            class="project-visual-link"
+            aria-label="Open Buavita brand strategy project"
+          >
 
-            <div class="buavita-label">
-              BRAND
-              <br>
-              STRATEGY
+            <div class="project-visual">
+
+              <div class="buavita-label">
+
+                BRAND
+                <br>
+                STRATEGY
+
+              </div>
+
+
+              <div class="fruit-shape"></div>
+
+
+              <span class="visual-word">
+                REFRESH
+              </span>
+
+
+              <div class="project-number">
+                02
+              </div>
+
             </div>
 
-
-            <div class="fruit-shape"></div>
-
-
-            <span class="visual-word">
-              REFRESH
-            </span>
-
-
-            <div class="project-number">
-              02
-            </div>
-
-          </div>
+          </a>
 
 
           <div class="project-info">
@@ -2043,37 +2143,49 @@
         </article>
 
 
-        <!-- K-BEAUTY -->
+        <!-- =================================================
+             K-BEAUTY
+        ================================================== -->
 
         <article
           class="project project-kbeauty"
         >
 
-          <div class="project-visual">
+          <a
+            href="https://marketing.co.id/menilik-strategi-branding-produk-kecantikan-korea/"
+            target="_blank"
+            rel="noopener"
+            class="project-visual-link"
+            aria-label="Read Korean beauty branding article"
+          >
 
-            <span class="beauty-word">
-              K-BEAUTY
-            </span>
+            <div class="project-visual">
 
-
-            <div class="beauty-circle">
-
-              <span>
-                BRAND
+              <span class="beauty-word">
+                K-BEAUTY
               </span>
 
-              <strong>
-                IMAGE
-              </strong>
+
+              <div class="beauty-circle">
+
+                <span>
+                  BRAND
+                </span>
+
+                <strong>
+                  IMAGE
+                </strong>
+
+              </div>
+
+
+              <div class="project-number">
+                03
+              </div>
 
             </div>
 
-
-            <div class="project-number">
-              03
-            </div>
-
-          </div>
+          </a>
 
 
           <div class="project-info">
@@ -2112,34 +2224,46 @@
         </article>
 
 
-        <!-- TWITCH -->
+        <!-- =================================================
+             TWITCH
+        ================================================== -->
 
         <article
           class="project project-twitch"
         >
 
-          <div class="project-visual">
+          <a
+            href="https://tamimmah-disma.medium.com/the-rollercoaster-ride-of-twitch-acquisition-from-google-yahoo-to-amazon-70b8a2124df3"
+            target="_blank"
+            rel="noopener"
+            class="project-visual-link"
+            aria-label="Read Twitch acquisition article on Medium"
+          >
 
-            <div class="twitch-grid">
+            <div class="project-visual">
 
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
+              <div class="twitch-grid">
+
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+
+              </div>
+
+
+              <span class="twitch-word">
+                TWITCH
+              </span>
+
+
+              <div class="project-number">
+                04
+              </div>
 
             </div>
 
-
-            <span class="twitch-word">
-              TWITCH
-            </span>
-
-
-            <div class="project-number">
-              04
-            </div>
-
-          </div>
+          </a>
 
 
           <div class="project-info">
@@ -2183,7 +2307,7 @@
 
 
     <!-- =====================================================
-         SKILLS & EDUCATION
+         SKILLS
     ====================================================== -->
 
     <section
@@ -2206,281 +2330,173 @@
 
       <div class="skills-intro">
 
-        <h2>
+        <div>
 
-          Different disciplines.
+          <p class="eyebrow">
+            THE MIX
+          </p>
 
-          <em>
-            One way of thinking.
-          </em>
 
-        </h2>
+          <h2>
+
+            Strategy meets
+
+            <em>
+              execution.
+            </em>
+
+          </h2>
+
+        </div>
 
 
         <p>
 
-          I connect customer understanding, commercial thinking,
-          analysis, and creative execution.
+          My strength comes from combining analytical thinking,
+          consumer understanding, business execution, and creative
+          communication.
 
         </p>
 
       </div>
 
 
-      <div class="skills-map">
+      <div class="skills-layout">
 
-        <div class="skills-orbit orbit-one"></div>
-
-        <div class="skills-orbit orbit-two"></div>
+        <div class="skills-list">
 
 
-        <div class="skill-center">
+          <div class="skill-group">
 
-          <span>
-            THIS IS
-          </span>
+            <span class="skill-group-number">
+              01
+            </span>
 
-          <strong>
-            TAMIMMAH
-          </strong>
+            <div>
 
-          <small>
-            BUSINESS × PEOPLE
-          </small>
+              <h3>
+                Marketing & Strategy
+              </h3>
 
-        </div>
+              <p>
+                Marketing strategy · Brand strategy · Campaign thinking
+                · Content strategy · Competitive analysis
+              </p>
 
+            </div>
 
-        <button
-          class="skill-node node-top"
-          type="button"
-          data-skill="strategy"
-        >
-
-          <span>01</span>
-
-          <strong>
-            STRATEGY
-          </strong>
-
-        </button>
+          </div>
 
 
-        <button
-          class="skill-node node-right"
-          type="button"
-          data-skill="brand"
-        >
+          <div class="skill-group">
 
-          <span>02</span>
+            <span class="skill-group-number">
+              02
+            </span>
 
-          <strong>
-            BRAND
-          </strong>
+            <div>
 
-        </button>
+              <h3>
+                Consumer & Research
+              </h3>
 
+              <p>
+                Consumer behavior · Market research · Survey design
+                · Quantitative analysis · Insight generation
+              </p>
 
-        <button
-          class="skill-node node-bottom-right"
-          type="button"
-          data-skill="business"
-        >
+            </div>
 
-          <span>03</span>
-
-          <strong>
-            BUSINESS
-          </strong>
-
-        </button>
+          </div>
 
 
-        <button
-          class="skill-node node-bottom-left"
-          type="button"
-          data-skill="creative"
-        >
+          <div class="skill-group">
 
-          <span>04</span>
+            <span class="skill-group-number">
+              03
+            </span>
 
-          <strong>
-            CREATIVE
-          </strong>
+            <div>
 
-        </button>
+              <h3>
+                Business
+              </h3>
 
+              <p>
+                Business development · Sales · Customer acquisition
+                · Operations · Entrepreneurship
+              </p>
 
-        <button
-          class="skill-node node-left"
-          type="button"
-          data-skill="research"
-        >
+            </div>
 
-          <span>05</span>
-
-          <strong>
-            RESEARCH
-          </strong>
-
-        </button>
+          </div>
 
 
-        <button
-          class="skill-node node-top-left"
-          type="button"
-          data-skill="consumer"
-        >
+          <div class="skill-group">
 
-          <span>06</span>
+            <span class="skill-group-number">
+              04
+            </span>
 
-          <strong>
-            CONSUMER
-            <br>
-            INSIGHTS
-          </strong>
+            <div>
 
-        </button>
+              <h3>
+                Communication
+              </h3>
 
-      </div>
+              <p>
+                Storytelling · Presentation · Pitching · Community
+                building · Cross-functional communication
+              </p>
 
+            </div>
 
-      <div class="skill-details">
-
-
-        <div
-          class="skill-detail active"
-          data-detail="strategy"
-        >
-
-          <span>
-            STRATEGY
-          </span>
-
-          <p>
-            Marketing Strategy · Content Strategy · Creative Strategy ·
-            Market Analysis
-          </p>
+          </div>
 
         </div>
 
 
-        <div
-          class="skill-detail"
-          data-detail="brand"
-        >
+        <div class="skills-side">
 
-          <span>
-            BRAND
-          </span>
+          <div class="skill-cloud">
 
-          <p>
-            Brand Strategy · Positioning · Consumer Communication ·
-            Visual Communication
-          </p>
+            <span class="skill-pill skill-pill-main">
+              CONSUMER INSIGHTS
+            </span>
 
-        </div>
+            <span class="skill-pill">
+              MARKETING
+            </span>
 
+            <span class="skill-pill">
+              BRAND STRATEGY
+            </span>
 
-        <div
-          class="skill-detail"
-          data-detail="business"
-        >
+            <span class="skill-pill">
+              BUSINESS DEVELOPMENT
+            </span>
 
-          <span>
-            BUSINESS
-          </span>
+            <span class="skill-pill">
+              RESEARCH
+            </span>
 
-          <p>
-            Business Development · Customer Acquisition ·
-            Customer Retention · Entrepreneurship · Operations ·
-            Project Management
-          </p>
+            <span class="skill-pill">
+              CONTENT
+            </span>
 
-        </div>
+            <span class="skill-pill">
+              COMMUNITY
+            </span>
 
+            <span class="skill-pill">
+              SALES
+            </span>
 
-        <div
-          class="skill-detail"
-          data-detail="creative"
-        >
+            <span class="skill-pill">
+              ENTREPRENEURSHIP
+            </span>
 
-          <span>
-            CREATIVE
-          </span>
-
-          <p>
-            Adobe Photoshop · Canva · Content Creation · Social Media ·
-            Creative Direction
-          </p>
-
-        </div>
-
-
-        <div
-          class="skill-detail"
-          data-detail="research"
-        >
-
-          <span>
-            RESEARCH
-          </span>
-
-          <p>
-            Consumer Research · Market Research · SPSS ·
-            Regression Analysis · Data Interpretation
-          </p>
-
-        </div>
-
-
-        <div
-          class="skill-detail"
-          data-detail="consumer"
-        >
-
-          <span>
-            CONSUMER INSIGHTS
-          </span>
-
-          <p>
-            Consumer Behavior · Customer Understanding ·
-            Market Observation · Purchase Intention Analysis
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <div class="tools-row">
-
-        <span>
-          TOOLS
-        </span>
-
-
-        <div class="tool-pills">
-
-          <span>SPSS</span>
-
-          <span>Regression</span>
-
-          <span>Adobe Photoshop</span>
-
-          <span>Canva</span>
-
-          <span>GitHub</span>
-
-          <span>HTML / CSS</span>
-
-          <span>Social Media</span>
-
-          <span>Market Research</span>
-
-          <span>Digital Marketing</span>
-
-          <span>Content Strategy</span>
+          </div>
 
         </div>
 
@@ -2765,9 +2781,11 @@
               </strong>
 
               <span>
+
                 1M+
                 <br>
                 VIEWS
+
               </span>
 
             </div>
@@ -2788,11 +2806,17 @@
 
             <div class="tiktok-note">
 
-              <span>PEOPLE</span>
+              <span>
+                PEOPLE
+              </span>
 
-              <strong>×</strong>
+              <strong>
+                ×
+              </strong>
 
-              <span>ATTENTION</span>
+              <span>
+                ATTENTION
+              </span>
 
             </div>
 
@@ -3067,4 +3091,3 @@
 </body>
 
 </html>
-```
