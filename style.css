@@ -5441,13 +5441,10 @@ h3 em {
     opacity .35s ease;
 }
 
-.connection.is-active {
+.connection.active {
   stroke: var(--green-dark, #438F89);
-
   stroke-width: 2;
-
   stroke-dasharray: none;
-
   opacity: 1;
 }
 
