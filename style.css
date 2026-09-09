@@ -222,6 +222,14 @@ h3 em {
 }
 
 
+/* Skills section spacing */
+#skills {
+  padding-top: 80px;
+}
+
+#skills .section-heading {
+  margin-bottom: 45px;
+}
 /* =========================================================
    05 — HEADER
 ========================================================= */
@@ -4004,7 +4012,14 @@ h3 em {
   h2 {
     font-size: clamp(43px, 13vw, 65px);
   }
+/* Skills section spacing */
+#skills {
+  padding-top: 60px;
+}
 
+#skills .section-heading {
+  margin-bottom: 35px;
+}
 
   /* =======================================================
      HEADER
