@@ -4750,7 +4750,8 @@
 
 
 <!-- =====================================================
-     SKILLS & EDUCATION
+     05 / SKILLS & EDUCATION
+     INTERACTIVE SKILL UNIVERSE
 ====================================================== -->
 
 <section class="section skills-section" id="skills">
@@ -4765,6 +4766,10 @@
     </span>
   </div>
 
+
+  <!-- ===================================================
+       INTRO
+  ==================================================== -->
 
   <div class="skills-intro">
 
@@ -4781,160 +4786,495 @@
   </div>
 
 
-  <!-- SKILLS GRID -->
+  <!-- ===================================================
+       INTERACTIVE SKILL UNIVERSE
+  ==================================================== -->
 
-  <div class="skills-grid">
+  <div class="skill-universe" aria-label="Interactive skills">
 
-    <button class="skill-card active" type="button" data-skill="strategy">
-      <span class="skill-number">01</span>
-      <span class="skill-title">Strategy</span>
-      <span class="skill-arrow">↗</span>
+    <!-- SVG BACKGROUND / CONNECTIONS -->
+
+    <svg
+      class="skill-universe-svg"
+      viewBox="0 0 800 700"
+      role="presentation"
+      aria-hidden="true"
+    >
+
+      <!-- OUTER ORBIT -->
+
+      <ellipse
+        class="orbit orbit-outer"
+        cx="400"
+        cy="350"
+        rx="310"
+        ry="250"
+      />
+
+      <!-- INNER ORBIT -->
+
+      <ellipse
+        class="orbit orbit-inner"
+        cx="400"
+        cy="350"
+        rx="205"
+        ry="165"
+      />
+
+
+      <!-- CONNECTIONS -->
+
+      <path
+        class="connection connection-strategy"
+        data-line="strategy"
+        d="M400 105 C400 190 400 245 400 350"
+      />
+
+      <path
+        class="connection connection-brand"
+        data-line="brand"
+        d="M650 210 C570 245 505 285 400 350"
+      />
+
+      <path
+        class="connection connection-business"
+        data-line="business"
+        d="M675 500 C585 470 510 415 400 350"
+      />
+
+      <path
+        class="connection connection-creative"
+        data-line="creative"
+        d="M400 595 C400 515 400 455 400 350"
+      />
+
+      <path
+        class="connection connection-research"
+        data-line="research"
+        d="M125 500 C215 465 300 410 400 350"
+      />
+
+      <path
+        class="connection connection-consumer"
+        data-line="consumer"
+        d="M150 205 C230 240 310 285 400 350"
+      />
+
+
+      <!-- DECORATIVE DOTS -->
+
+      <circle
+        class="orbit-dot dot-one"
+        cx="400"
+        cy="100"
+        r="3"
+      />
+
+      <circle
+        class="orbit-dot dot-two"
+        cx="650"
+        cy="205"
+        r="3"
+      />
+
+      <circle
+        class="orbit-dot dot-three"
+        cx="675"
+        cy="500"
+        r="3"
+      />
+
+      <circle
+        class="orbit-dot dot-four"
+        cx="400"
+        cy="600"
+        r="3"
+      />
+
+      <circle
+        class="orbit-dot dot-five"
+        cx="125"
+        cy="500"
+        r="3"
+      />
+
+      <circle
+        class="orbit-dot dot-six"
+        cx="150"
+        cy="205"
+        r="3"
+      />
+
+    </svg>
+
+
+    <!-- =================================================
+         CENTER
+    ================================================== -->
+
+    <div
+      class="skill-universe-center"
+      aria-live="polite"
+    >
+
+      <span class="center-kicker">
+        HOW I THINK
+      </span>
+
+      <strong class="center-title">
+        CUSTOMER
+      </strong>
+
+      <span class="center-subtitle">
+        × BUSINESS × CREATIVITY
+      </span>
+
+      <span class="center-pulse"></span>
+
+    </div>
+
+
+    <!-- =================================================
+         SKILL 01 — STRATEGY
+    ================================================== -->
+
+    <button
+      class="universe-skill skill-strategy active"
+      type="button"
+      data-skill="strategy"
+      aria-pressed="true"
+    >
+
+      <span class="universe-skill-number">
+        01
+      </span>
+
+      <span class="universe-skill-name">
+        Strategy
+      </span>
+
+      <span class="universe-skill-caption">
+        DECIDE
+      </span>
+
     </button>
 
 
-    <button class="skill-card" type="button" data-skill="brand">
-      <span class="skill-number">02</span>
-      <span class="skill-title">Brand</span>
-      <span class="skill-arrow">↗</span>
+    <!-- =================================================
+         SKILL 02 — BRAND
+    ================================================== -->
+
+    <button
+      class="universe-skill skill-brand"
+      type="button"
+      data-skill="brand"
+      aria-pressed="false"
+    >
+
+      <span class="universe-skill-number">
+        02
+      </span>
+
+      <span class="universe-skill-name">
+        Brand
+      </span>
+
+      <span class="universe-skill-caption">
+        POSITION
+      </span>
+
     </button>
 
 
-    <button class="skill-card" type="button" data-skill="business">
-      <span class="skill-number">03</span>
-      <span class="skill-title">Business</span>
-      <span class="skill-arrow">↗</span>
+    <!-- =================================================
+         SKILL 03 — BUSINESS
+    ================================================== -->
+
+    <button
+      class="universe-skill skill-business"
+      type="button"
+      data-skill="business"
+      aria-pressed="false"
+    >
+
+      <span class="universe-skill-number">
+        03
+      </span>
+
+      <span class="universe-skill-name">
+        Business
+      </span>
+
+      <span class="universe-skill-caption">
+        BUILD
+      </span>
+
     </button>
 
 
-    <button class="skill-card" type="button" data-skill="creative">
-      <span class="skill-number">04</span>
-      <span class="skill-title">Creative</span>
-      <span class="skill-arrow">↗</span>
+    <!-- =================================================
+         SKILL 04 — CREATIVE
+    ================================================== -->
+
+    <button
+      class="universe-skill skill-creative"
+      type="button"
+      data-skill="creative"
+      aria-pressed="false"
+    >
+
+      <span class="universe-skill-number">
+        04
+      </span>
+
+      <span class="universe-skill-name">
+        Creative
+      </span>
+
+      <span class="universe-skill-caption">
+        CREATE
+      </span>
+
     </button>
 
 
-    <button class="skill-card" type="button" data-skill="research">
-      <span class="skill-number">05</span>
-      <span class="skill-title">Research</span>
-      <span class="skill-arrow">↗</span>
+    <!-- =================================================
+         SKILL 05 — RESEARCH
+    ================================================== -->
+
+    <button
+      class="universe-skill skill-research"
+      type="button"
+      data-skill="research"
+      aria-pressed="false"
+    >
+
+      <span class="universe-skill-number">
+        05
+      </span>
+
+      <span class="universe-skill-name">
+        Research
+      </span>
+
+      <span class="universe-skill-caption">
+        DISCOVER
+      </span>
+
     </button>
 
 
-    <button class="skill-card" type="button" data-skill="consumer">
-      <span class="skill-number">06</span>
-      <span class="skill-title">Consumer Insights</span>
-      <span class="skill-arrow">↗</span>
+    <!-- =================================================
+         SKILL 06 — CONSUMER INSIGHTS
+    ================================================== -->
+
+    <button
+      class="universe-skill skill-consumer"
+      type="button"
+      data-skill="consumer"
+      aria-pressed="false"
+    >
+
+      <span class="universe-skill-number">
+        06
+      </span>
+
+      <span class="universe-skill-name">
+        Consumer
+        <small>Insights</small>
+      </span>
+
+      <span class="universe-skill-caption">
+        UNDERSTAND
+      </span>
+
     </button>
 
   </div>
 
 
-  <!-- SKILL DETAILS -->
+  <!-- ===================================================
+       DYNAMIC SKILL INFORMATION
+  ==================================================== -->
 
-  <div class="skill-details">
+  <div class="skill-info">
 
+    <!-- STRATEGY -->
 
-    <div class="skill-detail active" data-detail="strategy">
+    <div
+      class="skill-info-panel active"
+      data-info="strategy"
+    >
 
-      <span>STRATEGY</span>
+      <div class="skill-info-index">
+        <span>01</span>
+        <small>STRATEGY</small>
+      </div>
 
-      <p class="skill-detail-lead">
-        Turning observations into decisions.
-      </p>
+      <div class="skill-info-main">
 
-      <p>
-        Marketing Strategy · Content Strategy · Creative Strategy ·
-        Market Analysis
-      </p>
+        <p class="skill-info-lead">
+          Turning observations into decisions.
+        </p>
 
-    </div>
+        <p class="skill-info-list">
+          Marketing Strategy · Content Strategy ·
+          Creative Strategy · Market Analysis
+        </p>
 
-
-    <div class="skill-detail" data-detail="brand">
-
-      <span>BRAND</span>
-
-      <p class="skill-detail-lead">
-        Making a business easier to understand, remember, and choose.
-      </p>
-
-      <p>
-        Brand Strategy · Positioning · Consumer Communication ·
-        Visual Communication
-      </p>
+      </div>
 
     </div>
 
 
-    <div class="skill-detail" data-detail="business">
+    <!-- BRAND -->
 
-      <span>BUSINESS</span>
+    <div
+      class="skill-info-panel"
+      data-info="brand"
+    >
 
-      <p class="skill-detail-lead">
-        Understanding how ideas become commercially viable.
-      </p>
+      <div class="skill-info-index">
+        <span>02</span>
+        <small>BRAND</small>
+      </div>
 
-      <p>
-        Business Development · Customer Acquisition ·
-        Customer Retention · Entrepreneurship · Operations ·
-        Project Management
-      </p>
+      <div class="skill-info-main">
 
-    </div>
+        <p class="skill-info-lead">
+          Making a business easier to understand,
+          remember, and choose.
+        </p>
 
+        <p class="skill-info-list">
+          Brand Strategy · Positioning ·
+          Consumer Communication · Visual Communication
+        </p>
 
-    <div class="skill-detail" data-detail="creative">
-
-      <span>CREATIVE</span>
-
-      <p class="skill-detail-lead">
-        Turning ideas into visual and engaging experiences.
-      </p>
-
-      <p>
-        Adobe Photoshop · Canva · Visual Content ·
-        Campaign Creative · Social Media Content
-      </p>
+      </div>
 
     </div>
 
 
-    <div class="skill-detail" data-detail="research">
+    <!-- BUSINESS -->
 
-      <span>RESEARCH</span>
+    <div
+      class="skill-info-panel"
+      data-info="business"
+    >
 
-      <p class="skill-detail-lead">
-        Using data to understand what customers actually want.
-      </p>
+      <div class="skill-info-index">
+        <span>03</span>
+        <small>BUSINESS</small>
+      </div>
 
-      <p>
-        Consumer Research · Market Research · SPSS ·
-        PCA · Survey Design · Data Analysis
-      </p>
+      <div class="skill-info-main">
+
+        <p class="skill-info-lead">
+          Understanding how ideas become commercially viable.
+        </p>
+
+        <p class="skill-info-list">
+          Business Development · Customer Acquisition ·
+          Customer Retention · Entrepreneurship ·
+          Operations · Project Management
+        </p>
+
+      </div>
 
     </div>
 
 
-    <div class="skill-detail" data-detail="consumer">
+    <!-- CREATIVE -->
 
-      <span>CONSUMER INSIGHTS</span>
+    <div
+      class="skill-info-panel"
+      data-info="creative"
+    >
 
-      <p class="skill-detail-lead">
-        Connecting customer behaviour with business decisions.
-      </p>
+      <div class="skill-info-index">
+        <span>04</span>
+        <small>CREATIVE</small>
+      </div>
 
-      <p>
-        Consumer Behaviour · Customer Preferences ·
-        Customer Segmentation · Purchase Intention ·
-        Insight Generation
-      </p>
+      <div class="skill-info-main">
+
+        <p class="skill-info-lead">
+          Turning ideas into visual and engaging experiences.
+        </p>
+
+        <p class="skill-info-list">
+          Adobe Photoshop · Canva · Visual Content ·
+          Campaign Creative · Social Media Content
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- RESEARCH -->
+
+    <div
+      class="skill-info-panel"
+      data-info="research"
+    >
+
+      <div class="skill-info-index">
+        <span>05</span>
+        <small>RESEARCH</small>
+      </div>
+
+      <div class="skill-info-main">
+
+        <p class="skill-info-lead">
+          Using data to understand what customers actually want.
+        </p>
+
+        <p class="skill-info-list">
+          Consumer Research · Market Research · SPSS ·
+          PCA · Survey Design · Data Analysis
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- CONSUMER INSIGHTS -->
+
+    <div
+      class="skill-info-panel"
+      data-info="consumer"
+    >
+
+      <div class="skill-info-index">
+        <span>06</span>
+        <small>CONSUMER INSIGHTS</small>
+      </div>
+
+      <div class="skill-info-main">
+
+        <p class="skill-info-lead">
+          Connecting customer behaviour with business decisions.
+        </p>
+
+        <p class="skill-info-list">
+          Consumer Behaviour · Customer Preferences ·
+          Customer Segmentation · Purchase Intention ·
+          Insight Generation
+        </p>
+
+      </div>
 
     </div>
 
   </div>
 
 
-  <!-- TOOLS -->
+  <!-- ===================================================
+       TOOLS
+  ==================================================== -->
 
   <div class="skills-tools">
 
@@ -4956,7 +5296,9 @@
   </div>
 
 
-  <!-- EDUCATION -->
+  <!-- ===================================================
+       EDUCATION
+  ==================================================== -->
 
   <div class="skills-education">
 
@@ -4966,7 +5308,8 @@
 
     <div class="education-item">
 
-      <div>
+      <div class="education-main">
+
         <h3>
           Institut Teknologi Bandung
         </h3>
@@ -4974,11 +5317,20 @@
         <p>
           Bachelor of Business Management
         </p>
+
       </div>
 
       <div class="education-meta">
-        <span>GPA</span>
-        <strong>3.44 / 4.00</strong>
+
+        <span>
+          GPA
+        </span>
+
+        <strong>
+          3.44
+          <small>/ 4.00</small>
+        </strong>
+
       </div>
 
     </div>
@@ -4986,7 +5338,6 @@
   </div>
 
 </section>
-:::
     <!-- =====================================================
          CREATIVE
     ====================================================== -->
