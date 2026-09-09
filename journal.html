@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
   <meta charset="UTF-8">
@@ -16,43 +15,57 @@
 
   <meta
     name="description"
-    content="Journal of Tamimmah Disma Lestari — work, learning, growth and professional reflections."
+    content="A personal professional journal by Tamimmah Disma Lestari — documenting work, learning, challenges and growth."
   >
-
-  <!-- GOOGLE FONTS -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap"
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
     rel="stylesheet"
   >
 
-
   <style>
 
-    /* =====================================================
+    /* =========================================================
        COLOR PALETTE
-    =====================================================
+       =========================================================
 
-       #D8DE56  — Lime / Primary Accent
-       #5D8274  — Deep Green
-       #6FB3AC  — Teal
-       #D8A4A5  — Dusty Pink
-       #252525  — Charcoal
-       #7C9783  — Sage
+       #D9DF57 = Lime
+       #F8F4EE = Warm Off-White
+       #D8A4A5 = Dusty Pink
+       #000000 = Black
+       #438F89 = Teal
 
-    ===================================================== */
+       ========================================================= */
+
+    :root {
+
+      --lime: #D9DF57;
+      --cream: #F8F4EE;
+      --pink: #D8A4A5;
+      --black: #000000;
+      --teal: #438F89;
+
+      --border: rgba(0, 0, 0, 0.16);
+
+    }
 
 
-    /* =====================================================
+    /* =========================================================
        RESET
-    ===================================================== */
+       ========================================================= */
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
 
@@ -62,15 +75,17 @@
 
 
     body {
+
       font-family: "DM Sans", sans-serif;
 
-      background: #f8f8f4;
+      background: var(--cream);
 
-      color: #252525;
+      color: var(--black);
 
       line-height: 1.6;
 
-      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+
     }
 
 
@@ -80,17 +95,36 @@
     }
 
 
-
-    /* =====================================================
+    /* =========================================================
        HEADER
-    ===================================================== */
+       ========================================================= */
 
     header {
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 1000;
+
       width: 100%;
 
-      padding: 24px 5%;
+      background: var(--cream);
 
-      border-bottom: 1px solid #7c9783;
+      border-bottom: 1px solid var(--black);
+
+    }
+
+
+    .nav {
+
+      width: 90%;
+
+      max-width: 1200px;
+
+      margin: auto;
+
+      min-height: 76px;
 
       display: flex;
 
@@ -98,37 +132,39 @@
 
       justify-content: space-between;
 
-      background: #f8f8f4;
+      gap: 30px;
 
-      position: sticky;
-
-      top: 0;
-
-      z-index: 100;
     }
 
 
     .brand {
+
       display: flex;
 
       align-items: center;
 
-      gap: 12px;
+      gap: 13px;
 
-      font-size: 13px;
+      font-size: 14px;
 
       font-weight: 700;
 
-      letter-spacing: 0.14em;
+      letter-spacing: 0.12em;
+
+      white-space: nowrap;
+
     }
 
 
     .brand-mark {
-      width: 34px;
 
-      height: 34px;
+      width: 36px;
 
-      border: 1px solid #252525;
+      height: 36px;
+
+      background: var(--black);
+
+      color: var(--cream);
 
       display: flex;
 
@@ -140,347 +176,20 @@
 
       font-size: 18px;
 
-      font-weight: 500;
+      border-radius: 50%;
 
-      background: #d8de56;
-
-      transition:
-        background 0.25s ease,
-        color 0.25s ease;
     }
 
 
-    .brand:hover .brand-mark {
-      background: #6fb3ac;
+    .back-link {
 
-      color: #252525;
-    }
+      display: inline-flex;
 
+      align-items: center;
 
-    .back-home {
-      font-size: 11px;
+      gap: 8px;
 
-      font-weight: 700;
-
-      letter-spacing: 0.13em;
-
-      text-transform: uppercase;
-
-      transition:
-        color 0.2s ease,
-        opacity 0.2s ease;
-    }
-
-
-    .back-home:hover {
-      color: #5d8274;
-
-      opacity: 0.8;
-    }
-
-
-
-    /* =====================================================
-       PAGE HERO
-    ===================================================== */
-
-    .hero {
-      width: 90%;
-
-      max-width: 1200px;
-
-      margin: 0 auto;
-
-      padding: 100px 0 85px;
-
-      border-bottom: 1px solid #7c9783;
-    }
-
-
-    .section-number {
-      font-size: 11px;
-
-      font-weight: 700;
-
-      letter-spacing: 0.16em;
-
-      text-transform: uppercase;
-
-      color: #7c9783;
-
-      margin-bottom: 28px;
-    }
-
-
-    .section-number span {
-      color: #5d8274;
-    }
-
-
-    .section-number::before {
-      content: "✦";
-
-      color: #d8de56;
-
-      margin-right: 8px;
-
-      font-size: 9px;
-    }
-
-
-    .hero-grid {
-      display: grid;
-
-      grid-template-columns:
-        minmax(0, 1.3fr)
-        minmax(260px, 0.7fr);
-
-      gap: 70px;
-
-      align-items: end;
-    }
-
-
-    .hero h1 {
-      font-family: "Playfair Display", serif;
-
-      font-size: clamp(48px, 7vw, 92px);
-
-      font-weight: 500;
-
-      line-height: 0.98;
-
-      letter-spacing: -0.03em;
-
-      color: #252525;
-    }
-
-
-    .hero-description {
-      max-width: 430px;
-
-      font-size: 15px;
-
-      line-height: 1.8;
-
-      color: #5d8274;
-    }
-
-
-
-    /* =====================================================
-       CALENDAR SECTION
-    ===================================================== */
-
-    .calendar-section {
-      width: 90%;
-
-      max-width: 1200px;
-
-      margin: 0 auto;
-
-      padding: 80px 0 110px;
-    }
-
-
-    .calendar-heading {
-      display: flex;
-
-      justify-content: space-between;
-
-      align-items: flex-end;
-
-      margin-bottom: 35px;
-    }
-
-
-    .calendar-heading-left {
-      display: flex;
-
-      flex-direction: column;
-
-      gap: 5px;
-    }
-
-
-    .calendar-label {
-      font-size: 10px;
-
-      font-weight: 700;
-
-      letter-spacing: 0.16em;
-
-      text-transform: uppercase;
-
-      color: #7c9783;
-    }
-
-
-    .calendar-month {
-      font-family: "Playfair Display", serif;
-
-      font-size: clamp(34px, 4vw, 48px);
-
-      font-weight: 500;
-
-      line-height: 1;
-
-      color: #252525;
-    }
-
-
-    .calendar-year {
-      font-size: 11px;
-
-      font-weight: 700;
-
-      letter-spacing: 0.14em;
-
-      color: #5d8274;
-    }
-
-
-
-    /* =====================================================
-       CALENDAR GRID
-    ===================================================== */
-
-    .calendar {
-      display: grid;
-
-      grid-template-columns: repeat(7, 1fr);
-
-      border-top: 1px solid #7c9783;
-
-      border-left: 1px solid #7c9783;
-
-      background: #f8f8f4;
-    }
-
-
-    .weekday {
-      min-height: 45px;
-
-      padding: 13px 14px;
-
-      border-right: 1px solid #7c9783;
-
-      border-bottom: 1px solid #7c9783;
-
-      font-size: 9px;
-
-      font-weight: 700;
-
-      letter-spacing: 0.14em;
-
-      text-transform: uppercase;
-
-      color: #5d8274;
-    }
-
-
-    .day {
-      min-height: 125px;
-
-      padding: 15px;
-
-      border-right: 1px solid #7c9783;
-
-      border-bottom: 1px solid #7c9783;
-
-      position: relative;
-
-      background: #f8f8f4;
-
-      transition:
-        background 0.25s ease,
-        color 0.25s ease,
-        transform 0.2s ease;
-    }
-
-
-    .day-number {
       font-size: 12px;
-
-      font-weight: 600;
-
-      color: #252525;
-    }
-
-
-    .day.empty {
-      color: #7c9783;
-
-      background: #eef0e9;
-    }
-
-
-    .day.empty .day-number {
-      color: #7c9783;
-    }
-
-
-    .day:not(.empty):not(.has-entry) {
-      color: #5d8274;
-    }
-
-
-    .day:not(.empty):not(.has-entry):hover {
-      background: #eef5f1;
-    }
-
-
-
-    /* =====================================================
-       ACTIVE JOURNAL DATE
-    ===================================================== */
-
-    .day.has-entry {
-      background: #d8de56;
-
-      color: #252525;
-
-      cursor: pointer;
-
-      position: relative;
-    }
-
-
-    .day.has-entry:hover {
-      background: #6fb3ac;
-
-      color: #252525;
-
-      transform: translateY(-2px);
-    }
-
-
-    .day.has-entry .day-number {
-      color: #252525;
-
-      font-weight: 700;
-    }
-
-
-    .day.today {
-      outline: 2px solid #5d8274;
-
-      outline-offset: -5px;
-    }
-
-
-    .entry-mini {
-      position: absolute;
-
-      left: 15px;
-
-      right: 15px;
-
-      bottom: 15px;
-
-      font-size: 9px;
-
-      line-height: 1.4;
 
       font-weight: 700;
 
@@ -488,222 +197,582 @@
 
       text-transform: uppercase;
 
-      color: #252525;
+      transition: all 0.25s ease;
+
+    }
+
+
+    .back-link:hover {
+
+      color: var(--teal);
+
+    }
+
+
+    .back-arrow {
+
+      font-size: 17px;
+
+      transition: transform 0.25s ease;
+
+    }
+
+
+    .back-link:hover .back-arrow {
+
+      transform: translateX(-4px);
+
+    }
+
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+
+    .hero {
+
+      width: 90%;
+
+      max-width: 1200px;
+
+      margin: 0 auto;
+
+      padding: 100px 0 80px;
+
+    }
+
+
+    .eyebrow {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+      font-size: 11px;
+
+      font-weight: 700;
+
+      letter-spacing: 0.16em;
+
+      margin-bottom: 28px;
+
+    }
+
+
+    .eyebrow::before {
+
+      content: "";
+
+      width: 34px;
+
+      height: 3px;
+
+      background: var(--lime);
+
+      display: block;
+
+    }
+
+
+    .hero h1 {
+
+      max-width: 900px;
+
+      font-family: "Playfair Display", serif;
+
+      font-size: clamp(48px, 8vw, 96px);
+
+      line-height: 0.98;
+
+      font-weight: 600;
+
+      letter-spacing: -0.04em;
+
+      margin-bottom: 30px;
+
+    }
+
+
+    .hero h1 span {
+
+      position: relative;
+
+      display: inline-block;
+
+      z-index: 1;
+
+    }
+
+
+    .hero h1 span::after {
+
+      content: "";
+
+      position: absolute;
+
+      z-index: -1;
+
+      left: -6px;
+
+      right: -6px;
+
+      bottom: 5px;
+
+      height: 22px;
+
+      background: var(--lime);
+
+    }
+
+
+    .hero-description {
+
+      max-width: 650px;
+
+      font-size: 17px;
+
+      line-height: 1.8;
+
+      color: var(--black);
+
+    }
+
+
+    /* =========================================================
+       CALENDAR SECTION
+       ========================================================= */
+
+    .calendar-section {
+
+      width: 90%;
+
+      max-width: 1200px;
+
+      margin: 0 auto;
+
+      padding-bottom: 100px;
+
+    }
+
+
+    .section-heading {
+
+      display: flex;
+
+      align-items: flex-end;
+
+      justify-content: space-between;
+
+      gap: 30px;
+
+      margin-bottom: 30px;
+
+      border-bottom: 1px solid var(--black);
+
+      padding-bottom: 18px;
+
+    }
+
+
+    .section-heading h2 {
+
+      font-family: "Playfair Display", serif;
+
+      font-size: clamp(28px, 4vw, 44px);
+
+      font-weight: 600;
+
+      letter-spacing: -0.03em;
+
+    }
+
+
+    .section-heading span {
+
+      font-size: 11px;
+
+      font-weight: 700;
+
+      letter-spacing: 0.14em;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .calendar {
+
+      width: 100%;
+
+      display: grid;
+
+      grid-template-columns: repeat(7, 1fr);
+
+      border-top: 1px solid var(--black);
+
+      border-left: 1px solid var(--black);
+
+    }
+
+
+    .weekday {
+
+      min-height: 42px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      background: var(--black);
+
+      color: var(--cream);
+
+      border-right: 1px solid var(--black);
+
+      border-bottom: 1px solid var(--black);
+
+      font-size: 10px;
+
+      font-weight: 700;
+
+      letter-spacing: 0.12em;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .day {
+
+      min-height: 125px;
+
+      padding: 14px;
+
+      border-right: 1px solid var(--black);
+
+      border-bottom: 1px solid var(--black);
+
+      position: relative;
+
+      transition:
+
+        background 0.25s ease,
+
+        color 0.25s ease;
+
+    }
+
+
+    .day-number {
+
+      font-size: 12px;
+
+      font-weight: 600;
+
+    }
+
+
+    .day.empty {
+
+      background: transparent;
+
+    }
+
+
+    .day.has-entry {
+
+      background: var(--lime);
+
+      cursor: pointer;
+
+    }
+
+
+    .day.has-entry:hover {
+
+      background: var(--teal);
+
+      color: var(--cream);
+
+    }
+
+
+    .day.has-entry:hover .entry-dot {
+
+      background: var(--cream);
+
+    }
+
+
+    .day.today {
+
+      box-shadow:
+
+        inset 0 0 0 3px var(--teal);
+
     }
 
 
     .entry-dot {
-      width: 7px;
 
-      height: 7px;
+      width: 8px;
+
+      height: 8px;
+
+      background: var(--black);
 
       border-radius: 50%;
 
-      background: #5d8274;
-
       position: absolute;
+
+      right: 14px;
 
       top: 16px;
 
-      right: 16px;
     }
 
 
+    .entry-mini {
 
-    /* =====================================================
-       CALENDAR NOTE
-    ===================================================== */
+      position: absolute;
 
-    .calendar-note {
+      left: 14px;
+
+      right: 14px;
+
+      bottom: 14px;
+
+      font-size: 10px;
+
+      line-height: 1.4;
+
+      font-weight: 700;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.04em;
+
+    }
+
+
+    /* =========================================================
+       JOURNAL ENTRIES
+       ========================================================= */
+
+    .entries {
+
+      width: 90%;
+
+      max-width: 1200px;
+
+      margin: 0 auto;
+
+      padding-bottom: 120px;
+
+    }
+
+
+    .entry {
+
+      scroll-margin-top: 100px;
+
+      padding: 70px 0 80px;
+
+      border-top: 1px solid var(--black);
+
+    }
+
+
+    .entry:first-child {
+
+      border-top: none;
+
+    }
+
+
+    .entry-header {
+
+      display: grid;
+
+      grid-template-columns: 100px 1fr;
+
+      gap: 40px;
+
+      margin-bottom: 45px;
+
+    }
+
+
+    .entry-number {
+
+      font-size: 12px;
+
+      font-weight: 700;
+
+      letter-spacing: 0.12em;
+
+      padding-top: 10px;
+
+    }
+
+
+    .entry-meta {
+
       display: flex;
+
+      flex-wrap: wrap;
 
       align-items: center;
 
       gap: 10px;
 
-      margin-top: 18px;
+      margin-bottom: 18px;
 
-      font-size: 10px;
-
-      color: #7c9783;
-
-      letter-spacing: 0.05em;
-    }
-
-
-    .calendar-note-mark {
-      width: 7px;
-
-      height: 7px;
-
-      background: #d8de56;
-
-      border: 1px solid #5d8274;
-
-      border-radius: 50%;
-    }
-
-
-
-    /* =====================================================
-       JOURNAL ENTRY
-    ===================================================== */
-
-    .entry-section {
-      width: 90%;
-
-      max-width: 1200px;
-
-      margin: 0 auto;
-
-      padding: 0 0 130px;
-    }
-
-
-    .entry-header {
-      padding-top: 30px;
-
-      border-top: 1px solid #7c9783;
-    }
-
-
-    .entry-grid {
-      display: grid;
-
-      grid-template-columns:
-        minmax(180px, 0.35fr)
-        minmax(0, 1fr);
-
-      gap: 70px;
-    }
-
-
-    .entry-side {
-      padding-top: 8px;
     }
 
 
     .entry-date {
-      font-size: 10px;
+
+      font-size: 11px;
 
       font-weight: 700;
 
-      letter-spacing: 0.15em;
+      letter-spacing: 0.12em;
 
       text-transform: uppercase;
 
-      color: #5d8274;
-
-      margin-bottom: 10px;
-    }
-
-
-    .entry-number {
-      font-family: "Playfair Display", serif;
-
-      font-size: 24px;
-
-      font-weight: 500;
-
-      color: #252525;
     }
 
 
     .entry-category {
-      margin-top: 25px;
+
+      display: inline-block;
+
+      padding: 5px 9px;
+
+      border: 1px solid var(--black);
+
+      border-radius: 30px;
 
       font-size: 9px;
 
       font-weight: 700;
 
-      letter-spacing: 0.13em;
+      letter-spacing: 0.08em;
 
       text-transform: uppercase;
 
-      color: #7c9783;
-
-      line-height: 1.8;
     }
 
 
+    .entry h2 {
 
-    /* =====================================================
-       ENTRY CONTENT
-    ===================================================== */
+      max-width: 900px;
 
-    .entry-main {
-      max-width: 760px;
-    }
-
-
-    .entry-title {
       font-family: "Playfair Display", serif;
 
-      font-size: clamp(42px, 6vw, 72px);
+      font-size: clamp(38px, 6vw, 70px);
 
-      font-weight: 500;
+      line-height: 1.05;
 
-      line-height: 1.02;
+      font-weight: 600;
 
-      letter-spacing: -0.025em;
+      letter-spacing: -0.04em;
 
-      margin-bottom: 48px;
+    }
 
-      color: #252525;
+
+    .entry-body {
+
+      display: grid;
+
+      grid-template-columns: 100px 1fr;
+
+      gap: 40px;
+
     }
 
 
     .entry-content {
-      font-size: 15px;
 
-      line-height: 1.9;
+      max-width: 760px;
 
-      color: #5d8274;
     }
 
 
     .entry-content p {
+
+      font-size: 16px;
+
+      line-height: 1.9;
+
       margin-bottom: 25px;
+
     }
 
 
+    .entry-content p:last-child {
 
-    /* =====================================================
-       ENTRY HIGHLIGHT
-    ===================================================== */
+      margin-bottom: 0;
+
+    }
+
+
+    /* =========================================================
+       HIGHLIGHT
+       ========================================================= */
 
     .entry-highlight {
-      margin: 55px 0;
 
-      padding: 35px 0 35px 30px;
+      margin: 40px 0;
 
-      border-left: 4px solid #d8de56;
+      padding: 28px 30px;
+
+      background: var(--lime);
+
+      border-left: 7px solid var(--black);
+
+    }
+
+
+    .entry-highlight p {
+
+      margin: 0;
 
       font-family: "Playfair Display", serif;
 
-      font-size: clamp(22px, 3vw, 30px);
+      font-size: clamp(22px, 3vw, 31px);
 
-      line-height: 1.45;
+      line-height: 1.35;
 
-      color: #252525;
+      font-weight: 600;
+
     }
 
 
-
-    /* =====================================================
+    /* =========================================================
        LEARNING SECTION
-    ===================================================== */
+       ========================================================= */
 
     .learning {
-      margin-top: 65px;
 
-      padding-top: 35px;
+      margin-top: 50px;
 
-      border-top: 1px solid #7c9783;
+      padding-top: 30px;
+
+      border-top: 1px solid var(--black);
+
     }
 
 
     .learning-label {
+
+      margin-bottom: 14px;
+
       font-size: 10px;
 
       font-weight: 700;
@@ -712,372 +781,423 @@
 
       text-transform: uppercase;
 
-      color: #5d8274;
+      color: var(--teal);
 
-      margin-bottom: 20px;
     }
 
 
-    .learning-label::before {
-      content: "✦";
+    .learning p {
 
-      color: #d8de56;
+      font-size: 17px;
 
-      margin-right: 8px;
+      line-height: 1.8;
 
-      font-size: 9px;
     }
 
 
-    .learning-main {
+    .learning strong {
+
       font-family: "Playfair Display", serif;
 
-      font-size: clamp(25px, 3vw, 35px);
+      font-size: 23px;
 
-      line-height: 1.4;
-
-      color: #252525;
-
-      margin-bottom: 18px;
     }
 
 
-    .learning-final {
-      font-size: 14px;
+    /* =========================================================
+       SECONDARY ACCENT
+       ========================================================= */
 
-      font-weight: 700;
+    .pink-note {
 
-      color: #5d8274;
+      display: inline-block;
+
+      background: var(--pink);
+
+      padding: 2px 7px;
+
+      font-weight: 600;
+
     }
 
 
-
-    /* =====================================================
+    /* =========================================================
        FOOTER
-    ===================================================== */
+       ========================================================= */
 
     footer {
+
+      border-top: 1px solid var(--black);
+
       width: 90%;
 
       max-width: 1200px;
 
       margin: 0 auto;
 
-      padding: 30px 0;
-
-      border-top: 1px solid #7c9783;
+      padding: 30px 0 40px;
 
       display: flex;
 
+      align-items: center;
+
       justify-content: space-between;
 
-      gap: 20px;
+      gap: 30px;
 
       font-size: 10px;
 
-      letter-spacing: 0.07em;
+      font-weight: 600;
 
-      color: #7c9783;
+      letter-spacing: 0.08em;
+
+      text-transform: uppercase;
+
     }
 
 
+    .footer-right {
 
-    /* =====================================================
+      color: var(--teal);
+
+    }
+
+
+    /* =========================================================
        MOBILE
-    ===================================================== */
+       ========================================================= */
 
     @media (max-width: 760px) {
 
 
-      header {
-        padding: 20px 5%;
+      .nav {
+
+        min-height: 66px;
+
+      }
+
+
+      .brand {
+
+        font-size: 11px;
+
+      }
+
+
+      .brand-mark {
+
+        width: 32px;
+
+        height: 32px;
+
+        font-size: 16px;
+
+      }
+
+
+      .back-link {
+
+        font-size: 9px;
+
       }
 
 
       .hero {
-        padding: 70px 0 55px;
-      }
 
+        padding: 70px 0 60px;
 
-      .hero-grid {
-        display: block;
       }
 
 
       .hero h1 {
-        margin-bottom: 30px;
+
+        font-size: clamp(44px, 15vw, 68px);
+
       }
 
 
       .hero-description {
-        max-width: 100%;
 
-        font-size: 14px;
+        font-size: 15px;
+
       }
 
 
       .calendar-section {
-        padding: 60px 0 80px;
+
+        padding-bottom: 70px;
+
       }
 
 
-      .calendar-heading {
+      .section-heading {
+
         align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 8px;
+
       }
 
 
       .calendar {
-        grid-template-columns:
-          repeat(7, minmax(0, 1fr));
+
+        grid-template-columns: repeat(7, 1fr);
+
       }
 
 
       .weekday {
-        min-height: 38px;
 
-        padding: 10px 3px;
+        min-height: 34px;
 
-        text-align: center;
+        font-size: 8px;
 
-        font-size: 7px;
+        letter-spacing: 0.05em;
+
       }
 
 
       .day {
+
         min-height: 68px;
 
-        padding: 9px 7px;
+        padding: 8px;
+
       }
 
 
       .day-number {
+
         font-size: 10px;
-      }
 
-
-      .entry-mini {
-        display: none;
       }
 
 
       .entry-dot {
-        width: 5px;
 
-        height: 5px;
+        width: 6px;
+
+        height: 6px;
 
         top: 10px;
 
-        right: 10px;
+        right: 8px;
+
       }
 
 
-      .calendar-note {
-        font-size: 9px;
+      .entry-mini {
+
+        left: 8px;
+
+        right: 8px;
+
+        bottom: 8px;
+
+        font-size: 7px;
+
       }
 
 
-      .entry-section {
-        padding-bottom: 90px;
+      .entries {
+
+        padding-bottom: 80px;
+
       }
 
 
-      .entry-grid {
-        display: block;
+      .entry {
+
+        padding: 55px 0 65px;
+
       }
 
 
-      .entry-side {
-        display: flex;
+      .entry-header {
 
-        justify-content: space-between;
+        grid-template-columns: 1fr;
 
-        align-items: flex-start;
+        gap: 14px;
 
-        margin-bottom: 28px;
-      }
-
-
-      .entry-category {
-        margin-top: 0;
-
-        text-align: right;
-      }
-
-
-      .entry-title {
         margin-bottom: 35px;
+
       }
 
 
-      .entry-content {
-        font-size: 14px;
+      .entry-number {
 
-        line-height: 1.85;
+        padding-top: 0;
+
+      }
+
+
+      .entry h2 {
+
+        font-size: clamp(38px, 12vw, 58px);
+
+      }
+
+
+      .entry-body {
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+      }
+
+
+      .entry-content p {
+
+        font-size: 15px;
+
+        line-height: 1.8;
+
       }
 
 
       .entry-highlight {
-        margin: 45px 0;
 
-        padding-left: 20px;
+        margin: 35px 0;
 
-        border-left-width: 3px;
+        padding: 23px 20px;
+
+        border-left-width: 5px;
+
+      }
+
+
+      .entry-highlight p {
 
         font-size: 22px;
+
       }
 
 
-      .learning {
-        margin-top: 50px;
-      }
+      .learning p {
 
+        font-size: 15px;
 
-      .learning-main {
-        font-size: 25px;
       }
 
 
       footer {
+
         flex-direction: column;
 
-        padding: 25px 0;
+        align-items: flex-start;
+
+        gap: 10px;
+
       }
 
     }
-
 
   </style>
 
 </head>
 
 
-
 <body>
 
 
-  <!-- =====================================================
+  <!-- =======================================================
        HEADER
-  ===================================================== -->
+       ======================================================= -->
 
   <header>
 
+    <nav class="nav">
 
-    <a
-      href="index.html"
-      class="brand"
-      aria-label="Back to portfolio"
-    >
+      <a
+        href="index.html"
+        class="brand"
+        aria-label="Back to portfolio"
+      >
 
-      <span class="brand-mark">
-        T
-      </span>
+        <span class="brand-mark">
+          T
+        </span>
 
-      <span>
-        TAMIMMAH
-      </span>
+        <span>
+          TAMIMMAH
+        </span>
 
-    </a>
+      </a>
 
 
-    <a
-      href="index.html"
-      class="back-home"
-    >
-      ← Portfolio
-    </a>
+      <a
+        href="index.html"
+        class="back-link"
+      >
 
+        <span class="back-arrow">
+          ←
+        </span>
+
+        Back to portfolio
+
+      </a>
+
+    </nav>
 
   </header>
 
 
 
-  <!-- =====================================================
-       MAIN
-  ===================================================== -->
+  <!-- =======================================================
+       HERO
+       ======================================================= -->
 
   <main>
 
-
-    <!-- ===================================================
-         JOURNAL HERO
-    =================================================== -->
-
     <section class="hero">
 
-
-      <div class="section-number">
-
-        <span>08</span> / JOURNAL
-
+      <div class="eyebrow">
+        08 / JOURNAL
       </div>
 
 
-      <div class="hero-grid">
+      <h1>
+        Notes on
+        <span>
+          work,
+        </span>
+        learning & growth.
+      </h1>
 
 
-        <h1>
+      <p class="hero-description">
 
-          Notes on work,<br>
-          learning & growth.
+        A personal professional journal documenting the things
+        I'm building, learning, challenging myself with, and
+        figuring out along the way.
 
-        </h1>
-
-
-        <p class="hero-description">
-
-          A personal professional journal documenting
-          the things I'm building, learning, challenging
-          myself with, and figuring out along the way.
-
-        </p>
-
-
-      </div>
-
+      </p>
 
     </section>
 
 
 
-    <!-- ===================================================
+    <!-- =====================================================
          CALENDAR
-    =================================================== -->
+         ===================================================== -->
 
     <section class="calendar-section">
 
+      <div class="section-heading">
 
-      <div class="calendar-heading">
+        <h2>
+          September 2026
+        </h2>
 
-
-        <div class="calendar-heading-left">
-
-
-          <div class="calendar-label">
-
-            Journal Archive
-
-          </div>
-
-
-          <h2 class="calendar-month">
-
-            September
-
-          </h2>
-
-
-        </div>
-
-
-        <div class="calendar-year">
-
-          2026
-
-        </div>
-
+        <span>
+          Select a date to read
+        </span>
 
       </div>
-
 
 
       <div class="calendar">
@@ -1086,34 +1206,22 @@
         <!-- WEEKDAYS -->
 
         <div class="weekday">Mon</div>
-
         <div class="weekday">Tue</div>
-
         <div class="weekday">Wed</div>
-
         <div class="weekday">Thu</div>
-
         <div class="weekday">Fri</div>
-
         <div class="weekday">Sat</div>
-
         <div class="weekday">Sun</div>
 
 
 
-        <!-- AUGUST -->
+        <!-- AUGUST 31 -->
 
-        <div class="day empty">
-
-          <span class="day-number">
-            31
-          </span>
-
-        </div>
+        <div class="day empty"></div>
 
 
 
-        <!-- SEPTEMBER -->
+        <!-- SEPTEMBER 1 -->
 
         <div class="day">
 
@@ -1124,6 +1232,9 @@
         </div>
 
 
+
+        <!-- SEPTEMBER 2 -->
+
         <div class="day">
 
           <span class="day-number">
@@ -1132,6 +1243,9 @@
 
         </div>
 
+
+
+        <!-- SEPTEMBER 3 -->
 
         <div class="day">
 
@@ -1142,6 +1256,9 @@
         </div>
 
 
+
+        <!-- SEPTEMBER 4 -->
+
         <div class="day">
 
           <span class="day-number">
@@ -1150,6 +1267,9 @@
 
         </div>
 
+
+
+        <!-- SEPTEMBER 5 -->
 
         <div class="day">
 
@@ -1160,6 +1280,9 @@
         </div>
 
 
+
+        <!-- SEPTEMBER 6 -->
+
         <div class="day">
 
           <span class="day-number">
@@ -1168,6 +1291,9 @@
 
         </div>
 
+
+
+        <!-- SEPTEMBER 7 -->
 
         <div class="day">
 
@@ -1179,65 +1305,51 @@
 
 
 
-        <!-- =================================================
-             08 SEPTEMBER — JOURNAL ENTRY
-        ================================================== -->
+        <!-- SEPTEMBER 8 -->
 
         <a
           href="#2026-09-08"
           class="day has-entry"
-          aria-label="Read journal entry from September 8, 2026"
         >
 
           <span class="day-number">
             8
           </span>
 
-
           <span class="entry-dot"></span>
 
-
           <span class="entry-mini">
-
-            Maybe “I Can't”<br>
+            Maybe “I Can't”
             Was Too Easy
-
           </span>
-
 
         </a>
 
 
 
-        <!-- =================================================
-             09 SEPTEMBER — JOURNAL ENTRY / TODAY
-        ================================================== -->
+        <!-- SEPTEMBER 9 -->
 
         <a
           href="#2026-09-09"
           class="day has-entry today"
-          aria-label="Read journal entry from September 9, 2026"
         >
 
           <span class="day-number">
             9
           </span>
 
-
           <span class="entry-dot"></span>
 
-
           <span class="entry-mini">
-
-            Learning Outside<br>
+            Learning Outside
             My Field
-
           </span>
-
 
         </a>
 
 
+
+        <!-- SEPTEMBER 10 -->
 
         <div class="day">
 
@@ -1248,6 +1360,9 @@
         </div>
 
 
+
+        <!-- SEPTEMBER 11 -->
+
         <div class="day">
 
           <span class="day-number">
@@ -1256,6 +1371,9 @@
 
         </div>
 
+
+
+        <!-- SEPTEMBER 12 -->
 
         <div class="day">
 
@@ -1266,6 +1384,9 @@
         </div>
 
 
+
+        <!-- SEPTEMBER 13 -->
+
         <div class="day">
 
           <span class="day-number">
@@ -1274,6 +1395,9 @@
 
         </div>
 
+
+
+        <!-- SEPTEMBER 14 -->
 
         <div class="day">
 
@@ -1284,6 +1408,9 @@
         </div>
 
 
+
+        <!-- SEPTEMBER 15 -->
+
         <div class="day">
 
           <span class="day-number">
@@ -1292,6 +1419,9 @@
 
         </div>
 
+
+
+        <!-- SEPTEMBER 16 -->
 
         <div class="day">
 
@@ -1302,6 +1432,9 @@
         </div>
 
 
+
+        <!-- SEPTEMBER 17 -->
+
         <div class="day">
 
           <span class="day-number">
@@ -1310,6 +1443,9 @@
 
         </div>
 
+
+
+        <!-- SEPTEMBER 18 -->
 
         <div class="day">
 
@@ -1320,6 +1456,9 @@
         </div>
 
 
+
+        <!-- SEPTEMBER 19 -->
+
         <div class="day">
 
           <span class="day-number">
@@ -1328,6 +1467,9 @@
 
         </div>
 
+
+
+        <!-- SEPTEMBER 20 -->
 
         <div class="day">
 
@@ -1338,6 +1480,9 @@
         </div>
 
 
+
+        <!-- SEPTEMBER 21 -->
+
         <div class="day">
 
           <span class="day-number">
@@ -1346,6 +1491,9 @@
 
         </div>
 
+
+
+        <!-- SEPTEMBER 22 -->
 
         <div class="day">
 
@@ -1356,6 +1504,9 @@
         </div>
 
 
+
+        <!-- SEPTEMBER 23 -->
+
         <div class="day">
 
           <span class="day-number">
@@ -1364,6 +1515,9 @@
 
         </div>
 
+
+
+        <!-- SEPTEMBER 24 -->
 
         <div class="day">
 
@@ -1374,6 +1528,9 @@
         </div>
 
 
+
+        <!-- SEPTEMBER 25 -->
+
         <div class="day">
 
           <span class="day-number">
@@ -1382,6 +1539,9 @@
 
         </div>
 
+
+
+        <!-- SEPTEMBER 26 -->
 
         <div class="day">
 
@@ -1392,6 +1552,9 @@
         </div>
 
 
+
+        <!-- SEPTEMBER 27 -->
+
         <div class="day">
 
           <span class="day-number">
@@ -1400,6 +1563,9 @@
 
         </div>
 
+
+
+        <!-- SEPTEMBER 28 -->
 
         <div class="day">
 
@@ -1410,6 +1576,9 @@
         </div>
 
 
+
+        <!-- SEPTEMBER 29 -->
+
         <div class="day">
 
           <span class="day-number">
@@ -1418,6 +1587,9 @@
 
         </div>
 
+
+
+        <!-- SEPTEMBER 30 -->
 
         <div class="day">
 
@@ -1431,513 +1603,374 @@
 
         <!-- OCTOBER -->
 
-        <div class="day empty">
+        <div class="day empty"></div>
 
-          <span class="day-number">
-            1
-          </span>
+        <div class="day empty"></div>
 
-        </div>
+        <div class="day empty"></div>
 
-
-        <div class="day empty">
-
-          <span class="day-number">
-            2
-          </span>
-
-        </div>
-
-
-        <div class="day empty">
-
-          <span class="day-number">
-            3
-          </span>
-
-        </div>
-
-
-        <div class="day empty">
-
-          <span class="day-number">
-            4
-          </span>
-
-        </div>
+        <div class="day empty"></div>
 
 
       </div>
-
-
-
-      <div class="calendar-note">
-
-
-        <span class="calendar-note-mark"></span>
-
-
-        <span>
-          Click a marked date to read the entry
-        </span>
-
-
-      </div>
-
 
     </section>
 
 
 
-    <!-- ===================================================
-         SEPTEMBER 9 JOURNAL ENTRY
-    ===================================================== -->
+    <!-- =====================================================
+         JOURNAL ENTRIES
+         ===================================================== -->
 
-    <section
-      class="entry-section"
-      id="2026-09-09"
-    >
+    <section class="entries">
 
 
-      <div class="entry-header">
+
+      <!-- ===================================================
+           ENTRY 02 — SEPTEMBER 9
+           =================================================== -->
+
+      <article
+        class="entry"
+        id="2026-09-09"
+      >
+
+        <div class="entry-header">
+
+          <div class="entry-number">
+            02
+          </div>
 
 
-        <div class="entry-grid">
+          <div>
 
+            <div class="entry-meta">
 
-          <!-- ENTRY SIDEBAR -->
+              <span class="entry-date">
+                September 9, 2026
+              </span>
 
-          <aside class="entry-side">
+              <span class="entry-category">
+                LEARNING
+              </span>
 
+              <span class="entry-category">
+                BUSINESS
+              </span>
 
-            <div>
-
-
-              <div class="entry-date">
-
-                09 SEP 2026
-
-              </div>
-
-
-              <div class="entry-number">
-
-                02
-
-              </div>
-
-
-            </div>
-
-
-            <div class="entry-category">
-
-              LEARNING<br>
-              BUSINESS<br>
-              RESEARCH
+              <span class="entry-category">
+                RESEARCH
+              </span>
 
             </div>
 
 
-          </aside>
-
-
-
-          <!-- ENTRY CONTENT -->
-
-          <article class="entry-main">
-
-
-            <h2 class="entry-title">
-
-              Learning Outside<br>
-              My Field
-
+            <h2>
+              Learning Outside My Field
             </h2>
 
+          </div>
+
+        </div>
 
 
-            <div class="entry-content">
 
+        <div class="entry-body">
+
+          <div></div>
+
+
+          <div class="entry-content">
+
+
+            <p>
+
+              Today I accompanied the CEO of PT Cahaya Segara
+              Indonesia to UI and BRIN for research related to
+              corrosion and material inspection for ships.
+
+            </p>
+
+
+            <p>
+
+              The technical side was completely outside my
+              field — metallurgy, SEM/EDX, material samples,
+              and even water samples. I didn't understand
+              everything, but I found it interesting seeing
+              how the research was being figured out.
+
+            </p>
+
+
+            <p>
+
+              One of the professors working with PT Cahaya
+              Segara Indonesia helped discuss the research
+              with UI researchers, especially around what could
+              be investigated and what facilities were needed.
+              We eventually went to BRIN as well because some
+              of the research required capabilities beyond
+              what was available at UI.
+
+            </p>
+
+
+
+            <div class="entry-highlight">
 
               <p>
-
-                Today I accompanied the CEO of
-                PT Cahaya Segara Indonesia to UI and
-                BRIN for research related to corrosion
-                and material inspection for ships.
-
-              </p>
-
-
-              <p>
-
-                The technical side was completely outside
-                my field—metallurgy, SEM/EDX, material
-                samples, and even water samples. I didn't
-                understand everything, but I found it
-                interesting seeing how the research was
-                being figured out.
-
-              </p>
-
-
-              <p>
-
-                One of the professors working with
-                PT Cahaya Segara Indonesia helped discuss
-                the research with UI researchers, especially
-                around what could be investigated and what
-                facilities were needed. We eventually went
-                to BRIN as well because some of the research
-                required capabilities beyond what was
-                available at UI.
-
-              </p>
-
-
-
-              <!-- HIGHLIGHT -->
-
-              <div class="entry-highlight">
 
                 You don't always need to know the answer.
-
-                Sometimes you just need to know
-                who to ask.
-
-              </div>
-
-
-
-              <p>
-
-                As an ITB graduate, I was honestly a little
-                jealous seeing the facilities and research
-                capabilities at UI. 😂 But it also reminded me
-                that ITB gave me a different kind of experience
-                through its startup incubator and
-                entrepreneurship ecosystem.
+                Sometimes you just need to know who to ask.
 
               </p>
-
-
-              <p>
-
-                What stayed with me most was seeing how
-                a real business problem can require different
-                people, expertise, and institutions to come
-                together.
-
-              </p>
-
-
-
-              <!-- WHAT I LEARNED -->
-
-              <div class="learning">
-
-
-                <div class="learning-label">
-
-                  What I learned today
-
-                </div>
-
-
-                <p class="learning-main">
-
-                  When you don't have the answer,
-                  find the people and resources
-                  that can help you get there.
-
-                </p>
-
-
-                <p class="learning-final">
-
-                  Stay curious. Ask better questions.
-                  Keep learning outside your field.
-
-                </p>
-
-
-              </div>
-
 
             </div>
 
 
-          </article>
 
+            <p>
+
+              As an ITB graduate, I was honestly a little
+              jealous seeing the facilities and research
+              capabilities at UI. 😂 But it also reminded me
+              that ITB gave me a different kind of experience
+              through its startup incubator and entrepreneurship
+              ecosystem.
+
+            </p>
+
+
+            <p>
+
+              What stayed with me most was seeing how a real
+              business problem can require different people,
+              expertise, and institutions to come together.
+
+            </p>
+
+
+
+            <div class="learning">
+
+              <div class="learning-label">
+                What I'm taking away
+              </div>
+
+              <p>
+
+                <strong>
+                  When you don't have the answer, find the
+                  people and resources that can help you get
+                  there.
+                </strong>
+
+              </p>
+
+              <p style="margin-top: 18px;">
+
+                Stay curious. Ask better questions. Keep
+                learning outside your field.
+
+              </p>
+
+            </div>
+
+
+          </div>
 
         </div>
 
-
-      </div>
-
-
-    </section>
+      </article>
 
 
 
-    <!-- ===================================================
-         SEPTEMBER 8 JOURNAL ENTRY
-    ===================================================== -->
+      <!-- ===================================================
+           ENTRY 01 — SEPTEMBER 8
+           =================================================== -->
 
-    <section
-      class="entry-section"
-      id="2026-09-08"
-    >
+      <article
+        class="entry"
+        id="2026-09-08"
+      >
 
+        <div class="entry-header">
 
-      <div class="entry-header">
-
-
-        <div class="entry-grid">
-
-
-          <!-- ENTRY SIDEBAR -->
-
-          <aside class="entry-side">
+          <div class="entry-number">
+            01
+          </div>
 
 
-            <div>
+          <div>
 
+            <div class="entry-meta">
 
-              <div class="entry-date">
+              <span class="entry-date">
+                September 8, 2026
+              </span>
 
-                08 SEP 2026
+              <span class="entry-category">
+                WORK
+              </span>
 
-              </div>
+              <span class="entry-category">
+                GROWTH
+              </span>
 
-
-              <div class="entry-number">
-
-                01
-
-              </div>
-
+              <span class="entry-category">
+                TEAM BUILDING
+              </span>
 
             </div>
 
 
-            <div class="entry-category">
-
-              WORK<br>
-              GROWTH<br>
-              TEAM BUILDING
-
-            </div>
-
-
-          </aside>
-
-
-
-          <!-- ENTRY CONTENT -->
-
-          <article class="entry-main">
-
-
-            <h2 class="entry-title">
-
+            <h2>
               Maybe “I Can't” Was Too Easy
-
             </h2>
 
-
-
-            <div class="entry-content">
-
-
-              <p>
-
-                Today was one of those days where several
-                things seemed to happen at once.
-
-              </p>
-
-
-              <p>
-
-                A business partner from the Philippines
-                reached out about an upcoming M COUNTDOWN
-                live voting period. They were looking for
-                around 3,000 votes, while with my current
-                manpower, I could realistically handle
-                around 1,500.
-
-              </p>
-
-
-              <p>
-
-                Rather than immediately turning the request
-                down, I decided to see if I could find a
-                way to increase my capacity.
-
-              </p>
-
-
-              <p>
-
-                I started reaching out to potential new
-                employees through Threads. This wasn't easy
-                to do alongside everything else. I was
-                recruiting while simultaneously running my
-                digital business, managing my existing team,
-                handling ongoing work, and making sure
-                everything continued moving.
-
-              </p>
-
-
-              <p>
-
-                I reached out to around 20 people.
-
-              </p>
-
-
-              <p>
-
-                In the end, only one person was able to
-                handle the programming and workflow required.
-
-              </p>
-
-
-              <p>
-
-                It wasn't the number I initially hoped for,
-                but it was still progress. It also reminded
-                me that building a team isn't simply about
-                finding more people. It's about finding the
-                right people who can actually contribute.
-
-              </p>
-
-
-
-              <!-- HIGHLIGHT -->
-
-              <div class="entry-highlight">
-
-                “Instead of asking,
-                ‘Do I have enough people?’
-                I started asking,
-                ‘Can I find the people I need?’”
-
-              </div>
-
-
-
-              <p>
-
-                The same day also brought some encouraging
-                developments in my career. An opportunity I
-                had been pursuing moved forward, while
-                another professional opportunity was
-                progressing through its assessment stage.
-
-              </p>
-
-
-              <p>
-
-                Having different things develop at the same
-                time made the day feel significant. It was
-                a reminder that the work I've been putting
-                into my business, my skills, and my career
-                is gradually creating new possibilities.
-
-              </p>
-
-
-
-              <!-- WHAT I LEARNED -->
-
-              <div class="learning">
-
-
-                <div class="learning-label">
-
-                  What I learned today
-
-                </div>
-
-
-                <p class="learning-main">
-
-                  Maybe I don't need to have enough
-                  before I begin.
-
-                </p>
-
-
-                <p class="learning-main">
-
-                  Sometimes, I just need to begin —
-                  and figure out what “enough” looks like
-                  along the way.
-
-                </p>
-
-
-                <p class="learning-final">
-
-                  Maybe “I can't” was too easy.
-
-                </p>
-
-
-              </div>
-
-
-            </div>
-
-
-          </article>
-
+          </div>
 
         </div>
 
 
-      </div>
+
+        <div class="entry-body">
+
+          <div></div>
+
+
+          <div class="entry-content">
+
+
+            <p>
+
+              Today, a business partner from the Philippines
+              asked if I could help reach around 3,000
+              M COUNTDOWN live votes.
+
+            </p>
+
+
+            <p>
+
+              The problem was that with my current manpower,
+              I could realistically handle around 1,500.
+              My first instinct could have been to simply say
+              no.
+
+            </p>
+
+
+            <p>
+
+              But instead of turning it down immediately,
+              I started thinking about whether I could
+              increase my capacity.
+
+            </p>
+
+
+            <p>
+
+              I reached out to potential employees through
+              Threads while still managing my digital
+              business, my existing team, and ongoing work.
+              I ended up reaching around 20 people, but only
+              one seemed capable of handling the programming
+              and workflow I needed.
+
+            </p>
+
+
+
+            <div class="entry-highlight">
+
+              <p>
+
+                Instead of asking, “Do I have enough people?”
+                I started asking, “Can I find the people I
+                need?”
+
+              </p>
+
+            </div>
+
+
+
+            <p>
+
+              It made me realize that building a team isn't
+              always about finding <em>more</em> people.
+              Sometimes it's about finding the right people.
+
+            </p>
+
+
+            <p>
+
+              At the same time, other career opportunities
+              were also moving forward.
+
+            </p>
+
+
+            <p>
+
+              Maybe I don't always need to have everything
+              figured out before I start. Sometimes I need
+              to start, then figure out how to make it work.
+
+            </p>
+
+
+
+            <div class="learning">
+
+              <div class="learning-label">
+                What I'm taking away
+              </div>
+
+              <p>
+
+                <strong>
+                  Maybe “I can't” was too easy.
+                </strong>
+
+              </p>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </article>
 
 
     </section>
-
 
   </main>
 
 
 
-  <!-- =====================================================
+  <!-- =======================================================
        FOOTER
-  ===================================================== -->
+       ======================================================= -->
 
   <footer>
 
-
     <span>
-
       © 2026 Tamimmah Disma Lestari
-
     </span>
 
-
-    <span>
-
+    <span class="footer-right">
       Built with intention.
-
     </span>
-
 
   </footer>
 
 
 </body>
-
 </html>
