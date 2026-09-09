@@ -5298,3 +5298,80 @@ h3 em {
   }
 
 }
+/* =========================================================
+   05 — SKILLS & EDUCATION
+   TYPOGRAPHY ALIGNMENT
+========================================================= */
+
+.skills-section {
+  font-family: var(--sans);
+}
+
+/* Main editorial heading */
+.skills-section .skills-intro h2 {
+  font-family: var(--sans);
+  font-weight: 500;
+  letter-spacing: -.065em;
+}
+
+.skills-section .skills-intro h2 em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Supporting text */
+.skills-section .skills-intro p {
+  font-family: var(--sans);
+}
+
+/* Center of orbit */
+.skills-section .skill-center span,
+.skills-section .skill-center small {
+  font-family: var(--sans);
+}
+
+.skills-section .skill-center strong {
+  font-family: var(--serif);
+}
+
+/* Orbit nodes */
+.skills-section .skill-node {
+  font-family: var(--sans);
+}
+
+.skills-section .skill-node span,
+.skills-section .skill-node strong {
+  font-family: var(--sans);
+}
+
+/* Skill explanation */
+.skills-section .skill-detail span,
+.skills-section .skill-detail p {
+  font-family: var(--sans);
+}
+
+/* Tools */
+.skills-section .tools-row > span,
+.skills-section .tool-pills span {
+  font-family: var(--sans);
+}
+
+/* Education */
+.skills-section .education-label,
+.skills-section .education-main > span,
+.skills-section .education-main p,
+.skills-section .education-gpa span,
+.skills-section .education-gpa small {
+  font-family: var(--sans);
+}
+
+.skills-section .education-main h3 {
+  font-family: var(--sans);
+  font-weight: 500;
+}
+
+.skills-section .education-gpa strong {
+  font-family: var(--serif);
+  font-weight: 500;
+}
