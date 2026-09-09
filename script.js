@@ -36,14 +36,6 @@
     ".takeaway-skill, .today-skill"
   );
 
-  const skillNodes = document.querySelectorAll(
-    ".skill-node[data-skill]"
-  );
-
-  const skillDetails = document.querySelectorAll(
-    ".skill-detail[data-detail]"
-  );
-
   const projectCards = document.querySelectorAll(
     ".project"
   );
@@ -756,12 +748,42 @@
   );
 
 
+   /* =========================================================
+     SKILLS — INTERACTIVE CARD SYSTEM
+  =========================================================
+
+     The Skills section uses:
+       .skill-card
+       .skill-details
+       .skill-detail
+
+     Each card controls one corresponding detail panel.
+
+     The interaction works with:
+       → mouse click
+       → keyboard Enter
+       → keyboard Space
+
+     Only one skill is active at a time.
+  ========================================================= */
+
+
+  const skillCards = document.querySelectorAll(
+    ".skill-card[data-skill]"
+  );
+
+  const skillDetailItems = document.querySelectorAll(
+    ".skill-detail[data-detail]"
+  );
+
+
   /* =========================================================
-     SKILLS CONSTELLATION
+     ACTIVATE SKILL
   ========================================================= */
 
   function activateSkill(
-    skillName
+    skillName,
+    shouldScroll = false
   ) {
 
     if (!skillName) {
@@ -769,20 +791,24 @@
     }
 
 
-    skillNodes.forEach(
-      node => {
+    /* -----------------------------------------
+       UPDATE CARDS
+    ----------------------------------------- */
+
+    skillCards.forEach(
+      card => {
 
         const active =
-          node.dataset.skill === skillName;
+          card.dataset.skill === skillName;
 
 
-        node.classList.toggle(
+        card.classList.toggle(
           "active",
           active
         );
 
 
-        node.setAttribute(
+        card.setAttribute(
           "aria-pressed",
           active
             ? "true"
@@ -793,7 +819,11 @@
     );
 
 
-    skillDetails.forEach(
+    /* -----------------------------------------
+       UPDATE DETAIL PANELS
+    ----------------------------------------- */
+
+    skillDetailItems.forEach(
       detail => {
 
         const active =
@@ -808,25 +838,81 @@
       }
     );
 
+
+    /* -----------------------------------------
+       OPTIONAL MOBILE SCROLL
+    ----------------------------------------- */
+
+    if (
+      shouldScroll &&
+      window.innerWidth <= 700
+    ) {
+
+      const details =
+        document.querySelector(
+          ".skill-details"
+        );
+
+
+      if (details) {
+
+        const headerOffset =
+          getHeaderOffset();
+
+
+        const targetPosition =
+          details.getBoundingClientRect().top +
+          window.scrollY -
+          headerOffset -
+          15;
+
+
+        window.scrollTo({
+
+          top:
+            Math.max(
+              0,
+              targetPosition
+            ),
+
+          behavior:
+            reducedMotion()
+              ? "auto"
+              : "smooth"
+
+        });
+
+      }
+
+    }
+
   }
 
 
-  skillNodes.forEach(
-    node => {
+  /* =========================================================
+     INITIALIZE SKILL CARDS
+  ========================================================= */
 
-      node.setAttribute(
+  skillCards.forEach(
+    (card, index) => {
+
+      /* -----------------------------------------
+         ACCESSIBILITY
+      ----------------------------------------- */
+
+      card.setAttribute(
         "role",
         "button"
       );
 
 
-      node.setAttribute(
+      card.setAttribute(
         "tabindex",
         "0"
       );
 
 
-      node.setAttribute(
+      card.setAttribute(
         "aria-pressed",
         "false"
       );
@@ -836,12 +922,13 @@
          CLICK
       ----------------------------------------- */
 
-      node.addEventListener(
+      card.addEventListener(
         "click",
         () => {
 
           activateSkill(
-            node.dataset.skill
+            card.dataset.skill,
+            true
           );
 
         }
@@ -852,7 +939,7 @@
          KEYBOARD
       ----------------------------------------- */
 
-      node.addEventListener(
+      card.addEventListener(
         "keydown",
         event => {
 
@@ -865,7 +952,8 @@
 
 
             activateSkill(
-              node.dataset.skill
+              card.dataset.skill,
+              true
             );
 
           }
@@ -873,10 +961,110 @@
         }
       );
 
+
+      /* -----------------------------------------
+         STAGGER
+      ----------------------------------------- */
+
+      if (!reducedMotion()) {
+
+        card.style.transitionDelay =
+          `${Math.min(
+            index * 45,
+            225
+          )}ms`;
+
+      }
+
     }
   );
 
 
+  /* =========================================================
+     INITIAL ACTIVE SKILL
+  =========================================================
+
+     If HTML already contains:
+       .skill-card.active
+
+     use that skill.
+
+     Otherwise activate the first card.
+  ========================================================= */
+
+
+  if (skillCards.length) {
+
+    const existingActive =
+      document.querySelector(
+        ".skill-card.active[data-skill]"
+      );
+
+
+    if (existingActive) {
+
+      activateSkill(
+        existingActive.dataset.skill,
+        false
+      );
+
+    } else {
+
+      activateSkill(
+        skillCards[0].dataset.skill,
+        false
+      );
+
+    }
+
+  }
+
+
+  /* =========================================================
+     HOVER MICRO-INTERACTION
+  =========================================================
+
+     Desktop only.
+
+     Adds a subtle visual response without
+     interfering with the click interaction.
+  ========================================================= */
+
+  if (
+    supportsHover.matches &&
+    !reducedMotion()
+  ) {
+
+    skillCards.forEach(
+      card => {
+
+        card.addEventListener(
+          "mouseenter",
+          () => {
+
+            card.classList.add(
+              "is-hovered"
+            );
+
+          }
+        );
+
+
+        card.addEventListener(
+          "mouseleave",
+          () => {
+
+            card.classList.remove(
+              "is-hovered"
+            );
+
+          }
+        );
+
+      }
+    );
+
+  }
   /* =========================================================
      REVEAL ANIMATIONS
   ========================================================= */
