@@ -5937,41 +5937,36 @@ h3 em {
 
 .tools-list {
   display: flex;
-
   flex-wrap: wrap;
-
+  align-items: center;
   gap: 9px;
-
   max-width: 850px;
 }
 
-.tool-chip {
+.tools-list .tool-chip {
   display: inline-flex;
 
-  align-items: center;
-  justify-content: center;
-
+  width: auto;
+  height: auto;
   min-height: 36px;
 
   padding: 9px 15px;
 
-  border: 1px solid rgba(37, 37, 37, .22);
+  align-items: center;
+  justify-content: center;
 
+  border: 1px solid rgba(37, 37, 37, .22);
   border-radius: 999px;
 
   background: transparent;
 
-  color: inherit;
-
   font-family: var(--sans, "DM Sans", sans-serif);
-
   font-size: 8px;
-
   font-weight: 700;
-
   letter-spacing: .06em;
-
   text-transform: uppercase;
+
+  white-space: nowrap;
 
   cursor: default;
 
@@ -5979,7 +5974,6 @@ h3 em {
     transform .25s ease,
     background-color .25s ease,
     border-color .25s ease,
-    color .25s ease,
     box-shadow .25s ease;
 }
 
@@ -5990,12 +5984,9 @@ h3 em {
 
 @media (hover: hover) and (pointer: fine) {
 
-  .tool-chip:hover {
+  .tools-list .tool-chip:hover {
     background: var(--yellow, #D8DE56);
-
     border-color: var(--yellow, #D8DE56);
-
-    color: var(--ink, #252525);
 
     transform: translateY(-3px);
 
@@ -6010,7 +6001,7 @@ h3 em {
    MORE TO COME
    ========================================================= */
 
-.tool-chip-more {
+.tools-list .tool-chip-more {
   opacity: .7;
 }
 
@@ -6023,21 +6014,17 @@ h3 em {
 
   .skills-tools {
     grid-template-columns: 1fr;
-
     gap: 20px;
   }
 
   .tools-list {
     max-width: 100%;
-
     gap: 8px;
   }
 
-  .tool-chip {
+  .tools-list .tool-chip {
     min-height: 34px;
-
     padding: 8px 13px;
-
     font-size: 7.5px;
   }
 
@@ -6050,11 +6037,11 @@ h3 em {
 
 @media (prefers-reduced-motion: reduce) {
 
-  .tool-chip {
+  .tools-list .tool-chip {
     transition: none;
   }
 
-  .tool-chip:hover {
+  .tools-list .tool-chip:hover {
     transform: none;
   }
 
