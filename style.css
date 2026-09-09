@@ -5932,19 +5932,43 @@ h3 em {
 
 
 /* =========================================================
-   TOOLS LIST
+   TOOLS LIST — HORIZONTAL
    ========================================================= */
 
 .tools-list {
   display: flex;
-  flex-wrap: wrap;
+
+  flex-direction: row;
+  flex-wrap: nowrap;
+
   align-items: center;
+
   gap: 9px;
-  max-width: 850px;
+
+  width: 100%;
+  max-width: none;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  padding-bottom: 6px;
+
+  scrollbar-width: none;
 }
+
+.tools-list::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* =========================================================
+   TOOL CHIP
+   ========================================================= */
 
 .tools-list .tool-chip {
   display: inline-flex;
+
+  flex: 0 0 auto;
 
   width: auto;
   height: auto;
@@ -5961,9 +5985,12 @@ h3 em {
   background: transparent;
 
   font-family: var(--sans, "DM Sans", sans-serif);
+
   font-size: 8px;
   font-weight: 700;
+
   letter-spacing: .06em;
+
   text-transform: uppercase;
 
   white-space: nowrap;
@@ -5986,6 +6013,7 @@ h3 em {
 
   .tools-list .tool-chip:hover {
     background: var(--yellow, #D8DE56);
+
     border-color: var(--yellow, #D8DE56);
 
     transform: translateY(-3px);
@@ -6012,19 +6040,19 @@ h3 em {
 
 @media (max-width: 700px) {
 
-  .skills-tools {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
   .tools-list {
-    max-width: 100%;
     gap: 8px;
+
+    overflow-x: auto;
+
+    padding-bottom: 6px;
   }
 
   .tools-list .tool-chip {
     min-height: 34px;
+
     padding: 8px 13px;
+
     font-size: 7.5px;
   }
 
