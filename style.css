@@ -2465,17 +2465,12 @@ h3 em {
 
 .skills-tools {
   display: block;
-
   grid-column: 1 / -1;
-
   width: 100%;
-
-  margin-top: 35px;
-
-  padding-top: 23px;
+  margin-top: 10px;
+  padding-top: 15px;
   border-top: 1px solid rgba(37, 37, 37, .18);
 }
-
 
 /* =========================================================
    TOOLS HEADING
