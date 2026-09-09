@@ -2451,59 +2451,199 @@ h3 em {
 }
 
 
-/* ---------------------------------------------------------
+/* =========================================================
    TOOLS
---------------------------------------------------------- */
+   ========================================================= */
 
-.tools-row {
-  display: grid;
-  grid-template-columns: 100px 1fr;
+.skills-tools {
+  display: block;
 
-  gap: 35px;
+  grid-column: 1 / -1;
 
-  margin-top: 55px;
+  width: 100%;
+
+  margin-top: clamp(80px, 10vw, 125px);
+
+  padding-top: 23px;
+
+  border-top: 1px solid rgba(37, 37, 37, .18);
 }
 
-.tools-row > span {
-  padding-top: 8px;
 
-  font-size: 8px;
-  font-weight: 700;
+/* =========================================================
+   TOOLS HEADING
+   ========================================================= */
 
-  letter-spacing: .14em;
+.skills-tools .skills-subheading {
+  display: block;
 
-  color: var(--soft);
+  margin-bottom: 18px;
 }
 
-.tool-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
+.skills-tools .skills-subheading span {
+  display: block;
 
-.tool-pills span {
-  padding: 9px 13px;
-
-  border: 1px solid var(--line);
-  border-radius: 999px;
+  font-family: var(--sans, "DM Sans", sans-serif);
 
   font-size: 9px;
 
-  color: var(--muted);
+  font-weight: 700;
+
+  letter-spacing: .15em;
+}
+
+
+/* =========================================================
+   TOOLS LIST — HORIZONTAL
+   ========================================================= */
+
+.tools-list {
+  display: flex;
+
+  flex-direction: row;
+
+  flex-wrap: nowrap;
+
+  align-items: center;
+
+  gap: 9px;
+
+  width: 100%;
+
+  max-width: none;
+
+  overflow-x: auto;
+
+  overflow-y: hidden;
+
+  padding-bottom: 8px;
+
+  scrollbar-width: none;
+}
+
+.tools-list::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* =========================================================
+   TOOL CHIP
+   ========================================================= */
+
+.tools-list .tool-chip {
+  display: inline-flex;
+
+  flex: 0 0 auto;
+
+  width: auto;
+  height: auto;
+
+  min-height: 36px;
+
+  padding: 9px 15px;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(37, 37, 37, .22);
+
+  border-radius: 999px;
+
+  background: transparent;
+
+  font-family: var(--sans, "DM Sans", sans-serif);
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: .06em;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+
+  cursor: default;
 
   transition:
-    background .25s ease,
+    transform .25s ease,
+    background-color .25s ease,
     border-color .25s ease,
-    transform .25s var(--ease);
+    box-shadow .25s ease;
 }
 
-.tool-pills span:hover {
-  background: var(--yellow);
-  border-color: var(--yellow);
 
-  transform: translateY(-2px);
+/* =========================================================
+   TOOL HOVER
+   ========================================================= */
+
+@media (hover: hover) and (pointer: fine) {
+
+  .tools-list .tool-chip:hover {
+    background: var(--yellow, #D8DE56);
+
+    border-color: var(--yellow, #D8DE56);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+      0 7px 18px rgba(37, 37, 37, .08);
+  }
+
 }
 
+
+/* =========================================================
+   MORE TO COME
+   ========================================================= */
+
+.tools-list .tool-chip-more {
+  opacity: .7;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .skills-tools {
+    grid-column: 1 / -1;
+
+    margin-top: 70px;
+  }
+
+  .tools-list {
+    gap: 8px;
+  }
+
+  .tools-list .tool-chip {
+    min-height: 34px;
+
+    padding: 8px 13px;
+
+    font-size: 7.5px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .tools-list .tool-chip {
+    transition: none;
+  }
+
+  .tools-list .tool-chip:hover {
+    transform: none;
+  }
+
+}
 
 /* =========================================================
    14 — EDUCATION
