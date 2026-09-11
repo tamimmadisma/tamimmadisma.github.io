@@ -5521,7 +5521,7 @@ h3 em {
   width: min(850px, 100%);
   height: min(700px, 82vw);
 
-  min-height: 560px;
+  min-height: 0;
 
   margin: 0 auto;
 
