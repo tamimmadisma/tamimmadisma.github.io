@@ -1150,20 +1150,13 @@
 
     }
 
-
 .experience-modal-top {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: 30px;
 
   padding-bottom: 22px;
-
-  background: #F8F4EE;
 
   border-bottom: 1px solid rgba(0, 0, 0, 0.18);
 }
@@ -4296,6 +4289,15 @@
         aria-labelledby="experienceModalTitle"
       >
 
+  <button
+    type="button"
+    class="experience-modal-close"
+    id="experienceModalClose"
+    aria-label="Close experience details"
+  >
+    × CLOSE
+  </button>
+
         <div class="experience-modal-top">
 
           <div
@@ -4304,16 +4306,6 @@
           >
             01 / EXPERIENCE
           </div>
-
-
-          <button
-            type="button"
-            class="experience-modal-close"
-            id="experienceModalClose"
-            aria-label="Close experience details"
-          >
-            × CLOSE
-          </button>
 
         </div>
 
