@@ -1,13 +1,15 @@
-```html
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
 
 <meta charset="utf-8">
 
 <meta
-  name="viewport"
-  content="width=device-width, initial-scale=1, viewport-fit=cover"
+name="viewport"
+content="width=device-width, initial-scale=1, viewport-fit=cover"
+
 >
 
 <title>
@@ -15,8 +17,9 @@
 </title>
 
 <meta
-  name="description"
-  content="Selected case studies by Tamimmah Disma Lestari — covering business, marketing, growth, consumer insights and commercial strategy."
+name="description"
+content="Selected case studies by Tamimmah Disma Lestari — covering business, marketing, growth, consumer insights and commercial strategy."
+
 >
 
 <!-- =========================
@@ -31,7 +34,6 @@
   href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap"
   rel="stylesheet"
 >
-
 
 <style>
 
@@ -857,7 +859,7 @@ img {
 
 
 /* =====================================================
-   VISUALS
+   VISUALS / ARTIFACTS
 ===================================================== */
 
 .vis {
@@ -867,10 +869,10 @@ img {
   grid-template-columns:
     repeat(
       auto-fit,
-      minmax(190px, 1fr)
+      minmax(220px, 1fr)
     );
 
-  gap: 12px;
+  gap: 18px;
 
   align-items: start;
 
@@ -881,6 +883,21 @@ img {
 
   margin: 0;
 
+  min-width: 0;
+
+}
+
+
+.visimg a {
+
+  display: block;
+
+  overflow: hidden;
+
+  border-radius: 15px;
+
+  background: var(--card);
+
 }
 
 
@@ -890,20 +907,41 @@ img {
 
   width: 100%;
 
+  height: auto;
+
   border-radius: 15px;
 
   border: 1px solid var(--line);
+
+  transition:
+    transform .25s ease;
+
+}
+
+
+.visimg a:hover img {
+
+  transform: scale(1.015);
 
 }
 
 
 .visimg figcaption {
 
-  margin-top: 7px;
+  margin-top: 8px;
 
   color: var(--muted);
 
   font-size: 11px;
+
+  line-height: 1.45;
+
+}
+
+
+.vis .button {
+
+  align-self: start;
 
 }
 
@@ -929,17 +967,6 @@ img {
   font-size: 12px;
 
   text-align: center;
-
-}
-
-
-/* =====================================================
-   VISUAL LINK
-===================================================== */
-
-.vis .button {
-
-  align-self: start;
 
 }
 
@@ -1148,7 +1175,9 @@ img {
 
   .case-top {
 
-    grid-template-columns: 55px 1fr;
+    grid-template-columns:
+      55px
+      1fr;
 
     gap: 15px;
 
@@ -1174,6 +1203,13 @@ img {
   .row > b {
 
     font-size: 10px;
+
+  }
+
+
+  .vis {
+
+    grid-template-columns: 1fr 1fr;
 
   }
 
@@ -1303,6 +1339,13 @@ img {
 
   }
 
+
+  .vis {
+
+    grid-template-columns: 1fr;
+
+  }
+
 }
 
 
@@ -1331,9 +1374,7 @@ img {
 
 </head>
 
-
 <body>
-
 
 <!-- =====================================================
      HEADER
@@ -1343,54 +1384,54 @@ img {
 
   <div class="site-container header-inner">
 
-    <a
-      class="logo"
-      href="index.html"
-      aria-label="Back to Tamimmah Disma Lestari portfolio"
-    >
+```
+<a
+  class="logo"
+  href="index.html"
+  aria-label="Back to Tamimmah Disma Lestari portfolio"
+>
 
-      <span>TDL</span>
+  <span>TDL</span>
 
-      Tamimmah Disma Lestari
+  Tamimmah Disma Lestari
 
-    </a>
-
-
-    <nav
-      class="header-nav"
-      aria-label="Main navigation"
-    >
-
-      <a
-        class="header-link"
-        href="index.html"
-      >
-        Portfolio
-      </a>
+</a>
 
 
-      <a
-        class="header-link"
-        href="journal.html"
-      >
-        Journal
-      </a>
+<nav
+  class="header-nav"
+  aria-label="Main navigation"
+>
+
+  <a
+    class="header-link"
+    href="index.html"
+  >
+    Portfolio
+  </a>
 
 
-      <a
-        class="header-link primary"
-        href="mailto:tamimmadisma@gmail.com"
-      >
-        Get in touch →
-      </a>
+  <a
+    class="header-link"
+    href="journal.html"
+  >
+    Journal
+  </a>
 
-    </nav>
+
+  <a
+    class="header-link primary"
+    href="mailto:tamimmadisma@gmail.com"
+  >
+    Get in touch →
+  </a>
+
+</nav>
+```
 
   </div>
 
 </header>
-
-
 
 <!-- =====================================================
      HERO
@@ -1402,59 +1443,58 @@ img {
 
   <div class="site-container hero-grid">
 
+```
+<div>
 
-    <div>
-
-      <p class="eyebrow">
-        Selected work · Case studies
-      </p>
-
-
-      <h1>
-        Work that
-        <em>moves.</em>
-      </h1>
-
-    </div>
+  <p class="eyebrow">
+    Selected work · Case studies
+  </p>
 
 
-    <div>
+  <h1>
+    Work that
+    <em>moves.</em>
+  </h1>
 
-      <p class="hero-description">
-
-        A closer look at selected projects across
-        entrepreneurship, marketing, growth,
-        consumer insights and commercial strategy.
-
-      </p>
+</div>
 
 
-      <div class="hero-actions">
+<div>
 
-        <a
-          class="button button-dark"
-          href="index.html"
-        >
-          ← Back to portfolio
-        </a>
+  <p class="hero-description">
+
+    A closer look at selected projects across
+    entrepreneurship, marketing, growth,
+    consumer insights and commercial strategy.
+
+  </p>
 
 
-        <a
-          class="button button-light"
-          href="mailto:tamimmadisma@gmail.com"
-        >
-          Get in touch →
-        </a>
+  <div class="hero-actions">
 
-      </div>
+    <a
+      class="button button-dark"
+      href="index.html"
+    >
+      ← Back to portfolio
+    </a>
 
-    </div>
+
+    <a
+      class="button button-light"
+      href="mailto:tamimmadisma@gmail.com"
+    >
+      Get in touch →
+    </a>
+
+  </div>
+
+</div>
+```
 
   </div>
 
 </section>
-
-
 
 <!-- =====================================================
      CASE STUDIES
@@ -1464,43 +1504,41 @@ img {
 
   <div class="site-container">
 
+```
+<div class="section-heading">
 
-    <div class="section-heading">
+  <div>
 
-      <div>
-
-        <div class="section-number">
-          01 — 07
-        </div>
-
-        <h2>
-          Selected <em>case studies.</em>
-        </h2>
-
-      </div>
-
-
-      <p class="section-note">
-
-        Projects spanning business development,
-        marketing, content, research, operations
-        and commercial strategy.
-
-      </p>
-
+    <div class="section-number">
+      01 — 07
     </div>
 
+    <h2>
+      Selected <em>case studies.</em>
+    </h2>
 
-    <div id="cases"></div>
+  </div>
 
+
+  <p class="section-note">
+
+    Projects spanning business development,
+    marketing, content, research, operations
+    and commercial strategy.
+
+  </p>
+
+</div>
+
+
+<div id="cases"></div>
+```
 
   </div>
 
 </section>
 
 </main>
-
-
 
 <!-- =====================================================
      FOOTER
@@ -1510,55 +1548,53 @@ img {
 
   <div class="site-container footer-grid">
 
+```
+<div>
 
-    <div>
-
-      <h2 class="footer-title">
-        Let's build something
-        <em>useful.</em>
-      </h2>
-
-
-      <p class="footer-text">
-        Tamimmah Disma Lestari · Business · Marketing · Consumer Insights
-      </p>
-
-    </div>
+  <h2 class="footer-title">
+    Let's build something
+    <em>useful.</em>
+  </h2>
 
 
-    <div class="footer-links">
+  <p class="footer-text">
+    Tamimmah Disma Lestari · Business · Marketing · Consumer Insights
+  </p>
 
-      <a
-        class="footer-link"
-        href="index.html"
-      >
-        Portfolio
-      </a>
+</div>
 
 
-      <a
-        class="footer-link"
-        href="journal.html"
-      >
-        Journal
-      </a>
+<div class="footer-links">
+
+  <a
+    class="footer-link"
+    href="index.html"
+  >
+    Portfolio
+  </a>
 
 
-      <a
-        class="footer-link"
-        href="mailto:tamimmadisma@gmail.com"
-      >
-        Email
-      </a>
+  <a
+    class="footer-link"
+    href="journal.html"
+  >
+    Journal
+  </a>
 
-    </div>
 
+  <a
+    class="footer-link"
+    href="mailto:tamimmadisma@gmail.com"
+  >
+    Email
+  </a>
+
+</div>
+```
 
   </div>
 
 </footer>
-
-
 
 <script>
 
@@ -1599,12 +1635,14 @@ vis:[
 
 {
 img:"sellkpopvt-profile.png",
-cap:"Brand identity"
+cap:"Brand identity",
+link:"sellkpopvt-profile.png"
 },
 
 {
 img:"sellkpopvt-banner.png",
-cap:"Channel banner (2026)"
+cap:"Channel banner (2026)",
+link:"sellkpopvt-banner.png"
 },
 
 {
@@ -1796,8 +1834,6 @@ kpis:[
 
 },
 
-
-
 {
 tag:"Content · Organic TikTok",
 
@@ -1815,13 +1851,14 @@ process:[
 
 ],
 
-insight:"Across the last 10 posts, the account averaged 369K views a post with a 6.42% engagement rate — TikTok's \"Strong\" tier (5–8%) — using mostly photo carousels rather than video, on a 977-follower account.",
+insight:"Across the last 10 posts, the account averaged 369K views a post with a 6.42% engagement rate — TikTok's "Strong" tier (5–8%) — using mostly photo carousels rather than video, on a 977-follower account.",
 
 vis:[
 
 {
 img:"tiktok-profile.jpg",
-cap:"Profile & pinned posts, @baesminju"
+cap:"Profile & pinned posts, @baesminju",
+link:"tiktok-profile.jpg"
 },
 
 {
@@ -1944,8 +1981,6 @@ kpis:[
 ]
 
 },
-
-
 
 {
 tag:"CMO · Sustainable products startup",
@@ -2192,8 +2227,6 @@ kpis:[
 
 },
 
-
-
 {
 tag:"Marketing · Startup community",
 
@@ -2403,8 +2436,6 @@ kpis:[
 
 },
 
-
-
 {
 tag:"Investor & Business Partner · B2B distribution",
 
@@ -2441,8 +2472,6 @@ kpis:[
 ]
 
 },
-
-
 
 {
 tag:"Co-Founder & CMO · Campus beverage startup",
@@ -2483,8 +2512,6 @@ kpis:[
 
 },
 
-
-
 {
 tag:"Business Intern · Corporate training (CIEL, SBM ITB)",
 
@@ -2496,660 +2523,10 @@ challenge:"Finding where a training provider could grow beyond its current marke
 
 process:[
 
-"Surveyed 16 working professionals on past training and satisfaction, and observed a live Pertamina R&amp;D training at Patra Hotel Bandung (16–17 Oct 2019).",
+"Surveyed 16 working professionals on past training and satisfaction, and observed a live Pertamina R&D training at Patra Hotel Bandung (16–17 Oct 2019).",
 
 "Benchmarked three competitors (PM ELI, Binus Mini MBA, MDI) on price and features, and ran a Porter’s Five Forces analysis.",
 
 "Built a value proposition canvas for a teacher digital-transformation training and tested it against teacher and principal input.",
 
 "Sized the market top-down, from all schools in three provinces to the private schools CIEL could realistically win.",
-
-"When COVID-19 closed campus in 2020, wrote a 5-week remote mitigation plan with SMART KPIs for the Business Lab Instagram."
-
-],
-
-vis:[],
-
-mkChart:`<svg viewBox="0 0 640 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Market funnel">
-
-<style>
-
-.fa{fill:var(--black);opacity:.3}
-
-.fb{fill:var(--black);opacity:.6}
-
-.fc{fill:var(--black)}
-
-.fn{font:600 12px system-ui,sans-serif;fill:var(--text)}
-
-.fv{font:700 13px system-ui,sans-serif;fill:var(--text)}
-
-.fm{font:500 10.5px system-ui,sans-serif;fill:var(--muted)}
-
-</style>
-
-<text class="fn" x="20" y="36">
-Accessible (TAM)
-</text>
-
-<text class="fm" x="20" y="51">
-Jakarta, W. Java, Banten
-</text>
-
-<rect class="fa" x="190" y="24" width="400" height="28" rx="4"/>
-
-<text class="fv" x="580" y="43" text-anchor="end">
-6,705
-</text>
-
-<text class="fn" x="20" y="96">
-Serviceable (SAM)
-</text>
-
-<text class="fm" x="20" y="111">
-Accredited A, digital-ready
-</text>
-
-<rect class="fb" x="190" y="84" width="78" height="28" rx="4"/>
-
-<text class="fv" x="278" y="103">
-1,310
-</text>
-
-<text class="fn" x="20" y="156">
-Obtainable (SOM)
-</text>
-
-<text class="fm" x="290" y="156">
-Private schools only
-</text>
-
-<rect class="fc" x="190" y="140" width="42.5" height="28" rx="4"/>
-
-<text class="fv" x="242" y="159">
-712
-</text>
-
-</svg>`,
-
-mkCap:`Schools in Jakarta, West Java and Banten, narrowed by accreditation, digital readiness and ability to pay.`,
-
-mpChart:`<svg viewBox="0 0 640 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Five-week Instagram content plan">
-
-<style>
-
-.pb{fill:var(--accent-soft);stroke:var(--black);stroke-width:1.5}
-
-.ph{font:700 12px system-ui,sans-serif;fill:var(--text)}
-
-.pt{font:600 11px system-ui,sans-serif;fill:var(--text)}
-
-.pm{font:500 10.5px system-ui,sans-serif;fill:var(--muted)}
-
-</style>
-
-<rect class="pb" x="20" y="16" width="108" height="72" rx="6"/>
-
-<rect class="pb" x="140" y="16" width="108" height="72" rx="6"/>
-
-<rect class="pb" x="260" y="16" width="108" height="72" rx="6"/>
-
-<rect class="pb" x="380" y="16" width="108" height="72" rx="6"/>
-
-<rect class="pb" x="500" y="16" width="108" height="72" rx="6" stroke-dasharray="4 3"/>
-
-<text class="ph" x="32" y="38">
-Week 1
-</text>
-
-<text class="pt" x="32" y="56">
-Business Lab
-</text>
-
-<text class="pt" x="32" y="71">
-intro, positioning
-</text>
-
-<text class="ph" x="152" y="38">
-Week 2
-</text>
-
-<text class="pt" x="152" y="56">
-COVID-19 impact
-</text>
-
-<text class="pt" x="152" y="71">
-on business
-</text>
-
-<text class="ph" x="272" y="38">
-Week 3
-</text>
-
-<text class="pt" x="272" y="56">
-Self productivity
-</text>
-
-<text class="pt" x="272" y="71">
-while WFH
-</text>
-
-<text class="ph" x="392" y="38">
-Week 4
-</text>
-
-<text class="pt" x="392" y="56">
-Business ideas via
-</text>
-
-<text class="pt" x="392" y="71">
-design thinking
-</text>
-
-<text class="ph" x="512" y="38">
-Week 5
-</text>
-
-<text class="pt" x="512" y="56">
-In progress
-</text>
-
-<text class="pm" x="20" y="116">
-3 posts per week · KPI: 100 Instagram followers in 2 weeks · 3+ ITB account collaborations
-</text>
-
-</svg>`,
-
-mpCap:`Remote content plan built after COVID-19 halted campus activity; week 5 and results were still in progress in the plan.`,
-
-kpis:[
-
-["16","professionals surveyed"],
-
-["3","competitors benchmarked"],
-
-["712","obtainable schools sized (of 6,705)"]
-
-]
-
-}
-
-];
-
-
-
-/* =====================================================
-   ROW GENERATOR
-===================================================== */
-
-function row(k,v){
-
-  return `
-
-    <div class="row">
-
-      <b>${k}</b>
-
-      <div>
-        ${v}
-      </div>
-
-    </div>
-
-  `;
-
-}
-
-
-
-/* =====================================================
-   BUILD CASE STUDIES
-===================================================== */
-
-var out = "";
-
-
-P.forEach(function(p,i){
-
-
-  var vis = p.vis.map(function(v){
-
-    if(v.img){
-
-      return `
-
-        <figure class="visimg">
-
-          <img
-            src="${v.img}"
-            alt="${v.cap || ''}"
-            loading="lazy"
-          >
-
-          <figcaption>
-            ${v.cap || ''}
-          </figcaption>
-
-        </figure>
-
-      `;
-
-    }
-
-
-    if(v.h){
-
-      return `
-
-        <a
-          class="button button-light"
-          href="${v.h}"
-          target="_blank"
-          rel="noopener"
-        >
-          ${v.l} →
-        </a>
-
-      `;
-
-    }
-
-
-    return `
-
-      <div class="slot">
-        ${v.s}
-      </div>
-
-    `;
-
-  }).join("");
-
-
-  var kp = p.kpis.map(function(k){
-
-    return `
-
-      <div class="kpi">
-
-        <strong>
-          ${k[0]}
-        </strong>
-
-        <span>
-          ${k[1]}
-        </span>
-
-      </div>
-
-    `;
-
-  }).join("");
-
-
-  out += `
-
-    <article class="case">
-
-
-      <div class="case-top">
-
-        <div class="case-number">
-          ${String(i + 1).padStart(2,"0")}
-        </div>
-
-
-        <div>
-
-          <p class="case-tag">
-            ${p.tag}
-          </p>
-
-
-          <h2 class="case-title">
-            ${p.title}
-          </h2>
-
-        </div>
-
-      </div>
-
-
-      <div class="case-content">
-
-
-        ${row(
-          "Project overview",
-          `<p>${p.overview}</p>`
-        )}
-
-
-        ${row(
-          "The challenge",
-          `<p>${p.challenge}</p>`
-        )}
-
-
-        ${row(
-          "My process",
-          `<ul>${p.process.map(function(x){
-
-            return `<li>${x}</li>`;
-
-          }).join("")}</ul>`
-        )}
-
-
-        ${
-          p.insight
-
-          ? row(
-              "Key insight",
-              `<p>${p.insight}</p>`
-            )
-
-          : ""
-        }
-
-
-        ${
-          p.competitorChart
-
-          ? row(
-              "Competitive positioning",
-
-              `
-                <div class="chart">
-                  ${p.competitorChart}
-                </div>
-
-                <p class="chartcap">
-                  ${p.competitorCap}
-                </p>
-              `
-            )
-
-          : ""
-        }
-
-
-        ${
-          p.opsChart
-
-          ? row(
-              "Weekly operations snapshot",
-
-              `
-                <div class="chart">
-                  ${p.opsChart}
-                </div>
-
-                <p class="chartcap">
-                  ${p.opsCap}
-                </p>
-              `
-            )
-
-          : ""
-        }
-
-
-        ${
-          p.winsChart
-
-          ? row(
-              "Competition results",
-
-              `
-                <div class="chart">
-                  ${p.winsChart}
-                </div>
-
-                <p class="chartcap">
-                  ${p.winsCap}
-                </p>
-              `
-            )
-
-          : ""
-        }
-
-
-        ${
-          p.trChart
-
-          ? row(
-              "Sales traction",
-
-              `
-                <div class="chart">
-                  ${p.trChart}
-                </div>
-
-                <p class="chartcap">
-                  ${p.trCap}
-                </p>
-              `
-            )
-
-          : ""
-        }
-
-
-        ${
-          p.budChart
-
-          ? row(
-              "Funding plan",
-
-              `
-                <div class="chart">
-                  ${p.budChart}
-                </div>
-
-                <p class="chartcap">
-                  ${p.budCap}
-                </p>
-              `
-            )
-
-          : ""
-        }
-
-
-        ${
-          p.tlChart
-
-          ? row(
-              "Campaign timeline",
-
-              `
-                <div class="chart">
-                  ${p.tlChart}
-                </div>
-
-                <p class="chartcap">
-                  ${p.tlCap}
-                </p>
-              `
-            )
-
-          : ""
-        }
-
-
-        ${
-          p.outChart
-
-          ? row(
-              "Partnership outreach",
-
-              `
-                <div class="chart">
-                  ${p.outChart}
-                </div>
-
-                <p class="chartcap">
-                  ${p.outCap}
-                </p>
-              `
-            )
-
-          : ""
-        }
-
-
-        ${
-          p.mkChart
-
-          ? row(
-              "Market sizing",
-
-              `
-                <div class="chart">
-                  ${p.mkChart}
-                </div>
-
-                <p class="chartcap">
-                  ${p.mkCap}
-                </p>
-              `
-            )
-
-          : ""
-        }
-
-
-        ${
-          p.mpChart
-
-          ? row(
-              "Mitigation plan",
-
-              `
-                <div class="chart">
-                  ${p.mpChart}
-                </div>
-
-                <p class="chartcap">
-                  ${p.mpCap}
-                </p>
-              `
-            )
-
-          : ""
-        }
-
-
-        ${
-          p.perfChips
-
-          ? row(
-
-              "Post performance",
-
-              `
-
-                <div class="kpis">
-
-                  ${p.perfChips.map(function(k){
-
-                    return `
-
-                      <div class="kpi">
-
-                        <strong>
-                          ${k[0]}
-                        </strong>
-
-                        <span>
-                          ${k[1]}
-                        </span>
-
-                      </div>
-
-                    `;
-
-                  }).join("")}
-
-                </div>
-
-              `
-            )
-
-          : ""
-        }
-
-
-        ${
-          p.engagementChart
-
-          ? row(
-
-              "Engagement tier",
-
-              `
-
-                <div class="chart">
-                  ${p.engagementChart}
-                </div>
-
-                <p class="chartcap">
-                  ${p.engagementCap}
-                </p>
-
-              `
-            )
-
-          : ""
-        }
-
-
-        ${
-          p.vis.length
-
-          ? row(
-
-              "Visuals / artifacts",
-
-              `
-                <div class="vis">
-                  ${vis}
-                </div>
-              `
-            )
-
-          : ""
-        }
-
-
-        ${row(
-
-          "Outcomes & KPIs",
-
-          `
-            <div class="kpis">
-              ${kp}
-            </div>
-          `
-
-        )}
-
-
-      </div>
-
-    </article>
-
-  `;
-
-});
-
-
-document.getElementById("cases").innerHTML = out;
-
-</script>
-
-
-</body>
-</html>
-```
