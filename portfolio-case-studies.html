@@ -1,34 +1,27 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
 
 <meta charset="utf-8">
 
 <meta
-name="viewport"
-content="width=device-width, initial-scale=1, viewport-fit=cover"
-
+  name="viewport"
+  content="width=device-width, initial-scale=1, viewport-fit=cover"
 >
 
-<title>
-  Case Studies — Tamimmah Disma Lestari
-</title>
+<title>Case Studies — Tamimmah Disma Lestari</title>
 
 <meta
-name="description"
-content="Selected case studies by Tamimmah Disma Lestari — covering business, marketing, growth, consumer insights and commercial strategy."
-
+  name="description"
+  content="Selected case studies by Tamimmah Disma Lestari — covering business, marketing, growth, consumer insights and commercial strategy."
 >
 
-<!-- =========================
-     FONTS
-========================= -->
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  rel="preconnect"
+  href="https://fonts.gstatic.com"
+  crossorigin
+>
 
 <link
   href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap"
@@ -37,1335 +30,793 @@ content="Selected case studies by Tamimmah Disma Lestari — covering business, 
 
 <style>
 
-/* =====================================================
-   ROOT
-===================================================== */
-
-:root {
-
-  --bg: #f7f6f2;
-  --card: #ffffff;
-
-  --text: #111111;
-  --muted: #6d6b65;
-
-  --line: #deddd7;
-
-  --accent: #D9DF57;
-
-  --accent-soft: #eef0bd;
-
-  --black: #111111;
-
-  box-sizing: border-box;
-
+:root{
+  --bg:#f7f6f2;
+  --card:#ffffff;
+  --text:#111111;
+  --muted:#6d6b65;
+  --line:#deddd7;
+  --accent:#D9DF57;
+  --accent-soft:#eef0bd;
+  --black:#111111;
 }
-
 
 *,
 *::before,
-*::after {
-  box-sizing: border-box;
+*::after{
+  box-sizing:border-box;
 }
 
-
-html {
-
-  scroll-behavior: smooth;
-
-  scroll-padding-top: 90px;
-
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:90px;
 }
 
-
-body {
-
-  margin: 0;
-
-  background: var(--bg);
-
-  color: var(--text);
-
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
   font-family:
     "DM Sans",
     -apple-system,
     BlinkMacSystemFont,
     "Segoe UI",
     sans-serif;
+  line-height:1.6;
+}
 
-  line-height: 1.6;
+a{
+  color:inherit;
+}
 
+img{
+  max-width:100%;
+}
+
+.site-container{
+  width:min(1180px,calc(100% - 48px));
+  margin:0 auto;
 }
 
 
-a {
-
-  color: inherit;
-
-}
-
-
-img {
-
-  max-width: 100%;
-
-}
-
-
-/* =====================================================
-   GLOBAL CONTAINER
-===================================================== */
-
-.site-container {
-
-  width: min(
-    1180px,
-    calc(100% - 48px)
-  );
-
-  margin: 0 auto;
-
-}
-
-
-/* =====================================================
+/* =========================
    HEADER
-===================================================== */
+========================= */
 
-.site-header {
-
-  position: sticky;
-
-  top: 0;
-
-  z-index: 1000;
-
-  background: rgba(247,246,242,.92);
-
-  backdrop-filter: blur(12px);
-
-  -webkit-backdrop-filter: blur(12px);
-
-  border-bottom: 1px solid rgba(17,17,17,.08);
-
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(247,246,242,.92);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(17,17,17,.08);
 }
 
-
-.header-inner {
-
-  min-height: 76px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  gap: 24px;
-
+.header-inner{
+  min-height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
 }
 
-
-.logo {
-
-  text-decoration: none;
-
-  font-weight: 700;
-
-  font-size: 15px;
-
-  letter-spacing: -.02em;
-
+.logo{
+  text-decoration:none;
+  font-weight:700;
+  font-size:15px;
+  letter-spacing:-.02em;
 }
 
-
-.logo span {
-
-  display: inline-flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  width: 32px;
-
-  height: 32px;
-
-  margin-right: 9px;
-
-  border: 1.5px solid var(--black);
-
-  border-radius: 50%;
-
-  font-size: 11px;
-
+.logo span{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:32px;
+  height:32px;
+  margin-right:9px;
+  border:1.5px solid var(--black);
+  border-radius:50%;
+  font-size:11px;
 }
 
-
-.header-nav {
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 10px;
-
+.header-nav{
+  display:flex;
+  align-items:center;
+  gap:10px;
 }
 
-
-.header-link {
-
-  text-decoration: none;
-
-  font-size: 13px;
-
-  font-weight: 600;
-
-  padding: 9px 15px;
-
-  border-radius: 999px;
-
+.header-link{
+  text-decoration:none;
+  font-size:13px;
+  font-weight:600;
+  padding:9px 15px;
+  border-radius:999px;
   transition:
     background .2s ease,
     transform .2s ease;
+}
 
+.header-link:hover{
+  background:var(--accent);
+  transform:translateY(-1px);
+}
+
+.header-link.primary{
+  background:var(--black);
+  color:white;
+}
+
+.header-link.primary:hover{
+  background:var(--accent);
+  color:var(--black);
 }
 
 
-.header-link:hover {
-
-  background: var(--accent);
-
-  transform: translateY(-1px);
-
-}
-
-
-.header-link.primary {
-
-  background: var(--black);
-
-  color: white;
-
-}
-
-
-.header-link.primary:hover {
-
-  background: var(--accent);
-
-  color: var(--black);
-
-}
-
-
-/* =====================================================
+/* =========================
    HERO
-===================================================== */
+========================= */
 
-.hero {
-
-  padding: 100px 0 90px;
-
-  border-bottom: 1px solid var(--line);
-
+.hero{
+  padding:100px 0 90px;
+  border-bottom:1px solid var(--line);
 }
 
-
-.hero-grid {
-
-  display: grid;
-
+.hero-grid{
+  display:grid;
   grid-template-columns:
-    minmax(0, 1.25fr)
-    minmax(260px, .75fr);
-
-  gap: 70px;
-
-  align-items: end;
-
+    minmax(0,1.25fr)
+    minmax(260px,.75fr);
+  gap:70px;
+  align-items:end;
 }
 
-
-.eyebrow {
-
-  margin: 0 0 18px;
-
-  font-size: 12px;
-
-  line-height: 1.2;
-
-  font-weight: 700;
-
-  letter-spacing: .14em;
-
-  text-transform: uppercase;
-
+.eyebrow{
+  margin:0 0 18px;
+  font-size:12px;
+  line-height:1.2;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
 }
 
-
-.eyebrow::before {
-
-  content: "";
-
-  display: inline-block;
-
-  width: 9px;
-
-  height: 9px;
-
-  margin-right: 8px;
-
-  border-radius: 50%;
-
-  background: var(--accent);
-
+.eyebrow::before{
+  content:"";
+  display:inline-block;
+  width:9px;
+  height:9px;
+  margin-right:8px;
+  border-radius:50%;
+  background:var(--accent);
 }
 
-
-.hero h1 {
-
-  margin: 0;
-
-  max-width: 850px;
-
-  font-size: clamp(
-    48px,
-    7vw,
-    92px
-  );
-
-  line-height: .96;
-
-  letter-spacing: -.055em;
-
-  font-weight: 600;
-
+.hero h1{
+  margin:0;
+  max-width:850px;
+  font-size:clamp(48px,7vw,92px);
+  line-height:.96;
+  letter-spacing:-.055em;
+  font-weight:600;
 }
 
-
-.hero h1 em {
-
+.hero h1 em{
   font-family:
     "Playfair Display",
     Georgia,
     serif;
-
-  font-weight: 500;
-
+  font-weight:500;
 }
 
-
-.hero-description {
-
-  max-width: 460px;
-
-  margin: 0 0 28px;
-
-  color: var(--muted);
-
-  font-size: 15px;
-
+.hero-description{
+  max-width:460px;
+  margin:0 0 28px;
+  color:var(--muted);
+  font-size:15px;
 }
 
-
-.hero-meta {
-
-  display: flex;
-
-  flex-wrap: wrap;
-
-  gap: 9px;
-
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
 }
 
-
-.meta-pill {
-
-  padding: 8px 13px;
-
-  border: 1px solid var(--line);
-
-  border-radius: 999px;
-
-  font-size: 12px;
-
-  font-weight: 600;
-
-}
-
-
-.hero-actions {
-
-  display: flex;
-
-  flex-wrap: wrap;
-
-  gap: 10px;
-
-}
-
-
-.button {
-
-  display: inline-flex;
-
-  align-items: center;
-
-  gap: 9px;
-
-  padding: 12px 18px;
-
-  border-radius: 999px;
-
-  text-decoration: none;
-
-  font-size: 13px;
-
-  font-weight: 700;
-
+.button{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  padding:12px 18px;
+  border-radius:999px;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:700;
   transition:
     transform .2s ease,
     background .2s ease;
+}
 
+.button:hover{
+  transform:translateY(-2px);
+}
+
+.button-dark{
+  background:var(--black);
+  color:white;
+}
+
+.button-dark:hover{
+  background:var(--accent);
+  color:var(--black);
+}
+
+.button-light{
+  border:1px solid var(--black);
+}
+
+.button-light:hover{
+  background:var(--accent);
 }
 
 
-.button:hover {
+/* =========================
+   CASE INTRO
+========================= */
 
-  transform: translateY(-2px);
-
+.cases-section{
+  padding:75px 0 20px;
 }
 
-
-.button-dark {
-
-  background: var(--black);
-
-  color: white;
-
+.section-heading{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:30px;
+  margin-bottom:36px;
 }
 
-
-.button-dark:hover {
-
-  background: var(--accent);
-
-  color: var(--black);
-
+.section-number{
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.12em;
+  color:var(--muted);
 }
 
-
-.button-light {
-
-  border: 1px solid var(--black);
-
+.section-heading h2{
+  margin:5px 0 0;
+  font-size:clamp(32px,5vw,54px);
+  line-height:1;
+  letter-spacing:-.045em;
 }
 
-
-.button-light:hover {
-
-  background: var(--accent);
-
-}
-
-
-/* =====================================================
-   CASE STUDIES INTRO
-===================================================== */
-
-.cases-section {
-
-  padding: 75px 0 20px;
-
-}
-
-
-.section-heading {
-
-  display: flex;
-
-  justify-content: space-between;
-
-  align-items: end;
-
-  gap: 30px;
-
-  margin-bottom: 36px;
-
-}
-
-
-.section-number {
-
-  font-size: 12px;
-
-  font-weight: 700;
-
-  letter-spacing: .12em;
-
-  color: var(--muted);
-
-}
-
-
-.section-heading h2 {
-
-  margin: 5px 0 0;
-
-  font-size: clamp(
-    32px,
-    5vw,
-    54px
-  );
-
-  line-height: 1;
-
-  letter-spacing: -.045em;
-
-}
-
-
-.section-heading h2 em {
-
+.section-heading h2 em{
   font-family:
     "Playfair Display",
     Georgia,
     serif;
+  font-weight:500;
+}
 
-  font-weight: 500;
-
+.section-note{
+  max-width:330px;
+  margin:0;
+  color:var(--muted);
+  font-size:13px;
 }
 
 
-.section-note {
-
-  max-width: 330px;
-
-  margin: 0;
-
-  color: var(--muted);
-
-  font-size: 13px;
-
-}
-
-
-/* =====================================================
+/* =========================
    CASE STUDY
-===================================================== */
+========================= */
 
-.case {
-
-  margin-bottom: 70px;
-
-  padding: 0 0 70px;
-
-  border-bottom: 1px solid var(--line);
-
+.case{
+  margin-bottom:70px;
+  padding:0 0 70px;
+  border-bottom:1px solid var(--line);
 }
 
-
-.case:last-child {
-
-  border-bottom: 0;
-
+.case:last-child{
+  border-bottom:0;
 }
 
-
-.case-top {
-
-  display: grid;
-
-  grid-template-columns:
-    90px
-    minmax(0, 1fr);
-
-  gap: 30px;
-
-  margin-bottom: 38px;
-
+.case-top{
+  display:grid;
+  grid-template-columns:90px minmax(0,1fr);
+  gap:30px;
+  margin-bottom:38px;
 }
 
-
-.case-number {
-
-  font-size: 13px;
-
-  font-weight: 700;
-
-  letter-spacing: .08em;
-
-  color: var(--muted);
-
-  padding-top: 8px;
-
+.case-number{
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.08em;
+  color:var(--muted);
+  padding-top:8px;
 }
 
-
-.case-tag {
-
-  margin: 0 0 11px;
-
-  font-size: 11px;
-
-  font-weight: 700;
-
-  letter-spacing: .12em;
-
-  text-transform: uppercase;
-
-  color: var(--muted);
-
+.case-tag{
+  margin:0 0 11px;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--muted);
 }
 
-
-.case-title {
-
-  margin: 0;
-
-  max-width: 880px;
-
-  font-size: clamp(
-    34px,
-    5vw,
-    62px
-  );
-
-  line-height: 1;
-
-  letter-spacing: -.045em;
-
-  font-weight: 600;
-
+.case-title{
+  margin:0;
+  max-width:880px;
+  font-size:clamp(34px,5vw,62px);
+  line-height:1;
+  letter-spacing:-.045em;
+  font-weight:600;
 }
 
-
-.case-title em {
-
+.case-title em{
   font-family:
     "Playfair Display",
     Georgia,
     serif;
+  font-weight:500;
+}
 
-  font-weight: 500;
+.case-content{
+  margin-left:120px;
+}
 
+.row{
+  display:grid;
+  grid-template-columns:175px minmax(0,1fr);
+  gap:35px;
+  padding:24px 0;
+  border-top:1px solid var(--line);
+}
+
+.row > b{
+  align-self:start;
+  font-size:11px;
+  line-height:1.3;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+.row p{
+  margin:0;
+  max-width:720px;
+  font-size:15px;
+}
+
+.row ul{
+  margin:0;
+  padding-left:20px;
+  max-width:760px;
+}
+
+.row li{
+  margin:5px 0;
+  font-size:14px;
 }
 
 
-/* =====================================================
-   CASE CONTENT
-===================================================== */
+/* =========================
+   KPI
+========================= */
 
-.case-content {
-
-  margin-left: 120px;
-
-}
-
-
-.row {
-
-  display: grid;
-
+.kpis{
+  display:grid;
   grid-template-columns:
-    175px
-    minmax(0, 1fr);
+    repeat(auto-fit,minmax(145px,1fr));
+  gap:10px;
+}
 
-  gap: 35px;
+.kpi{
+  min-height:105px;
+  padding:17px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:var(--card);
+}
 
-  padding: 24px 0;
+.kpi strong{
+  display:block;
+  margin-bottom:5px;
+  color:var(--black);
+  font-size:25px;
+  line-height:1.05;
+  letter-spacing:-.04em;
+}
 
-  border-top: 1px solid var(--line);
-
+.kpi span{
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.4;
 }
 
 
-.row > b {
+/* =========================
+   VISUALS
+========================= */
 
-  align-self: start;
-
-  font-size: 11px;
-
-  line-height: 1.3;
-
-  letter-spacing: .1em;
-
-  text-transform: uppercase;
-
-  color: var(--muted);
-
-}
-
-
-.row p {
-
-  margin: 0;
-
-  max-width: 720px;
-
-  font-size: 15px;
-
-}
-
-
-.row ul {
-
-  margin: 0;
-
-  padding-left: 20px;
-
-  max-width: 760px;
-
-}
-
-
-.row li {
-
-  margin: 5px 0;
-
-  font-size: 14px;
-
-}
-
-
-/* =====================================================
-   KPI BLOCKS
-===================================================== */
-
-.kpis {
-
-  display: grid;
-
+.vis{
+  display:grid;
   grid-template-columns:
-    repeat(
-      auto-fit,
-      minmax(145px, 1fr)
-    );
+    repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
+  align-items:start;
+}
 
-  gap: 10px;
+.visimg{
+  margin:0;
+  min-width:0;
+}
 
+.visimg a{
+  display:block;
+  overflow:hidden;
+  border-radius:15px;
+  background:var(--card);
+}
+
+.visimg img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:15px;
+  border:1px solid var(--line);
+  transition:transform .25s ease;
+}
+
+.visimg a:hover img{
+  transform:scale(1.015);
+}
+
+.visimg figcaption{
+  margin-top:8px;
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.45;
+}
+
+.slot{
+  min-height:120px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  border:1px dashed #bcbab3;
+  border-radius:15px;
+  color:var(--muted);
+  font-size:12px;
+  text-align:center;
 }
 
 
-.kpi {
+/* =========================
+   CHART / INSIGHT CARDS
+========================= */
 
-  min-height: 105px;
+.chart-card{
+  padding:20px;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:var(--card);
+}
 
-  padding: 17px;
+.chart-title{
+  margin:0 0 15px;
+  font-size:13px;
+  font-weight:700;
+}
 
-  border: 1px solid var(--line);
+.chart-note{
+  margin:14px 0 0;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.55;
+}
 
-  border-radius: 16px;
-
-  background: var(--card);
-
+.chart-note a{
+  color:var(--black);
+  font-weight:700;
+  text-decoration:underline;
+  text-underline-offset:3px;
 }
 
 
-.kpi strong {
+/* =========================
+   SIMPLE DATA VISUALS
+========================= */
 
-  display: block;
+.bar-list{
+  display:grid;
+  gap:14px;
+}
 
-  margin-bottom: 5px;
+.bar-item{
+  display:grid;
+  gap:6px;
+}
 
-  color: var(--black);
+.bar-label{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  font-size:12px;
+  font-weight:600;
+}
 
-  font-size: 25px;
+.bar-track{
+  height:14px;
+  overflow:hidden;
+  border-radius:999px;
+  background:#ecebe5;
+}
 
-  line-height: 1.05;
+.bar-fill{
+  height:100%;
+  border-radius:999px;
+  background:var(--black);
+}
 
-  letter-spacing: -.04em;
+.timeline{
+  display:grid;
+  gap:14px;
+}
 
+.timeline-item{
+  display:grid;
+  grid-template-columns:110px 1fr;
+  gap:15px;
+  padding-bottom:14px;
+  border-bottom:1px solid var(--line);
+}
+
+.timeline-item:last-child{
+  border-bottom:0;
+}
+
+.timeline-date{
+  font-size:11px;
+  font-weight:700;
+  color:var(--muted);
+}
+
+.timeline-title{
+  margin:0;
+  font-size:13px;
+  font-weight:700;
+}
+
+.timeline-text{
+  margin:3px 0 0;
+  color:var(--muted);
+  font-size:12px;
+}
+
+.insight-box{
+  padding:20px;
+  border-radius:18px;
+  background:var(--accent-soft);
+}
+
+.insight-box p{
+  margin:0;
+  max-width:760px;
+  font-size:14px;
 }
 
 
-.kpi span {
-
-  color: var(--muted);
-
-  font-size: 11px;
-
-  line-height: 1.4;
-
-}
-
-
-/* =====================================================
-   CHARTS
-===================================================== */
-
-.chart {
-
-  padding: 18px;
-
-  border-radius: 18px;
-
-  background: var(--card);
-
-  border: 1px solid var(--line);
-
-  overflow-x: auto;
-
-}
-
-
-.chart svg {
-
-  display: block;
-
-  width: 100%;
-
-  min-width: 560px;
-
-  height: auto;
-
-}
-
-
-.chartcap {
-
-  margin: 12px 0 0;
-
-  color: var(--muted);
-
-  font-size: 12px;
-
-  line-height: 1.55;
-
-}
-
-
-.chartcap a {
-
-  color: var(--black);
-
-  font-weight: 700;
-
-  text-decoration: underline;
-
-  text-decoration-thickness: 1px;
-
-  text-underline-offset: 3px;
-
-}
-
-
-.chartcap a:hover {
-
-  color: var(--muted);
-
-}
-
-
-/* =====================================================
-   VISUALS / ARTIFACTS
-===================================================== */
-
-.vis {
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(
-      auto-fit,
-      minmax(220px, 1fr)
-    );
-
-  gap: 18px;
-
-  align-items: start;
-
-}
-
-
-.visimg {
-
-  margin: 0;
-
-  min-width: 0;
-
-}
-
-
-.visimg a {
-
-  display: block;
-
-  overflow: hidden;
-
-  border-radius: 15px;
-
-  background: var(--card);
-
-}
-
-
-.visimg img {
-
-  display: block;
-
-  width: 100%;
-
-  height: auto;
-
-  border-radius: 15px;
-
-  border: 1px solid var(--line);
-
-  transition:
-    transform .25s ease;
-
-}
-
-
-.visimg a:hover img {
-
-  transform: scale(1.015);
-
-}
-
-
-.visimg figcaption {
-
-  margin-top: 8px;
-
-  color: var(--muted);
-
-  font-size: 11px;
-
-  line-height: 1.45;
-
-}
-
-
-.vis .button {
-
-  align-self: start;
-
-}
-
-
-.slot {
-
-  min-height: 120px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  padding: 20px;
-
-  border: 1px dashed #bcbab3;
-
-  border-radius: 15px;
-
-  color: var(--muted);
-
-  font-size: 12px;
-
-  text-align: center;
-
-}
-
-
-/* =====================================================
-   SPECIAL SMALL KPI GROUP
-===================================================== */
-
-.row .kpis + * {
-
-  margin-top: 10px;
-
-}
-
-
-/* =====================================================
+/* =========================
    FOOTER
-===================================================== */
+========================= */
 
-.site-footer {
-
-  padding: 60px 0 45px;
-
-  border-top: 1px solid var(--line);
-
+.site-footer{
+  padding:60px 0 45px;
+  border-top:1px solid var(--line);
 }
 
-
-.footer-grid {
-
-  display: grid;
-
-  grid-template-columns:
-    1fr
-    auto;
-
-  gap: 40px;
-
-  align-items: end;
-
+.footer-grid{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:40px;
+  align-items:end;
 }
 
-
-.footer-title {
-
-  margin: 0 0 12px;
-
-  font-size: clamp(
-    34px,
-    5vw,
-    56px
-  );
-
-  line-height: .95;
-
-  letter-spacing: -.05em;
-
+.footer-title{
+  margin:0 0 12px;
+  font-size:clamp(34px,5vw,56px);
+  line-height:.95;
+  letter-spacing:-.05em;
 }
 
-
-.footer-title em {
-
+.footer-title em{
   font-family:
     "Playfair Display",
     Georgia,
     serif;
-
-  font-weight: 500;
-
+  font-weight:500;
 }
 
-
-.footer-text {
-
-  margin: 0;
-
-  color: var(--muted);
-
-  font-size: 13px;
-
+.footer-text{
+  margin:0;
+  color:var(--muted);
+  font-size:13px;
 }
 
-
-.footer-links {
-
-  display: flex;
-
-  flex-wrap: wrap;
-
-  justify-content: flex-end;
-
-  gap: 8px;
-
+.footer-links{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+  gap:8px;
 }
 
-
-.footer-link {
-
-  padding: 9px 14px;
-
-  border: 1px solid var(--line);
-
-  border-radius: 999px;
-
-  text-decoration: none;
-
-  font-size: 12px;
-
-  font-weight: 600;
-
+.footer-link{
+  padding:9px 14px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  text-decoration:none;
+  font-size:12px;
+  font-weight:600;
   transition:
     background .2s ease,
     transform .2s ease;
+}
 
+.footer-link:hover{
+  background:var(--accent);
+  transform:translateY(-2px);
 }
 
 
-.footer-link:hover {
-
-  background: var(--accent);
-
-  transform: translateY(-2px);
-
-}
-
-
-/* =====================================================
+/* =========================
    MOBILE
-===================================================== */
+========================= */
 
-@media (max-width: 800px) {
+@media(max-width:800px){
 
-  .site-container {
-
-    width: min(
-      100% - 32px,
-      680px
-    );
-
+  .site-container{
+    width:min(100% - 32px,680px);
   }
 
-
-  .header-inner {
-
-    min-height: 68px;
-
+  .header-inner{
+    min-height:68px;
   }
 
-
-  .header-nav .header-link:not(.primary) {
-
-    display: none;
-
+  .header-nav .header-link:not(.primary){
+    display:none;
   }
 
-
-  .hero {
-
-    padding: 70px 0 65px;
-
+  .hero{
+    padding:70px 0 65px;
   }
 
-
-  .hero-grid {
-
-    grid-template-columns: 1fr;
-
-    gap: 35px;
-
+  .hero-grid{
+    grid-template-columns:1fr;
+    gap:35px;
   }
 
-
-  .hero h1 {
-
-    font-size: clamp(
-      48px,
-      15vw,
-      76px
-    );
-
+  .hero h1{
+    font-size:clamp(48px,15vw,76px);
   }
 
-
-  .section-heading {
-
-    display: block;
-
+  .section-heading{
+    display:block;
   }
 
-
-  .section-note {
-
-    margin-top: 18px;
-
+  .section-note{
+    margin-top:18px;
   }
 
-
-  .case {
-
-    margin-bottom: 55px;
-
-    padding-bottom: 55px;
-
+  .case{
+    margin-bottom:55px;
+    padding-bottom:55px;
   }
 
-
-  .case-top {
-
-    grid-template-columns:
-      55px
-      1fr;
-
-    gap: 15px;
-
+  .case-top{
+    grid-template-columns:55px 1fr;
+    gap:15px;
   }
 
-
-  .case-content {
-
-    margin-left: 0;
-
+  .case-content{
+    margin-left:0;
   }
 
-
-  .row {
-
-    grid-template-columns: 1fr;
-
-    gap: 10px;
-
+  .row{
+    grid-template-columns:1fr;
+    gap:10px;
   }
 
-
-  .row > b {
-
-    font-size: 10px;
-
+  .vis{
+    grid-template-columns:1fr 1fr;
   }
 
-
-  .vis {
-
-    grid-template-columns: 1fr 1fr;
-
+  .footer-grid{
+    grid-template-columns:1fr;
   }
 
-
-  .footer-grid {
-
-    grid-template-columns: 1fr;
-
-  }
-
-
-  .footer-links {
-
-    justify-content: flex-start;
-
+  .footer-links{
+    justify-content:flex-start;
   }
 
 }
 
+@media(max-width:560px){
 
-@media (max-width: 560px) {
-
-  .site-container {
-
-    width: calc(100% - 28px);
-
+  .site-container{
+    width:calc(100% - 28px);
   }
 
-
-  .header-nav {
-
-    gap: 4px;
-
+  .header-nav{
+    gap:4px;
   }
 
-
-  .header-link.primary {
-
-    padding: 8px 12px;
-
-    font-size: 11px;
-
+  .header-link.primary{
+    padding:8px 12px;
+    font-size:11px;
   }
 
-
-  .logo {
-
-    font-size: 13px;
-
+  .logo{
+    font-size:13px;
   }
 
-
-  .logo span {
-
-    width: 29px;
-
-    height: 29px;
-
-    margin-right: 6px;
-
+  .logo span{
+    width:29px;
+    height:29px;
+    margin-right:6px;
   }
 
-
-  .hero {
-
-    padding-top: 55px;
-
+  .hero{
+    padding-top:55px;
   }
 
-
-  .hero h1 {
-
-    font-size: 46px;
-
+  .hero h1{
+    font-size:46px;
   }
 
-
-  .case-top {
-
-    grid-template-columns: 1fr;
-
-    gap: 7px;
-
+  .case-top{
+    grid-template-columns:1fr;
+    gap:7px;
   }
 
-
-  .case-number {
-
-    padding-top: 0;
-
+  .case-number{
+    padding-top:0;
   }
 
-
-  .case-title {
-
-    font-size: 38px;
-
+  .case-title{
+    font-size:38px;
   }
 
-
-  .kpis {
-
-    grid-template-columns: 1fr 1fr;
-
+  .kpis{
+    grid-template-columns:1fr 1fr;
   }
 
-
-  .kpi {
-
-    min-height: 95px;
-
-    padding: 13px;
-
+  .kpi{
+    min-height:95px;
+    padding:13px;
   }
 
-
-  .kpi strong {
-
-    font-size: 21px;
-
+  .kpi strong{
+    font-size:21px;
   }
 
-
-  .chart {
-
-    padding: 10px;
-
+  .vis{
+    grid-template-columns:1fr;
   }
 
-
-  .vis {
-
-    grid-template-columns: 1fr;
-
+  .timeline-item{
+    grid-template-columns:1fr;
+    gap:3px;
   }
 
 }
 
+@media(prefers-reduced-motion:reduce){
 
-/* =====================================================
-   ACCESSIBILITY
-===================================================== */
-
-@media (prefers-reduced-motion: reduce) {
-
-  html {
-
-    scroll-behavior: auto;
-
+  html{
+    scroll-behavior:auto;
   }
 
-
-  * {
-
-    transition: none !important;
-
+  *{
+    transition:none !important;
   }
 
 }
@@ -1376,66 +827,52 @@ img {
 
 <body>
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
 
 <header class="site-header">
 
   <div class="site-container header-inner">
 
-```
-<a
-  class="logo"
-  href="index.html"
-  aria-label="Back to Tamimmah Disma Lestari portfolio"
->
+    <a
+      class="logo"
+      href="index.html"
+      aria-label="Back to Tamimmah Disma Lestari portfolio"
+    >
+      <span>TDL</span>
+      Tamimmah Disma Lestari
+    </a>
 
-  <span>TDL</span>
+    <nav
+      class="header-nav"
+      aria-label="Main navigation"
+    >
 
-  Tamimmah Disma Lestari
+      <a
+        class="header-link"
+        href="index.html"
+      >
+        Portfolio
+      </a>
 
-</a>
+      <a
+        class="header-link"
+        href="journal.html"
+      >
+        Journal
+      </a>
 
+      <a
+        class="header-link primary"
+        href="mailto:tamimmadisma@gmail.com"
+      >
+        Get in touch →
+      </a>
 
-<nav
-  class="header-nav"
-  aria-label="Main navigation"
->
-
-  <a
-    class="header-link"
-    href="index.html"
-  >
-    Portfolio
-  </a>
-
-
-  <a
-    class="header-link"
-    href="journal.html"
-  >
-    Journal
-  </a>
-
-
-  <a
-    class="header-link primary"
-    href="mailto:tamimmadisma@gmail.com"
-  >
-    Get in touch →
-  </a>
-
-</nav>
-```
+    </nav>
 
   </div>
 
 </header>
 
-<!-- =====================================================
-     HERO
-===================================================== -->
 
 <main>
 
@@ -1443,96 +880,78 @@ img {
 
   <div class="site-container hero-grid">
 
-```
-<div>
+    <div>
 
-  <p class="eyebrow">
-    Selected work · Case studies
-  </p>
+      <p class="eyebrow">
+        Selected work · Case studies
+      </p>
 
+      <h1>
+        Work that
+        <em>moves.</em>
+      </h1>
 
-  <h1>
-    Work that
-    <em>moves.</em>
-  </h1>
+    </div>
 
-</div>
+    <div>
 
+      <p class="hero-description">
+        A closer look at selected projects across entrepreneurship,
+        marketing, growth, consumer insights and commercial strategy.
+      </p>
 
-<div>
+      <div class="hero-actions">
 
-  <p class="hero-description">
+        <a
+          class="button button-dark"
+          href="index.html"
+        >
+          ← Back to portfolio
+        </a>
 
-    A closer look at selected projects across
-    entrepreneurship, marketing, growth,
-    consumer insights and commercial strategy.
+        <a
+          class="button button-light"
+          href="mailto:tamimmadisma@gmail.com"
+        >
+          Get in touch →
+        </a>
 
-  </p>
+      </div>
 
-
-  <div class="hero-actions">
-
-    <a
-      class="button button-dark"
-      href="index.html"
-    >
-      ← Back to portfolio
-    </a>
-
-
-    <a
-      class="button button-light"
-      href="mailto:tamimmadisma@gmail.com"
-    >
-      Get in touch →
-    </a>
-
-  </div>
-
-</div>
-```
+    </div>
 
   </div>
 
 </section>
 
-<!-- =====================================================
-     CASE STUDIES
-===================================================== -->
 
 <section class="cases-section">
 
   <div class="site-container">
 
-```
-<div class="section-heading">
+    <div class="section-heading">
 
-  <div>
+      <div>
 
-    <div class="section-number">
-      01 — 07
+        <div class="section-number">
+          01 — 07
+        </div>
+
+        <h2>
+          Selected <em>case studies.</em>
+        </h2>
+
+      </div>
+
+      <p class="section-note">
+        Projects spanning business development,
+        marketing, content, research, operations
+        and commercial strategy.
+      </p>
+
     </div>
 
-    <h2>
-      Selected <em>case studies.</em>
-    </h2>
-
-  </div>
-
-
-  <p class="section-note">
-
-    Projects spanning business development,
-    marketing, content, research, operations
-    and commercial strategy.
-
-  </p>
-
-</div>
-
-
-<div id="cases"></div>
-```
+    <div id="cases"></div>
 
   </div>
 
@@ -1540,61 +959,53 @@ img {
 
 </main>
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
 
 <footer class="site-footer">
 
   <div class="site-container footer-grid">
 
-```
-<div>
+    <div>
 
-  <h2 class="footer-title">
-    Let's build something
-    <em>useful.</em>
-  </h2>
+      <h2 class="footer-title">
+        Let's build something
+        <em>useful.</em>
+      </h2>
 
+      <p class="footer-text">
+        Tamimmah Disma Lestari · Business · Marketing · Consumer Insights
+      </p>
 
-  <p class="footer-text">
-    Tamimmah Disma Lestari · Business · Marketing · Consumer Insights
-  </p>
+    </div>
 
-</div>
+    <div class="footer-links">
 
+      <a
+        class="footer-link"
+        href="index.html"
+      >
+        Portfolio
+      </a>
 
-<div class="footer-links">
+      <a
+        class="footer-link"
+        href="journal.html"
+      >
+        Journal
+      </a>
 
-  <a
-    class="footer-link"
-    href="index.html"
-  >
-    Portfolio
-  </a>
+      <a
+        class="footer-link"
+        href="mailto:tamimmadisma@gmail.com"
+      >
+        Email
+      </a>
 
-
-  <a
-    class="footer-link"
-    href="journal.html"
-  >
-    Journal
-  </a>
-
-
-  <a
-    class="footer-link"
-    href="mailto:tamimmadisma@gmail.com"
-  >
-    Email
-  </a>
-
-</div>
-```
+    </div>
 
   </div>
 
 </footer>
+
 
 <script>
 
@@ -1604,928 +1015,690 @@ img {
 
 var P = [
 
+/* =====================================================
+   01 — SELLKPOPVT
+===================================================== */
+
 {
-tag:"Founder · International D2C on X",
+  tag:"Founder · International D2C on X",
 
-title:"SellKpopVT: turning an X audience into 1,000+ orders",
+  title:"SellKpopVT: turning an X audience into 1,000+ orders",
 
-overview:"An international direct-to-consumer business selling K-pop fan-voting services, run by me end to end as founder. Customers and resellers came from SEA, Europe and the US.",
+  overview:"An international direct-to-consumer business selling K-pop fan-voting services, run by me end to end as founder. Customers and resellers came from SEA, Europe and the US.",
 
-challenge:"Followers do not pay the bills. The audience had to become trusting, repeat customers in many countries, while resellers pushed on price and the team worked across time zones.",
+  challenge:"Followers do not pay the bills. The audience had to become trusting, repeat customers in many countries, while resellers pushed on price and the team worked across time zones.",
 
-process:[
+  process:[
+    "Ran promotions and tracked campaign and sales performance.",
+    "Used demand and purchasing insights to adjust pricing and campaigns.",
+    "Benchmarked 4 competing resellers on pricing, branding and trust signals to sharpen positioning.",
+    "Negotiated with resellers instead of rejecting low offers.",
+    "Led 3 core members (2 in Indonesia, 1 in the Philippines), each leading a team of 1–3 people.",
+    "Handled customer communication with resellers, customers and payment partners."
+  ],
 
-"Ran promotions and tracked campaign and sales performance.",
+  insight:"Direct benchmarking of 4 active resellers showed the market splits between undercutting on price and competing on brand trust. SellKpopVT leaned into the second lane — consistent branding, broad payment coverage (PayPal, GCash, QRIS, Wise) and public proof-of-delivery posts — rather than a race to the bottom on price.",
 
-"Used demand and purchasing insights to adjust pricing and campaigns.",
+  vis:[
+    {
+      img:"sellkpopvt-profile.png",
+      cap:"Brand identity",
+      link:"sellkpopvt-profile.png"
+    },
+    {
+      img:"sellkpopvt-banner.png",
+      cap:"Channel banner (2026)",
+      link:"sellkpopvt-banner.png"
+    },
+    {
+      l:"View the live account @sellkpopvt",
+      h:"https://x.com/sellkpopvt"
+    }
+  ],
 
-"Benchmarked 4 competing resellers on pricing, branding and trust signals to sharpen positioning.",
+  charts:[
+    {
+      title:"Competitive positioning",
+      type:"bars",
+      items:[
+        ["@kpopvote***","16k · slightly below market",27],
+        ["@bearin***","27k · inconsistent pricing",45],
+        ["@bluevo***","40k · well below market",65],
+        ["@i_got_***","16k · at market",38],
+        ["SellKpopVT","Trust-led positioning",78]
+      ],
+      note:"A strategic positioning view based on direct benchmarking of active resellers."
+    },
+    {
+      title:"Weekly account delivery",
+      type:"bars",
+      items:[
+        ["Hari 1","2,000 accounts",83],
+        ["Hari 2","2,000 accounts",83],
+        ["Hari 3","1,600 accounts · staff shortage",67],
+        ["Hari 4","2,400 accounts · shortfall recovered",100]
+      ],
+      note:"Illustrative operating tracker for an 8,000-account weekly delivery target."
+    }
+  ],
 
-"Negotiated with resellers instead of rejecting low offers.",
+  kpis:[
+    ["10,000+","followers converted to buyers"],
+    ["1,000+","transactions"],
+    ["3 regions","SEA, Europe, US; Japan and China via resellers"]
+  ]
+},
 
-"Led 3 core members (2 in Indonesia, 1 in the Philippines), each leading a team of 1–3 people.",
 
-"Handled customer communication with resellers, customers and payment partners."
+/* =====================================================
+   02 — TIKTOK
+===================================================== */
 
-],
+{
+  tag:"Content · Organic TikTok",
 
-insight:"Direct benchmarking of 4 active resellers showed the market splits between undercutting on price and competing on brand trust. SellKpopVT leaned into the second lane — consistent branding, broad payment coverage (PayPal, GCash, QRIS, Wise) and public proof-of-delivery posts — rather than a race to the bottom on price. The tracker linked below is an illustrative template of the system used to coordinate an 8,000-account/week delivery target across a 3-country team.",
-vis:[
+  title:"Organic TikTok account: 4.25M+ views from 16 posts",
 
-  {
-    img:"./sellkpopvt-profile.png",
-    cap:"Brand identity",
-    link:"./sellkpopvt-profile.png"
-  },
+  overview:"An unpaid TikTok account I grew as the creator and owner, testing how far organic content could travel.",
 
-  {
-    img:"./sellkpopvt-banner.png",
-    cap:"Channel banner (2026)",
-    link:"./sellkpopvt-banner.png"
-  },
+  challenge:"Getting reach without ads on a video-heavy platform, using mostly photo-based posts.",
 
-  {
-    l:"View the live account @sellkpopvt",
-    h:"https://x.com/sellkpopvt"
+  process:[
+    "Published 16 mostly photo-based posts.",
+    "Measured views and engagement per post to see what worked."
+  ],
+
+  insight:"Across the last 10 posts, the account averaged 369K views a post with a 6.42% engagement rate, using mostly photo carousels rather than video, on a 977-follower account.",
+
+  vis:[
+    {
+      img:"tiktok-profile.jpg",
+      cap:"Profile & pinned posts, @baesminju",
+      link:"tiktok-profile.jpg"
+    },
+    {
+      l:"View the live account @baesminju",
+      h:"https://www.tiktok.com/@baesminju"
+    }
+  ],
+
+  charts:[
+    {
+      title:"Average performance per post",
+      type:"bars",
+      items:[
+        ["Views","369,187",100],
+        ["Likes","22,996",62],
+        ["Comments","317",12],
+        ["Shares","375",14]
+      ],
+      note:"Average performance across the account's measured posts."
+    },
+    {
+      title:"Engagement rate",
+      type:"bars",
+      items:[
+        ["Very low","<1%",12],
+        ["Low","1–3%",30],
+        ["Good","3–5%",50],
+        ["Strong","5–8% · account: 6.42%",80],
+        ["Excellent",">8%",100]
+      ],
+      note:"The account's measured engagement rate was 6.42%."
+    }
+  ],
+
+  kpis:[
+    ["4.25M+","total views"],
+    ["6.42%","engagement rate"],
+    ["2 posts","over 1M views each"]
+  ]
+},
+
+
+/* =====================================================
+   03 — ECOPLAST
+===================================================== */
+
+{
+  tag:"CMO · Sustainable products startup",
+
+  title:"Ecoplast ID: building a brand and winning 3 competitions",
+
+  overview:"An early-stage sustainable products startup selling affordable, water-resistant biodegradable bags made from cassava starch, with R&D on a non-food alternative from palm-oil empty fruit bunches. I was CMO, owning positioning, messaging and the pitch, and led the 2021 PMW funding proposal.",
+
+  challenge:"A new brand needed visibility online and credibility with investors and judges at the same time.",
+
+  process:[
+    "Built a social-to-e-commerce presence, with TikTok at the centre.",
+    "Benchmarked competitor Avani and built the SWOT to position Ecoplast on price and durability.",
+    "Pitched the business model to VCs, investors and competition judges.",
+    "Built the funding case: a Rp20M budget plan and a 6-month break-even model."
+  ],
+
+  insight:"The work combined brand positioning, competition pitching and commercial planning rather than treating marketing as a standalone communications function.",
+
+  charts:[
+    {
+      title:"Competition results",
+      type:"bars",
+      items:[
+        ["PMW ITB × TOP","Top 20",35],
+        ["Hult Prize ITB","Top 6 · campus round",70],
+        ["Indonesia Millennial Connect","Runner-up · national level",90]
+      ],
+      note:"Competition results across 2019–2021."
+    },
+    {
+      title:"Packs sold / target",
+      type:"bars",
+      items:[
+        ["Idul Adha 2019","48 packs",64],
+        ["Typical month","10–20 packs",25],
+        ["Monthly target with PMW funding","50–75 packs",100]
+      ],
+      note:"Sales figures from the 2021 PMW proposal; the final figure is a funded-growth target, not an actual result."
+    },
+    {
+      title:"Proposed Rp20M budget",
+      type:"bars",
+      items:[
+        ["Business development","Rp6M",30],
+        ["Marketing & ads","Rp8M",40],
+        ["Travel & operations","Rp2.4M",12],
+        ["Other","Rp3.6M",18]
+      ],
+      note:"Proposed use of funds in the 2021 PMW application."
+    }
+  ],
+
+  kpis:[
+    ["7x","TikTok reach"],
+    ["3 wins","including Runner-up, Indonesia Millennial Connect"],
+    ["2,400 bags","sold in the first Idul Adha batch, Aug 2019"]
+  ]
+},
+
+
+/* =====================================================
+   04 — THE FOUNDERS LAB
+===================================================== */
+
+{
+  tag:"Marketing · Startup community",
+
+  title:"The Founders Lab: growing a startup community and its events",
+
+  overview:"A startup community where I led marketing, running webinars, events and a business-idea competition.",
+
+  challenge:"Growing a young community, filling events with speakers and mentors, and funding it through partnerships.",
+
+  process:[
+    "Led 8 marketing representatives across campaigns and 3 major events.",
+    "Ran 8+ webinars a month for a 100-member community.",
+    "Secured paid and barter partnerships.",
+    "Planned content calendars and campaigns; organised a business-idea competition end to end.",
+    "Led Startup Dating, matching aspiring founders without teams.",
+    "Marketed Idealogy Festival 2020 end to end: IG Live founder talks, a startup challenge and the 4 July Digital Summit.",
+    "Designed a tiered paid-promotion rate card from a benchmark of 10 accounts, then pitched it to 5 partners."
+  ],
+
+  charts:[
+    {
+      title:"Campaign timeline",
+      type:"timeline",
+      items:[
+        ["Mar–Apr 2020","Social media plan","Intro → recruit → challenge"],
+        ["18–19 May","Founders Talk","2 founder IG Lives"],
+        ["15 Jun","Challenge semi-finals","Startup Challenge"],
+        ["4 Jul","Idealogy Digital Summit","5 speakers"],
+        ["21 Sep–5 Oct","Funding Frenzy recruitment","5-step selection"],
+        ["Jan 2021","IG Live: Drama vs Reality","K-drama startup theme"]
+      ]
+    },
+    {
+      title:"Paid-promotion outreach",
+      type:"bars",
+      items:[
+        ["Accounts benchmarked","10",100],
+        ["Partners approached","5",50],
+        ["Deals closed","2",20]
+      ],
+      note:"The service design was based on follower-size benchmarking and tested through real partner outreach."
+    }
+  ],
+
+  kpis:[
+    ["2,000+","followers generated"],
+    ["200+","startup listings"],
+    ["24 + 30","mentors and judges, speakers"],
+    ["9/10","360-degree feedback"],
+    ["2 of 5","paid-promotion pitches closed"]
+  ]
+},
+
+
+/* =====================================================
+   05 — SARI RASA
+===================================================== */
+
+{
+  tag:"Investor & Business Partner · B2B distribution",
+
+  title:"PT Sari Rasa: analysing a distributor and securing Rp100M+",
+
+  overview:"A B2B distribution network I evaluated before investing, then joined as a business partner for promotional and commercial strategy.",
+
+  challenge:"Deciding whether the business was worth backing, then funding its next stage of growth.",
+
+  process:[
+    "Analysed operations and market viability before joining as partner.",
+    "Acted as primary contact to the bank and presented the case for funding.",
+    "Advised the owner on operational and financial issues as they arose."
+  ],
+
+  insight:"The project combined business evaluation, financing support and commercial involvement rather than treating the investment decision separately from the operating business.",
+
+  vis:[
+    {
+      s:"Funding presentation artifact — redacted for confidentiality."
+    }
+  ],
+
+  kpis:[
+    ["Rp100M+","funding secured"],
+    ["50+","outlets in the network"]
+  ]
+},
+
+
+/* =====================================================
+   06 — JUS FOR YOU
+===================================================== */
+
+{
+  tag:"Co-Founder & CMO · Campus beverage startup",
+
+  title:"Jus For You: keeping 10+ campus retailers stocked",
+
+  overview:"A juice startup I co-founded and ran as CMO, supplying campus canteens and retailers.",
+
+  challenge:"Keeping retailers supplied without overstock on a short inventory cycle.",
+
+  process:[
+    "Ran biweekly procurement and supplier negotiation.",
+    "Structured profit-sharing deals with retailers.",
+    "Tracked daily 5 PM sell-through and adjusted stock."
+  ],
+
+  vis:[
+    {
+      s:"Sales log / retailer documentation — selected artifact."
+    }
+  ],
+
+  charts:[
+    {
+      title:"Operating rhythm",
+      type:"bars",
+      items:[
+        ["Procurement","Biweekly",70],
+        ["Sell-through review","Daily · 5 PM",100],
+        ["Inventory cycle","2–3 days",45]
+      ]
+    }
+  ],
+
+  kpis:[
+    ["10+","campus retailers"],
+    ["15–25","juices per canteen daily"],
+    ["2–3 days","inventory cycle"]
+  ]
+},
+
+
+/* =====================================================
+   07 — CIEL SBM ITB
+===================================================== */
+
+{
+  tag:"Business Intern · Corporate training (CIEL, SBM ITB)",
+
+  title:"CIEL SBM ITB: market research and sizing for a training provider",
+
+  overview:"An internship project for CIEL, a corporate training provider at SBM ITB, done in a team of eight across two semesters of the Integrative Business Experience course. We researched the corporate training market in 2019, then sized a teacher-training service for senior high schools, and in 2020 wrote a remote social media plan for its Business Lab.",
+
+  challenge:"Finding where a training provider could grow beyond its current market, and backing the case with field data instead of assumptions.",
+
+  process:[
+    "Surveyed 16 working professionals on past training and satisfaction, and observed a live Pertamina R&D training at Patra Hotel Bandung (16–17 Oct 2019).",
+    "Benchmarked three competitors (PM ELI, Binus Mini MBA, MDI) on price and features, and ran a Porter's Five Forces analysis.",
+    "Built a value proposition canvas for a teacher digital-transformation training and tested it against teacher and principal input.",
+    "Sized the market top-down, from all schools in three provinces to the private schools CIEL could realistically win.",
+    "Developed a remote social media plan for CIEL's Business Lab."
+  ],
+
+  insight:"The project connected field research, competitor benchmarking, market sizing and customer-value analysis to a concrete commercial opportunity.",
+
+  charts:[
+    {
+      title:"Research approach",
+      type:"timeline",
+      items:[
+        ["2019","Primary research","16 working professionals"],
+        ["Oct 2019","Field observation","Pertamina R&D training"],
+        ["2019","Competitor analysis","PM ELI · Binus Mini MBA · MDI"],
+        ["2019","Value proposition","Teacher digital-transformation training"],
+        ["2020","Digital marketing","Remote Business Lab social media plan"]
+      ]
+    }
+  ],
+
+  kpis:[
+    ["16","working professionals surveyed"],
+    ["3","competitors benchmarked"],
+    ["3","provinces included in market sizing"]
+  ]
+}
+
+];
+
+
+/* =====================================================
+   HELPERS
+===================================================== */
+
+function escapeHTML(value){
+
+  return String(value)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+
+}
+
+
+function renderKPIs(items){
+
+  if(!items || !items.length){
+    return "";
   }
 
-],
+  return `
+    <div class="kpis">
+      ${
+        items.map(function(item){
+          return `
+            <div class="kpi">
+              <strong>${escapeHTML(item[0])}</strong>
+              <span>${escapeHTML(item[1])}</span>
+            </div>
+          `;
+        }).join("")
+      }
+    </div>
+  `;
 
-competitorChart:`<svg viewBox="0 0 640 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Reseller positioning map: price versus brand consistency">
-
-<style>
-
-.axis2{stroke:var(--line);stroke-width:1}
-
-.pt{fill:var(--accent-soft);stroke:var(--black);stroke-width:2}
-
-.pt-me{fill:none;stroke:var(--black);stroke-width:2;stroke-dasharray:5 4}
-
-.lbl2{font:600 12px system-ui,sans-serif;fill:var(--text)}
-
-.lbl2m{font:500 10.5px system-ui,sans-serif;fill:var(--muted)}
-
-.lbl2c{font:700 12px system-ui,sans-serif;fill:var(--text)}
-
-</style>
-
-<line class="axis2" x1="320" y1="40" x2="320" y2="420"/>
-
-<line class="axis2" x1="40" y1="235" x2="600" y2="235"/>
-
-<text class="lbl2m" x="60" y="48" text-anchor="start">
-Strong brand · low price
-</text>
-
-<text class="lbl2m" x="580" y="48" text-anchor="end">
-Strong brand · high price
-</text>
-
-<text class="lbl2m" x="60" y="440" text-anchor="start">
-Weak brand · low price
-</text>
-
-<text class="lbl2m" x="580" y="440" text-anchor="end">
-Weak brand · high price
-</text>
-
-<circle class="pt-me" cx="470" cy="90" r="24"/>
-
-<text class="lbl2c" x="436" y="86" text-anchor="end">
-SellKpopVT
-</text>
-
-<text class="lbl2m" x="436" y="100" text-anchor="end">
-trust-led, not cheapest
-</text>
-
-<circle class="pt" cx="150" cy="130" r="20"/>
-
-<text class="lbl2" x="182" y="126">
-@kpopvote***
-</text>
-
-<text class="lbl2m" x="182" y="140">
-16k · slightly below market
-</text>
-
-<circle class="pt" cx="330" cy="190" r="28"/>
-
-<text class="lbl2" x="368" y="186">
-@bearin***
-</text>
-
-<text class="lbl2m" x="368" y="200">
-27k · inconsistent pricing
-</text>
-
-<circle class="pt" cx="130" cy="340" r="34"/>
-
-<text class="lbl2" x="130" y="386" text-anchor="middle">
-@bluevo***
-</text>
-
-<text class="lbl2m" x="130" y="400" text-anchor="middle">
-40k · well below market
-</text>
-
-<circle class="pt" cx="320" cy="375" r="20"/>
-
-<text class="lbl2" x="320" y="407" text-anchor="middle">
-@i_got_***
-</text>
-
-<text class="lbl2m" x="320" y="421" text-anchor="middle">
-16k · at market
-</text>
-
-</svg>`,
-
-competitorCap:`Circle size = follower count. Dashed circle marks SellKpopVT's chosen position (a strategic read from the analysis, not a measured data point). <a href="Analisis_Kompetitor_Pasar_SellKpopVT.pdf" target="_blank" rel="noopener">View the full competitor analysis (PDF)</a>`,
-
-opsChart:`<svg viewBox="0 0 640 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Weekly account delivery: target versus actual">
-
-<style>
-
-.axis{stroke:var(--line);stroke-width:1}
-
-.target{stroke:var(--muted);stroke-width:1.5;stroke-dasharray:4 4}
-
-.bar-ok{fill:var(--black)}
-
-.bar-low{fill:var(--black);fill-opacity:.35}
-
-.lbl{font:600 12px system-ui,sans-serif;fill:var(--text)}
-
-.lblm{font:500 10.5px system-ui,sans-serif;fill:var(--muted)}
-
-</style>
-
-<text class="lblm" x="320" y="22" text-anchor="middle">
-- - - Target: 2,000 accounts/day
-</text>
-
-<line class="axis" x1="40" y1="210" x2="580" y2="210"/>
-
-<line class="target" x1="40" y1="77" x2="580" y2="77"/>
-
-<rect class="bar-ok" x="68" y="77" width="64" height="133" rx="6"/>
-
-<text class="lbl" x="100" y="66" text-anchor="middle">
-2,000
-</text>
-
-<text class="lblm" x="100" y="228" text-anchor="middle">
-Hari 1
-</text>
-
-<rect class="bar-ok" x="208" y="77" width="64" height="133" rx="6"/>
-
-<text class="lbl" x="240" y="66" text-anchor="middle">
-2,000
-</text>
-
-<text class="lblm" x="240" y="228" text-anchor="middle">
-Hari 2
-</text>
-
-<rect class="bar-low" x="348" y="103" width="64" height="107" rx="6"/>
-
-<text class="lbl" x="380" y="93" text-anchor="middle">
-1,600
-</text>
-
-<text class="lblm" x="380" y="228" text-anchor="middle">
-Hari 3
-</text>
-
-<text class="lblm" x="380" y="242" text-anchor="middle">
-staff shortage
-</text>
-
-<rect class="bar-ok" x="488" y="50" width="64" height="160" rx="6"/>
-
-<text class="lbl" x="520" y="40" text-anchor="middle">
-2,400
-</text>
-
-<text class="lblm" x="520" y="228" text-anchor="middle">
-Hari 4
-</text>
-
-<text class="lblm" x="520" y="242" text-anchor="middle">
-shortfall recovered
-</text>
-
-</svg>`,
-
-opsCap:`8,000 / 8,000 accounts delivered this cycle — Hari 4 absorbed the Hari 3 shortfall. Illustrative template of the tracker used to run an 8,000-account/week target across a 3-country team. <a href="sellkpopvt_pelacak_operasional_harian.pdf" target="_blank" rel="noopener">View the full tracker (PDF)</a>`,
-
-kpis:[
-
-["10,000+","followers converted to buyers"],
-
-["1,000+","transactions"],
-
-["3 regions","SEA, Europe, US; Japan and China via resellers"]
-
-]
-
-},
-
-{
-tag:"Content · Organic TikTok",
-
-title:"Organic TikTok account: 4.25M+ views from 16 posts",
-
-overview:"An unpaid TikTok account I grew as the creator and owner, testing how far organic content could travel.",
-
-challenge:"Getting reach without ads on a video-heavy platform, using mostly photo-based posts.",
-
-process:[
-
-"Published 16 mostly photo-based posts.",
-
-"Measured views and engagement per post to see what worked."
-
-],
-
-insight:"Across the last 10 posts, the account averaged 369K views a post with a 6.42% engagement rate — TikTok's "Strong" tier (5–8%) — using mostly photo carousels rather than video, on a 977-follower account.",
-
-vis:[
-
-{
-img:"tiktok-profile.jpg",
-cap:"Profile & pinned posts, @baesminju",
-link:"tiktok-profile.jpg"
-},
-
-{
-l:"View the live account @baesminju",
-h:"https://www.tiktok.com/@baesminju"
 }
 
-],
 
-perfChips:[
+function renderVisuals(items){
 
-["369,187","avg views/post"],
+  if(!items || !items.length){
+    return "";
+  }
 
-["22,996","avg likes/post"],
+  return `
+    <div class="vis">
 
-["317","avg comments/post"],
+      ${
+        items.map(function(v){
 
-["375","avg shares/post"]
+          if(v.img){
 
-],
+            var imageLink = v.link || v.img;
 
-engagementChart:`<svg viewBox="0 0 640 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Engagement rate tier gauge showing 6.42 percent in the Strong tier">
+            return `
+              <figure class="visimg">
 
-<style>
+                <a
+                  href="${imageLink}"
+                  target="_blank"
+                  rel="noopener"
+                >
 
-.seg{stroke:none}
+                  <img
+                    src="${v.img}"
+                    alt="${escapeHTML(v.cap || "")}"
+                    loading="lazy"
+                    onerror="this.style.display='none';this.parentElement.parentElement.classList.add('image-error');"
+                  >
 
-.seg1{fill:var(--accent);fill-opacity:.15}
+                </a>
 
-.seg2{fill:var(--accent);fill-opacity:.3}
+                <figcaption>
+                  ${escapeHTML(v.cap || "")}
+                </figcaption>
 
-.seg3{fill:var(--accent);fill-opacity:.5}
+              </figure>
+            `;
 
-.seg4{fill:var(--accent);fill-opacity:.78}
+          }
 
-.seg5{fill:var(--accent);fill-opacity:1}
+          if(v.h){
 
-.mk{fill:var(--black)}
+            return `
+              <a
+                class="button button-light"
+                href="${v.h}"
+                target="_blank"
+                rel="noopener"
+              >
+                ${escapeHTML(v.l || "View link")} →
+              </a>
+            `;
 
-.mkline{stroke:var(--black);stroke-width:1.5;stroke-dasharray:3 3}
+          }
 
-.mklbl{font:700 12px system-ui,sans-serif;fill:var(--text)}
+          return `
+            <div class="slot">
+              ${escapeHTML(v.s || "")}
+            </div>
+          `;
 
-.tlbl{font:600 10.5px system-ui,sans-serif;fill:var(--text)}
+        }).join("")
+      }
 
-.tlbl2{font:500 9.5px system-ui,sans-serif;fill:var(--muted)}
+    </div>
+  `;
 
-</style>
-
-<rect class="seg seg1" x="40" y="54" width="56" height="26"/>
-
-<rect class="seg seg2" x="96" y="54" width="112" height="26"/>
-
-<rect class="seg seg3" x="208" y="54" width="112" height="26"/>
-
-<rect class="seg seg4" x="320" y="54" width="168" height="26"/>
-
-<rect class="seg seg5" x="488" y="54" width="112" height="26"/>
-
-<polygon class="mk" points="399.5,42 391,54 408,54"/>
-
-<line class="mkline" x1="399.5" y1="54" x2="399.5" y2="80"/>
-
-<text class="mklbl" x="399.5" y="34" text-anchor="middle">
-6.42% · Strong
-</text>
-
-<text class="tlbl" x="68" y="96" text-anchor="middle">
-Very low
-</text>
-
-<text class="tlbl2" x="68" y="108" text-anchor="middle">
-&lt;1%
-</text>
-
-<text class="tlbl" x="152" y="96" text-anchor="middle">
-Low
-</text>
-
-<text class="tlbl2" x="152" y="108" text-anchor="middle">
-1–3%
-</text>
-
-<text class="tlbl" x="264" y="96" text-anchor="middle">
-Good
-</text>
-
-<text class="tlbl2" x="264" y="108" text-anchor="middle">
-3–5%
-</text>
-
-<text class="tlbl" x="404" y="96" text-anchor="middle">
-Strong
-</text>
-
-<text class="tlbl2" x="404" y="108" text-anchor="middle">
-5–8%
-</text>
-
-<text class="tlbl" x="544" y="96" text-anchor="middle">
-Excellent
-</text>
-
-<text class="tlbl2" x="544" y="108" text-anchor="middle">
-&gt;8%
-</text>
-
-</svg>`,
-
-engagementCap:`Based on the account's last 10 posts, via a public TikTok analytics tool.`,
-
-kpis:[
-
-["4.25M+","total views"],
-
-["6.42%","engagement rate"],
-
-["2 posts","over 1M views each"]
-
-]
-
-},
-
-{
-tag:"CMO · Sustainable products startup",
-
-title:"Ecoplast ID: building a brand and winning 3 competitions",
-
-overview:"An early-stage sustainable products startup selling affordable, water-resistant biodegradable bags (cassava starch), with R&D on a non-food alternative from palm-oil empty fruit bunches. I was CMO, owning positioning, messaging and the pitch, and led the 2021 PMW funding proposal.",
-
-challenge:"A new brand needed visibility online and credibility with investors and judges at the same time.",
-
-process:[
-
-"Built a social-to-e-commerce presence, with TikTok at the centre.",
-
-"Benchmarked competitor Avani (pricey, dissolves in liquids) and built the SWOT to position Ecoplast on price and durability.",
-
-"Pitched the business model to VCs, investors and competition judges.",
-
-"Built the funding case: a Rp20M budget plan and a 6-month break-even model."
-
-],
-
-vis:[],
-
-winsChart:`<svg viewBox="0 0 640 222" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Competition results">
-
-<style>
-
-.wl{stroke:var(--line);stroke-width:3;stroke-linecap:round}
-
-.wd{fill:var(--accent-soft);stroke:var(--black);stroke-width:2.5}
-
-.wd-hi{fill:var(--black);stroke:var(--black);stroke-width:2.5}
-
-.wr{font:800 15px system-ui,sans-serif;fill:var(--text)}
-
-.wn{font:600 12px system-ui,sans-serif;fill:var(--text)}
-
-.wm{font:500 10.5px system-ui,sans-serif;fill:var(--muted)}
-
-</style>
-
-<line class="wl" x1="40" y1="80" x2="590" y2="80"/>
-
-<circle class="wd" cx="40" cy="80" r="9"/>
-
-<circle class="wd" cx="423" cy="80" r="11"/>
-
-<circle class="wd-hi" cx="533" cy="80" r="15"/>
-
-<text class="wm" x="590" y="52" text-anchor="middle">
-1st
-</text>
-
-<circle cx="590" cy="80" r="5" fill="var(--line)"/>
-
-<text class="wr" x="40" y="52">
-Top 20
-</text>
-
-<text class="wn" x="40" y="118">
-PMW ITB × TOP
-</text>
-
-<text class="wm" x="40" y="134">
-Competition
-</text>
-
-<text class="wr" x="423" y="52" text-anchor="middle">
-Top 6
-</text>
-
-<text class="wn" x="423" y="118" text-anchor="middle">
-Hult Prize ITB
-</text>
-
-<text class="wm" x="423" y="134" text-anchor="middle">
-Campus round
-</text>
-
-<text class="wr" x="533" y="46" text-anchor="middle">
-Runner-up
-</text>
-
-<line x1="533" y1="97" x2="533" y2="146" stroke="var(--black)" stroke-width="1.5" stroke-dasharray="3 3"/>
-
-<text class="wn" x="560" y="162" text-anchor="end">
-Indonesia Millennial Connect
-</text>
-
-<text class="wm" x="560" y="178" text-anchor="end">
-National level
-</text>
-
-<text class="wm" x="315" y="212" text-anchor="middle">
-Competition results across 2019–2021
-</text>
-
-</svg>`,
-
-winsCap:`Three competition results as CMO, including a national runner-up finish.`,
-
-trChart:`<svg viewBox="0 0 640 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Packs sold per period">
-
-<style>
-
-.ta{fill:var(--black)}
-
-.tb{fill:var(--black);opacity:.35}
-
-.tt{fill:none;stroke:var(--black);stroke-width:2;stroke-dasharray:5 4}
-
-.tn{font:600 12px system-ui,sans-serif;fill:var(--text)}
-
-.tm{font:500 10.5px system-ui,sans-serif;fill:var(--muted)}
-
-.tv{font:700 12px system-ui,sans-serif;fill:var(--text)}
-
-</style>
-
-<text class="tn" x="20" y="60">
-Idul Adha 2019
-</text>
-
-<text class="tm" x="20" y="75">
-first batch
-</text>
-
-<rect class="ta" x="190" y="46" width="240" height="28" rx="4"/>
-
-<text class="tv" x="440" y="65">
-48 packs
-</text>
-
-<text class="tn" x="20" y="130">
-Typical month after
-</text>
-
-<text class="tm" x="20" y="145">
-2019 to 2020
-</text>
-
-<rect class="ta" x="190" y="116" width="50" height="28" rx="4"/>
-
-<rect class="tb" x="240" y="116" width="50" height="28" rx="4"/>
-
-<text class="tv" x="300" y="135">
-10–20 packs
-</text>
-
-<text class="tn" x="20" y="200">
-Monthly target
-</text>
-
-<text class="tm" x="20" y="215">
-with PMW funding
-</text>
-
-<rect class="tt" x="190" y="186" width="250" height="28" rx="4"/>
-
-<rect class="tt" x="440" y="186" width="125" height="28" rx="4"/>
-
-<text class="tv" x="575" y="205">
-50–75
-</text>
-
-<text class="tm" x="190" y="240">
-1 pack = 50 bags. Solid = actual, dashed = target.
-</text>
-
-</svg>`,
-
-trCap:`Sales figures from the 2021 PMW proposal I led; the dashed bar is the funded-growth target, not a result.`,
-
-budChart:`<svg viewBox="0 0 640 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Rp20M budget">
-
-<style>
-
-.bn{font:600 12px system-ui,sans-serif;fill:var(--text)}
-
-.bm{font:500 10.5px system-ui,sans-serif;fill:var(--muted)}
-
-.bt{font:700 13px system-ui,sans-serif;fill:var(--text)}
-
-</style>
-
-<text class="bt" x="40" y="28">
-Rp 20M requested
-</text>
-
-<rect x="40" y="40" width="168" height="34" fill="var(--black)"/>
-
-<rect x="208" y="40" width="224" height="34" fill="var(--black)" opacity=".7"/>
-
-<rect x="432" y="40" width="67.2" height="34" fill="var(--black)" opacity=".45"/>
-
-<rect x="499.2" y="40" width="100.8" height="34" fill="var(--black)" opacity=".25"/>
-
-<text class="bn" x="124" y="98" text-anchor="middle">
-Business dev
-</text>
-
-<text class="bm" x="124" y="113" text-anchor="middle">
-Rp 6M
-</text>
-
-<text class="bn" x="320" y="98" text-anchor="middle">
-Marketing &amp; ads
-</text>
-
-<text class="bm" x="320" y="113" text-anchor="middle">
-Rp 8M
-</text>
-
-<text class="bn" x="460" y="98" text-anchor="middle">
-Travel &amp; ops
-</text>
-
-<text class="bm" x="460" y="113" text-anchor="middle">
-Rp 2.4M
-</text>
-
-<text class="bn" x="565" y="98" text-anchor="middle">
-Other
-</text>
-
-<text class="bm" x="565" y="113" text-anchor="middle">
-Rp 3.6M
-</text>
-
-</svg>`,
-
-budCap:`Proposed use of funds in the 2021 PMW application, with break-even projected in about 6 months.`,
-
-kpis:[
-
-["7x","TikTok reach"],
-
-["3 wins","incl. Runner-up, Indonesia Millennial Connect (national)"],
-
-["2,400 bags","sold in the first Idul Adha batch, Aug 2019"]
-
-]
-
-},
-
-{
-tag:"Marketing · Startup community",
-
-title:"The Founders Lab: growing a startup community and its events",
-
-overview:"A startup community where I led marketing, running webinars, events and a business-idea competition.",
-
-challenge:"Growing a young community, filling events with speakers and mentors, and funding it through partnerships.",
-
-process:[
-
-"Led 8 marketing representatives across campaigns and 3 major events.",
-
-"Ran 8+ webinars a month for a 100-member community.",
-
-"Secured paid and barter partnerships.",
-
-"Planned content calendars and campaigns; organised a business-idea competition end to end.",
-
-"Led “Startup Dating”, matching aspiring founders without teams.",
-
-"Marketed Idealogy Festival 2020 end to end: IG Live founder talks, a startup challenge and the 4 July Digital Summit.",
-
-"Designed a tiered paid-promotion rate card from a benchmark of 10 accounts, then pitched it to 5 partners."
-
-],
-
-vis:[],
-
-tlChart:`<svg viewBox="0 0 640 215" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Timeline of The Founders Lab campaigns">
-
-<style>
-
-.ln{stroke:var(--line);stroke-width:3;stroke-linecap:round}
-
-.dt{fill:var(--accent-soft);stroke:var(--black);stroke-width:2.5}
-
-.dh{fill:var(--black)}
-
-.d1{font:700 12px system-ui,sans-serif;fill:var(--text)}
-
-.d2{font:600 12px system-ui,sans-serif;fill:var(--text)}
-
-.d3{font:500 10.5px system-ui,sans-serif;fill:var(--muted)}
-
-</style>
-
-<line class="ln" x1="30" y1="107" x2="610" y2="107"/>
-
-<circle class="dt" cx="70" cy="107" r="8"/>
-
-<circle class="dt" cx="180" cy="107" r="8"/>
-
-<circle class="dt" cx="290" cy="107" r="8"/>
-
-<circle class="dh" cx="400" cy="107" r="10"/>
-
-<circle class="dt" cx="510" cy="107" r="8"/>
-
-<circle class="dt" cx="585" cy="107" r="8"/>
-
-<text class="d1" x="20" y="44">
-Mar–Apr 2020
-</text>
-
-<text class="d2" x="20" y="60">
-Social media plan
-</text>
-
-<text class="d3" x="20" y="75">
-Intro → recruit → challenge
-</text>
-
-<text class="d1" x="180" y="146" text-anchor="middle">
-18–19 May
-</text>
-
-<text class="d2" x="180" y="162" text-anchor="middle">
-Founders Talk
-</text>
-
-<text class="d3" x="180" y="177" text-anchor="middle">
-2 founder IG Lives
-</text>
-
-<text class="d1" x="290" y="44" text-anchor="middle">
-15 Jun
-</text>
-
-<text class="d2" x="290" y="60" text-anchor="middle">
-Challenge semi-finals
-</text>
-
-<text class="d3" x="290" y="75" text-anchor="middle">
-Startup Challenge
-</text>
-
-<text class="d1" x="400" y="146" text-anchor="middle">
-4 Jul
-</text>
-
-<text class="d2" x="400" y="162" text-anchor="middle">
-Idealogy Digital Summit
-</text>
-
-<text class="d3" x="400" y="177" text-anchor="middle">
-5 speakers, fees to COVID relief
-</text>
-
-<text class="d1" x="510" y="44" text-anchor="middle">
-21 Sep–5 Oct
-</text>
-
-<text class="d2" x="510" y="60" text-anchor="middle">
-Funding Frenzy recruitment
-</text>
-
-<text class="d3" x="510" y="75" text-anchor="middle">
-5-step selection
-</text>
-
-<text class="d1" x="630" y="146" text-anchor="end">
-Jan 2021
-</text>
-
-<text class="d2" x="630" y="162" text-anchor="end">
-IG Live: Drama vs Reality
-</text>
-
-<text class="d3" x="630" y="177" text-anchor="end">
-K-drama startup theme
-</text>
-
-</svg>`,
-
-tlCap:`Campaigns I marketed across the Idealogy Festival 2020 and the Funding Frenzy collaboration.`,
-
-outChart:`<svg viewBox="0 0 640 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Paid promotion outreach">
-
-<style>
-
-.oa{fill:var(--black);opacity:.3}
-
-.ob{fill:var(--black);opacity:.6}
-
-.oc{fill:var(--black)}
-
-.on{font:600 12px system-ui,sans-serif;fill:var(--text)}
-
-.ov{font:700 13px system-ui,sans-serif;fill:var(--text)}
-
-.om{font:500 10.5px system-ui,sans-serif;fill:var(--muted)}
-
-</style>
-
-<text class="on" x="20" y="38">
-Accounts benchmarked
-</text>
-
-<rect class="oa" x="190" y="20" width="400" height="26" rx="4"/>
-
-<text class="ov" x="600" y="39" text-anchor="end">
-10
-</text>
-
-<text class="on" x="20" y="88">
-Partners approached
-</text>
-
-<rect class="ob" x="190" y="70" width="200" height="26" rx="4"/>
-
-<text class="ov" x="400" y="89">
-5
-</text>
-
-<text class="on" x="20" y="138">
-Deals closed
-</text>
-
-<rect class="oc" x="190" y="120" width="80" height="26" rx="4"/>
-
-<text class="ov" x="280" y="139">
-2
-</text>
-
-<text class="om" x="330" y="139">
-TEC Fest (free, Package B) · PIF_Id (Rp10,000, Level 1)
-</text>
-
-</svg>`,
-
-outCap:`From my paid-promotion service design paper: rate tiers by follower size, tested on real partners.`,
-
-kpis:[
-
-["2,000+","followers generated"],
-
-["200+","startup listings"],
-
-["24 + 30","mentors and judges, speakers"],
-
-["9/10","360-degree feedback"],
-
-["2 of 5","paid-promotion pitches closed"]
-
-]
-
-},
-
-{
-tag:"Investor & Business Partner · B2B distribution",
-
-title:"PT Sari Rasa: analysing a distributor and securing Rp100M+",
-
-overview:"A B2B distribution network I evaluated before investing, then joined as business partner for promotional and commercial strategy.",
-
-challenge:"Deciding whether the business was worth backing, then funding its next stage of growth.",
-
-process:[
-
-"Analysed operations and market viability before joining as partner.",
-
-"Acted as primary contact to the bank and presented the case for funding.",
-
-"Advised the owner on operational and financial issues as they arose."
-
-],
-
-vis:[
-
-{
-s:"Add: one redacted slide from the funding presentation"
 }
 
-],
 
-kpis:[
+function renderChart(chart){
 
-["Rp100M+","funding secured (about USD 6,500)"],
+  if(!chart){
+    return "";
+  }
 
-["50+","outlets in the network now"]
+  if(chart.type === "timeline"){
 
-]
+    return `
+      <div class="chart-card">
 
-},
+        <p class="chart-title">
+          ${escapeHTML(chart.title || "")}
+        </p>
 
-{
-tag:"Co-Founder & CMO · Campus beverage startup",
+        <div class="timeline">
 
-title:"Jus For You: keeping 10+ campus retailers stocked",
+          ${
+            (chart.items || []).map(function(item){
 
-overview:"A juice startup I co-founded and ran as CMO, supplying campus canteens and retailers.",
+              return `
+                <div class="timeline-item">
 
-challenge:"Keeping retailers supplied without overstock on a short inventory cycle.",
+                  <div class="timeline-date">
+                    ${escapeHTML(item[0])}
+                  </div>
 
-process:[
+                  <div>
 
-"Ran biweekly procurement and supplier negotiation.",
+                    <p class="timeline-title">
+                      ${escapeHTML(item[1])}
+                    </p>
 
-"Structured profit-sharing deals with retailers.",
+                    <p class="timeline-text">
+                      ${escapeHTML(item[2] || "")}
+                    </p>
 
-"Tracked daily 5 PM sell-through and adjusted stock."
+                  </div>
 
-],
+                </div>
+              `;
 
-vis:[
+            }).join("")
+          }
 
-{
-s:"Add: a sales log or retailer photo"
+        </div>
+
+      </div>
+    `;
+
+  }
+
+
+  if(chart.type === "bars"){
+
+    return `
+      <div class="chart-card">
+
+        <p class="chart-title">
+          ${escapeHTML(chart.title || "")}
+        </p>
+
+        <div class="bar-list">
+
+          ${
+            (chart.items || []).map(function(item){
+
+              return `
+                <div class="bar-item">
+
+                  <div class="bar-label">
+
+                    <span>
+                      ${escapeHTML(item[0])}
+                    </span>
+
+                    <span>
+                      ${escapeHTML(item[1])}
+                    </span>
+
+                  </div>
+
+                  <div class="bar-track">
+
+                    <div
+                      class="bar-fill"
+                      style="width:${Math.max(4,Math.min(100,Number(item[2]) || 0))}%"
+                    ></div>
+
+                  </div>
+
+                </div>
+              `;
+
+            }).join("")
+          }
+
+        </div>
+
+        ${
+          chart.note
+          ? `
+            <p class="chart-note">
+              ${escapeHTML(chart.note)}
+            </p>
+          `
+          : ""
+        }
+
+      </div>
+    `;
+
+  }
+
+  return "";
+
 }
 
-],
 
-kpis:[
+function renderCharts(charts){
 
-["10+","campus retailers"],
+  if(!charts || !charts.length){
+    return "";
+  }
 
-["15–25","juices per canteen daily"],
+  return `
+    <div style="display:grid;gap:12px;">
 
-["2–3 days","inventory cycle"]
+      ${
+        charts.map(function(chart){
+          return renderChart(chart);
+        }).join("")
+      }
 
-]
+    </div>
+  `;
 
-},
+}
 
-{
-tag:"Business Intern · Corporate training (CIEL, SBM ITB)",
 
-title:"CIEL SBM ITB: market research and sizing for a training provider",
+/* =====================================================
+   RENDER CASE STUDIES
+===================================================== */
 
-overview:"An internship project for CIEL, a corporate training provider at SBM ITB, done in a team of eight across two semesters of the Integrative Business Experience course. We researched the corporate training market in 2019, then sized a teacher-training service for senior high schools, and in 2020 wrote a remote social media plan for its Business Lab.",
+function renderCaseStudy(p,index){
 
-challenge:"Finding where a training provider could grow beyond its current market, and backing the case with field data instead of assumptions.",
+  var number = String(index + 1).padStart(2,"0");
 
-process:[
+  return `
 
-"Surveyed 16 working professionals on past training and satisfaction, and observed a live Pertamina R&D training at Patra Hotel Bandung (16–17 Oct 2019).",
+    <article class="case">
 
-"Benchmarked three competitors (PM ELI, Binus Mini MBA, MDI) on price and features, and ran a Porter’s Five Forces analysis.",
+      <div class="case-top">
 
-"Built a value proposition canvas for a teacher digital-transformation training and tested it against teacher and principal input.",
+        <div class="case-number">
+          ${number}
+        </div>
 
-"Sized the market top-down, from all schools in three provinces to the private schools CIEL could realistically win.",
+        <div>
+
+          <p class="case-tag">
+            ${escapeHTML(p.tag)}
+          </p>
+
+          <h3 class="case-title">
+            ${formatTitle(p.title)}
+          </h3>
+
+        </div>
+
+      </div>
+
+
+      <div class="case-content">
+
+
+        ${
+          p.overview
+          ? `
+            <div class="row">
+
+              <b>Overview</b>
+
+              <div>
+                <p
