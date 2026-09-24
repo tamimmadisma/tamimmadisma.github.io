@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -7,8 +8,9 @@
 <title>Tamimmah Disma Lestari · Portfolio Case Studies</title>
 
 <meta
-    name="description"
-    content="Selected project case studies by Tamimmah Disma Lestari."
+name="description"
+content="Selected project case studies by Tamimmah Disma Lestari."
+
 >
 
 <style>
@@ -531,7 +533,7 @@ th {
 
 
 /* =========================================================
-   CHART / VISUAL PLACEHOLDER
+   GENERAL VISUAL CONTAINER
 ========================================================= */
 
 .visual {
@@ -555,6 +557,12 @@ th {
 
     text-transform: uppercase;
 }
+
+
+/* =========================================================
+   BAR CHART
+   Used for independent categorical comparisons.
+========================================================= */
 
 .bar-chart {
     display: flex;
@@ -603,6 +611,289 @@ th {
 
 
 /* =========================================================
+   COMPETITOR POSITIONING MAP
+   Used instead of a line/bar graph because competitors
+   are positioned across two strategic dimensions.
+========================================================= */
+
+.positioning-map {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    aspect-ratio: 1.55 / 1;
+
+    border-left: 1px solid var(--line);
+
+    border-bottom: 1px solid var(--line);
+
+    background:
+        linear-gradient(
+            to right,
+            transparent 49.8%,
+            var(--line) 50%,
+            transparent 50.2%
+        ),
+        linear-gradient(
+            to bottom,
+            transparent 49.8%,
+            var(--line) 50%,
+            transparent 50.2%
+        );
+}
+
+.positioning-map::before {
+    content: "";
+
+    position: absolute;
+
+    left: -1px;
+    bottom: -1px;
+
+    width: 100%;
+    height: 1px;
+
+    background: var(--text);
+
+    opacity: 0.25;
+}
+
+.positioning-axis-x {
+    position: absolute;
+
+    right: 0;
+
+    bottom: -35px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+
+    color: var(--muted);
+}
+
+.positioning-axis-x::before {
+    content: "TRADITIONAL";
+
+    position: absolute;
+
+    right: 100%;
+
+    margin-right: calc(100% + 20px);
+
+    white-space: nowrap;
+}
+
+.positioning-axis-y {
+    position: absolute;
+
+    top: 0;
+
+    left: -55px;
+
+    height: 100%;
+
+    writing-mode: vertical-rl;
+
+    transform: rotate(180deg);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+
+    color: var(--muted);
+}
+
+.positioning-axis-y::after {
+    content: "MASS MARKET";
+
+    position: absolute;
+
+    bottom: -5px;
+
+    white-space: nowrap;
+
+    transform: rotate(180deg);
+}
+
+.positioning-point {
+    position: absolute;
+
+    transform: translate(-50%, -50%);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 18px;
+
+    height: 18px;
+
+    border-radius: 50%;
+
+    background: var(--text);
+
+    border: 4px solid var(--paper);
+
+    box-shadow: 0 0 0 1px var(--text);
+
+    z-index: 2;
+}
+
+.positioning-point span {
+    position: absolute;
+
+    left: 25px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    white-space: nowrap;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.02em;
+}
+
+.positioning-point.sellkpop {
+    left: 72%;
+
+    top: 30%;
+
+    width: 25px;
+
+    height: 25px;
+
+    background: var(--accent);
+
+    box-shadow: 0 0 0 1px var(--accent);
+}
+
+.positioning-point.sellkpop span {
+    color: var(--accent);
+
+    left: 32px;
+}
+
+.positioning-point.competitor-a {
+    left: 48%;
+
+    top: 46%;
+}
+
+.positioning-point.competitor-b {
+    left: 31%;
+
+    top: 68%;
+}
+
+.positioning-label-top,
+.positioning-label-bottom {
+    position: absolute;
+
+    right: 0;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+
+    color: var(--muted);
+
+    text-transform: uppercase;
+}
+
+.positioning-label-top {
+    top: -28px;
+}
+
+.positioning-label-top::before {
+    content: "PREMIUM";
+}
+
+.positioning-label-bottom {
+    bottom: -48px;
+}
+
+.positioning-label-bottom::before {
+    content: "INNOVATIVE";
+}
+
+
+/* =========================================================
+   POSITIONING MAP LEGEND
+========================================================= */
+
+.positioning-legend {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 25px;
+
+    margin-top: 65px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+}
+
+.legend-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.legend-dot {
+    width: 9px;
+
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: var(--text);
+}
+
+.legend-dot.accent {
+    background: var(--accent);
+}
+
+
+/* =========================================================
    TIMELINE
 ========================================================= */
 
@@ -647,6 +938,140 @@ th {
     color: var(--muted);
 
     font-size: 14px;
+}
+
+
+/* =========================================================
+   TAM / SAM / SOM MARKET SIZE VISUALIZATION
+   Nested circles communicate market hierarchy better
+   than bars with arbitrary widths.
+========================================================= */
+
+.market-visual {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.market-circles {
+    position: relative;
+
+    width: min(650px, 100%);
+
+    aspect-ratio: 1 / 0.68;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.market-circle {
+    position: absolute;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    border: 1px solid var(--line);
+
+    background: var(--background);
+
+    padding-top: 25px;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 0.1em;
+
+    text-transform: uppercase;
+}
+
+.market-circle.tam {
+    width: 88%;
+
+    height: 88%;
+
+    top: 5%;
+
+    background: #f5f1eb;
+}
+
+.market-circle.sam {
+    width: 63%;
+
+    height: 63%;
+
+    top: 18.5%;
+
+    background: var(--accent-light);
+}
+
+.market-circle.som {
+    width: 36%;
+
+    height: 36%;
+
+    top: 32%;
+
+    background: var(--accent);
+
+    color: white;
+
+    border-color: var(--accent);
+
+    padding-top: 20px;
+}
+
+.market-caption {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    width: 100%;
+
+    max-width: 700px;
+
+    margin-top: 20px;
+
+    border-top: 1px solid var(--line);
+}
+
+.market-caption-item {
+    padding: 20px;
+
+    border-right: 1px solid var(--line);
+}
+
+.market-caption-item:last-child {
+    border-right: 0;
+}
+
+.market-caption-item strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 14px;
+}
+
+.market-caption-item span {
+    color: var(--muted);
+
+    font-size: 11px;
+
+    line-height: 1.4;
 }
 
 
@@ -747,6 +1172,24 @@ th {
         padding: 45px 25px;
     }
 
+    .positioning-map {
+        aspect-ratio: 1 / 0.85;
+
+        margin-left: 30px;
+
+        width: calc(100% - 30px);
+    }
+
+    .positioning-axis-y {
+        left: -35px;
+
+        font-size: 8px;
+    }
+
+    .market-circles {
+        aspect-ratio: 1 / 0.8;
+    }
+
 }
 
 
@@ -789,14 +1232,76 @@ th {
         flex-direction: column;
     }
 
+    .positioning-map {
+        aspect-ratio: 1 / 1;
+    }
+
+    .positioning-point span {
+        left: 20px;
+
+        font-size: 9px;
+    }
+
+    .positioning-point.sellkpop span {
+        left: 27px;
+    }
+
+    .positioning-axis-x {
+        bottom: -30px;
+
+        font-size: 8px;
+    }
+
+    .positioning-axis-x::before {
+        margin-right: 35px;
+    }
+
+    .positioning-axis-y {
+        left: -28px;
+
+        font-size: 7px;
+    }
+
+    .positioning-label-top,
+    .positioning-label-bottom {
+        font-size: 8px;
+    }
+
+    .market-circles {
+        aspect-ratio: 1 / 1;
+    }
+
+    .market-circle {
+        padding-top: 15px;
+
+        font-size: 8px;
+    }
+
+    .market-circle.som {
+        padding-top: 12px;
+    }
+
+    .market-caption {
+        grid-template-columns: 1fr;
+    }
+
+    .market-caption-item {
+        border-right: 0;
+
+        border-bottom: 1px solid var(--line);
+    }
+
+    .market-caption-item:last-child {
+        border-bottom: 0;
+    }
+
 }
 
 </style>
+
 </head>
 
-
 <body>
-
 
 <!-- =====================================================
      NAVIGATION
@@ -804,32 +1309,31 @@ th {
 
 <header class="nav">
 
-    <a href="index.html" class="logo">
-        TAMIMMAH
+```
+<a href="index.html" class="logo">
+    TAMIMMAH
+</a>
+
+<nav class="nav-links">
+
+    <a href="index.html">
+        Portfolio
     </a>
 
-    <nav class="nav-links">
+    <a href="#sellkpopvt">
+        Projects
+    </a>
 
-        <a href="index.html">
-            Portfolio
-        </a>
+    <a href="#contact">
+        Contact
+    </a>
 
-        <a href="#sellkpopvt">
-            Projects
-        </a>
-
-        <a href="#contact">
-            Contact
-        </a>
-
-    </nav>
+</nav>
+```
 
 </header>
 
-
-
 <main>
-
 
 <!-- =====================================================
      HERO
@@ -837,54 +1341,54 @@ th {
 
 <section class="hero">
 
-    <div class="container">
+```
+<div class="container">
 
-        <a href="index.html" class="back-link">
-            ← Back to portfolio
-        </a>
-
-
-        <div class="hero-grid">
-
-            <div>
-
-                <p class="eyebrow">
-                    PORTFOLIO · SELECTED WORK
-                </p>
-
-                <h1>
-                    Case<br>
-                    <em>Studies.</em>
-                </h1>
-
-                <p class="hero-description">
-                    Seven projects across e-commerce, content,
-                    campaigns, startups and commercial analysis,
-                    by Tamimmah Disma Lestari.
-                </p>
-
-            </div>
+    <a href="index.html" class="back-link">
+        ← Back to portfolio
+    </a>
 
 
-            <div class="hero-side">
+    <div class="hero-grid">
 
-                <span>
-                    SELECTED PROJECTS
-                </span>
+        <div>
 
-                <strong>
-                    07
-                </strong>
+            <p class="eyebrow">
+                PORTFOLIO · SELECTED WORK
+            </p>
 
-            </div>
+            <h1>
+                Case<br>
+                <em>Studies.</em>
+            </h1>
+
+            <p class="hero-description">
+                Seven projects across e-commerce, content,
+                campaigns, startups and commercial analysis,
+                by Tamimmah Disma Lestari.
+            </p>
+
+        </div>
+
+
+        <div class="hero-side">
+
+            <span>
+                SELECTED PROJECTS
+            </span>
+
+            <strong>
+                07
+            </strong>
 
         </div>
 
     </div>
 
+</div>
+```
+
 </section>
-
-
 
 <!-- =====================================================
      PROJECT 01 — SELLKPOPVT
@@ -894,216 +1398,163 @@ th {
 
 <div class="container">
 
-    <div class="project-header">
+```
+<div class="project-header">
 
-        <div class="project-number">
-            01
+    <div class="project-number">
+        01
+    </div>
+
+    <div>
+
+        <div class="project-tag">
+            E-COMMERCE · ENTREPRENEURSHIP
         </div>
 
-        <div>
+        <h2>
+            SellKpopVT:
+            <em>Turning Community Into Business.</em>
+        </h2>
 
-            <div class="project-tag">
-                E-COMMERCE · ENTREPRENEURSHIP
-            </div>
+        <p class="project-intro">
+            Building and operating an international digital
+            business from an online community, with customer
+            acquisition, pricing, fulfillment, operations,
+            and retention managed end-to-end.
+        </p>
 
-            <h2>
-                SellKpopVT:
-                <em>Turning Community Into Business.</em>
-            </h2>
+    </div>
 
-            <p class="project-intro">
-                Building and operating an international digital
-                business from an online community, with customer
-                acquisition, pricing, fulfillment, operations,
-                and retention managed end-to-end.
-            </p>
+</div>
 
+
+<div class="kpi-grid">
+
+    <div class="kpi">
+        <strong>30K+</strong>
+        <span>Community followers</span>
+    </div>
+
+    <div class="kpi">
+        <strong>4.25M+</strong>
+        <span>Content views</span>
+    </div>
+
+    <div class="kpi">
+        <strong>1K+</strong>
+        <span>Customers</span>
+    </div>
+
+    <div class="kpi">
+        <strong>3×</strong>
+        <span>Business competitions</span>
+    </div>
+
+</div>
+
+
+<div class="two-column">
+
+    <div class="content-block">
+
+        <h3>
+            The challenge
+        </h3>
+
+        <p>
+            How can an online audience be transformed into
+            a sustainable business while maintaining trust,
+            operational efficiency, and customer retention?
+        </p>
+
+    </div>
+
+
+    <div class="content-block">
+
+        <h3>
+            The approach
+        </h3>
+
+        <p>
+            I developed the business around audience understanding,
+            competitive positioning, pricing, customer acquisition,
+            fulfillment systems and repeat-purchase behaviour.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     UPDATED: COMPETITOR POSITIONING MAP
+===================================================== -->
+
+<div class="visual">
+
+    <div class="visual-title">
+        Competitive positioning
+    </div>
+
+    <div class="positioning-map">
+
+        <div class="positioning-label-top"></div>
+
+        <div class="positioning-label-bottom"></div>
+
+        <div class="positioning-axis-y">
+            Premium
+        </div>
+
+        <div class="positioning-axis-x">
+            Innovative
+        </div>
+
+
+        <div class="positioning-point sellkpop">
+            <span>
+                SellKpopVT
+            </span>
+        </div>
+
+
+        <div class="positioning-point competitor-a">
+            <span>
+                Competitor A
+            </span>
+        </div>
+
+
+        <div class="positioning-point competitor-b">
+            <span>
+                Competitor B
+            </span>
         </div>
 
     </div>
 
 
-    <div class="kpi-grid">
+    <div class="positioning-legend">
 
-        <div class="kpi">
-            <strong>30K+</strong>
-            <span>Community followers</span>
-        </div>
+        <div class="legend-item">
 
-        <div class="kpi">
-            <strong>4.25M+</strong>
-            <span>Content views</span>
-        </div>
+            <div class="legend-dot accent"></div>
 
-        <div class="kpi">
-            <strong>1K+</strong>
-            <span>Customers</span>
-        </div>
-
-        <div class="kpi">
-            <strong>3×</strong>
-            <span>Business competitions</span>
-        </div>
-
-    </div>
-
-
-    <div class="two-column">
-
-        <div class="content-block">
-
-            <h3>
-                The challenge
-            </h3>
-
-            <p>
-                How can an online audience be transformed into
-                a sustainable business while maintaining trust,
-                operational efficiency, and customer retention?
-            </p>
+            <span>
+                SellKpopVT
+            </span>
 
         </div>
 
 
-        <div class="content-block">
+        <div class="legend-item">
 
-            <h3>
-                The approach
-            </h3>
+            <div class="legend-dot"></div>
 
-            <p>
-                I developed the business around audience understanding,
-                competitive positioning, pricing, customer acquisition,
-                fulfillment systems and repeat-purchase behaviour.
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <div class="visual">
-
-        <div class="visual-title">
-            Competitive positioning
-        </div>
-
-        <div class="bar-chart">
-
-            <div class="bar-row">
-
-                <div class="bar-label">
-                    SellKpopVT
-                </div>
-
-                <div class="bar">
-                    <div
-                        class="bar-fill"
-                        style="width: 90%;"
-                    ></div>
-                </div>
-
-                <div class="bar-value">
-                    High
-                </div>
-
-            </div>
-
-
-            <div class="bar-row">
-
-                <div class="bar-label">
-                    Competitor A
-                </div>
-
-                <div class="bar">
-                    <div
-                        class="bar-fill"
-                        style="width: 65%;"
-                    ></div>
-                </div>
-
-                <div class="bar-value">
-                    Mid
-                </div>
-
-            </div>
-
-
-            <div class="bar-row">
-
-                <div class="bar-label">
-                    Competitor B
-                </div>
-
-                <div class="bar">
-                    <div
-                        class="bar-fill"
-                        style="width: 45%;"
-                    ></div>
-                </div>
-
-                <div class="bar-value">
-                    Mid
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div class="two-column">
-
-        <div class="content-block">
-
-            <h3>
-                What I handled
-            </h3>
-
-            <ul class="clean-list">
-
-                <li>
-                    Customer acquisition
-                </li>
-
-                <li>
-                    Pricing strategy
-                </li>
-
-                <li>
-                    Order fulfillment
-                </li>
-
-                <li>
-                    Customer communication
-                </li>
-
-                <li>
-                    Operations
-                </li>
-
-                <li>
-                    Retention
-                </li>
-
-            </ul>
-
-        </div>
-
-
-        <div class="content-block">
-
-            <h3>
-                What I learned
-            </h3>
-
-            <p>
-                The project gave me direct experience connecting
-                marketing activity with revenue, customer experience,
-                and operational execution.
-            </p>
+            <span>
+                Competitors
+            </span>
 
         </div>
 
@@ -1111,9 +1562,66 @@ th {
 
 </div>
 
+
+<div class="two-column">
+
+    <div class="content-block">
+
+        <h3>
+            What I handled
+        </h3>
+
+        <ul class="clean-list">
+
+            <li>
+                Customer acquisition
+            </li>
+
+            <li>
+                Pricing strategy
+            </li>
+
+            <li>
+                Order fulfillment
+            </li>
+
+            <li>
+                Customer communication
+            </li>
+
+            <li>
+                Operations
+            </li>
+
+            <li>
+                Retention
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="content-block">
+
+        <h3>
+            What I learned
+        </h3>
+
+        <p>
+            The project gave me direct experience connecting
+            marketing activity with revenue, customer experience,
+            and operational execution.
+        </p>
+
+    </div>
+
+</div>
+```
+
+</div>
+
 </section>
-
-
 
 <!-- =====================================================
      PROJECT 02 — ORGANIC TIKTOK
@@ -1123,191 +1631,103 @@ th {
 
 <div class="container">
 
-    <div class="project-header">
+```
+<div class="project-header">
 
-        <div class="project-number">
-            02
+    <div class="project-number">
+        02
+    </div>
+
+    <div>
+
+        <div class="project-tag">
+            CONTENT · SOCIAL MEDIA
         </div>
 
-        <div>
+        <h2>
+            Organic TikTok:
+            <em>Building Reach Without Paid Media.</em>
+        </h2>
 
-            <div class="project-tag">
-                CONTENT · SOCIAL MEDIA
-            </div>
+        <p class="project-intro">
+            Using audience behaviour, content experimentation,
+            and platform-native formats to build organic reach.
+        </p>
 
-            <h2>
-                Organic TikTok:
-                <em>Building Reach Without Paid Media.</em>
-            </h2>
+    </div>
 
-            <p class="project-intro">
-                Using audience behaviour, content experimentation,
-                and platform-native formats to build organic reach.
-            </p>
+</div>
 
-        </div>
+
+<div class="kpi-grid">
+
+    <div class="kpi">
+
+        <strong>
+            4.25M+
+        </strong>
+
+        <span>
+            Total views
+        </span>
 
     </div>
 
 
-    <div class="kpi-grid">
+    <div class="kpi">
 
-        <div class="kpi">
+        <strong>
+            367K+
+        </strong>
 
-            <strong>
-                4.25M+
-            </strong>
-
-            <span>
-                Total views
-            </span>
-
-        </div>
-
-
-        <div class="kpi">
-
-            <strong>
-                367K+
-            </strong>
-
-            <span>
-                Average views
-            </span>
-
-        </div>
-
-
-        <div class="kpi">
-
-            <strong>
-                30K+
-            </strong>
-
-            <span>
-                Followers
-            </span>
-
-        </div>
-
-
-        <div class="kpi">
-
-            <strong>
-                Organic
-            </strong>
-
-            <span>
-                Growth approach
-            </span>
-
-        </div>
+        <span>
+            Average views
+        </span>
 
     </div>
 
 
-    <div class="two-column">
+    <div class="kpi">
 
-        <div class="content-block">
+        <strong>
+            30K+
+        </strong>
 
-            <h3>
-                Objective
-            </h3>
-
-            <p>
-                Develop content that earns attention naturally
-                by understanding what the audience wants to watch,
-                share and return to.
-            </p>
-
-        </div>
-
-
-        <div class="content-block">
-
-            <h3>
-                Approach
-            </h3>
-
-            <p>
-                Tested formats, topics, hooks and posting patterns
-                while continuously observing engagement and
-                audience response.
-            </p>
-
-        </div>
+        <span>
+            Followers
+        </span>
 
     </div>
 
 
-    <div class="visual">
+    <div class="kpi">
 
-        <div class="visual-title">
-            Content performance
-        </div>
+        <strong>
+            Organic
+        </strong>
 
-        <div class="bar-chart">
+        <span>
+            Growth approach
+        </span>
 
-            <div class="bar-row">
+    </div>
 
-                <div class="bar-label">
-                    Content A
-                </div>
-
-                <div class="bar">
-                    <div
-                        class="bar-fill"
-                        style="width: 100%;"
-                    ></div>
-                </div>
-
-                <div class="bar-value">
-                    1M+
-                </div>
-
-            </div>
+</div>
 
 
-            <div class="bar-row">
+<div class="two-column">
 
-                <div class="bar-label">
-                    Content B
-                </div>
+    <div class="content-block">
 
-                <div class="bar">
-                    <div
-                        class="bar-fill"
-                        style="width: 72%;"
-                    ></div>
-                </div>
+        <h3>
+            Objective
+        </h3>
 
-                <div class="bar-value">
-                    700K+
-                </div>
-
-            </div>
-
-
-            <div class="bar-row">
-
-                <div class="bar-label">
-                    Content C
-                </div>
-
-                <div class="bar">
-                    <div
-                        class="bar-fill"
-                        style="width: 45%;"
-                    ></div>
-                </div>
-
-                <div class="bar-value">
-                    400K+
-                </div>
-
-            </div>
-
-        </div>
+        <p>
+            Develop content that earns attention naturally
+            by understanding what the audience wants to watch,
+            share and return to.
+        </p>
 
     </div>
 
@@ -1315,23 +1735,117 @@ th {
     <div class="content-block">
 
         <h3>
-            Key takeaway
+            Approach
         </h3>
 
         <p>
-            Organic content growth became an exercise in consumer
-            insight: understanding audience interests, identifying
-            patterns, and adapting creative execution based on
-            observed behaviour.
+            Tested formats, topics, hooks and posting patterns
+            while continuously observing engagement and
+            audience response.
         </p>
 
     </div>
 
 </div>
 
+
+<!-- =====================================================
+     BAR CHART RETAINED
+     Appropriate because these are independent content
+     performance categories.
+===================================================== -->
+
+<div class="visual">
+
+    <div class="visual-title">
+        Content performance
+    </div>
+
+    <div class="bar-chart">
+
+        <div class="bar-row">
+
+            <div class="bar-label">
+                Content A
+            </div>
+
+            <div class="bar">
+                <div
+                    class="bar-fill"
+                    style="width: 100%;"
+                ></div>
+            </div>
+
+            <div class="bar-value">
+                1M+
+            </div>
+
+        </div>
+
+
+        <div class="bar-row">
+
+            <div class="bar-label">
+                Content B
+            </div>
+
+            <div class="bar">
+                <div
+                    class="bar-fill"
+                    style="width: 72%;"
+                ></div>
+            </div>
+
+            <div class="bar-value">
+                700K+
+            </div>
+
+        </div>
+
+
+        <div class="bar-row">
+
+            <div class="bar-label">
+                Content C
+            </div>
+
+            <div class="bar">
+                <div
+                    class="bar-fill"
+                    style="width: 45%;"
+                ></div>
+            </div>
+
+            <div class="bar-value">
+                400K+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="content-block">
+
+    <h3>
+        Key takeaway
+    </h3>
+
+    <p>
+        Organic content growth became an exercise in consumer
+        insight: understanding audience interests, identifying
+        patterns, and adapting creative execution based on
+        observed behaviour.
+    </p>
+
+</div>
+```
+
+</div>
+
 </section>
-
-
 
 <!-- =====================================================
      PROJECT 03 — ECOPLAST
@@ -1341,86 +1855,111 @@ th {
 
 <div class="container">
 
-    <div class="project-header">
+```
+<div class="project-header">
 
-        <div class="project-number">
-            03
+    <div class="project-number">
+        03
+    </div>
+
+    <div>
+
+        <div class="project-tag">
+            STARTUP · MARKETING · BUSINESS
         </div>
 
-        <div>
+        <h2>
+            Ecoplast ID:
+            <em>From Business Idea to Pitch.</em>
+        </h2>
 
-            <div class="project-tag">
-                STARTUP · MARKETING · BUSINESS
-            </div>
+        <p class="project-intro">
+            A startup project focused on developing a sustainable
+            business model, marketing direction, competition
+            strategy and funding plan.
+        </p>
 
-            <h2>
-                Ecoplast ID:
-                <em>From Business Idea to Pitch.</em>
-            </h2>
+    </div>
 
-            <p class="project-intro">
-                A startup project focused on developing a sustainable
-                business model, marketing direction, competition
-                strategy and funding plan.
-            </p>
+</div>
 
-        </div>
+
+<div class="kpi-grid">
+
+    <div class="kpi">
+        <strong>3×</strong>
+        <span>Competition achievements</span>
+    </div>
+
+    <div class="kpi">
+        <strong>50+</strong>
+        <span>Potential retail reach</span>
+    </div>
+
+    <div class="kpi">
+        <strong>CMO</strong>
+        <span>Role</span>
+    </div>
+
+    <div class="kpi">
+        <strong>Startup</strong>
+        <span>Business stage</span>
+    </div>
+
+</div>
+
+
+<div class="two-column">
+
+    <div class="content-block">
+
+        <h3>
+            My role
+        </h3>
+
+        <p>
+            As Chief Marketing Officer, I worked on marketing
+            communication, positioning, presentation and
+            competition strategy.
+        </p>
 
     </div>
 
 
-    <div class="kpi-grid">
+    <div class="content-block">
 
-        <div class="kpi">
-            <strong>3×</strong>
-            <span>Competition achievements</span>
-        </div>
+        <h3>
+            Business focus
+        </h3>
 
-        <div class="kpi">
-            <strong>50+</strong>
-            <span>Potential retail reach</span>
-        </div>
-
-        <div class="kpi">
-            <strong>CMO</strong>
-            <span>Role</span>
-        </div>
-
-        <div class="kpi">
-            <strong>Startup</strong>
-            <span>Business stage</span>
-        </div>
+        <p>
+            The project required connecting sustainability,
+            customer needs, commercial viability and a clear
+            story for external stakeholders.
+        </p>
 
     </div>
 
+</div>
 
-    <div class="two-column">
 
-        <div class="content-block">
+<div class="timeline">
 
-            <h3>
-                My role
-            </h3>
+    <div class="timeline-row">
+
+        <div class="timeline-date">
+            STEP 01
+        </div>
+
+        <div class="timeline-content">
+
+            <h4>
+                Identify the problem
+            </h4>
 
             <p>
-                As Chief Marketing Officer, I worked on marketing
-                communication, positioning, presentation and
-                competition strategy.
-            </p>
-
-        </div>
-
-
-        <div class="content-block">
-
-            <h3>
-                Business focus
-            </h3>
-
-            <p>
-                The project required connecting sustainability,
-                customer needs, commercial viability and a clear
-                story for external stakeholders.
+                Understand the environmental and consumer
+                problem the business aims to address.
             </p>
 
         </div>
@@ -1428,102 +1967,77 @@ th {
     </div>
 
 
-    <div class="timeline">
+    <div class="timeline-row">
 
-        <div class="timeline-row">
+        <div class="timeline-date">
+            STEP 02
+        </div>
 
-            <div class="timeline-date">
-                STEP 01
-            </div>
+        <div class="timeline-content">
 
-            <div class="timeline-content">
+            <h4>
+                Build the proposition
+            </h4>
 
-                <h4>
-                    Identify the problem
-                </h4>
-
-                <p>
-                    Understand the environmental and consumer
-                    problem the business aims to address.
-                </p>
-
-            </div>
+            <p>
+                Translate the problem into a commercially
+                understandable value proposition.
+            </p>
 
         </div>
 
+    </div>
 
-        <div class="timeline-row">
 
-            <div class="timeline-date">
-                STEP 02
-            </div>
+    <div class="timeline-row">
 
-            <div class="timeline-content">
+        <div class="timeline-date">
+            STEP 03
+        </div>
 
-                <h4>
-                    Build the proposition
-                </h4>
+        <div class="timeline-content">
 
-                <p>
-                    Translate the problem into a commercially
-                    understandable value proposition.
-                </p>
+            <h4>
+                Develop marketing direction
+            </h4>
 
-            </div>
+            <p>
+                Build the communication and positioning needed
+                to explain the business to its audience.
+            </p>
 
         </div>
 
+    </div>
 
-        <div class="timeline-row">
 
-            <div class="timeline-date">
-                STEP 03
-            </div>
+    <div class="timeline-row">
 
-            <div class="timeline-content">
-
-                <h4>
-                    Develop marketing direction
-                </h4>
-
-                <p>
-                    Build the communication and positioning needed
-                    to explain the business to its audience.
-                </p>
-
-            </div>
-
+        <div class="timeline-date">
+            STEP 04
         </div>
 
+        <div class="timeline-content">
 
-        <div class="timeline-row">
+            <h4>
+                Pitch & compete
+            </h4>
 
-            <div class="timeline-date">
-                STEP 04
-            </div>
-
-            <div class="timeline-content">
-
-                <h4>
-                    Pitch & compete
-                </h4>
-
-                <p>
-                    Represent the startup through business
-                    competitions and external presentations.
-                </p>
-
-            </div>
+            <p>
+                Represent the startup through business
+                competitions and external presentations.
+            </p>
 
         </div>
 
     </div>
 
 </div>
+```
+
+</div>
 
 </section>
-
-
 
 <!-- =====================================================
      PROJECT 04 — THE FOUNDERS LAB
@@ -1533,79 +2047,104 @@ th {
 
 <div class="container">
 
-    <div class="project-header">
+```
+<div class="project-header">
 
-        <div class="project-number">
-            04
+    <div class="project-number">
+        04
+    </div>
+
+    <div>
+
+        <div class="project-tag">
+            CAMPAIGN · PARTNERSHIP · STARTUP
         </div>
 
-        <div>
+        <h2>
+            The Founders Lab:
+            <em>Building a Startup Ecosystem.</em>
+        </h2>
 
-            <div class="project-tag">
-                CAMPAIGN · PARTNERSHIP · STARTUP
-            </div>
+        <p class="project-intro">
+            Developing marketing systems and partnership
+            outreach for a startup-focused ecosystem.
+        </p>
 
-            <h2>
-                The Founders Lab:
-                <em>Building a Startup Ecosystem.</em>
-            </h2>
+    </div>
 
-            <p class="project-intro">
-                Developing marketing systems and partnership
-                outreach for a startup-focused ecosystem.
-            </p>
+</div>
 
-        </div>
+
+<div class="two-column">
+
+    <div class="content-block">
+
+        <h3>
+            Marketing work
+        </h3>
+
+        <ul class="clean-list">
+
+            <li>
+                Campaign planning
+            </li>
+
+            <li>
+                Omnichannel promotion
+            </li>
+
+            <li>
+                Webinar promotion
+            </li>
+
+            <li>
+                Startup competition promotion
+            </li>
+
+            <li>
+                Partnership outreach
+            </li>
+
+        </ul>
 
     </div>
 
 
-    <div class="two-column">
+    <div class="content-block">
 
-        <div class="content-block">
+        <h3>
+            Strategic question
+        </h3>
 
-            <h3>
-                Marketing work
-            </h3>
+        <p>
+            How can a startup ecosystem attract relevant
+            founders, partners and participants while
+            maintaining a consistent proposition across
+            different communication channels?
+        </p>
 
-            <ul class="clean-list">
+    </div>
 
-                <li>
-                    Campaign planning
-                </li>
+</div>
 
-                <li>
-                    Omnichannel promotion
-                </li>
 
-                <li>
-                    Webinar promotion
-                </li>
+<div class="timeline">
 
-                <li>
-                    Startup competition promotion
-                </li>
+    <div class="timeline-row">
 
-                <li>
-                    Partnership outreach
-                </li>
-
-            </ul>
-
+        <div class="timeline-date">
+            PHASE 01
         </div>
 
+        <div class="timeline-content">
 
-        <div class="content-block">
-
-            <h3>
-                Strategic question
-            </h3>
+            <h4>
+                Audience & channel mapping
+            </h4>
 
             <p>
-                How can a startup ecosystem attract relevant
-                founders, partners and participants while
-                maintaining a consistent proposition across
-                different communication channels?
+                Identify relevant audiences and the channels
+                where they could be reached.
             </p>
 
         </div>
@@ -1613,80 +2152,55 @@ th {
     </div>
 
 
-    <div class="timeline">
+    <div class="timeline-row">
 
-        <div class="timeline-row">
+        <div class="timeline-date">
+            PHASE 02
+        </div>
 
-            <div class="timeline-date">
-                PHASE 01
-            </div>
+        <div class="timeline-content">
 
-            <div class="timeline-content">
+            <h4>
+                Campaign development
+            </h4>
 
-                <h4>
-                    Audience & channel mapping
-                </h4>
-
-                <p>
-                    Identify relevant audiences and the channels
-                    where they could be reached.
-                </p>
-
-            </div>
+            <p>
+                Develop promotional materials and communication
+                around ecosystem activities.
+            </p>
 
         </div>
 
+    </div>
 
-        <div class="timeline-row">
 
-            <div class="timeline-date">
-                PHASE 02
-            </div>
+    <div class="timeline-row">
 
-            <div class="timeline-content">
-
-                <h4>
-                    Campaign development
-                </h4>
-
-                <p>
-                    Develop promotional materials and communication
-                    around ecosystem activities.
-                </p>
-
-            </div>
-
+        <div class="timeline-date">
+            PHASE 03
         </div>
 
+        <div class="timeline-content">
 
-        <div class="timeline-row">
+            <h4>
+                Partnership outreach
+            </h4>
 
-            <div class="timeline-date">
-                PHASE 03
-            </div>
-
-            <div class="timeline-content">
-
-                <h4>
-                    Partnership outreach
-                </h4>
-
-                <p>
-                    Contact and coordinate with potential partners
-                    and supporting organizations.
-                </p>
-
-            </div>
+            <p>
+                Contact and coordinate with potential partners
+                and supporting organizations.
+            </p>
 
         </div>
 
     </div>
 
 </div>
+```
+
+</div>
 
 </section>
-
-
 
 <!-- =====================================================
      PROJECT 05 — PT SARI RASA
@@ -1696,98 +2210,98 @@ th {
 
 <div class="container">
 
-    <div class="project-header">
+```
+<div class="project-header">
 
-        <div class="project-number">
-            05
-        </div>
-
-        <div>
-
-            <div class="project-tag">
-                COMMERCIAL ANALYSIS · BUSINESS
-            </div>
-
-            <h2>
-                PT Sari Rasa:
-                <em>Understanding the Business Behind the Product.</em>
-            </h2>
-
-            <p class="project-intro">
-                A hands-on commercial project involving supply chain,
-                cost structure, financing, retail and business viability.
-            </p>
-
-        </div>
-
+    <div class="project-number">
+        05
     </div>
 
+    <div>
 
-    <div class="two-column">
-
-        <div class="content-block">
-
-            <h3>
-                Areas explored
-            </h3>
-
-            <ul class="clean-list">
-
-                <li>
-                    Supply chain
-                </li>
-
-                <li>
-                    Cost of goods sold
-                </li>
-
-                <li>
-                    Financing
-                </li>
-
-                <li>
-                    Retail
-                </li>
-
-                <li>
-                    Dividends
-                </li>
-
-                <li>
-                    Commercial viability
-                </li>
-
-            </ul>
-
+        <div class="project-tag">
+            COMMERCIAL ANALYSIS · BUSINESS
         </div>
 
+        <h2>
+            PT Sari Rasa:
+            <em>Understanding the Business Behind the Product.</em>
+        </h2>
 
-        <div class="content-block">
-
-            <h3>
-                Perspective
-            </h3>
-
-            <p>
-                This project strengthened my understanding that
-                marketing decisions cannot be separated from
-                operational and financial realities.
-            </p>
-
-            <p>
-                A strong customer proposition still needs to work
-                within the economics of the business.
-            </p>
-
-        </div>
+        <p class="project-intro">
+            A hands-on commercial project involving supply chain,
+            cost structure, financing, retail and business viability.
+        </p>
 
     </div>
 
 </div>
 
+
+<div class="two-column">
+
+    <div class="content-block">
+
+        <h3>
+            Areas explored
+        </h3>
+
+        <ul class="clean-list">
+
+            <li>
+                Supply chain
+            </li>
+
+            <li>
+                Cost of goods sold
+            </li>
+
+            <li>
+                Financing
+            </li>
+
+            <li>
+                Retail
+            </li>
+
+            <li>
+                Dividends
+            </li>
+
+            <li>
+                Commercial viability
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="content-block">
+
+        <h3>
+            Perspective
+        </h3>
+
+        <p>
+            This project strengthened my understanding that
+            marketing decisions cannot be separated from
+            operational and financial realities.
+        </p>
+
+        <p>
+            A strong customer proposition still needs to work
+            within the economics of the business.
+        </p>
+
+    </div>
+
+</div>
+```
+
+</div>
+
 </section>
-
-
 
 <!-- =====================================================
      PROJECT 06 — JUS FOR YOU
@@ -1797,316 +2311,271 @@ th {
 
 <div class="container">
 
-    <div class="project-header">
+```
+<div class="project-header">
 
-        <div class="project-number">
-            06
-        </div>
-
-        <div>
-
-            <div class="project-tag">
-                BUSINESS · PRODUCT · SALES
-            </div>
-
-            <h2>
-                Jus For You:
-                <em>Learning Through Direct Sales.</em>
-            </h2>
-
-            <p class="project-intro">
-                A practical business experiment focused on
-                customer behaviour, product execution and
-                direct selling.
-            </p>
-
-        </div>
-
+    <div class="project-number">
+        06
     </div>
 
+    <div>
 
-    <div class="kpi-grid">
-
-        <div class="kpi">
-
-            <strong>
-                25
-            </strong>
-
-            <span>
-                Portions prepared
-            </span>
-
+        <div class="project-tag">
+            BUSINESS · PRODUCT · SALES
         </div>
 
+        <h2>
+            Jus For You:
+            <em>Learning Through Direct Sales.</em>
+        </h2>
 
-        <div class="kpi">
-
-            <strong>
-                22
-            </strong>
-
-            <span>
-                Portions sold
-            </span>
-
-        </div>
-
-
-        <div class="kpi">
-
-            <strong>
-                88%
-            </strong>
-
-            <span>
-                Sell-through
-            </span>
-
-        </div>
-
-
-        <div class="kpi">
-
-            <strong>
-                1
-            </strong>
-
-            <span>
-                Core lesson
-            </span>
-
-        </div>
-
-    </div>
-
-
-    <div class="two-column">
-
-        <div class="content-block">
-
-            <h3>
-                What happened
-            </h3>
-
-            <p>
-                25 portions were prepared and 22 were sold.
-                The result became a practical lesson in observing
-                customer response instead of relying only on assumptions.
-            </p>
-
-        </div>
-
-
-        <div class="content-block">
-
-            <h3>
-                The lesson
-            </h3>
-
-            <p>
-                Observe → test → adapt.
-            </p>
-
-            <p>
-                Direct selling provides immediate feedback that
-                can be used to improve product, pricing and approach.
-            </p>
-
-        </div>
+        <p class="project-intro">
+            A practical business experiment focused on
+            customer behaviour, product execution and
+            direct selling.
+        </p>
 
     </div>
 
 </div>
 
+
+<div class="kpi-grid">
+
+    <div class="kpi">
+
+        <strong>
+            25
+        </strong>
+
+        <span>
+            Portions prepared
+        </span>
+
+    </div>
+
+
+    <div class="kpi">
+
+        <strong>
+            22
+        </strong>
+
+        <span>
+            Portions sold
+        </span>
+
+    </div>
+
+
+    <div class="kpi">
+
+        <strong>
+            88%
+        </strong>
+
+        <span>
+            Sell-through
+        </span>
+
+    </div>
+
+
+    <div class="kpi">
+
+        <strong>
+            1
+        </strong>
+
+        <span>
+            Core lesson
+        </span>
+
+    </div>
+
+</div>
+
+
+<div class="two-column">
+
+    <div class="content-block">
+
+        <h3>
+            What happened
+        </h3>
+
+        <p>
+            25 portions were prepared and 22 were sold.
+            The result became a practical lesson in observing
+            customer response instead of relying only on assumptions.
+        </p>
+
+    </div>
+
+
+    <div class="content-block">
+
+        <h3>
+            The lesson
+        </h3>
+
+        <p>
+            Observe → test → adapt.
+        </p>
+
+        <p>
+            Direct selling provides immediate feedback that
+            can be used to improve product, pricing and approach.
+        </p>
+
+    </div>
+
+</div>
+```
+
+</div>
+
 </section>
-
-
 
 <!-- =====================================================
      PROJECT 07 — CIEL SBM ITB
-========================================================= -->
+===================================================== -->
 
 <section class="project">
 
 <div class="container">
 
-    <div class="project-header">
+```
+<div class="project-header">
 
-        <div class="project-number">
-            07
+    <div class="project-number">
+        07
+    </div>
+
+    <div>
+
+        <div class="project-tag">
+            MARKET RESEARCH · STRATEGY
         </div>
 
-        <div>
+        <h2>
+            CIEL SBM ITB:
+            <em>From Market Sizing to Mitigation.</em>
+        </h2>
 
-            <div class="project-tag">
-                MARKET RESEARCH · STRATEGY
+        <p class="project-intro">
+            A market analysis project focused on sizing the
+            opportunity, understanding market conditions and
+            developing mitigation strategies.
+        </p>
+
+    </div>
+
+</div>
+
+
+<div class="two-column">
+
+    <div class="content-block">
+
+        <h3>
+            Market sizing
+        </h3>
+
+        <p>
+            The analysis used market sizing to understand the
+            potential opportunity and create a structured basis
+            for strategic decisions.
+        </p>
+
+    </div>
+
+
+    <div class="content-block">
+
+        <h3>
+            Risk mitigation
+        </h3>
+
+        <p>
+            Potential barriers were translated into mitigation
+            actions to make the strategy more practical and
+            executable.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     UPDATED: TAM / SAM / SOM NESTED VISUALIZATION
+===================================================== -->
+
+<div class="visual">
+
+    <div class="visual-title">
+        Strategic framework
+    </div>
+
+    <div class="market-visual">
+
+        <div class="market-circles">
+
+            <div class="market-circle tam">
+                TAM
             </div>
 
-            <h2>
-                CIEL SBM ITB:
-                <em>From Market Sizing to Mitigation.</em>
-            </h2>
+            <div class="market-circle sam">
+                SAM
+            </div>
 
-            <p class="project-intro">
-                A market analysis project focused on sizing the
-                opportunity, understanding market conditions and
-                developing mitigation strategies.
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <div class="two-column">
-
-        <div class="content-block">
-
-            <h3>
-                Market sizing
-            </h3>
-
-            <p>
-                The analysis used market sizing to understand the
-                potential opportunity and create a structured basis
-                for strategic decisions.
-            </p>
+            <div class="market-circle som">
+                SOM
+            </div>
 
         </div>
 
 
-        <div class="content-block">
+        <div class="market-caption">
 
-            <h3>
-                Risk mitigation
-            </h3>
+            <div class="market-caption-item">
 
-            <p>
-                Potential barriers were translated into mitigation
-                actions to make the strategy more practical and
-                executable.
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <div class="visual">
-
-        <div class="visual-title">
-            Strategic framework
-        </div>
-
-        <div class="bar-chart">
-
-            <div class="bar-row">
-
-                <div class="bar-label">
-                    Market
-                </div>
-
-                <div class="bar">
-                    <div
-                        class="bar-fill"
-                        style="width: 90%;"
-                    ></div>
-                </div>
-
-                <div class="bar-value">
+                <strong>
                     TAM
-                </div>
+                </strong>
+
+                <span>
+                    Total Addressable Market
+                </span>
 
             </div>
 
 
-            <div class="bar-row">
+            <div class="market-caption-item">
 
-                <div class="bar-label">
-                    Target
-                </div>
-
-                <div class="bar">
-                    <div
-                        class="bar-fill"
-                        style="width: 60%;"
-                    ></div>
-                </div>
-
-                <div class="bar-value">
+                <strong>
                     SAM
-                </div>
+                </strong>
+
+                <span>
+                    Serviceable Available Market
+                </span>
 
             </div>
 
 
-            <div class="bar-row">
+            <div class="market-caption-item">
 
-                <div class="bar-label">
-                    Initial
-                </div>
-
-                <div class="bar">
-                    <div
-                        class="bar-fill"
-                        style="width: 30%;"
-                    ></div>
-                </div>
-
-                <div class="bar-value">
+                <strong>
                     SOM
-                </div>
+                </strong>
+
+                <span>
+                    Serviceable Obtainable Market
+                </span>
 
             </div>
-
-        </div>
-
-    </div>
-
-
-    <div class="two-column">
-
-        <div class="content-block">
-
-            <h3>
-                Analysis
-            </h3>
-
-            <ul class="clean-list">
-
-                <li>
-                    Market opportunity
-                </li>
-
-                <li>
-                    Customer segments
-                </li>
-
-                <li>
-                    Competitive environment
-                </li>
-
-                <li>
-                    Potential barriers
-                </li>
-
-            </ul>
-
-        </div>
-
-
-        <div class="content-block">
-
-            <h3>
-                Strategic response
-            </h3>
-
-            <p>
-                The final recommendation focused on connecting
-                market opportunity with realistic execution,
-                rather than looking at market size in isolation.
-            </p>
 
         </div>
 
@@ -2114,9 +2583,58 @@ th {
 
 </div>
 
+
+<div class="two-column">
+
+    <div class="content-block">
+
+        <h3>
+            Analysis
+        </h3>
+
+        <ul class="clean-list">
+
+            <li>
+                Market opportunity
+            </li>
+
+            <li>
+                Customer segments
+            </li>
+
+            <li>
+                Competitive environment
+            </li>
+
+            <li>
+                Potential barriers
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="content-block">
+
+        <h3>
+            Strategic response
+        </h3>
+
+        <p>
+            The final recommendation focused on connecting
+            market opportunity with realistic execution,
+            rather than looking at market size in isolation.
+        </p>
+
+    </div>
+
+</div>
+```
+
+</div>
+
 </section>
-
-
 
 <!-- =====================================================
      CONTACT
@@ -2126,49 +2644,48 @@ th {
 
 <div class="container">
 
-    <p class="eyebrow">
-        LET'S TALK
-    </p>
+```
+<p class="eyebrow">
+    LET'S TALK
+</p>
 
-    <h2>
-        Interested in the
-        <em>work?</em>
-    </h2>
+<h2>
+    Interested in the
+    <em>work?</em>
+</h2>
 
-    <p class="project-intro">
-        For more information about my experience, projects,
-        or potential opportunities, feel free to get in touch.
-    </p>
+<p class="project-intro">
+    For more information about my experience, projects,
+    or potential opportunities, feel free to get in touch.
+</p>
 
-    <div style="margin-top: 40px;">
+<div style="margin-top: 40px;">
 
-        <a
-            href="mailto:tamimmadisma@gmail.com"
-            style="
-                display:inline-block;
-                padding:15px 22px;
-                background:#d42b68;
-                color:white;
-                text-decoration:none;
-                font-size:11px;
-                font-weight:800;
-                letter-spacing:.1em;
-                text-transform:uppercase;
-            "
-        >
-            CONTACT ME ↗
-        </a>
+    <a
+        href="mailto:tamimmadisma@gmail.com"
+        style="
+            display:inline-block;
+            padding:15px 22px;
+            background:#d42b68;
+            color:white;
+            text-decoration:none;
+            font-size:11px;
+            font-weight:800;
+            letter-spacing:.1em;
+            text-transform:uppercase;
+        "
+    >
+        CONTACT ME ↗
+    </a>
 
-    </div>
+</div>
+```
 
 </div>
 
 </section>
 
-
 </main>
-
-
 
 <!-- =====================================================
      FOOTER
@@ -2178,26 +2695,27 @@ th {
 
 <div class="container">
 
-    <div class="footer-inner">
+```
+<div class="footer-inner">
 
-        <span>
-            TAMIMMAH DISMA LESTARI
-        </span>
+    <span>
+        TAMIMMAH DISMA LESTARI
+    </span>
 
-        <span>
-            SELECTED PROJECT CASE STUDIES
-        </span>
+    <span>
+        SELECTED PROJECT CASE STUDIES
+    </span>
 
-        <span>
-            © 2026
-        </span>
+    <span>
+        © 2026
+    </span>
 
-    </div>
+</div>
+```
 
 </div>
 
 </footer>
-
 
 </body>
 </html>
