@@ -365,7 +365,7 @@ trust-led, not cheapest
 40k · well below market
 </text>
 
-<circle class="pt" cx="320" cy="375" r="20/>
+<circle class="pt" cx="320" cy="375" r="20"/>
 
 <text class="lbl2" x="320" y="407" text-anchor="middle">
 @i_got_***
@@ -435,6 +435,7 @@ kpis:[
 ["4","competitors benchmarked"]
 ]
 },
+
 
 /* =========================================================
    02 — TIKTOK
@@ -525,6 +526,7 @@ kpis:[
 ["2 posts","over 1M views each"]
 ]
 },
+
 
 /* =========================================================
    03 — ECOPLAST
@@ -685,6 +687,7 @@ kpis:[
 ]
 },
 
+
 /* =========================================================
    04 — THE FOUNDERS LAB
 ========================================================= */
@@ -803,7 +806,6 @@ kpis:[
 ["2 of 5","paid-promotion pitches closed"]
 ]
 },
-
 /* =========================================================
    05 — PT SARI RASA
 ========================================================= */
@@ -839,6 +841,7 @@ kpis:[
 ]
 },
 
+
 /* =========================================================
    06 — JUS FOR YOU
 ========================================================= */
@@ -872,6 +875,7 @@ kpis:[
 ["Biweekly","procurement and supplier negotiation"]
 ]
 },
+
 
 /* =========================================================
    07 — CIEL SBM ITB
@@ -986,222 +990,12 @@ kpis:[
 ["712","obtainable schools"]
 ]
 },
+
+
 /* =========================================================
    08 — BUSINESS DEVELOPMENT & MANAGEMENT SUPPORT
 ========================================================= */
 
-{
-tag:"Business Development · Management Support",
-
-title:"Business Development & Management Support: turning time-sensitive work into deliverables",
-
-overview:
-"Alongside my own businesses and projects, I supported senior management with practical business-development and commercial work. The role required switching between strategic and detailed tasks, understanding what management needed and turning incomplete information or tight deadlines into usable deliverables.",
-
-challenge:
-"Business-development work often moved quickly. Proposals, tender administration, client reports and financing discussions could arrive at the same time and required accuracy, responsiveness and follow-through.",
-
-process:[
-"Supported the preparation and development of business proposals for potential clients and opportunities.",
-"Handled tender administration and the supporting documentation required for submissions.",
-"Prepared and organised client reports so that information could be communicated clearly to management and clients.",
-"Supported discussions around business financing by organising information and helping present the relevant business case.",
-"Worked directly with senior management on commercial tasks and adjusted priorities as deadlines changed.",
-"Followed through on repetitive administrative details as well as higher-level commercial work, rather than focusing only on the more visible parts of a project.",
-"Worked independently when necessary while keeping management updated on progress and outstanding requirements."
-],
-
-insight:
-"The experience strengthened the practical side of business development: commercial work is not only about generating ideas or speaking with clients. It also depends on being able to execute the documentation, follow-ups, analysis and administrative details that allow an opportunity to move forward.",
-
-vis:[],
-
-kpis:[
-["Business proposals","supported preparation and development"],
-["Tender administration","documentation and submission support"],
-["Client reports","prepared and organised"],
-["Financing discussions","business-case support"],
-["Management support","commercial and operational execution"]
-]
-}
-
-];
-
-
-/* =========================================================
-   RENDER
-========================================================= */
-
-function row(k,v){
-return '<div class="row"><b>'+k+'</b><div>'+v+'</div></div>'
-}
-
-var out='';
-
-P.forEach(function(p,i){
-
-var vis=p.vis.map(function(v){
-
-if(v.img)
-return '<figure class="visimg"><img src="'+v.img+'" alt="'+(v.cap||'')+'"><figcaption>'+(v.cap||'')+'</figcaption></figure>';
-
-if(v.h)
-return '<a class="btn" href="'+v.h+'" target="_blank" rel="noopener">'+v.l+'</a>';
-
-return '<div class="slot">'+v.s+'</div>';
-
-}).join('');
-
-var kp=p.kpis.map(function(k){
-return '<div class="kpi"><strong>'+k[0]+'</strong><span>'+k[1]+'</span></div>'
-}).join('');
-
-out+=
-'<article class="case">'+
-
-'<div class="tag">'+(i+1)+' · '+p.tag+'</div>'+
-
-'<h2>'+p.title+'</h2>'+
-
-row(
-'Project overview',
-'<p>'+p.overview+'</p>'
-)+
-
-row(
-'The challenge',
-'<p>'+p.challenge+'</p>'
-)+
-
-row(
-'My process',
-'<ul>'+
-p.process.map(function(x){
-return '<li>'+x+'</li>'
-}).join('')+
-'</ul>'
-)+
-
-(p.insight?
-row(
-'Key insight',
-'<p>'+p.insight+'</p>'
-)
-:'')+
-
-(p.competitorChart?
-row(
-'Competitive positioning',
-'<div class="chart">'+p.competitorChart+'</div>'+
-'<p class="chartcap">'+p.competitorCap+'</p>'
-)
-:'')+
-
-(p.opsChart?
-row(
-'Weekly operations snapshot',
-'<div class="chart">'+p.opsChart+'</div>'+
-'<p class="chartcap">'+p.opsCap+'</p>'
-)
-:'')+
-
-(p.winsChart?
-row(
-'Competition results',
-'<div class="chart">'+p.winsChart+'</div>'+
-'<p class="chartcap">'+p.winsCap+'</p>'
-)
-:'')+
-
-(p.trChart?
-row(
-'Sales traction',
-'<div class="chart">'+p.trChart+'</div>'+
-'<p class="chartcap">'+p.trCap+'</p>'
-)
-:'')+
-
-(p.budChart?
-row(
-'Funding plan',
-'<div class="chart">'+p.budChart+'</div>'+
-'<p class="chartcap">'+p.budCap+'</p>'
-)
-:'')+
-
-(p.tlChart?
-row(
-'Campaign timeline',
-'<div class="chart">'+p.tlChart+'</div>'+
-'<p class="chartcap">'+p.tlCap+'</p>'
-)
-:'')+
-
-(p.outChart?
-row(
-'Partnership outreach',
-'<div class="chart">'+p.outChart+'</div>'+
-'<p class="chartcap">'+p.outCap+'</p>'
-)
-:'')+
-
-(p.mkChart?
-row(
-'Market sizing',
-'<div class="chart">'+p.mkChart+'</div>'+
-'<p class="chartcap">'+p.mkCap+'</p>'
-)
-:'')+
-
-(p.mpChart?
-row(
-'Mitigation plan',
-'<div class="chart">'+p.mpChart+'</div>'+
-'<p class="chartcap">'+p.mpCap+'</p>'
-)
-:'')+
-
-(p.perfChips?
-row(
-'Post performance',
-'<div class="kpis">'+
-p.perfChips.map(function(k){
-return '<div class="kpi"><strong>'+k[0]+'</strong><span>'+k[1]+'</span></div>'
-}).join('')+
-'</div>'
-)
-:'')+
-
-(p.engagementChart?
-row(
-'Engagement tier',
-'<div class="chart">'+p.engagementChart+'</div>'+
-'<p class="chartcap">'+p.engagementCap+'</p>'
-)
-:'')+
-
-(p.vis.length?
-row(
-'Visuals / artifacts',
-'<div class="vis">'+vis+'</div>'
-)
-:'')+
-
-row(
-'Outcomes &amp; KPIs',
-'<div class="kpis">'+kp+'</div>'
-)+
-
-'</article>';
-
-});
-
-document.getElementById('cases').innerHTML=out;
-
-</script>
-
-</body>
-</html>
 {
 tag:"Business Development · Management Support",
 
