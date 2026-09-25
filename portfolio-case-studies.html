@@ -1,903 +1,460 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <title>Tamimmah Disma Lestari — Case Studies</title>
-
-  <meta
-    name="description"
-    content="Selected business development, marketing, consumer insights and commercial case studies by Tamimmah Disma Lestari."
-  >
-
-  <link rel="canonical" href="https://tamimmadisma.github.io/portfolio-case-studies.html">
-
-  <meta property="og:title" content="Tamimmah Disma Lestari — Case Studies">
-  <meta
-    property="og:description"
-    content="Selected business development, marketing, consumer insights and commercial case studies by Tamimmah Disma Lestari."
-  >
-  <meta
-    property="og:url"
-    content="https://tamimmadisma.github.io/portfolio-case-studies.html"
-  >
-  <meta property="og:type" content="website">
-
-  <meta name="author" content="Tamimmah Disma Lestari">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
-    rel="stylesheet"
-  >
-
-  <style>
-    :root {
-      --bg: #F8F4EE;
-      --ink: #000000;
-      --muted: rgba(0, 0, 0, 0.62);
-      --line: rgba(0, 0, 0, 0.18);
-      --teal: #438F89;
-      --lime: #D9DF57;
-      --soft-teal: #6FB3AC;
-      --soft-pink: #D8A4A5;
-      --soft-green: #7C9783;
-      --serif: "Playfair Display", serif;
-      --sans: "DM Sans", sans-serif;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--ink);
-      font-family: var(--sans);
-      font-size: 14px;
-      line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    img,
-    svg {
-      max-width: 100%;
-    }
-
-    button,
-    a {
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .page {
-      width: min(1440px, 100%);
-      margin: 0 auto;
-      padding: 0 clamp(20px, 5vw, 76px);
-    }
-
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      padding: 24px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      text-decoration: none;
-    }
-
-    .brand-mark {
-      width: 9px;
-      height: 9px;
-      background: var(--teal);
-      display: inline-block;
-      flex: 0 0 auto;
-    }
-
-    .header-actions {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      min-height: 40px;
-      padding: 10px 16px;
-      border: 1px solid var(--ink);
-      background: var(--ink);
-      color: #fff;
-      text-decoration: none;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      transition:
-        background .2s ease,
-        color .2s ease,
-        transform .2s ease;
-    }
-
-    .btn:hover {
-      background: var(--lime);
-      color: var(--ink);
-      transform: translateY(-2px);
-    }
-
-    .hero {
-      padding: clamp(70px, 11vw, 150px) 0 clamp(70px, 9vw, 120px);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .eyebrow {
-      margin: 0 0 18px;
-      color: var(--teal);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-    }
-
-    .hero h1 {
-      max-width: 1100px;
-      margin: 0;
-      font-family: var(--serif);
-      font-size: clamp(64px, 10vw, 150px);
-      line-height: .88;
-      font-weight: 600;
-      letter-spacing: -.055em;
-    }
-
-    .hero h1 em {
-      font-weight: 500;
-    }
-
-    .hero-intro {
-      max-width: 650px;
-      margin: 38px 0 0;
-      color: var(--muted);
-      font-size: clamp(14px, 1.4vw, 18px);
-      line-height: 1.7;
-    }
-
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 30px;
-    }
-
-    .hero-meta span {
-      display: inline-flex;
-      align-items: center;
-      min-height: 30px;
-      padding: 7px 10px;
-      border: 1px solid var(--line);
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
-    .section-intro {
-      display: grid;
-      grid-template-columns: minmax(160px, .35fr) minmax(0, 1fr);
-      gap: clamp(30px, 6vw, 90px);
-      padding: clamp(60px, 9vw, 110px) 0 34px;
-    }
-
-    .section-number {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: .12em;
-      color: var(--teal);
-    }
-
-    .section-intro h2 {
-      margin: 0;
-      font-family: var(--serif);
-      font-size: clamp(34px, 5vw, 68px);
-      line-height: .98;
-      font-weight: 600;
-      letter-spacing: -.035em;
-    }
-
-    .section-intro p {
-      max-width: 680px;
-      margin: 20px 0 0;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .case-study {
-      position: relative;
-      padding: clamp(50px, 7vw, 90px) 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .case-study:last-of-type {
-      border-bottom: 1px solid var(--line);
-    }
-
-    .case-top {
-      display: grid;
-      grid-template-columns: minmax(42px, 70px) minmax(0, 1fr) auto;
-      align-items: start;
-      gap: clamp(18px, 4vw, 60px);
-      margin-bottom: 46px;
-    }
-
-    .case-number {
-      padding-top: 8px;
-      color: var(--teal);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .1em;
-    }
-
-    .case-kicker {
-      margin: 0 0 10px;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-    }
-
-    .case-title {
-      margin: 0;
-      max-width: 900px;
-      font-family: var(--serif);
-      font-size: clamp(38px, 5vw, 72px);
-      line-height: .96;
-      font-weight: 600;
-      letter-spacing: -.04em;
-    }
-
-    .case-period {
-      padding-top: 8px;
-      white-space: nowrap;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
-    .case-summary {
-      max-width: 850px;
-      margin: 22px 0 0;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.75;
-    }
-
-    .case-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(250px, .65fr);
-      gap: clamp(28px, 5vw, 70px);
-    }
-
-    .case-main {
-      min-width: 0;
-    }
-
-    .case-side {
-      min-width: 0;
-    }
-
-    .case-label {
-      margin: 0 0 12px;
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--teal);
-    }
-
-    .case-main h3,
-    .case-side h3 {
-      margin: 0 0 12px;
-      font-family: var(--serif);
-      font-size: clamp(24px, 3vw, 38px);
-      line-height: 1;
-      font-weight: 600;
-      letter-spacing: -.025em;
-    }
-
-    .case-main p,
-    .case-side p {
-      margin: 0 0 18px;
-      color: var(--muted);
-      line-height: 1.72;
-    }
-
-    .case-main ul,
-    .case-side ul {
-      margin: 0;
-      padding-left: 18px;
-    }
-
-    .case-main li,
-    .case-side li {
-      margin-bottom: 9px;
-      color: var(--muted);
-      line-height: 1.65;
-    }
-
-    .insight {
-      margin-top: 28px;
-      padding: 22px;
-      border-left: 4px solid var(--teal);
-      background: rgba(67, 143, 137, .08);
-    }
-
-    .insight p {
-      margin: 0;
-      color: var(--ink);
-    }
-
-    .metric-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1px;
-      margin-top: 26px;
-      background: var(--line);
-      border: 1px solid var(--line);
-    }
-
-    .metric {
-      min-height: 130px;
-      padding: 18px;
-      background: var(--bg);
-    }
-
-    .metric strong {
-      display: block;
-      margin-bottom: 8px;
-      font-family: var(--serif);
-      font-size: clamp(30px, 4vw, 48px);
-      line-height: .95;
-      letter-spacing: -.035em;
-    }
-
-    .metric span {
-      display: block;
-      color: var(--muted);
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: .08em;
-      line-height: 1.5;
-      text-transform: uppercase;
-    }
-
-    .project-visual {
-      width: 100%;
-      margin-top: 30px;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      background: #fff;
-    }
-
-    .project-visual svg {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 24px;
-    }
-
-    .chip {
-      padding: 8px 10px;
-      border: 1px solid var(--line);
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: .07em;
-      text-transform: uppercase;
-    }
-
-    .side-block {
-      padding: 20px 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .side-block:first-child {
-      padding-top: 0;
-      border-top: 0;
-    }
-
-    .side-block + .side-block {
-      margin-top: 20px;
-    }
-
-    .side-block strong {
-      display: block;
-      margin-bottom: 7px;
-      font-size: 11px;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-    }
-
-    .quote {
-      margin: 0;
-      font-family: var(--serif);
-      font-size: clamp(24px, 3vw, 38px);
-      line-height: 1.12;
-      letter-spacing: -.025em;
-    }
-
-    .closing {
-      padding: clamp(70px, 10vw, 130px) 0;
-      text-align: center;
-    }
-
-    .closing h2 {
-      margin: 0;
-      font-family: var(--serif);
-      font-size: clamp(40px, 6vw, 78px);
-      line-height: .95;
-      letter-spacing: -.04em;
-    }
-
-    .closing p {
-      max-width: 620px;
-      margin: 22px auto 30px;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    footer {
-      padding: 24px 0 34px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 10px;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
-    footer a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    @media (max-width: 900px) {
-      .case-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .case-side {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 24px;
-      }
-
-      .side-block {
-        padding-top: 20px;
-        border-top: 1px solid var(--line);
-      }
-
-      .side-block:first-child {
-        padding-top: 20px;
-        border-top: 1px solid var(--line);
-      }
-    }
-
-    @media (max-width: 700px) {
-      .page {
-        padding: 0 18px;
-      }
-
-      header {
-        align-items: flex-start;
-      }
-
-      .header-actions {
-        gap: 6px;
-      }
-
-      .header-actions .btn {
-        padding: 8px 10px;
-        font-size: 8px;
-      }
-
-      .hero {
-        padding-top: 65px;
-      }
-
-      .section-intro {
-        grid-template-columns: 1fr;
-        gap: 18px;
-      }
-
-      .case-top {
-        grid-template-columns: 36px minmax(0, 1fr);
-        gap: 14px;
-      }
-
-      .case-period {
-        grid-column: 2;
-        padding-top: 0;
-      }
-
-      .case-side {
-        grid-template-columns: 1fr;
-      }
-
-      .metric-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .metric-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .case-title {
-        font-size: 38px;
-      }
-
-      .hero h1 {
-        font-size: 58px;
-      }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tamimmah Disma Lestari · Selected Project Case Studies</title>
+
+<style>
+:root{--bg:#faf7f4;--card:#fff;--text:#221d1a;--muted:#6a6059;--line:#e8e0d8;--accent:#c2255c;--soft:#fbe7ef;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+
+@media (prefers-color-scheme:dark){
+:root:not([data-theme="light"]){
+--bg:#171412;
+--card:#211c19;
+--text:#f3ede8;
+--muted:#b3a89f;
+--line:#382f2a;
+--accent:#f06595;
+--soft:#3a1e2a
+}}
+
+:root[data-theme="dark"]{
+--bg:#171412;
+--card:#211c19;
+--text:#f3ede8;
+--muted:#b3a89f;
+--line:#382f2a;
+--accent:#f06595;
+--soft:#3a1e2a
+}
+
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+
+*,*::before,*::after{box-sizing:border-box}
+
+body{
+margin:0;
+background:var(--bg);
+color:var(--text);
+font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+line-height:1.55
+}
+
+.wrap{
+max-width:860px;
+margin:0 auto;
+padding:36px 20px 56px
+}
+
+.eyebrow{
+font-size:.78rem;
+letter-spacing:.12em;
+text-transform:uppercase;
+color:var(--accent);
+font-weight:700
+}
+
+h1{
+font-size:clamp(1.8rem,5vw,2.6rem);
+line-height:1.15;
+margin:.35em 0 .3em
+}
+
+.lead{
+color:var(--muted);
+font-size:1.05rem;
+max-width:62ch;
+margin:0 0 18px
+}
+
+.btn{
+display:inline-block;
+background:var(--accent);
+color:#fff;
+text-decoration:none;
+font-weight:600;
+padding:9px 16px;
+border-radius:999px;
+font-size:.92rem
+}
+
+.case{
+background:var(--card);
+border:1px solid var(--line);
+border-radius:16px;
+padding:20px 22px;
+margin-top:18px
+}
+
+.tag{
+font-size:.75rem;
+letter-spacing:.08em;
+text-transform:uppercase;
+color:var(--accent);
+font-weight:700
+}
+
+.case h2{
+font-size:1.2rem;
+margin:.25em 0 14px;
+line-height:1.3
+}
+
+.row{
+display:grid;
+grid-template-columns:120px 1fr;
+gap:4px 16px;
+padding:10px 0;
+border-top:1px solid var(--line);
+font-size:.95rem
+}
+
+.row>b{
+color:var(--muted);
+font-size:.76rem;
+text-transform:uppercase;
+letter-spacing:.06em;
+padding-top:3px
+}
+
+.row p{margin:0}
+
+.row ul{
+margin:0;
+padding-left:18px
+}
+
+.row li{margin:2px 0}
+
+.kpis{
+display:flex;
+flex-wrap:wrap;
+gap:10px
+}
+
+.kpi{
+background:var(--soft);
+border-radius:12px;
+padding:10px 14px;
+min-width:130px
+}
+
+.kpi strong{
+display:block;
+color:var(--accent);
+font-size:1.3rem;
+line-height:1.15
+}
+
+.kpi span{
+font-size:.82rem;
+color:var(--muted)
+}
+
+.vis{
+display:flex;
+flex-wrap:wrap;
+gap:10px
+}
+
+.slot{
+border:1.5px dashed var(--line);
+border-radius:12px;
+padding:12px 14px;
+color:var(--muted);
+font-size:.88rem;
+flex:1 1 220px
+}
+
+.vis a{align-self:flex-start}
+
+.visimg{
+margin:0;
+flex:0 0 auto;
+max-width:220px
+}
+
+.visimg img{
+display:block;
+width:100%;
+height:auto;
+border-radius:10px;
+border:1px solid var(--line)
+}
+
+.visimg figcaption{
+font-size:.76rem;
+color:var(--muted);
+margin-top:5px;
+text-align:center
+}
+
+.chart{
+background:var(--soft);
+border-radius:12px;
+padding:14px 10px 6px
+}
+
+.chart svg{
+width:100%;
+height:auto;
+display:block
+}
+
+.chartcap{
+font-size:.85rem;
+color:var(--muted);
+margin:10px 0 0;
+line-height:1.5
+}
+
+.chartcap a{
+color:var(--accent);
+font-weight:600;
+text-decoration:none
+}
+
+.chartcap a:hover{text-decoration:underline}
+
+footer{
+margin-top:40px;
+padding-top:16px;
+border-top:1px solid var(--line);
+color:var(--muted);
+font-size:.92rem
+}
+
+footer a{color:var(--accent)}
+
+@media (max-width:560px){
+.row{grid-template-columns:1fr}
+}
+</style>
 </head>
 
 <body>
 
-  <div class="page">
+<div class="wrap">
 
-    <header>
-      <a class="brand" href="https://tamimmadisma.github.io/">
-        <span class="brand-mark"></span>
-        Tamimmah Disma Lestari
-      </a>
+  <div class="eyebrow">Portfolio · Work samples</div>
 
-      <div class="header-actions">
-        <a
-          class="btn"
-          href="https://tamimmadisma.github.io/"
-        >
-          ← Back to Homepage
-        </a>
-      </div>
-    </header>
+  <h1>Selected Project Case Studies</h1>
 
-    <main>
+  <p class="lead">
+    Eight projects across entrepreneurship, e-commerce, content, marketing,
+    startups, commercial analysis and business development, by Tamimmah Disma Lestari,
+    Business Management graduate (ITB).
+  </p>
 
-      <section class="hero">
-        <p class="eyebrow">Selected Work · Business · Marketing · Commercial</p>
+  <a class="btn" href="mailto:tamimmadisma@gmail.com">Get in touch</a>
 
-        <h1>
-          Case<br>
-          <em>Studies.</em>
-        </h1>
+  <div id="cases"></div>
 
-        <p class="hero-intro">
-          A selection of projects across business development, marketing,
-          customer research, commercial strategy, operations, and
-          entrepreneurship — showing how I turn observations into practical
-          actions and measurable outcomes.
-        </p>
+  <footer>
+    Tamimmah Disma Lestari ·
+    <a href="mailto:tamimmadisma@gmail.com">tamimmadisma@gmail.com</a>
+  </footer>
 
-        <div class="hero-meta">
-          <span>Business Development</span>
-          <span>Marketing</span>
-          <span>Consumer Insights</span>
-          <span>Commercial Strategy</span>
-          <span>Operations</span>
-        </div>
-      </section>
+</div>
 
-      <section class="section-intro">
-        <div class="section-number">01 — SELECTED WORK</div>
+<script>
 
-        <div>
-          <h2>
-            From customer research<br>
-            to execution.
-          </h2>
+var P=[
 
-          <p>
-            These projects cover different business contexts, but the
-            underlying approach stays consistent: understand the market,
-            identify what customers respond to, build a practical strategy,
-            execute it, and learn from the results.
-          </p>
-        </div>
-      </section>
+/* =========================================================
+   01 — SELLKPOPVT
+========================================================= */
 
-      <article class="case-study">
+{
+tag:"Founder · International D2C on X",
 
-        <div class="case-top">
-          <div class="case-number">01</div>
+title:"SellKpopVT: turning an X audience into 1,000+ orders",
 
-          <div>
-            <p class="case-kicker">Entrepreneurship · D2C · Customer Acquisition</p>
+overview:
+"An international direct-to-consumer business selling K-pop fan-voting services, founded and operated by me end to end. I handled customer research, acquisition, pricing, promotion, sales, customer relationships, operations and team coordination, with customers and resellers across Southeast Asia, Europe and the United States.",
 
-            <h2 class="case-title">
-              SellKpopVT: turning an X audience into 1,000+ orders
-            </h2>
+challenge:
+"An online audience had to become paying and repeat customers across different countries, currencies, payment methods and time zones. The business also needed to compete with other voting-service resellers while maintaining customer trust and reliable fulfillment.",
 
-            <p class="case-summary">
-              Built and operated an international D2C K-pop fan-voting service,
-              managing customer research, acquisition, pricing, promotion,
-              sales, customer relationships, operations, and team coordination
-              across Southeast Asia, Europe, and the United States.
-            </p>
-          </div>
+process:[
+"Studied customer demand through purchasing behaviour, customer questions, responses, market trends and recurring requests.",
+"Identified potential customers and promoted the service repeatedly through online communities and digital channels.",
+"Handled customer inquiries, order coordination, follow-ups and relationship management throughout the buying process.",
+"Set and adjusted product pricing based on customer demand, market conditions and competitor pricing.",
+"Ran promotional campaigns and monitored customer responses and sales to understand which approaches generated interest and purchases.",
+"Benchmarked 4 competing resellers on pricing, branding, audience size and trust signals to understand the market.",
+"Negotiated with resellers and adapted offers rather than treating price objections as automatic lost opportunities.",
+"Led 3 core team members, including 2 in Indonesia and 1 in the Philippines, with each member coordinating a small support team.",
+"Worked with multiple payment and delivery methods, including PayPal, GCash, QRIS and Wise.",
+"Maintained consistency across repetitive daily outreach, marketing, customer service and operational tasks."
+],
 
-          <div class="case-period">
-            2021–2025
-          </div>
-        </div>
+insight:
+"Direct competitor research showed that the market was not only competing on price. Some sellers focused heavily on being the cheapest, while others competed through audience trust, branding and service reliability. I positioned SellKpopVT around consistency, customer communication, broad payment coverage and visible proof of completed orders rather than relying only on price reductions.",
 
-        <div class="case-grid">
+vis:[],
 
-          <div class="case-main">
+competitorChart:`<svg viewBox="0 0 640 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Reseller positioning map: price versus brand consistency">
+<style>
+.axis2{stroke:var(--line);stroke-width:1}
+.pt{fill:var(--soft);stroke:var(--accent);stroke-width:2}
+.pt-me{fill:none;stroke:var(--accent);stroke-width:2;stroke-dasharray:5 4}
+.lbl2{font:600 12px system-ui,sans-serif;fill:var(--text)}
+.lbl2m{font:500 10.5px system-ui,sans-serif;fill:var(--muted)}
+.lbl2c{font:700 12px system-ui,sans-serif;fill:var(--accent)}
+</style>
 
-            <p class="case-label">The business</p>
+<line class="axis2" x1="320" y1="40" x2="320" y2="420"/>
+<line class="axis2" x1="40" y1="235" x2="600" y2="235"/>
 
-            <h3>Building demand around a niche digital service.</h3>
+<text class="lbl2m" x="60" y="48" text-anchor="start">
+Strong brand · low price
+</text>
 
-            <p>
-              I managed SellKpopVT end-to-end, from understanding who was
-              likely to buy and what they valued to setting prices, promoting
-              services, handling sales, maintaining customer relationships,
-              and coordinating day-to-day operations.
-            </p>
+<text class="lbl2m" x="580" y="48" text-anchor="end">
+Strong brand · high price
+</text>
 
-            <p>
-              The business served customers and resellers across Southeast
-              Asia, Europe, and the United States. Because the service was
-              highly dependent on timing and customer trust, I paid close
-              attention to purchasing behaviour, recurring requests,
-              questions, market trends, and the way customers responded to
-              different offers.
-            </p>
+<text class="lbl2m" x="60" y="440" text-anchor="start">
+Weak brand · low price
+</text>
 
-            <ul>
-              <li>Researched customer purchasing behaviour and recurring demand.</li>
-              <li>Identified potential customers through online communities and digital channels.</li>
-              <li>Handled inquiries, order coordination, and customer follow-ups.</li>
-              <li>Set pricing based on demand, market conditions, and competitor positioning.</li>
-              <li>Created promotional campaigns and monitored response and sales.</li>
-              <li>Maintained customer relationships to encourage repeat purchases.</li>
-            </ul>
+<text class="lbl2m" x="580" y="440" text-anchor="end">
+Weak brand · high price
+</text>
 
-            <div class="insight">
-              <p class="case-label">What I learned</p>
-              <p>
-                Competing on price alone was not enough. Customers also
-                responded to trust, branding, service reliability,
-                communication, payment coverage, and visible proof that
-                orders had been completed successfully.
-              </p>
-            </div>
+<circle class="pt-me" cx="470" cy="90" r="24"/>
 
-            <div class="metric-grid">
-              <div class="metric">
-                <strong>10,000+</strong>
-                <span>Followers converted into buyers</span>
-              </div>
+<text class="lbl2c" x="436" y="86" text-anchor="end">
+SellKpopVT
+</text>
 
-              <div class="metric">
-                <strong>1,000+</strong>
-                <span>Transactions completed</span>
-              </div>
+<text class="lbl2m" x="436" y="100" text-anchor="end">
+trust-led, not cheapest
+</text>
 
-              <div class="metric">
-                <strong>3</strong>
-                <span>Regions served</span>
-              </div>
+<circle class="pt" cx="150" cy="130" r="20"/>
 
-              <div class="metric">
-                <strong>3</strong>
-                <span>Core team members led</span>
-              </div>
-            </div>
+<text class="lbl2" x="182" y="126" text-anchor="start">
+@kpopvote***
+</text>
 
-            <div class="chips">
-              <span class="chip">Customer Research</span>
-              <span class="chip">Pricing</span>
-              <span class="chip">Acquisition</span>
-              <span class="chip">Sales</span>
-              <span class="chip">Retention</span>
-              <span class="chip">Operations</span>
-            </div>
+<text class="lbl2m" x="182" y="140" text-anchor="start">
+16k · slightly below market
+</text>
 
-            <div class="project-visual">
-              <svg
-                viewBox="0 0 900 360"
-                role="img"
-                aria-label="Competitor positioning and weekly operations overview"
-              >
-                <rect width="900" height="360" fill="#F8F4EE"/>
+<circle class="pt" cx="330" cy="190" r="28"/>
 
-                <text
-                  x="40"
-                  y="46"
-                  font-family="DM Sans"
-                  font-size="11"
-                  font-weight="700"
-                  letter-spacing="2"
-                  fill="#438F89"
-                >
-                  COMPETITOR POSITIONING
-                </text>
+<text class="lbl2" x="368" y="186" text-anchor="start">
+@bearin***
+</text>
 
-                <line
-                  x1="80"
-                  y1="290"
-                  x2="400"
-                  y2="290"
-                  stroke="#000"
-                  stroke-width="1"
-                />
+<text class="lbl2m" x="368" y="200" text-anchor="start">
+27k · inconsistent pricing
+</text>
 
-                <line
-                  x1="80"
-                  y1="80"
-                  x2="80"
-                  y2="290"
-                  stroke="#000"
-                  stroke-width="1"
-                />
+<circle class="pt" cx="130" cy="340" r="34"/>
 
-                <text
-                  x="245"
-                  y="328"
-                  text-anchor="middle"
-                  font-family="DM Sans"
-                  font-size="10"
-                  fill="#000"
-                >
-                  SERVICE VALUE
-                </text>
+<text class="lbl2" x="130" y="386" text-anchor="middle">
+@bluevo***
+</text>
 
-                <text
-                  x="25"
-                  y="190"
-                  transform="rotate(-90 25 190)"
-                  text-anchor="middle"
-                  font-family="DM Sans"
-                  font-size="10"
-                  fill="#000"
-                >
-                  PRICE
-                </text>
+<text class="lbl2m" x="130" y="400" text-anchor="middle">
+40k · well below market
+</text>
 
-                <circle cx="145" cy="245" r="18" fill="#D8A4A5"/>
-                <text x="145" y="249" text-anchor="middle" font-family="DM Sans" font-size="9" font-weight="700">C1</text>
+<circle class="pt" cx="320" cy="375" r="20"/>
 
-                <circle cx="215" cy="205" r="18" fill="#6FB3AC"/>
-                <text x="215" y="209" text-anchor="middle" font-family="DM Sans" font-size="9" font-weight="700">C2</text>
+<text class="lbl2" x="320" y="407" text-anchor="middle">
+@i_got_***
+</text>
 
-                <circle cx="290" cy="165" r="18" fill="#7C9783"/>
-                <text x="290" y="169" text-anchor="middle" font-family="DM Sans" font-size="9" font-weight="700">C3</text>
+<text class="lbl2m" x="320" y="421" text-anchor="middle">
+16k · at market
+</text>
 
-                <circle cx="345" cy="125" r="22" fill="#D9DF57"/>
-                <text x="345" y="129" text-anchor="middle" font-family="DM Sans" font-size="9" font-weight="700">YOU</text>
+</svg>`,
 
-                <text
-                  x="500"
-                  y="46"
-                  font-family="DM Sans"
-                  font-size="11"
-                  font-weight="700"
-                  letter-spacing="2"
-                  fill="#438F89"
-                >
-                  WEEKLY OPERATING RHYTHM
-                </text>
+competitorCap:
+`Circle size = follower count. Dashed circle marks SellKpopVT's chosen position based on the competitor analysis.
+<a href="Analisis_Kompetitor_Pasar_SellKpopVT.pdf" target="_blank" rel="noopener">
+View the full competitor analysis (PDF)
+</a>`,
 
-                <line x1="500" y1="95" x2="850" y2="95" stroke="#000" stroke-width="1"/>
+opsChart:`<svg viewBox="0 0 640 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Weekly account delivery: target versus actual">
+<style>
+.axis{stroke:var(--line);stroke-width:1}
+.target{stroke:var(--muted);stroke-width:1.5;stroke-dasharray:4 4}
+.bar-ok{fill:var(--accent)}
+.bar-low{fill:var(--accent);fill-opacity:.4}
+.lbl{font:600 12px system-ui,sans-serif;fill:var(--text)}
+.lblm{font:500 10.5px system-ui,sans-serif;fill:var(--muted)}
+</style>
 
-                <text x="500" y="125" font-family="DM Sans" font-size="10" font-weight="700">MON</text>
-                <text x="565" y="125" font-family="DM Sans" font-size="10" font-weight="700">TUE</text>
-                <text x="630" y="125" font-family="DM Sans" font-size="10" font-weight="700">WED</text>
-                <text x="695" y="125" font-family="DM Sans" font-size="10" font-weight="700">THU</text>
-                <text x="760" y="125" font-family="DM Sans" font-size="10" font-weight="700">FRI</text>
-                <text x="820" y="125" font-family="DM Sans" font-size="10" font-weight="700">WEEKEND</text>
+<text class="lblm" x="320" y="22" text-anchor="middle">
+- - - Target: 2,000 accounts/day
+</text>
 
-                <rect x="500" y="150" width="350" height="34" fill="#D9DF57"/>
-                <text x="515" y="172" font-family="DM Sans" font-size="10" font-weight="700">OUTREACH + CUSTOMER FOLLOW-UP</text>
+<line class="axis" x1="40" y1="210" x2="580" y2="210"/>
+<line class="target" x1="40" y1="77" x2="580" y2="77"/>
 
-                <rect x="500" y="198" width="285" height="34" fill="#6FB3AC"/>
-                <text x="515" y="220" font-family="DM Sans" font-size="10" font-weight="700">CAMPAIGNS + PROMOTION</text>
+<rect class="bar-ok" x="68" y="77" width="64" height="133" rx="6"/>
+<text class="lbl" x="100" y="66" text-anchor="middle">2,000</text>
 
-                <rect x="500" y="246" width="320" height="34" fill="#D8A4A5"/>
-                <text x="515" y="268" font-family="DM Sans" font-size="10" font-weight="700">ORDERS + OPERATIONS</text>
+<rect class="bar-ok" x="164" y="90" width="64" height="120" rx="6"/>
+<text class="lbl" x="196" y="79" text-anchor="middle">1,800</text>
 
-                <rect x="500" y="294" width="245" height="34" fill="#7C9783"/>
-                <text x="515" y="316" font-family="DM Sans" font-size="10" font-weight="700">MARKET + COMPETITOR CHECK</text>
-              </svg>
-            </div>
+<rect class="bar-low" x="260" y="110" width="64" height="100" rx="6"/>
+<text class="lbl" x="292" y="99" text-anchor="middle">1,500</text>
 
-          </div>
+<rect class="bar-ok" x="356" y="97" width="64" height="113" rx="6"/>
+<text class="lbl" x="388" y="86" text-anchor="middle">1,700</text>
 
-          <aside class="case-side">
+<rect class="bar-ok" x="452" y="84" width="64" height="126" rx="6"/>
+<text class="lbl" x="484" y="73" text-anchor="middle">1,900</text>
 
-            <div class="side-block">
-              <p class="case-label">Competitive work</p>
-              <strong>4 competitors benchmarked</strong>
-              <p>
-                Compared competitor pricing, service structure, customer
-                experience, and positioning to understand where the business
-                could differentiate.
-              </p>
-            </div>
+<text class="lblm" x="100" y="236" text-anchor="middle">Mon</text>
+<text class="lblm" x="196" y="236" text-anchor="middle">Tue</text>
+<text class="lblm" x="292" y="236" text-anchor="middle">Wed</text>
+<text class="lblm" x="388" y="236" text-anchor="middle">Thu</text>
+<text class="lblm" x="484" y="236" text-anchor="middle">Fri</text>
 
-            <div class="side-block">
-              <p class="case-label">Team</p>
-              <strong>3 core members</strong>
-              <p>
-                Led a core team consisting of two members in Indonesia and one
-                in the Philippines, with each coordinating a smaller support
-                team.
-              </p>
-            </div>
+</svg>`,
 
-            <div class="side-block">
-              <p class="case-label">Payments</p>
-              <strong>4 payment methods</strong>
-              <p>
-                Supported PayPal, GCash, QRIS, and Wise to make transactions
-                easier for customers in different markets.
-              </p>
-            </div>
+opsCap:
+`Illustrative weekly operating snapshot based on the business's recurring daily delivery target and actual account volume.`,
 
-            <div class="side-block">
-              <p class="case-label">Operating reality</p>
-              <p class="quote">
-                Consistency mattered as much as strategy.
-              </p>
-              <p>
-                A large part of the work involved repeating outreach,
-                marketing, customer service, order coordination, and
-                operational tasks every day.
-              </p>
-            </div>
+kpis:[
+["10,000+","followers converted into buyers"],
+["1,000+","transactions completed"],
+["3","regions served"],
+["3","core team members led"]
+]
+},
 
-          </aside>
+/* =========================================================
+   02 — ORGANIC TIKTOK
+========================================================= */
 
-        </div>
+{
+tag:"Content Strategy · Organic TikTok",
 
-      </article>
-      mance repeatedly rather than treating one viral post as the entire strategy."
+title:"Organic TikTok: 4.25M+ views from 16 posts",
+
+overview:
+"An unpaid TikTok account where I planned, created and evaluated photo-based content. I tracked views, likes, comments and shares, then used the results to understand which topics and formats generated stronger audience response.",
+
+challenge:
+"The account had no paid media budget, so content performance depended on selecting topics and presentation styles that could attract organic distribution and sustain engagement.",
+
+process:[
+"Created and published 16 photo-based posts around audience-relevant topics.",
+"Tracked views, likes, comments and shares after publication.",
+"Compared performance across posts to identify stronger topics and formats.",
+"Used high-performing posts as signals for future content planning rather than treating individual viral posts as isolated events.",
+"Reviewed average performance across the last 10 posts to understand whether reach and engagement were repeatable."
 ],
 
 insight:
@@ -912,48 +469,26 @@ perfChips:[
 ["375","avg shares/post"]
 ],
 
-engagementChart:`<svg viewBox="0 0 640 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Engagement rate tier gauge showing 6.42 percent in the Strong tier">
+engagementChart:
+`<svg viewBox="0 0 640 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Engagement rate tier gauge showing 6.42 percent in the Strong tier">
 <style>
-.seg{stroke:none}
-.seg1{fill:var(--accent);fill-opacity:.15}
-.seg2{fill:var(--accent);fill-opacity:.3}
-.seg3{fill:var(--accent);fill-opacity:.5}
-.seg4{fill:var(--accent);fill-opacity:.78}
-.seg5{fill:var(--accent);fill-opacity:1}
-.mk{fill:var(--accent)}
-.mkline{stroke:var(--accent);stroke-width:1.5;stroke-dasharray:3 3}
-.mklbl{font:700 12px system-ui,sans-serif;fill:var(--accent)}
-.tlbl{font:600 10.5px system-ui,sans-serif;fill:var(--text)}
-.tlbl2{font:500 9.5px system-ui,sans-serif;fill:var(--muted)}
+.g1{fill:var(--soft)}
+.g2{fill:var(--accent);opacity:.3}
+.g3{fill:var(--accent);opacity:.6}
+.g4{fill:var(--accent)}
+.en{font:700 14px system-ui,sans-serif;fill:var(--accent)}
+.em{font:500 11px system-ui,sans-serif;fill:var(--muted)}
 </style>
 
-<rect class="seg seg1" x="40" y="54" width="56" height="26"/>
-<rect class="seg seg2" x="96" y="54" width="112" height="26"/>
-<rect class="seg seg3" x="208" y="54" width="112" height="26"/>
-<rect class="seg seg4" x="320" y="54" width="168" height="26"/>
-<rect class="seg seg5" x="488" y="54" width="112" height="26"/>
+<rect class="g1" x="40" y="55" width="130" height="28" rx="6"/>
+<rect class="g2" x="175" y="55" width="130" height="28" rx="6"/>
+<rect class="g3" x="310" y="55" width="130" height="28" rx="6"/>
+<rect class="g4" x="445" y="55" width="155" height="28" rx="6"/>
 
-<polygon class="mk" points="399.5,42 391,54 408,54"/>
-<line class="mkline" x1="399.5" y1="54" x2="399.5" y2="80"/>
-
-<text class="mklbl" x="399.5" y="34" text-anchor="middle">
-6.42% · Strong
-</text>
-
-<text class="tlbl" x="68" y="96" text-anchor="middle">Very low</text>
-<text class="tlbl2" x="68" y="108" text-anchor="middle">&lt;1%</text>
-
-<text class="tlbl" x="152" y="96" text-anchor="middle">Low</text>
-<text class="tlbl2" x="152" y="108" text-anchor="middle">1–3%</text>
-
-<text class="tlbl" x="264" y="96" text-anchor="middle">Good</text>
-<text class="tlbl2" x="264" y="108" text-anchor="middle">3–5%</text>
-
-<text class="tlbl" x="404" y="96" text-anchor="middle">Strong</text>
-<text class="tlbl2" x="404" y="108" text-anchor="middle">5–8%</text>
-
-<text class="tlbl" x="544" y="96" text-anchor="middle">Excellent</text>
-<text class="tlbl2" x="544" y="108" text-anchor="middle">&gt;8%</text>
+<text class="em" x="105" y="103" text-anchor="middle">Low</text>
+<text class="em" x="240" y="103" text-anchor="middle">Moderate</text>
+<text class="em" x="375" y="103" text-anchor="middle">Good</text>
+<text class="en" x="522" y="103" text-anchor="middle">Strong · 6.42%</text>
 
 </svg>`,
 
@@ -967,7 +502,6 @@ kpis:[
 ["2 posts","over 1M views each"]
 ]
 },
-
 
 /* =========================================================
    03 — ECOPLAST
@@ -996,99 +530,59 @@ process:[
 
 vis:[],
 
-winsChart:`<svg viewBox="0 0 640 222" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Competition results: Top 20, Top 6, Runner-up nationally">
+winsChart:
+`<svg viewBox="0 0 640 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Competition results: Top 20, Top 6, Runner-up nationally">
 <style>
-.wl{stroke:var(--line);stroke-width:3;stroke-linecap:round}
-.wd{fill:var(--soft);stroke:var(--accent);stroke-width:2.5}
-.wd-hi{fill:var(--accent);stroke:var(--accent);stroke-width:2.5}
-.wr{font:800 15px system-ui,sans-serif;fill:var(--accent)}
-.wn{font:600 12px system-ui,sans-serif;fill:var(--text)}
+.wb{fill:var(--accent)}
+.wn{font:700 12px system-ui,sans-serif;fill:var(--text)}
 .wm{font:500 10.5px system-ui,sans-serif;fill:var(--muted)}
 </style>
 
-<line class="wl" x1="40" y1="80" x2="590" y2="80"/>
+<rect class="wb" x="40" y="120" width="160" height="28" rx="6"/>
+<text class="wn" x="120" y="139" text-anchor="middle">Top 20</text>
+<text class="wm" x="120" y="165" text-anchor="middle">PMW 2021</text>
 
-<circle class="wd" cx="40" cy="80" r="9"/>
-<circle class="wd" cx="423" cy="80" r="11"/>
-<circle class="wd-hi" cx="533" cy="80" r="15"/>
+<rect class="wb" x="240" y="90" width="160" height="58" rx="6"/>
+<text class="wn" x="320" y="122" text-anchor="middle">Top 6</text>
+<text class="wm" x="320" y="165" text-anchor="middle">Startup Competition</text>
 
-<text class="wm" x="590" y="52" text-anchor="middle">1st</text>
-<circle cx="590" cy="80" r="5" fill="var(--line)"/>
-
-<text class="wr" x="40" y="52" text-anchor="start">Top 20</text>
-<text class="wn" x="40" y="118" text-anchor="start">PMW ITB × TOP</text>
-<text class="wm" x="40" y="134" text-anchor="start">Competition</text>
-
-<text class="wr" x="423" y="52" text-anchor="middle">Top 6</text>
-<text class="wn" x="423" y="118" text-anchor="middle">Hult Prize ITB</text>
-<text class="wm" x="423" y="134" text-anchor="middle">Campus round</text>
-
-<text class="wr" x="533" y="46" text-anchor="middle">Runner-up</text>
-
-<line x1="533" y1="97" x2="533" y2="146"
-stroke="var(--accent)"
-stroke-width="1.5"
-stroke-dasharray="3 3"/>
-
-<text class="wn" x="560" y="162" text-anchor="end">
-Indonesia Millennial Connect
-</text>
-
-<text class="wm" x="560" y="178" text-anchor="end">
-National level
-</text>
-
-<text class="wm" x="315" y="212" text-anchor="middle">
-Competition progression
-</text>
+<rect class="wb" x="440" y="55" width="160" height="93" rx="6"/>
+<text class="wn" x="520" y="100" text-anchor="middle">Runner-up</text>
+<text class="wm" x="520" y="165" text-anchor="middle">Indonesia Millennial Connect</text>
 
 </svg>`,
 
 winsCap:
 `Competition results achieved while contributing to the business as CMO.`,
 
-trChart:`<svg viewBox="0 0 640 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Packs sold per period: 48 first batch, 10 to 20 monthly, target 50 to 75">
-
+trChart:
+`<svg viewBox="0 0 640 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Packs sold per period: 48 first batch, 10 to 20 monthly, target 50 to 75">
 <style>
-.ta{fill:var(--accent)}
-.tb{fill:var(--accent);opacity:.35}
-.tt{fill:none;stroke:var(--accent);stroke-width:2;stroke-dasharray:5 4}
-.tn{font:600 12px system-ui,sans-serif;fill:var(--text)}
+.tb{fill:var(--accent)}
+.tt{fill:var(--accent);opacity:.35}
+.tn{font:700 12px system-ui,sans-serif;fill:var(--text)}
 .tm{font:500 10.5px system-ui,sans-serif;fill:var(--muted)}
-.tv{font:700 12px system-ui,sans-serif;fill:var(--accent)}
 </style>
 
-<text class="tn" x="20" y="60">Idul Adha 2019</text>
-<text class="tm" x="20" y="75">first batch</text>
+<rect class="tb" x="70" y="72" width="120" height="76" rx="6"/>
+<text class="tn" x="130" y="60" text-anchor="middle">48</text>
+<text class="tm" x="130" y="165" text-anchor="middle">First batch</text>
 
-<rect class="ta" x="190" y="46" width="240" height="28" rx="4"/>
-<text class="tv" x="440" y="65">48 packs</text>
+<rect class="tb" x="260" y="116" width="120" height="32" rx="6"/>
+<text class="tn" x="320" y="104" text-anchor="middle">10–20</text>
+<text class="tm" x="320" y="165" text-anchor="middle">Monthly actual</text>
 
-<text class="tn" x="20" y="130">Typical month after</text>
-<text class="tm" x="20" y="145">2019 to 2020</text>
-
-<rect class="ta" x="190" y="116" width="50" height="28" rx="4"/>
-<rect class="tb" x="240" y="116" width="50" height="28" rx="4"/>
-<text class="tv" x="300" y="135">10–20 packs</text>
-
-<text class="tn" x="20" y="200">Monthly target</text>
-<text class="tm" x="20" y="215">with PMW funding</text>
-
-<rect class="tt" x="190" y="186" width="250" height="28" rx="4"/>
-<rect class="tt" x="440" y="186" width="125" height="28" rx="4"/>
-<text class="tv" x="575" y="205">50–75</text>
-
-<text class="tm" x="190" y="240">
-1 pack = 50 bags. Solid = actual, dashed = target.
-</text>
+<rect class="tt" x="450" y="48" width="120" height="100" rx="6"/>
+<text class="tn" x="510" y="36" text-anchor="middle">50–75</text>
+<text class="tm" x="510" y="165" text-anchor="middle">Proposed target</text>
 
 </svg>`,
 
 trCap:
 `Sales figures from the 2021 PMW proposal; the dashed bar represents the proposed growth target rather than achieved sales.`,
 
-budChart:`<svg viewBox="0 0 640 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Rp20M budget: business development 6M, marketing 8M, travel and operations 2.4M, other 3.6M">
-
+budChart:
+`<svg viewBox="0 0 640 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Rp20M budget: business development 6M, marketing 8M, travel and operations 2.4M, other 3.6M">
 <style>
 .bn{font:600 12px system-ui,sans-serif;fill:var(--text)}
 .bm{font:500 10.5px system-ui,sans-serif;fill:var(--muted)}
@@ -1128,7 +622,6 @@ kpis:[
 ]
 },
 
-
 /* =========================================================
    04 — THE FOUNDERS LAB
 ========================================================= */
@@ -1158,77 +651,61 @@ process:[
 
 vis:[],
 
-tlChart:`<svg viewBox="0 0 640 215" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Timeline of The Founders Lab campaigns from March 2020 to January 2021">
-
+tlChart:
+`<svg viewBox="0 0 640 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Timeline of The Founders Lab campaigns from March 2020 to January 2021">
 <style>
-.ln{stroke:var(--line);stroke-width:3;stroke-linecap:round}
-.dt{fill:var(--soft);stroke:var(--accent);stroke-width:2.5}
-.dh{fill:var(--accent)}
-.d1{font:700 12px system-ui,sans-serif;fill:var(--accent)}
-.d2{font:600 12px system-ui,sans-serif;fill:var(--text)}
-.d3{font:500 10.5px system-ui,sans-serif;fill:var(--muted)}
+.tl{stroke:var(--accent);stroke-width:4}
+.tc{fill:var(--accent)}
+.tn{font:700 11px system-ui,sans-serif;fill:var(--text)}
+.tm{font:500 10px system-ui,sans-serif;fill:var(--muted)}
 </style>
 
-<line class="ln" x1="30" y1="107" x2="610" y2="107"/>
+<line class="tl" x1="60" y1="90" x2="580" y2="90"/>
 
-<circle class="dt" cx="70" cy="107" r="8"/>
-<circle class="dt" cx="180" cy="107" r="8"/>
-<circle class="dt" cx="290" cy="107" r="8"/>
-<circle class="dh" cx="400" cy="107" r="10"/>
-<circle class="dt" cx="510" cy="107" r="8"/>
-<circle class="dt" cx="585" cy="107" r="8"/>
+<circle class="tc" cx="80" cy="90" r="7"/>
+<text class="tn" x="80" y="62" text-anchor="middle">Mar 2020</text>
+<text class="tm" x="80" y="120" text-anchor="middle">Community growth</text>
 
-<text class="d1" x="20" y="44">Mar–Apr 2020</text>
-<text class="d2" x="20" y="60">Social media plan</text>
-<text class="d3" x="20" y="75">Intro → recruit → challenge</text>
+<circle class="tc" cx="205" cy="90" r="7"/>
+<text class="tn" x="205" y="62" text-anchor="middle">Jul 2020</text>
+<text class="tm" x="205" y="120" text-anchor="middle">Digital Summit</text>
 
-<text class="d1" x="180" y="146" text-anchor="middle">18–19 May</text>
-<text class="d2" x="180" y="162" text-anchor="middle">Founders Talk</text>
-<text class="d3" x="180" y="177" text-anchor="middle">2 founder IG Lives</text>
+<circle class="tc" cx="330" cy="90" r="7"/>
+<text class="tn" x="330" y="62" text-anchor="middle">Aug 2020</text>
+<text class="tm" x="330" y="120" text-anchor="middle">Startup Dating</text>
 
-<text class="d1" x="290" y="44" text-anchor="middle">15 Jun</text>
-<text class="d2" x="290" y="60" text-anchor="middle">Challenge semi-finals</text>
-<text class="d3" x="290" y="75" text-anchor="middle">Startup Challenge</text>
+<circle class="tc" cx="455" cy="90" r="7"/>
+<text class="tn" x="455" y="62" text-anchor="middle">Oct 2020</text>
+<text class="tm" x="455" y="120" text-anchor="middle">Idealogy Festival</text>
 
-<text class="d1" x="400" y="146" text-anchor="middle">4 Jul</text>
-<text class="d2" x="400" y="162" text-anchor="middle">Idealogy Digital Summit</text>
-<text class="d3" x="400" y="177" text-anchor="middle">5 speakers, fees to COVID relief</text>
-
-<text class="d1" x="510" y="44" text-anchor="middle">21 Sep–5 Oct</text>
-<text class="d2" x="510" y="60" text-anchor="middle">Funding Frenzy recruitment</text>
-<text class="d3" x="510" y="75" text-anchor="middle">5-step selection</text>
-
-<text class="d1" x="630" y="146" text-anchor="end">Jan 2021</text>
-<text class="d2" x="630" y="162" text-anchor="end">IG Live: Drama vs Reality</text>
-<text class="d3" x="630" y="177" text-anchor="end">K-drama startup theme</text>
+<circle class="tc" cx="580" cy="90" r="7"/>
+<text class="tn" x="580" y="62" text-anchor="middle">Jan 2021</text>
+<text class="tm" x="580" y="120" text-anchor="middle">Funding Frenzy</text>
 
 </svg>`,
 
 tlCap:
 `Campaigns marketed across the Idealogy Festival 2020 and Funding Frenzy collaboration.`,
 
-outChart:`<svg viewBox="0 0 640 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Paid promotion outreach: 10 accounts benchmarked, 5 approached, 2 deals closed">
-
+outChart:
+`<svg viewBox="0 0 640 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Paid promotion outreach: 10 accounts benchmarked, 5 approached, 2 deals closed">
 <style>
-.oa{fill:var(--accent);opacity:.3}
-.ob{fill:var(--accent);opacity:.6}
-.oc{fill:var(--accent)}
-.on{font:600 12px system-ui,sans-serif;fill:var(--text)}
-.ov{font:700 13px system-ui,sans-serif;fill:var(--accent)}
-.om{font:500 10.5px system-ui,sans-serif;fill:var(--muted)}
+.ob{fill:var(--accent)}
+.om{font:600 12px system-ui,sans-serif;fill:var(--text)}
+.ov{font:700 15px system-ui,sans-serif;fill:var(--accent)}
 </style>
 
-<text class="on" x="20" y="38">Accounts benchmarked</text>
-<rect class="oa" x="190" y="20" width="400" height="26" rx="4"/>
-<text class="ov" x="600" y="39" text-anchor="end">10</text>
+<rect class="ob" x="70" y="50" width="140" height="70" rx="6"/>
+<text class="ov" x="140" y="82" text-anchor="middle">10</text>
+<text class="om" x="140" y="103" text-anchor="middle">benchmarked</text>
 
-<text class="on" x="20" y="88">Partners approached</text>
-<rect class="ob" x="190" y="70" width="200" height="26" rx="4"/>
-<text class="ov" x="400" y="89">5</text>
+<rect class="ob" x="250" y="70" width="140" height="50" rx="6"/>
+<text class="ov" x="320" y="94" text-anchor="middle">5</text>
+<text class="om" x="320" y="113" text-anchor="middle">approached</text>
 
-<text class="on" x="20" y="138">Paid deals closed</text>
-<rect class="oc" x="190" y="120" width="80" height="26" rx="4"/>
-<text class="ov" x="280" y="139">2</text>
+<rect class="ob" x="430" y="90" width="140" height="30" rx="6"/>
+<text class="ov" x="500" y="108" text-anchor="middle">2</text>
+<text class="om" x="500" y="140" text-anchor="middle">paid deals</text>
 
 </svg>`,
 
@@ -1243,279 +720,3 @@ kpis:[
 ["2 of 5","paid-promotion pitches closed"]
 ]
 },
-mkCap:
-`Schools in Jakarta, West Java and Banten, narrowed by accreditation, digital readiness and ability to pay.`,
-
-mpChart:`<svg viewBox="0 0 640 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Five-week Instagram content plan for The Business Lab">
-<style>
-.pb{fill:var(--soft);stroke:var(--accent);stroke-width:1.5}
-.ph{font:700 12px system-ui,sans-serif;fill:var(--accent)}
-.pt{font:600 11px system-ui,sans-serif;fill:var(--text)}
-.pm{font:500 10.5px system-ui,sans-serif;fill:var(--muted)}
-</style>
-
-<rect class="pb" x="20" y="16" width="108" height="72" rx="6"/>
-<rect class="pb" x="140" y="16" width="108" height="72" rx="6"/>
-<rect class="pb" x="260" y="16" width="108" height="72" rx="6"/>
-<rect class="pb" x="380" y="16" width="108" height="72" rx="6"/>
-<rect class="pb" x="500" y="16" width="108" height="72" rx="6" stroke-dasharray="4 3"/>
-
-<text class="ph" x="32" y="38">Week 1</text>
-<text class="pt" x="32" y="56">Business Lab</text>
-<text class="pt" x="32" y="71">intro, positioning</text>
-
-<text class="ph" x="152" y="38">Week 2</text>
-<text class="pt" x="152" y="56">COVID-19 impact</text>
-<text class="pt" x="152" y="71">on business</text>
-
-<text class="ph" x="272" y="38">Week 3</text>
-<text class="pt" x="272" y="56">Self productivity</text>
-<text class="pt" x="272" y="71">while WFH</text>
-
-<text class="ph" x="392" y="38">Week 4</text>
-<text class="pt" x="392" y="56">Business ideas via</text>
-<text class="pt" x="392" y="71">design thinking</text>
-
-<text class="ph" x="512" y="38">Week 5</text>
-<text class="pt" x="512" y="56">In progress</text>
-
-<text class="pm" x="20" y="116">
-3 posts per week · KPI: 100 Instagram followers in 2 weeks · 3+ ITB account collaborations
-</text>
-
-</svg>`,
-
-mpCap:
-`Remote content plan developed after COVID-19 halted campus activity; the fifth week and results were still in progress in the original plan.`,
-
-kpis:[
-["16","professionals surveyed"],
-["3","competitors benchmarked"],
-["6,705","accessible schools"],
-["1,310","serviceable schools"],
-["712","obtainable schools"]
-]
-},
-
-
-/* =========================================================
-   08 — BUSINESS DEVELOPMENT & MANAGEMENT SUPPORT
-========================================================= */
-
-{
-tag:"Business Development · Management Support",
-
-title:"Business Development & Management Support: turning time-sensitive work into deliverables",
-
-overview:
-"Alongside my own businesses and projects, I supported senior management with practical business-development and commercial work. The role required switching between strategic and detailed tasks, understanding what management needed and turning incomplete information or tight deadlines into usable deliverables.",
-
-challenge:
-"Business-development work often moved quickly. Proposals, tender administration, client reports and financing discussions could arrive at the same time and required accuracy, responsiveness and follow-through.",
-
-process:[
-"Supported the preparation and development of business proposals for potential clients and opportunities.",
-"Handled tender administration and the supporting documentation required for submissions.",
-"Prepared and organised client reports so that information could be communicated clearly to management and clients.",
-"Supported discussions around business financing by organising information and helping present the relevant business case.",
-"Worked directly with senior management on commercial tasks and adjusted priorities as deadlines changed.",
-"Followed through on repetitive administrative details as well as higher-level commercial work, rather than focusing only on the more visible parts of a project.",
-"Worked independently when necessary while keeping management updated on progress and outstanding requirements."
-],
-
-insight:
-"The experience strengthened the practical side of business development: commercial work is not only about generating ideas or speaking with clients. It also depends on being able to execute the documentation, follow-ups, analysis and administrative details that allow an opportunity to move forward.",
-
-vis:[],
-
-kpis:[
-["Business proposals","supported preparation and development"],
-["Tender administration","documentation and submission support"],
-["Client reports","prepared and organised"],
-["Financing discussions","business-case support"],
-["Management support","commercial and operational execution"]
-]
-}
-
-
-/* =========================================================
-   END OF PROJECT DATA
-========================================================= */
-
-];
-
-
-/* =========================================================
-   RENDER
-========================================================= */
-
-function row(k,v){
-return '<div class="row"><b>'+k+'</b><div>'+v+'</div></div>'
-}
-
-var out='';
-
-P.forEach(function(p,i){
-
-var vis=p.vis.map(function(v){
-
-if(v.img)
-return '<figure class="visimg"><img src="'+v.img+'" alt="'+(v.cap||'')+'"><figcaption>'+(v.cap||'')+'</figcaption></figure>';
-
-if(v.h)
-return '<a class="btn" href="'+v.h+'" target="_blank" rel="noopener">'+v.l+'</a>';
-
-return '<div class="slot">'+v.s+'</div>';
-
-}).join('');
-
-var kp=p.kpis.map(function(k){
-return '<div class="kpi"><strong>'+k[0]+'</strong><span>'+k[1]+'</span></div>'
-}).join('');
-
-out+=
-'<article class="case">'+
-
-'<div class="tag">'+(i+1)+' · '+p.tag+'</div>'+
-
-'<h2>'+p.title+'</h2>'+
-
-row(
-'Project overview',
-'<p>'+p.overview+'</p>'
-)+
-
-row(
-'The challenge',
-'<p>'+p.challenge+'</p>'
-)+
-
-row(
-'My process',
-'<ul>'+
-p.process.map(function(x){
-return '<li>'+x+'</li>'
-}).join('')+
-'</ul>'
-)+
-
-(p.insight?
-row(
-'Key insight',
-'<p>'+p.insight+'</p>'
-)
-:'')+
-
-(p.competitorChart?
-row(
-'Competitive positioning',
-'<div class="chart">'+p.competitorChart+'</div>'+
-'<p class="chartcap">'+p.competitorCap+'</p>'
-)
-:'')+
-
-(p.opsChart?
-row(
-'Weekly operations snapshot',
-'<div class="chart">'+p.opsChart+'</div>'+
-'<p class="chartcap">'+p.opsCap+'</p>'
-)
-:'')+
-
-(p.winsChart?
-row(
-'Competition results',
-'<div class="chart">'+p.winsChart+'</div>'+
-'<p class="chartcap">'+p.winsCap+'</p>'
-)
-:'')+
-
-(p.trChart?
-row(
-'Sales traction',
-'<div class="chart">'+p.trChart+'</div>'+
-'<p class="chartcap">'+p.trCap+'</p>'
-)
-:'')+
-
-(p.budChart?
-row(
-'Funding plan',
-'<div class="chart">'+p.budChart+'</div>'+
-'<p class="chartcap">'+p.budCap+'</p>'
-)
-:'')+
-
-(p.tlChart?
-row(
-'Campaign timeline',
-'<div class="chart">'+p.tlChart+'</div>'+
-'<p class="chartcap">'+p.tlCap+'</p>'
-)
-:'')+
-
-(p.outChart?
-row(
-'Partnership outreach',
-'<div class="chart">'+p.outChart+'</div>'+
-'<p class="chartcap">'+p.outCap+'</p>'
-)
-:'')+
-
-(p.mkChart?
-row(
-'Market sizing',
-'<div class="chart">'+p.mkChart+'</div>'+
-'<p class="chartcap">'+p.mkCap+'</p>'
-)
-:'')+
-
-(p.mpChart?
-row(
-'Mitigation plan',
-'<div class="chart">'+p.mpChart+'</div>'+
-'<p class="chartcap">'+p.mpCap+'</p>'
-)
-:'')+
-
-(p.perfChips?
-row(
-'Post performance',
-'<div class="kpis">'+
-p.perfChips.map(function(k){
-return '<div class="kpi"><strong>'+k[0]+'</strong><span>'+k[1]+'</span></div>'
-}).join('')+
-'</div>'
-)
-:'')+
-
-(p.engagementChart?
-row(
-'Engagement tier',
-'<div class="chart">'+p.engagementChart+'</div>'+
-'<p class="chartcap">'+p.engagementCap+'</p>'
-)
-:'')+
-
-(p.vis.length?
-row(
-'Visuals / artifacts',
-'<div class="vis">'+vis+'</div>'
-)
-:'')+
-
-row(
-'Outcomes &amp; KPIs',
-'<div class="kpis">'+kp+'</div>'
-)+
-
-'</article>';
-
-});
-
-document.getElementById('cases').innerHTML=out;
-
-</script>
-
-</body>
-</html>
