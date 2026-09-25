@@ -6,230 +6,257 @@
 <title>Tamimmah Disma Lestari · Selected Project Case Studies</title>
 
 <style>
-:root{--bg:#faf7f4;--card:#fff;--text:#221d1a;--muted:#6a6059;--line:#e8e0d8;--accent:#c2255c;--soft:#fbe7ef;
-box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-
-@media (prefers-color-scheme:dark){
-:root:not([data-theme="light"]){
---bg:#171412;
---card:#211c19;
---text:#f3ede8;
---muted:#b3a89f;
---line:#382f2a;
---accent:#f06595;
---soft:#3a1e2a
-}}
-
-:root[data-theme="dark"]{
---bg:#171412;
---card:#211c19;
---text:#f3ede8;
---muted:#b3a89f;
---line:#382f2a;
---accent:#f06595;
---soft:#3a1e2a
+:root{
+  --bg:#faf7f4;
+  --card:#fff;
+  --text:#221d1a;
+  --muted:#6a6059;
+  --line:#e8e0d8;
+  --accent:#c2255c;
+  --soft:#fbe7ef;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px)
 }
 
-html{scroll-padding-top:env(safe-area-inset-top,0px)}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#171412;
+    --card:#211c19;
+    --text:#f3ede8;
+    --muted:#b3a89f;
+    --line:#382f2a;
+    --accent:#f06595;
+    --soft:#3a1e2a
+  }
+}
 
-*,*::before,*::after{box-sizing:border-box}
+:root[data-theme="dark"]{
+  --bg:#171412;
+  --card:#211c19;
+  --text:#f3ede8;
+  --muted:#b3a89f;
+  --line:#382f2a;
+  --accent:#f06595;
+  --soft:#3a1e2a
+}
+
+html{
+  scroll-padding-top:env(safe-area-inset-top,0px)
+}
+
+*,*::before,*::after{
+  box-sizing:border-box
+}
 
 body{
-margin:0;
-background:var(--bg);
-color:var(--text);
-font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-line-height:1.55
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.55
 }
 
 .wrap{
-max-width:860px;
-margin:0 auto;
-padding:36px 20px 56px
+  max-width:860px;
+  margin:0 auto;
+  padding:36px 20px 56px
 }
 
 .eyebrow{
-font-size:.78rem;
-letter-spacing:.12em;
-text-transform:uppercase;
-color:var(--accent);
-font-weight:700
+  font-size:.78rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--accent);
+  font-weight:700
 }
 
 h1{
-font-size:clamp(1.8rem,5vw,2.6rem);
-line-height:1.15;
-margin:.35em 0 .3em
+  font-size:clamp(1.8rem,5vw,2.6rem);
+  line-height:1.15;
+  margin:.35em 0 .3em
 }
 
 .lead{
-color:var(--muted);
-font-size:1.05rem;
-max-width:62ch;
-margin:0 0 18px
+  color:var(--muted);
+  font-size:1.05rem;
+  max-width:62ch;
+  margin:0 0 18px
 }
 
 .btn{
-display:inline-block;
-background:var(--accent);
-color:#fff;
-text-decoration:none;
-font-weight:600;
-padding:9px 16px;
-border-radius:999px;
-font-size:.92rem
+  display:inline-block;
+  background:var(--accent);
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  padding:9px 16px;
+  border-radius:999px;
+  font-size:.92rem
 }
 
 .case{
-background:var(--card);
-border:1px solid var(--line);
-border-radius:16px;
-padding:20px 22px;
-margin-top:18px
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:20px 22px;
+  margin-top:18px
 }
 
 .tag{
-font-size:.75rem;
-letter-spacing:.08em;
-text-transform:uppercase;
-color:var(--accent);
-font-weight:700
+  font-size:.75rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--accent);
+  font-weight:700
 }
 
 .case h2{
-font-size:1.2rem;
-margin:.25em 0 14px;
-line-height:1.3
+  font-size:1.2rem;
+  margin:.25em 0 14px;
+  line-height:1.3
 }
 
 .row{
-display:grid;
-grid-template-columns:120px 1fr;
-gap:4px 16px;
-padding:10px 0;
-border-top:1px solid var(--line);
-font-size:.95rem
+  display:grid;
+  grid-template-columns:120px 1fr;
+  gap:4px 16px;
+  padding:10px 0;
+  border-top:1px solid var(--line);
+  font-size:.95rem
 }
 
 .row>b{
-color:var(--muted);
-font-size:.76rem;
-text-transform:uppercase;
-letter-spacing:.06em;
-padding-top:3px
+  color:var(--muted);
+  font-size:.76em;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  padding-top:3px
 }
 
-.row p{margin:0}
+.row p{
+  margin:0
+}
 
 .row ul{
-margin:0;
-padding-left:18px
+  margin:0;
+  padding-left:18px
 }
 
-.row li{margin:2px 0}
+.row li{
+  margin:2px 0
+}
 
 .kpis{
-display:flex;
-flex-wrap:wrap;
-gap:10px
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px
 }
 
 .kpi{
-background:var(--soft);
-border-radius:12px;
-padding:10px 14px;
-min-width:130px
+  background:var(--soft);
+  border-radius:12px;
+  padding:10px 14px;
+  min-width:130px
 }
 
 .kpi strong{
-display:block;
-color:var(--accent);
-font-size:1.3rem;
-line-height:1.15
+  display:block;
+  color:var(--accent);
+  font-size:1.3rem;
+  line-height:1.15
 }
 
 .kpi span{
-font-size:.82rem;
-color:var(--muted)
+  font-size:.82rem;
+  color:var(--muted)
 }
 
 .vis{
-display:flex;
-flex-wrap:wrap;
-gap:10px
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px
 }
 
 .slot{
-border:1.5px dashed var(--line);
-border-radius:12px;
-padding:12px 14px;
-color:var(--muted);
-font-size:.88rem;
-flex:1 1 220px
+  border:1.5px dashed var(--line);
+  border-radius:12px;
+  padding:12px 14px;
+  color:var(--muted);
+  font-size:.88rem;
+  flex:1 1 220px
 }
 
-.vis a{align-self:flex-start}
+.vis a{
+  align-self:flex-start
+}
 
 .visimg{
-margin:0;
-flex:0 0 auto;
-max-width:220px
+  margin:0;
+  flex:0 0 auto;
+  max-width:220px
 }
 
 .visimg img{
-display:block;
-width:100%;
-height:auto;
-border-radius:10px;
-border:1px solid var(--line)
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:10px;
+  border:1px solid var(--line)
 }
 
 .visimg figcaption{
-font-size:.76rem;
-color:var(--muted);
-margin-top:5px;
-text-align:center
+  font-size:.76rem;
+  color:var(--muted);
+  margin-top:5px;
+  text-align:center
 }
 
 .chart{
-background:var(--soft);
-border-radius:12px;
-padding:14px 10px 6px
+  background:var(--soft);
+  border-radius:12px;
+  padding:14px 10px 6px
 }
 
 .chart svg{
-width:100%;
-height:auto;
-display:block
+  width:100%;
+  height:auto;
+  display:block
 }
 
 .chartcap{
-font-size:.85rem;
-color:var(--muted);
-margin:10px 0 0;
-line-height:1.5
+  font-size:.85rem;
+  color:var(--muted);
+  margin:10px 0 0;
+  line-height:1.5
 }
 
 .chartcap a{
-color:var(--accent);
-font-weight:600;
-text-decoration:none
+  color:var(--accent);
+  font-weight:600;
+  text-decoration:none
 }
 
-.chartcap a:hover{text-decoration:underline}
+.chartcap a:hover{
+  text-decoration:underline
+}
 
 footer{
-margin-top:40px;
-padding-top:16px;
-border-top:1px solid var(--line);
-color:var(--muted);
-font-size:.92rem
+  margin-top:40px;
+  padding-top:16px;
+  border-top:1px solid var(--line);
+  color:var(--muted);
+  font-size:.92rem
 }
 
-footer a{color:var(--accent)}
+footer a{
+  color:var(--accent)
+}
 
 @media (max-width:560px){
-.row{grid-template-columns:1fr}
+  .row{
+    grid-template-columns:1fr
+  }
 }
 </style>
 </head>
@@ -248,16 +275,9 @@ footer a{color:var(--accent)}
     Business Management graduate (ITB).
   </p>
 
-  <a class="btn" href="mailto:tamimmadisma@gmail.com">Get in touch</a>
+  <a class="btn" href="https://tamimmadisma.github.io/">← Back to Homepage</a>
 
   <div id="cases"></div>
-
-  <footer>
-    Tamimmah Disma Lestari ·
-    <a href="mailto:tamimmadisma@gmail.com">tamimmadisma@gmail.com</a>
-  </footer>
-
-</div>
 
 <script>
 
@@ -268,35 +288,35 @@ var P=[
 ========================================================= */
 
 {
-tag:"Founder · International D2C on X",
+  tag:"Founder · International D2C on X",
 
-title:"SellKpopVT: turning an X audience into 1,000+ orders",
+  title:"SellKpopVT: turning an X audience into 1,000+ orders",
 
-overview:
-"An international direct-to-consumer business selling K-pop fan-voting services, founded and operated by me end to end. I handled customer research, acquisition, pricing, promotion, sales, customer relationships, operations and team coordination, with customers and resellers across Southeast Asia, Europe and the United States.",
+  overview:
+  "An international direct-to-consumer business selling K-pop fan-voting services, founded and operated by me end to end. I handled customer research, acquisition, pricing, promotion, sales, customer relationships, operations and team coordination, with customers and resellers across Southeast Asia, Europe and the United States.",
 
-challenge:
-"An online audience had to become paying and repeat customers across different countries, currencies, payment methods and time zones. The business also needed to compete with other voting-service resellers while maintaining customer trust and reliable fulfillment.",
+  challenge:
+  "An online audience had to become paying and repeat customers across different countries, currencies, payment methods and time zones. The business also needed to compete with other voting-service resellers while maintaining customer trust and reliable fulfillment.",
 
-process:[
-"Studied customer demand through purchasing behaviour, customer questions, responses, market trends and recurring requests.",
-"Identified potential customers and promoted the service repeatedly through online communities and digital channels.",
-"Handled customer inquiries, order coordination, follow-ups and relationship management throughout the buying process.",
-"Set and adjusted product pricing based on customer demand, market conditions and competitor pricing.",
-"Ran promotional campaigns and monitored customer responses and sales to understand which approaches generated interest and purchases.",
-"Benchmarked 4 competing resellers on pricing, branding, audience size and trust signals to understand the market.",
-"Negotiated with resellers and adapted offers rather than treating price objections as automatic lost opportunities.",
-"Led 3 core team members, including 2 in Indonesia and 1 in the Philippines, with each member coordinating a small support team.",
-"Worked with multiple payment and delivery methods, including PayPal, GCash, QRIS and Wise.",
-"Maintained consistency across repetitive daily outreach, marketing, customer service and operational tasks."
-],
+  process:[
+    "Studied customer demand through purchasing behaviour, customer questions, responses, market trends and recurring requests.",
+    "Identified potential customers and promoted the service repeatedly through online communities and digital channels.",
+    "Handled customer inquiries, order coordination, follow-ups and relationship management throughout the buying process.",
+    "Set and adjusted product pricing based on customer demand, market conditions and competitor pricing.",
+    "Ran promotional campaigns and monitored customer responses and sales to understand which approaches generated interest and purchases.",
+    "Benchmarked 4 competing resellers on pricing, branding, audience size and trust signals to understand the market.",
+    "Negotiated with resellers and adapted offers rather than treating price objections as automatic lost opportunities.",
+    "Led 3 core team members, including 2 in Indonesia and 1 in the Philippines, with each member coordinating a small support team.",
+    "Worked with multiple payment and delivery methods, including PayPal, GCash, QRIS and Wise.",
+    "Maintained consistency across repetitive daily outreach, marketing, customer service and operational tasks."
+  ],
 
-insight:
-"Direct competitor research showed that the market was not only competing on price. Some sellers focused heavily on being the cheapest, while others competed through audience trust, branding and service reliability. I positioned SellKpopVT around consistency, customer communication, broad payment coverage and visible proof of completed orders rather than relying only on price reductions.",
+  insight:
+  "Direct competitor research showed that the market was not only competing on price. Some sellers focused heavily on being the cheapest, while others competed through audience trust, branding and service reliability. I positioned SellKpopVT around consistency, customer communication, broad payment coverage and visible proof of completed orders rather than relying only on price reductions.",
 
-vis:[],
+  vis:[],
 
-competitorChart:`<svg viewBox="0 0 640 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Reseller positioning map: price versus brand consistency">
+  competitorChart:`<svg viewBox="0 0 640 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Reseller positioning map: price versus brand consistency">
 <style>
 .axis2{stroke:var(--line);stroke-width:1}
 .pt{fill:var(--soft);stroke:var(--accent);stroke-width:2}
@@ -377,13 +397,13 @@ trust-led, not cheapest
 
 </svg>`,
 
-competitorCap:
-`Circle size = follower count. Dashed circle marks SellKpopVT's chosen position based on the competitor analysis.
-<a href="Analisis_Kompetitor_Pasar_SellKpopVT.pdf" target="_blank" rel="noopener">
-View the full competitor analysis (PDF)
-</a>`,
+  competitorCap:
+  `Circle size = follower count. Dashed circle marks SellKpopVT's chosen position based on the competitor analysis.
+  <a href="Analisis_Kompetitor_Pasar_SellKpopVT.pdf" target="_blank" rel="noopener">
+  View the full competitor analysis (PDF)
+  </a>`,
 
-opsChart:`<svg viewBox="0 0 640 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Weekly account delivery: target versus actual">
+  opsChart:`<svg viewBox="0 0 640 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Weekly account delivery: target versus actual">
 <style>
 .axis{stroke:var(--line);stroke-width:1}
 .target{stroke:var(--muted);stroke-width:1.5;stroke-dasharray:4 4}
@@ -402,324 +422,6 @@ opsChart:`<svg viewBox="0 0 640 270" xmlns="http://www.w3.org/2000/svg" role="im
 
 <rect class="bar-ok" x="68" y="77" width="64" height="133" rx="6"/>
 <text class="lbl" x="100" y="66" text-anchor="middle">2,000</text>
-
-<rect class="bar-ok" x="164" y="90" width="64" height="120" rx="6"/>
-<text class="lbl" x="196" y="79" text-anchor="middle">1,800</text>
-
-<rect class="bar-low" x="260" y="110" width="64" height="100" rx="6"/>
-<text class="lbl" x="292" y="99" text-anchor="middle">1,500</text>
-
-<rect class="bar-ok" x="356" y="97" width="64" height="113" rx="6"/>
-<text class="lbl" x="388" y="86" text-anchor="middle">1,700</text>
-
-<rect class="bar-ok" x="452" y="84" width="64" height="126" rx="6"/>
-<text class="lbl" x="484" y="73" text-anchor="middle">1,900</text>
-
-<text class="lblm" x="100" y="236" text-anchor="middle">Mon</text>
-<text class="lblm" x="196" y="236" text-anchor="middle">Tue</text>
-<text class="lblm" x="292" y="236" text-anchor="middle">Wed</text>
-<text class="lblm" x="388" y="236" text-anchor="middle">Thu</text>
-<text class="lblm" x="484" y="236" text-anchor="middle">Fri</text>
-
-</svg>`,
-
-opsCap:
-`Illustrative weekly operating snapshot based on the business's recurring daily delivery target and actual account volume.`,
-
-kpis:[
-["10,000+","followers converted into buyers"],
-["1,000+","transactions completed"],
-["3","regions served"],
-["3","core team members led"]
-]
-},
-
-/* =========================================================
-   02 — ORGANIC TIKTOK
-========================================================= */
-
-{
-tag:"Content Strategy · Organic TikTok",
-
-title:"Organic TikTok: 4.25M+ views from 16 posts",
-
-overview:
-"An unpaid TikTok account where I planned, created and evaluated photo-based content. I tracked views, likes, comments and shares, then used the results to understand which topics and formats generated stronger audience response.",
-
-challenge:
-"The account had no paid media budget, so content performance depended on selecting topics and presentation styles that could attract organic distribution and sustain engagement.",
-
-process:[
-"Created and published 16 photo-based posts around audience-relevant topics.",
-"Tracked views, likes, comments and shares after publication.",
-"Compared performance across posts to identify stronger topics and formats.",
-"Used high-performing posts as signals for future content planning rather than treating individual viral posts as isolated events.",
-"Reviewed average performance across the last 10 posts to understand whether reach and engagement were repeatable."
-],
-
-insight:
-"The account reached more than 4.25 million total views from 16 posts. Across the last 10 posts, the account averaged 369,187 views per post with a 6.42% engagement rate, showing that photo-led content could still generate substantial organic distribution when the topic and presentation matched audience interest.",
-
-vis:[],
-
-perfChips:[
-["369,187","avg views/post"],
-["22,996","avg likes/post"],
-["317","avg comments/post"],
-["375","avg shares/post"]
-],
-
-engagementChart:
-`<svg viewBox="0 0 640 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Engagement rate tier gauge showing 6.42 percent in the Strong tier">
-<style>
-.g1{fill:var(--soft)}
-.g2{fill:var(--accent);opacity:.3}
-.g3{fill:var(--accent);opacity:.6}
-.g4{fill:var(--accent)}
-.en{font:700 14px system-ui,sans-serif;fill:var(--accent)}
-.em{font:500 11px system-ui,sans-serif;fill:var(--muted)}
-</style>
-
-<rect class="g1" x="40" y="55" width="130" height="28" rx="6"/>
-<rect class="g2" x="175" y="55" width="130" height="28" rx="6"/>
-<rect class="g3" x="310" y="55" width="130" height="28" rx="6"/>
-<rect class="g4" x="445" y="55" width="155" height="28" rx="6"/>
-
-<text class="em" x="105" y="103" text-anchor="middle">Low</text>
-<text class="em" x="240" y="103" text-anchor="middle">Moderate</text>
-<text class="em" x="375" y="103" text-anchor="middle">Good</text>
-<text class="en" x="522" y="103" text-anchor="middle">Strong · 6.42%</text>
-
-</svg>`,
-
-engagementCap:
-`Based on the account's last 10 posts and the engagement calculation used for the project analysis.`,
-
-kpis:[
-["4.25M+","total views"],
-["16","posts"],
-["6.42%","engagement rate"],
-["2 posts","over 1M views each"]
-]
-},
-
-/* =========================================================
-   03 — ECOPLAST
-========================================================= */
-
-{
-tag:"CMO · Sustainable products startup",
-
-title:"Ecoplast ID: building a brand and winning 3 competitions",
-
-overview:
-"An early-stage sustainable-products startup selling affordable, water-resistant biodegradable bags made from cassava starch, with R&D on a non-food alternative using palm-oil empty fruit bunches. I worked as CMO, focusing on brand positioning, social media, competitive analysis, pitching and the commercial case.",
-
-challenge:
-"A new sustainable-products brand needed to communicate a clear reason to buy while also demonstrating commercial potential to investors and competition judges.",
-
-process:[
-"Built the brand positioning around affordability, durability and sustainability.",
-"Developed the social-media and promotional direction for the business.",
-"Benchmarked competitor Avani on product characteristics and pricing to understand how Ecoplast could differentiate.",
-"Conducted competitive analysis and SWOT analysis to identify opportunities and risks.",
-"Prepared and presented the business case to investors, judges and competition panels.",
-"Led the 2021 PMW funding proposal, including a Rp20M budget plan and a projected six-month break-even period.",
-"Connected the product proposition to concrete sales opportunities, including the Idul Adha bag campaign."
-],
-
-vis:[],
-
-winsChart:
-`<svg viewBox="0 0 640 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Competition results: Top 20, Top 6, Runner-up nationally">
-<style>
-.wb{fill:var(--accent)}
-.wn{font:700 12px system-ui,sans-serif;fill:var(--text)}
-.wm{font:500 10.5px system-ui,sans-serif;fill:var(--muted)}
-</style>
-
-<rect class="wb" x="40" y="120" width="160" height="28" rx="6"/>
-<text class="wn" x="120" y="139" text-anchor="middle">Top 20</text>
-<text class="wm" x="120" y="165" text-anchor="middle">PMW 2021</text>
-
-<rect class="wb" x="240" y="90" width="160" height="58" rx="6"/>
-<text class="wn" x="320" y="122" text-anchor="middle">Top 6</text>
-<text class="wm" x="320" y="165" text-anchor="middle">Startup Competition</text>
-
-<rect class="wb" x="440" y="55" width="160" height="93" rx="6"/>
-<text class="wn" x="520" y="100" text-anchor="middle">Runner-up</text>
-<text class="wm" x="520" y="165" text-anchor="middle">Indonesia Millennial Connect</text>
-
-</svg>`,
-
-winsCap:
-`Competition results achieved while contributing to the business as CMO.`,
-
-trChart:
-`<svg viewBox="0 0 640 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Packs sold per period: 48 first batch, 10 to 20 monthly, target 50 to 75">
-<style>
-.tb{fill:var(--accent)}
-.tt{fill:var(--accent);opacity:.35}
-.tn{font:700 12px system-ui,sans-serif;fill:var(--text)}
-.tm{font:500 10.5px system-ui,sans-serif;fill:var(--muted)}
-</style>
-
-<rect class="tb" x="70" y="72" width="120" height="76" rx="6"/>
-<text class="tn" x="130" y="60" text-anchor="middle">48</text>
-<text class="tm" x="130" y="165" text-anchor="middle">First batch</text>
-
-<rect class="tb" x="260" y="116" width="120" height="32" rx="6"/>
-<text class="tn" x="320" y="104" text-anchor="middle">10–20</text>
-<text class="tm" x="320" y="165" text-anchor="middle">Monthly actual</text>
-
-<rect class="tt" x="450" y="48" width="120" height="100" rx="6"/>
-<text class="tn" x="510" y="36" text-anchor="middle">50–75</text>
-<text class="tm" x="510" y="165" text-anchor="middle">Proposed target</text>
-
-</svg>`,
-
-trCap:
-`Sales figures from the 2021 PMW proposal; the dashed bar represents the proposed growth target rather than achieved sales.`,
-
-budChart:
-`<svg viewBox="0 0 640 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Rp20M budget: business development 6M, marketing 8M, travel and operations 2.4M, other 3.6M">
-<style>
-.bn{font:600 12px system-ui,sans-serif;fill:var(--text)}
-.bm{font:500 10.5px system-ui,sans-serif;fill:var(--muted)}
-.bt{font:700 13px system-ui,sans-serif;fill:var(--accent)}
-</style>
-
-<text class="bt" x="40" y="28">Rp 20M requested</text>
-
-<rect x="40" y="40" width="168" height="34" fill="var(--accent)"/>
-<rect x="208" y="40" width="224" height="34" fill="var(--accent)" opacity=".7"/>
-<rect x="432" y="40" width="67.2" height="34" fill="var(--accent)" opacity=".45"/>
-<rect x="499.2" y="40" width="100.8" height="34" fill="var(--accent)" opacity=".25"/>
-
-<text class="bn" x="124" y="98" text-anchor="middle">Business dev</text>
-<text class="bm" x="124" y="113" text-anchor="middle">Rp 6M</text>
-
-<text class="bn" x="320" y="98" text-anchor="middle">Marketing &amp; ads</text>
-<text class="bm" x="320" y="113" text-anchor="middle">Rp 8M</text>
-
-<text class="bn" x="460" y="98" text-anchor="middle">Travel &amp; ops</text>
-<text class="bm" x="460" y="113" text-anchor="middle">Rp 2.4M</text>
-
-<text class="bn" x="565" y="98" text-anchor="middle">Other</text>
-<text class="bm" x="565" y="113" text-anchor="middle">Rp 3.6M</text>
-
-</svg>`,
-
-budCap:
-`Proposed use of funds in the 2021 PMW application, with break-even projected in about 6 months.`,
-
-kpis:[
-["7x","TikTok reach"],
-["3","competition achievements"],
-["Runner-up","Indonesia Millennial Connect, national level"],
-["2,400 bags","first Idul Adha batch"],
-["48 packs","first batch"]
-]
-},
-
-/* =========================================================
-   04 — THE FOUNDERS LAB
-========================================================= */
-
-{
-tag:"Co-Founder & Marketing Director · Startup community",
-
-title:"The Founders Lab: growing a startup community and its events",
-
-overview:
-"A startup community I co-founded and led marketing for, with responsibility for community growth, campaigns, events, partnerships and commercial initiatives.",
-
-challenge:
-"Growing a young startup community while continuously creating useful activities, attracting speakers and mentors, generating audience engagement and developing partnership opportunities.",
-
-process:[
-"Led 8 marketing representatives across campaigns and 3 major events.",
-"Ran 8+ webinars per month for a 100-member community.",
-"Built partnerships through both paid and barter arrangements.",
-"Planned content calendars and campaigns around community acquisition and engagement.",
-"Organised a business-idea competition and supported its end-to-end promotion.",
-"Led Startup Dating, connecting aspiring founders who were looking for teammates.",
-"Marketed Idealogy Festival 2020, including founder talks, a startup challenge and the 4 July Digital Summit.",
-"Developed a paid-promotion service and rate card by benchmarking 10 accounts.",
-"Approached 5 potential partners and converted 2 into paid promotion deals."
-],
-
-vis:[],
-
-tlChart:
-`<svg viewBox="0 0 640 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Timeline of The Founders Lab campaigns from March 2020 to January 2021">
-<style>
-.tl{stroke:var(--accent);stroke-width:4}
-.tc{fill:var(--accent)}
-.tn{font:700 11px system-ui,sans-serif;fill:var(--text)}
-.tm{font:500 10px system-ui,sans-serif;fill:var(--muted)}
-</style>
-
-<line class="tl" x1="60" y1="90" x2="580" y2="90"/>
-
-<circle class="tc" cx="80" cy="90" r="7"/>
-<text class="tn" x="80" y="62" text-anchor="middle">Mar 2020</text>
-<text class="tm" x="80" y="120" text-anchor="middle">Community growth</text>
-
-<circle class="tc" cx="205" cy="90" r="7"/>
-<text class="tn" x="205" y="62" text-anchor="middle">Jul 2020</text>
-<text class="tm" x="205" y="120" text-anchor="middle">Digital Summit</text>
-
-<circle class="tc" cx="330" cy="90" r="7"/>
-<text class="tn" x="330" y="62" text-anchor="middle">Aug 2020</text>
-<text class="tm" x="330" y="120" text-anchor="middle">Startup Dating</text>
-
-<circle class="tc" cx="455" cy="90" r="7"/>
-<text class="tn" x="455" y="62" text-anchor="middle">Oct 2020</text>
-<text class="tm" x="455" y="120" text-anchor="middle">Idealogy Festival</text>
-
-<circle class="tc" cx="580" cy="90" r="7"/>
-<text class="tn" x="580" y="62" text-anchor="middle">Jan 2021</text>
-<text class="tm" x="580" y="120" text-anchor="middle">Funding Frenzy</text>
-
-</svg>`,
-
-tlCap:
-`Campaigns marketed across the Idealogy Festival 2020 and Funding Frenzy collaboration.`,
-
-outChart:
-`<svg viewBox="0 0 640 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Paid promotion outreach: 10 accounts benchmarked, 5 approached, 2 deals closed">
-<style>
-.ob{fill:var(--accent)}
-.om{font:600 12px system-ui,sans-serif;fill:var(--text)}
-.ov{font:700 15px system-ui,sans-serif;fill:var(--accent)}
-</style>
-
-<rect class="ob" x="70" y="50" width="140" height="70" rx="6"/>
-<text class="ov" x="140" y="82" text-anchor="middle">10</text>
-<text class="om" x="140" y="103" text-anchor="middle">benchmarked</text>
-
-<rect class="ob" x="250" y="70" width="140" height="50" rx="6"/>
-<text class="ov" x="320" y="94" text-anchor="middle">5</text>
-<text class="om" x="320" y="113" text-anchor="middle">approached</text>
-
-<rect class="ob" x="430" y="90" width="140" height="30" rx="6"/>
-<text class="ov" x="500" y="108" text-anchor="middle">2</text>
-<text class="om" x="500" y="140" text-anchor="middle">paid deals</text>
-
-</svg>`,
-
-outCap:
-`Paid-promotion outreach converted 2 of 5 partner pitches into paid deals.`,
-
-kpis:[
-["2,000+","followers generated"],
-["200+","startup listings"],
-["24 + 30","mentors, judges & speakers"],
-["9/10","feedback"],
-["2 of 5","paid-promotion pitches closed"]
-]
-},
 <text class="lblm" x="100" y="228" text-anchor="middle">Hari 1</text>
 
 <rect class="bar-ok" x="208" y="77" width="64" height="133" rx="6"/>
@@ -738,58 +440,57 @@ kpis:[
 
 </svg>`,
 
-opsCap:
-`8,000 / 8,000 accounts delivered this cycle — Hari 4 absorbed the Hari 3 shortfall.
-Illustrative template of the tracker used to coordinate an 8,000-account/week target across a 3-country team.
-<a href="sellkpopvt_pelacak_operasional_harian.pdf" target="_blank" rel="noopener">
-View the full tracker (PDF)
-</a>`,
+  opsCap:
+  `8,000 / 8,000 accounts delivered this cycle — Hari 4 absorbed the Hari 3 shortfall.
+  Illustrative template of the tracker used to coordinate an 8,000-account/week target across a 3-country team.
+  <a href="sellkpopvt_pelacak_operasional_harian.pdf" target="_blank" rel="noopener">
+  View the full tracker (PDF)
+  </a>`,
 
-kpis:[
-["10,000+","followers converted to buyers"],
-["1,000+","transactions"],
-["3 regions","Southeast Asia, Europe and US; Japan and China via resellers"],
-["3","core team members led"],
-["4","competitors benchmarked"]
-]
+  kpis:[
+    ["10,000+","followers converted to buyers"],
+    ["1,000+","transactions"],
+    ["3 regions","Southeast Asia, Europe and US; Japan and China via resellers"],
+    ["3","core team members led"],
+    ["4","competitors benchmarked"]
+  ]
 },
-
 
 /* =========================================================
    02 — TIKTOK
 ========================================================= */
 
 {
-tag:"Content · Organic TikTok",
+  tag:"Content · Organic TikTok",
 
-title:"Organic TikTok account: 4.25M+ views from 16 posts",
+  title:"Organic TikTok account: 4.25M+ views from 16 posts",
 
-overview:
-"An unpaid TikTok account I grew as the creator and owner, testing how far organic content could travel without relying on paid promotion.",
+  overview:
+  "An unpaid TikTok account I grew as the creator and owner, testing how far organic content could travel without relying on paid promotion.",
 
-challenge:
-"Generating meaningful reach without advertising while working primarily with photo-based content on a video-heavy platform.",
+  challenge:
+  "Generating meaningful reach without advertising while working primarily with photo-based content on a video-heavy platform.",
 
-process:[
-"Published 16 mostly photo-based posts and tested different topics, formats and presentation styles.",
-"Tracked views, likes, comments and shares to understand how audiences responded to different posts.",
-"Observed which topics and formats generated unusually high reach and used those results to guide subsequent content.",
-"Reviewed performance repeatedly rather than treating one viral post as the entire strategy."
-],
+  process:[
+    "Published 16 mostly photo-based posts and tested different topics, formats and presentation styles.",
+    "Tracked views, likes, comments and shares to understand how audiences responded to different posts.",
+    "Observed which topics and formats generated unusually high reach and used those results to guide subsequent content.",
+    "Reviewed performance repeatedly rather than treating one viral post as the entire strategy."
+  ],
 
-insight:
-"The account reached more than 4.25 million total views from 16 posts. Across the last 10 posts, the account averaged 369,187 views per post with a 6.42% engagement rate, showing that photo-led content could still generate substantial organic distribution when the topic and presentation matched audience interest.",
+  insight:
+  "The account reached more than 4.25 million total views from 16 posts. Across the last 10 posts, the account averaged 369,187 views per post with a 6.42% engagement rate, showing that photo-led content could still generate substantial organic distribution when the topic and presentation matched audience interest.",
 
-vis:[],
+  vis:[],
 
-perfChips:[
-["369,187","avg views/post"],
-["22,996","avg likes/post"],
-["317","avg comments/post"],
-["375","avg shares/post"]
-],
+  perfChips:[
+    ["369,187","avg views/post"],
+    ["22,996","avg likes/post"],
+    ["317","avg comments/post"],
+    ["375","avg shares/post"]
+  ],
 
-engagementChart:`<svg viewBox="0 0 640 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Engagement rate tier gauge showing 6.42 percent in the Strong tier">
+  engagementChart:`<svg viewBox="0 0 640 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Engagement rate tier gauge showing 6.42 percent in the Strong tier">
 <style>
 .seg{stroke:none}
 .seg1{fill:var(--accent);fill-opacity:.15}
@@ -834,46 +535,45 @@ engagementChart:`<svg viewBox="0 0 640 130" xmlns="http://www.w3.org/2000/svg" r
 
 </svg>`,
 
-engagementCap:
-`Based on the account's last 10 posts and the engagement calculation used for the project analysis.`,
+  engagementCap:
+  `Based on the account's last 10 posts and the engagement calculation used for the project analysis.`,
 
-kpis:[
-["4.25M+","total views"],
-["16","posts"],
-["6.42%","engagement rate"],
-["2 posts","over 1M views each"]
-]
+  kpis:[
+    ["4.25M+","total views"],
+    ["16","posts"],
+    ["6.42%","engagement rate"],
+    ["2 posts","over 1M views each"]
+  ]
 },
-
 
 /* =========================================================
    03 — ECOPLAST
 ========================================================= */
 
 {
-tag:"CMO · Sustainable products startup",
+  tag:"CMO · Sustainable products startup",
 
-title:"Ecoplast ID: building a brand and winning 3 competitions",
+  title:"Ecoplast ID: building a brand and winning 3 competitions",
 
-overview:
-"An early-stage sustainable-products startup selling affordable, water-resistant biodegradable bags made from cassava starch, with R&D on a non-food alternative using palm-oil empty fruit bunches. I worked as CMO, focusing on brand positioning, social media, competitive analysis, pitching and the commercial case.",
+  overview:
+  "An early-stage sustainable-products startup selling affordable, water-resistant biodegradable bags made from cassava starch, with R&D on a non-food alternative using palm-oil empty fruit bunches. I worked as CMO, focusing on brand positioning, social media, competitive analysis, pitching and the commercial case.",
 
-challenge:
-"A new sustainable-products brand needed to communicate a clear reason to buy while also demonstrating commercial potential to investors and competition judges.",
+  challenge:
+  "A new sustainable-products brand needed to communicate a clear reason to buy while also demonstrating commercial potential to investors and competition judges.",
 
-process:[
-"Built the brand positioning around affordability, durability and sustainability.",
-"Developed the social-media and promotional direction for the business.",
-"Benchmarked competitor Avani on product characteristics and pricing to understand how Ecoplast could differentiate.",
-"Conducted competitive analysis and SWOT analysis to identify opportunities and risks.",
-"Prepared and presented the business case to investors, judges and competition panels.",
-"Led the 2021 PMW funding proposal, including a Rp20M budget plan and a projected six-month break-even period.",
-"Connected the product proposition to concrete sales opportunities, including the Idul Adha bag campaign."
-],
+  process:[
+    "Built the brand positioning around affordability, durability and sustainability.",
+    "Developed the social-media and promotional direction for the business.",
+    "Benchmarked competitor Avani on product characteristics and pricing to understand how Ecoplast could differentiate.",
+    "Conducted competitive analysis and SWOT analysis to identify opportunities and risks.",
+    "Prepared and presented the business case to investors, judges and competition panels.",
+    "Led the 2021 PMW funding proposal, including a Rp20M budget plan and a projected six-month break-even period.",
+    "Connected the product proposition to concrete sales opportunities, including the Idul Adha bag campaign."
+  ],
 
-vis:[],
+  vis:[],
 
-winsChart:`<svg viewBox="0 0 640 222" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Competition results: Top 20, Top 6, Runner-up nationally">
+  winsChart:`<svg viewBox="0 0 640 222" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Competition results: Top 20, Top 6, Runner-up nationally">
 <style>
 .wl{stroke:var(--line);stroke-width:3;stroke-linecap:round}
 .wd{fill:var(--soft);stroke:var(--accent);stroke-width:2.5}
@@ -921,10 +621,10 @@ Competition progression
 
 </svg>`,
 
-winsCap:
-`Competition results achieved while contributing to the business as CMO.`,
+  winsCap:
+  `Competition results achieved while contributing to the business as CMO.`,
 
-trChart:`<svg viewBox="0 0 640 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Packs sold per period: 48 first batch, 10 to 20 monthly, target 50 to 75">
+  trChart:`<svg viewBox="0 0 640 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Packs sold per period: 48 first batch, 10 to 20 monthly, target 50 to 75">
 
 <style>
 .ta{fill:var(--accent)}
@@ -951,8 +651,8 @@ trChart:`<svg viewBox="0 0 640 250" xmlns="http://www.w3.org/2000/svg" role="img
 <text class="tn" x="20" y="200">Monthly target</text>
 <text class="tm" x="20" y="215">with PMW funding</text>
 
-<rect class="tt" x="190" y="186" width="250" height="28" rx="4"/>
-<rect class="tt" x="440" y="186" width="125" height="28" rx="4"/>
+<rect class="tt" x="190" y="186" width="250" height="28"/>
+<rect class="tt" x="440" y="186" width="125" height="28"/>
 <text class="tv" x="575" y="205">50–75</text>
 
 <text class="tm" x="190" y="240">
@@ -961,10 +661,10 @@ trChart:`<svg viewBox="0 0 640 250" xmlns="http://www.w3.org/2000/svg" role="img
 
 </svg>`,
 
-trCap:
-`Sales figures from the 2021 PMW proposal; the dashed bar represents the proposed growth target rather than achieved sales.`,
+  trCap:
+  `Sales figures from the 2021 PMW proposal; the dashed bar represents the proposed growth target rather than achieved sales.`,
 
-budChart:`<svg viewBox="0 0 640 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Rp20M budget: business development 6M, marketing 8M, travel and operations 2.4M, other 3.6M">
+  budChart:`<svg viewBox="0 0 640 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Rp20M budget: business development 6M, marketing 8M, travel and operations 2.4M, other 3.6M">
 
 <style>
 .bn{font:600 12px system-ui,sans-serif;fill:var(--text)}
@@ -993,49 +693,48 @@ budChart:`<svg viewBox="0 0 640 140" xmlns="http://www.w3.org/2000/svg" role="im
 
 </svg>`,
 
-budCap:
-`Proposed use of funds in the 2021 PMW application, with break-even projected in about 6 months.`,
+  budCap:
+  `Proposed use of funds in the 2021 PMW application, with break-even projected in about 6 months.`,
 
-kpis:[
-["7x","TikTok reach"],
-["3","competition achievements"],
-["Runner-up","Indonesia Millennial Connect, national level"],
-["2,400 bags","first Idul Adha batch"],
-["48 packs","first batch"]
-]
+  kpis:[
+    ["7x","TikTok reach"],
+    ["3","competition achievements"],
+    ["Runner-up","Indonesia Millennial Connect, national level"],
+    ["2,400 bags","first Idul Adha batch"],
+    ["48 packs","first batch"]
+  ]
 },
-
 
 /* =========================================================
    04 — THE FOUNDERS LAB
 ========================================================= */
 
 {
-tag:"Co-Founder & Marketing Director · Startup community",
+  tag:"Co-Founder & Marketing Director · Startup community",
 
-title:"The Founders Lab: growing a startup community and its events",
+  title:"The Founders Lab: growing a startup community and its events",
 
-overview:
-"A startup community I co-founded and led marketing for, with responsibility for community growth, campaigns, events, partnerships and commercial initiatives.",
+  overview:
+  "A startup community I co-founded and led marketing for, with responsibility for community growth, campaigns, events, partnerships and commercial initiatives.",
 
-challenge:
-"Growing a young startup community while continuously creating useful activities, attracting speakers and mentors, generating audience engagement and developing partnership opportunities.",
+  challenge:
+  "Growing a young startup community while continuously creating useful activities, attracting speakers and mentors, generating audience engagement and developing partnership opportunities.",
 
-process:[
-"Led 8 marketing representatives across campaigns and 3 major events.",
-"Ran 8+ webinars per month for a 100-member community.",
-"Built partnerships through both paid and barter arrangements.",
-"Planned content calendars and campaigns around community acquisition and engagement.",
-"Organised a business-idea competition and supported its end-to-end promotion.",
-"Led Startup Dating, connecting aspiring founders who were looking for teammates.",
-"Marketed Idealogy Festival 2020, including founder talks, a startup challenge and the 4 July Digital Summit.",
-"Developed a paid-promotion service and rate card by benchmarking 10 accounts.",
-"Approached 5 potential partners and converted 2 into paid promotion deals."
-],
+  process:[
+    "Led 8 marketing representatives across campaigns and 3 major events.",
+    "Ran 8+ webinars per month for a 100-member community.",
+    "Built partnerships through both paid and barter arrangements.",
+    "Planned content calendars and campaigns around community acquisition and engagement.",
+    "Organised a business-idea competition and supported its end-to-end promotion.",
+    "Led Startup Dating, connecting aspiring founders who were looking for teammates.",
+    "Marketed Idealogy Festival 2020, including founder talks, a startup challenge and the 4 July Digital Summit.",
+    "Developed a paid-promotion service and rate card by benchmarking 10 accounts.",
+    "Approached 5 potential partners and converted 2 into paid promotion deals."
+  ],
 
-vis:[],
+  vis:[],
 
-tlChart:`<svg viewBox="0 0 640 215" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Timeline of The Founders Lab campaigns from March 2020 to January 2021">
+  tlChart:`<svg viewBox="0 0 640 215" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Timeline of The Founders Lab campaigns from March 2020 to January 2021">
 
 <style>
 .ln{stroke:var(--line);stroke-width:3;stroke-linecap:round}
@@ -1081,10 +780,10 @@ tlChart:`<svg viewBox="0 0 640 215" xmlns="http://www.w3.org/2000/svg" role="img
 
 </svg>`,
 
-tlCap:
-`Campaigns marketed across the Idealogy Festival 2020 and Funding Frenzy collaboration.`,
+  tlCap:
+  `Campaigns marketed across the Idealogy Festival 2020 and Funding Frenzy collaboration.`,
 
-outChart:`<svg viewBox="0 0 640 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Paid promotion outreach: 10 accounts benchmarked, 5 approached, 2 deals closed">
+  outChart:`<svg viewBox="0 0 640 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Paid promotion outreach: 10 accounts benchmarked, 5 approached, 2 deals closed">
 
 <style>
 .oa{fill:var(--accent);opacity:.3}
@@ -1113,117 +812,116 @@ TEC Fest (free, Package B) · PIF_Id (Rp10,000, Level 1)
 
 </svg>`,
 
-outCap:
-`From the paid-promotion service design work: rate tiers were developed from account benchmarks and then tested through real partner outreach.`,
+  outCap:
+  `From the paid-promotion service design work: rate tiers were developed from account benchmarks and then tested through real partner outreach.`,
 
-kpis:[
-["2,000+","followers generated"],
-["200+","startup listings"],
-["24 + 30","mentors and judges, speakers"],
-["9/10","360-degree feedback"],
-["2 of 5","paid-promotion pitches closed"]
-]
+  kpis:[
+    ["2,000+","followers generated"],
+    ["200+","startup listings"],
+    ["24 + 30","mentors and judges, speakers"],
+    ["9/10","360-degree feedback"],
+    ["2 of 5","paid-promotion pitches closed"]
+  ]
 },
+
 /* =========================================================
    05 — PT SARI RASA
 ========================================================= */
 
 {
-tag:"Investor & Business Partner · B2B distribution",
+  tag:"Investor & Business Partner · B2B distribution",
 
-title:"PT Sari Rasa: analysing a distributor and securing Rp100M+",
+  title:"PT Sari Rasa: analysing a distributor and securing Rp100M+",
 
-overview:
-"A B2B distribution business I evaluated before joining as an investor and business partner. My involvement covered business analysis, financing discussions, promotional strategy and commercial decision-making.",
+  overview:
+  "A B2B distribution business I evaluated before joining as an investor and business partner. My involvement covered business analysis, financing discussions, promotional strategy and commercial decision-making.",
 
-challenge:
-"Before committing to the business, I needed to understand its operations, market viability and growth potential, then support the business in accessing additional financing.",
+  challenge:
+  "Before committing to the business, I needed to understand its operations, market viability and growth potential, then support the business in accessing additional financing.",
 
-process:[
-"Reviewed the business model and operating structure before joining as an investor and business partner.",
-"Analysed the market and the viability of the distribution model.",
-"Worked directly with the owner on operational and commercial considerations.",
-"Acted as the primary bank contact during financing discussions.",
-"Presented the business case and supporting information required for financing.",
-"Advised the owner on promotional and commercial strategy.",
-"Continued supporting business decisions after the financing process rather than treating the investment as a one-time transaction."
-],
+  process:[
+    "Reviewed the business model and operating structure before joining as an investor and business partner.",
+    "Analysed the market and the viability of the distribution model.",
+    "Worked directly with the owner on operational and commercial considerations.",
+    "Acted as the primary bank contact during financing discussions.",
+    "Presented the business case and supporting information required for financing.",
+    "Advised the owner on promotional and commercial strategy.",
+    "Continued supporting business decisions after the financing process rather than treating the investment as a one-time transaction."
+  ],
 
-vis:[],
+  vis:[],
 
-kpis:[
-["Rp100M+","funding secured"],
-["50+","outlets in the distribution network"],
-["B2B","distribution model"],
-["Investor","business partner involvement"]
-]
+  kpis:[
+    ["Rp100M+","funding secured"],
+    ["50+","outlets in the distribution network"],
+    ["B2B","distribution model"],
+    ["Investor","business partner involvement"]
+  ]
 },
-
 
 /* =========================================================
    06 — JUS FOR YOU
 ========================================================= */
 
 {
-tag:"Co-Founder & CMO · Campus beverage startup",
+  tag:"Co-Founder & CMO · Campus beverage startup",
 
-title:"Jus For You: keeping 10+ campus retailers stocked",
+  title:"Jus For You: keeping 10+ campus retailers stocked",
 
-overview:
-"A campus juice startup I co-founded and operated as CMO, supplying drinks to campus canteens and retailers while managing procurement, supplier relationships, inventory and sell-through.",
+  overview:
+  "A campus juice startup I co-founded and operated as CMO, supplying drinks to campus canteens and retailers while managing procurement, supplier relationships, inventory and sell-through.",
 
-challenge:
-"Fresh products require a short inventory cycle. The business needed to keep enough stock available for retailers without creating unnecessary waste or overstock.",
+  challenge:
+  "Fresh products require a short inventory cycle. The business needed to keep enough stock available for retailers without creating unnecessary waste or overstock.",
 
-process:[
-"Managed biweekly procurement and supplier negotiations.",
-"Coordinated inventory based on expected demand and previous sales.",
-"Structured profit-sharing arrangements with campus retailers.",
-"Monitored daily 5 PM sell-through to understand which locations needed additional stock.",
-"Adjusted stock allocation according to actual retailer performance rather than using the same quantity for every location.",
-"Maintained relationships with suppliers and retailers throughout the operating cycle."
-],
+  process:[
+    "Managed biweekly procurement and supplier negotiations.",
+    "Coordinated inventory based on expected demand and previous sales.",
+    "Structured profit-sharing arrangements with campus retailers.",
+    "Monitored daily 5 PM sell-through to understand which locations needed additional stock.",
+    "Adjusted stock allocation according to actual retailer performance rather than using the same quantity for every location.",
+    "Maintained relationships with suppliers and retailers throughout the operating cycle."
+  ],
 
-vis:[],
+  vis:[],
 
-kpis:[
-["10+","campus retailers"],
-["15–25","juices per canteen per day"],
-["2–3 days","inventory cycle"],
-["Biweekly","procurement and supplier negotiation"]
-]
+  kpis:[
+    ["10+","campus retailers"],
+    ["15–25","juices per canteen per day"],
+    ["2–3 days","inventory cycle"],
+    ["Biweekly","procurement and supplier negotiation"]
+  ]
 },
-
 
 /* =========================================================
    07 — CIEL SBM ITB
 ========================================================= */
 
 {
-tag:"Business Intern · Corporate training (CIEL, SBM ITB)",
+  tag:"Business Intern · Corporate training (CIEL, SBM ITB)",
 
-title:"CIEL SBM ITB: market research and sizing for a training provider",
+  title:"CIEL SBM ITB: market research and sizing for a training provider",
 
-overview:
-"An internship project for CIEL, a corporate training provider at SBM ITB, completed as part of a team of eight across two semesters of the Integrative Business Experience course. The work covered market research, competitor benchmarking, market sizing and a digital response plan during COVID-19.",
+  overview:
+  "An internship project for CIEL, a corporate training provider at SBM ITB, completed as part of a team of eight across two semesters of the Integrative Business Experience course. The work covered market research, competitor benchmarking, market sizing and a digital response plan during COVID-19.",
 
-challenge:
-"Finding where a corporate training provider could expand beyond its existing market and supporting the opportunity with field research, competitor evidence and market sizing rather than assumptions.",
+  challenge:
+  "Finding where a corporate training provider could expand beyond its existing market and supporting the opportunity with field research, competitor evidence and market sizing rather than assumptions.",
 
-process:[
-"Surveyed 16 working professionals about previous training experiences and satisfaction.",
-"Observed a live Pertamina R&D training at Patra Hotel Bandung on 16–17 October 2019.",
-"Benchmarked three competitors — PM ELI, Binus Mini MBA and MDI — on pricing and service features.",
-"Used Porter's Five Forces to analyse the competitive environment.",
-"Built a Value Proposition Canvas for teacher digital-transformation training.",
-"Used input from teachers and principals to refine the proposed training proposition.",
-"Sized the market from schools across Jakarta, West Java and Banten, narrowing the opportunity according to accreditation, digital readiness and ability to pay.",
-"When COVID-19 disrupted campus activity, developed a five-week remote social-media mitigation plan for the Business Lab."
-],
+  process:[
+    "Surveyed 16 working professionals about previous training experiences and satisfaction.",
+    "Observed a live Pertamina R&D training at Patra Hotel Bandung on 16–17 October 2019.",
+    "Benchmarked three competitors — PM ELI, Binus Mini MBA and MDI — on pricing and service features.",
+    "Used Porter's Five Forces to analyse the competitive environment.",
+    "Built a Value Proposition Canvas for teacher digital-transformation training.",
+    "Used input from teachers and principals to refine the proposed training proposition.",
+    "Sized the market from schools across Jakarta, West Java and Banten, narrowing the opportunity according to accreditation, digital readiness and ability to pay.",
+    "When COVID-19 disrupted campus activity, developed a five-week remote social-media mitigation plan for the Business Lab."
+  ],
 
-vis:[],
+  vis:[],
 
-mkChart:`<svg viewBox="0 0 640 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Market funnel: 6,705 accessible schools, 1,310 serviceable, 712 obtainable">
+  mkChart:`<svg viewBox="0 0 640 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Market funnel: 6,705 accessible schools, 1,310 serviceable, 712 obtainable">
 
 <style>
 .fa{fill:var(--accent);opacity:.3}
@@ -1254,10 +952,10 @@ mkChart:`<svg viewBox="0 0 640 175" xmlns="http://www.w3.org/2000/svg" role="img
 
 </svg>`,
 
-mkCap:
-`Schools in Jakarta, West Java and Banten, narrowed by accreditation, digital readiness and ability to pay.`,
+  mkCap:
+  `Schools in Jakarta, West Java and Banten, narrowed by accreditation, digital readiness and ability to pay.`,
 
-mpChart:`<svg viewBox="0 0 640 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Five-week Instagram content plan for The Business Lab">
+  mpChart:`<svg viewBox="0 0 640 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Five-week Instagram content plan for The Business Lab">
 
 <style>
 .pb{fill:var(--soft);stroke:var(--accent);stroke-width:1.5}
@@ -1297,56 +995,55 @@ mpChart:`<svg viewBox="0 0 640 140" xmlns="http://www.w3.org/2000/svg" role="img
 
 </svg>`,
 
-mpCap:
-`Remote content plan developed after COVID-19 halted campus activity; the fifth week and results were still in progress in the original plan.`,
+  mpCap:
+  `Remote content plan developed after COVID-19 halted campus activity; the fifth week and results were still in progress in the original plan.`,
 
-kpis:[
-["16","professionals surveyed"],
-["3","competitors benchmarked"],
-["6,705","accessible schools"],
-["1,310","serviceable schools"],
-["712","obtainable schools"]
-]
+  kpis:[
+    ["16","professionals surveyed"],
+    ["3","competitors benchmarked"],
+    ["6,705","accessible schools"],
+    ["1,310","serviceable schools"],
+    ["712","obtainable schools"]
+  ]
 },
-
 
 /* =========================================================
    08 — BUSINESS DEVELOPMENT & MANAGEMENT SUPPORT
 ========================================================= */
 
 {
-tag:"Business Development · Management Support",
+  tag:"Business Development · Management Support",
 
-title:"Business Development & Management Support: turning time-sensitive work into deliverables",
+  title:"Business Development & Management Support: turning time-sensitive work into deliverables",
 
-overview:
-"Alongside my own businesses and projects, I supported senior management with practical business-development and commercial work. The role required switching between strategic and detailed tasks, understanding what management needed and turning incomplete information or tight deadlines into usable deliverables.",
+  overview:
+  "Alongside my own businesses and projects, I supported senior management with practical business-development and commercial work. The role required switching between strategic and detailed tasks, understanding what management needed and turning incomplete information or tight deadlines into usable deliverables.",
 
-challenge:
-"Business-development work often moved quickly. Proposals, tender administration, client reports and financing discussions could arrive at the same time and required accuracy, responsiveness and follow-through.",
+  challenge:
+  "Business-development work often moved quickly. Proposals, tender administration, client reports and financing discussions could arrive at the same time and required accuracy, responsiveness and follow-through.",
 
-process:[
-"Supported the preparation and development of business proposals for potential clients and opportunities.",
-"Handled tender administration and the supporting documentation required for submissions.",
-"Prepared and organised client reports so that information could be communicated clearly to management and clients.",
-"Supported discussions around business financing by organising information and helping present the relevant business case.",
-"Worked directly with senior management on commercial tasks and adjusted priorities as deadlines changed.",
-"Followed through on repetitive administrative details as well as higher-level commercial work, rather than focusing only on the more visible parts of a project.",
-"Worked independently when necessary while keeping management updated on progress and outstanding requirements."
-],
+  process:[
+    "Supported the preparation and development of business proposals for potential clients and opportunities.",
+    "Handled tender administration and the supporting documentation required for submissions.",
+    "Prepared and organised client reports so that information could be communicated clearly to management and clients.",
+    "Supported discussions around business financing by organising information and helping present the relevant business case.",
+    "Worked directly with senior management on commercial tasks and adjusted priorities as deadlines changed.",
+    "Followed through on repetitive administrative details as well as higher-level commercial work, rather than focusing only on the more visible parts of a project.",
+    "Worked independently when necessary while keeping management updated on progress and outstanding requirements."
+  ],
 
-insight:
-"The experience strengthened the practical side of business development: commercial work is not only about generating ideas or speaking with clients. It also depends on being able to execute the documentation, follow-ups, analysis and administrative details that allow an opportunity to move forward.",
+  insight:
+  "The experience strengthened the practical side of business development: commercial work is not only about generating ideas or speaking with clients. It also depends on being able to execute the documentation, follow-ups, analysis and administrative details that allow an opportunity to move forward.",
 
-vis:[],
+  vis:[],
 
-kpis:[
-["Business proposals","supported preparation and development"],
-["Tender administration","documentation and submission support"],
-["Client reports","prepared and organised"],
-["Financing discussions","business-case support"],
-["Management support","commercial and operational execution"]
-]
+  kpis:[
+    ["Business proposals","supported preparation and development"],
+    ["Tender administration","documentation and submission support"],
+    ["Client reports","prepared and organised"],
+    ["Financing discussions","business-case support"],
+    ["Management support","commercial and operational execution"]
+  ]
 }
 
 ];
@@ -1357,172 +1054,205 @@ kpis:[
 ========================================================= */
 
 function row(k,v){
-return '<div class="row"><b>'+k+'</b><div>'+v+'</div></div>'
+  return '<div class="row"><b>'+k+'</b><div>'+v+'</div></div>'
 }
 
 var out='';
 
 P.forEach(function(p,i){
 
-var vis=p.vis.map(function(v){
+  var vis=p.vis.map(function(v){
 
-if(v.img)
-return '<figure class="visimg"><img src="'+v.img+'" alt="'+(v.cap||'')+'"><figcaption>'+(v.cap||'')+'</figcaption></figure>';
+    if(v.img)
+      return '<figure class="visimg"><img src="'+v.img+'" alt="'+(v.cap||'')+'"><figcaption>'+(v.cap||'')+'</figcaption></figure>';
 
-if(v.h)
-return '<a class="btn" href="'+v.h+'" target="_blank" rel="noopener">'+v.l+'</a>';
+    if(v.h)
+      return '<a class="btn" href="'+v.h+'" target="_blank" rel="noopener">'+v.l+'</a>';
 
-return '<div class="slot">'+v.s+'</div>';
+    return '<div class="slot">'+v.s+'</div>';
 
-}).join('');
+  }).join('');
 
-var kp=p.kpis.map(function(k){
-return '<div class="kpi"><strong>'+k[0]+'</strong><span>'+k[1]+'</span></div>'
-}).join('');
+  var kp=p.kpis.map(function(k){
+    return '<div class="kpi"><strong>'+k[0]+'</strong><span>'+k[1]+'</span></div>'
+  }).join('');
 
-out+=
-'<article class="case">'+
+  out+=
+  '<article class="case">'+
 
-'<div class="tag">'+(i+1)+' · '+p.tag+'</div>'+
+  '<div class="tag">'+(i+1)+' · '+p.tag+'</div>'+
 
-'<h2>'+p.title+'</h2>'+
+  '<h2>'+p.title+'</h2>'+
 
-row(
-'Project overview',
-'<p>'+p.overview+'</p>'
-)+
+  row(
+    'Project overview',
+    '<p>'+p.overview+'</p>'
+  )+
 
-row(
-'The challenge',
-'<p>'+p.challenge+'</p>'
-)+
+  row(
+    'The challenge',
+    '<p>'+p.challenge+'</p>'
+  )+
 
-row(
-'My process',
-'<ul>'+
-p.process.map(function(x){
-return '<li>'+x+'</li>'
-}).join('')+
-'</ul>'
-)+
+  row(
+    'My process',
+    '<ul>'+
+    p.process.map(function(x){
+      return '<li>'+x+'</li>'
+    }).join('')+
+    '</ul>'
+  )+
 
-(p.insight?
-row(
-'Key insight',
-'<p>'+p.insight+'</p>'
-)
-:'')+
+  (p.insight?
+    row(
+      'Key insight',
+      '<p>'+p.insight+'</p>'
+    )
+  :'')+
 
-(p.competitorChart?
-row(
-'Competitive positioning',
-'<div class="chart">'+p.competitorChart+'</div>'+
-'<p class="chartcap">'+p.competitorCap+'</p>'
-)
-:'')+
+  (p.competitorChart?
+    row(
+      'Competitive positioning',
+      '<div class="chart">'+p.competitorChart+'</div>'+
+      '<p class="chartcap">'+p.competitorCap+'</p>'
+    )
+  :'')+
 
-(p.opsChart?
-row(
-'Weekly operations snapshot',
-'<div class="chart">'+p.opsChart+'</div>'+
-'<p class="chartcap">'+p.opsCap+'</p>'
-)
-:'')+
+  (p.opsChart?
+    row(
+      'Weekly operations snapshot',
+      '<div class="chart">'+p.opsChart+'</div>'+
+      '<p class="chartcap">'+p.opsCap+'</p>'
+    )
+  :'')+
 
-(p.winsChart?
-row(
-'Competition results',
-'<div class="chart">'+p.winsChart+'</div>'+
-'<p class="chartcap">'+p.winsCap+'</p>'
-)
-:'')+
+  (p.winsChart?
+    row(
+      'Competition results',
+      '<div class="chart">'+p.winsChart+'</div>'+
+      '<p class="chartcap">'+p.winsCap+'</p>'
+    )
+  :'')+
 
-(p.trChart?
-row(
-'Sales traction',
-'<div class="chart">'+p.trChart+'</div>'+
-'<p class="chartcap">'+p.trCap+'</p>'
-)
-:'')+
+  (p.trChart?
+    row(
+      'Sales traction',
+      '<div class="chart">'+p.trChart+'</div>'+
+      '<p class="chartcap">'+p.trCap+'</p>'
+    )
+  :'')+
 
-(p.budChart?
-row(
-'Funding plan',
-'<div class="chart">'+p.budChart+'</div>'+
-'<p class="chartcap">'+p.budCap+'</p>'
-)
-:'')+
+  (p.budChart?
+    row(
+      'Funding plan',
+      '<div class="chart">'+p.budChart+'</div>'+
+      '<p class="chartcap">'+p.budCap+'</p>'
+    )
+  :'')+
 
-(p.tlChart?
-row(
-'Campaign timeline',
-'<div class="chart">'+p.tlChart+'</div>'+
-'<p class="chartcap">'+p.tlCap+'</p>'
-)
-:'')+
+  (p.tlChart?
+    row(
+      'Campaign timeline',
+      '<div class="chart">'+p.tlChart+'</div>'+
+      '<p class="chartcap">'+p.tlCap+'</p>'
+    )
+  :'')+
 
-(p.outChart?
-row(
-'Partnership outreach',
-'<div class="chart">'+p.outChart+'</div>'+
-'<p class="chartcap">'+p.outCap+'</p>'
-)
-:'')+
+  (p.outChart?
+    row(
+      'Partnership outreach',
+      '<div class="chart">'+p.outChart+'</div>'+
+      '<p class="chartcap">'+p.outCap+'</p>'
+    )
+  :'')+
 
-(p.mkChart?
-row(
-'Market sizing',
-'<div class="chart">'+p.mkChart+'</div>'+
-'<p class="chartcap">'+p.mkCap+'</p>'
-)
-:'')+
+  (p.mkChart?
+    row(
+      'Market sizing',
+      '<div class="chart">'+p.mkChart+'</div>'+
+      '<p class="chartcap">'+p.mkCap+'</p>'
+    )
+  :'')+
 
-(p.mpChart?
-row(
-'Mitigation plan',
-'<div class="chart">'+p.mpChart+'</div>'+
-'<p class="chartcap">'+p.mpCap+'</p>'
-)
-:'')+
+  (p.mpChart?
+    row(
+      'Mitigation plan',
+      '<div class="chart">'+p.mpChart+'</div>'+
+      '<p class="chartcap">'+p.mpCap+'</p>'
+    )
+  :'')+
 
-(p.perfChips?
-row(
-'Post performance',
-'<div class="kpis">'+
-p.perfChips.map(function(k){
-return '<div class="kpi"><strong>'+k[0]+'</strong><span>'+k[1]+'</span></div>'
-}).join('')+
-'</div>'
-)
-:'')+
+  (p.perfChips?
+    row(
+      'Post performance',
+      '<div class="kpis">'+
+      p.perfChips.map(function(k){
+        return '<div class="kpi"><strong>'+k[0]+'</strong><span>'+k[1]+'</span></div>'
+      }).join('')+
+      '</div>'
+    )
+  :'')+
 
-(p.engagementChart?
-row(
-'Engagement tier',
-'<div class="chart">'+p.engagementChart+'</div>'+
-'<p class="chartcap">'+p.engagementCap+'</p>'
-)
-:'')+
+  (p.engagementChart?
+    row(
+      'Engagement tier',
+      '<div class="chart">'+p.engagementChart+'</div>'+
+      '<p class="chartcap">'+p.engagementCap+'</p>'
+    )
+  :'')+
 
-(p.vis.length?
-row(
-'Visuals / artifacts',
-'<div class="vis">'+vis+'</div>'
-)
-:'')+
+  (p.vis.length?
+    row(
+      'Visuals / artifacts',
+      '<div class="vis">'+vis+'</div>'
+    )
+  :'')+
 
-row(
-'Outcomes &amp; KPIs',
-'<div class="kpis">'+kp+'</div>'
-)+
+  row(
+    'Outcomes &amp; KPIs',
+    '<div class="kpis">'+kp+'</div>'
+  )+
 
-'</article>';
+  '</article>';
 
 });
 
 document.getElementById('cases').innerHTML=out;
 
 </script>
+
+<section style="max-width:860px;margin:40px auto 0;padding:28px 22px;text-align:center;border-top:1px solid var(--line);">
+
+  <h2 style="font-size:1.35rem;margin:0 0 10px;">
+    Interested in working together?
+  </h2>
+
+  <p style="color:var(--muted);max-width:560px;margin:0 auto 20px;">
+    I’m open to opportunities involving business development, marketing,
+    customer insights, and commercial projects.
+  </p>
+
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;">
+
+    <a class="btn" href="mailto:tamimmadisma@gmail.com">
+      Get in touch
+    </a>
+
+    <a class="btn" href="https://www.linkedin.com/in/tamimmah-disma-lestari-b84b72436/" target="_blank" rel="noopener">
+      LinkedIn
+    </a>
+
+    <a class="btn" href="https://tamimmadisma.github.io/">
+      ← Back to Homepage
+    </a>
+
+  </div>
+
+  <p style="margin:24px 0 0;color:var(--muted);font-size:.85rem;">
+    Tamimmah Disma Lestari · Business Management · ITB
+  </p>
+
+</section>
 
 </body>
 </html>
